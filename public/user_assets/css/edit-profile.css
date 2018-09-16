@@ -1,0 +1,27 @@
+.lable-color{
+    color:red;
+}
+input{
+    height: 35px;
+    width: 60%;
+    margin: 10px;
+}
+label{
+    margin: 10px;
+}
+select{
+    height: 35px;
+    width: 60%;
+    margin: 10px;
+   
+}
+option {
+    font-weight: normal;
+    display: block;
+    white-space: pre;
+    min-height: 1.2em;
+    padding: 0px 2px 1px;
+}
+.input_width{
+	width: 20% !important;
+}

@@ -1,0 +1,255 @@
+
+
+
+
+/* The sticky */
+.sidebar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 60px;
+}
+
+.btn-pref .btn {
+    -webkit-border-radius:0 !important;
+    size: 45px;
+}
+
+
+/*saasf*/
+ 
+  
+ .masterTooltip:hover
+  {
+    -webkit-transform: scale(1.1);
+       -moz-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+         -o-transform: scale(1.1);
+            transform: scale(1.1);
+            -webkit-transition: all .2s ease-in-out;
+               -moz-transition: all .2s ease-in-out;
+                -ms-transition: all .2s ease-in-out;
+                 -o-transition: all .2s ease-in-out;
+                    transition: all .2s ease-in-out;
+  }
+ 
+ 
+  
+  .btnnarea
+  {
+    width: 100%;
+    height: 40px;
+    /*background-color:#fff;*/
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color:#ffffff;
+    /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.12);*/
+  }
+ 
+  
+  
+  
+  
+  .box_header_heading
+  {
+      font-size: 14px;
+      color: #000000;
+      font-family: sans-serif;
+  }
+ 
+ 
+  
+ 
+  .list_somebtn
+  {
+    line-height: 27px;
+    display: inline-block;
+    font-family: sans-serif;
+  }
+  
+ 
+ 
+  
+  ul li.agea:hover
+  {
+    -webkit-transform: scale(1.1);
+       -moz-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+         -o-transform: scale(1.1);
+            transform: scale(1.1);
+            -webkit-transition: all .2s ease-in-out;
+               -moz-transition: all .2s ease-in-out;
+                -ms-transition: all .2s ease-in-out;
+                 -o-transition: all .2s ease-in-out;
+                    transition: all .2s ease-in-out;
+    border-bottom: 1px solid #5a378c; 
+    border-top: 1px solid #5a378c;  
+  }
+
+
+
+  .qsh
+  {
+    float:left;
+    margin-left:15px;
+    margin-bottom:15px;
+    text-transform: capitalize;
+    font-family: sans-serif; 
+  }
+  .qs
+  {
+    border-radius: 5px;
+    border:1px solid #cccccc;
+  }
+  .w
+  {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0);
+  }
+ 
+  .bn
+  {
+    width: 100%;
+    border-radius:10px;
+    border:1px;
+    height: 45px;
+    background-color:#f47e2a;
+    color:#ffffff;
+    font-size:14px;
+  }
+  .bn:hover
+  {
+    background-color:#f47e2a;
+  }
+  .qsun
+  {
+    margin-top:5px;
+    margin-left:10px;
+    font-weight:bold;
+  }
+  .tqsun
+  {
+    margin-top:5px;
+    margin-left:10px;
+    color: black;
+    font-size:12px; 
+  }
+  .tqsunn
+  {
+    margin-top:5px;
+    margin-left:10px;
+    color: white;
+    font-size:12px; 
+  }
+  .tooltip {
+  display:none;
+  position:absolute;
+  border:1px solid #333;
+  background-color:#161616;
+  border-radius:5px;
+  padding:10px;
+  color:#fff;
+  font-size:12px Arial;
+}
+.linkT
+{
+  margin-left:8px; 
+}
+.icon_size
+{
+  width:20px
+}
+.countN
+{
+  border:1px solid #f47e2a;
+  padding:5px;
+  background-color:#5a378c;
+  color:#ffffff;
+  border-radius:50px;
+}
+
+.ntb
+{
+  margin-bottom:20px;
+}
+
+.patti
+{
+  background-image: url('{{ $user_assets }}/icons/patti.png');
+    background-repeat: no-repeat;
+    background-position: 14px 0px;
+    background-size: 290px 50px;
+}
+
+/*input[type=radio]{
+  cursor: pointer;
+}
+input[type=radio]:checked:before {
+content: "\2713";
+    background: #fffed5;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+    font-size: 20px;
+    text-align: center;
+    line-height: 8px;
+    display: inline-block;
+    width: 13px;
+    height: 15px;
+    color: #00904f;
+    border: 1px solid #cdcdcd;
+    border-radius: 4px;
+    margin: -3px -3px;
+    text-indent: 1px;
+}
+input[type=radio]:before {
+content: "\202A";
+    background: #ffffff;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+    font-size: 20px;
+    text-align: center;
+    line-height: 8px;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    color: #00904f;
+    border: 1px solid #cdcdcd;
+    border-radius: 4px;
+    margin: -3px -3px;
+    text-indent: 1px;
+}*/
+
+
+
+
+/*input[type=checkbox]{
+  cursor: pointer;
+}
+input[type=checkbox]:checked:before {
+content: "\2713";
+    background: #fffed5;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+    font-size: 20px;
+    text-align: center;
+    line-height: 8px;
+    display: inline-block;
+    width: 13px;
+    height: 15px;
+    color: #00904f;
+    border: 1px solid #cdcdcd;
+    border-radius: 4px;
+    margin: -3px -3px;
+    text-indent: 1px;
+}
+input[type=checkbox]:before {
+content: "\202A";
+    background: #ffffff;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+    font-size: 20px;
+    text-align: center;
+    line-height: 8px;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    color: #00904f;
+    border: 1px solid #cdcdcd;
+    border-radius: 4px;
+    margin: -3px -3px;
+    text-indent: 1px;
+}*/

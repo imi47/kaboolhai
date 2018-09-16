@@ -1,0 +1,309 @@
+
+.well
+{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  height: auto;
+}
+
+.wizrdpic
+{
+  width: 100%;
+}
+
+.form_area
+{
+  padding-top:30px;
+  padding-bottom:30px; 
+  height:auto;
+}
+input[type=text]
+{
+  height:27px;
+  padding:3px;
+  font-size:14px;
+  /*border:1px solid gray;*/
+}
+input[type=password]
+{
+  height:27px;
+  padding:5px;
+  border:1px solid gray;
+}
+input[type=select]
+{
+  height:27px;
+  padding:5px;
+  font-size:14px;
+  border:5px solid gray;
+}
+
+
+.imporatant
+{
+  color: red;
+}
+
+.lead
+{
+  font-size:12px;
+}
+
+#first_step
+{
+  float:right;
+  margin-right: 40px;
+  margin-top:-19px;
+}
+
+#secnd_step
+{
+  display:none;
+  float:right;
+  margin-top: -14px;
+  margin-right: 20px;
+}
+
+#third_step
+{
+  display:none;
+  float:right;
+  margin-right: 40px;
+  margin-top:-19px;
+}
+
+.lineinhead
+{
+  width:90%;
+  margin-top:0rem;
+}
+
+.lineinheadjoined
+{
+  width: 100%;
+  margin-top:7px;
+}
+
+.arrows
+{
+  padding-top:10px;
+  margin-left:-20px;
+  z-index: 1;
+  position: absolute;
+}
+.arrowse
+{
+  display:none;
+  padding-top:10px;
+  margin-left:-20px;
+  z-index: 1;
+  position: absolute; 
+}
+
+.menuwizard
+{
+  width:92%;
+  margin-left:4%;
+}
+
+.firstnextbtn
+{
+  width:70px;
+  height:40px;
+  border-color:#5A378C;
+  background-color:transparent;
+  color: #ED6C05;
+  font-size:18px;
+  font-weight:600;
+}
+
+.firstnextbtn:hover
+{
+  background-color:#5A378C;
+  color:#ffffff;
+  font-weight:lighter;
+}
+
+.prevtofirstbtn
+{
+  width:97px;
+  height:40px;
+  border-color:#ED6C05;
+  background-color:#5A378C;
+  color:#ffffff;
+  font-size:18px;
+  font-weight:600;
+  text-transform:capitalize;
+}
+
+.prevtofirstbtn:hover
+{
+  background-color:transparent;
+  color:#5A378C;
+  border-color:#ED6C05; 
+}
+
+.nexttothirdbtn
+{
+  width:70px;
+  height:40px;
+  border-color:#ED6C05;
+  color:#5A378C;
+  font-size:18px;
+  text-transform:capitalize;
+  font-weight:600; 
+  background-color:transparent;
+}
+
+.nexttothirdbtn:hover
+{
+  background-color:#5A378C;
+  color:#ffffff;
+}
+
+.prevsecbtn
+{
+  width:97px;
+  height:40px;
+  border-color:#ED6C05;
+  background-color:#5A378C;
+  color:#ffffff;
+  font-size:18px;
+  font-weight:600;
+  text-transform:capitalize;
+}
+
+.prevsecbtn:hover
+{
+  background-color:transparent;
+  color:#5A378C;
+  border-color:#ED6C05; 
+}
+
+.submitbtn
+{
+      background-color: #ED6C05;
+    font-size: 18px;
+    border-color: #5A378C;
+    font-weight:600;
+    border-radius:5%;
+    color: #ffffff;
+}
+
+.submitbtn:hover
+{
+  background-color:  #ED6C05;
+  font-size: 18px;
+  border-color:#5A378C;
+  color: #ffffff;
+}
+
+.listtopmarg
+{
+  margin-top:10px;
+}
+
+.allinputs
+{
+  width:40%;
+}
+
+.colons
+{
+  padding-right: 10px;
+}
+
+.btpad
+{
+  padding:5px;
+}
+
+.allselects
+{
+  width:40%;
+  height:27px;
+  font-size:14px;
+}
+
+.litinput
+{
+  width:10%;
+}
+
+.midlinput
+{
+  width:20%;
+}
+
+.welmsgimg
+{
+  margin-left:11px;
+}
+
+.sechead
+{
+  font-size: 18px;
+  font-weight:bold;
+  padding-top:5px;
+}
+
+.midlselect
+{
+  width:20%;
+}
+
+.radoinput
+{
+  display:inline;
+  font-size:14px;
+}
+
+.radiyn
+{
+  display:inline;
+  font-size:16px;
+}
+
+.addTarea
+{
+  width:50%;
+  height:50px;
+}
+
+.agreestat
+{
+  display:inline;
+}
+
+.prfdesctxt
+{
+  width:100%;
+  height:75px;
+}
+
+.parntdet
+{
+  display:inline;
+}
+
+.childdet
+{
+  display:inline;
+}
+
+.smallselect
+{
+  width:8%;
+}
+
+.famdet
+{
+  height:75px;
+  width:91%;
+}
+
+.partpref
+{
+  font-size: 22px;
+  font-weight:bold;
+  padding-top:5px;
+}
