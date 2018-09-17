@@ -1,6 +1,13 @@
 @extends('user/master_layout2')
 @section('data')
 
+<style>
+  #form-container {
+    width:100% !important;
+    margin:0 !important;
+  }
+</style>
+
 <div class="modal wow fadeInDown" id="myModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog"
   aria-hidden="false">
   <div class="modal-dialog modal-lg" style="height: 700px; box-shadow: 0 4px 8px 0 rgba(0,0,0, 0.5), 0 6px 20px 0 rgba(0,0, 0, 0.5;);">
@@ -130,7 +137,7 @@ border: 1px;
   <div id="wait" style="display: none;"></div>
   <div class="row" id='form-container'>
 
-    <div class="col-lg-9">
+    <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
       <div class="well" style="background-color: #f5f5f5">
         <br>
         <div class="menuwizard">
