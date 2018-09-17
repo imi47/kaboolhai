@@ -29,6 +29,10 @@
 		border: 2px solid #f47e2a;
 	}
 
+	#stay-tuned-container p{
+		font-size:small;
+	}
+
 	.navsidebar {
 		width: 260px;
 		height: 650px;
@@ -449,7 +453,7 @@
 		<section class="bg-orange no-padding wow" style="background-color:#ed6c05;">
 			<div class="container">
 				<div class="row padding-two sm-text-center">
-					<div class="col-md-9 no-padding">
+					<div class="col-md-9 no-padding" id='stay-tuned-container'>
 						<h5 class="white-text font-weight-600" style="color: white;font-family:sans-serif; margin-top: 20px;">Stay
 							tuned for the launch of Best &amp; Secure Matrimonial App!</h5>
 						<p class="white-text" style="font-family:sans-serif; color: white;">It has been our utmost

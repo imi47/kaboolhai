@@ -33,6 +33,12 @@
     .fa.fa-smile-o {
       font-size: 20px;
     }
+
+    @media (max-width:768px) {
+      #stay-tuned-container p {
+        margin:10px;
+      }
+    }
   </style>
   <script type="text/javascript">
     $(document).ready(function (e) {
@@ -747,7 +753,7 @@
     <section class="bg-orange no-padding wow ">
       <div class="container">
         <div class="row padding-two sm-text-center">
-          <div class="col-md-9 no-padding">
+          <div class="col-md-9 no-padding" id='stay-tuned-container'>
             <h4 class="white-text font-weight-600" style="font-family:sans-serif;">Stay tuned for the launch of Best &
               Secure Matrimonial App!</h4>
             <p class="white-text" style="font-family:sans-serif;text-align:justify;">It has been our utmost desire to
