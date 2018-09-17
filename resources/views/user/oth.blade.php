@@ -76,6 +76,10 @@
   {
     width:40px;
   }
+
+  #oath-container {
+    margin-top:-66px;
+  }
   
 </style>
 <div style="padding-top: 90px;"></div>
@@ -93,7 +97,7 @@
      
       <div class="col-md-2"></div>
 
-      <div class="col-md-8" style="background-color: #f6f6f4;">
+      <div class="col-md-8" style="background-color: #f6f6f4;" id='oath-container'>
         <div class="well" style="height: auto;">
            <img id="two" class="wizrdpic" src="{{ $user_assets }}/img/registration-step 2.png" alt="">
            <div style="height:87px; margin-top: 20px; width:100%;border:1px solid darkorange;">

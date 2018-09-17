@@ -4,12 +4,17 @@
 <style>
 
 .form_error {
-    margin-left:275px !important;
+    margin-left:287px !important;
   }
 
   #form-container {
     width:100% !important;
     margin:0 !important;
+  }
+
+  .well #regform{
+    margin:0 !important;
+    padding:0 !important;
   }
 
   #year.form_error {
@@ -80,6 +85,14 @@
       #date-container {
         margin-left:0 !important;
       }
+
+      .form_error {
+        margin-left:144px !important;
+      }
+    }
+
+    #phone.form_error {
+      margin-left:100px !important;
     }
   }
 
