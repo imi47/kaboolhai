@@ -211,9 +211,10 @@ border: 1px;
 
 <div class="container">
   <div id="wait" style="display: none;"></div>
-  <div class="row" id='form-container'>
+  <br>
+  <div class="row">
 
-    <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
       <div class="well" style="background-color: #f5f5f5">
         <br>
         <div class="menuwizard">
@@ -570,31 +571,6 @@ border-bottom-left-radius: 10px;*/
           .progress-bar.progress-bar-warning {
             background-color: #edda12;
           }
-
-          @media (max-width:767px) {
-            #form-container {
-              width: 100vw;
-            }
-
-            /* #form-container > div { */
-            /* width:100%; */
-
-            /* } */
-
-            #form-container .col-sm-9,
-            .well {
-              padding: 0;
-            }
-          }
-
-          #logindivv {
-            position: fixed;
-            top: 0;
-            /* left:0; */
-            right: 0;
-            bottom: 0;
-            margin-right: 0;
-          }
         </style>
 
         <form method="post" id="register_step_1">
@@ -602,12 +578,12 @@ border-bottom-left-radius: 10px;*/
             <ul id="regform">
 
               <li class="row listtopmarg">
-                <div class="col-4">
-                  <label for="">First Name: <span class="imporatant">*</span></label>
+                <div class="col-3">
+                  <label for="">First Name <span class="imporatant">*</span></label>
                 </div>
-                <div class="col-8">
-                  <!-- <span class="colons">:</span> -->
+                <div class="col-9">
 
+                  <span class="colons">:</span>
                   <span class="on-focus">
                     <input type="text" data-toggle="tooltip" data-placement="top" title="Kindly enter your first name in the field"
                       onblur="fir()" onkeypress="ft()" title="First name" onfocus="first();" id="fi" name="firstname"
@@ -615,15 +591,15 @@ border-bottom-left-radius: 10px;*/
 
                   </span>
                 </div>
-                <span id="firstname" class="form_error" style="color:red; font-size:13px; margin-left: 267px;"></span>
+                <span id="firstname" class="form_error" style="color:red; font-size:13px; margin-left: 237px;"></span>
               </li>
               <div class="btpad"></div>
               <li class="row listtopmarg">
-                <div class="col-4">
-                  <label for="">Last Name: <span class="imporatant">*</span></label>
+                <div class="col-3">
+                  <label for="">Last Name <span class="imporatant">*</span></label>
                 </div>
-                <div class="col-8">
-                  <!-- <span class="colons">:</span> -->
+                <div class="col-9">
+                  <span class="colons">:</span>
                   <span class="on-focus">
                     <input type="text" data-toggle="tooltip" data-placement="top" title="Kindly enter your last name in the field"
                       id="li" onblur="lst()" onkeypress="lt()" onfocus="last();" name="lastname" title="Last name"
@@ -632,16 +608,16 @@ border-bottom-left-radius: 10px;*/
                   </span>
 
                 </div>
-                <span id="lastname" class="form_error" style="color:red; font-size: 13px; margin-left: 267px;"></span>
+                <span id="lastname" class="form_error" style="color:red; font-size: 13px; margin-left: 237px;"></span>
               </li>
               <div class="btpad"></div>
               <li class="row listtopmarg">
-                <div class="col-4">
-                  <label for="">Username: <span class="imporatant">*</span></label>
+                <div class="col-3">
+                  <label for="">Username <span class="imporatant">*</span></label>
                 </div>
                 {{ csrf_field() }}
-                <div class="col-8">
-                  <!-- <span class="colons">:</span> -->
+                <div class="col-9">
+                  <span class="colons">:</span>
                   <span class="on-focus">
                     <input maxlength="8" type="text" data-toggle="tooltip" data-placement="top" title="Create your user name. It must not exceed 8 letters."
                       id="ui" onblur="un()" onkeypress="us()" onfocus="usr()" name="user_name" title="User name" class="allinputs"
@@ -649,17 +625,17 @@ border-bottom-left-radius: 10px;*/
 
                   </span>
                 </div>
-                <span id="user_name" class="form_error" style="color:red; font-size: 13px; margin-left: 267px;"></span>
+                <span id="user_name" class="form_error" style="color:red; font-size: 13px; margin-left: 237px;"></span>
               </li>
               <div class="btpad"></div>
 
               <li class="row listtopmarg">
-                <div class="col-4">
-                  <label for="">Email: <span class="imporatant">*</span></label>
+                <div class="col-3">
+                  <label for="">Email <span class="imporatant">*</span></label>
                 </div>
-                <div class="col-8">
+                <div class="col-9">
 
-                  <!-- <span class="colons">:</span> -->
+                  <span class="colons">:</span>
                   <span class="on-focus">
                     <input type="email" data-toggle="tooltip" data-placement="top" title="Enter your email address in the field"
                       id="emai" onblur="emi()" onfocus="ema()" onkeypress="emails()" name="email" title="Email" value="{{ $email }}"
@@ -667,17 +643,17 @@ border-bottom-left-radius: 10px;*/
                   </span>
 
                 </div>
-                <span id="email" class="form_error" style="color:red; font-size: 13px; margin-left: 267px;"></span>
+                <span id="email" class="form_error" style="color:red; font-size: 13px; margin-left: 237px;"></span>
               </li>
               <div class="btpad"></div>
 
               <li class="row listtopmarg">
-                <div class="col-4">
-                  <label for="">Password: <span class="imporatant">*</span></label>
+                <div class="col-3">
+                  <label for="">Password <span class="imporatant">*</span></label>
                 </div>
-                <div class="col-8">
+                <div class="col-9">
 
-                  <!-- <span class="colons">:</span> -->
+                  <span class="colons">:</span>
                   <span class="on-focus">
                     <input type="password" data-toggle="tooltip" data-placement="top" title="Password should be between 8-25 characters "
                       {{-- id="password" --}} id="pa" name="password" onkeypress="passwordss()" onblur="pas()" onfocus="pass()"
@@ -690,17 +666,17 @@ border-bottom-left-radius: 10px;*/
 
                   </span>
                 </div>
-                <span id="password" title="Password" class="form_error" style="color:red; font-size: 13px; margin-left: 267px;"></span>
+                <span id="password" title="Password" class="form_error" style="color:red; font-size: 13px; margin-left: 237px;"></span>
               </li>
               <div class="btpad"></div>
 
               <li class="row listtopmarg">
-                <div class="col-4">
-                  <label for="">Confirm Password: <span class="imporatant">*</span></label>
+                <div class="col-3">
+                  <label for="">Confirm Password <span class="imporatant">*</span></label>
                 </div>
-                <div class="col-8">
+                <div class="col-9">
 
-                  <!-- <span class="colons">:</span> -->
+                  <span class="colons">:</span>
                   <span class="on-focus">
                     <input type="password" data-toggle="tooltip" data-placement="top" title="Re-enter your password to confirm"
                       id="c_pa" title="Confirm Password" name="password_confirmation" onblur="c_pass()" onfocus="c_pas()"
@@ -709,16 +685,16 @@ border-bottom-left-radius: 10px;*/
                   </span>
 
                 </div>
-                <span id="password_confirmation" class="form_error" style="color:red; margin-left: 267px; font-size: 13px;"></span>
+                <span id="password_confirmation" class="form_error" style="color:red; margin-left: 237px; font-size: 13px;"></span>
               </li>
               <div class="btpad"></div>
 
               <li class="row listtopmarg">
-                <div class="col-4">
-                  <label for="">Gender: <span class="imporatant">*</span></label>
+                <div class="col-3">
+                  <label for="">Gender <span class="imporatant">*</span></label>
                 </div>
-                <div class="col-8">
-                  <!-- <span class="colons">:</span> -->
+                <div class="col-9">
+                  <span class="colons">:</span>
                   {{-- <span class="on-focus"> --}}
                     <select name="gender" id="gend" onblur="gen()" onchange="genders(this)" onfocus="gendr()" class="allselects"
                       title="Gender">
@@ -732,16 +708,16 @@ border-bottom-left-radius: 10px;*/
                   {{-- <span id="ged" class="firs" style="display: none;"> sample text sample text sample text sample
                     text sample text sample text sample text </span> --}}
                 </div>
-                <span id="gender" class="form_error" style="color:red; font-size: 13px; margin-left: 267px;"></span>
+                <span id="gender" class="form_error" style="color:red; font-size: 13px; margin-left: 237px;"></span>
               </li>
               <div class="btpad"></div>
 
               <li class="row listtopmarg">
-                <div class="col-4">
-                  <label for="">Country: <span class="imporatant">*</span></label>
+                <div class="col-3">
+                  <label for="">Country <span class="imporatant">*</span></label>
                 </div>
-                <div class="col-8">
-                  <!-- <span class="colons">:</span> -->
+                <div class="col-9">
+                  <span class="colons">:</span>
                   {{-- <select name="" id=""> --}}
                     <select title="Country" id="cont" onblur="count()" onfocus="conry()" onchange="country_change(this)"
                       name="country_id" class="allselects">
@@ -755,34 +731,34 @@ border-bottom-left-radius: 10px;*/
                     </select>
 
                 </div>
-                <span id="country_id" class="form_error" style="color:red; margin-left: 267px; font-size: 13px;"></span>
+                <span id="country_id" class="form_error" style="color:red; margin-left: 237px; font-size: 13px;"></span>
               </li>
               <div class="btpad"></div>
 
               <li class="row listtopmarg">
-                <div class="col-4">
-                  <label for="">Province: <span class="imporatant">*</span></label>
+                <div class="col-3">
+                  <label for="">Province <span class="imporatant">*</span></label>
 
                 </div>
-                <div class="col-8">
-                  <!-- <span class="colons">:</span> -->
+                <div class="col-9">
+                  <span class="colons">:</span>
                   {{-- <select name="" id=""> --}}
                     <select title="State" onblur="stat()" onfocus="statuss()" selected="selected" id="state" onchange="state_change(this)"
                       name="state_id" class="allselects">
                       <option value="">Select</option>
                     </select>
                 </div>
-                <span id="state_id" class="form_error" style="color:red; margin-left: 267px; font-size: 13px;"></span>
+                <span id="state_id" class="form_error" style="color:red; margin-left: 237px; font-size: 13px;"></span>
               </li>
               <div class="btpad"></div>
 
               <li class="row listtopmarg">
-                <div class="col-4">
-                  <label for="">City: <span class="imporatant">*</span></label>
+                <div class="col-3">
+                  <label for="">City <span class="imporatant">*</span></label>
 
                 </div>
-                <div class="col-8">
-                  <!-- <span class="colons">:</span> -->
+                <div class="col-9">
+                  <span class="colons">:</span>
 
                   <select title="City" onblur="city_blour()" onchange="city_change(this)" onfocus="city_focus()" name="city_id"
                     id="city" selected="selected" class="allselects">
@@ -790,16 +766,16 @@ border-bottom-left-radius: 10px;*/
                   </select>
 
                 </div>
-                <span id="city_id" class="form_error" style="color:red; font-size:13px; margin-left: 267px;"></span>
+                <span id="city_id" class="form_error" style="color:red; font-size:13px; margin-left: 237px;"></span>
               </li>
               <div class="btpad"></div>
 
               <li class="row listtopmarg">
-                <div class="col-4">
-                  <label for="">Phone: <span class="imporatant">*</span></label>
+                <div class="col-3">
+                  <label for="">Phone <span class="imporatant">*</span></label>
                 </div>
-                <div class="col-8">
-                  <!-- <span class="colons">:</span> -->
+                <div class="col-9">
+                  <span class="colons">:</span>
                   <img style="margin-top: 4px; margin-bottom: 6px;" src="{{ $user_assets }}/flags/pk.png" width="20" id="falgimg">
 
                   <input type="text" readonly="" id="code" name="code2" value="+92" placeholder="Code" class="smallselect">
@@ -823,11 +799,11 @@ border-bottom-left-radius: 10px;*/
               </li>
               <div class="btpad"></div>
               <li class="row" class="listtopmarg">
-                <div class="col-5">
-                  <label for=""> Date of Birth: <span class="imporatant">*</span></label>
+                <div class="col-4">
+                  <label for=""> Date of Birth <span class="imporatant">*</span></label>
                 </div>
-                <div class="col-7" style="margin-left:-65px; " id='date-container'>
-                  <!-- <span class="colons">:</span> -->
+                <div class="col-8" style="margin-left:-65px; ">
+                  <span class="colons">:</span>
                   <select id="yer" onblur="year_blor()" onchange="year_change(this)" onfocus="year_focus()" name="day"
                     class="midlselect">
                     <option value="">Day..</option>
@@ -836,13 +812,13 @@ border-bottom-left-radius: 10px;*/
                   </select>
                   {{-- <span id="years" class="firs1" style="display: none;"> sample text sample text sample text
                     sample text sample text sample text sample text </span> --}}
-                  <select name="month" class="midlselect" id='month-select'>
+                  <select name="month" class="midlselect">
                     <option value="">Month..</option>
                     @foreach(months() as $key => $month)
                     <option value="{{ $key+1 }}">{{ $month }}</option>
                     @endforeach
                   </select>
-                  <select name="year" class="midlselect" id='year-select'>
+                  <select name="year" class="midlselect">
                     <option value="">Year..</option>
 
 
