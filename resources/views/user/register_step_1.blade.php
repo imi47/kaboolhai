@@ -7,6 +7,18 @@
     margin:0 !important;
   }
 
+  #register_step_1 #code{
+    width:65px !important;
+  }
+
+  #register_step_1 #code1{
+    width:90px !important;
+  }
+
+  #regform input[type=text],input[type=email], input[type=text],input[type=password], select {
+    width:200px !important;
+  }
+
   #regform input[type] {
     padding:15px;
     border:1px solid #ccc;
@@ -35,7 +47,21 @@
     select {
       width:90% !important;
     }
+
+
   }
+
+      /* For Firefox */
+  input[type='number'] {
+    -moz-appearance:textfield;
+  }
+  /* Webkit browsers like Safari and Chrome */
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none !important;
+      margin: 0;
+  }
+}
 </style>
 
 <div class="modal wow fadeInDown" id="myModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog"
