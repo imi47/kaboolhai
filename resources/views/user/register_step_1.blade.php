@@ -19,6 +19,10 @@
     width:200px !important;
   }
 
+  #full {
+    width:200px;
+  }
+
   #regform input[type] {
     padding:15px;
     border:1px solid #ccc;
@@ -31,6 +35,16 @@
     margin-left:-15px !important;
   }
 
+ 
+
+  @media (max-width:1200px) {
+    #full {
+      /* width:40% !important; */
+      display:inline;
+      margin-top:10px !important;
+    }
+  }
+
   @media (max-width:768px) {
     #regform input[type=text],input[type=email], input[type=text],input[type=password] {
       width:90%;
@@ -40,6 +54,10 @@
       margin-left:173px !important;
     }
 
+    #full {
+      width:90%;
+    }
+
     /* #gender, #country_id, #state_id, #city_id {
       margin-top:0;
     } */
@@ -47,8 +65,6 @@
     select {
       width:90% !important;
     }
-
-
   }
 
       /* For Firefox */
@@ -60,6 +76,10 @@
   input[type=number]::-webkit-outer-spin-button {
       -webkit-appearance: none !important;
       margin: 0;
+  }
+
+   #yer, #month-select, #year-select {
+   width:auto !important;
   }
 }
 </style>
@@ -803,11 +823,11 @@ border-bottom-left-radius: 10px;*/
               </li>
               <div class="btpad"></div>
               <li class="row" class="listtopmarg">
-                <div class="col-4">
+                <div class="col-5">
                   <label for=""> Date of Birth: <span class="imporatant">*</span></label>
                 </div>
-                <div class="col-8" style="margin-left:-65px; ">
-                  <span class="colons">:</span>
+                <div class="col-7" style="margin-left:-65px; " id='date-container'>
+                  <!-- <span class="colons">:</span> -->
                   <select id="yer" onblur="year_blor()" onchange="year_change(this)" onfocus="year_focus()" name="day"
                     class="midlselect">
                     <option value="">Day..</option>
@@ -816,13 +836,13 @@ border-bottom-left-radius: 10px;*/
                   </select>
                   {{-- <span id="years" class="firs1" style="display: none;"> sample text sample text sample text
                     sample text sample text sample text sample text </span> --}}
-                  <select name="month" class="midlselect">
+                  <select name="month" class="midlselect" id='month-select'>
                     <option value="">Month..</option>
                     @foreach(months() as $key => $month)
                     <option value="{{ $key+1 }}">{{ $month }}</option>
                     @endforeach
                   </select>
-                  <select name="year" class="midlselect">
+                  <select name="year" class="midlselect" id='year-select'>
                     <option value="">Year..</option>
 
 
