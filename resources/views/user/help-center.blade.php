@@ -7,6 +7,12 @@
   .admininfo{
     line-height: 50px;
   }
+
+  @media (max-width:991px) {
+    #side-info {
+      margin-top:50px;
+    }
+  }
 </style>
 <div style="padding-top:90px;"></div>
 <div class="container-fluid">
@@ -86,7 +92,7 @@
                   <button type="Submit" class="btn btn-success pull-right">Send</button>
                 </div>
                 <br>
-                <div class="col-md-4 well">
+                <div class="col-md-4 well" id='side-info'>
                   <strong class="admininfo">Usman Khan,Kaboolhai Admin</strong>
                   <p class="admininfo">Mobile No: 0300-8000085</p>
                   <p class="admininfo">Email: admin@kaboolhai.com</p>
