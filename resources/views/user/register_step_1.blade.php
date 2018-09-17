@@ -34,7 +34,6 @@
     margin-top:5px !important;
     margin-left:-15px !important;
   }
-
  
 
   @media (max-width:1200px) {
@@ -57,7 +56,7 @@
 
   @media (max-width:768px) {
     #regform input[type=text],input[type=email], input[type=text],input[type=password] {
-      width:90%;
+      /* width:90%; */
     }
 
     .form_error {
@@ -65,15 +64,13 @@
     }
 
     #full {
-      width:90%;
+      /* width:90%; */
     }
 
-    /* #gender, #country_id, #state_id, #city_id {
-      margin-top:0;
-    } */
-
-    select {
-      width:90% !important;
+    @media (max-width:575px) {
+      #date-container {
+        margin-left:0 !important;
+      }
     }
   }
 
@@ -82,16 +79,14 @@
     -moz-appearance:textfield;
   }
   /* Webkit browsers like Safari and Chrome */
-  input[type=number]::-webkit-inner-spin-button,
-  input[type=number]::-webkit-outer-spin-button {
+  input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
       -webkit-appearance: none !important;
       margin: 0;
   }
 
-   #yer, #month-select, #year-select {
-   width:auto !important;
+#yer, #month-select, #year-select {
+    width:auto !important;
   }
-}
 </style>
 
 <div class="modal wow fadeInDown" id="myModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog"
@@ -809,10 +804,10 @@ border-bottom-left-radius: 10px;*/
               </li>
               <div class="btpad"></div>
               <li class="row" class="listtopmarg">
-                <div class="col-4">
+                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
                   <label for=""> Date of Birth: <span class="imporatant">*</span></label>
                 </div>
-                <div class="col-8" style="margin-left:-65px; ">
+                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7" style="margin-left:-65px; "id='date-container'>
                   <!-- <span class="colons">:</span> -->
                   <select id="yer" onblur="year_blor()" onchange="year_change(this)" onfocus="year_focus()" name="day"
                     class="midlselect">
@@ -822,13 +817,13 @@ border-bottom-left-radius: 10px;*/
                   </select>
                   {{-- <span id="years" class="firs1" style="display: none;"> sample text sample text sample text
                     sample text sample text sample text sample text </span> --}}
-                  <select name="month" class="midlselect">
+                  <select name="month" class="midlselect" id='month-select'>
                     <option value="">Month..</option>
                     @foreach(months() as $key => $month)
                     <option value="{{ $key+1 }}">{{ $month }}</option>
                     @endforeach
                   </select>
-                  <select name="year" class="midlselect">
+                  <select name="year" class="midlselect" id='year-select'>
                     <option value="">Year..</option>
 
 
