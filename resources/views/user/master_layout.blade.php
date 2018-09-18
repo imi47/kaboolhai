@@ -46,6 +46,10 @@
     top: 5px;
     left: 25px;
   }
+
+  .stay-tuned {
+    margin:10px;
+  }
 </style>
 
 <body style="background-color: #2B354B; overflow-x:hidden;">
@@ -525,7 +529,7 @@
       <section class="no-padding footer_sec" style="margin-bottom:-19px;">
         <div class="container">
           <div class="row padding-two sm-text-center" style="padding-top:20px;padding-bottom: 43px;">
-            <div class="col-md-9 no-padding">
+            <div class="col-md-9 no-padding stay-tuned">
               <h4 class="white-text font-weight-600" style="font-family:sans-serif;color:white">Stay tuned for the
                 launch of Best & Secure Matrimonial App!</h4>
               <p class="white-text" style="font-family:sans-serif;text-align:justify;color:white">It has been our
