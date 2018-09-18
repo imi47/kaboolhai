@@ -83,17 +83,17 @@
 		margin-right:0;
 	}
 
-	.remove-top-margin:first-child {
-		margin-top:-40px;
+	.remove-top-margin {
+		margin-top:-70px;
 	}
 
 	.remove-top-margin:last-child {
 		margin-top:-50px;
 	}
 
-	/* li.signin1 {
-		margin-top:20px;
-	} */
+	li.signin1 {
+		margin-top:80px;
+	}
 
 	</style>
 	<!-- favicon -->
@@ -228,7 +228,7 @@
 				</a>
 
 				<ul style="margin-left:25px;list-style-type:none;width:100px;line-height:50px;margin-top:15px;">
-				<li class="wow fadeInDown signin1 remove-top-margin" data-wow-delay="0.1s">
+				<li class="wow fadeInDown remove-top-margin" data-wow-delay="0.1s">
 				@if(Session::get('user_id'))) 
 						<a href="{{ url('dashboard') }}" class="M">
 							<span>
