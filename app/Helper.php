@@ -24,16 +24,16 @@ function user_data()
 }
 function tochat()
 {
-     $all_chats= chats::with('to_users','from_users','photo')->distinct()->where([['to_user','=',Session::get('user_id')]])->orderBy('created_at','asc')->get(['to_user','from_user']);
-    return $all_chats;
+    //  $all_chats= chats::with('to_users','from_users','photo')->distinct()->where([['to_user','=',Session::get('user_id')]])->orderBy('created_at','asc')->get(['to_user','from_user']);
+    // return $all_chats;
   
 }
 
 
 function fromchat()
 {
-  $all_chats= chats::with('from_users')->distinct()->where([['from_user','=',Session::get('user_id')]])->orderBy('created_at','asc')->get(['to_user','from_user']);
-  return $all_chats;
+//   $all_chats= chats::with('from_users')->distinct()->where([['from_user','=',Session::get('user_id')]])->orderBy('created_at','asc')->get(['to_user','from_user']);
+//   return $all_chats;
 }
 function get_photo()
  {
