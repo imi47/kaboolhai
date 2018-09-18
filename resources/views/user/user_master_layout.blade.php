@@ -83,9 +83,18 @@
 		margin-right:0;
 	}
 
-    /* body, html {
-      width: 100vw;
-    } */
+	.remove-top-margin:first-child {
+		margin-top:-40px;
+	}
+
+	.remove-top-margin:last-child {
+		margin-top:-50px;
+	}
+
+	/* li.signin1 {
+		margin-top:20px;
+	} */
+
 	</style>
 	<!-- favicon -->
 	<link rel="shortcut icon" href="{{ $user_assets }}/kabool-hai-favicon.png">
@@ -112,7 +121,7 @@
 		<div class="container-fluid navbar-container">
 			<div class="row">
 				<!-- logo -->
-				<div class="col-md-2">
+				<div class="col-md-2" id='test'>
 					<a class="logo-light" href="{{ url('/') }}">
 						<img alt="" src="{{ $user_assets }}/images/kaboolhai.png" class="logo" />
 					</a>
@@ -179,7 +188,6 @@
 							<li class="{{ Request::is('advance-search') ? 'active1' : '' }}">
 								<a href="{{url('advance-search')}}">Find Match</a>
 							</li>
-
 						</ul>
 						<ul class="nav navbar-nav">
 
@@ -220,6 +228,18 @@
 				</a>
 
 				<ul style="margin-left:25px;list-style-type:none;width:100px;line-height:50px;margin-top:15px;">
+				<li class="wow fadeInDown signin1 remove-top-margin" data-wow-delay="0.1s">
+				@if(Session::get('user_id'))) 
+						<a href="{{ url('dashboard') }}" class="M">
+							<span>
+								<!-- <img width="40" height="40" src="{{ $user_assets }}/login.svg" alt="" /> -->
+								<i class="fa fa-dashboard fa-2x"></i>
+							</span>
+							<span style="padding-left:15px;">Dashboard</span>
+						</a>
+					</li>
+					@endif
+
 					@if(empty(Session::get('user_id')))
 					<li class="wow fadeInDown signin1" data-wow-delay="0.1s">
 						<a href="#" class="M">
@@ -326,10 +346,29 @@
 							<span style="padding-left:15px;">Advanced Search</span>
 						</a>
 					</li>
+					@if(Session::get('user_id'))) 
+					<li class="wow fadeInDown remove-top-margin" data-wow-delay="1s">
+						<a href="{{ url('logout') }}" class="M">
+							<span>
+							<i class="fa fa-sign-out fa-2x" aria-hidden="true"></i>
+							</span>
+							<span style="padding-left:15px;">Log out</span>
+						</a>
+					</li>
+					@endif 
 				</ul>
 			</div>
 		</div>
 	</nav>
+
+	<!-- <style>
+		@media (max-width:991px) {
+			.menudesign + .dropdown-menu {
+				/* display:none !important; */
+				z-index:1;
+			}
+		}
+	</style> -->
 
 	<script>
 		// i named signin1 instead of signin because other code interferes
@@ -377,7 +416,53 @@
         });
 
 
+		//   var username_dropdown = $('.nav li.dropdown').clone();
+		//    mq = window.matchMedia( "(max-width: 1166px)" );
+         
+			// mq.addListener(mediaQueryResponse) // attach listener function to listen in on state changes so a page refresh will not be required
+ 
+			// search option will stay in the same line in tablet mode 
+			// function mediaQueryResponse(mq) {
+ 
+			//   if(mq.matches) {
+			// 		$(username_dropdown).show();
+			// 		username_dropdown.appendTo('#test');
+			// 		$(username_dropdown).css({
+			// 		'position' : 'absolute',
+			// 		'right' : '100px',
+			// 		'top' : '20px'
+			// 	});
+
+				// $('.menudesign').removeAttr('data-toggle');
+
+				// if ( $('.menudesign + .dropdown-menu').css('visibility', 'hidden') ) {
+				// 	$('.menudesign').click(function(){
+				// 		$('.menudesign + .dropdown-menu').css('visibility','visisle');
+				// 	});
+				// }
+
+				// if ( $('.menudesign + .dropdown-menu').css('visibility', 'visible') ) {
+				// 	$('.menudesign').click(function(){
+				// 		$('.menudesign + .dropdown-menu').css('visibility','hidden');
+				// 	});
+				// }
+
+					// alert('hi');
+			//   }
+
+			//   else {
+			// 	  $(username_dropdown).hide();
+			//   }
+			// }
+			// mediaQueryResponse(mq);
+
 	</script>
+
+	<style>
+		.dropdown-open .dropdown-menu {
+			/* display:none !important; */
+		}
+	</style>
 
 	<div class="logindiv wow fadeIn" id="logindivv">
 
@@ -437,6 +522,7 @@
 
 		//  });
 		//  });
+
 	</script>
 	@yield('data')
 
@@ -2127,6 +2213,7 @@
         background: url('{{ $user_assets }}/loading.gif') 50% 50% no-repeat rgba(249,249,249,0.7);
         background-size: 150px 150px;
       }
+
       </style>
       @if(count(user_data()))
       <script type="
