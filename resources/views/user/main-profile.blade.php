@@ -1,33 +1,38 @@
 @extends('user/master_layout') 
 @section('data')
 
-  
+
+  <style>
+    .hvr-grow {
+      margin-bottom:25px;
+    }
+  </style>
   
   <div class="col-md-9">
     
     <div class="row">
-      <div class="col-sm-3">
+      <div class="col-md-3 col-sm-3 col-xs-6">
         <div class="profile_stat hvr-grow">
           <a href="{{url('statistics')}}" target="__blank">
             <img src="{{ $user_assets }}/db_images/statistics.png" alt="" style="width:200px ;height: 200px;">
           </a>
         </div>
       </div>
-      <div class="col-sm-3">
+      <div class="col-md-3 col-sm-3 col-xs-6">
         <div class="profile_stat hvr-grow">
             <a href="{{ url('trust-badges') }}">
               <img src="{{ $user_assets }}/db_images/Trust-Badge.png" alt="" style="width:200px ;height: 200px;">
             </a>
         </div>       
       </div>
-      <div class="col-sm-3">
+      <div class="col-md-3 col-sm-3 col-xs-6">
         <div class="profile_stat hvr-grow">
             <a href="{{ url('membership') }}">
               <img src="{{ $user_assets }}/db_images/Membership.png" alt="" style="width:200px ;height: 200px;">
             </a>
         </div>
       </div>
-      <div class="col-sm-3">
+      <div class="col-md-3 col-sm-3 col-xs-6">
         <div class="profile_stat hvr-grow">
             <a href="#">
               <img src="{{ $user_assets }}/db_images/payments.png" alt="" style="width:200px ;height: 200px;">
@@ -39,28 +44,28 @@
     <br><br><br><br>
 
     <div class="row">
-      <div class="col-sm-3">
+      <div class="col-md-3 col-sm-3 col-xs-6">
         <div class="profile_stat hvr-grow">
           <a href="#">
             <img src="{{ $user_assets }}/db_images/Packages.png" alt="" style="width:200px ;height: 200px;">
           </a>
         </div>
       </div>
-      <div class="col-sm-3">
+      <div class="col-md-3 col-sm-3 col-xs-6">
         <div class="profile_stat hvr-grow">
             <a href="{{ url('manage-profile') }}">
               <img src="{{ $user_assets }}/db_images/Manage-Profile.png" alt="" style="width:200px ;height: 200px;">
             </a>
         </div>       
       </div>
-      <div class="col-sm-3">
+      <div class="col-md-3 col-sm-3 col-xs-6">
         <div class="profile_stat hvr-grow">
             <a href="{{ url('public-profile',user_data()->id) }}">
               <img src="{{ $user_assets }}/db_images/View-My-Profile.png" alt="" style="width:200px ;height: 200px;">
             </a>
         </div>
       </div>
-      <div class="col-sm-3">
+      <div class="col-md-3 col-sm-3 col-xs-6">
         <div class="profile_stat hvr-grow">
             <a href="{{ url('deactive-user',user_data()->id) }}">
               <img src="{{ $user_assets }}/db_images/Deactivate-Profile.png" alt="" style="width:200px ;height: 200px;">
@@ -72,28 +77,28 @@
     <br><br><br><br>
 
     <div class="row">
-      <div class="col-sm-3">
+      <div class="col-md-3 col-sm-3 col-xs-6">
         <div class="profile_stat hvr-grow">
           <a href="{{ url('blocked-list') }}">
             <img src="{{ $user_assets }}/db_images/Block-User.png" alt="" style="width:200px ;height: 200px;">
           </a>
         </div>
       </div>
-      <div class="col-sm-3">
+      <div class="col-md-3 col-sm-3 col-xs-6">
         <div class="profile_stat hvr-grow">
             <a href="{{ url('my-photo') }}">
               <img src="{{ $user_assets }}/db_images/Photo-Upload.png" alt="" style="width:200px ;height: 200px;">
             </a>
         </div>       
       </div>
-      <div class="col-sm-3">
+      <div class="col-md-3 col-sm-3 col-xs-6">
         <div class="profile_stat hvr-grow">
             <a href="{{ url('latest-updates') }}">
               <img src="{{ $user_assets }}/db_images/Latest-Updates.png" alt="" style="width:200px ;height: 200px;">
             </a>
         </div>
       </div>
-      <div class="col-sm-3">
+      <div class="col-md-3 col-sm-3 col-xs-6">
         <div class="profile_stat hvr-grow">
             <a href="{{ url('email-prefrences') }}">
               <img src="{{ $user_assets }}/db_images/Email-Preferences.png" alt="" style="width:200px ;height: 200px;">
