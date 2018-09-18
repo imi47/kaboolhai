@@ -177,7 +177,7 @@
       height: 100vh;
     }
 
-    @media (max-width:1230px) {
+    @media (max-width:1250px) {
 
       .navbar .accordion-menu #accordion>li,
       #signin {

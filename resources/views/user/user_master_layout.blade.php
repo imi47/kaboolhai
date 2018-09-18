@@ -76,13 +76,13 @@
       width:100% !important;
     }
     
-    .navbar-container .main-nav {
+    .navbar-container .main-nav .navbar-collapse{
       float:right !important;
     }
 
-    .main-nav .navbar-collapse #accordion {
+    /* .main-nav .navbar-collapse #accordion {
       float:right;
-    }
+    } */
 
 	#logindivv {
 		position:fixed;
@@ -104,6 +104,14 @@
 	li.signin1 {
 		margin-top:80px;
 	}
+
+	#accordion {
+		/* float:l !important; */
+	}
+
+	/* #accordion + .nav {
+		float:right !important;
+	} */
 
 	</style>
 	<!-- favicon -->
@@ -410,7 +418,7 @@
 			$('.navbar-header').show();
 		});
 
-    $('.navbar-header').click(function(){
+    $('.navbar-toggle').click(function(){
 			$("#navsidebare").show();
 			$(this).hide();
     });
