@@ -45,6 +45,16 @@
       .navbar-toggle .icon-bar {
         background-color:#fff !important;
       }
+
+		#username {
+			color:#fff;
+			position:absolute;
+			top:25px;
+			right:60px;
+			font-weight:600;
+			letter-spacing:1px;
+			font-size:1.2em;
+		}
     }
         
         #login-div-x {
@@ -145,6 +155,9 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
+				@if(Session::get('user_id')))
+				<span id='username'> {{ Session::get('user_name') }}</span>
+				@endif
 				</div>
 				<!-- toggle navigation end -->
 				<!-- main menu -->
