@@ -646,6 +646,20 @@
       </div>
     </nav>
   </div>
+
+  @if(Session::get('user_id'))
+  <style>
+    @media (max-width:991px) {
+      .navbar-form {
+        display:none;
+      }
+
+      .nav li.dropdown,  .nav li.dropdown a{
+       width:auto !important;
+      }
+    }
+  </style>
+  @endif
   <script>
     // old code
         //  $("#btntoshowmenu").click(function(){
