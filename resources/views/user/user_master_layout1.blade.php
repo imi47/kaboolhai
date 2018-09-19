@@ -26,6 +26,9 @@
   <link rel="shortcut icon" href="{{ $user_assets }}/kabool-hai-favicon.png">
   @stack('css')
   <style type="text/css">
+    body {
+      /* position:relative; */
+    }
     .label {
       display: none;
     }
@@ -691,10 +694,14 @@
 
   .sticky-nav .navbar-nav > li > .dropdown-menu {
     width:500px !important;
+    /* position:absolute !important;
+    right:200px !important; */
   }
 
-  ul.icon-dropdown {
-    /* width:500px; */
+  .icon-dropdown {
+    position:fixed !important;
+    right:0 !important;
+    width:100vw !important;
   }
 
       .nav li.dropdown,  .nav li.dropdown a{
