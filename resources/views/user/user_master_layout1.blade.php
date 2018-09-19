@@ -45,6 +45,27 @@
       border:none;
     }
 
+    #sidebar-2 {
+      background-color:orange;
+      height:100vh;
+      width:260px;
+      /* display:none; */
+      position:fixed;
+      right:-260px;
+      transition:500ms;
+      z-index:1;
+    }
+
+    #sidebar-2 span {
+      font-size:xx-large;
+      font-weight:600;
+      position:absolute;
+      right:20px;
+      top:70px;
+      cursor:pointer;
+
+    }
+
     @media (max-width:768px) {
       #stay-tuned-container p {
         margin:10px;
@@ -650,12 +671,32 @@
             <li class="wow fadeInDown" data-wow-delay="0.99s"><a href="{{ url('help-center') }}" class="M"><span><i
                     class="fa fa-question" style="color:red; font-size: 45px;"></i></span><span style="padding-left:15px;">Help
                   Center</span></a></li>
-
+            
+            @if(Session::get('user_id'))
+            <li class="wow fadeInDown" data-wow-delay="0.9s"><a href="#" class="M" id='side-go-more-li'><span><i class="fas fa-bars fa-2x" style='color:orange'></i></span> <span style="padding-left:10px;">Go more</span></a></li>
+            @endif
 
           </ul>
         </div>
       </div>
     </nav>
+
+
+    <div id="sidebar-2">
+      <span>&times</span>
+    </div>
+    <script>
+      $('#side-go-more-li').click(function(){
+        $('#navsidebare').hide('fast');
+        $("#sidebar-2").css('right', '0');
+      });
+
+      $('#sidebar-2 span').click(function(){
+        $('#sidebar-2').css('right', '-260px');
+        $('#btntoshowmenu').show();
+      });
+    </script>
+
   </div>
 
   @if(Session::get('user_id'))
