@@ -572,7 +572,7 @@
                     </a>
                   </ul>
                 </li>
-                <li class="dropdown">
+                <li class="dropdown username-dropdown-toggle">
                   <a class="dropdown-toggle menudesign" data-toggle="dropdown" href="#">
                     {{ user_data()->user_name }} <span class="caret"></span></a>
                   <ul class="dropdown-menu" style="    background-color: #ffffff;">
@@ -700,8 +700,8 @@
     }
 
     @media (max-width:375px) {
-      #menu-div .nav li.dropdown {
-        /* display:none; */
+      #menu-div .nav li.dropdown:not(.username-dropdown-toggle) {
+        display:none !important;
       }
     }
   </style>
