@@ -46,25 +46,46 @@
     }
 
     #sidebar-2 {
-      background-color:orange;
+      background-color:#000;
+      color:#fff;
+      opacity:0.9;
       height:100vh;
       width:260px;
-      /* display:none; */
       position:fixed;
       right:-260px;
       transition:500ms;
       z-index:1;
+      overflow:scroll;
     }
 
-    #sidebar-2 span {
+    #sidebar-2 span:not(.divider) {
       font-size:xx-large;
       font-weight:600;
       position:absolute;
-      right:20px;
+      right:15px;
       top:70px;
       cursor:pointer;
-
     }
+
+     #sidebar-2 ul {
+       margin-top:100px;
+     }
+
+    #sidebar-2 ul li:not(.divider) {
+      text-align:center;
+      padding:10px;
+      font-size:large;
+    }
+
+    #sidebar-2 ul li.divider {
+      background-color:#222;
+      height:1px;
+    }
+
+     #sidebar-2 ul li a {
+       text-decoration:none;
+       color:#fff;
+     }
 
     @media (max-width:768px) {
       #stay-tuned-container p {
@@ -684,7 +705,60 @@
 
     <div id="sidebar-2">
       <span>&times</span>
+      
+      <ul>
+      <li><a href="{{ url('edit-profile',user_data()->id) }}">Edit Profile</a></li> 
+      <li><a href="{{ url('my-photo') }}">My Photos</a></li>
+      <li><a href="{{ url('favourite-list') }}">My
+                        Favourite</a></li>
+        <li><a href="{{ url('find-exact-match') }}">Find
+            Exact Match</a></li>
+        <li><a href="{{ url('profile-writing-tips') }}">Profile
+            Writing Tips</a></li>
+        <li><a href="{{ url('friend-list') }}">Friend
+            List</a></li>
+        <li><a href="{{ url('public-profile',user_data()->id) }}">Public
+            Profile</a></li>
+        <li class="divider"></li>
+        <li><a href="{{ url('hide-profile-list') }}">Hidden
+            Profiles</a></li>
+        <li class="divider"></li>
+        <li><a href="{{ url('email-prefrences') }}">Email
+            Prefrences</a></li>
+        <li><a href="{{ url('invite-friend') }}">Invite
+            Friends</a></li>
+        <li><a href="{{ url('photo-permission-list') }}">Photo
+            Permisions</a></li>
+        <li class="divider"></li>
+        <li><a href="{{ url('who-looking-for-me') }}">Who
+            Looking For Me</a></li>
+        <li><a href="{{ 'who-am-i-looking' }}">Who
+            Am I Looking</a></li>
+        <li><a href="{{ url('question') }}">My
+            Question</a></li>
+        <li class="divider"></li>
+        <li><a href="{{ url('notification') }}">Notifications</a></li>
+        <li><a href="{{ url('statistics') }}">Statistics</a></li>
+        <li><a href="{{ url('settings') }}">Setting</a></li>
+        <li><a href="{{ url('close-account') }}">Close
+            My Account</a></li>
+        <li><a href="{{ url('show-search') }}">Save
+            Search</a></li>
+
+        <li><a href="{{ url('my-notes') }}">My
+            Notes</a></li>
+        <li><a href="{{ url('tell-friend') }}">Tell
+            Friend</a></li>
+        <li><a href="{{ url('sitemap') }}">Sitemap</a></li>
+
+        <li><a href="{{ url('help-center') }}">Help
+            Center</a></li>
+
+        <li><a href="{{ url('assisted-service') }}">Assisted
+            Service</a></li>
+      </ul>  
     </div>
+
     <script>
       $('#side-go-more-li').click(function(){
         $('#navsidebare').hide('fast');
