@@ -699,9 +699,9 @@
       }
     }
 
-    @media (max-width:400px) {
+    @media (max-width:375px) {
       #menu-div .nav li.dropdown {
-        display:none;
+        /* display:none; */
       }
     }
   </style>
