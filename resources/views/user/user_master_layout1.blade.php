@@ -745,7 +745,7 @@
       }
     }
 
-    @media (max-width:375px) {
+    @media (max-width:380px) {
       #menu-div .nav li.dropdown:not(.username-dropdown-toggle) {
         display:none !important;
       }
