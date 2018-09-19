@@ -38,6 +38,10 @@
       font-size: 20px;
     }
 
+    #menu-div .navbar-collapse {
+      border:none;
+    }
+
     @media (max-width:768px) {
       #stay-tuned-container p {
         margin:10px;
@@ -201,8 +205,8 @@
       #menu-div {
         background-color: inherit;
         float: right;
-        width: auto;
-        position: relative;
+        /* width: auto; */
+        /* position: relative; */
 
         /* min-height: 0 !important; */
         /* position:relative; */
@@ -262,7 +266,7 @@
       <div class="container-fluid">
         <div class="row">
           <!-- logo -->
-          <div class="col-lg-2" id="logo-div"> <a class="logo-light" href="{{ url('/') }}"><img alt="" src="{{ $user_assets }}/images/kaboolhai.png"
+          <div class="col-lg-2 col-sm-2 col-xs-2" id="logo-div"> <a class="logo-light" href="{{ url('/') }}"><img alt="" src="{{ $user_assets }}/images/kaboolhai.png"
                 class="logo" /></a> <a class="logo-dark" href="{{ url('/') }}"><img alt="" src="{{ $user_assets }}/images/kaboolhai.png"
                 class="logo" /></a></div>
           <!-- end logo -->
@@ -661,6 +665,11 @@
       .nav li.dropdown,  .nav li.dropdown a{
        width:auto !important;
       }
+
+      #menu-div .collapse {
+        /* display:inline-block !important; */
+        float:right;
+      }
     }
 
     @media (max-width:768px) {
@@ -674,7 +683,7 @@
 
      #menu-div .collapse {
         display:inline-block !important;
-        float:right !important;
+        /* float:right !important; */
       }
 
       /* #menu-div {
@@ -682,11 +691,17 @@
       } */
 
       .dropdown-menu {
-        position:absolute;
+        /* position:absolute; */
       }
 
       .icon-dropdown {
-        position:absolute !important;
+        /* position:absolute !important; */
+      }
+    }
+
+    @media (max-width:400px) {
+      #menu-div .nav li.dropdown {
+        display:none;
       }
     }
   </style>
@@ -719,8 +734,20 @@
             $("#navsidebare").hide("slow");
             // $("#signin").show();
              $("#btntoshowmenu").show();
-            $(".navbar-header").show();
+            // $(".navbar-header").show();
          });
+
+           @if(empty(Session::get('user_id')))
+            $(".navbar-header").click(function(){
+              $("#cross").click(function() {
+              
+              $("#navsidebare").hide("slow");
+              // $("#signin").show();
+              // $("#btntoshowmenu").show();
+              $(".navbar-header").show();
+            });
+          });
+          @endif
 
          mq = window.matchMedia( "(max-width: 1230px)" );
          
