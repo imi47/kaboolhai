@@ -7,7 +7,7 @@
     } */
 
     .slider_area, .slider_area div {
-        height:100vh;
+        height:600px;
     }
 
     .table-cell {
@@ -20,6 +20,12 @@
             width:80%;
            margin:60px auto 0 auto !important;
            float:none;
+        }
+    }
+
+    @media (max-width:768px) {
+        .howtoouterwrapper .margintop {
+            margin-top:610px; 
         }
     }
 
