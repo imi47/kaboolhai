@@ -87,6 +87,14 @@
        color:#fff;
      }
 
+     #x {
+       font-size: x-large;
+       font-weight:600;
+       position:absolute;
+       right:5px;
+       cursor:pointer;
+     }
+
     @media (max-width:768px) {
       #stay-tuned-container p {
         margin:10px;
@@ -436,7 +444,7 @@
               </ul>
 
               <ul class="nav navbar-nav">
-                <li class="dropdown">
+                <li class="dropdown" id='friends-dropdown'>
                   <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;" onclick="return friend_count()"
                     title="Friend Request">
 
@@ -444,7 +452,7 @@
                       {{ count_friend() }} @endif</span>
                     <span id="request_counts"></span>
                   </a>
-                  <ul class="dropdown-menu lenght icon-dropdown" style="width: 500px; height:400px; overflow-y: scroll;background-color: #ffffff;">
+                  <ul class="dropdown-menu lenght icon-dropdown" style="width: 500px; height:400px; overflow-y: scroll;background-color: #ffffff;"><span id='x'>&times</span>
                     <li class="notify_section">
                     </li>
                     @if(count(get_friend()))
@@ -508,11 +516,11 @@
                       </li>
                   </ul>
                 </li>
-                <li class="dropdown">
+                <li class="dropdown" id='messages-dropdown'>
                   <a class="dropdown-toggle" data-toggle="dropdown" href="#" title="Message" onclick="return get_message()">
                     <span class="fa fa-envelope icon_color"></span><span id="message_count" style="color: red">@if(!empty(count_message()))
                       {{ count_message() }} @endif</span></a>
-                  <ul class="dropdown-menu lenght icon-dropdown" style="width: 500px; height:400px; overflow-y: scroll;background-color: #ffffff;">
+                  <ul class="dropdown-menu lenght icon-dropdown" style="width: 500px; height:400px; overflow-y: scroll;background-color: #ffffff;"><span id='x'>&times</span>
 
                     @if(!empty(tochat()))
                     @foreach(tochat() as $row)
@@ -580,12 +588,12 @@
 
 
                   </ul>
-                <li class="dropdown">
+                <li class="dropdown" id='notifications-dropdown'>
                   <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;" onclick="return read_notification()"
                     title="Notification">
                     <span class="noti_counts">@if(!empty(count_friend())) {{ count_notification() }} @endif</span>
                     <span class="fa fa-bell icon_color"></span></a>
-                  <ul class="dropdown-menu lenght icon-dropdown" style="width: 500px !important; height:400px !important; overflow-y: scroll !important;background-color: #ffffff;">
+                  <ul class="dropdown-menu lenght icon-dropdown" style="width: 500px !important; height:400px !important; overflow-y: scroll !important;background-color: #ffffff;"><span id='x'>&times</span>
                     @if(count(get_notification()))
                     @foreach(get_notification() as $row)
                     <div id="get_noti" class="get_notifi">
@@ -695,6 +703,11 @@
             
             @if(Session::get('user_id'))
             <li class="wow fadeInDown" data-wow-delay="0.9s"><a href="#" class="M" id='side-go-more-li'><span><i class="fas fa-bars fa-2x" style='color:orange'></i></span> <span style="padding-left:10px;">Go more</span></a></li>
+
+            <li><a href="#" id="friends-toggle" class='M'>Friends</a></li>
+            <li><a href="#" id="messages-toggle" class='M'>Messages</a></li>
+            <li><a href="#" id="notifications-toggle" class='M'>Notifications</a></li>
+
             @endif
 
           </ul>
@@ -773,6 +786,23 @@
         $('#sidebar-2').css('right', '-260px');
         $('#btntoshowmenu').show();
       });
+
+      document.getElementById("friends-toggle").onclick = function () {
+        // alert('onclick');
+        // setTimeout(function() {
+          if(document.querySelector('#friends-dropdown .icon-dropdown').style.display = 'none') {
+            document.querySelector('#friends-dropdown .icon-dropdown').style.display = 'block';
+            $('#navsidebare').hide('slow');
+          }
+          else document.querySelector('#friends-dropdown .icon-dropdown').style.display = 'none';     
+            
+        // })
+      };
+
+      document.getElementById("x").onclick = function () {
+        document.querySelector('.icon-dropdown').style.display = 'none';     
+      }
+
     </script>
 
   </div>
