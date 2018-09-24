@@ -1,5 +1,22 @@
 @extends('user/user_master_layout1') 
-@section('data') 
+@section('data')
+
+<style>
+    @media (max-width:991px) {
+        #register {
+            position:relative;
+            width:80%;
+           margin:0 auto !important;
+           float:none;
+        }
+    }
+
+     @media (max-width:520px) {
+        #register {
+            width:100%;
+        }
+    }
+</style>
  
       <div id="home"></div>
      
