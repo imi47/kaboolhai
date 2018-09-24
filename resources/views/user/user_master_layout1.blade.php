@@ -670,6 +670,19 @@
             <img width="20" height="20" style="margin-top:15px;" src="{{ $user_assets }}/cross.png" alt="" />
           </a>
           <ul style="margin-left:25px;list-style-type:none;width:100px;line-height:50px;margin-top:15px;">
+
+         <li class="wow fadeInDown remove-top-margin" data-wow-delay="0.1s">
+				@if(Session::get('user_id'))) 
+						<a href="{{ url('dashboard') }}" class="M">
+							<span>
+								<!-- <img width="40" height="40" src="{{ $user_assets }}/login.svg" alt="" /> -->
+								<i class="fa fa-dashboard fa-2x"></i>
+							</span>
+							<span style="padding-left:15px;">Dashboard</span>
+						</a>
+					</li>
+					@endif
+
             @if(empty(Session::get('user_id')))
             <li class="wow fadeInDown login-li" data-wow-delay="0.1s"><a href="#" class="M"><span><img width="40"
                     height="40" src="{{ $user_assets }}/login.svg" alt="" /></span><span style="padding-left:15px;">Sign
@@ -703,10 +716,14 @@
             
             @if(Session::get('user_id'))
             <li class="wow fadeInDown" data-wow-delay="0.9s"><a href="#" class="M" id='side-go-more-li'><span><i class="fas fa-bars fa-2x" style='color:orange'></i></span> <span style="padding-left:10px;">Go more</span></a></li>
-
-            <li><a href="#" id="friends-toggle" class='M'>Friends</a></li>
-            <li><a href="#" id="messages-toggle" class='M'>Messages</a></li>
-            <li><a href="#" id="notifications-toggle" class='M'>Notifications</a></li>
+					<li class="wow fadeInDown remove-top-margin" data-wow-delay="1s">
+						<a href="{{ url('logout') }}" class="M">
+							<span>
+							<i class="fa fa-sign-out fa-2x" aria-hidden="true"></i>
+							</span>
+							<span style="padding-left:15px;">Log out</span>
+						</a>
+					</li>
 
             @endif
 
@@ -787,21 +804,21 @@
         $('#btntoshowmenu').show();
       });
 
-      document.getElementById("friends-toggle").onclick = function () {
-        // alert('onclick');
-        // setTimeout(function() {
-          if(document.querySelector('#friends-dropdown .icon-dropdown').style.display = 'none') {
-            document.querySelector('#friends-dropdown .icon-dropdown').style.display = 'block';
-            $('#navsidebare').hide('slow');
-          }
-          else document.querySelector('#friends-dropdown .icon-dropdown').style.display = 'none';     
-            
-        // })
-      };
+      // document.getElementById("x").onclick = function () {
+      //   document.querySelector('#friends-dropdown .icon-dropdown').style.display = 'none';     
+      // }
 
-      document.getElementById("x").onclick = function () {
-        document.querySelector('.icon-dropdown').style.display = 'none';     
-      }
+      // document.getElementById("friends-toggle").onclick = function () {
+      //   // alert('onclick');
+      //   // setTimeout(function() {
+      //     if(document.querySelector('#friends-dropdown .icon-dropdown').style.display = 'none') {
+      //       document.querySelector('#friends-dropdown .icon-dropdown').style.display = 'block';
+      //       $('#navsidebare').hide('slow');
+      //     }
+      //     else document.querySelector('#friends-dropdown .icon-dropdown').style.display = 'none';     
+            
+      //   // })
+      // };
 
     </script>
 
@@ -895,7 +912,8 @@
     }
 
     @media (max-width:380px) {
-      #menu-div .nav li.dropdown:not(.username-dropdown-toggle) {
+      /* #menu-div .nav li.dropdown:not(.username-dropdown-toggle) { */
+        #menu-div .nav li.dropdown.username-dropdown-toggle {
         display:none !important;
       }
     }
