@@ -25,7 +25,7 @@
 
     @media (max-width:768px) {
         .howtoouterwrapper .margintop {
-            margin-top:640px; 
+            margin-top:610px; 
         }
 
         .horizontal-margin {
@@ -38,10 +38,6 @@
 
         #box2 {
             margin-bottom:50px;
-        }
-
-        #box4 {
-            margin-bottom:80px;            
         }
     }
 
