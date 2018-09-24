@@ -54,7 +54,7 @@
       position:fixed;
       right:-260px;
       transition:500ms;
-      z-index:1;
+      z-index:9999;
       overflow:scroll;
     }
 
