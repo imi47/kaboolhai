@@ -18,18 +18,30 @@
         #register {
             position:relative;
             width:80%;
-           margin:60px auto 0 auto !important;
+           margin:60px auto -200px auto !important;
            float:none;
         }
     }
 
     @media (max-width:768px) {
         .howtoouterwrapper .margintop {
-            margin-top:615px; 
+            margin-top:640px; 
         }
 
         .horizontal-margin {
             margin:0 15px;
+        }
+
+        #box1 {
+            margin-bottom:-30px;
+        }
+
+        #box2 {
+            margin-bottom:50px;
+        }
+
+        #box4 {
+            margin-bottom:80px;            
         }
     }
 
@@ -171,7 +183,7 @@
             <div class="row text-center paddingnoting">
                <div class="row rowpadding">
                   <div class="col-sm-4 col-sm-offset-4 howtoouterwrapper">
-                     <div class="dirbox box1 horizontal-margin" >
+                     <div class="dirbox box1 horizontal-margin" id='box1'>
                         <span class="box-number">1</span>
                         <div class="col-md-3 paddingdiv"> <img src="{{ $user_assets }}/kabool_hai_icons/needs.png"></div>
                         <div class="col-md-9">
@@ -183,7 +195,7 @@
                      <img src="{{ $user_assets }}/kabool_hai_icons/stripbar.png" class="topboxstrip"/>
                   </div>
                   <div class="col-sm-4 col-sm-offset-4 howtoouterwrapper">
-                     <div class="dirbox dedicated box1 horizontal-margin" >
+                     <div class="dirbox dedicated box1 horizontal-margin" id='box2'>
                         <span class="box-number">2</span>
                         <div class="col-md-3 paddingdiv"> <img src="{{ $user_assets }}/kabool_hai_icons/search.png"></div>
                         <div class="col-md-9">
@@ -196,7 +208,7 @@
                   </div>
                   <div class="col-sm-12 arrow-box-wrapper">
                      <div class="col-sm-4 col-sm-offset-1 margin-right howtoouterwrapper">
-                        <div class="dirbox box1">
+                        <div class="dirbox box1" id='box3'>
                            <span class="box-number">3</span>
                            <div class="col-md-3 paddingdiv"><img src="{{ $user_assets }}/kabool_hai_icons/shortlist.png"></div>
                            <div class="col-md-9">
@@ -212,7 +224,7 @@
                      <div class="arrow-box" ></div>
                      <div class="arrow-boxdiv" id="loading"></div>
                      <div class="col-sm-4 col-sm-offset-1 divclasspadding howtoouterwrapper">
-                        <div class="dirbox box1">
+                        <div class="dirbox box1" id='box4'>
                            <span class="box-number">4</span>
                            <div class="col-md-3 paddingdiv"><img src="{{ $user_assets }}/kabool_hai_icons/contact.png"></div>
                            <div class="col-md-9">
@@ -225,7 +237,7 @@
                      </div>
                   </div>
                   <div class="col-sm-4 col-sm-offset-4 howtoouterwrapper divfloat">
-                     <div class="dirbox margintop box1 horizontal-margin" >
+                     <div class="dirbox margintop box1 horizontal-margin" id='box5'>
                         <span class="box-number">5</span>
                         <div class="col-md-3 paddingdiv"><img src="{{ $user_assets }}/kabool_hai_icons/meeting.png"> </div>
                         <div class="col-md-9">
