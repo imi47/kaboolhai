@@ -25,7 +25,7 @@
 
     @media (max-width:768px) {
         .howtoouterwrapper .margintop {
-            margin-top:610px; 
+            margin-top:615px; 
         }
     }
 
@@ -167,7 +167,7 @@
             <div class="row text-center paddingnoting">
                <div class="row rowpadding">
                   <div class="col-sm-4 col-sm-offset-4 howtoouterwrapper">
-                     <div class="dirbox  box1" >
+                     <div class="dirbox box1" >
                         <span class="box-number">1</span>
                         <div class="col-md-3 paddingdiv"> <img src="{{ $user_assets }}/kabool_hai_icons/needs.png"></div>
                         <div class="col-md-9">

@@ -258,6 +258,9 @@
         /* width:100%; */
       }
     }
+    .shrink-nav .accordion-menu {
+    top: 0px;
+}
 
     .navbar-header {
       position: absolute;
