@@ -455,7 +455,7 @@
                       {{ count_friend() }} @endif</span>
                     <span id="request_counts"></span>
                   </a>
-                  <ul class="dropdown-menu lenght icon-dropdown" style="max-width: 500px; height:400px; overflow-y: scroll;background-color: #ffffff;">
+                  <ul class="dropdown-menu lenght icon-dropdown" style="width: 500px; height:400px; overflow-y: scroll;background-color: #ffffff;">
                     <li class="notify_section">
                     </li>
                     @if(count(get_friend()))
@@ -523,7 +523,7 @@
                   <a class="dropdown-toggle" data-toggle="dropdown" href="#" title="Message" onclick="return get_message()">
                     <span class="fa fa-envelope icon_color"></span><span id="message_count" style="color: red">@if(!empty(count_message()))
                       {{ count_message() }} @endif</span></a>
-                  <ul class="dropdown-menu lenght icon-dropdown" style="max-width: 500px; height:400px; overflow-y: scroll;background-color: #ffffff;">
+                  <ul class="dropdown-menu lenght icon-dropdown" style="width: 500px; height:400px; overflow-y: scroll;background-color: #ffffff;">
 
                     @if(!empty(tochat()))
                     @foreach(tochat() as $row)
@@ -596,7 +596,7 @@
                     title="Notification">
                     <span class="noti_counts">@if(!empty(count_friend())) {{ count_notification() }} @endif</span>
                     <span class="fa fa-bell icon_color"></span></a>
-                  <ul class="dropdown-menu lenght icon-dropdown" style="max-width: 500px !important; height:400px !important; overflow-y: scroll !important;background-color: #ffffff;">
+                  <ul class="dropdown-menu lenght icon-dropdown" style="width: 500px !important; height:400px !important; overflow-y: scroll !important;background-color: #ffffff;">
                     @if(count(get_notification()))
                     @foreach(get_notification() as $row)
                     <div id="get_noti" class="get_notifi">
@@ -909,10 +909,6 @@
         /* position:absolute; */
       }
 
-      .icon-dropdown {
-        /* position:absolute !important; */
-      }
-
 
     }
 
@@ -920,6 +916,11 @@
       /* #menu-div .nav li.dropdown:not(.username-dropdown-toggle) { */
         #menu-div .nav li.dropdown.username-dropdown-toggle {
         display:none !important;
+      }
+
+        .icon-dropdown {
+        /* position:absolute !important; */
+        max-width: 400px !important;
       }
     }
   </style>
