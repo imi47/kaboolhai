@@ -2,11 +2,23 @@
 @section('data')
 
 <style>
+    /* .assistedservice h1 {
+        color:#000;
+    } */
+
+    .slider_area, .slider_area div {
+        height:100vh;
+    }
+
+    .table-cell {
+        display:block;
+    }
+
     @media (max-width:991px) {
         #register {
             position:relative;
             width:80%;
-           margin:0 auto !important;
+           margin:60px auto 0 auto !important;
            float:none;
         }
     }
