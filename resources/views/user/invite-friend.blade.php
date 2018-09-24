@@ -1,5 +1,14 @@
 @extends('user/user_master_layout1') 
 @section('data')
+
+<style>
+  @media (max-width:991px) {
+    .profile_stat {
+      margin-bottom:20px;
+    }
+  }
+</style>
+
 <div style="padding-top:90px;"></div>
 <div class="container-fluid">
  <div class="col-md-3 hidden-sm hidden-xs">
@@ -13,7 +22,7 @@
     <div class="row">
       <h2 class="dashboard-h2 text-center " style="margin-bottom:100px; ">Invite Friends</h2>
       
-      <div class="col-md-3">
+      <div class="col-md-3 col-md-offset-0 col-sm-4 col-sm-offset-3 col-xs-6">
        <div class="profile_stat hvr-grow">
           <a href="javascript:popup_share('https://www.facebook.com/sharer.php?={{url('/')}}')" target="__blank">
             <img src="{{ $user_assets }}/fb.jpg" alt="" style="width:150px ;height: 150px; border-radius:5px;">
@@ -21,7 +30,7 @@
         </div> 
       </div>
       
-      <div class="col-md-3">
+      <div class="col-md-3 col-sm-4 col-xs-6">
         <div class="profile_stat hvr-grow">
           <a href="javascript:popup_share('https://plus.google.com/share?url={{url('/')}}',700,320)" target="__blank">
             <img src="{{ $user_assets }}/g+.jpg" alt="" style="width:150px ;height: 150px; border-radius:5px;">
@@ -29,7 +38,7 @@
         </div>
       </div>
       
-      <div class="col-md-3">
+      <div class="col-md-3 col-md-offset-0 col-sm-4 col-sm-offset-3 col-xs-6">
         <div class="profile_stat hvr-grow">
           <a href="javascript:popup_share('https://twitter.com/home?status={{url('/')}}',700,320)" target="__blank">
             <img src="{{ $user_assets }}/twtr.jpg" alt="" style="width:150px ;height: 150px; border-radius:5px;">
@@ -37,7 +46,7 @@
         </div>
       </div>
       
-      <div class="col-md-3">
+      <div class="col-md-3 col-sm-4 col-xs-6">
         <div class="profile_stat hvr-grow">
           <a href="javascript:popup_share('http://www.linkedin.com/shareArticle?mini=true&url={{url('/')}}',700,320)" target="__blank">
             <img src="{{ $user_assets }}/link.jpg" alt="" style="width:150px ;height: 150px; border-radius:5px;">
