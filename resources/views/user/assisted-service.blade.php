@@ -27,6 +27,10 @@
         .howtoouterwrapper .margintop {
             margin-top:615px; 
         }
+
+        .horizontal-margin {
+            margin:0 15px;
+        }
     }
 
      @media (max-width:520px) {
@@ -167,7 +171,7 @@
             <div class="row text-center paddingnoting">
                <div class="row rowpadding">
                   <div class="col-sm-4 col-sm-offset-4 howtoouterwrapper">
-                     <div class="dirbox box1" >
+                     <div class="dirbox box1 horizontal-margin" >
                         <span class="box-number">1</span>
                         <div class="col-md-3 paddingdiv"> <img src="{{ $user_assets }}/kabool_hai_icons/needs.png"></div>
                         <div class="col-md-9">
@@ -179,7 +183,7 @@
                      <img src="{{ $user_assets }}/kabool_hai_icons/stripbar.png" class="topboxstrip"/>
                   </div>
                   <div class="col-sm-4 col-sm-offset-4 howtoouterwrapper">
-                     <div class="dirbox dedicated box1" >
+                     <div class="dirbox dedicated box1 horizontal-margin" >
                         <span class="box-number">2</span>
                         <div class="col-md-3 paddingdiv"> <img src="{{ $user_assets }}/kabool_hai_icons/search.png"></div>
                         <div class="col-md-9">
@@ -221,7 +225,7 @@
                      </div>
                   </div>
                   <div class="col-sm-4 col-sm-offset-4 howtoouterwrapper divfloat">
-                     <div class="dirbox margintop box1" >
+                     <div class="dirbox margintop box1 horizontal-margin" >
                         <span class="box-number">5</span>
                         <div class="col-md-3 paddingdiv"><img src="{{ $user_assets }}/kabool_hai_icons/meeting.png"> </div>
                         <div class="col-md-9">
