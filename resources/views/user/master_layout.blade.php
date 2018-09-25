@@ -104,18 +104,21 @@
       overflow:scroll;
     }
 
+    #sidebar-2 ul {
+      margin-top:40px;
+    }
+
     #sidebar-2 span:not(.divider) {
       font-size:xx-large;
       font-weight:600;
       position:absolute;
       right:15px;
-      top:70px;
       cursor:pointer;
     }
 
-     #sidebar-2 ul {
+     /* #sidebar-2 ul {
        margin-top:100px;
-     }
+     } */
 
     #sidebar-2 ul li:not(.divider) {
       text-align:center;
