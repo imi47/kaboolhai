@@ -41,6 +41,12 @@
         }
     }
 
+    @media (max-width:548px) {
+        .howtoouterwrapper .margintop {
+            margin-top:640px;
+        }
+    }
+
      @media (max-width:520px) {
         #register {
             width:100%;

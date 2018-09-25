@@ -33,6 +33,10 @@
       display: none;
     }
 
+    #menu-div .navbar-collapse {
+      float:right;
+    }
+
     .icon-dropdown {
       position:absolute !important;
     }
