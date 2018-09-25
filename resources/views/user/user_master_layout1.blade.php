@@ -742,6 +742,7 @@
 
     <div id="sidebar-2">
       <span>&times</span>
+      @if(Session::get('user_id'))
       
       <ul>
       <li><a href="{{ url('edit-profile',user_data()->id) }}">Edit Profile</a></li> 
@@ -798,6 +799,7 @@
             <li><a href="{{ url('sent-items') }}" class="menudesign">Sent Items</a></li>
             <li><a href="{{ url('blocked-list') }}" class="menudesign">Block List</a></li>
       </ul>  
+      @endif
     </div>
 
     <script>

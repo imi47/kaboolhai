@@ -35,6 +35,15 @@
 </head>
 <style type="text/css">
 
+.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+  
+  }
+
 .navbar-toggle-2 {
   display:none;
 }
@@ -159,6 +168,13 @@
     margin-bottom:0;
   }
 
+  @media (min-width: 1350px) {
+    #myNavbar {
+        position: unset !important;
+    }
+}
+  
+
    @media (max-width:1349px) {
       #myNavbar .navbar-form {
         display:none;
@@ -214,6 +230,13 @@
       height: auto!important;
       padding-bottom: 0;
       overflow: visible!important;
+    margin:0 !important;
+
+  }
+
+  .nav.navbar-nav.navbar-right li.dropdown{
+    display:inline-block !important;
+    margin:0 !important;
   }
 } */
 

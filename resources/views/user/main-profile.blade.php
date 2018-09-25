@@ -3,15 +3,96 @@
 
 
   <style>
+  .clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+  
+  }
+
+  @media (min-width:769px) {
+    .nav.navbar-nav.navbar-right {
+      margin-right:40px;
+    }
+  }
+
+  @media (min-width:1350px) {
+    .nav.navbar-nav.navbar-right {
+      margin-right:0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #myNavbar {
+      position: absolute !important;
+      right: 100px;
+      top: 5px;
+    }
+}
     .hvr-grow {
       margin-bottom:25px;
     }
+
+  @media (min-width: 1350px) {
+    #myNavbar {
+        position: unset !important;
+        /* right: 100px;
+        top: 5px; */
+    }
+}
 
     /* @media (max-width:1200px) {
       #myNavbar .nav:nth-child(1):nth-child(-n+6) {
         display:none;
       }
     } */
+
+
+/* @media (min-width:451px) {
+  #myNavbar {
+    position:absolute !important;
+    right:0;
+    top:0;
+  }
+} */
+
+    @media (min-width: 300px) {
+.navbar-collapse.collapse {
+    display: block!important;
+    height: auto!important;
+    padding-bottom: 0;
+    overflow: visible!important;
+  }
+}
+
+@media (min-width: 300px) {
+  .navbar-collapse {
+    width: auto !important;
+    border-top: 0 !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+  }
+
+   .nav.navbar-nav.navbar-right li.dropdown{
+   float:left !important;
+    margin:0 !important;
+  }
+
+  /* #myNavbar {
+    position:absolute !important;
+    right:100px;
+    top:5px;
+  } */
+  
+}
+
+@media (max-width:360px) {
+  #myNavbar .nav.navbar-nav.navbar-right li.dropdown:nth-child(5){
+    display:none !important;
+  }
+}
 
   </style>
   
