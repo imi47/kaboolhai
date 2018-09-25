@@ -6,6 +6,13 @@
     .hvr-grow {
       margin-bottom:25px;
     }
+
+    /* @media (max-width:1200px) {
+      #myNavbar .nav:nth-child(1):nth-child(-n+6) {
+        display:none;
+      }
+    } */
+
   </style>
   
   <div class="col-md-9">

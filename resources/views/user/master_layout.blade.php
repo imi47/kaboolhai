@@ -34,6 +34,96 @@
   </script>
 </head>
 <style type="text/css">
+
+.navbar-toggle-2 {
+  display:none;
+}
+ 
+ #navsidebare {
+      overflow: scroll;
+      height: 100vh;
+  }
+
+  #navsidebare a {
+    color:#fff;
+  }
+
+   #navsidebare {
+      overflow: scroll;
+      height: 100vh;
+    }
+
+    li a.M {
+      display: block;
+      width: 200px;
+      margin-top: 10px;
+      /* background-color: red; */
+      color: #ffffff;
+      font-size: 16px;
+  }
+
+  .navsidebar
+  {
+      width:260px;
+      height:650px;
+      /*background-color:rgba(244,126,44,1);*/
+      background-color: rgba(0,0,0,0.5);
+      position:absolute;
+      top:0;
+      right:0;
+      z-index:999999;
+  }
+
+  .remove-top-margin {
+		margin-top:-70px;
+	  }
+
+    .remove-top-margin:last-child {
+		margin-top:-5px;
+  }
+  
+  #sidebar-2 {
+      background-color:#000;
+      color:#fff;
+      opacity:0.9;
+      height:100vh;
+      width:260px;
+      position:fixed;
+      right:-260px;
+      transition:500ms;
+      z-index:9999;
+      overflow:scroll;
+    }
+
+    #sidebar-2 span:not(.divider) {
+      font-size:xx-large;
+      font-weight:600;
+      position:absolute;
+      right:15px;
+      top:70px;
+      cursor:pointer;
+    }
+
+     #sidebar-2 ul {
+       margin-top:100px;
+     }
+
+    #sidebar-2 ul li:not(.divider) {
+      text-align:center;
+      padding:10px;
+      font-size:large;
+    }
+
+    #sidebar-2 ul li.divider {
+      background-color:#222;
+      height:1px;
+    }
+
+     #sidebar-2 ul li a {
+       text-decoration:none;
+       color:#fff;
+     }
+
   #friend_counts {
     color: red;
     position: absolute;
@@ -50,6 +140,83 @@
   .stay-tuned {
     margin:10px;
   }
+
+  .navbar-toggle-2 {
+    padding:10px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    float:right;
+   margin:7px 10px auto 0;
+  }
+
+  .navbar-toggle-2 div {
+    padding:1px 10px;
+    margin-bottom:4px;
+    background-color:#fff;
+  }
+
+  .navbar-toggle-2 div:last-child {
+    margin-bottom:0;
+  }
+
+   @media (max-width:1349px) {
+      #myNavbar .navbar-form {
+        display:none;
+      }
+
+      #myNavbar {
+        float:right;
+      }
+
+      .navbar-toggle-2 {
+        display:block;
+        position:absolute;
+        right:5px;
+        top:5px;
+      }
+      
+      /* username name margin right */
+      .nav.navbar-nav.navbar-right li:nth-child(5) {
+        margin-right:25px;
+      }
+
+      /* ul.nav .navbar-nav .navbar-right {
+        float:right !important;
+      }
+      
+      #myNavbar ul.nav {
+        float:right;
+      } */
+    }
+
+    @media (max-width:1031px) {
+      #myNavbar .nav:nth-child(1):nth-child(-n+6) {
+        display:none;
+      }
+    }
+
+    @media (max-width:768px) {
+      /* #myNavbar .nav, #myNavbar, .nav {
+        display:block !important;
+      } */
+
+      .navbar-header .navbar-toggle {
+        display:none;
+      }
+      
+    }
+   
+}
+
+/* @media (min-width: 500px) {
+  .navbar-collapse.collapse {
+      display: block!important;
+      height: auto!important;
+      padding-bottom: 0;
+      overflow: visible!important;
+  }
+} */
+
 </style>
 
 <body style="background-color: #2B354B; overflow-x:hidden;">
@@ -468,7 +635,187 @@
         </ul>
       </div>
     </div>
+
+
+    <!-- navbar header 2 -->
+    <div class="navbar-toggle-2">
+      <div></div>
+      <div></div>
+      <div></div>                    
+    </div>  
   </nav>
+
+
+   <div class="navsidebar wow slideInRight" id="navsidebare" style="display:none;">
+        <div class="row">
+
+          <a href="javascript:;" id="cross" style="margin-left:230px;">
+            <!-- <i class="fa fa-arrow-right fa-3x" style="color:white;margin-top:10px;"></i> -->
+            <img width="20" height="20" style="margin-top:15px;" src="{{ $user_assets }}/cross.png" alt="" />
+          </a>
+          <ul style="margin-left:25px;list-style-type:none;width:100px;line-height:50px;margin-top:15px;">
+
+         <li class="wow fadeInDown remove-top-margin" data-wow-delay="0.1s">
+				@if(Session::get('user_id'))) 
+						<a href="{{ url('dashboard') }}" class="M">
+							<span>
+								<!-- <img width="40" height="40" src="{{ $user_assets }}/login.svg" alt="" /> -->
+								<i class="fa fa-dashboard fa-2x"></i>
+							</span>
+							<span style="padding-left:15px;">Dashboard</span>
+						</a>
+					</li>
+					@endif
+
+            @if(empty(Session::get('user_id')))
+            <li class="wow fadeInDown login-li" data-wow-delay="0.1s"><a href="#" class="M"><span><img width="40"
+                    height="40" src="{{ $user_assets }}/login.svg" alt="" /></span><span style="padding-left:15px;">Sign
+                  in</span></a></li>
+            <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="{{ url('register') }}" class="M"><span><img width="40"
+                    height="40" src="{{ $user_assets }}/create_account.png" alt="" /></span><span style="padding-left:15px;">Create
+                  Account</span></a></li>
+            @endif
+            <li class="wow fadeInDown" data-wow-delay="0.3"><a href="{{url('about-us')}}" class="M"><span><img width="40"
+                    height="40" src="{{ $user_assets }}/about_us.png" alt="" /></span> <span style="padding-left:10px;">About
+                  Us</span></a></li>
+            <li class="wow fadeInDown" data-wow-delay="0.4s"><a href="{{ url('advance-search') }}" class="M"><span><img
+                    width="40" height="40" src="{{ $user_assets }}/find_match.png" alt="" /></span><span style="padding-left:15px;">Find
+                  Match</span></a></li>
+            {{-- <li class="wow fadeInDown" data-wow-delay="0.5s"><a href="{{ url('our-police') }}" class="M"><span><img
+                    width="40" height="40" src="{{ $user_assets }}/our_policy.png" alt="" /></span><span style="padding-left:15px;">Our
+                  Policy</span></a></li> --}}
+            <li class="wow fadeInDown" data-wow-delay="0.6s"><a href="{{ url('policy-privacy') }}" class="M"><span><img
+                    width="40" height="40" src="{{ $user_assets }}/privacy.png" alt="" /></span> <span style="padding-left:10px;">Privacy</span></a></li>
+            <li class="wow fadeInDown" data-wow-delay="0.7s"><a href="http://kaboolhai.com/blog/" target="_blank" class="M"><span><img
+                    width="40" height="40" src="{{ $user_assets }}/blog.svg" alt="" /></span><span style="padding-left:15px;">Blogs</span></a></li>
+            <li class="wow fadeInDown" data-wow-delay="0.9s"><a href="{{ url('faqs') }}" class="M"><span><img width="40"
+                    height="40" src="{{ $user_assets }}/faqs.png" alt="" /></span> <span style="padding-left:10px;">FAQs</span></a></li>
+            <li class="wow fadeInDown" data-wow-delay="0.8s"><a href="our-partnar" class="M"><span><img width="40" height="40" src="{{ $user_assets }}/our_partners.png"
+                    alt="" /></span><span style="padding-left:15px;">Our Partners</span></a></li>
+            <li class="wow fadeInDown" data-wow-delay="0.99s"><a href="{{ url('contact-us') }}" class="M"><span><img
+                    width="40" height="40" src="{{ $user_assets }}/contact_us.png" alt="" /></span><span style="padding-left:15px;">Contact</span></a></li>
+            <li class="wow fadeInDown" data-wow-delay="0.99s"><a href="{{ url('help-center') }}" class="M"><span><i
+                    class="fa fa-question" style="color:red; font-size: 45px;"></i></span><span style="padding-left:15px;">Help
+                  Center</span></a></li>
+            
+            @if(Session::get('user_id'))
+            <li class="wow fadeInDown" data-wow-delay="0.9s"><a href="#" class="M" id='side-go-more-li'><span><i class="fas fa-bars fa-2x" style='color:orange'></i></span> <span style="padding-left:10px;">Go more</span></a></li>
+					<li class="wow fadeInDown remove-top-margin" data-wow-delay="1s">
+						<a href="{{ url('logout') }}" class="M">
+							<span>
+							<i class="fa fa-sign-out fa-2x" aria-hidden="true"></i>
+							</span>
+							<span style="padding-left:15px;">Log out</span>
+						</a>
+					</li>
+
+            @endif
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div id="sidebar-2">
+      <span>&times</span>
+      
+      <ul>
+      <li><a href="{{ url('edit-profile',user_data()->id) }}">Edit Profile</a></li> 
+      <li><a href="{{ url('my-photo') }}">My Photos</a></li>
+      <li><a href="{{ url('favourite-list') }}">My
+                        Favourite</a></li>
+        <li><a href="{{ url('find-exact-match') }}">Find
+            Exact Match</a></li>
+        <li><a href="{{ url('profile-writing-tips') }}">Profile
+            Writing Tips</a></li>
+        <li><a href="{{ url('friend-list') }}">Friend
+            List</a></li>
+        <li><a href="{{ url('public-profile',user_data()->id) }}">Public
+            Profile</a></li>
+        <li class="divider"></li>
+        <li><a href="{{ url('hide-profile-list') }}">Hidden
+            Profiles</a></li>
+        <li class="divider"></li>
+        <li><a href="{{ url('email-prefrences') }}">Email
+            Prefrences</a></li>
+        <li><a href="{{ url('invite-friend') }}">Invite
+            Friends</a></li>
+        <li><a href="{{ url('photo-permission-list') }}">Photo
+            Permisions</a></li>
+        <li class="divider"></li>
+        <li><a href="{{ url('who-looking-for-me') }}">Who
+            Looking For Me</a></li>
+        <li><a href="{{ 'who-am-i-looking' }}">Who
+            Am I Looking</a></li>
+        <li><a href="{{ url('question') }}">My
+            Question</a></li>
+        <li class="divider"></li>
+        <li><a href="{{ url('notification') }}">Notifications</a></li>
+        <li><a href="{{ url('statistics') }}">Statistics</a></li>
+        <li><a href="{{ url('settings') }}">Setting</a></li>
+        <li><a href="{{ url('close-account') }}">Close
+            My Account</a></li>
+        <li><a href="{{ url('show-search') }}">Save
+            Search</a></li>
+
+        <li><a href="{{ url('my-notes') }}">My
+            Notes</a></li>
+        <li><a href="{{ url('tell-friend') }}">Tell
+            Friend</a></li>
+        <li><a href="{{ url('sitemap') }}">Sitemap</a></li>
+
+        <li><a href="{{ url('help-center') }}">Help
+            Center</a></li>
+
+        <li><a href="{{ url('assisted-service') }}">Assisted
+            Service</a></li>
+            <li class="divider"></li>
+            <li><a href="{{ url('inbox') }}" class="menudesign">Inbox</a></li>
+            <li><a href="{{ url('sent-items') }}" class="menudesign">Sent Items</a></li>
+            <li><a href="{{ url('blocked-list') }}" class="menudesign">Block List</a></li>
+      </ul>  
+    </div>
+
+    <script>
+      $('.navbar-toggle-2').click(function(){
+        $('#navsidebare').show('slow');
+        $(this).hide();
+      });
+
+      $("#cross").click(function() {
+            
+            $("#navsidebare").hide("slow");
+            // $("#signin").show();
+             $(".navbar-toggle-2").show();
+
+         });
+
+          mq = window.matchMedia( "(max-width: 1349px)" );
+         
+         mq.addListener(mediaQueryResponse) // attach listener function to listen in on state changes so a page refresh will not be required
+ 
+         // search option will stay in the same line in tablet mode 
+         function mediaQueryResponse(mq) {
+ 
+           if(mq.matches) {
+               $( ".navbar-toggle-2" ).show();
+               // alert('hi');
+           } else $( ".navbar-toggle-2" ).hide();
+         }
+         mediaQueryResponse(mq);
+
+         $('#side-go-more-li').click(function(){
+          $('#navsidebare').hide('fast');
+          $("#sidebar-2").css('right', '0');
+      });
+
+      $('#sidebar-2 span').click(function(){
+        $('#sidebar-2').css('right', '-260px');
+        $('#btntoshowmenu').show();
+      });
+
+    </script>
+  
   <div class="jumbotron jumbotron-fluid" style="background-image: url({{ $user_assets }}/banner1.jpg);background-size: 100%; padding:89px; background-repeat: no-repeat;">
 
   </div>
