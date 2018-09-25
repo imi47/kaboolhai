@@ -222,10 +222,12 @@
       .navbar-header .navbar-toggle {
         display:none;
       }
+
+      .navbar-nav .open .dropdown-menu {
+        background-color:#fff;
+      }
       
     }
-   
-}
 
 /* @media (min-width: 500px) {
   .navbar-collapse.collapse {
