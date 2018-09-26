@@ -300,11 +300,9 @@
     // search option will stay in the same line in tablet mode 
     function mediaQueryResponse(mq) {
 
-      if(mq.matches) {
-          // document.querySelector('.logo-light img')
-
-          // alert('hi');
-      }
+      if(mq.matches) 
+          document.querySelector('.logo-light img').src='public/user_assets/db_images/KH-logo2.png';
+      else document.querySelector('.logo-light img').src='public/user_assets/images/kaboolhai.png';
     }
     mediaQueryResponse(mq);
 </script>

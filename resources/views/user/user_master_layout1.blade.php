@@ -33,6 +33,10 @@
       display: none;
     }
 
+    .logo {
+      width:auto;
+    }
+
     #menu-div .navbar-collapse.collapse {
       float:right;
     }
@@ -112,10 +116,28 @@
       //   height: '200px'
       // });
     });
+    
+    // if (window.matchMedia("(max-width: 520px)").matches)
+    //         document.querySelector('.logo-light img').src='public/user_assets/db_images/KH-logo2.png';
+    // else document.querySelector('.logo-light img').src='public/user_assets/images/kaboolhai.png';
+
+
+    mq = window.matchMedia( "(max-width: 520px)" );
+         
+      mq.addListener(mediaQueryResponse) // attach listener function to listen in on state changes so a page refresh will not be required
+  
+      // search option will stay in the same line in tablet mode 
+      function mediaQueryResponse(mq) {
+  
+        if(mq.matches) 
+            document.querySelector('.logo-light img').src='public/user_assets/db_images/KH-logo2.png';
+        else document.querySelector('.logo-light img').src='public/user_assets/images/kaboolhai.png';
+      }
+      mediaQueryResponse(mq);
   </script>
 </head>
 
-<body>
+<body onload="changeLogo()">
 
   <div class="main-section">
     <div class="row border-chat">
@@ -193,6 +215,13 @@
         $('.main-section').toggleClass("open-more");
       });
     });
+
+    function changeLogo() {
+      if (window.matchMedia("(max-width: 520px)").matches)
+          document.querySelector('.logo-light img').src='public/user_assets/db_images/KH-logo2.png';
+    else document.querySelector('.logo-light img').src='public/user_assets/images/kaboolhai.png';
+    }
+
   </script>
 
   <style type="text/css">
