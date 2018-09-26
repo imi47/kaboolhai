@@ -934,7 +934,7 @@
         <div class="row">
           <div class="col-sm-2"></div>
           <a href="{{ url('public-profile',user_data()->id) }}">
-            <div class="col-sm-7">
+            <div class="col-sm-7 text-center">
               @if(!empty(get_photo()))
               <img src="{{ $user_assets }}/my_photo/{{ get_photo() }}" width="175" height="175" class="user_img" style="margin-left: ">
               @elseif(user_data()->image_name)
