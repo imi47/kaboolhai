@@ -261,6 +261,10 @@
         /* position:relative; */
         /* width:100%; */
       }
+
+      .open > .dropdown-menu {
+        margin: 16px !important;
+      }
     }
     .shrink-nav .accordion-menu {
     top: 0px;
