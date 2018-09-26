@@ -463,15 +463,6 @@
       }
     }
 
-/* @media (max-width: 991px) {
-.icon-dropdown {
-    position: fixed !important;
-    left: 0 !important;
-    max-width: 500px !important;
-}
-} */
-
-
 
   </style>
   <nav class="navbar navbar-default navbar-fixed-top">
@@ -933,7 +924,7 @@
 
     </script>
   
-  <div class="jumbotron jumbotron-fluid" style="background-image: url({{ $user_assets }}/banner1.jpg);background-size: 100%; padding:89px; background-repeat: no-repeat;">
+  <div class="jumbotron jumbotron-fluid" style="background-image: url({{ $user_assets }}/banner1.jpg);background-size: cover; padding:89px; background-repeat: no-repeat;">
 
   </div>
 
