@@ -335,6 +335,11 @@
     position: fixed !important;
     left: 0 !important;
 }
+
+#username-dropdown-toggle .dropdown-menu {
+    /* position: absolute !important; */
+    left: -89px !important;
+    }
 }
 
 @media (max-width:515px) {
@@ -342,6 +347,10 @@
     width:100vw !important;
   }
 }
+
+  #username-dropdown-toggle ul.dropdown-menu{
+       width:100px !important;
+     }
   </style>
   <!--  -->
   <!-- navigation panel -->
@@ -656,7 +665,7 @@
                     </a>
                   </ul>
                 </li>
-                <li class="dropdown username-dropdown-toggle">
+                <li class="dropdown username-dropdown-toggle" id='username-dropdown-toggle'>
                   <a class="dropdown-toggle menudesign" data-toggle="dropdown" href="#">
                     {{ user_data()->user_name }} <span class="caret"></span></a>
                   <ul class="dropdown-menu" style="    background-color: #ffffff;">
@@ -914,6 +923,10 @@
       .username-dropdown-menu .dropdown-menu {
         position:absolute !important;
       }
+
+      #username-dropdown-toggle .dropdown-menu {
+    position: absolute !important;
+    right: 0 !important;
     }
 
     @media (max-width:768px) {

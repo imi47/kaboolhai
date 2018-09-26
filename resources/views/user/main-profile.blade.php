@@ -3,6 +3,12 @@
 
 
   <style>
+
+  html, body {
+    width:100vw;
+    overflow-x:hidden;
+  }
+
   .clearfix:after {
    content: " "; /* Older browser do not support empty content */
    visibility: hidden;
