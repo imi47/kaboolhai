@@ -232,6 +232,13 @@
       .navbar-nav .open .dropdown-menu {
         background-color:#fff;
       }
+
+      #username-dropdown-toggle ul.dropdown-menu{
+       width:100px !important;
+       position: absolute !important;
+       left: -66px !important;
+      right: 0 !important;
+     }
       
     }
 
@@ -729,7 +736,7 @@
             </ul>
           </li>
 
-          <li class="dropdown">
+          <li class="dropdown" id='username-dropdown-toggle'>
             <a class="dropdown-toggle menudesign" data-toggle="dropdown" href="#">
               @if(count(user_data())) {{ user_data()->user_name }} @endif<span class="caret"></span></a>
             <ul class="dropdown-menu">
