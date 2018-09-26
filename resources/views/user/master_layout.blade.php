@@ -430,6 +430,13 @@
 }
 } */
 
+
+@media (max-width: 767px) {
+  .navbar-nav .open .dropdown-menu {
+      width: 500px;
+  }
+}
+
 @media (max-width: 768px) {
 
   .dropdown-menu {

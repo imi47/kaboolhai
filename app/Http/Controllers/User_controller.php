@@ -1958,7 +1958,7 @@ public function accept_photo_request($request_id)
      $data['block_users']=BlockUser::where('block_user_id',$user_id)->where('user_id',Session::get('user_id'))->first();
       
     
-		$data['all_chats']= chats::with('from_users')->distinct()->where([['from_user','=',Session::get('user_id')]])->orderBy('created_at','asc')->get(['to_user','from_user']);
+		// $data['all_chats']= chats::with('from_users')->distinct()->where([['from_user','=',Session::get('user_id')]])->orderBy('created_at','asc')->get(['to_user','from_user']);
 		
 
 		
