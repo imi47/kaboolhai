@@ -34,15 +34,17 @@
     }
 
     .icon-dropdown {
+    width:500px;
+    height:400px;
+    overflow-y:scroll;
+  }
+
+    /* .icon-dropdown {
       position:absolute !important;
-    }
+    } */
 
     .fa.fa-smile-o {
       font-size: 20px;
-    }
-
-    #menu-div .navbar-collapse {
-      float:right;
     }
 
     #menu-div .navbar-collapse {
@@ -261,6 +263,10 @@
         /* position:relative; */
         /* width:100%; */
       }
+
+      .dropdown-menu {
+        left: unset !important;
+      }
     }
     .shrink-nav .accordion-menu {
     top: 0px;
@@ -318,6 +324,24 @@
     .remove-top-margin:last-child {
     margin-top:-5px;
   }
+
+  .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
+    width:500px !important;
+  }
+
+  @media (max-width: 685px) {
+
+    .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
+    position: fixed !important;
+    left: 0 !important;
+}
+}
+
+@media (max-width:515px) {
+  .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
+    width:100vw !important;
+  }
+}
   </style>
   <!--  -->
   <!-- navigation panel -->
@@ -459,7 +483,7 @@
                       {{ count_friend() }} @endif</span>
                     <span id="request_counts"></span>
                   </a>
-                  <ul class="dropdown-menu lenght icon-dropdown" style="width: 500px; height:400px; overflow-y: scroll;background-color: #ffffff;">
+                  <ul class="dropdown-menu lenght icon-dropdown">
                     <li class="notify_section">
                     </li>
                     @if(count(get_friend()))
@@ -527,7 +551,7 @@
                   <a class="dropdown-toggle" data-toggle="dropdown" href="#" title="Message" onclick="return get_message()">
                     <span class="fa fa-envelope icon_color"></span><span id="message_count" style="color: red">@if(!empty(count_message()))
                       {{ count_message() }} @endif</span></a>
-                  <ul class="dropdown-menu lenght icon-dropdown" style="width: 500px; height:400px; overflow-y: scroll;background-color: #ffffff;">
+                  <ul class="dropdown-menu lenght icon-dropdown">
 
                     @if(!empty(tochat()))
                     @foreach(tochat() as $row)
@@ -600,7 +624,7 @@
                     title="Notification">
                     <span class="noti_counts">@if(!empty(count_friend())) {{ count_notification() }} @endif</span>
                     <span class="fa fa-bell icon_color"></span></a>
-                  <ul class="dropdown-menu lenght icon-dropdown" style="width: 500px !important; height:400px !important; overflow-y: scroll !important;background-color: #ffffff;">
+                  <ul class="dropdown-menu lenght icon-dropdown">
                     @if(count(get_notification()))
                     @foreach(get_notification() as $row)
                     <div id="get_noti" class="get_notifi">
@@ -844,12 +868,12 @@
       } */
 
       .dropdown-menu {
-        position: absolute !important;
+        /* position: fixed !important;
         top: 100% !important;
         left: -90px !important;
-        z-index: 1000 !important;
+        z-index: 1000 !important; */
         /* display: none !important; */
-        float: left !important;
+        /* float: left !important; */
         min-width: 160px !important;
         padding: 5px !important;
         margin: 2px 0 0 !important;
@@ -873,9 +897,9 @@
   }
 
   .icon-dropdown {
-    position:fixed !important;
+    position:absolute !important;
     right:0 !important;
-    max-width:500px !important;
+    /* max-width:500px !important; */
   }
 
       .nav li.dropdown,  .nav li.dropdown a{

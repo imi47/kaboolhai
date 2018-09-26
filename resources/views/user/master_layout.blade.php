@@ -235,12 +235,6 @@
       
     }
 
-    @media (max-width:505px) {
-      .icon-dropdown {
-        width:100vw;
-      }
-    }
-
 
 
     /* partially fixes icon dropdown menu z-index and going out of screen */
@@ -463,6 +457,12 @@
   }
 }
 
+@media (max-width:505px) {
+      .icon-dropdown {
+        width:100vw !important;
+      }
+    }
+
 /* @media (max-width: 991px) {
 .icon-dropdown {
     position: fixed !important;
@@ -634,7 +634,7 @@
             <a class="dropdown-toggle" data-toggle="dropdown" href="#" title="Message" onclick="return get_message()">
               <span class="fa fa-envelope icon_color"></span><span id="message_count" style="color: red">@if(!empty(count_message()))
                 {{ count_message() }} @endif</span></a>
-            <ul class="dropdown-menu lenght icon-dropdown"ackground-color: #ffffff;">
+            <ul class="dropdown-menu lenght icon-dropdown">
 
               @if(!empty(tochat()))
               @foreach(tochat() as $row)
