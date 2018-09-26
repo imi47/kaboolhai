@@ -44,6 +44,12 @@
   
   }
 
+  .icon-dropdown {
+    width:500px;
+    height:400px;
+    overflow-y:scroll;
+  }
+
 .navbar-toggle-2 {
   display:none;
 }
@@ -227,6 +233,12 @@
         background-color:#fff;
       }
       
+    }
+
+    @media (max-width:505px) {
+      .icon-dropdown {
+        width:100vw;
+      }
     }
 
 
@@ -440,7 +452,7 @@
     border-radius: 4px !important;
     -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175) !important;
     box-shadow: 0 6px 12px rgba(0,0,0,.175) !important;
-
+    max-width: 500px !important;
   }
 }
 
@@ -541,7 +553,7 @@
                 {{ count_friend() }} @endif</span>
               <span id="request_counts"></span>
             </a>
-            <ul class="dropdown-menu lenght icon-dropdown" style="width: 500px; height:400px; overflow-y: scroll;">
+            <ul class="dropdown-menu lenght icon-dropdown">
               <li class="notify_section">
 
               </li>
@@ -615,7 +627,7 @@
             <a class="dropdown-toggle" data-toggle="dropdown" href="#" title="Message" onclick="return get_message()">
               <span class="fa fa-envelope icon_color"></span><span id="message_count" style="color: red">@if(!empty(count_message()))
                 {{ count_message() }} @endif</span></a>
-            <ul class="dropdown-menu lenght icon-dropdown" style="width: 500px; height:400px; overflow-y: scroll;background-color: #ffffff;">
+            <ul class="dropdown-menu lenght icon-dropdown"ackground-color: #ffffff;">
 
               @if(!empty(tochat()))
               @foreach(tochat() as $row)
@@ -682,7 +694,7 @@
             <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;" onclick="return read_notification()">
               <span class="noti_counts">@if(!empty(count_friend())) {{ count_notification() }} @endif</span>
               <span class="glyphicon glyphicon-bell icon_color"></span></a>
-            <ul class="dropdown-menu lenght icon-dropdown" style="width: 500px; height:400px; overflow-y: scroll;">
+            <ul class="dropdown-menu lenght icon-dropdown">
               @if(!empty(get_notification()))
               @foreach(get_notification() as $row)
               <div id="get_noti" class="get_notifi">
