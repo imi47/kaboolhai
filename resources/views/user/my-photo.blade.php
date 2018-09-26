@@ -1,5 +1,25 @@
 @extends('user/user_master_layout1') 
 @section('data')
+
+<style>
+  #menu-div .navbar-collapse.collapse {
+    float:right;
+  }
+
+  .navbar-nav>li {
+    float:left !important;
+  }
+
+  @media (max-width:991px) {
+  
+  .nav>li>a {
+    font-size: smaller;
+    padding: 0 7px;
+    font-weight:700;
+    margin-top:15px;
+  } 
+}
+</style>
 <div class="col-md-12">
          {{--  <h4 class="text-color" style="text-align: center;">Settings</h4> --}}
         
@@ -272,6 +292,22 @@
 
   <div style="padding-bottom: 100px;"></div>  
 
+<script>
+   mq = window.matchMedia( "(max-width: 530px)" );
+         
+    mq.addListener(mediaQueryResponse) // attach listener function to listen in on state changes so a page refresh will not be required
+
+    // search option will stay in the same line in tablet mode 
+    function mediaQueryResponse(mq) {
+
+      if(mq.matches) {
+          // document.querySelector('.logo-light img')
+
+          // alert('hi');
+      }
+    }
+    mediaQueryResponse(mq);
+</script>
 
 @endsection
 
