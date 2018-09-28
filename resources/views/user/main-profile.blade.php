@@ -15,7 +15,6 @@
    display: block;
    height: 0;
    clear: both;
-  
   }
 
   @media (min-width:769px) {

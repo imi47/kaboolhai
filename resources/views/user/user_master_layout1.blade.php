@@ -32,33 +32,26 @@
     .label {
       display: none;
     }
-
     .logo {
       width:auto;
     }
-
     #menu-div .navbar-collapse.collapse {
       float:right;
     }
-
     .icon-dropdown {
     width:500px;
     height:400px;
     overflow-y:scroll;
   }
-
     /* .icon-dropdown {
       position:absolute !important;
     } */
-
     .fa.fa-smile-o {
       font-size: 20px;
     }
-
     #menu-div .navbar-collapse {
       border:none;
     }
-
     #sidebar-2 {
       background-color:#000;
       color:#fff;
@@ -71,7 +64,6 @@
       z-index:9999;
       overflow:scroll;
     }
-
     #sidebar-2 span:not(.divider) {
       font-size:xx-large;
       font-weight:600;
@@ -80,27 +72,22 @@
       top:70px;
       cursor:pointer;
     }
-
      #sidebar-2 ul {
        margin-top:100px;
      }
-
     #sidebar-2 ul li:not(.divider) {
       text-align:center;
       padding:10px;
       font-size:large;
     }
-
     #sidebar-2 ul li.divider {
       background-color:#222;
       height:1px;
     }
-
      #sidebar-2 ul li a {
        text-decoration:none;
        color:#fff;
      }
-
     @media (max-width:768px) {
       #stay-tuned-container p {
         margin:10px;
@@ -110,7 +97,6 @@
   <script type="text/javascript">
     $(document).ready(function (e) {
       $('#send_messgae').emojiPicker();
-
       //   $('#send_messgae').emojiPicker({
       //   width: '300px',
       //   height: '200px'
@@ -120,8 +106,6 @@
     // if (window.matchMedia("(max-width: 520px)").matches)
     //         document.querySelector('.logo-light img').src='public/user_assets/db_images/KH-logo2.png';
     // else document.querySelector('.logo-light img').src='public/user_assets/images/kaboolhai.png';
-
-
     mq = window.matchMedia( "(max-width: 520px)" );
          
       mq.addListener(mediaQueryResponse) // attach listener function to listen in on state changes so a page refresh will not be required
@@ -130,8 +114,8 @@
       function mediaQueryResponse(mq) {
   
         if(mq.matches) 
-            document.querySelector('.logo-light img').src='public/user_assets/db_images/KH-logo2.png';
-        else document.querySelector('.logo-light img').src='public/user_assets/images/kaboolhai.png';
+            document.querySelector('.logo-light img').src='{{ $user_assets }}/db_images/KH-logo2.png';
+        else document.querySelector('.logo-light img').src='{{ $user_assets }}/images/kaboolhai.png';
       }
       mediaQueryResponse(mq);
   </script>
@@ -202,7 +186,6 @@
     $(document).ready(function () {
       $(".left-first-section").click(function () {
         $('.main-section').toggleClass("open-more");
-
       });
     });
     $(document).ready(function () {
@@ -215,13 +198,11 @@
         $('.main-section').toggleClass("open-more");
       });
     });
-
     function changeLogo() {
       if (window.matchMedia("(max-width: 520px)").matches)
-          document.querySelector('.logo-light img').src='public/user_assets/db_images/KH-logo2.png';
-    else document.querySelector('.logo-light img').src='public/user_assets/images/kaboolhai.png';
+          document.querySelector('.logo-light img').src='{{ $user_assets }}/db_images/KH-logo2.png';
+    else document.querySelector('.logo-light img').src='{{ $user_assets }}/images/kaboolhai.png';
     }
-
   </script>
 
   <style type="text/css">
@@ -230,25 +211,20 @@
       height: 350px;
       overflow-y: scroll;
     }
-
     label {
       /*padding: 10px;*/
       /*background: red; */
       display: table;
       /*color: #fff;*/
     }
-
     label .fa {
-
       color: white;
       font-size: 30px;
       margin-left: -50px;
     }
-
     input[type="file"] {
       display: none;
     }
-
     /*.emojy_image{
       font-size: 30px;
     margin-left: -120px;
@@ -258,45 +234,35 @@
     .arrow_image {
       padding: 10px;
     }
-
     .arrow_button {
       margin-left: -31px;
-
     }
-
     #navsidebare {
       overflow: scroll;
       height: 100vh;
     }
-
     @media (max-width:1250px) {
-
       .navbar .accordion-menu #accordion>li,
       #signin {
         display: none;
       }
-
       .navbar .accordion-menu .dropdown {
         /* display:; */
       }
-
       #accordion {
         float: right;
       }
     }
-
     @media (max-width: 991px) {
       #menu-div {
         background-color: inherit;
         float: right;
         /* width: auto; */
         /* position: relative; */
-
         /* min-height: 0 !important; */
         /* position:relative; */
         /* width:100%; */
       }
-
       .dropdown-menu {
         left: unset !important;
       }
@@ -304,24 +270,19 @@
     .shrink-nav .accordion-menu {
     top: 0px;
 }
-
     .navbar-header {
       position: absolute;
       top: 3px;
       right: 5px;
     }
-
     .navbar-toggle {
       background-color: #5a378c !important;
       border-radius: 5px;
     }
-
     }
-
     #logindivv {
       /* position: relative; */
     }
-
     /* #logindivv {
   position:absolute;
   width:100vw;
@@ -331,7 +292,6 @@
   right:0;
   bottom:0;
 } */
-
 #logindivv {
     position:fixed;
     top:0;
@@ -340,7 +300,6 @@
     bottom:0;
     margin-right:0;
   }
-
     #login-div-x {
       position: absolute;
       font-size: large;
@@ -349,38 +308,30 @@
       right: 0;
       cursor: pointer;
     }
-
     .remove-top-margin {
     margin-top:-70px;
     }
-
     .remove-top-margin:last-child {
     margin-top:-5px;
   }
-
   .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
     width:500px !important;
   }
-
   @media (max-width: 685px) {
-
     .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
     position: fixed !important;
     left: 0 !important;
 }
-
 #username-dropdown-toggle .dropdown-menu {
     /* position: absolute !important; */
     left: -89px !important;
     }
 }
-
 @media (max-width:515px) {
   .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
     width:100vw !important;
   }
 }
-
   #username-dropdown-toggle ul.dropdown-menu{
        width:100px !important;
      }
@@ -872,16 +823,13 @@
         $('#navsidebare').hide('fast');
         $("#sidebar-2").css('right', '0');
       });
-
       $('#sidebar-2 span').click(function(){
         $('#sidebar-2').css('right', '-260px');
         $('#btntoshowmenu').show();
       });
-
       // document.getElementById("x").onclick = function () {
       //   document.querySelector('#friends-dropdown .icon-dropdown').style.display = 'none';     
       // }
-
       // document.getElementById("friends-toggle").onclick = function () {
       //   // alert('onclick');
       //   // setTimeout(function() {
@@ -893,7 +841,6 @@
             
       //   // })
       // };
-
     </script>
 
   </div>
@@ -904,11 +851,9 @@
       .navbar-form {
         display:none;
       }
-
       /* .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
         position:absolute;
       } */
-
       .dropdown-menu {
         /* position: fixed !important;
         top: 100% !important;
@@ -931,68 +876,53 @@
         -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175) !important;
         box-shadow: 0 6px 12px rgba(0,0,0,.175) !important;
   }
-
   .sticky-nav .navbar-nav > li > .dropdown-menu {
     /* width:500px !important; */
     /* position:absolute !important;
     right:200px !important; */
   }
-
   .icon-dropdown {
     position:absolute !important;
     right:0 !important;
     /* max-width:500px !important; */
   }
-
       .nav li.dropdown,  .nav li.dropdown a{
        width:auto !important;
       }
-
       #menu-div .collapse {
         /* display:inline-block !important; */
         float:right;
       }
-
       .username-dropdown-menu .dropdown-menu {
         position:absolute !important;
       }
-
       #username-dropdown-toggle .dropdown-menu {
     position: absolute !important;
     right: 0 !important;
     }
-
     @media (max-width:768px) {
       .navbar-header {
         display:none;
       }
-
       #menu-div {
         float:right !important;
       }
-
      #menu-div .collapse {
         display:inline-block !important;
         /* float:right !important; */
       }
-
       /* #menu-div {
         display:inline-block !important;
       } */
-
       .dropdown-menu {
         /* position:absolute; */
       }
-
-
     }
-
     @media (max-width:380px) {
       /* #menu-div .nav li.dropdown:not(.username-dropdown-toggle) { */
         #menu-div .nav li.dropdown.username-dropdown-toggle {
         display:none !important;
       }
-
         .icon-dropdown {
         /* position:absolute !important; */
         max-width: 400px !important;
@@ -1003,22 +933,18 @@
   <script>
     // old code
         //  $("#btntoshowmenu").click(function(){
-
          $(".navbar-header").click(function(){
-
              $("#navsidebare").show();
             //  $("#signin").hide();
              $("#logindivv").hide();
             //  $("#btntoshowmenu").hide();
             $(".navbar-header").hide();
          });
-
          $("#btntoshowmenu").click(function() {
           $("#navsidebare").show();
           $(this).hide();
            
          });
-
          $('.login-li').click(function(){
           $("#logindivv").show();
          })
@@ -1030,7 +956,6 @@
              $("#btntoshowmenu").show();
             // $(".navbar-header").show();
          });
-
            @if(empty(Session::get('user_id')))
             $(".navbar-header").click(function(){
               $("#cross").click(function() {
@@ -1042,41 +967,32 @@
             });
           });
           @endif
-
          mq = window.matchMedia( "(max-width: 1230px)" );
          
         mq.addListener(mediaQueryResponse) // attach listener function to listen in on state changes so a page refresh will not be required
-
         // search option will stay in the same line in tablet mode 
         function mediaQueryResponse(mq) {
-
           if(mq.matches) {
               $( "#logo-div" ).removeClass('col-lg-2' );
               $( "#logo-div" ).addClass('col-sm-2' );
-
               $( "#menu-div" ).removeClass('col-lg-10');
               $( "#menu-div" ).addClass('col-sm-10' );
-
               // alert('hi');
           }
         }
         mediaQueryResponse(mq);
-
         // hide login div when clicked anywhere else
         $(document).mouseup(function(e) 
         {
             var login_div = $("#logindivv");
             var navSideBar = $('#navsidebare');
-
             // if the target of the click isn't the login_div nor a descendant of the login_div
             if (!login_div.is(e.target) && login_div.has(e.target).length === 0) 
             {
                 login_div.hide();
             }
         });
-
          
-
       </script>
   <div class="logindiv wow fadeIn" id="logindivv">
     <div class="row" style="padding:15px;">
@@ -1102,14 +1018,12 @@
       </div>
     </div>
   </div>
-
 </div>
   </div>
   <script>
     $("#signin").click(function(){
             $("#logindivv").toggle();
          });
-
          $("#login-div-x").click(function(){
           $('#logindivv').hide();
         });
@@ -1528,15 +1442,12 @@
            <input type="radio" value="Widow Widower" name="martial_status"> Widow/Widower
          </div>
        </div>
-
        <div class="col-md-3">
           <div class="form-group"> 
            <input type="radio" value="Divorcee" name="martial_status"> Divorcee
          </div>
        </div>
-
          <div class="col-md-3"></div>
-
            <div class="col-md-3">
           <div class="form-group"> 
            <input type="radio" value="Seprated" name="martial_status"> Seprated
@@ -1549,7 +1460,6 @@
        </div>
          
         </div>
-
         <br>
                      <div class="form-group">
                         <label>Height</label>
@@ -1848,15 +1758,12 @@
            <input type="radio" value="Widow Widower" name="martial_status"> Widow/Widower
          </div>
        </div>
-
        <div class="col-md-3">
           <div class="form-group"> 
            <input type="radio" value="Divorcee" name="martial_status"> Divorcee
          </div>
        </div>
-
          <div class="col-md-3"></div>
-
            <div class="col-md-3">
           <div class="form-group"> 
            <input type="radio" value="Seprated" name="martial_status"> Seprated
@@ -1869,7 +1776,6 @@
        </div>
          
         </div>
-
         <br>
                      <div class="form-group">
                         <label>Height</label>
@@ -2204,10 +2110,8 @@
          @if(count(user_data()))
       <script type="text/javascript">
        
-
   var idleTime = 0;
     var idleInterval = setInterval(timerIncrement, 60000); // 1 minute
-
     //Zero the idle timer on mouse movement.
     $(this).mousemove(function (e) {
         idleTime = 0;
@@ -2215,9 +2119,6 @@
     $(this).keypress(function (e) {
         idleTime = 0;
     });
-
-
-
 function timerIncrement() {
     idleTime = idleTime + 1;
     if (idleTime > 30) { // 20 minutes
@@ -2231,24 +2132,16 @@ function timerIncrement() {
           success:function(response) {
             
           }
-
         });
     }
 }
-
 </script>
-
-
       <script type="text/javascript">
-
          var to_user;
          $("a.left-first-section").click(function(){
-
-
             to_user=$(this).attr('rel');
          
          $('#to_userss').val(to_user);
-
             $.post('{{ url('/chat') }}' , {_token: '{{ csrf_token() }}' , to_user: to_user} , function(data)
          {
          response = $.parseJSON(data);
@@ -2259,10 +2152,8 @@ function timerIncrement() {
          });
    
 });
-
       setInterval(function() {
            
-
       $.ajax({
     url:'{{url('/get-notification')}}',
             type: 'POST',
@@ -2277,10 +2168,8 @@ function timerIncrement() {
             
               $('#noti_counts').show();
           }
-
         });
   },1000);
-
          setInterval(function() {
          
          
@@ -2298,7 +2187,6 @@ function timerIncrement() {
          {
          
           response.forEach(function (item) {
-
             if(item.to_user=={{user_data()->id}})
             {
              
@@ -2322,7 +2210,6 @@ else
    $('#chat-scroll').animate({
             scrollTop: $('#chat-scroll').get(0).scrollHeight},10);
             
-
 }
 }
            //  $('.new_message').append('<li><div class="left-chat"><p><a href="{{ url('public/user_assets/attached') }}/'+item.attached+'" target="_blank"><img src="{{ url('public/user_assets/attached') }}/'+item.attached+'"></a></p></div></li>');
@@ -2349,7 +2236,6 @@ else
          },1000);
          
          
-
 $("#file").change(function () {
        var fileExtension = ['xlsx','xls','csv','jpg','jpeg','png','gif','bmp','doc','docx','pdf','txt'];
        if ($.inArray($(this).val().split('.').pop().toLowerCase(), fileExtension) == -1) {
@@ -2362,30 +2248,24 @@ $("#file").change(function () {
          document.getElementById('error').style.display = "none";
        }
    });
-
          
          
 $('#form').on('submit',function (e) {
 e.preventDefault();
-
 var message=document.getElementById("send_messgae").value;
 var file=document.getElementById("file").value;
 if(message)
 {
 var word_to_match = message;
 var string_of_words = 'a string containing the word ender, this will match';
-
 //use \b to match on word boundaries
 var filter = new RegExp('\\b' + word_to_match + '\\b', 'gi');
-
 if(string_of_words.match(filter))
  {
    $('#error').html('Block ' + word_to_match);
    $('#send_messgae').val('');
    return false;
  } 
-
-
 }
     
          
@@ -2408,7 +2288,6 @@ if(string_of_words.match(filter))
            $('.new_message').append('<li><div class="right-chat"><p>'+message+'</p></div></li>');
            $('#chat-scroll').animate({
             scrollTop: $('#chat-scroll').get(0).scrollHeight},10);
-
             $('.new_message').append('<li><div class="right-chat"><p><a href="{{ url('public/user_assets/attached') }}/'+response.attached+'" target="_blank"><img src="{{ url('public/user_assets/attached') }}/'+response.attached+'"></a></p></div></li>');
            $('#chat-scroll').animate({
             scrollTop: $('#chat-scroll').get(0).scrollHeight},10);
@@ -2430,7 +2309,6 @@ else
    $('#chat-scroll').animate({
             scrollTop: $('#chat-scroll').get(0).scrollHeight},10);
             
-
 }
 }
                
@@ -2443,7 +2321,6 @@ else
             }
             else
             {
-
              
                $('#error').html('Write message');
             }
@@ -2455,10 +2332,8 @@ else
         
        
          });
-
          function friend_count()
   {
-
     $.ajax({
     url:'{{url('/friend-count')}}',
             type: 'POST',
@@ -2470,14 +2345,9 @@ else
             
            
              $('#friend_counts').hide();
-
-
           }
-
         });
   }
-
-
   function read_notification()
   {
     $.ajax({
@@ -2492,15 +2362,9 @@ else
            
              $('.noti_counts').hide();
              
-
           }
-
         });
   }
-
-
-
-
 function get_message()
 {
   $.ajax({
@@ -2515,21 +2379,15 @@ function get_message()
            
              $('#message_count').hide();
              
-
           }
-
         });
 }
-
       </script>
      @endif
      
       @stack('js')
      
 <script type="text/javascript" src="{{ $user_assets }}/js/jquery.emojiarea.js"></script>
-
 <script type="text/javascript" src="{{ $user_assets }}/js/emoji-picker.js"></script>
-
-
    </body>
 </html>

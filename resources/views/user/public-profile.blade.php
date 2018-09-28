@@ -20,13 +20,11 @@
      .go_more{
       background-color: #ffffff;
      }
-
      #collapse1 {
      	    overflow-y: scroll;
     min-height: 250px;
     max-height: 450px;
      }
-
      </style>
 <script type="text/javascript">
 	
@@ -70,6 +68,8 @@ $('.owl-carousel').owlCarousel({
         }
     }
 });
+
+
 </script>
 
 <div class="row">
@@ -367,7 +367,6 @@ $('.owl-carousel').owlCarousel({
        	<tr>
        		<td>{{ $row->question }}</td>
        		
-
        		@if(!empty($row->answer->user_answers) && $row->answer->user_id==Session::get('user_id'))
        		<td><a rel="{{ $row->question_id }}" href="javascript:;" class="update-answer">{{ $row->answer->user_answers }}<i class="glyphicon glyphicon-edit"></i></a>
        		</td>
@@ -376,7 +375,6 @@ $('.owl-carousel').owlCarousel({
        		</td>
        		@endif
        	</tr>
-
        	 
        	@endforeach
        	@else
@@ -387,7 +385,6 @@ $('.owl-carousel').owlCarousel({
        		
        		<td>{{ $row->user_answers }}</td>
        	</tr>
-
        	@endforeach
        	@else
  			<tr>
@@ -397,7 +394,6 @@ $('.owl-carousel').owlCarousel({
        {{-- 	</tr>      	
        	@endif
        		@endif
-
        </tbody>
        
       
@@ -538,7 +534,6 @@ $('.owl-carousel').owlCarousel({
 							{{-- @if($user_data->profile_created=='Self')
 							<ul class="in_box_brdr">
 								<li><span class="box_txt_lb"><img src="{{ $user_assets }}/public_profile_icon/contactperson.png" alt="" width="20px" height="20px;"> Name </span> <span class="txt_fetched">{{ $user_data->firstname.' '.$user_data->lastname }}</span></li>
-
 							<ul class="in_box_brdr">
 								<li><span class="box_txt_lb"><img src="{{ $user_assets }}/public_profile_icon/contactperson.png" alt="" width="20px" height="20px;"> Gardian Relation</span> <span class="txt_fetched">{{ $user_data->contact_person }}</span></li>
 							</ul>
@@ -575,7 +570,6 @@ $('.owl-carousel').owlCarousel({
 @php 
 	$data .= '<div class="col-sm-4"><span class="fa fa-check check-color"></span>' . $row->loking_value . '
                
-
             
                 <hr>
             </div>';
@@ -2334,9 +2328,7 @@ $('.owl-carousel').owlCarousel({
 
 
 {{-- <div class="modal fadeInDown" id="chat" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="false" >
-
 	<div class="modal-dialog modal-md">
-
       <div class="modal-content">
       
         <div class="modal-header">
@@ -2356,11 +2348,8 @@ $('.owl-carousel').owlCarousel({
         No chat found
         @endif
       </div>
-
-
       <div class="col-md-12">
         <div class="well"  id="chat-scroll" style="box-shadow: none;height:350px !important; overflow: scroll;">
-
          
           @if(!empty($current_chat))
           @foreach($current_chat as $key)
@@ -2406,7 +2395,6 @@ $('.owl-carousel').owlCarousel({
                
                         
             </div>
-
               
              
           </div>
@@ -2654,9 +2642,7 @@ $('.owl-carousel').owlCarousel({
  		$('#family').hide(90);
  		$('#partner').hide(90);
  		$("#pro").css("background-color", "#4ccee8");
-
  		
-
  	}
  	function family()
  	 {
@@ -2665,8 +2651,6 @@ $('.owl-carousel').owlCarousel({
  		$('#family').show(90);
  		$('#partner').hide(90);
  		$("#fam").css("background-color", "#4ccee8");
-
-
  		
  		
  	}
@@ -2679,7 +2663,6 @@ $('.owl-carousel').owlCarousel({
  		$("#par").css("background-color", "#4ccee8");
  		
  	}
-
 				// $('.read-btn').on('click' , function(){
 				// 	elem = $(this).parent('.txt_fetched').find('.model-text').text();
 				// 	$('#further-data').html(elem);
@@ -2781,7 +2764,6 @@ $('.owl-carousel').owlCarousel({
 <!-- setting -->
 <script type="text/javascript">
   $("a.add-answer").click(function(){
-
      question_id=$(this).attr('rel');
      // alert(question_id);
      // var answer =$('.add-answer').text();
@@ -2790,11 +2772,7 @@ $('.owl-carousel').owlCarousel({
     $('#question').modal('show');
     $('.add-answer').html('');  
    });
-
-
-
    $("a.update-answer").click(function(){
-
      question_id=$(this).attr('rel');
      // alert(question_id);
      // var answer =$('.add-answer').text();
@@ -2813,6 +2791,9 @@ $('.owl-carousel').owlCarousel({
 	
 		
 		$('#loginmodal').modal('show');
+
+    document.querySelector('.logo-light img').src='logo test.png';
+		
 	</script>
 
 	@else
@@ -2821,4 +2802,3 @@ $('.owl-carousel').owlCarousel({
 
         
 @endpush
-
