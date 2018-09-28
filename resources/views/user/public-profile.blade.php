@@ -25,6 +25,72 @@
     min-height: 250px;
     max-height: 450px;
      }
+
+		 @media (max-width:1125px) {
+			#btn a button {
+					width:180px !important;
+				}
+		 }
+
+		 @media (max-width:991px) {
+			 .imgofuser {
+				 float:none;
+				 clear:both;
+				 text-align:center;
+				 width:auto;
+			 }
+
+			 .contacts_detail {
+				 margin-bottom:40px;
+			 }
+
+			 .somelinks {
+				 margin-left:-9px;
+			 }
+
+			 .photo3 {
+				 margin: 8px auto 0 auto;
+			 }
+		 }
+
+		  @media (max-width:768px) {
+				.contacts_detail, .somelinks {
+					float:none;
+				 clear:both;
+				 text-align:center;
+				 width:auto;
+				 /* margin:auto !important;
+				 text-align:center !important; */
+				}
+			}
+		 
+		 @media (max-width:840px) {
+				#btn a button {
+					width:180px !important;
+				}
+
+				#btn a button .hidden-xs {
+					display:block !important;
+				}
+		 }
+
+		  @media (max-width:640px) {
+				#btn a button {
+					width:380px !important;
+				}
+				
+				#btn {
+				display:block !important;
+				width:100% !important;
+				text-align:center;
+				margin-bottom:15px;
+				}
+
+				.container1 {
+				 padding-bottom:540px;
+			 }
+		 }
+
      </style>
 <script type="text/javascript">
 	
@@ -85,14 +151,14 @@ $('.owl-carousel').owlCarousel({
                 @if(Session::has('success'))
                     <p class="alert alert-success">{{ Session::get('success') }}</p>
                 @endif
-		  <div class="well" style="background-color: #ffffff;border-radius:10px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+		  <div class="well container1" style="background-color: #ffffff;border-radius:10px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
 			    <div class="headcontain">
 				  <div class="row">
            @if(count($block_user))
            <p class="alert alert-danger text-center">Sory you are block</p>
             @else
 
-					<div class="col-xs-3">
+					<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 						<div class="imgofuser">
                @if($user_data->id==Session::get('user_id'))
                @if(count($myphoto))
@@ -147,7 +213,7 @@ $('.owl-carousel').owlCarousel({
              @if($user_data->id==Session::get('user_id'))
              @if(count($myphoto)>1)
              <a href="javascript:;" data-toggle="modal" data-target="#myphotoModal">
-							<div class="cnt_lod_ph">
+							<div class="cnt_lod_ph photo3">
 								<p class="tto" style="color: white !important;"> {{ count($myphoto) }} Photo</p>	
 							</div>
 							</a>
@@ -179,7 +245,7 @@ $('.owl-carousel').owlCarousel({
 						</div>	
 					</div>
 
-					<div class="col-xs-3">
+					<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
 						<div class="contacts_detail">
 							<p class="t" style="font-size: 18px;"><strong>{{strtoupper($user_data->user_name)}}</strong></p>
 							<p class="t" style="font-weight:bold;">{{ $user_data->word_1 }}, {{ $user_data->word_2 }}, {{ $user_data->word_3 }}</p>
@@ -217,7 +283,7 @@ $('.owl-carousel').owlCarousel({
 						</div>		
 					</div>
 					@if($user_data->id<>Session::get('user_id'))
-					<div class="col-xs-6">
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 						<div class="somelinks">
 							<ul class="list_somebtn">
 								<li class="agea"><a href="{{ url('more-alike',$user_data->id) }}"><span><img src="{{ $user_assets }}/more-alike.png" alt="" class="icon_size"></span> <span class="linkT">More alike</span></a></li>
@@ -265,7 +331,7 @@ $('.owl-carousel').owlCarousel({
 						</div>
 					</div>
           @else
-            <div class="col-xs-6">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <div class="somelinks">
               <ul class="list_somebtn">
                
@@ -309,7 +375,7 @@ $('.owl-carousel').owlCarousel({
 					<div class="col-lg-12 col-sm-12">
    					
 					    <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
-					        <div class="btn-group" role="group">
+					        <div class="btn-group" role="group" id='btn'>
 					        	<a href="" onclick="return profile()">
 					            <button id="pro" style="margin-top:0px;height:40px;width:250px;border-radius:10px !important; background-color:#4ccee8;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0);" type="button" id="stars" class="btn abc" href="#tab1" data-toggle="tab">
 					                <div class="hidden-xs" style="color: white">Profile Info</div>
@@ -319,14 +385,14 @@ $('.owl-carousel').owlCarousel({
 					        </div>
 					       
 					       
-					        <div class="btn-group" role="group">
+					        <div class="btn-group" role="group" id='btn'>
 					        	<a href="" onclick="return family()">
 					            <button id="fam" style="margin-top:0px;height:40px;width:250px;border-radius:10px !important;background-color:#5a378c;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0);" type="button" id="following" class="btn abc" href="#tab3" data-toggle="tab">
 					                <div class="hidden-xs"><span style="color:#ffffff;">My Family Info</span></div>
 					            </button>
 					        </a>
 					        </div>
-					         <div class="btn-group" role="group">
+					         <div class="btn-group" role="group" id='btn'>
 					        	<a href="" onclick="return partner()">
 					            <button id="par" style="margin-top:0px;height:40px;width:250px;border-radius:10px !important;background-color:#5a378c;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0);" type="button" id="favorites" class="btn abc" href="#tab2" data-toggle="tab">
 					                <div class="hidden-xs"><span style="color:#ffffff;">Partner Prefrences</span></div>
@@ -2791,8 +2857,6 @@ $('.owl-carousel').owlCarousel({
 	
 		
 		$('#loginmodal').modal('show');
-
-    document.querySelector('.logo-light img').src='logo test.png';
 		
 	</script>
 
