@@ -24,7 +24,11 @@
      	    overflow-y: scroll;
     min-height: 250px;
     max-height: 450px;
-     }
+		 }
+		 
+		 #btn a button {
+			 margin:0;
+		 }
 
 		 @media (max-width:1125px) {
 			#btn a button {
@@ -84,7 +88,7 @@
 
 		  @media (max-width:640px) {
 				#btn a button {
-					width:380px !important;
+					width:200px !important;
 				}
 
 				.box_body, .txt_fetched {
