@@ -66,6 +66,10 @@
 				.contacts_detail_parent {
 					margin-top:20px;
 				}
+
+				.row.padding-two.sm-text-center {
+					padding: 0 10px 0 10px;
+				}
 			} 
 		 
 		 @media (max-width:840px) {
