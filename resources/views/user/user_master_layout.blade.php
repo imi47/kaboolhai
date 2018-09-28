@@ -21,6 +21,14 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
 
 	<style>
+		.top-searches-by div > a {
+			color:#fff !important;
+		}
+		
+		.top-searches-by div{
+			border-bottom:1px solid #fff;
+			padding:10px;
+		}
 		@media (max-width:1250px) {
 			/* .main-nav {
                 display:none;
@@ -30,7 +38,25 @@
 				top: -8px;
 				right: 20px;
 			}
-    }
+	 }
+	 
+	 @media (max-width:520px) {
+			.tpsrch {
+				display:none;
+			}
+			.top-searches-by {
+				display:block;
+			}
+		}
+
+		@media (min-width:521px) {
+			.tpsrch {
+				display:block;
+			}
+			.top-searches-by {
+				display:none;
+			}
+		}
 
     @media (max-width:1066px) {
       .main-nav {
@@ -791,21 +817,25 @@
                          <p style=" color:#ffffff
 								 ">Top Searches by:</p>
                     </tr>
-                     <tr class=" tpsrch
-								 ">
-                       <th><a href=" {{ url( 'pakistani') }}
-								 ">Pakistani Muslim Matrimony</a></th>
-                        <th><a href=" {{ url( 'UAE') }}
-								 ">UAE Muslim Matrimony</a></th>
-                        <th><a href=" {{ url( 'United-Kingdom') }}
-								 ">United Kingdom Muslim Matrimony</a></th>
-                        <th><a href=" {{ url( 'USA') }}
-								 ">USA Muslim Matrimony Muslim Matrimony</a></th>
-                        <th><a href=" {{ url( 'canada') }}
-								 " style=" border:none;
-								 ">CANADA Muslim Matrimony</a></th>
+                     <tr class=" tpsrch">
+                       <th><a href=" {{ url( 'pakistani') }}">Pakistani Muslim Matrimony</a></th>
+                        <th><a href=" {{ url( 'UAE') }}">UAE Muslim Matrimony</a></th>
+                        <th><a href=" {{ url( 'United-Kingdom') }}">United Kingdom Muslim Matrimony</a></th>
+                        <th><a href=" {{ url( 'USA') }}">USA Muslim Matrimony Muslim Matrimony</a></th>
+                        <th><a href=" {{ url( 'canada') }}" style=" border:none;">CANADA Muslim Matrimony</a></th>
                     </tr>
                 </table>
+
+					<style>
+						
+					</style>
+					 <div class="top-searches-by">
+						<div><a href="{{ url( 'pakistani') }}">Pakistani Muslim Matrimony</a></div>
+						<div><a href="{{ url( 'UAE') }}">UAE Muslim Matrimony</a></div>
+						<div><a href="{{ url( 'United-Kingdom') }}">United Kingdom Muslim Matrimony</a></div>
+						<div><a href="{{ url( 'USA') }}">USA Muslim Matrimony Muslim Matrimony</a></div>
+						<div><a href="{{ url( 'canada') }}">CANADA Muslim Matrimony</a></div>
+					 </div>
             </div>
         </div>
 
