@@ -87,8 +87,8 @@
 				}
 
 				.container1 {
-				 padding-bottom:540px;
-			 }
+					padding-bottom:120px;
+				}
 		 }
 
      </style>
