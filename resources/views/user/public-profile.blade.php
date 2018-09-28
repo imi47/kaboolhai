@@ -2240,21 +2240,21 @@ $('.owl-carousel').owlCarousel({
 
 		<div class="well w" style="background-color:#ffffff;border-radius:10px;">
 			<div class="row">
-				<div class="col-sm-4">
+				<div class="col-sm-3 col-sm-offset-2 col-xs-3 col-xs-offset-2">
           @if($user_data->mobile_status==1)
 					<img src="{{ $user_assets }}/public_profile_icon/mobile verified.png" alt="" class="masterTooltip" title="Phone Number is Verified!">
           @else
           <img src="{{ $user_assets }}/public_profile_icon/mobile unverified gray.png" alt="" class="masterTooltip" title="Phone Number is un verified!">
           @endif	
 				</div>
-				<div class="col-sm-4">
+				<div class="col-sm-3 col-xs-3">
            @if($user_data->email_status==1)
 					<img src="{{ $user_assets }}/public_profile_icon/email verified.png" alt="" class="masterTooltip" title="Email  is verified!">
           @else
           <img src="{{ $user_assets }}/public_profile_icon/email unverified.png" alt="" class="masterTooltip" title="Email  is unverified!">
           @endif
 				</div>
-				<div class="col-sm-4">
+				<div class="col-sm-3 col-xs-3">
           @if($user_data->ssn_status<>1)
 					<img src="{{ $user_assets }}/public_profile_icon/ssn verified.png" alt=""  class="masterTooltip" title="CNIC  is verified!">
           @else
