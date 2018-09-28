@@ -62,7 +62,11 @@
 				 /* margin:auto !important;
 				 text-align:center !important; */
 				}
-			}
+
+				.contacts_detail_parent {
+					margin-top:20px;
+				}
+			} 
 		 
 		 @media (max-width:840px) {
 				#btn a button {
@@ -78,6 +82,10 @@
 				#btn a button {
 					width:380px !important;
 				}
+
+				.box_body, .txt_fetched {
+					font-size:2.5vw;
+				}
 				
 				#btn {
 				display:block !important;
@@ -88,6 +96,10 @@
 
 				.container1 {
 					padding-bottom:120px;
+				}
+
+				.box_body, .box_header {
+					padding-left:0;
 				}
 		 }
 
@@ -245,7 +257,7 @@ $('.owl-carousel').owlCarousel({
 						</div>	
 					</div>
 
-					<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+					<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 contacts_detail_parent">
 						<div class="contacts_detail">
 							<p class="t" style="font-size: 18px;"><strong>{{strtoupper($user_data->user_name)}}</strong></p>
 							<p class="t" style="font-weight:bold;">{{ $user_data->word_1 }}, {{ $user_data->word_2 }}, {{ $user_data->word_3 }}</p>
