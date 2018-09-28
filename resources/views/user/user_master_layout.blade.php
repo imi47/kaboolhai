@@ -24,6 +24,10 @@
 		.top-searches-by div > a {
 			color:#fff !important;
 		}
+
+		/* .logo {
+			width:40px !important;
+		} */
 		
 		.top-searches-by div{
 			border-bottom:1px solid #fff;
@@ -152,7 +156,7 @@
 	@stack('css')
 </head>
 
-<body>
+<body onload='changeLogo()'>
 
 
 
@@ -189,9 +193,9 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-				@if(Session::get('user_id')))
+				<!-- @if(Session::get('user_id'))
 				<span id='username'> {{ Session::get('user_name') }}</span>
-				@endif
+				@endif -->
 				</div>
 				<!-- toggle navigation end -->
 				<!-- main menu -->
@@ -425,6 +429,35 @@
 	  $('.navbar-header').show();
 	  $("#btntoshowmenu").css('visibility', 'visible');
     });
+
+	 	mq = window.matchMedia( "(max-width: 420px)" );
+         
+			mq.addListener(mediaQueryResponse) // attach listener function to listen in on state changes so a page refresh will not be required
+	  
+			// search option will stay in the same line in tablet mode 
+			function mediaQueryResponse(mq) {
+	  
+			  if(mq.matches) {
+					document.querySelector('.logo-light img').src='{{ $user_assets }}/db_images/KH-logo2.png';
+					document.querySelector('.logo').style.width = '40px';
+			  }
+			  else {
+			 	 document.querySelector('.logo-light img').src='{{ $user_assets }}/images/kaboolhai.png';
+					document.querySelector('.logo').style.width = 'auto';
+			  } 
+			}
+			mediaQueryResponse(mq);
+
+			function changeLogo() {
+				if(mq.matches) {
+					document.querySelector('.logo-light img').src='{{ $user_assets }}/db_images/KH-logo2.png';
+					document.querySelector('.logo').style.width = '40px';
+			  }
+			  else {
+			 	 document.querySelector('.logo-light img').src='{{ $user_assets }}/images/kaboolhai.png';
+					document.querySelector('.logo').style.width = 'auto';
+			  } 
+   		}
   </script>
 
 
