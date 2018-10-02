@@ -262,9 +262,9 @@ body, html {
 
 
      <div class="row social_icon">
-      <div class="col-sm-3">
+      <div class="col-lg-3 col-sm-3">
       </div>
-      <div class="col-sm-8">
+      <div class="col-lg-7 col-sm-8">
         <img src="{{ $user_assets }}/db_images/g+.png" alt="" width="27" height="27" class="distance  hvr-grow">
 
        <a href="https://www.facebook.com/Saykaboolhai/" target="__blank">

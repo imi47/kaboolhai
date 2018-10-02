@@ -47,6 +47,20 @@
   #search-btn {
     margin-bottom:15px;
   }
+
+  select, label {
+    margin-top:10px;
+    margin-bottom:10px;
+  }
+
+  input[type='radio'] {
+    width:50px;
+  }
+
+  .col-xs-1.text-center.to {
+    margin-top:17px;
+    margin-left:-10px;
+  }
 }
 
  .btn-group #pro, .btn-group #fam, .btn-group #par{
@@ -329,7 +343,7 @@
               </select>
 
             </div>
-            <div class="col-xs-1 text-center">
+            <div class="col-xs-1 text-center to">
               To
             </div>
             <div class="col-xs-3 col-md-2 col-lg-2" id='select-container'>
@@ -425,7 +439,7 @@
               </select>
 
             </div>
-            <div class="col-xs-1 text-center">
+            <div class="col-xs-1 text-center to">
               To
             </div>
             <div class="col-xs-3">
@@ -520,7 +534,7 @@
               </select>
 
             </div>
-            <div class="col-xs-1 text-center">
+            <div class="col-xs-1 text-center to">
               To
             </div>
             <div class="col-xs-3 col-sm-2 col-md-2 col-lg-2">
@@ -618,7 +632,7 @@
               </select>
 
             </div>
-            <div class="col-xs-1 text-center">
+            <div class="col-xs-1 text-center to">
               To
             </div>
             <div class="col-xs-3">
@@ -1234,7 +1248,7 @@
               </select>
 
             </div>
-            <div class="col-xs-1 text-center">
+            <div class="col-xs-1 text-center to">
               To
             </div>
             <div class="col-xs-3 col-sm-2 col-md-2 col-lg-2">
