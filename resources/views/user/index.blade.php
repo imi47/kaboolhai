@@ -23,7 +23,7 @@
 </div> -->
 
 <style>
-	body {
+	html {
         overflow-x:hidden;
     }
 

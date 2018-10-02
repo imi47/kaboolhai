@@ -32,6 +32,12 @@
 		/* .logo {
 			width:40px !important;
 		} */
+
+		@media (max-width:400px) {
+			#logindivv {
+				width:100vw;
+			}
+		}
 		
 		.top-searches-by div{
 			border-bottom:1px solid #fff;
@@ -123,7 +129,7 @@
 		top:0;
 		/* left:0; */
 		right:0;
-		bottom:0;
+		/* bottom:0; */
 		margin-right:0;
 	}
 

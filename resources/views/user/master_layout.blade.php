@@ -480,7 +480,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a href="{{ url('/') }}"><img src="{{ $user_assets }}/db_images/KH-logo2.png" alt=""></a>
+        <a href="{{ url('/') }}"><img src="{{ $user_assets }}/db_images/KH-logo2.png" alt="" width='40px'></a>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
