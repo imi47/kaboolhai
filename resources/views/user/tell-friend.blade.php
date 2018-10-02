@@ -44,7 +44,36 @@
   max-height: 60vh;
   overflow-y: scroll !important;
 }
+
+@media (max-width:991px) {
+  #friends-dropdown, #messages-dropdown, #notifications-dropdown {
+      margin-top:18px !important;
+      margin-bottom:-18px !important;
+    }
+
+    #username-dropdown-toggle {
+      margin-top:0px !important;
+    }
+    .humburger {
+        margin-top:11px !important;
+    }
+}
+
+@media (max-width:768px) {
+  #friends-dropdown, #messages-dropdown, #notifications-dropdown {
+      margin-top:13px !important;
+      margin-bottom:-13px !important;
+    }
+
+    #username-dropdown-toggle {
+      margin-top:0px !important;
+    }
+    .humburger {
+        margin-top:8px !important;
+    }
+}
 </style>
+
 <div class="container-fluid">
   <div style="padding-top:90px;"></div>
  <div class="col-md-3 hidden-sm hidden-xs">

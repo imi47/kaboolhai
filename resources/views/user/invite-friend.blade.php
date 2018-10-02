@@ -3,8 +3,36 @@
 
 <style>
   @media (max-width:991px) {
-    .profile_stat {
-      margin-bottom:20px;
+      .profile_stat {
+        margin-bottom:20px;
+      }
+
+      #friends-dropdown, #messages-dropdown, #notifications-dropdown {
+            margin-top:21px !important;
+            margin-bottom:-21px !important;
+        }
+
+        #username-dropdown-toggle {
+          margin-top:2px !important;
+        }
+        .humburger {
+            margin-top:14px !important;
+      }
+    }
+
+
+  @media (max-width:768px) {
+    #friends-dropdown, #messages-dropdown, #notifications-dropdown {
+          margin-top:14px !important;
+          display:inline-block !important;
+          margin-bottom:-12px !important;
+      }
+
+      #username-dropdown-toggle {
+        margin-top:-0px !important;
+      }
+      .humburger {
+          margin-top:8px !important;
     }
   }
 </style>

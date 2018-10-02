@@ -333,6 +333,34 @@ p.t
   .perdiv{
     width: 32.777%;
   }
+
+  @media (max-width:991px) {
+    #friends-dropdown, #messages-dropdown, #notifications-dropdown {
+      margin-top:18px !important;
+      margin-bottom:-18px !important;
+    }
+
+    #username-dropdown-toggle {
+      margin-top:0px !important;
+    }
+    .humburger {
+        margin-top:11px !important;
+    }
+  }
+
+  @media (max-width:768px) {
+    #friends-dropdown, #messages-dropdown, #notifications-dropdown {
+          margin-top:12px !important;
+          margin-bottom:-12px !important;
+      }
+
+      /* #username-dropdown-toggle {
+        margin-top:-0px !important;
+      } */
+      .humburger {
+          margin-top:8px !important;
+    }
+  }
    </style>
 
    <div id="wait" style="display: none;"></div>

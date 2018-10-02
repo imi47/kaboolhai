@@ -20,8 +20,8 @@
   }
 
   #friends-dropdown, #messages-dropdown, #notifications-dropdown {
-          margin-top:13px !important;
-          margin-bottom:-13px !important;
+          margin-top:11px !important;
+          margin-bottom:-11px !important;
       }
 
       #username-dropdown-toggle {
@@ -34,13 +34,10 @@
 
   @media (max-width:768px) {
     #friends-dropdown, #messages-dropdown, #notifications-dropdown {
-          margin-top:6px !important;
-          margin-bottom:-6px !important;
+          margin-top:4px !important;
+          margin-bottom:-4px !important;
       }
 
-      #username-dropdown-toggle {
-        margin-top:-9px !important;
-      }
       .humburger {
           margin-top:11px !important;
     }
