@@ -29,11 +29,43 @@
     }
   }
 
+  /* @media (min-width: 991px) and (max-width:1221px) {
+  .profile_stat.hvr-grow a img {
+    max-width:170px !important;
+    max-height:170px !important;
+  }
+} */
+
+.social_icon {
+  text-align:center;
+}
+
+
+@media (max-width:991px) and (min-width:768px) {
+    .profile_stat.hvr-grow a img {
+      width:180px !important;
+      height:180px !important;
+    }
+  }
+
+@media (max-width:1200px) and (min-width:991px) {
+    .profile_stat.hvr-grow a img {
+      width:280px !important;
+      height:280px !important;
+    }
+  }
+
   @media (max-width: 768px) {
     #myNavbar {
       position: absolute !important;
       right: 100px;
       top: 5px;
+    }
+
+    .profile_stat.hvr-grow a img{
+      width:80vw !important;
+      height:80vw !important;
+      margin-left:10.1vw;
     }
 }
     .hvr-grow {
@@ -62,6 +94,24 @@
     top:0;
   }
 } */
+
+
+@media (max-width:399px) {
+  .social_icon {
+    margin-left:20px !important;
+  }
+
+   .social_icon img {
+    margin-right:20px !important;
+  }
+}
+
+@media (max-width:332px) {
+  .social_icon img {
+    margin-right:15px !important;
+  }
+}
+
 
     @media (min-width: 300px) {
 .navbar-collapse.collapse {
@@ -99,33 +149,37 @@
   }
 }
 
+body, html {
+  overflow-x:hidden;
+}
+
   </style>
   
   <div class="col-md-9">
     
     <div class="row">
-      <div class="col-md-3 col-sm-3 col-xs-6">
+      <div class="col-xl-3 col-lg-3 col-md-5 col-sm-3 col-xs-12 col-xl-offset-0 col-lg-offset-0 col-md-offset-1 col-sm-offset-0">
         <div class="profile_stat hvr-grow">
           <a href="{{url('statistics')}}" target="__blank">
             <img src="{{ $user_assets }}/db_images/statistics.png" alt="" style="width:200px ;height: 200px;">
           </a>
         </div>
       </div>
-      <div class="col-md-3 col-sm-3 col-xs-6">
+      <div class="col-xl-3 col-lg-3 col-md-5 col-sm-3 col-xs-12 col-xl-offset-0 col-lg-offset-0 col-md-offset-1 col-sm-offset-0">
         <div class="profile_stat hvr-grow">
             <a href="{{ url('trust-badges') }}">
               <img src="{{ $user_assets }}/db_images/Trust-Badge.png" alt="" style="width:200px ;height: 200px;">
             </a>
         </div>       
       </div>
-      <div class="col-md-3 col-sm-3 col-xs-6">
+      <div class="col-xl-3 col-lg-3 col-md-5 col-sm-3 col-xs-12 col-xl-offset-0 col-lg-offset-0 col-md-offset-1 col-sm-offset-0">
         <div class="profile_stat hvr-grow">
             <a href="{{ url('membership') }}">
               <img src="{{ $user_assets }}/db_images/Membership.png" alt="" style="width:200px ;height: 200px;">
             </a>
         </div>
       </div>
-      <div class="col-md-3 col-sm-3 col-xs-6">
+      <div class="col-xl-3 col-lg-3 col-md-5 col-sm-3 col-xs-12 col-xl-offset-0 col-lg-offset-0 col-md-offset-1 col-sm-offset-0">
         <div class="profile_stat hvr-grow">
             <a href="#">
               <img src="{{ $user_assets }}/db_images/payments.png" alt="" style="width:200px ;height: 200px;">
@@ -137,28 +191,28 @@
     <br><br><br><br>
 
     <div class="row">
-      <div class="col-md-3 col-sm-3 col-xs-6">
+      <div class="col-xl-3 col-lg-3 col-md-5 col-sm-3 col-xs-12 col-xl-offset-0 col-lg-offset-0 col-md-offset-1 col-sm-offset-0">
         <div class="profile_stat hvr-grow">
           <a href="#">
             <img src="{{ $user_assets }}/db_images/Packages.png" alt="" style="width:200px ;height: 200px;">
           </a>
         </div>
       </div>
-      <div class="col-md-3 col-sm-3 col-xs-6">
+      <div class="col-xl-3 col-lg-3 col-md-5 col-sm-3 col-xs-12 col-xl-offset-0 col-lg-offset-0 col-md-offset-1 col-sm-offset-0">
         <div class="profile_stat hvr-grow">
             <a href="{{ url('manage-profile') }}">
               <img src="{{ $user_assets }}/db_images/Manage-Profile.png" alt="" style="width:200px ;height: 200px;">
             </a>
         </div>       
       </div>
-      <div class="col-md-3 col-sm-3 col-xs-6">
+      <div class="col-xl-3 col-lg-3 col-md-5 col-sm-3 col-xs-12 col-xl-offset-0 col-lg-offset-0 col-md-offset-1 col-sm-offset-0">
         <div class="profile_stat hvr-grow">
             <a href="{{ url('public-profile',user_data()->id) }}">
               <img src="{{ $user_assets }}/db_images/View-My-Profile.png" alt="" style="width:200px ;height: 200px;">
             </a>
         </div>
       </div>
-      <div class="col-md-3 col-sm-3 col-xs-6">
+      <div class="col-xl-3 col-lg-3 col-md-5 col-sm-3 col-xs-12 col-xl-offset-0 col-lg-offset-0 col-md-offset-1 col-sm-offset-0">
         <div class="profile_stat hvr-grow">
             <a href="{{ url('deactive-user',user_data()->id) }}">
               <img src="{{ $user_assets }}/db_images/Deactivate-Profile.png" alt="" style="width:200px ;height: 200px;">
@@ -170,28 +224,28 @@
     <br><br><br><br>
 
     <div class="row">
-      <div class="col-md-3 col-sm-3 col-xs-6">
+      <div class="col-xl-3 col-lg-3 col-md-5 col-sm-3 col-xs-12 col-xl-offset-0 col-lg-offset-0 col-md-offset-1 col-sm-offset-0">
         <div class="profile_stat hvr-grow">
           <a href="{{ url('blocked-list') }}">
             <img src="{{ $user_assets }}/db_images/Block-User.png" alt="" style="width:200px ;height: 200px;">
           </a>
         </div>
       </div>
-      <div class="col-md-3 col-sm-3 col-xs-6">
+      <div class="col-xl-3 col-lg-3 col-md-5 col-sm-3 col-xs-12 col-xl-offset-0 col-lg-offset-0 col-md-offset-1 col-sm-offset-0">
         <div class="profile_stat hvr-grow">
             <a href="{{ url('my-photo') }}">
               <img src="{{ $user_assets }}/db_images/Photo-Upload.png" alt="" style="width:200px ;height: 200px;">
             </a>
         </div>       
       </div>
-      <div class="col-md-3 col-sm-3 col-xs-6">
+      <div class="col-xl-3 col-lg-3 col-md-5 col-sm-3 col-xs-12 col-xl-offset-0 col-lg-offset-0 col-md-offset-1 col-sm-offset-0">
         <div class="profile_stat hvr-grow">
             <a href="{{ url('latest-updates') }}">
               <img src="{{ $user_assets }}/db_images/Latest-Updates.png" alt="" style="width:200px ;height: 200px;">
             </a>
         </div>
       </div>
-      <div class="col-md-3 col-sm-3 col-xs-6">
+      <div class="col-xl-3 col-lg-3 col-md-5 col-sm-3 col-xs-12 col-xl-offset-0 col-lg-offset-0 col-md-offset-1 col-sm-offset-0">
         <div class="profile_stat hvr-grow">
             <a href="{{ url('email-prefrences') }}">
               <img src="{{ $user_assets }}/db_images/Email-Preferences.png" alt="" style="width:200px ;height: 200px;">
@@ -207,7 +261,7 @@
     <br>
 
 
-    <div class="row social_icon">
+     <div class="row social_icon">
       <div class="col-sm-3">
       </div>
       <div class="col-sm-8">
