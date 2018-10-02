@@ -869,9 +869,6 @@
                     </tr>
                 </table>
 
-					<style>
-						
-					</style>
 					 <div class="top-searches-by">
 						<div><a href="{{ url( 'pakistani') }}">Pakistani Muslim Matrimony</a></div>
 						<div><a href="{{ url( 'UAE') }}">UAE Muslim Matrimony</a></div>

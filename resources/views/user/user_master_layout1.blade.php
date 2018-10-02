@@ -84,6 +84,11 @@
       background-color:#222;
       height:1px;
     }
+
+    #signin-li {
+      margin-top:80px;
+    }
+
      #sidebar-2 ul li a {
        text-decoration:none;
        color:#fff;
@@ -724,7 +729,7 @@
           @endif
 
             @if(empty(Session::get('user_id')))
-            <li class="wow fadeInDown login-li" data-wow-delay="0.1s"><a href="#" class="M"><span><img width="40"
+            <li class="wow fadeInDown login-li" data-wow-delay="0.1s"><a href="#" class="M" id='signin-li'><span><img width="40"
                     height="40" src="{{ $user_assets }}/login.svg" alt="" /></span><span style="padding-left:15px;">Sign
                   in</span></a></li>
             <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="{{ url('register') }}" class="M"><span><img width="40"
