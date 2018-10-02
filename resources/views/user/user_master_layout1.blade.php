@@ -32,9 +32,13 @@
     .label {
       display: none;
     }
-    .logo {
-      width:auto;
+
+    @media (max-width:420px) {
+      .logo {
+        width:47px;
+      }
     }
+    
     #menu-div .navbar-collapse.collapse {
       float:right;
     }
@@ -120,7 +124,7 @@
        
            if(mq.matches) {
              document.querySelector('.logo-light img').src='{{ $user_assets }}/db_images/KH-logo2.png';
-             document.querySelector('.logo').style.width = '40px';
+             document.querySelector('.logo').style.width = '40px ';
            }
            else {
              document.querySelector('.logo-light img').src='{{ $user_assets }}/images/kaboolhai.png';
@@ -132,7 +136,7 @@
          function changeLogo() {
            if(mq.matches) {
              document.querySelector('.logo-light img').src='{{ $user_assets }}/db_images/KH-logo2.png';
-             document.querySelector('.logo').style.width = '40px';
+             document.querySelector('.logo').style.width = '40px ';
            }
            else {
              document.querySelector('.logo-light img').src='{{ $user_assets }}/images/kaboolhai.png';
@@ -232,6 +236,35 @@
       height: 350px;
       overflow-y: scroll;
     }
+
+    .top-searches-by div{
+			border-bottom:1px solid #fff;
+			padding:10px;
+		}
+
+    .top-searches-by div > a {
+    color: #fff !important;
+    }
+
+
+    @media (max-width:520px) {
+			.tpsrch {
+				display:none;
+			}
+			.top-searches-by {
+				display:block;
+			}
+		}
+
+		@media (min-width:521px) {
+			.tpsrch {
+				display:block;
+			}
+			.top-searches-by {
+				display:none;
+			}
+		}
+    
     label {
       /*padding: 10px;*/
       /*background: red; */
@@ -1221,6 +1254,14 @@
                   </table>
                </div>
             </div>
+
+            <div class="top-searches-by">
+              <div><a href="{{ url( 'pakistani') }}">Pakistani Muslim Matrimony</a></div>
+              <div><a href="{{ url( 'UAE') }}">UAE Muslim Matrimony</a></div>
+              <div><a href="{{ url( 'United-Kingdom') }}">United Kingdom Muslim Matrimony</a></div>
+              <div><a href="{{ url( 'USA') }}">USA Muslim Matrimony Muslim Matrimony</a></div>
+              <div><a href="{{ url( 'canada') }}">CANADA Muslim Matrimony</a></div>
+					 </div>
             <!-- scroll to top -->
             <a href="javascript:;" class="scrollToTop"></a>
          </div>
