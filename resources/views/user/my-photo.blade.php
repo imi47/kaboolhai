@@ -17,8 +17,34 @@
     padding: 0 7px;
     font-weight:700;
     margin-top:15px;
-  } 
-}
+  }
+
+  #friends-dropdown, #messages-dropdown, #notifications-dropdown {
+          margin-top:13px !important;
+          margin-bottom:-13px !important;
+      }
+
+      #username-dropdown-toggle {
+        margin-top:-10px !important;
+      }
+      .humburger {
+          margin-top:17px !important;
+    }
+  }
+
+  @media (max-width:768px) {
+    #friends-dropdown, #messages-dropdown, #notifications-dropdown {
+          margin-top:6px !important;
+          margin-bottom:-6px !important;
+      }
+
+      #username-dropdown-toggle {
+        margin-top:-9px !important;
+      }
+      .humburger {
+          margin-top:11px !important;
+    }
+  }
 </style>
 <div class="col-md-12">
          {{--  <h4 class="text-color" style="text-align: center;">Settings</h4> --}}

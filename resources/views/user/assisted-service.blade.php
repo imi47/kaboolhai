@@ -21,6 +21,14 @@
            margin:60px auto -200px auto !important;
            float:none;
         }
+
+        #friends-dropdown, #messages-dropdown, #notifications-dropdown {
+            margin-top:15px !important;
+            margin-bottom:-15px !important;
+        }
+        .humburger {
+            margin-top:13px !important;
+        }
     }
 
     @media (max-width:768px) {
@@ -38,6 +46,14 @@
 
         #box2 {
             margin-bottom:50px;
+        }
+
+        #friends-dropdown, #messages-dropdown, #notifications-dropdown {
+            margin-top:12px !important;
+            margin-bottom:-12px !important;
+        }
+        .humburger {
+            margin-top:7px !important;
         }
     }
 
