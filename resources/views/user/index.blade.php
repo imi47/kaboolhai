@@ -98,7 +98,7 @@
 
     @media (max-width:660px) {
         #our-partners-section #Carousel {
-            margin-left:21vw;
+            margin-left:19vw;
         }
     }
 

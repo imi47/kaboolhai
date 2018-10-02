@@ -25,6 +25,10 @@
 			color:#fff !important;
 		}
 
+		html {
+			overflow-x:hidden;
+		}
+
 		/* .logo {
 			width:40px !important;
 		} */
