@@ -136,7 +136,6 @@
      } */
 
     #sidebar-2 ul li:not(.divider) {
-      text-align:center;
       padding:10px;
       font-size:large;
     }
