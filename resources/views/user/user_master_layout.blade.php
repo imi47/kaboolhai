@@ -25,7 +25,7 @@
 			color:#fff !important;
 		}
 
-		html {
+		html, body {
 			overflow-x:hidden;
 		}
 

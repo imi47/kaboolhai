@@ -318,7 +318,6 @@
     top:0;
     /* left:0; */
     right:0;
-    bottom:0;
     margin-right:0;
   }
     #login-div-x {
@@ -329,6 +328,13 @@
       right: 0;
       cursor: pointer;
     }
+
+    @media (max-width:400px) {
+			#logindivv {
+				width:100vw;
+			}
+		}
+    
     .remove-top-margin {
     margin-top:-70px;
     }
