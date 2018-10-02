@@ -8,11 +8,38 @@
     line-height: 50px;
   }
 
+  @media (max-width:991px) and (min-width:768px) {
+    .humburger {
+      margin-top:12px !important;
+    }
+  }
+
   @media (max-width:991px) {
     #side-info {
       margin-top:50px;
     }
+
+    #friends-dropdown, #messages-dropdown, #notifications-dropdown {
+      margin-top:20px !important;
+      margin-bottom:-20px !important;
+    }
+
+    .navbar-default .navbar-nav > li > a { 
+      line-height:54px;
+    }
   }
+
+  @media (max-width:768px) {
+    #friends-dropdown, #messages-dropdown, #notifications-dropdown {
+      margin-top:12px !important;
+      margin-bottom:-12px !important;
+    }
+
+    .navbar-default .navbar-nav > li > a { 
+      line-height:44px;
+    }
+  }
+
 </style>
 <div style="padding-top:90px;"></div>
 <div class="container-fluid">
