@@ -4,6 +4,10 @@
 <link rel="stylesheet" href="{{ $user_assets }}/css/responsive.css">
 
 <style type="text/css">
+#accordion.nav.navbar-nav {
+  margin-top:20px;
+}
+
   .text-color{
     color: white;
   }
