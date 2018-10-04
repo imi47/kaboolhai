@@ -374,9 +374,10 @@ p.t
 
       @media (max-width:420px) {
         .pl-top-selection img {
-        width:25% !important;
+        width:40% !important;
         }
       }
+    }
 
       /* #username-dropdown-toggle {
         margin-top:-0px !important;
@@ -939,7 +940,7 @@ p.t
 
     <div class="well w">
       <div class="row">
-        <div class="col-xs-6 smallest">
+        <div class="col-xs-6">
             <a href="{{ url('single') }}" class="pl-top-selection pull-left pl-text-center @if($search == 'single') category-active @endif" target="_blank" style="    margin-bottom: 23px;">
               <div>
                 <img src="{{ $user_assets }}/single.png">
@@ -947,7 +948,7 @@ p.t
               </div>
             </a>
         </div>
-        <div class="col-xs-6 smallest">
+        <div class="col-xs-6">
           <a href="{{ url('widow') }}" class="pl-top-selection pull-left pl-text-center @if($search == 'widow') category-active @endif" target="_blank">
             <div>
              <img src="{{ $user_assets }}/widowed.png">
@@ -955,7 +956,7 @@ p.t
             </div>
           </a>
         </div>
-        <div class="col-xs-6 smallest">
+        <div class="col-xs-6">
           <a href="{{ url('divorcee') }}" class="pl-top-selection pull-left pl-text-center @if($search == 'divorcee') category-active @endif" target="_blank" style="margin-bottom: 23px;">
             <div>
              <img src="{{ $user_assets }}/divorced.png">
@@ -963,7 +964,7 @@ p.t
             </div>
           </a>
         </div>
-        <div class="col-xs-6 smallest">
+        <div class="col-xs-6">
           <a href="{{ url('annulled') }}" class="pl-top-selection pull-left pl-text-center @if($search == 'annulled') category-active @endif" target="_blank">
             <div>
               <img src="{{ $user_assets }}/annul.png">
@@ -971,7 +972,7 @@ p.t
             </div>
           </a>
         </div>
-        <div class="col-xs-6 smallest">
+        <div class="col-xs-6">
           <a href="{{ url('polygamy') }}" class="pl-top-selection pull-left pl-text-center @if($search == 'polygamy') category-active @endif"  target="_blank">
             <div>
                <img src="{{ $user_assets }}/polygamy.png">
@@ -979,7 +980,7 @@ p.t
             </div>
           </a>
         </div>
-        <div class="col-xs-6 smallest">
+        <div class="col-xs-6">
           <a href="{{ url('separated') }}" class="pl-top-selection pull-left pl-text-center @if($search == 'separated') category-active @endif" target="_blank">
             <div>
               <img src="{{ $user_assets }}/separated.png">
