@@ -1,6 +1,10 @@
 @extends('user/user_master_layout1') 
 @section('data')
 <style type="text/css">
+  .message-wraper {
+    overflow-x:hidden;
+  }
+
   .container-1 {
     border: 2px solid #dedede;
     background-color: #f1f1f1;
