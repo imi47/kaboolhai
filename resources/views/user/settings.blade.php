@@ -77,9 +77,25 @@ html, body {
     background-color: #555;
 }
 
+.humburger {
+  margin-right:10px;
+}
+
 #friends-dropdown, #messages-dropdown, #notifications-dropdown {
-    margin-top:21px !important;
-    margin-bottom:-21px !important;
+    margin-top:13px !important;
+    margin-bottom:-13px !important;
+  }
+
+.icon-dropdown {
+  margin-top:-15px !important;
+}
+
+.go_more {
+  margin-top:-22px !important;
+}
+
+  #friends-dropdown a, #messages-dropdown a, #notifications-dropdown a{
+    padding:10px;
   }
 
   #username-dropdown-toggle {
@@ -94,11 +110,6 @@ html, body {
 }
 
 @media (max-width:991px) {
-    #friends-dropdown, #messages-dropdown, #notifications-dropdown {
-            margin-top:21px !important;
-            margin-bottom:-21px !important;
-        }
-
         #username-dropdown-toggle {
           margin-top:9px !important;
         }
@@ -109,8 +120,8 @@ html, body {
 
    @media (max-width:768px) {
      #friends-dropdown, #messages-dropdown, #notifications-dropdown {
-            margin-top:12px !important;
-            margin-bottom:-12px !important;
+            margin-top:5px !important;
+            margin-bottom:-5px !important;
         }
 
       #username-dropdown-toggle {
