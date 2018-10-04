@@ -1920,3 +1920,9 @@ label{ margin-bottom:5px;}
         .blog-grid-listing > .col-sm-4:nth-child(3n + 4) { clear: none; }
         .blog-grid-listing > .col-sm-4:nth-child(2n + 3) { clear: none; }
 }
+
+@media (max-width:420px) {
+    .smallest {
+        width:100%;
+    }
+}

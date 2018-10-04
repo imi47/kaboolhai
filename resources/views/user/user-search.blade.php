@@ -7,6 +7,14 @@
    <link rel="stylesheet" href="{{ $user_assets }}/css/advance-profile.css" />
 
    <style type="text/css">
+   .add-margin {
+     margin:10px;
+   }
+
+   .bg-orange.no-padding.wow.animated {
+     margin-top:53px;
+   }
+
    .emojiPicker{
     
    height: 0px !important;
@@ -334,6 +342,12 @@ p.t
     width: 32.777%;
   }
 
+  @media (min-width:991px) {
+    .pl-top-selection img {
+      width:21.5% !important;
+    }
+  }
+
   @media (max-width:991px) {
     #friends-dropdown, #messages-dropdown, #notifications-dropdown {
       margin-top:18px !important;
@@ -346,12 +360,22 @@ p.t
     .humburger {
         margin-top:11px !important;
     }
+
+    .pl-top-selection img {
+      width:15% !important;
+    }
   }
 
   @media (max-width:768px) {
     #friends-dropdown, #messages-dropdown, #notifications-dropdown {
           margin-top:12px !important;
           margin-bottom:-12px !important;
+      }
+
+      @media (max-width:420px) {
+        .pl-top-selection img {
+        width:25% !important;
+        }
       }
 
       /* #username-dropdown-toggle {
@@ -385,7 +409,7 @@ p.t
       @endphp
       <div class="row" {{-- @if($search == 'user-search') hidden="" --}} {{-- @endif --}}>
         <form method="get" action="{{ url('user-search') }}">
-        <div class="col-sm-3">
+        <div class="col-sm-3 add-margin">
           <select name="country_id" id="" class="serach_relative">
             <option value="">Country</option>
              @foreach ($country as $row)
@@ -395,7 +419,7 @@ p.t
                              @endforeach
           </select>
         </div>
-        <div class="col-sm-3">
+        <div class="col-sm-3 add-margin">
           <select name="language" id="" class="serach_relative">
             <option value="">Language</option>
             <option value="Urdu">Urdu</option> 
@@ -473,7 +497,7 @@ p.t
 <option value="Tulu">Tulu</option> 
           </select>
         </div>
-        <div class="col-sm-3">
+        <div class="col-sm-3 add-margin">
           <select name="qualification" id="" class="serach_relative">
              <option value="">Qualification</option>
              Select ---</option>
@@ -614,7 +638,7 @@ p.t
 </optgroup>
           </select>
         </div>
-        <div class="col-sm-3">
+        <div class="col-sm-3 add-margin">
           <select name="job" id="" class="serach_relative">
              <option value="">Occupation</option>
              <option value="Softwarw Engineer">Softwarw Engineer</option>
@@ -652,7 +676,7 @@ p.t
                     <option value="Real Estate">Real Estate</option>
           </select>
         </div>
-        <div class="col-sm-3">
+        <div class="col-sm-3 add-margin">
           <select name="age_from" id="" class="serach_relative">
              <option value="">Age from</option>
              @for($i =  date('y');  $i <= date('y')+82 ; $i++)
@@ -661,7 +685,7 @@ p.t
           </select>
         </div>
         
-        <div class="col-sm-3">
+        <div class="col-sm-3 add-margin">
           <select name="age_to" id="" class="serach_relative">
              <option value="">Age to</option>
               @for($i = date('y')+82; $i >= date('y'); $i--)
@@ -669,7 +693,7 @@ p.t
 @endfor 
           </select>
         </div>
-        <div class="col-sm-3">
+        <div class="col-sm-3 add-margin">
           <select name="loking_for" id="" class="serach_relative">
  <option value="">Gender</option>
                    <option value="Male">Male</option>
@@ -678,12 +702,12 @@ p.t
           </select>
         </div>
         
-        {{-- <div class="col-sm-3">
+        {{-- <div class="col-sm-3 add-margin">
           <select name="" id="" class="serach_relative">
              <option value="">Height to</option>
           </select>
         </div> --}}
-        <div class="col-sm-3">
+        <div class="col-sm-3 add-margin">
           <input type="hidden" name="search" value="{{ $search }}">
           <button type="submit" class="s_r_btn">Search</button>
         </div>
@@ -915,7 +939,7 @@ p.t
 
     <div class="well w">
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-xs-6 smallest">
             <a href="{{ url('single') }}" class="pl-top-selection pull-left pl-text-center @if($search == 'single') category-active @endif" target="_blank" style="    margin-bottom: 23px;">
               <div>
                 <img src="{{ $user_assets }}/single.png">
@@ -923,7 +947,7 @@ p.t
               </div>
             </a>
         </div>
-        <div class="col-sm-6">
+        <div class="col-xs-6 smallest">
           <a href="{{ url('widow') }}" class="pl-top-selection pull-left pl-text-center @if($search == 'widow') category-active @endif" target="_blank">
             <div>
              <img src="{{ $user_assets }}/widowed.png">
@@ -931,7 +955,7 @@ p.t
             </div>
           </a>
         </div>
-        <div class="col-sm-6">
+        <div class="col-xs-6 smallest">
           <a href="{{ url('divorcee') }}" class="pl-top-selection pull-left pl-text-center @if($search == 'divorcee') category-active @endif" target="_blank" style="margin-bottom: 23px;">
             <div>
              <img src="{{ $user_assets }}/divorced.png">
@@ -939,7 +963,7 @@ p.t
             </div>
           </a>
         </div>
-        <div class="col-sm-6">
+        <div class="col-xs-6 smallest">
           <a href="{{ url('annulled') }}" class="pl-top-selection pull-left pl-text-center @if($search == 'annulled') category-active @endif" target="_blank">
             <div>
               <img src="{{ $user_assets }}/annul.png">
@@ -947,7 +971,7 @@ p.t
             </div>
           </a>
         </div>
-        <div class="col-sm-6">
+        <div class="col-xs-6 smallest">
           <a href="{{ url('polygamy') }}" class="pl-top-selection pull-left pl-text-center @if($search == 'polygamy') category-active @endif"  target="_blank">
             <div>
                <img src="{{ $user_assets }}/polygamy.png">
@@ -955,7 +979,7 @@ p.t
             </div>
           </a>
         </div>
-        <div class="col-sm-6">
+        <div class="col-xs-6 smallest">
           <a href="{{ url('separated') }}" class="pl-top-selection pull-left pl-text-center @if($search == 'separated') category-active @endif" target="_blank">
             <div>
               <img src="{{ $user_assets }}/separated.png">
