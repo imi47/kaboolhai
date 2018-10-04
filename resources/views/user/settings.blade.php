@@ -1,6 +1,8 @@
 @extends('user/user_master_layout1') 
 @section('data')
 
+<link rel="stylesheet" href="{{ $user_assets }}/css/responsive.css">
+
 <style type="text/css">
   .text-color{
     color: white;
@@ -55,6 +57,58 @@
     color: #fff;
     background-color: #555;
 }
+
+#friends-dropdown, #messages-dropdown, #notifications-dropdown {
+    margin-top:21px !important;
+    margin-bottom:-21px !important;
+  }
+
+  #username-dropdown-toggle {
+    margin-top:18px !important;
+  }
+  .humburger {
+      margin-top:14px !important;
+}
+
+.nav li.dropdown {
+  width:auto !important;
+}
+
+@media (max-width:991px) {
+    #friends-dropdown, #messages-dropdown, #notifications-dropdown {
+            margin-top:21px !important;
+            margin-bottom:-21px !important;
+        }
+
+        #username-dropdown-toggle {
+          margin-top:9px !important;
+        }
+        .humburger {
+            margin-top:14px !important;
+      }
+   }
+
+   @media (max-width:768px) {
+     #friends-dropdown, #messages-dropdown, #notifications-dropdown {
+            margin-top:12px !important;
+            margin-bottom:-12px !important;
+        }
+
+      #username-dropdown-toggle {
+        margin-top:-0px !important;
+      }
+      .humburger {
+          margin-top:8px !important;
+    }
+  }
+
+  @media (min-width: 768px) {
+  .navbar-nav>li>a {
+      padding-top: 0;
+      padding-bottom: 0;
+  }
+}
+
 </style>
  <div class="col-md-12">
          {{--  <h4 class="text-color" style="text-align: center;">Settings</h4> --}}
