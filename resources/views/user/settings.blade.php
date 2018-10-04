@@ -8,6 +8,10 @@
   margin-top:20px;
 }
 
+.logo {
+  width:40px;
+}
+
   .text-color{
     color: white;
   }
