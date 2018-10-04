@@ -4,8 +4,17 @@
 <link rel="stylesheet" href="{{ $user_assets }}/css/responsive.css">
 
 <style type="text/css">
+
+html, body {
+  overflow-x:hidden;
+}
+
 #accordion.nav.navbar-nav {
   margin-top:20px;
+}
+
+.panel.with-nav-tabs.panel-default {
+  width:98%;
 }
 
 @media (max-width:420px) {
