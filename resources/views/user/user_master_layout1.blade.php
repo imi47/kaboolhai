@@ -29,21 +29,16 @@
     body {
       /* position:relative; */
     }
-
     
-
     .label {
       display: none;
     }
-
     @media (max-width:420px) {
       .logo {
         width:47px;
       }
     }
-
     
-
     #menu-div .navbar-collapse.collapse {
       float:right;
     }
@@ -92,19 +87,21 @@
       background-color:#222;
       height:1px;
     }
-
     #signin-li {
       margin-top:80px;
     }
-
      #sidebar-2 ul li a {
        text-decoration:none;
        color:#fff;
      }
-
     @media (max-width:768px) {
       #stay-tuned-container p {
         margin:10px;
+      }
+
+      .bg-orange.no-padding.wow p{
+        padding-left:10px;
+        padding-right:10px; 
       }
     }
   </style>
@@ -241,17 +238,13 @@
       height: 350px;
       overflow-y: scroll;
     }
-
     .top-searches-by div{
 			border-bottom:1px solid #fff;
 			padding:10px;
 		}
-
     .top-searches-by div > a {
     color: #fff !important;
     }
-
-
     @media (max-width:520px) {
 			.tpsrch {
 				display:none;
@@ -260,7 +253,6 @@
 				display:block;
 			}
 		}
-
 		@media (min-width:521px) {
 			.tpsrch {
 				display:block;
@@ -268,7 +260,14 @@
 			.top-searches-by {
 				display:none;
 			}
-		}
+    }
+    
+    @media (min-width:992px) {
+      .nav-white.sticky-nav .navbar-nav li a {
+        margin-top:5px;
+      }
+
+    }
     
     label {
       /*padding: 10px;*/
@@ -325,11 +324,9 @@
       .dropdown-menu {
         left: unset !important;
       }
-
       .navbar-default .navbar-nav > li > a { 
         line-height:54px;
       }
-
       .humburger {
         margin-top:12px !important;
         margin-bottom:-5px !important;
@@ -375,7 +372,6 @@
       right: 0;
       cursor: pointer;
     }
-
     @media (max-width:400px) {
 			#logindivv {
 				width:100vw;
@@ -991,7 +987,6 @@
       .dropdown-menu {
         /* position:absolute; */
       }
-
       .navbar-default .navbar-nav > li > a { 
         line-height:40px;
       }
@@ -1111,7 +1106,7 @@
       </script>
       @yield('data')
       <footer>
-         <section class="bg-orange no-padding wow ">
+         <section class="bg-orange no-padding wow">
             <div class="container">
                <div class="row padding-two sm-text-center">
                   <div class="col-md-9 no-padding">

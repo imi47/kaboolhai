@@ -200,10 +200,8 @@
  
      
         var country_id= sel.value;
-
              
                             document.getElementById("wait").style.display = "block";
-
                             $.post('{{ url('/get_state') }}' , {_token: '{{ csrf_token() }}' , country_id: country_id} , function(data)
                             {
                                 
@@ -230,12 +228,10 @@
         });
                  
       }
-
   $('#gender').val('{{ $user_data->gender }}');
   $('#day').val('{{ $user_data->day }}');
   $('#month').val('{{ $user_data->month }}');
   $('#year').val('{{ $user_data->year }}');
-
 </script>
 <style type="text/css">
 #wait {
@@ -335,8 +331,3 @@
 <script type="text/javascript" src="{{ asset('public') }}/js/chosen.jq.js"></script>
 
 @endpush
-
-
-
-
-
