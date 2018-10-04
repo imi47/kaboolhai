@@ -37,6 +37,11 @@
 		 }
 
 		 @media (max-width:991px) {
+				#carousel-default1 img {
+					width:100% !important;
+					margin:auto;
+					height:auto !important;
+				}
 			 .imgofuser {
 				 float:none;
 				 clear:both;
