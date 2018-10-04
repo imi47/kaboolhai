@@ -64,8 +64,9 @@
 }
  
  #navsidebare {
-      overflow: scroll;
-      height: 100vh;
+  position:fixed;
+  overflow: scroll;
+  height: 100vh;
   }
 
   #navsidebare a {
