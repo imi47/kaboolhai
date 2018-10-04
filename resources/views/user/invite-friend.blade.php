@@ -35,6 +35,25 @@
           margin-top:8px !important;
     }
   }
+
+  @media (max-width:400px) {
+
+    .profile_stat_container {
+      width:100%;
+      margin-left:4.5vw;
+    }
+
+    .profile_stat.hvr-grow a img {
+      width:75vw !important;
+      height:75vw !important;
+    }
+  }
+
+  @media (max-width:320px) {
+    .profile_stat_container {
+      margin-left:3.5vw;
+    }
+  }
 </style>
 
 <div style="padding-top:90px;"></div>
@@ -50,7 +69,7 @@
     <div class="row">
       <h2 class="dashboard-h2 text-center " style="margin-bottom:100px; ">Invite Friends</h2>
       
-      <div class="col-md-3 col-md-offset-0 col-sm-4 col-sm-offset-3 col-xs-6">
+      <div class="col-md-3 col-md-offset-0 col-sm-4 col-sm-offset-3 col-xs-6 profile_stat_container">
        <div class="profile_stat hvr-grow">
           <a href="javascript:popup_share('https://www.facebook.com/sharer.php?={{url('/')}}')" target="__blank">
             <img src="{{ $user_assets }}/fb.jpg" alt="" style="width:150px ;height: 150px; border-radius:5px;">
@@ -58,7 +77,7 @@
         </div> 
       </div>
       
-      <div class="col-md-3 col-sm-4 col-xs-6">
+      <div class="col-md-3 col-sm-4 col-xs-6 profile_stat_container">
         <div class="profile_stat hvr-grow">
           <a href="javascript:popup_share('https://plus.google.com/share?url={{url('/')}}',700,320)" target="__blank">
             <img src="{{ $user_assets }}/g+.jpg" alt="" style="width:150px ;height: 150px; border-radius:5px;">
@@ -66,7 +85,7 @@
         </div>
       </div>
       
-      <div class="col-md-3 col-md-offset-0 col-sm-4 col-sm-offset-3 col-xs-6">
+      <div class="col-md-3 col-md-offset-0 col-sm-4 col-sm-offset-3 col-xs-6 profile_stat_container">
         <div class="profile_stat hvr-grow">
           <a href="javascript:popup_share('https://twitter.com/home?status={{url('/')}}',700,320)" target="__blank">
             <img src="{{ $user_assets }}/twtr.jpg" alt="" style="width:150px ;height: 150px; border-radius:5px;">
@@ -74,7 +93,7 @@
         </div>
       </div>
       
-      <div class="col-md-3 col-sm-4 col-xs-6">
+      <div class="col-md-3 col-sm-4 col-xs-6 profile_stat_container">
         <div class="profile_stat hvr-grow">
           <a href="javascript:popup_share('http://www.linkedin.com/shareArticle?mini=true&url={{url('/')}}',700,320)" target="__blank">
             <img src="{{ $user_assets }}/link.jpg" alt="" style="width:150px ;height: 150px; border-radius:5px;">
