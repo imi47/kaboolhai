@@ -8,8 +8,10 @@
   margin-top:20px;
 }
 
-.logo {
-  width:40px;
+@media (max-width:420px) {
+  .logo {
+    width:40px;
+  }
 }
 
   .text-color{
