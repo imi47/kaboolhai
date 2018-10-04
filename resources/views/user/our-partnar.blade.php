@@ -13,6 +13,7 @@
     text-align: center;
     padding-bottom:20px;
     font-family: "Source Sans Pro", sans-serif;
+    line-height:1.1em;
   }
   .ptext
   {
