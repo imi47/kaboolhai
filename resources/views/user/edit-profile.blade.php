@@ -1,6 +1,16 @@
 @extends('user/user_master_layout1') 
 @section('data') 
 
+<style>
+  .container-fluid {
+    width:100%;
+  }
+
+  .navbar-form.navbar-right:last-child {
+    margin-top:-25px;
+  }
+</style>
+
 <br><br><br><br>
   
   <div class="container-fluid"> 

@@ -3,8 +3,13 @@
 
 <style>
 
-
-
+  @media (max-width:991px) {
+    #carousel-default img {
+    width:100% !important;
+    margin:auto;
+    height:auto !important;
+  }
+}
 
   @media (max-width:716px) {
   .btn-group {

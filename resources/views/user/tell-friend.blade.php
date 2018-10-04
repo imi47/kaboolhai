@@ -5,6 +5,10 @@
     overflow-x:hidden;
   }
 
+  .message-wraper .row {
+    margin:0;
+  }
+
   .container-1 {
     border: 2px solid #dedede;
     background-color: #f1f1f1;
