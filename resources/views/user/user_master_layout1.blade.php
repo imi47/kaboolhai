@@ -29,6 +29,9 @@
     body {
       /* position:relative; */
     }
+
+    
+
     .label {
       display: none;
     }
@@ -328,7 +331,7 @@
       }
 
       .humburger {
-        margin-top:5px !important;
+        margin-top:12px !important;
         margin-bottom:-5px !important;
       }
     }
@@ -992,8 +995,9 @@
       .navbar-default .navbar-nav > li > a { 
         line-height:40px;
       }
-
-      
+      .humburger {
+        margin-top:6px !important;
+      }
     }
     @media (max-width:380px) {
       /* #menu-div .nav li.dropdown:not(.username-dropdown-toggle) { */
