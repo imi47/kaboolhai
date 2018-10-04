@@ -952,7 +952,7 @@
 
       $('#sidebar-2 span').click(function(){
         $('#sidebar-2').css('right', '-260px');
-        $('#btntoshowmenu').show();
+        $('.navbar-toggle-2').show();
       });
 
     </script>

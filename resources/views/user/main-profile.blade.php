@@ -29,13 +29,6 @@
     }
   }
 
-  /* @media (min-width: 991px) and (max-width:1221px) {
-  .profile_stat.hvr-grow a img {
-    max-width:170px !important;
-    max-height:170px !important;
-  }
-} */
-
 .social_icon {
   text-align:center;
 }
@@ -80,21 +73,6 @@
     }
 }
 
-    /* @media (max-width:1200px) {
-      #myNavbar .nav:nth-child(1):nth-child(-n+6) {
-        display:none;
-      }
-    } */
-
-
-/* @media (min-width:451px) {
-  #myNavbar {
-    position:absolute !important;
-    right:0;
-    top:0;
-  }
-} */
-
 
 @media (max-width:399px) {
   .social_icon {
@@ -113,7 +91,7 @@
 }
 
 
-    @media (min-width: 300px) {
+@media (min-width: 300px) {
 .navbar-collapse.collapse {
     display: block!important;
     height: auto!important;
@@ -297,8 +275,7 @@ body, html {
  
 
 
-<br><br>  
-
+<br><br>
 
 @endsection
 
