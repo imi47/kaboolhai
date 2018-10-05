@@ -29,23 +29,35 @@
         .humburger {
             margin-top:13px !important;
         }
+
+        html, body {
+            overflow-x:hidden;
+        }
     }
 
     @media (max-width:768px) {
-        .howtoouterwrapper .margintop {
+        /* .howtoouterwrapper .margintop {
             margin-top:610px; 
-        }
+        } */
 
         .horizontal-margin {
             margin:0 15px;
         }
 
-        #box1 {
+        /* #box1 {
             margin-bottom:-30px;
         }
 
         #box2 {
             margin-bottom:50px;
+        } */
+
+        #box1, #box2 {
+            margin-bottom:50px;
+        }
+        
+        #box5 {
+            margin-top:650px;
         }
 
         #friends-dropdown, #messages-dropdown, #notifications-dropdown {
@@ -55,11 +67,21 @@
         .humburger {
             margin-top:7px !important;
         }
+
+        .arrow-boxdiv#loading, .topboxstrip, .stripdisplay, .arrow-box {
+            display:none;
+        }
     }
 
     @media (max-width:548px) {
-        .howtoouterwrapper .margintop {
-            margin-top:640px;
+       #box5 {
+            margin-top:605px;
+        }
+    }
+
+     @media (max-width:547px) {
+       #box5 {
+            margin-top:625px;
         }
     }
 
@@ -67,7 +89,73 @@
         #register {
             width:100%;
         }
-    }
+     }
+
+     @media (min-width:320px) {
+         #box5 {
+             margin-top:720px;
+         }
+     }
+
+      @media (min-width:325px) {
+         #box5 {
+             margin-top:690px;
+         }
+     }
+
+      @media (min-width:381px) {
+         #box5 {
+             margin-top:650px !important;
+         }
+     }
+
+      @media (min-width:394px) {
+         #box5 {
+             margin-top:640px !important;
+         }
+     }
+
+     @media (min-width:527px) {
+         #box5 {
+             margin-top:630px !important;
+         }
+     }
+
+     @media (min-width:339px) {
+         #box5 {
+             margin-top:675px;
+         }
+     }
+
+        /* @media (max-width:380px) {
+            #box5 {
+                margin-top:675px
+            }
+        } */
+
+        /* @media (max-width:338px) {
+            #box5 {
+                margin-top:690px
+            }
+        }
+
+        @media (max-width:324px) {
+            #box5 {
+                margin-top:710px
+            }
+        }
+
+         @media (max-width:321px) {
+            #box5 {
+                margin-top:730px
+            }
+        }
+
+        @media (max-width:307px) {
+            #box5 {
+                margin-top:750px
+            }
+        } */
 </style>
  
       <div id="home"></div>
@@ -255,7 +343,7 @@
                      </div>
                   </div>
                   <div class="col-sm-4 col-sm-offset-4 howtoouterwrapper divfloat">
-                     <div class="dirbox margintop box1 horizontal-margin" id='box5'>
+                     <div class="dirbox box1 horizontal-margin" id='box5'>
                         <span class="box-number">5</span>
                         <div class="col-md-3 paddingdiv"><img src="{{ $user_assets }}/kabool_hai_icons/meeting.png"> </div>
                         <div class="col-md-9">
