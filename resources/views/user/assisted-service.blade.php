@@ -91,6 +91,12 @@
         }
      }
 
+     @media (max-width:420px) {
+        .logo {
+            width:50px;
+        }
+     }
+
      @media (min-width:320px) {
          #box5 {
              margin-top:720px;
