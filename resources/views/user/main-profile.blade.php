@@ -14,6 +14,12 @@
    height: 0;
    clear: both;
   }
+
+  #navsidebare {
+    opacity:0.9;
+    background-color:#000;
+  }
+
   @media (min-width:769px) {
     .nav.navbar-nav.navbar-right {
       margin-right:40px;
