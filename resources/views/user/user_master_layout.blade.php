@@ -107,9 +107,11 @@
     }
 
     #navsidebare {
-        overflow:scroll;
-		  height:100vh;
-		  overflow-x:hidden;
+		overflow:scroll;
+		height:100vh;
+		overflow-x:hidden;
+		opacity:0.9;
+		background-color:#000;
     }
 
     .navbar-container {

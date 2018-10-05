@@ -309,7 +309,10 @@
       overflow: scroll;
 		  overflow-x:hidden;
       height: 100vh;
+      opacity:0.9;
+      background-color:#000;
     }
+
     @media (max-width:1250px) {
       .navbar .accordion-menu #accordion>li,
       #signin {
@@ -822,7 +825,7 @@
                   Center</span></a></li>
             
             @if(Session::get('user_id'))
-            <li class="wow fadeInDown" data-wow-delay="0.9s"><a href="#" class="M" id='side-go-more-li'><span><i class="fas fa-bars fa-2x" style='color:orange'></i></span> <span style="padding-left:10px;">Go more</span></a></li>
+            <li class="wow fadeInDown" data-wow-delay="0.9s"><a href="#" class="M" id='side-go-more-li'><span><img width="40" height="40" src="{{ $user_assets }}/more.svg" alt="go more" /></span> <span style="padding-left:10px;">Go more</span></a></li>
           <li class="wow fadeInDown remove-top-margin" data-wow-delay="1s">
             <a href="{{ url('logout') }}" class="M">
               <span>
