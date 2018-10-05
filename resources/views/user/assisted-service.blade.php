@@ -40,21 +40,10 @@
     }
 
     @media (max-width:768px) {
-        /* .howtoouterwrapper .margintop {
-            margin-top:610px; 
-        } */
 
         .horizontal-margin {
             margin:0 15px;
         }
-
-        /* #box1 {
-            margin-bottom:-30px;
-        }
-
-        #box2 {
-            margin-bottom:50px;
-        } */
 
         #box1, #box2 {
             margin-bottom:50px;
@@ -137,35 +126,6 @@
          }
      }
 
-        /* @media (max-width:380px) {
-            #box5 {
-                margin-top:675px
-            }
-        } */
-
-        /* @media (max-width:338px) {
-            #box5 {
-                margin-top:690px
-            }
-        }
-
-        @media (max-width:324px) {
-            #box5 {
-                margin-top:710px
-            }
-        }
-
-         @media (max-width:321px) {
-            #box5 {
-                margin-top:730px
-            }
-        }
-
-        @media (max-width:307px) {
-            #box5 {
-                margin-top:750px
-            }
-        } */
 </style>
  
       <div id="home"></div>
