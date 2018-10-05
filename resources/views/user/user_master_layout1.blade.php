@@ -398,7 +398,7 @@
     margin-top:-70px;
     }
     .remove-top-margin:last-child {
-    margin-top:-5px;
+     margin-top:13px;
   }
   .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
     width:500px !important;
