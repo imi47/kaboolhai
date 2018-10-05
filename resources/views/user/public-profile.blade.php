@@ -37,8 +37,8 @@
 		 }
 
 		 @media (max-width:991px) {
-			#carousel-default1 img {
-				width:100% !important;
+			#carousel-default1 img, .carousel-default img {
+				width:90% !important;
 				margin:auto;
 				height:auto !important;
 			}

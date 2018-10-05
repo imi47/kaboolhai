@@ -371,13 +371,13 @@ p.t
           margin-top:12px !important;
           margin-bottom:-12px !important;
       }
-
-      @media (max-width:420px) {
+    }
+    
+    @media (max-width:420px) {
         .pl-top-selection img {
         width:40% !important;
         }
       }
-    }
 
       /* #username-dropdown-toggle {
         margin-top:-0px !important;
@@ -385,7 +385,6 @@ p.t
       .humburger {
           margin-top:8px !important;
     }
-  }
    </style>
 
    <div id="wait" style="display: none;"></div>

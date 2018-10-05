@@ -5,7 +5,7 @@
 
   @media (max-width:991px) {
     #carousel-default img {
-    width:100% !important;
+    width:90% !important;
     margin:auto;
     height:auto !important;
   }
