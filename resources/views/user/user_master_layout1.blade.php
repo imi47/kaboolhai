@@ -65,7 +65,7 @@
       position:fixed;
       right:-260px;
       transition:500ms;
-      z-index:9999;
+      z-index:999999;
       overflow:scroll;
     }
     #sidebar-2 span:not(.divider) {
@@ -73,11 +73,11 @@
       font-weight:600;
       position:absolute;
       right:15px;
-      top:70px;
+      top:10px;
       cursor:pointer;
     }
      #sidebar-2 ul {
-       margin-top:100px;
+       margin-top:40px;
      }
     #sidebar-2 ul li:not(.divider) {
       padding:10px;
