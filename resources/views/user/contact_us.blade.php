@@ -23,6 +23,25 @@
     text-align:justify;
     font-family: "Source Sans Pro", sans-serif;
   }
+
+  @media (max-width:768px) {
+    .contact-info-container {
+      margin-top:40px;
+    }
+
+    .contact-info-container .smallhead {
+      text-align:left;
+    }
+
+    .contact-info-container .smallhead + .row div {
+      margin-left:-45px !important;
+    }
+
+    /* .contact-info-container .smallhead {
+      padding-left: 45px;
+      text-align: left;
+    } */
+  }
 </style> 
 <div style="padding-top: 90px;"></div>
     <div class="container-fluid">
@@ -61,7 +80,7 @@
             <button type="submit" class="btn btn-lg btn-success ">Submit</button>  
           </div>
 </form>
-          <div class="col-sm-6">
+          <div class="col-sm-6 contact-info-container">
             <h3 class="smallhead text-center"><u>Contact Us</u></h3>
             <div class="row">
               <div style="padding-left: 65px;margin-top: 45px;">
