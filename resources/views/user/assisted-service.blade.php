@@ -6,6 +6,10 @@
         color:#000;
     } */
 
+    #navsidebare a, #sidebar-2 a {
+        text-transform:none;
+    }
+
     .slider_area, .slider_area div {
         height:600px;
     }

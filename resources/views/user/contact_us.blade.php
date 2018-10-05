@@ -24,6 +24,13 @@
     font-family: "Source Sans Pro", sans-serif;
   }
 
+   @media (min-width:768px) {
+    .contact-info-container .smallhead {
+      text-align:left;
+      margin-left:45px;
+    }
+   }
+
   @media (max-width:768px) {
     .contact-info-container {
       margin-top:40px;
