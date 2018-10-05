@@ -313,7 +313,7 @@
 					<li class="wow fadeInDown signin1" data-wow-delay="0.1s">
 						<a href="#" class="M">
 							<span>
-								<img width="40" height="40" src="{{ $user_assets }}/login.svg" alt="" />
+								<img width="40" height="auto" src="{{ $user_assets }}/login.svg" alt="" />
 							</span>
 							<span style="padding-left:15px;">Sign In</span>
 						</a>

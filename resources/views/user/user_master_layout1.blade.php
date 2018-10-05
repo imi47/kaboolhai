@@ -909,20 +909,11 @@
         $('#sidebar-2').css('right', '-260px');
         $('#btntoshowmenu').show();
       });
-      // document.getElementById("x").onclick = function () {
-      //   document.querySelector('#friends-dropdown .icon-dropdown').style.display = 'none';     
-      // }
-      // document.getElementById("friends-toggle").onclick = function () {
-      //   // alert('onclick');
-      //   // setTimeout(function() {
-      //     if(document.querySelector('#friends-dropdown .icon-dropdown').style.display = 'none') {
-      //       document.querySelector('#friends-dropdown .icon-dropdown').style.display = 'block';
-      //       $('#navsidebare').hide('slow');
-      //     }
-      //     else document.querySelector('#friends-dropdown .icon-dropdown').style.display = 'none';     
-            
-      //   // })
-      // };
+
+      document.querySelector('#signin-li').onclick = function() {
+        $('#navsidebare').hide('slow');
+        $('#btntoshowmenu').show();
+      }
     </script>
 
   </div>
@@ -933,16 +924,8 @@
       .navbar-form {
         display:none;
       }
-      /* .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
-        position:absolute;
-      } */
+
       .dropdown-menu {
-        /* position: fixed !important;
-        top: 100% !important;
-        left: -90px !important;
-        z-index: 1000 !important; */
-        /* display: none !important; */
-        /* float: left !important; */
         min-width: 160px !important;
         padding: 5px !important;
         margin: 2px 0 0 !important;
