@@ -153,6 +153,14 @@
 		float:right !important;
 	} */
 
+	@media (max-width:768px) {
+		.copyright p{
+			float:none !important;
+			margin-top:15px;
+			margin-left:8px;
+		}
+	}
+
 	</style>
 	<!-- favicon -->
 	<link rel="shortcut icon" href="{{ $user_assets }}/kabool-hai-favicon.png">
@@ -467,7 +475,7 @@
 			 	 document.querySelector('.logo-light img').src='{{ $user_assets }}/images/kaboolhai.png';
 					document.querySelector('.logo').style.width = 'auto';
 			  } 
-   		}
+			}
   </script>
 
 
@@ -893,7 +901,7 @@
         <div class=" container ">
             <div class=" row " style="
 								 padding-top:15px;padding-bottom: 15px; ">
-            <div class=" col-md-6
+            <div class="col-sm-6
 								 ">
                 <table>
                     <tr class=" dosrch ">
@@ -909,7 +917,7 @@
             </div>
 
             <div class="
-								 col-md-6 ">
+								 col-sm-6 copyright">
                 <p class=" pull-right " style=" color:#ffffff;
 								 ">&copy;2018 Kaboolhai.All rights reserved.Powered By <a style=" color:white; " href=" http://www.ranglerz.com/
 								 " target=" __blanck

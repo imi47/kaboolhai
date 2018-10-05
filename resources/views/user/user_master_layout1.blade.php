@@ -103,7 +103,13 @@
         padding-left:10px;
         padding-right:10px; 
       }
-    }
+
+      .copyright p{
+			float:none !important;
+			margin-top:15px;
+			margin-left:8px;
+		}
+  }
   </style>
   <script type="text/javascript">
     $(document).ready(function (e) {
@@ -266,6 +272,10 @@
       .nav-white.sticky-nav .navbar-nav li a {
         margin-top:5px;
       }
+      
+      .humburger {
+        padding:5px;
+      }
 
     }
     
@@ -331,7 +341,9 @@
         margin-top:12px !important;
         margin-bottom:-5px !important;
       }
+
     }
+
     .shrink-nav .accordion-menu {
     top: 0px;
 }
@@ -1286,7 +1298,7 @@
       <div style="width:100%;background-color:#222;">
          <div class="container">
             <div class="row" style="padding-top:15px;padding-bottom: 15px;">
-               <div class="col-md-6">
+               <div class="col-sm-6">
                   <table>
                      <tr class="dosrch">
                         <th><a href="{{ url('term-condation') }}">Terms</a></th>
@@ -1295,7 +1307,7 @@
                      </tr>
                   </table>
                </div>
-               <div class="col-md-6">
+               <div class="col-sm-6 copyright">
                   <p class="pull-right" style="color:#ffffff;">&copy;2018 Kaboolhai.All rights reserved.Powered By <a style="color:white;" href="http://www.ranglerz.com/" target="__blanck">Ranglerz</a>.</p>
                </div>
             </div>

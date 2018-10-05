@@ -58,8 +58,6 @@
   @media (min-width: 1350px) {
     #myNavbar {
         position: unset !important;
-        /* right: 100px;
-        top: 5px; */
     }
 }
 @media (max-width:399px) {
@@ -94,11 +92,6 @@
    float:left !important;
     margin:0 !important;
   }
-  /* #myNavbar {
-    position:absolute !important;
-    right:100px;
-    top:5px;
-  } */
   
 }
 @media (max-width:360px) {

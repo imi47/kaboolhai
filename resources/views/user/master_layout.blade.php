@@ -41,7 +41,14 @@
    display: block;
    height: 0;
    clear: both;
-  
+  }
+
+  .tpsrch {
+    line-height:1.5em;
+  }
+
+  .copyright p {
+    text-transform:uppercase;
   }
 
   .top-searches-by div{
@@ -245,12 +252,22 @@
       #myNavbar .nav:nth-child(1):nth-child(-n+6) {
         display:none;
       }
+
+      .last-footer, .tpsrch-table, .dosrch {
+      font-size:12px;
     }
+  }
 
     @media (max-width:768px) {
       /* #myNavbar .nav, #myNavbar, .nav {
         display:block !important;
       } */
+
+      .copyright p {
+        float:none !important;
+        margin-top:15px;
+        margin-left:8px;
+    }
 
       .navbar-header .navbar-toggle {
         display:none;
@@ -1197,7 +1214,7 @@
 
           <div class="row">
             <div class="col-md-12" style="padding-top:50px;">
-              <table>
+              <table class='tpsrch-table'>
                 <tr>
                   <p style="color:#ffffff">Top Searches by:</p>
                 </tr>
@@ -1229,10 +1246,10 @@
     </footer>
 
 
-    <div style="width:100%;background-color:#222;">
+    <div style="width:100%;background-color:#222;" class='last-footer'>
       <div class="container">
         <div class="row" style="padding-top:15px;padding-bottom: 15px;">
-          <div class="col-md-6">
+          <div class="col-sm-6">
             <table>
               <tr class="dosrch">
                 <th><a href="{{ url('term-condation') }}">Terms</a></th>
@@ -1242,7 +1259,7 @@
             </table>
           </div>
 
-          <div class="col-md-6">
+          <div class="col-sm-6 copyright">
             <p class="pull-right" style="color:#ffffff;">&copy;2018 Kaboolhai.All rights reserved.Powered By <a style="color:white;"
                 href="http://www.ranglerz.com/" target="__blanck">Ranglerz</a>.</p>
           </div>
