@@ -307,6 +307,7 @@
     }
     #navsidebare {
       overflow: scroll;
+		  overflow-x:hidden;
       height: 100vh;
     }
     @media (max-width:1250px) {
@@ -782,7 +783,7 @@
             <a href="{{ url('dashboard') }}" class="M">
               <span>
                 <!-- <img width="40" height="40" src="{{ $user_assets }}/login.svg" alt="" /> -->
-                <i class="fa fa-dashboard fa-2x"></i>
+                <img width="40" height="40" src="{{ $user_assets }}/dashboard.svg" alt="" />
               </span>
               <span style="padding-left:15px;">Dashboard</span>
             </a>
@@ -825,7 +826,7 @@
           <li class="wow fadeInDown remove-top-margin" data-wow-delay="1s">
             <a href="{{ url('logout') }}" class="M">
               <span>
-              <i class="fa fa-sign-out fa-2x" aria-hidden="true"></i>
+              <img width="40" height="40" src="{{ $user_assets }}/logout.svg" alt="log out" />
               </span>
               <span style="padding-left:15px;">Log out</span>
             </a>
