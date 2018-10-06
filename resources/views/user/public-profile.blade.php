@@ -97,7 +97,7 @@
 				}
 
 				.box_body, .txt_fetched {
-					font-size:2.5vw;
+					font-size:2.7vw;
 				}
 				
 				#btn {
