@@ -9,6 +9,13 @@ html, body {
   overflow-x:hidden;
 }
 
+footer .footer-middle {
+  margin-left:10px;
+  margin-right:10px;
+}
+
+
+
 #accordion.nav.navbar-nav {
   margin-top:20px;
 }
@@ -129,6 +136,11 @@ html, body {
       }
       .humburger {
           margin-top:8px !important;
+    }
+
+    .bg-orange.no-padding.wow .row {
+      margin-left:10px;
+      margin-right:10px;
     }
   }
 
