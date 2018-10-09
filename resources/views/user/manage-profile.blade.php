@@ -1,6 +1,172 @@
 @extends('user/user_master_layout1') 
 @section('data')
 
+<style>
+
+html, body {
+	overflow-x:hidden;
+}
+	.humburger {
+		font-size: 30px;
+		color: #fff;
+		font-weight: normal;
+		margin-top: 10px;
+}
+
+.mp-btns {
+   position: absolute;
+	right:37px;
+}
+
+input[type='checkbox'] {
+    margin-top: 10px;
+    width: 26%;
+}
+
+@media (max-width:1131px) {
+	input[type='checkbox'] {
+    margin-top: 10px;
+    width: 21%;
+}
+}
+
+@media (max-width:1169px) {
+	input[type='checkbox'] {
+		margin-top: 10px;
+		width: 18%;
+	}
+}
+
+/* .btn1 {
+	top: 63px;
+}
+
+.btn2 {
+	top: 345px;
+}
+
+.btn3 {
+	top: 575px;
+}
+
+.btn4 {
+	top: 720px;
+}
+
+.btn5 {
+	top: 940px;
+}
+
+.btn6 {
+	top: 1150px;
+}
+
+.btn7 {
+	top: 1340px;
+}
+
+.btn8 {
+	top: 1620px;
+}
+
+.btn9 {
+	top: 2100px;
+}
+
+.btn10 {
+	top: 2270px;
+}
+
+.btn11 {
+	top: 2400px;
+}
+
+.btn12 {
+	top: 2550px;
+} */
+
+@media (max-width:768px) {
+	.mp-bio-label {
+    width: auto;
+}
+
+	.mp-form-list li {
+		display:block;
+	}
+}
+
+@media (max-width:475px) {
+	ul.mp-form-list span{
+		font-size:2.8vw;
+	}
+
+	.basic-info-form, .mp-content {
+		width:70vw;
+	}
+
+	.btn10, .btn7 {
+		margin-top:30px;
+	}
+}
+
+@media (max-width:322px) {
+	input[type='checkbox'] {
+		margin-top: 10px;
+		width: 26%;
+	}
+}
+
+@media (max-width:352px) {
+	input[type='checkbox'] {
+		margin-top: 10px;
+		width: 28%;
+	}
+}
+
+@media (max-width:368px) {
+	input[type='checkbox'] {
+		margin-top: 10px;
+		width: 29%;
+	}
+}
+
+@media (max-width:387px) {
+	input[type='checkbox'] {
+		margin-top: 10px;
+		width: 30%;
+	}
+}
+
+@media (max-width:407px) {
+	input[type='checkbox'] {
+		margin-top: 10px;
+		width: 31%;
+	}
+}
+
+@media (max-width:430px) {
+	input[type='checkbox'] {
+		margin-top: 10px;
+		width: 32%;
+	}
+}
+
+@media (max-width:455px) {
+	input[type='checkbox'] {
+		margin-top: 10px;
+		width: 33%;
+	}
+}
+
+@media (max-width:475px) {
+	input[type='checkbox'] {
+		margin-top: 10px;
+		width: 34%;
+	}
+}
+
+</style>
+
 <div style="padding-top:90px;"></div>
  <div class="col-md-3 hidden-sm hidden-xs">
         <div class="well" style="box-shadow: none;">
@@ -197,7 +363,7 @@ $limit = 1;
 </div>
 
 </div>
-<div class="mp-btns pull-right">
+<div class="mp-btns pull-right btn1">
 <a href="javascript:;" class="mp-edit-btn eb2">Edit</a>
 <div class="mp-btn2-two dc2" style="display: none;">
 <input type="submit" value="Done" class="mp-done-btn" />
@@ -405,7 +571,7 @@ $limit = 1;
 
 </div>
 
-<div class="mp-btns pull-right">
+<div class="mp-btns pull-right btn2">
 <a href="javascript:;" class="mp-edit-btn eb3">Edit</a>
 <div class="mp-btn2-two dc3" style="display: none;">
 <input type="submit" value="Done" class="mp-done-btn" />
@@ -637,7 +803,7 @@ $limit = 1;
 
 </div>
 
-<div class="mp-btns pull-right">
+<div class="mp-btns pull-right btn3">
 <a href="javascript:;" class="mp-edit-btn eb4">Edit</a>
 <div class="mp-btn2-two dc4" style="display: none;">
 <input type="submit" value="Done" class="mp-done-btn" />
@@ -937,7 +1103,7 @@ $limit = 1;
 
 </div>
 
-<div class="mp-btns pull-right">
+<div class="mp-btns pull-right btn4">
 <a href="javascript:;" class="mp-edit-btn eb5">Edit</a>
 <div class="mp-btn2-two dc5" style="display: none;">
 <input type="submit" value="Done" class="mp-done-btn" />
@@ -1064,7 +1230,7 @@ $limit = 1;
 
 </div>
 
-<div class="mp-btns pull-right">
+<div class="mp-btns pull-right btn5">
 <a href="javascript:;" class="mp-edit-btn eb6">Edit</a>
 <div class="mp-btn2-two dc6" style="display: none;">
 <input type="submit" value="Done" class="mp-done-btn" />
@@ -1201,7 +1367,7 @@ $limit = 1;
 
 </div>
 
-<div class="mp-btns pull-right">
+<div class="mp-btns pull-right btn6">
 <a href="javascript:;" class="mp-edit-btn eb7">Edit</a>
 <div class="mp-btn2-two dc7" style="display: none;">
 <input type="submit" value="Done" class="mp-done-btn" />
@@ -1927,7 +2093,7 @@ $limit = 1;
 
 </div>
 
-<div class="mp-btns pull-right">
+<div class="mp-btns pull-right btn7">
 <a href="javascript:;" class="mp-edit-btn eb8">Edit</a>
 <div class="mp-btn2-two dc8" style="display: none;">
 <input type="submit" value="Done" class="mp-done-btn" />
@@ -2262,7 +2428,7 @@ $limit = 1;
 
 </div>
 
-<div class="mp-btns pull-right">
+<div class="mp-btns pull-right btn8">
 <a href="javascript:;" class="mp-edit-btn eb9">Edit</a>
 <div class="mp-btn2-two dc9" style="display: none;">
 <input type="submit" value="Done" class="mp-done-btn" />
@@ -2784,7 +2950,7 @@ $limit = 1;
 </div>
 
 </div>
-<div class="mp-btns pull-right">
+<div class="mp-btns pull-right btn9">
 <a href="javascript:;" class="mp-edit-btn eb10">Edit</a>
 <div class="mp-btn2-two dc10" style="display: none;">
 <input type="submit" value="Done" class="mp-done-btn" />
@@ -3042,7 +3208,7 @@ $limit = 1;
 
 </div>
 {{ csrf_field() }}
-<div class="mp-btns pull-right">
+<div class="mp-btns pull-right btn10">
 <a href="javascript:;" class="mp-edit-btn eb11">Edit</a>
 <div class="mp-btn2-two dc11" style="display: none;">
 <input type="submit" value="Done" class="mp-done-btn" />
@@ -3322,7 +3488,7 @@ $limit = 1;
 
 </div>
 
-<div class="mp-btns pull-right">
+<div class="mp-btns pull-right btn11">
 <a href="javascript:;" class="mp-edit-btn eb12">Edit</a>
 <div class="mp-btn2-two dc12" style="display: none;">
 <input type="submit" value="Done" class="mp-done-btn" />
@@ -5520,7 +5686,7 @@ $limit = 1;
 </div>
 {{ csrf_field() }}
 </div>
-<div class="mp-btns pull-right">
+<div class="mp-btns pull-right btn12">
 <a href="javascript:;" class="mp-edit-btn eb13">Edit</a>
 <div class="mp-btn2-two dc13" style="display: none;">
 <input type="submit" value="Done" class="mp-done-btn" />
