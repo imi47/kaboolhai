@@ -63,6 +63,15 @@
 		margin: 0;
 	}
 
+	tr.tpsrch th a {
+    display: inline-block;
+    border-right: 1px solid white;
+    margin-left: 10px;
+    padding-right: 10px;
+    color: #ffffff;
+    font-weight: 150;
+	}
+
 	@media (max-width: 1193px) {
 		.top-menu-main {
 			display: none;
@@ -718,16 +727,16 @@
 									<tr class="tpsrch">
 										<th><a href="{{ url('pakistani') }}" style="color: white; font-weight: normal; padding: 0px 5px;
     font-size: 14px;">Pakistani
-												Muslim Matrimony | </a></th>
+												Muslim Matrimony</a></th>
 										<th><a href="{{ url('UAE') }}" style="color: white; font-weight: normal; padding: 0px 5px;
     font-size: 14px;">UAE
-												Muslim Matrimony | </a></th>
+												Muslim Matrimony</a></th>
 										<th><a href="{{ url('United-Kingdom') }}" style="color: white; font-weight: normal; padding: 0px 5px;
     font-size: 14px;">United
-												Kingdom Muslim Matrimony | </a></th>
+												Kingdom Muslim Matrimony</a></th>
 										<th><a href="{{ url('USA') }}" style="color: white; font-weight: normal; padding: 0px 5px;
     font-size: 14px;">USA
-												Muslim Matrimony | </a></th>
+												Muslim Matrimony</a></th>
 										<th><a href="{{ url('canada') }}" style="border:none; color: white; font-weight: normal; padding: 0px 5px;
     font-size: 14px;">CANADA
 												Muslim Matrimony</a></th>
