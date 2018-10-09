@@ -63,6 +63,31 @@
 		}
 	}
 
+	@media (max-width: 768px) {
+		.pull-right {
+			margin-top:20px;
+			float:none !important;
+		}
+	}
+
+	@media (max-width:520px) {
+			.tpsrch {
+				display:none;
+			}
+			.top-searches-by {
+				display:block;
+			}
+		}
+
+		@media (min-width:521px) {
+			.tpsrch {
+				display:block;
+			}
+			.top-searches-by {
+				display:none;
+			}
+		}
+
 	.humburger {
 		font-size: 30px;
 		color: #fff;
@@ -89,6 +114,14 @@
 	.navbar-default .navbar-toggle {
 		border-color: #ddd;
 	}
+
+	.top-searches-by div {
+			border-bottom:1px solid #fff;
+			padding:10px;
+		}
+    .top-searches-by div > a {
+    color: #fff !important;
+    }
 
 	/* mobile navbar toggle code begin */
 
@@ -642,7 +675,7 @@
 
 						<div class="row" style="margin-top: 100px;">
 							<div class="col-md-12">
-								<table style="margin-bottom: 50px;">
+								<table>
 									<tr>
 										<p style="color:#ffffff">Top Searches by:</p>
 									</tr>
@@ -666,6 +699,15 @@
 								</table>
 							</div>
 						</div>
+
+
+						<div class="top-searches-by">
+							<div><a href="{{ url( 'pakistani') }}">Pakistani Muslim Matrimony</a></div>
+							<div><a href="{{ url( 'UAE') }}">UAE Muslim Matrimony</a></div>
+							<div><a href="{{ url( 'United-Kingdom') }}">United Kingdom Muslim Matrimony</a></div>
+							<div><a href="{{ url( 'USA') }}">USA Muslim Matrimony Muslim Matrimony</a></div>
+							<div><a href="{{ url( 'canada') }}">CANADA Muslim Matrimony</a></div>
+					    </div>
 
 						<!-- scroll to top -->
 						<a href="javascript:;" class="scrollToTop"></a>
