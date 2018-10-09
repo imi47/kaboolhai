@@ -302,8 +302,8 @@
     /*  sticky navigation */
     .shrink-nav .accordion-menu { top: 56px; }
     .static-sticky .accordion-menu { top: 90px; }
-    .sticky-nav .nav > li { float: left; width: 100% !important; margin: 0 !important; border-top: 1px solid rgba(255, 255, 255, 0.06) !important; }
-    .sticky-nav .nav > li:last-child { border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
+    .sticky-nav .nav > li { float: left; width: 100% !important; margin: 0 !important; }
+    /* .sticky-nav .nav > li:last-child { border-bottom: 1px solid rgba(255, 255, 255, 0.06); } */
     .sticky-nav ul li a:hover { color: #fff !important; background-color: rgba(0, 0, 0, 0.3); }
     .sticky-nav ul li a:hover i { color: #fff; border-color: #e6af2a; }
     .sticky-nav .navbar-nav > li > a { font-weight: 700; }
