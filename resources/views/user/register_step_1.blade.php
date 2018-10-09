@@ -57,6 +57,11 @@
     margin-top:5px !important;
     margin-left:-15px !important;
   }
+
+  .item.well img {
+    width:100% !important;
+    height:auto !important;
+  }
  
 
   @media (max-width:1200px) {
