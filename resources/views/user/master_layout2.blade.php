@@ -226,7 +226,7 @@
 	/* mobile navbar toggle code begin */
 </style>
 
-<body>
+<body onload='changeLogo()'>
 	<link rel="stylesheet" href="{{ $user_assets }}/css/muzamil.css" />
 
 	<!--  -->
@@ -378,6 +378,36 @@
 			  }
 			}
 			mediaQueryResponse(mq);
+
+
+			mq1 = window.matchMedia( "(max-width: 420px)" );
+         
+         mq1.addListener(mediaQueryResponse) // attach listener function to listen in on state changes so a page refresh will not be required
+       
+         // search option will stay in the same line in tablet mode 
+         function mediaQueryResponse(mq1) {
+       
+           if(mq1.matches) {
+             document.querySelector('.logo-light img').src='{{ $user_assets }}/db_images/KH-logo2.png';
+             document.querySelector('.logo').style.width = '40px ';
+           }
+           else {
+             document.querySelector('.logo-light img').src='{{ $user_assets }}/images/kaboolhai.png';
+             document.querySelector('.logo').style.width = 'auto';
+           } 
+         }
+         mediaQueryResponse(mq1);
+   
+         function changeLogo() {
+           if(mq1.matches) {
+             document.querySelector('.logo-light img').src='{{ $user_assets }}/db_images/KH-logo2.png';
+             document.querySelector('.logo').style.width = '40px ';
+           }
+           else {
+             document.querySelector('.logo-light img').src='{{ $user_assets }}/images/kaboolhai.png';
+             document.querySelector('.logo').style.width = 'auto';
+           } 
+          }
 
       </script>
 	<div class="logindiv wow fadeIn" id="logindivv">
