@@ -1,6 +1,102 @@
 @extends('user/user_master_layout1') 
 @section('data') 
 
+<style>
+
+  .stat-li {
+      width:48%;
+    }
+  
+  .listofmenu li {
+    margin:0 !important;
+  }
+
+  .listofmenu li p {
+    margin-left:25px !important;
+  }
+
+  .listofmenu li div div.inner-content.text-center {
+    width:16vw;
+  }
+
+  @media (max-width:991px) {
+    .stat-li {
+      width:19%;
+    }
+
+    .listofmenu li div div.inner-content.text-center {
+      width:86vw;
+    }
+
+    .listofmenu li p {
+      margin-left:35px !important;
+  }
+  }
+
+  @media (max-width:768px) {
+    .stat-li {
+      width:24%;
+    }
+
+    .listofmenu li p {
+    margin-left:35px !important;
+  }
+
+    .listofmenu li div div.inner-content.text-center {
+      width:84vw;
+    }
+  }
+
+  @media (max-width:630px) {
+    .listofmenu li div div.inner-content.text-center {
+      width:83vw;
+    }
+  }
+
+  @media (max-width:600px) {
+    .listofmenu li div div.inner-content.text-center {
+      width:80vw;
+    }
+
+    .listofmenu li p {
+      margin-left:25px !important;
+    }
+  }
+
+  @media (max-width:500px) {
+    .stat-li {
+      width:32%;
+    }
+
+    .head_box.one.stats-main p{
+      font-size:3vw !important;
+    }
+
+    .head_box.one.stats-main {
+      height:50px;
+    }
+
+    .listofmenu li div div.inner-content.text-center {
+      width:75vw;
+    }
+
+  }
+
+  @media (max-width:400px) {
+    .stat-li {
+      width:37vw;
+    }
+
+    .head_box.one.stats-main p, .head_box.one.stats-main p em{
+      font-size:2.7vw !important;
+    }
+
+    .listofmenu li div div.inner-content.text-center {
+      width:70vw;
+    }
+  }
+</style>
+
 <div class="container-fluid">
    <div class="row mrtp">
    	<div class="col-md-3">

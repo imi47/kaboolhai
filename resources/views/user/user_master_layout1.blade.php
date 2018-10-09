@@ -346,6 +346,12 @@
         margin-bottom:-5px !important;
       }
 
+      .nav-white.sticky-nav .navbar-nav li a:hover, .nav-white.sticky-nav .navbar-nav > .open > a {
+        padding-right:14px;
+        padding-bottom:25px;
+        display:inline-block;
+      }
+
     }
 
     .shrink-nav .accordion-menu {
@@ -359,7 +365,6 @@
     .navbar-toggle {
       background-color: #5a378c !important;
       border-radius: 5px;
-    }
     }
     #logindivv {
       /* position: relative; */
