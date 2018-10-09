@@ -72,6 +72,27 @@
     font-weight: 150;
 	}
 
+	#logindivv {
+    position:fixed;
+    top:-17px;
+    right:0;
+    margin-right:0;
+  }
+    #login-div-x {
+      position: absolute;
+      font-size: large;
+      font-weight: bold;
+      top: 0;
+      right: 0;
+      cursor: pointer;
+    }
+	 
+    @media (max-width:400px) {
+		#logindivv {
+			width:100vw;
+		}
+	}
+
 	@media (max-width: 1193px) {
 		.top-menu-main {
 			display: none;

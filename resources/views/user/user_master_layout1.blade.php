@@ -375,7 +375,7 @@
 } */
 #logindivv {
     position:fixed;
-    top:0;
+    top:-13px;
     /* left:0; */
     right:0;
     margin-right:0;
