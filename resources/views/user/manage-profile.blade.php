@@ -19,8 +19,8 @@ html, body {
 }
 
 input[type='checkbox'] {
-    margin-top: 10px;
-    width: 26%;
+	display:block;
+   width: 6%;
 }
 
 @media (max-width:1131px) {
@@ -106,62 +106,6 @@ input[type='checkbox'] {
 
 	.btn10, .btn7 {
 		margin-top:30px;
-	}
-}
-
-@media (max-width:322px) {
-	input[type='checkbox'] {
-		margin-top: 10px;
-		width: 26%;
-	}
-}
-
-@media (max-width:352px) {
-	input[type='checkbox'] {
-		margin-top: 10px;
-		width: 28%;
-	}
-}
-
-@media (max-width:368px) {
-	input[type='checkbox'] {
-		margin-top: 10px;
-		width: 29%;
-	}
-}
-
-@media (max-width:387px) {
-	input[type='checkbox'] {
-		margin-top: 10px;
-		width: 30%;
-	}
-}
-
-@media (max-width:407px) {
-	input[type='checkbox'] {
-		margin-top: 10px;
-		width: 31%;
-	}
-}
-
-@media (max-width:430px) {
-	input[type='checkbox'] {
-		margin-top: 10px;
-		width: 32%;
-	}
-}
-
-@media (max-width:455px) {
-	input[type='checkbox'] {
-		margin-top: 10px;
-		width: 33%;
-	}
-}
-
-@media (max-width:475px) {
-	input[type='checkbox'] {
-		margin-top: 10px;
-		width: 34%;
 	}
 }
 
