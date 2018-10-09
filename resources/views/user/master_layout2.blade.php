@@ -29,6 +29,12 @@
 		border: 2px solid #f47e2a;
 	}
 
+	#navsidebare {
+		height:100vh;
+		background-color:#000;
+		opacity:0.9;
+	}
+
 	#stay-tuned-container p{
 		font-size:small;
 	}
