@@ -3,6 +3,10 @@
 
 <style>
 
+html, body {
+  overflow-x:hidden;
+}
+
 .form_error {
     margin-left:287px !important;
   }
