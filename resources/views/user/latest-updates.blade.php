@@ -1,6 +1,30 @@
 @extends('user/user_master_layout1') 
 @section('data') 
 
+<style>
+  img {
+    height:auto !important;
+  }
+
+  @media (max-width:430px) {
+    .updates {
+      padding:0;
+    }
+
+    .updates-container {
+      padding:0;
+    }
+
+    .about_text {
+      font-size:2.7vw;
+    }
+  }
+
+  @media (max-width:364px) {
+    
+  }
+</style>
+
 <div style="padding-top: 90px;"></div>
   
   <div class="container-fluid"> 
@@ -18,8 +42,8 @@
                 @if(Session::has('success'))
                     <p class="alert alert-success">{{ Session::get('success') }}</p>
                 @endif
-      <div class="col-md-9">
-        <div class="well" style="box-shadow: none;">
+      <div class="col-md-9 updates-container">
+        <div class="well updates" style="box-shadow: none;">
           <div class="about_text">
             <h2 class="text-center">Latest Updates</h2>
             <p class="ptext"><table class="table">
