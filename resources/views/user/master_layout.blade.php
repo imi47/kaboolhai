@@ -290,7 +290,10 @@
 			margin-left:8px;
     }
     
-   
+    .footer_sec {
+      /* padding:0 10px !important;
+      text-align:center; */
+    }
       
     }
 
@@ -1041,15 +1044,15 @@
      @yield('data')
 
      <footer>
-        <section class="no-padding footer_sec" style="margin-bottom:-19px;">
+        <section class="footer_sec" style="margin-bottom:-19px;">
           <div class="container">
               <div class="row padding-two sm-text-center" style="padding-top:20px;padding-bottom: 43px;">
-                  <div class="col-md-9 no-padding" >
+                  <div class="col-md-9" >
                       <h4 class="white-text font-weight-600" style="font-family:sans-serif;color:white">Stay tuned for the launch of Best & Secure Matrimonial App!</h4>
                       <p class="white-text" style="font-family:sans-serif;text-align:justify;color:white">It has been our utmost desire to introduce an outstanding and easy to use matrimonial application for IOS and Android users. We have been working hard in this stance and are planning to come up with a user-friendly and secure Matrimonial App so that our users stay updated while on the go!</p>
                       <p class="white-text" style="font-family:sans-serif;text-align:justify;color:white">The app will be soon available for both Android and Apple iPhone users in the respective play stores. Stay tuned for the launch of our ‘Kabool Hai Matrimonial app’ as the early birds will be given early access and will get free subscription.</p>
                   </div>
-                  <div class="col-md-3 padding-one" style="padding-top:10px;">
+                  <div class="col-md-3 padding-one" style="padding-top:10px; text-align:center">
                       <a class="" href="#"><img src="{{ $user_assets }}/images/google-play.png" width="193" height="58"></a><br><br>
                       <a class="" href="#"><img src="{{ $user_assets }}/images/apple-store.png" width="193" height="58"></a>
                   </div>
