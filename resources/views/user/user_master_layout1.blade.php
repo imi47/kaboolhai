@@ -38,6 +38,10 @@
         width:47px;
       }
     }
+
+    #navsidebare a {
+      text-decoration:none;
+    }
     
     #menu-div .navbar-collapse.collapse {
       float:right;
