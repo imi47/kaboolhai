@@ -110,6 +110,13 @@
 			margin-left:8px;
 		}
   }
+
+  @media (max-width:320px) {
+		.searchcontainer button {
+			margin-top:-44px !important;
+		}
+  }
+  
   </style>
   <script type="text/javascript">
     $(document).ready(function (e) {
@@ -1249,7 +1256,7 @@
                   <div class="searchcontainer">
                      <form action="{{ url('subscribe') }}" method="post">
                         {{ csrf_field() }}
-                        <input type="text" required="" class="form-control" style="height:44px;width:225px;border-radius-left: 5%;" placeholder="Enter Your Email" name="search">
+                        <input type="text" required="" class="form-control" style="height:44px;border-radius-left: 5%;" placeholder="Enter Your Email" name="search">
                         <button type="submit"><i class="fa fa-search"></i></button>
                      </form>
                   </div>

@@ -175,6 +175,10 @@
 			margin-left:8px;
 		}
 
+		footer .pull-right {
+			float:left !important;
+		}
+
 		.blog-div-orange:hover .orange-hover-div, .blog-div-green:hover .green-hover-div {
 			opacity:0.7 !important;
 			padding:41% 0;
@@ -915,7 +919,7 @@
 								 ">
                    <form action=" ">
                        <input type=" text " class=" form-control
-								 " style=" height:44px;border-radius-left: 5%; " placeholder=" Enter Your Email " name=" search
+								 " style=" height:44px;border-radius-left: 5%;" placeholder=" Enter Your Email " name=" search
 								 ">
                        <button type=" submit "><i class=" fa fa-search
 								 "></i></button>
@@ -973,28 +977,18 @@
         <div class=" container ">
             <div class=" row " style="
 								 padding-top:15px;padding-bottom: 15px; ">
-            <div class="col-sm-6
-								 ">
-                <table>
-                    <tr class=" dosrch ">
-                        <th><a href="
-								 {{ url( 'term-condation') }} ">Terms</a></th>
-                        <th><a href="
-								 {{ url( 'policy-privacy') }} ">Privacy Policy</a></th>
-                        <th><a href="
-								 {{ url( 'sitemap') }} " style=" border:none;
-								 ">Site Map</a></th>
-                    </tr>
-                </table>
-            </div>
-
-            <div class="
-								 col-sm-6 copyright">
-                <p class=" pull-right " style=" color:#ffffff;
-								 ">&copy;2018 Kaboolhai.All rights reserved.Powered By <a style=" color:white; " href=" http://www.ranglerz.com/
-								 " target=" __blanck
-								 ">Ranglerz</a>.</p>
-            </div>
+            <div class="col-sm-6">
+                  <table>
+                     <tr class="dosrch">
+                        <th><a href="{{ url('term-condation') }}">Terms</a></th>
+                        <th><a href="{{ url('policy-privacy') }}">Privacy Policy</a></th>
+                        <th><a href="{{ url('sitemap') }}" style="border:none;">Site Map</a></th>
+                     </tr>
+                  </table>
+               </div>
+               <div class="col-sm-6 copyright">
+                  <p class="pull-right" style="color:#ffffff;">&copy;2018 Kaboolhai.All rights reserved.Powered By <a style="color:white;" href="http://www.ranglerz.com/" target="__blanck">Ranglerz</a>.</p>
+               </div>
         </div>
         </div>
     </div>
@@ -2428,6 +2422,7 @@ function timerIncrement() {
 </script>
 
 @endif
+
 </body>
 
 </html>

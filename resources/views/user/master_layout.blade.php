@@ -263,10 +263,10 @@
         display:block !important;
       } */
 
-      .copyright p {
-        float:none !important;
-        margin-top:15px;
-        margin-left:8px;
+    footer + div .pull-right {
+      float:left !important;
+      margin-top:15px !important;
+        margin-left:8px !important;
     }
 
       .navbar-header .navbar-toggle {
@@ -283,6 +283,14 @@
        left: -66px !important;
       right: 0 !important;
      }
+
+     .copyright p{
+			float:none !important;
+			margin-top:15px;
+			margin-left:8px;
+    }
+    
+   
       
     }
 
@@ -1240,7 +1248,7 @@
 <div style="width:100%;background-color:#222;">
         <div class="container">
             <div class="row" style="padding-top:15px;padding-bottom: 15px;">
-            <div class="col-md-6">
+            <div class="col-sm-6">
                 <table>
                     <tr class="dosrch">
                         <th><a href="{{ url('term-condation') }}">Terms</a></th>
@@ -1250,7 +1258,7 @@
                 </table>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-sm-6">
                 <p class="pull-right" style="color:#ffffff;">&copy;2018 Kaboolhai.All rights reserved.Powered By <a style="color:white;" href="http://www.ranglerz.com/" target="__blanck">Ranglerz</a>.</p>
             </div>
         </div>
@@ -2518,6 +2526,7 @@ function get_message()
      <script type="text/javascript" src="{{ $user_assets }}/js/jquery.emojiarea.js"></script>
 
 <script type="text/javascript" src="{{ $user_assets }}/js/emoji-picker.js"></script>
+
 </body>
 
 </html>

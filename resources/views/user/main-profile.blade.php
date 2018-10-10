@@ -15,6 +15,10 @@
    clear: both;
   }
 
+  .paymg img {
+    width:100%;
+  }
+
   #navsidebare {
     opacity:0.9;
     background-color:#000;
@@ -28,6 +32,12 @@
   @media (min-width:1350px) {
     .nav.navbar-nav.navbar-right {
       margin-right:0;
+    }
+  }
+
+  @media (max-width:991px) {
+    footer .search-container .form-control {
+      width:100% !important;
     }
   }
 .social_icon {
@@ -108,6 +118,14 @@
 body, html {
   overflow-x:hidden;
 }
+
+footer .searchcontainer {
+  margin-right:8px;
+}
+
+ footer .form-control {
+    width:100% !important;
+  }
   </style>
   
   <div class="col-md-9">
@@ -274,6 +292,5 @@ body, html {
 @endpush      
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    
 </body>
 </html>
