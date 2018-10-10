@@ -33,6 +33,10 @@
 			width:40px !important;
 		} */
 
+		section .row .blockcontain .frownumdiv .textowndiv {
+			color:#fff !important;
+		}
+
 		@media (max-width:400px) {
 			#logindivv {
 				width:100vw;
@@ -152,15 +156,80 @@
 		/* float:l !important; */
 	}
 
-	/* #accordion + .nav {
-		float:right !important;
-	} */
+	.growsec {
+    background-image: url(../back.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+
+	section.wow.fadeIn.padding-two-bottom.growsec.animated .container .row .row div.col-sm-3
+   {
+   margin-bottom:50px;
+}
 
 	@media (max-width:768px) {
-		.copyright p{
+		.copyright p {
 			float:none !important;
 			margin-top:15px;
 			margin-left:8px;
+		}
+
+		.blog-div-orange:hover .orange-hover-div, .blog-div-green:hover .green-hover-div {
+			opacity:0.7 !important;
+			padding:41% 0;
+			box-sizing:border-box;
+		}
+
+		.blog-div-orange:hover .orange-hover-div i, .blog-div-green:hover .green-hover-div i{
+			opacity:1 !important;
+		}
+
+		section {
+			margin-top:0 !important;
+		}
+
+		footer section .container .row {
+			padding:0 15px;
+		}
+
+		footer .container-fluid.footer-middle {
+			margin-left:0 !important;
+			width:100% !important;
+		}
+	}
+
+	@media (max-width:767px) {
+		section .row .blockcontain {
+			margin-left:13vw;
+			height:5vw;
+		}
+
+		section .row .textmaindiv {
+			margin-left:19vw;
+			margin-bottom:70px;
+		}
+
+		section .row .blockcontain {
+			margin-bottom:5vw;
+		}
+
+		section .row .blockcontain .frownumdiv .textowndiv {
+			font-size:5vw;
+		}
+
+		section .row .textmaindiv .counter-value.connct {
+			font-size:7vw;
+		}
+
+		.growlogodiv img {
+			width:11vw;
+		}
+	}
+
+	@media (max-width:320px) {
+		.searchcontainer button {
+			margin-top:-44px !important;
 		}
 	}
 
@@ -846,7 +915,7 @@
 								 ">
                    <form action=" ">
                        <input type=" text " class=" form-control
-								 " style=" height:44px;width:225px;border-radius-left: 5%; " placeholder=" Enter Your Email " name=" search
+								 " style=" height:44px;border-radius-left: 5%; " placeholder=" Enter Your Email " name=" search
 								 ">
                        <button type=" submit "><i class=" fa fa-search
 								 "></i></button>
