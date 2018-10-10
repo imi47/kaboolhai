@@ -11,6 +11,11 @@
         margin-bottom:20px;
       }
 
+      .searchcontainer button {
+      margin-top:-56px !important;
+      padding-top:15px;
+    }
+
       #friends-dropdown, #messages-dropdown, #notifications-dropdown {
             margin-top:21px !important;
             margin-bottom:-21px !important;
@@ -23,6 +28,13 @@
             margin-top:14px !important;
       }
     }
+
+    @media (min-width:991px) {
+   .searchcontainer button {
+      margin-top:-56px !important;
+      padding-top:15px;
+    }
+}
 
 
   @media (max-width:768px) {

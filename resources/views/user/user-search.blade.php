@@ -346,12 +346,22 @@ p.t
     .pl-top-selection img {
       width:21.5% !important;
     }
+    
+    .searchcontainer button {
+      margin-top:-56px !important;
+      padding-top:15px;
+    }
   }
 
   @media (max-width:991px) {
     #friends-dropdown, #messages-dropdown, #notifications-dropdown {
       margin-top:18px !important;
       margin-bottom:-18px !important;
+    }
+
+    .searchcontainer button {
+      margin-top:-56px !important;
+      padding-top:15px;
     }
 
     #username-dropdown-toggle {

@@ -123,7 +123,21 @@ footer .footer-middle {
         .humburger {
             margin-top:14px !important;
       }
+
+      .searchcontainer button {
+        margin-top:-56px !important;
+        padding-top:15px;
+    }
    }
+
+   @media (min-width:991px) {
+   .searchcontainer button {
+      margin-top:-56px !important;
+      padding-top:15px;
+    }
+}
+
+
 
    @media (max-width:768px) {
      #friends-dropdown, #messages-dropdown, #notifications-dropdown {

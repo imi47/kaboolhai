@@ -93,11 +93,21 @@ html, body {
     top:53 !important;
     left:98px;
     }
+
+    .searchcontainer button {
+      margin-top:-56px !important;
+      padding-top:15px;
+    }
   }
 
   @media (max-width:991px) {
     #menu-div .navbar-collapse.collapse {
       display:block !important;
+    }
+
+    .searchcontainer button {
+      margin-top:-56px !important;
+      padding-top:15px;
     }
 
     .icon-dropdown, .navbar-header, .username-dropdown-toggle .dropdown-menu {

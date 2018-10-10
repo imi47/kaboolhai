@@ -31,7 +31,20 @@
     .no-of-conv {
       margin-left:35px !important;
   }
+
+  .searchcontainer button {
+      margin-top:-56px !important;
+      padding-top:12px;
+    }
+
   }
+
+  @media (min-width:991px) {
+   .searchcontainer button {
+      margin-top:-56px !important;
+      padding-top:12px;
+    }
+}
 
   @media (max-width:768px) {
     .stat-li {

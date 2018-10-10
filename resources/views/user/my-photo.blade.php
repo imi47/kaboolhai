@@ -10,6 +10,13 @@
     float:left !important;
   }
 
+  @media (min-width:991px) {
+   .searchcontainer button {
+      margin-top:-56px !important;
+      padding-top:15px;
+    }
+}
+
   @media (max-width:991px) {
   
   .nav>li>a {
@@ -18,6 +25,11 @@
     font-weight:700;
     margin-top:15px;
   }
+
+  .searchcontainer button {
+      margin-top:-56px !important;
+      padding-top:15px;
+    }
 
   #friends-dropdown, #messages-dropdown, #notifications-dropdown {
           margin-top:11px !important;
