@@ -11,12 +11,12 @@
     margin:0 !important;
   }
 
-  .listofmenu li p {
+  .no-of-conv {
     margin-left:25px !important;
   }
 
   .listofmenu li div div.inner-content.text-center {
-    width:16vw;
+    width:18vw;
   }
 
   @media (max-width:991px) {
@@ -28,7 +28,7 @@
       width:86vw;
     }
 
-    .listofmenu li p {
+    .no-of-conv {
       margin-left:35px !important;
   }
   }
@@ -38,7 +38,7 @@
       width:24%;
     }
 
-    .listofmenu li p {
+    .no-of-conv {
     margin-left:35px !important;
   }
 
@@ -58,7 +58,7 @@
       width:80vw;
     }
 
-    .listofmenu li p {
+    .no-of-conv {
       margin-left:25px !important;
     }
   }
@@ -116,7 +116,7 @@
                     </div>
                 </div><!-- /.col -->
                 <div class="clearfix"></div>
-                <p style="color:black; margin-top: 10px;">No. Of Conversation</p>
+                <p class='no-of-conv' style="color:black; margin-top: 10px;">No. Of Conversation</p>
    				</li>
    				<a href="{{ url('favourite-list') }}">
    				<li class="stat-li">
