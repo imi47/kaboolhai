@@ -29,9 +29,20 @@
 			overflow-x:hidden;
 		}
 
-		/* .logo {
-			width:40px !important;
-		} */
+		.logo-mobile {
+			display:none;
+		}
+
+		@media (max-width:420px) {
+			.logo {
+				display:none;
+			}
+			
+			.logo-mobile {
+				display:block;
+				width:40px;
+			}
+		}
 
 		section .row .blockcontain .frownumdiv .textowndiv {
 			color:#fff !important;
@@ -250,38 +261,7 @@
 	@stack('css')
 </head>
 
-<script>
-
-	mq = window.matchMedia( "(max-width: 420px)" );
-         
-			mq.addListener(mediaQueryResponse) // attach listener function to listen in on state changes so a page refresh will not be required
-	  
-			// search option will stay in the same line in tablet mode 
-			function mediaQueryResponse(mq) {
-	  
-			  if(mq.matches) {
-					document.querySelector('.logo-light img').src='{{ $user_assets }}/db_images/KH-logo2.png';
-					document.querySelector('.logo').style.width = '40px';
-			  }
-			  else {
-			 	 document.querySelector('.logo-light img').src='{{ $user_assets }}/images/kaboolhai.png';
-					document.querySelector('.logo').style.width = 'auto';
-			  } 
-			}
-			mediaQueryResponse(mq);
-function changeLogo() {
-				if(mq.matches) {
-					document.querySelector('.logo-light img').src='{{ $user_assets }}/db_images/KH-logo2.png';
-					document.querySelector('.logo').style.width = '40px';
-			  }
-			  else {
-			 	 document.querySelector('.logo-light img').src='{{ $user_assets }}/images/kaboolhai.png';
-					document.querySelector('.logo').style.width = 'auto';
-			  } 
-			}
-</script>
-
-<body onload='changeLogo()'>
+<body>
 
 
 
@@ -297,6 +277,7 @@ function changeLogo() {
 				<div class="col-md-2" id='test'>
 					<a class="logo-light" href="{{ url('/') }}">
 						<img alt="" src="{{ $user_assets }}/images/kaboolhai.png" class="logo" />
+						<img alt="" src="{{ $user_assets }}/db_images/KH-logo2.png" class="logo-mobile" />
 					</a>
 					<a class="logo-dark" href="{{ url('/') }}">
 						<img alt="" src="{{ $user_assets }}/images/kaboolhai.png" class="logo" />
@@ -591,47 +572,6 @@ function changeLogo() {
                 login_div.hide();
             }
         });
-
-
-		//   var username_dropdown = $('.nav li.dropdown').clone();
-		//    mq = window.matchMedia( "(max-width: 1166px)" );
-         
-			// mq.addListener(mediaQueryResponse) // attach listener function to listen in on state changes so a page refresh will not be required
- 
-			// search option will stay in the same line in tablet mode 
-			// function mediaQueryResponse(mq) {
- 
-			//   if(mq.matches) {
-			// 		$(username_dropdown).show();
-			// 		username_dropdown.appendTo('#test');
-			// 		$(username_dropdown).css({
-			// 		'position' : 'absolute',
-			// 		'right' : '100px',
-			// 		'top' : '20px'
-			// 	});
-
-				// $('.menudesign').removeAttr('data-toggle');
-
-				// if ( $('.menudesign + .dropdown-menu').css('visibility', 'hidden') ) {
-				// 	$('.menudesign').click(function(){
-				// 		$('.menudesign + .dropdown-menu').css('visibility','visisle');
-				// 	});
-				// }
-
-				// if ( $('.menudesign + .dropdown-menu').css('visibility', 'visible') ) {
-				// 	$('.menudesign').click(function(){
-				// 		$('.menudesign + .dropdown-menu').css('visibility','hidden');
-				// 	});
-				// }
-
-					// alert('hi');
-			//   }
-
-			//   else {
-			// 	  $(username_dropdown).hide();
-			//   }
-			// }
-			// mediaQueryResponse(mq);
 
 	</script>
 

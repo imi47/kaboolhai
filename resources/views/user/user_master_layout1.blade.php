@@ -33,11 +33,24 @@
     .label {
       display: none;
     }
-    @media (max-width:420px) {
-      .logo {
-        width:47px;
+    .logo-mobile {
+			display:none;
+		}
+
+		@media (max-width:420px) {
+			.logo-light, .logo-dark {
+				display:none !important;
+			}
+			
+			.logo-mobile {
+				display:block;
+				width:40px;
       }
-    }
+      
+      #logo-div {
+        margin-top:6px;
+      }
+		}
 
     #navsidebare a {
       text-decoration:none;
@@ -138,39 +151,7 @@
   </script>
 </head>
 
-<script>
-
-mq = window.matchMedia( "(max-width: 420px)" );
-         
-         mq.addListener(mediaQueryResponse) // attach listener function to listen in on state changes so a page refresh will not be required
-       
-         // search option will stay in the same line in tablet mode 
-         function mediaQueryResponse(mq) {
-       
-           if(mq.matches) {
-             document.querySelector('.logo-light img').src='{{ $user_assets }}/db_images/KH-logo2.png';
-             document.querySelector('.logo').style.width = '40px ';
-           }
-           else {
-             document.querySelector('.logo-light img').src='{{ $user_assets }}/images/kaboolhai.png';
-             document.querySelector('.logo').style.width = 'auto';
-           } 
-         }
-			mediaQueryResponse(mq);
-
-function changeLogo() {
-    if(mq.matches) {
-      document.querySelector('.logo-light img').src='{{ $user_assets }}/db_images/KH-logo2.png';
-      document.querySelector('.logo').style.width = '40px ';
-    }
-    else {
-      document.querySelector('.logo-light img').src='{{ $user_assets }}/images/kaboolhai.png';
-      document.querySelector('.logo').style.width = 'auto';
-    } 
-  }
-</script>
-
-<body onload="changeLogo()">
+<body>
 
   <div class="main-section">
     <div class="row border-chat">
@@ -446,9 +427,12 @@ function changeLogo() {
       <div class="container-fluid">
         <div class="row">
           <!-- logo -->
-          <div class="col-lg-2 col-sm-2 col-xs-2" id="logo-div"> <a class="logo-light" href="{{ url('/') }}"><img alt="" src="{{ $user_assets }}/images/kaboolhai.png"
-                class="logo" /></a> <a class="logo-dark" href="{{ url('/') }}"><img alt="" src="{{ $user_assets }}/images/kaboolhai.png"
-                class="logo" /></a></div>
+          <div class="col-lg-2 col-sm-2 col-xs-2" id="logo-div">
+            <a class="logo-light" href="{{ url('/') }}"><img alt="" src="{{ $user_assets }}/images/kaboolhai.png" class="logo" /></a>
+            <a class="logo-dark" href="{{ url('/') }}"><img alt="" src="{{ $user_assets }}/images/kaboolhai.png" class="logo" /></a> 
+            <a  class="logo-mobile" href="{{ url('/') }}"><img alt="" src="{{ $user_assets }}/db_images/KH-logo2.png" /></a> 
+                
+                </div>
           <!-- end logo -->
           <!-- search and cart  -->
           <!-- end search and cart  -->
