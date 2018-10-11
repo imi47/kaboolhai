@@ -61,6 +61,12 @@
   {
     width:40px;
   }
+
+  @media (max-width:400px) {
+    .term_text .bigheading {
+      font-size:10vw !important;
+    }
+  }
 </style>
 <div style="padding-top: 90px;"></div>
   

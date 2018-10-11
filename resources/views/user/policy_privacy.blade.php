@@ -97,6 +97,13 @@
   }
 }
 
+@media (max-width:400px) {
+    .policy_text .bigheading {
+      font-size:11vw !important;
+      line-height:12vw;
+    }
+  }
+
 </style>
 
 <div style="padding-top: 90px;"></div>

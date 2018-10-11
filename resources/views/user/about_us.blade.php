@@ -76,6 +76,12 @@
 
   }
 }
+
+@media (max-width:400px) {
+    .about_text .bigheading {
+      font-size:12vw !important;
+    }
+  }
   
 </style>
 <div style="padding-top:90px;"></div>

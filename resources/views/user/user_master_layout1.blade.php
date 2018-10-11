@@ -125,7 +125,18 @@
 			float:none !important;
 			margin-top:15px;
 			margin-left:8px;
-		}
+    }
+
+    @media (max-width:767px) {
+    .modal input[type=checkbox], input[type=radio] {
+      /* display:block; */
+      width:6%;
+	  }
+  }
+    
+    .to {
+      margin-top:7px !important;
+    }
   }
 
   @media (max-width:320px) {
@@ -133,6 +144,7 @@
 			margin-top:-44px !important;
 		}
   }
+
   
   </style>
   <script type="text/javascript">
@@ -1314,16 +1326,16 @@
                   <form method="get" action="{{ url('user-search') }}" class="form-inline">
                      {{ csrf_field() }}
                     <div class="row">
-        <div class="col-md-3">
+        <div class="col-sm-3">
           <label>Looking for</label>
           
         </div>
-        <div class="col-md-3">
+        <div class="col-sm-3">
        <div class="form-group"> 
        
            {{-- <label><input type="radio" name="optradio">Option 1</label> --}}
            <input type="radio" value="Female" name="loking_for"> Bride
-         </div>
+</div>
        </div>
              <div class="col-md-3">
               <div class="form-group">        
@@ -1337,7 +1349,7 @@
                         <label>Age</label>
                      </div>
                      <div class="row">
-                        <div class="col-md-5">
+                        <div class="col-xs-5">
                            <select name="age_from" class="form-control" style="width: 200PX">
                               <option value="">Select</option>
                               @for($i =  date('y');  $i <= date('y')+82 ; $i++)
@@ -1345,10 +1357,10 @@
                               @endfor 
                            </select>
                         </div>
-                        <div class="col-xs-1 text-center">
+                        <div class="col-xs-1 text-center to">
                            To
                         </div>
-                        <div class="col-md-5">
+                        <div class="col-xs-5">
                            <select name="age_to" class="form-control" style="width: 200px;">
                               <option value="">Select</option>
                               @for($i = date('y')+82; $i >= date('y'); $i--)
@@ -1362,7 +1374,7 @@
                         <label>Height</label>
                      </div>
                      <div class="row">
-                        <div class="col-md-5">
+                        <div class="col-sm-5">
                            <select name="height_from" class="form-control">
                               <option value="">Height..</option>
                               <option value="Below 4ft 6in - 137cm">Below 4ft 6in - 137cm</option>
@@ -1400,10 +1412,10 @@
                               <option value="Above 7ft - 213c">Above 7ft - 213cm</option>
                            </select>
                         </div>
-                        <div class="col-xs-1 text-center">
+                        <div class="col-xs-1 text-center to">
                            To
                         </div>
-                        <div class="col-md-5">
+                        <div class="col-sm-5">
                            <select name="height_to" class="form-control">
                               <option value="">Height..</option>
                               <option value="Below 4ft 6in - 137cm">Below 4ft 6in - 137cm</option>
@@ -1466,18 +1478,18 @@
                   <form method="get" action="{{ url('user-search') }}" class="form-inline">
                      {{ csrf_field() }}
                      <div class="row">
-        <div class="col-md-3">
+        <div class="col-sm-3">
           <label>Looking for</label>
           
         </div>
-        <div class="col-md-3">
+        <div class="col-sm-3">
        <div class="form-group"> 
        
            {{-- <label><input type="radio" name="optradio">Option 1</label> --}}
            <input type="radio" value="Female" name="loking_for"> Bride
          </div>
        </div>
-             <div class="col-md-3">
+             <div class="col-sm-3">
               <div class="form-group">        
              <input type="radio" value="Male" name="loking_for"> Groom
              
@@ -1489,7 +1501,7 @@
                         <label>Age</label>
                      </div>
                      <div class="row">
-                        <div class="col-md-5">
+                        <div class="col-xs-5">
                            <select name="age_from" class="form-control" style="width: 200px;">
                               <option value="">Select</option>
                               @for($i =  date('y');  $i <= date('y')+82 ; $i++)
@@ -1497,10 +1509,10 @@
                               @endfor 
                            </select>
                         </div>
-                        <div class="col-xs-1 text-center">
+                        <div class="col-xs-1 text-center to">
                            To
                         </div>
-                        <div class="col-md-5">
+                        <div class="col-xs-5">
                            <select name="age_to" class="form-control" style="width: 200px;">
                               <option value="">Select</option>
                               @for($i = date('y')+82; $i >= date('y'); $i--)
@@ -1512,32 +1524,32 @@
                      <br>
                     <div class="row"> 
         
-        <div class="col-md-3">
+        <div class="col-sm-3">
           <label>Martial Status</label>
           
         </div>
-         <div class="col-md-3">
+         <div class="col-sm-3">
           <div class="form-group"> 
            <input type="radio" value="Unmaried" name="martial_status"> Unmaried
          </div>
        </div>
-        <div class="col-md-3">
+        <div class="col-sm-3">
           <div class="form-group"> 
            <input type="radio" value="Widow Widower" name="martial_status"> Widow/Widower
          </div>
        </div>
-       <div class="col-md-3">
+       <div class="col-sm-3">
           <div class="form-group"> 
            <input type="radio" value="Divorcee" name="martial_status"> Divorcee
          </div>
        </div>
-         <div class="col-md-3"></div>
-           <div class="col-md-3">
+         <div class="col-sm-3"></div>
+           <div class="col-sm-3">
           <div class="form-group"> 
            <input type="radio" value="Seprated" name="martial_status"> Seprated
          </div>
        </div>
-       <div class="col-md-3">
+       <div class="col-sm-3">
           <div class="form-group"> 
            <input type="radio" value="Annulled" name="martial_status"> Annulled
          </div>
@@ -1549,7 +1561,7 @@
                         <label>Height</label>
                      </div>
                      <div class="row">
-                        <div class="col-md-5">
+                        <div class="col-xs-5">
                            <select name="height_from" class="form-control">
                               <option value="">Height..</option>
                               <option value="Below 4ft 6in - 137cm">Below 4ft 6in - 137cm</option>
@@ -1587,10 +1599,10 @@
                               <option value="Above 7ft - 213c">Above 7ft - 213cm</option>
                            </select>
                         </div>
-                        <div class="col-xs-1 text-center">
+                        <div class="col-xs-1 text-center to">
                            To
                         </div>
-                        <div class="col-md-5">
+                        <div class="col-xs-5">
                            <select name="height_to" class="form-control">
                               <option value="">Height..</option>
                               <option value="Below 4ft 6in - 137cm">Below 4ft 6in - 137cm</option>
@@ -1782,18 +1794,18 @@
                      </div>
                      <br>
                      <div class="row">
-        <div class="col-md-3">
+        <div class="col-sm-3">
           <label>Looking for</label>
           
         </div>
-        <div class="col-md-3">
+        <div class="col-sm-3">
        <div class="form-group"> 
        
            {{-- <label><input type="radio" name="optradio">Option 1</label> --}}
            <input type="radio" value="Female" name="loking_for"> Bride
          </div>
        </div>
-             <div class="col-md-3">
+             <div class="col-sm-3">
               <div class="form-group">        
              <input type="radio" value="Male" name="loking_for"> Groom
              
@@ -1805,7 +1817,7 @@
                         <label>Age</label>
                      </div>
                      <div class="row">
-                        <div class="col-md-5">
+                        <div class="col-xs-5">
                            <select name="age_from" class="form-control" style="width: 200px">
                               <option value="">Select</option>
                               @for($i =  date('y');  $i <= date('y')+82 ; $i++)
@@ -1813,10 +1825,10 @@
                               @endfor 
                            </select>
                         </div>
-                        <div class="col-xs-1 text-center">
+                        <div class="col-xs-1 text-center to">
                            To
                         </div>
-                        <div class="col-md-5">
+                        <div class="col-xs-5">
                            <select name="age_to" class="form-control" style="width: 200px;">
                               <option value="">Select</option>
                               @for($i = date('y')+82; $i >= date('y'); $i--)
@@ -1828,32 +1840,32 @@
                      <br>
                     <div class="row"> 
         
-        <div class="col-md-3">
+        <div class="col-sm-3">
           <label>Martial Status</label>
           
         </div>
-         <div class="col-md-3">
+         <div class="col-sm-3">
           <div class="form-group"> 
            <input type="radio" value="Unmaried" name="martial_status"> Unmaried
          </div>
        </div>
-        <div class="col-md-3">
+        <div class="col-sm-3">
           <div class="form-group"> 
            <input type="radio" value="Widow Widower" name="martial_status"> Widow/Widower
          </div>
        </div>
-       <div class="col-md-3">
+       <div class="col-sm-3">
           <div class="form-group"> 
            <input type="radio" value="Divorcee" name="martial_status"> Divorcee
          </div>
        </div>
-         <div class="col-md-3"></div>
-           <div class="col-md-3">
+         <div class="col-sm-3"></div>
+           <div class="col-sm-3">
           <div class="form-group"> 
            <input type="radio" value="Seprated" name="martial_status"> Seprated
          </div>
        </div>
-       <div class="col-md-3">
+       <div class="col-sm-3">
           <div class="form-group"> 
            <input type="radio" value="Annulled" name="martial_status"> Annulled
          </div>
@@ -1865,7 +1877,7 @@
                         <label>Height</label>
                      </div>
                      <div class="row">
-                        <div class="col-md-5">
+                        <div class="col-sm-5">
                            <select name="height_from" class="form-control">
                               <option value="">Height..</option>
                               <option value="Below 4ft 6in - 137cm">Below 4ft 6in - 137cm</option>
@@ -1903,10 +1915,10 @@
                               <option value="Above 7ft - 213c">Above 7ft - 213cm</option>
                            </select>
                         </div>
-                        <div class="col-xs-1 text-center">
+                        <div class="col-xs-1 text-center to">
                            To
                         </div>
-                        <div class="col-md-5">
+                        <div class="col-sm-5">
                            <select name="height_to" class="form-control">
                               <option value="">Height..</option>
                               <option value="Below 4ft 6in - 137cm">Below 4ft 6in - 137cm</option>
