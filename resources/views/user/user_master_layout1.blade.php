@@ -134,7 +134,13 @@
     // if (window.matchMedia("(max-width: 520px)").matches)
     //         document.querySelector('.logo-light img').src='public/user_assets/db_images/KH-logo2.png';
     // else document.querySelector('.logo-light img').src='public/user_assets/images/kaboolhai.png';
-    mq = window.matchMedia( "(max-width: 420px)" );
+   
+  </script>
+</head>
+
+<script>
+
+mq = window.matchMedia( "(max-width: 420px)" );
          
          mq.addListener(mediaQueryResponse) // attach listener function to listen in on state changes so a page refresh will not be required
        
@@ -150,20 +156,19 @@
              document.querySelector('.logo').style.width = 'auto';
            } 
          }
-         mediaQueryResponse(mq);
-   
-         function changeLogo() {
-           if(mq.matches) {
-             document.querySelector('.logo-light img').src='{{ $user_assets }}/db_images/KH-logo2.png';
-             document.querySelector('.logo').style.width = '40px ';
-           }
-           else {
-             document.querySelector('.logo-light img').src='{{ $user_assets }}/images/kaboolhai.png';
-             document.querySelector('.logo').style.width = 'auto';
-           } 
-          }
-  </script>
-</head>
+			mediaQueryResponse(mq);
+
+function changeLogo() {
+    if(mq.matches) {
+      document.querySelector('.logo-light img').src='{{ $user_assets }}/db_images/KH-logo2.png';
+      document.querySelector('.logo').style.width = '40px ';
+    }
+    else {
+      document.querySelector('.logo-light img').src='{{ $user_assets }}/images/kaboolhai.png';
+      document.querySelector('.logo').style.width = 'auto';
+    } 
+  }
+</script>
 
 <body onload="changeLogo()">
 
@@ -242,11 +247,7 @@
         $('.main-section').toggleClass("open-more");
       });
     });
-    function changeLogo() {
-      if (window.matchMedia("(max-width: 520px)").matches)
-          document.querySelector('.logo-light img').src='{{ $user_assets }}/db_images/KH-logo2.png';
-    else document.querySelector('.logo-light img').src='{{ $user_assets }}/images/kaboolhai.png';
-    }
+  
   </script>
 
   <style type="text/css">

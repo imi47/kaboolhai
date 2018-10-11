@@ -250,6 +250,37 @@
 	@stack('css')
 </head>
 
+<script>
+
+	mq = window.matchMedia( "(max-width: 420px)" );
+         
+			mq.addListener(mediaQueryResponse) // attach listener function to listen in on state changes so a page refresh will not be required
+	  
+			// search option will stay in the same line in tablet mode 
+			function mediaQueryResponse(mq) {
+	  
+			  if(mq.matches) {
+					document.querySelector('.logo-light img').src='{{ $user_assets }}/db_images/KH-logo2.png';
+					document.querySelector('.logo').style.width = '40px';
+			  }
+			  else {
+			 	 document.querySelector('.logo-light img').src='{{ $user_assets }}/images/kaboolhai.png';
+					document.querySelector('.logo').style.width = 'auto';
+			  } 
+			}
+			mediaQueryResponse(mq);
+function changeLogo() {
+				if(mq.matches) {
+					document.querySelector('.logo-light img').src='{{ $user_assets }}/db_images/KH-logo2.png';
+					document.querySelector('.logo').style.width = '40px';
+			  }
+			  else {
+			 	 document.querySelector('.logo-light img').src='{{ $user_assets }}/images/kaboolhai.png';
+					document.querySelector('.logo').style.width = 'auto';
+			  } 
+			}
+</script>
+
 <body onload='changeLogo()'>
 
 
@@ -524,34 +555,6 @@
 	  $("#btntoshowmenu").css('visibility', 'visible');
     });
 
-	 	mq = window.matchMedia( "(max-width: 420px)" );
-         
-			mq.addListener(mediaQueryResponse) // attach listener function to listen in on state changes so a page refresh will not be required
-	  
-			// search option will stay in the same line in tablet mode 
-			function mediaQueryResponse(mq) {
-	  
-			  if(mq.matches) {
-					document.querySelector('.logo-light img').src='{{ $user_assets }}/db_images/KH-logo2.png';
-					document.querySelector('.logo').style.width = '40px';
-			  }
-			  else {
-			 	 document.querySelector('.logo-light img').src='{{ $user_assets }}/images/kaboolhai.png';
-					document.querySelector('.logo').style.width = 'auto';
-			  } 
-			}
-			mediaQueryResponse(mq);
-
-			function changeLogo() {
-				if(mq.matches) {
-					document.querySelector('.logo-light img').src='{{ $user_assets }}/db_images/KH-logo2.png';
-					document.querySelector('.logo').style.width = '40px';
-			  }
-			  else {
-			 	 document.querySelector('.logo-light img').src='{{ $user_assets }}/images/kaboolhai.png';
-					document.querySelector('.logo').style.width = 'auto';
-			  } 
-			}
   </script>
 
 

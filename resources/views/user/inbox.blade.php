@@ -9,7 +9,7 @@
     margin: 10px 0;
 }
 
-footer section:first-child {
+footer section {
     margin-top:50px;
 }
 
