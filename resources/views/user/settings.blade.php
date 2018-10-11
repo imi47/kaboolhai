@@ -130,10 +130,6 @@ footer .footer-middle {
     }
 
     .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
-      width:500px !important;
-    }
-
-    .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
         top:42px !important;
       }
 
@@ -219,6 +215,41 @@ footer .footer-middle {
       </div>
 
   <div class="col-md-9">
+
+  <style>
+   @media (max-width:768px) {
+     .nav-tabs {
+       background-color:#eee !important;
+     }
+
+     .panel.with-nav-tabs .panel-heading {
+       margin-top:-40px !important;
+       padding:0;
+     }
+
+     .nav-tabs li {
+       float:none;
+       display:inline-block;
+       width:30vw;
+       border-bottom:1px solid #999;
+       box-sizing:border-box;
+     }
+
+      .nav-tabs li:nth-child(1), .nav-tabs li:nth-child(4), .nav-tabs li:nth-child(7) {
+        margin-left:4vw;
+      }
+
+     .nav-tabs li a {
+       text-align:center;
+       color:#555 !important;
+       font-weight:600;
+     }
+
+     .panel.with-nav-tabs .nav-tabs {
+       padding-bottom:7px;
+     }
+   }
+  </style>
 
           <div class="row account"> 
 
