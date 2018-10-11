@@ -9,6 +9,14 @@
     margin: 10px 0;
 }
 
+footer section:first-child {
+    margin-top:50px;
+}
+
+.fa-google-plus-square, .fa-linkedin-square {
+  font-size:2.44em;
+}
+
 
 
 .container-1::after {

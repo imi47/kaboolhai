@@ -61,6 +61,10 @@
       .humburger {
           margin-top:11px !important;
     }
+
+    footer section div div {
+      text-align:center;
+    }
   }
 
   @media (max-width: 685px) {

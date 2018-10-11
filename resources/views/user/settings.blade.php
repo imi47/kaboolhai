@@ -185,9 +185,12 @@ footer .footer-middle {
 
   #username-dropdown-toggle .dropdown-menu {
     top: 47px !important;
-
   }
 }
+
+.fa-google-plus-square, .fa-linkedin-square {
+    font-size:2.44em;
+  }
 </style>
  <div class="col-md-12">
          {{--  <h4 class="text-color" style="text-align: center;">Settings</h4> --}}

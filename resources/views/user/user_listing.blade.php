@@ -4,6 +4,11 @@
   .greenpartnercolor{
     color: green;
   }
+
+  .fa-google-plus-square, .fa-linkedin-square {
+  font-size:3.2em;
+}
+
   .headin-color{
     background-color: #ccc;
     padding: 5px;

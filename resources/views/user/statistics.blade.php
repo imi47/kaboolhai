@@ -13,6 +13,8 @@
 
   .no-of-conv {
     margin-left:25px !important;
+    font-size: 1.8rem;
+    font-weight: 600;
   }
 
   .listofmenu li div div.inner-content.text-center {
@@ -47,6 +49,10 @@
    .searchcontainer button {
       margin-top:-56px !important;
       padding-top:12px;
+    }
+
+    .no-of-conv {
+      font-size:1.5rem;
     }
 }
 
@@ -125,6 +131,10 @@
   #username-dropdown-toggle .dropdown-menu {
     top: 52px !important;
 
+  }
+
+  .fa-google-plus-square, .fa-linkedin-square {
+    font-size:3.3em;
   }
 }
 </style>

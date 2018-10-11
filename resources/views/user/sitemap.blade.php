@@ -24,6 +24,19 @@
 
   }
 }
+
+@media (max-width:380px) {
+  .col-md-3.col-xs-6 {
+    width:100%;
+    margin:auto;
+    font-size:1.3rem;
+    line-height:1.9rem;
+  }
+}
+
+.fa-google-plus-square, .fa-linkedin-square {
+    font-size:3.35em;
+}
 </style>
    
 <div style="padding-top: 90px;"></div>
@@ -34,7 +47,7 @@
   <div style="padding-top: 40px;"></div>
 
         <div class="row">
-           <div class="col-md-3 ">
+           <div class="col-md-3 col-xs-6 ">
             <ul>
               <h2>User Listing</h2>
               <li><a href="{{ url('user-search') }}">User listing</a></li>
@@ -57,7 +70,7 @@
 
             </ul>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-3 col-xs-6">
             <ul>
         <h2>Dashboard</h2>
               <li><a href="{{ url('dashboard') }}">Dashboard</a></li>
@@ -91,7 +104,7 @@
               </ul>
           </div>
           
-          <div class="col-md-3">
+          <div class="col-md-3 col-xs-6">
             <ul>
              <h2>Search</h2>
              <li><a href="#">Search page</a></li>
@@ -108,7 +121,7 @@
                    <li><a href="{{ url('salafi-muslam') }}">Salafi Muslim</a></li>
             </ul>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-3 col-xs-6">
             <ul>
         <h2>Genrel</h2>
               <li><a href="{{ url('/') }}">Home</a></li>
@@ -125,7 +138,7 @@
           </div>
           </div>
           <hr>
-          <div class="col-md-3 ">
+          <div class="col-md-3 col-xs-6 ">
             <ul>
               <h2>Settings</h2>
               <li><a href="{{ url('settings') }}">Change password</a></li>
@@ -137,7 +150,7 @@
                 <li><a href="{{ url('settings') }}">Friend list setting</a></li>             
             </ul>
           </div>
-          <div class="col-md-3 ">
+          <div class="col-md-3 col-xs-6 ">
             <ul>
               <h2>User</h2>
               <li><a href="{{ url('login') }}">Login</a></li>
@@ -148,7 +161,7 @@
             </ul>
           </div>
 
-          <div class="col-md-3 ">
+          <div class="col-md-3 col-xs-6 ">
             <ul>
               <h2>Chat</h2>
               <li><a href="{{ url('inbox') }}">Inbox</a></li>

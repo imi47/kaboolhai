@@ -49,6 +49,14 @@
         top:52px !important;
       }
   }
+
+  .fa-google-plus-square, .fa-linkedin-square {
+    font-size:2.44em;
+  }
+
+  footer section .container {
+    margin-top:20px;
+  }
 </style>
 <div style="padding-top:90px;"></div>
 <div class="container-fluid">

@@ -24,6 +24,10 @@
 
   }
 }
+
+.fa-google-plus-square, .fa-linkedin-square {
+    font-size:3.25em;
+  }
 </style>
 
 <div style="padding-top: 90px;"></div>

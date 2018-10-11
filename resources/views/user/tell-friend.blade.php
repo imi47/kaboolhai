@@ -5,6 +5,14 @@
     overflow-x:hidden;
   }
 
+  footer section .container {
+    margin-top:30px;
+  }
+
+  .fa-google-plus-square, .fa-linkedin-square {
+    font-size:2.44em;
+  }
+
   .message-wraper .row {
     margin:0;
   }

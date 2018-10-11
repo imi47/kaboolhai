@@ -52,6 +52,14 @@
 
   }
 }
+
+.text-left.q {
+  margin-bottom:7px;
+}
+
+.fa-google-plus-square, .fa-linkedin-square {
+    font-size:2.44em;
+  }
 </style>
 
   <div style="padding-top:90px;"></div>
