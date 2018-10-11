@@ -155,10 +155,7 @@
       //   height: '200px'
       // });
     });
-    
-    // if (window.matchMedia("(max-width: 520px)").matches)
-    //         document.querySelector('.logo-light img').src='public/user_assets/db_images/KH-logo2.png';
-    // else document.querySelector('.logo-light img').src='public/user_assets/images/kaboolhai.png';
+
    
   </script>
 </head>
