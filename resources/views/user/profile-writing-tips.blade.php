@@ -41,6 +41,17 @@
       padding-top:15px;
     }
 }
+
+@media (max-width: 685px) {
+  .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
+    top: 56px !important;
+  }
+
+  #username-dropdown-toggle .dropdown-menu {
+    top: 47px !important;
+
+  }
+}
 </style>
 
 <div style="padding-top:90px;"></div>

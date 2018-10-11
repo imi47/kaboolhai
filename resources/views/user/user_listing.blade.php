@@ -8,6 +8,29 @@
     background-color: #ccc;
     padding: 5px;
   }
+
+  @media (max-width: 991px) {
+    .sticky-nav .navbar-nav > li > .dropdown-menu {
+      top:55px !important;
+  }
+}
+
+@media (max-width: 768px) {
+    .sticky-nav .navbar-nav > li > .dropdown-menu {
+      top:48px !important;
+  }
+}
+
+@media (max-width: 685px) {
+  .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
+    top: 55px !important;
+  }
+
+  #username-dropdown-toggle .dropdown-menu {
+    top: 47px !important;
+
+  }
+}
 </style>
 <div style="padding-top: 90px;"></div>
   

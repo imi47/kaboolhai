@@ -158,6 +158,17 @@ html, body {
     -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175) !important;
     box-shadow: 0 6px 12px rgba(0,0,0,.175) !important;
 }
+
+@media (max-width: 685px) {
+    .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
+    top: 55px !important;
+  }
+
+  #username-dropdown-toggle .dropdown-menu {
+    top: 49px !important;
+
+  }
+}
 </style>
 
 <script>

@@ -43,6 +43,10 @@
    clear: both;
   }
 
+  #navsidebare a {
+    text-decoration:none;
+  }
+
   .tpsrch {
     line-height:1.5em;
   }

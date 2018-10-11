@@ -27,6 +27,10 @@
         .humburger {
             margin-top:14px !important;
       }
+
+      #username-dropdown-toggle ul.dropdown-menu {
+        top:58px !important;
+      }
     }
 
     @media (min-width:991px) {
@@ -50,6 +54,10 @@
       .humburger {
           margin-top:8px !important;
     }
+
+    #username-dropdown-toggle ul.dropdown-menu {
+        top:53px !important;
+      }
   }
 </style>
 

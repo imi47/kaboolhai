@@ -128,6 +128,19 @@ footer .footer-middle {
         margin-top:-56px !important;
         padding-top:15px;
     }
+
+    .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
+      width:500px !important;
+    }
+
+    .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
+        top:42px !important;
+      }
+
+      #username-dropdown-toggle ul.dropdown-menu {
+        top:47px !important;
+
+      }
    }
 
    @media (min-width:991px) {
@@ -165,6 +178,16 @@ footer .footer-middle {
   }
 }
 
+ @media (max-width: 685px) {
+  .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
+    top: 55px !important;
+  }
+
+  #username-dropdown-toggle .dropdown-menu {
+    top: 47px !important;
+
+  }
+}
 </style>
  <div class="col-md-12">
          {{--  <h4 class="text-color" style="text-align: center;">Settings</h4> --}}

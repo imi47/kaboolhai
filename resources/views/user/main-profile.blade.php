@@ -39,6 +39,8 @@
     footer .search-container .form-control {
       width:100% !important;
     }
+
+    
   }
 .social_icon {
   text-align:center;
@@ -66,6 +68,20 @@
       height:43vw !important;
       /* margin-left:10.1vw; */
       margin-left:1.2vw;
+    }
+
+    .navbar-nav .open .dropdown-menu {
+      top:58px !important;
+    }
+
+    #username-dropdown-toggle ul.dropdown-menu {
+      top:52px !important;
+    }
+}
+
+@media (max-width:767px) {
+  #username-dropdown-toggle ul.dropdown-menu {
+      top:45px !important;
     }
 }
     .hvr-grow {

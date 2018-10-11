@@ -87,7 +87,7 @@
       cursor: pointer;
     }
 	 
-    @media (max-width:400px) {
+    @media (max-width:430px) {
 		#logindivv {
 			width:100vw;
 		}

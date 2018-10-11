@@ -395,6 +395,16 @@ p.t
       .humburger {
           margin-top:8px !important;
     }
+
+    @media (max-width: 685px) {
+      .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
+        top: 56px !important;
+  }
+
+    #username-dropdown-toggle .dropdown-menu {
+      top: 48px !important;
+  }
+}
    </style>
 
    <div id="wait" style="display: none;"></div>

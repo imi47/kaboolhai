@@ -60,6 +60,10 @@
 			 .photo3 {
 				 margin: 8px auto 0 auto;
 			 }
+
+			 .sticky-nav .navbar-nav > li > .dropdown-menu {
+     		 top:55px !important;
+ 			 }
 		 }
 
 		  @media (max-width:768px) {
@@ -68,8 +72,10 @@
 				 clear:both;
 				 text-align:center;
 				 width:auto;
-				 /* margin:auto !important;
-				 text-align:center !important; */
+				}
+
+				.sticky-nav .navbar-nav > li > .dropdown-menu {
+					top:48px !important;
 				}
 
 				.contacts_detail_parent {
@@ -115,6 +121,17 @@
 					padding-left:0;
 				}
 		 }
+
+		 @media (max-width: 685px) {
+  .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
+    top: 55px !important;
+  }
+
+  #username-dropdown-toggle .dropdown-menu {
+    top: 47px !important;
+
+  }
+}
 
      </style>
 <script type="text/javascript">

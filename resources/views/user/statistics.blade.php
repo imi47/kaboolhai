@@ -37,6 +37,10 @@
       padding-top:12px;
     }
 
+    .sticky-nav .navbar-nav > li > .dropdown-menu {
+      top:60px !important;
+    }
+
   }
 
   @media (min-width:991px) {
@@ -57,6 +61,10 @@
 
     .listofmenu li div div.inner-content.text-center {
       width:84vw;
+    }
+
+    .sticky-nav .navbar-nav > li > .dropdown-menu {
+      top:52px !important;
     }
   }
 
@@ -108,6 +116,17 @@
       width:70vw;
     }
   }
+
+  @media (max-width: 685px) {
+  .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
+    top: 60px !important;
+  }
+
+  #username-dropdown-toggle .dropdown-menu {
+    top: 52px !important;
+
+  }
+}
 </style>
 
 <div class="container-fluid">

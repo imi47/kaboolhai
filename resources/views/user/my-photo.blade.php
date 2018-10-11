@@ -42,6 +42,14 @@
       .humburger {
           margin-top:17px !important;
     }
+
+    .nav-white.sticky-nav .navbar-nav li a:hover, .nav-white.sticky-nav .navbar-nav > .open > a.menudesign {
+      padding-bottom:0;
+    }
+
+    .icon-dropdown {
+      margin-top:-16px !important;
+    }
   }
 
   @media (max-width:768px) {
@@ -54,6 +62,21 @@
           margin-top:11px !important;
     }
   }
+
+  @media (max-width: 685px) {
+    #username-dropdown-toggle .dropdown-menu {
+      left: -85px !important;
+  }
+
+  .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
+    top: 76px !important;
+  }
+
+  #username-dropdown-toggle .dropdown-menu {
+    top: 60px !important;
+
+  }
+}
 </style>
 <div class="col-md-12">
          {{--  <h4 class="text-color" style="text-align: center;">Settings</h4> --}}

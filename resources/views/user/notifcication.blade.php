@@ -19,6 +19,10 @@
         margin-top:-56px !important;
         padding-top:15px;
     }
+
+    #username-dropdown-toggle ul.dropdown-menu {
+        top:58px !important;
+      }
    }
 
    @media (min-width:991px) {
@@ -40,6 +44,10 @@
       .humburger {
           margin-top:8px !important;
     }
+
+     #username-dropdown-toggle ul.dropdown-menu {
+        top:52px !important;
+      }
   }
 </style>
 <div style="padding-top:90px;"></div>

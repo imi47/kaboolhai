@@ -17,6 +17,28 @@
       margin-top:-56px !important;
       padding-top:12px;
     }
+
+    .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu,  #username-dropdown-toggle ul.dropdown-menu  {
+        top:60px !important;
+      }
+}
+
+ @media (max-width:768px) {
+    .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
+      top:52px !important;
+   }
+
+}
+
+       @media (max-width: 685px) {
+  .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
+    top: 60px !important;
+  }
+
+  .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu, #username-dropdown-toggle ul.dropdown-menu {
+    top: 53px !important;
+
+  }
 }
 </style>
 

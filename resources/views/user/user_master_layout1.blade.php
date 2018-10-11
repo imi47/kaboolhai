@@ -404,7 +404,7 @@
       right: 0;
       cursor: pointer;
     }
-    @media (max-width:400px) {
+    @media (max-width:430px) {
 			#logindivv {
 				width:100vw;
 			}
@@ -426,7 +426,7 @@
 }
 #username-dropdown-toggle .dropdown-menu {
     /* position: absolute !important; */
-    left: -89px !important;
+    left: -75px !important;
     }
 }
 @media (max-width:515px) {
