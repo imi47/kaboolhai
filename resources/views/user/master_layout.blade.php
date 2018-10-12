@@ -48,7 +48,7 @@
     position:fixed !important;
   }
 
-     #navsidebare {
+     /* #navsidebare {
       box-sizing:border-box;
     }
 
@@ -62,7 +62,7 @@
 
     #sidebar-2 * {
       box-sizing:border-box;
-    }
+    } */
 
   #navsidebare a {
     text-decoration:none;
@@ -143,7 +143,7 @@
       background-color:#000;
       color:#fff;
       opacity:0.9;
-      height:100vh;
+      height:100%;
       width:260px;
       position:fixed;
       right:-260px;

@@ -82,7 +82,7 @@
       background-color:#000;
       color:#fff;
       opacity:0.9;
-      height:100vh;
+      height:100%;
       width:260px;
       position:fixed;
       right:-260px;
