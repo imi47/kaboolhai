@@ -381,6 +381,20 @@ p.t
           margin-top:12px !important;
           margin-bottom:-12px !important;
       }
+
+      .col-xs-6 {
+        width:50% ;
+      }
+
+      .pl-profile {
+        margin-left:0;
+      }
+    }
+
+    @media (max-width:500px) {
+      .smallest {
+        width:100%;   
+      }
     }
     
     @media (max-width:420px) {
@@ -829,7 +843,7 @@ p.t
          <a href="{{ url('public-profile',$row->id) }}" target="_blank" class="userserch">
     
           <!-- first box -->
-         <div class="col-sm-4 perdiv">
+         <div class="col-sm-4 col-xs-6 smallest perdiv">
            <div class="clearfix"></div>
            <div class="pl-profile">
            {{--  @if(!empty($row->image))
