@@ -31,11 +31,8 @@
     }
 
     #navsidebare {
-      box-sizing:border-box;
-    }
-
-    #navsidebare * {
-      box-sizing:border-box;
+      height:100% !important;
+      position:fixed !important;
     }
     
     .label {
@@ -247,6 +244,22 @@
   </script>
 
   <style type="text/css">
+     #navsidebare {
+      box-sizing:border-box;
+    }
+
+    #navsidebare * {
+      box-sizing:border-box;
+    }
+
+    #sidebar-2 {
+      box-sizing:border-box;
+    }
+
+    #sidebar-2 * {
+      box-sizing:border-box;
+    }
+
     .go_more {
       background-color: #ffffff;
       height: 350px;

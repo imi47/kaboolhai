@@ -15,14 +15,27 @@
 </head>
 <style type="text/css">
 
-   #navsidebare {
+   /* #navsidebare {
       box-sizing:border-box;
     }
 
     #navsidebare * {
       box-sizing:border-box;
+    } */
+
+	 #navsidebare {
+      height:100% !important;
+      position:fixed !important;
     }
-	 
+
+	 #sidebar-2 {
+      box-sizing:border-box;
+    }
+
+    #sidebar-2 * {
+      box-sizing:border-box;
+    }
+
 	.logindiv {
 		width: 300px;
 		height: auto;

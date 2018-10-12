@@ -43,11 +43,24 @@
    clear: both;
   }
 
+  #navsidebare {
+    height:100% !important;
+    position:fixed !important;
+  }
+
      #navsidebare {
       box-sizing:border-box;
     }
 
     #navsidebare * {
+      box-sizing:border-box;
+    }
+
+    #sidebar-2 {
+      box-sizing:border-box;
+    }
+
+    #sidebar-2 * {
       box-sizing:border-box;
     }
 

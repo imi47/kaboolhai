@@ -7,6 +7,10 @@ html, body {
   overflow-x:hidden;
 }
 
+#navsidebare {
+  height:100vh !important;
+}
+
 @media (max-width:450px) {
   #day, #month, #year, #code1, #full {
   width:100% !important;
@@ -130,6 +134,11 @@ html, body {
   }
 
    @media (max-width:768px) {
+
+    #navsidebare .row ul{
+      margin-bottom:100px;
+    }
+
     #friends-dropdown, #messages-dropdown, #notifications-dropdown {
         margin-top:19px !important;
         margin-bottom:-19px !important;
@@ -188,6 +197,7 @@ html, body {
    $(document).click(function() {
     $('#username-dropdown-toggle .dropdown-menu, .icon-dropdown').hide();
   });
+
 </script>
 
 <br><br><br><br>

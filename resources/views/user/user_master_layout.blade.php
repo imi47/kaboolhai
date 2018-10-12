@@ -29,12 +29,31 @@
 			overflow-x:hidden;
 		}
 
-		   #navsidebare {
+		#navsidebare {
+      height:100% !important;
+      position:fixed !important;
+		z-index:9999999;
+    }
+
+		/* #navsidebare {
       		box-sizing:border-box;
     }
 
-    #navsidebare * {
+    	#navsidebare * {
+      	box-sizing:border-box;
+    }
+
+	 #sidebar-2 {
       box-sizing:border-box;
+    }
+
+    #sidebar-2 * {
+      box-sizing:border-box;
+    } */
+
+	 #navsidebare {
+      height:100% !important;
+      position:fixed;
     }
 
 		.logo-mobile {
@@ -267,121 +286,7 @@
 
 <body>
 
-
-
-	<div id="wait" style="display: none;"></div>
-	<!-- navigation panel -->
-
-
-	<nav class="navbar navbar-default navbar-fixed-top nav-transparent overlay-nav sticky-nav nav-white nav-border-bottom"
-	 role="navigation">
-		<div class="container-fluid navbar-container">
-			<div class="row">
-				<!-- logo -->
-				<div class="col-md-2" id='test'>
-					<a class="logo-light" href="{{ url('/') }}">
-						<img alt="" src="{{ $user_assets }}/images/kaboolhai.png" class="logo" />
-						<img alt="" src="{{ $user_assets }}/db_images/KH-logo2.png" class="logo-mobile" />
-					</a>
-					<a class="logo-dark" href="{{ url('/') }}">
-						<img alt="" src="{{ $user_assets }}/images/kaboolhai.png" class="logo" />
-					</a>
-				</div>
-				<!-- end logo -->
-				<!-- search and cart  -->
-
-				<!-- end search and cart  -->
-				<!-- toggle navigation -->
-				<div class="navbar-header">
-
-					<!-- old code -->
-					<!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> -->
-
-					<button type="button" class="navbar-toggle" data-toggle="collapse">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-				<!-- @if(Session::get('user_id'))
-				<span id='username'> {{ Session::get('user_name') }}</span>
-				@endif -->
-				</div>
-				<!-- toggle navigation end -->
-				<!-- main menu -->
-				<div class="col-md-10 main-nav">
-					<div class="navbar-collapse collapse">
-						<ul id="accordion" class="nav navbar-nav panel-group">
-							<!-- <li> <a href="register.html">Register</a> </li> -->
-							<!-- <li class="{{ Request::is('/') ? 'active1' : '' }}">
-		 <a href="{{url('/')}}">Home</a> </li> -->
-							<li class="{{ Request::is('about-us') ? 'active1' : '' }}">
-								<a href="{{url('about-us')}}">About Us</a>
-							</li>
-							<li class="{{ Request::is('contact-us') ? 'active1' : '' }}">
-								<a href="{{url('contact-us')}}">Contact</a>
-							</li>
-							<li class="{{ Request::is('faqs') ? 'active1' : '' }}">
-								<a href="{{url('faqs')}}">FAQs</a>
-							</li>
-							<li class="{{ Request::is('advance-search') ? 'active1' : '' }}">
-								<a href="{{ url('advance-search') }}">Advanced Search</a>
-							</li>
-							<li class="{{ Request::is('blog') ? 'active1' : '' }}">
-								<a href="http://kaboolhai.com/blog/" target="_blank">Blogs</a>
-							</li>
-							@if(empty(Session::get('user_id'))) {{--
-							<li style="padding-right:0px;text-transform:capitalize;">
-								<a href="{{ url('dashboard') }}"> {{ Session::get('user_name') }} </a>
-							</li>
-							<li style="padding-right:0px;text-transform:capitalize;">
-								<a href="{{ url('logout') }}"> Logout </a>
-							</li>
-							@else --}}
-							<li class="{{ Request::is('register') ? 'active1' : '' }}">
-								<a href="{{url('register')}}">Create Account</a>
-							</li>
-
-							<li class="signin" style="padding-right:0px;text-transform:capitalize;">
-								<a href="#"> Sign In </a>
-							</li>
-							@else
-							<li class="{{ Request::is('advance-search') ? 'active1' : '' }}">
-								<a href="{{url('advance-search')}}">Find Match</a>
-							</li>
-						</ul>
-						<ul class="nav navbar-nav">
-
-
-
-							<li class="dropdown">
-								<a class="dropdown-toggle menudesign" data-toggle="dropdown" href="#">
-									{{ user_data()->user_name }}
-									<span class="caret"></span>
-								</a>
-								<ul class="dropdown-menu" style="    background-color: #ffffff;">
-									<li>
-										<a style="background-color: #ffffff; color: black !important; font-size: 13px;" href="{{ url('dashboard') }}">Dashboard</a>
-									</li>
-
-									<li>
-										<a style="background-color: #ffffff; color:black !important; font-size: 13px;" href="{{ url('logout') }}">Logout</a>
-									</li>
-								</ul>
-								@endif
-							</li>
-							<a href="javascript:;" id="btntoshowmenu">
-								<i class="fa fa-bars humburger"></i>
-							</a>
-					</div>
-
-					</ul>
-				</div>
-				<!-- end main menu -->
-			</div>
-		</div>
-
-		<div class="navsidebar wow slideInRight" id="navsidebare" style="display:none;">
+	<div class="navsidebar wow slideInRight" id="navsidebare" style="display:none;">
 			<div class="row">
 				<a href="javascript:;" id="cross" style="margin-left:230px;">
 					<!-- <i class="fa fa-arrow-right fa-3x" style="color:white;margin-top:10px;"></i> -->
@@ -520,6 +425,120 @@
 				</ul>
 			</div>
 		</div>
+
+	<div id="wait" style="display: none;"></div>
+	<!-- navigation panel -->
+
+
+	<nav class="navbar navbar-default navbar-fixed-top nav-transparent overlay-nav sticky-nav nav-white nav-border-bottom"
+	 role="navigation">
+		<div class="container-fluid navbar-container">
+			<div class="row">
+				<!-- logo -->
+				<div class="col-md-2" id='test'>
+					<a class="logo-light" href="{{ url('/') }}">
+						<img alt="" src="{{ $user_assets }}/images/kaboolhai.png" class="logo" />
+						<img alt="" src="{{ $user_assets }}/db_images/KH-logo2.png" class="logo-mobile" />
+					</a>
+					<a class="logo-dark" href="{{ url('/') }}">
+						<img alt="" src="{{ $user_assets }}/images/kaboolhai.png" class="logo" />
+					</a>
+				</div>
+				<!-- end logo -->
+				<!-- search and cart  -->
+
+				<!-- end search and cart  -->
+				<!-- toggle navigation -->
+				<div class="navbar-header">
+
+					<!-- old code -->
+					<!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> -->
+
+					<button type="button" class="navbar-toggle" data-toggle="collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				<!-- @if(Session::get('user_id'))
+				<span id='username'> {{ Session::get('user_name') }}</span>
+				@endif -->
+				</div>
+				<!-- toggle navigation end -->
+				<!-- main menu -->
+				<div class="col-md-10 main-nav">
+					<div class="navbar-collapse collapse">
+						<ul id="accordion" class="nav navbar-nav panel-group">
+							<!-- <li> <a href="register.html">Register</a> </li> -->
+							<!-- <li class="{{ Request::is('/') ? 'active1' : '' }}">
+		 <a href="{{url('/')}}">Home</a> </li> -->
+							<li class="{{ Request::is('about-us') ? 'active1' : '' }}">
+								<a href="{{url('about-us')}}">About Us</a>
+							</li>
+							<li class="{{ Request::is('contact-us') ? 'active1' : '' }}">
+								<a href="{{url('contact-us')}}">Contact</a>
+							</li>
+							<li class="{{ Request::is('faqs') ? 'active1' : '' }}">
+								<a href="{{url('faqs')}}">FAQs</a>
+							</li>
+							<li class="{{ Request::is('advance-search') ? 'active1' : '' }}">
+								<a href="{{ url('advance-search') }}">Advanced Search</a>
+							</li>
+							<li class="{{ Request::is('blog') ? 'active1' : '' }}">
+								<a href="http://kaboolhai.com/blog/" target="_blank">Blogs</a>
+							</li>
+							@if(empty(Session::get('user_id'))) {{--
+							<li style="padding-right:0px;text-transform:capitalize;">
+								<a href="{{ url('dashboard') }}"> {{ Session::get('user_name') }} </a>
+							</li>
+							<li style="padding-right:0px;text-transform:capitalize;">
+								<a href="{{ url('logout') }}"> Logout </a>
+							</li>
+							@else --}}
+							<li class="{{ Request::is('register') ? 'active1' : '' }}">
+								<a href="{{url('register')}}">Create Account</a>
+							</li>
+
+							<li class="signin" style="padding-right:0px;text-transform:capitalize;">
+								<a href="#"> Sign In </a>
+							</li>
+							@else
+							<li class="{{ Request::is('advance-search') ? 'active1' : '' }}">
+								<a href="{{url('advance-search')}}">Find Match</a>
+							</li>
+						</ul>
+						<ul class="nav navbar-nav">
+
+
+
+							<li class="dropdown">
+								<a class="dropdown-toggle menudesign" data-toggle="dropdown" href="#">
+									{{ user_data()->user_name }}
+									<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu" style="    background-color: #ffffff;">
+									<li>
+										<a style="background-color: #ffffff; color: black !important; font-size: 13px;" href="{{ url('dashboard') }}">Dashboard</a>
+									</li>
+
+									<li>
+										<a style="background-color: #ffffff; color:black !important; font-size: 13px;" href="{{ url('logout') }}">Logout</a>
+									</li>
+								</ul>
+								@endif
+							</li>
+							<a href="javascript:;" id="btntoshowmenu">
+								<i class="fa fa-bars humburger"></i>
+							</a>
+					</div>
+
+					</ul>
+				</div>
+				<!-- end main menu -->
+			</div>
+		</div>
+
+		
 	</nav>
 
 	<!-- <style>
