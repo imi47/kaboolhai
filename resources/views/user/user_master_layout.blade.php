@@ -29,6 +29,14 @@
 			overflow-x:hidden;
 		}
 
+		   #navsidebare {
+      		box-sizing:border-box;
+    }
+
+    #navsidebare * {
+      box-sizing:border-box;
+    }
+
 		.logo-mobile {
 			display:none;
 		}
@@ -151,17 +159,13 @@
 		margin-right:0;
 	}
 
-	.remove-top-margin {
+	/* .remove-top-margin {
 		margin-top:-70px;
 	}
 
 	.remove-top-margin:last-child {
 		margin-top:-43px;
-	}
-
-	li.signin1 {
-		margin-top:80px;
-	}
+	} */
 
 	#accordion {
 		/* float:l !important; */
@@ -385,8 +389,8 @@
 				</a>
 
 				<ul style="margin-left:25px;list-style-type:none;width:100px;line-height:50px;margin-top:15px;">
-				<li class="wow fadeInDown remove-top-margin" data-wow-delay="0.1s">
-				@if(Session::get('user_id'))) 
+				<li class="wow fadeInDown" data-wow-delay="0.1s">
+				@if(Session::get('user_id')) 
 						<a href="{{ url('dashboard') }}" class="M">
 							<span>
 								<!-- <img width="40" height="40" src="{{ $user_assets }}/login.svg" alt="" /> -->
@@ -503,8 +507,8 @@
 							<span style="padding-left:15px;">Advanced Search</span>
 						</a>
 					</li>
-					@if(Session::get('user_id'))) 
-					<li class="wow fadeInDown remove-top-margin" data-wow-delay="1s">
+					@if(Session::get('user_id')) 
+					<li class="wow fadeInDown" data-wow-delay="1s">
 						<a href="{{ url('logout') }}" class="M">
 							<span>
 							<img width="40" height="40" src="{{ $user_assets }}/logout.svg" alt="log out" />

@@ -43,6 +43,14 @@
    clear: both;
   }
 
+     #navsidebare {
+      box-sizing:border-box;
+    }
+
+    #navsidebare * {
+      box-sizing:border-box;
+    }
+
   #navsidebare a {
     text-decoration:none;
   }
@@ -110,13 +118,13 @@
       z-index:999999;
   }
 
-  .remove-top-margin {
+  /* .remove-top-margin {
     margin-top:-70px;
     }
 
     .remove-top-margin:last-child {
     margin-top:-5px;
-  }
+  } */
   
   #sidebar-2 {
       background-color:#000;
@@ -829,8 +837,8 @@
           </a>
           <ul style="margin-left:25px;list-style-type:none;width:100px;line-height:50px;margin-top:15px;">
 
-         <li class="wow fadeInDown remove-top-margin" data-wow-delay="0.1s">
-        @if(Session::get('user_id'))) 
+         <li class="wow fadeInDown" data-wow-delay="0.1s">
+        @if(Session::get('user_id'))
             <a href="{{ url('dashboard') }}" class="M">
               <span>
                 <!-- <img width="40" height="40" src="{{ $user_assets }}/login.svg" alt="" /> -->
@@ -874,7 +882,7 @@
             
             @if(Session::get('user_id'))
             <li class="wow fadeInDown" data-wow-delay="0.9s"><a href="#" class="M" id='side-go-more-li'><span><i class="fas fa-bars fa-2x" style='color:orange'></i></span> <span style="padding-left:10px;">Go more</span></a></li>
-          <li class="wow fadeInDown remove-top-margin" data-wow-delay="1s">
+          <li class="wow fadeInDown" data-wow-delay="1s">
             <a href="{{ url('logout') }}" class="M">
               <span>
               <i class="fa fa-sign-out fa-2x" aria-hidden="true"></i>

@@ -29,6 +29,14 @@
     body {
       /* position:relative; */
     }
+
+    #navsidebare {
+      box-sizing:border-box;
+    }
+
+    #navsidebare * {
+      box-sizing:border-box;
+    }
     
     .label {
       display: none;
@@ -104,9 +112,7 @@
       background-color:#222;
       height:1px;
     }
-    #signin-li {
-      margin-top:80px;
-    }
+    
      #sidebar-2 ul li a {
        text-decoration:none;
        color:#fff;
@@ -401,12 +407,12 @@
 			}
 		}
     
-    .remove-top-margin {
+    /* .remove-top-margin {
     margin-top:-70px;
     }
     .remove-top-margin:last-child {
      margin-top:13px;
-  }
+  } */
   .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
     width:500px !important;
   }
@@ -791,8 +797,8 @@
           </a>
           <ul style="margin-left:25px;list-style-type:none;width:100px;line-height:50px;margin-top:15px;">
 
-         <li class="wow fadeInDown remove-top-margin" data-wow-delay="0.1s">
-        @if(Session::get('user_id'))) 
+         <li class="wow fadeInDown" data-wow-delay="0.1s">
+        @if(Session::get('user_id'))
             <a href="{{ url('dashboard') }}" class="M">
               <span>
                 <!-- <img width="40" height="40" src="{{ $user_assets }}/login.svg" alt="" /> -->
@@ -836,7 +842,7 @@
             
             @if(Session::get('user_id'))
             <li class="wow fadeInDown" data-wow-delay="0.9s"><a href="#" class="M" id='side-go-more-li'><span><img width="40" height="40" src="{{ $user_assets }}/more.svg" alt="go more" /></span> <span style="padding-left:10px;">Go more</span></a></li>
-          <li class="wow fadeInDown remove-top-margin" data-wow-delay="1s">
+          <li class="wow fadeInDown" data-wow-delay="1s">
             <a href="{{ url('logout') }}" class="M">
               <span>
               <img width="40" height="40" src="{{ $user_assets }}/logout.svg" alt="log out" />

@@ -14,6 +14,15 @@
 	@stack('css')
 </head>
 <style type="text/css">
+
+   #navsidebare {
+      box-sizing:border-box;
+    }
+
+    #navsidebare * {
+      box-sizing:border-box;
+    }
+	 
 	.logindiv {
 		width: 300px;
 		height: auto;
