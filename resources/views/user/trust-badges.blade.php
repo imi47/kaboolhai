@@ -7,6 +7,13 @@
     padding-top:12px;
   }
 
+  .fa-google-plus-square, .fa-linkedin-square {
+    font-size:3.25em;
+  }
+   .top-searches-by div > a {
+      text-transform:capitalize;
+  }
+
   .navbar .accordion-menu .dropdown {
     margin-top:4px !important;
   }
