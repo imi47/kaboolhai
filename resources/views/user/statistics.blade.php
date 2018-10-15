@@ -11,6 +11,10 @@
     margin:0 !important;
   }
 
+  .fa-google-plus-square, .fa-linkedin-square {
+    font-size:3.85rem;
+  }
+
   .no-of-conv {
     margin-left:25px !important;
     font-size: 1.8rem;

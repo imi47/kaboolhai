@@ -2,6 +2,9 @@
 @section('data')
 
 <style>
+.fa-google-plus-square, .fa-linkedin-square {
+    font-size:3.85rem;
+  }
 
   @media (max-width:991px) {
     #carousel-default img {

@@ -35,7 +35,7 @@
 }
 
 .fa-google-plus-square, .fa-linkedin-square {
-    font-size:3.35em;
+    font-size:3.2em;
 }
 </style>
    

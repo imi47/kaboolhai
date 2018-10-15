@@ -2,6 +2,7 @@
 @section('data')
 
 <style>
+
 @media (min-width:991px) {
    .searchcontainer button {
       margin-top:-56px !important;
@@ -50,7 +51,7 @@
 }
 
 .fa-google-plus-square, .fa-linkedin-square {
-  font-size:3.3em;
+  font-size:3.2em;
 }
 </style>
 

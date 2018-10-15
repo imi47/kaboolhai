@@ -10,12 +10,20 @@
         text-transform:none;
     }
 
+    .copyright p {
+        font-size:11px;
+    }
+
     .slider_area, .slider_area div {
         height:600px;
     }
 
     .table-cell {
         display:block;
+    }
+
+    tr.dosrch th a {
+        font-size:14px;
     }
 
     @media (max-width:991px) {
@@ -92,11 +100,16 @@
 
         .sticky-nav .navbar-nav > li > .dropdown-menu {
             top:36px !important;
+        }
     }
 
     @media (max-width:548px) {
        #box5 {
             margin-top:605px;
+        }
+
+        .copyright p {
+            font-size:9px;
         }
     }
 
@@ -161,8 +174,19 @@
 
   #username-dropdown-toggle .dropdown-menu {
     top: 47px !important;
-
   }
+
+  tr.dosrch th a {
+    font-size:12px;
+    }
+
+}
+
+@media (max-width:320px) {
+  .searchcontainer button {
+      margin-top:-44px !important;
+      padding-top:15px;
+    }
 }
 
 .fa-google-plus-square, .fa-linkedin-square {

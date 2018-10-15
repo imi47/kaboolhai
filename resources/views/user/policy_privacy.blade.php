@@ -74,6 +74,10 @@
     width:40px;
   }
 
+  .fa-google-plus-square, .fa-linkedin-square {
+    font-size:4rem;
+  }
+
    @media (max-width:991px) {
     .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
       top:55px !important;

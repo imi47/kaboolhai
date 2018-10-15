@@ -9,6 +9,10 @@
     margin: 10px 0;
 }
 
+tr.dosrch th a {
+    font-size:14px;
+}
+
 footer section {
     margin-top:50px;
 }
@@ -114,6 +118,16 @@ footer section {
     top: 47px !important;
 
   }
+
+  tr.dosrch th a {
+    font-size:12px;
+}
+}
+
+@media (max-width:320px) {
+    .searchcontainer button {
+        margin-top:-44px !important;
+    }
 }
 
 </style>

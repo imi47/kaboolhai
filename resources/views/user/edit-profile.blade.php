@@ -200,6 +200,10 @@ html, body {
     margin-top:-44px !important;
   }
 }
+
+.fa-google-plus-square, .fa-linkedin-square {
+    font-size:2.45rem;
+  }
 </style>
 
 <script>

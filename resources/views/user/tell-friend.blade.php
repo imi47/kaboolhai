@@ -9,6 +9,10 @@
     margin-top:30px;
   }
 
+  tr.dosrch th a {
+    font-size:14px;
+  }
+
   .fa-google-plus-square, .fa-linkedin-square {
     font-size:2.44em;
   }
@@ -118,9 +122,19 @@
     top: 56px !important;
   }
 
+  @media (max-width:320px) {
+    .searchcontainer button {
+      margin-top:-44px !important;
+      padding-top:15px;
+    }
+  }
+
   #username-dropdown-toggle .dropdown-menu {
     top: 47px !important;
+  }
 
+  tr.dosrch th a {
+    font-size:12px;
   }
 }
 </style>

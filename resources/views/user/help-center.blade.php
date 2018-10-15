@@ -8,6 +8,10 @@
     line-height: 50px;
   }
 
+  tr.dosrch th a {
+    font-size:14px;
+  }
+
   @media (max-width:991px) and (min-width:768px) {
     .humburger {
       margin-top:12px !important;
@@ -72,9 +76,24 @@
 
   #username-dropdown-toggle .dropdown-menu {
     top: 47px !important;
+  }
 
+  tr.dosrch th a {
+    font-size:12px;
   }
 }
+
+@media (max-width:320px) {
+  .searchcontainer button {
+      margin-top:-44px !important;
+      padding-top:15px;
+    }
+
+    .btn {
+      margin-top:10px;
+    }
+}
+
 .fa-google-plus-square, .fa-linkedin-square {
     font-size:2.44em;
   }
