@@ -21,6 +21,14 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
 
 	<style>
+
+	.sticky-nav .navbar-nav > li > .dropdown-menu {
+		top: 45px !important;
+		border-radius: 5px;
+		right: 26px;
+		border: 2px solid #ddd;
+	}
+
 		.top-searches-by div > a {
 			color:#fff !important;
 		}
@@ -404,7 +412,7 @@
 					<li class="wow fadeInDown" data-wow-delay="0.99s">
 						<a href="{{ url('help-center') }}" class="M">
 							<span>
-								<i class="fa fa-question" style="color:red; font-size: 45px;"></i>
+							<img width="39" src="http://localhost/KBH/public/user_assets/images/support.png" alt="" style="margin-left:2px;">
 							</span>
 							<span style="padding-left:15px;">Help Center</span>
 						</a>

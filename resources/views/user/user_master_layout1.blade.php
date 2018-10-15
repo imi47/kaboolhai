@@ -849,8 +849,7 @@
                     alt="" /></span><span style="padding-left:15px;">Our Partners</span></a></li>
             <li class="wow fadeInDown" data-wow-delay="0.99s"><a href="{{ url('contact-us') }}" class="M"><span><img
                     width="40" height="40" src="{{ $user_assets }}/contact_us.png" alt="" /></span><span style="padding-left:15px;">Contact</span></a></li>
-            <li class="wow fadeInDown" data-wow-delay="0.99s"><a href="{{ url('help-center') }}" class="M"><span><i
-                    class="fa fa-question" style="color:red; font-size: 45px;"></i></span><span style="padding-left:15px;">Help
+            <li class="wow fadeInDown" data-wow-delay="0.99s"><a href="{{ url('help-center') }}" class="M"><span><img width="39" src="http://localhost/KBH/public/user_assets/images/support.png" alt="" style="margin-left:2px;"></span><span style="padding-left:15px;">Help
                   Center</span></a></li>
             
             @if(Session::get('user_id'))
