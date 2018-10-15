@@ -7,8 +7,16 @@ html, body {
   overflow-x:hidden;
 }
 
+.top-searches-by div > a, tr.tpsrch th a, tr.dosrch th a {
+  font-size:14px;
+}
+
 #navsidebare {
   height:100vh !important;
+}
+
+.top-searches-by div > a, tr.tpsrch th a {
+  font-size:14px;
 }
 
 @media (max-width:450px) {
@@ -17,6 +25,14 @@ html, body {
   }
   #code {
   width:40% !important;
+  }
+
+  .top-searches-by div > a, tr.tpsrch th a, tr.dosrch th a {
+  font-size:12px;
+}
+
+  .top-searches-by div > a, tr.tpsrch th a {
+    font-size:12px;
   }
 }
 

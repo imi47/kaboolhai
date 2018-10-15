@@ -6,6 +6,10 @@
     float:right;
   }
 
+.top-searches-by div > a, tr.tpsrch th a, tr.dosrch th a {
+  font-size:14px;
+}
+
   .navbar-nav>li {
     float:left !important;
   }
@@ -69,7 +73,7 @@
 
   @media (max-width: 685px) {
     #username-dropdown-toggle .dropdown-menu {
-      left: -85px !important;
+      left: -85px !important; 
   }
 
   .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
@@ -79,6 +83,10 @@
   #username-dropdown-toggle .dropdown-menu {
     top: 60px !important;
 
+  }
+
+  .top-searches-by div > a, tr.tpsrch th a, tr.dosrch th a {
+    font-size:12px;
   }
 }
 </style>
