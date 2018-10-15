@@ -10,6 +10,14 @@
         text-transform:none;
     }
 
+    .text-center {
+        padding:0;
+    }
+
+    .modal-dialog {
+        max-width:600px;
+    }
+
     .copyright p {
         font-size:11px;
     }
@@ -100,6 +108,12 @@
 
         .sticky-nav .navbar-nav > li > .dropdown-menu {
             top:36px !important;
+        }
+
+        .modal-dialog {
+            width:auto;
+            margin-left:10px;
+            margin-right:10px;
         }
     }
 

@@ -137,9 +137,9 @@
 	  }
   }
     
-    .to {
+    /* .to {
       margin-top:7px !important;
-    }
+    } */
   }
 
   @media (max-width:320px) {

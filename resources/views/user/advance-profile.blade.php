@@ -71,7 +71,6 @@
 
   .col-xs-1.text-center.to {
     margin-top:17px;
-    margin-left:-10px;
   }
 
   .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {

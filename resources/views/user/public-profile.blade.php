@@ -103,7 +103,7 @@
 				}
 
 				.box_body, .txt_fetched {
-					font-size:2.7vw;
+					font-size:2.75vw;
 				}
 				
 				#btn {
@@ -134,7 +134,7 @@
 }
 
 .fa-google-plus-square, .fa-linkedin-square {
-  font-size:3.3em;
+  font-size:3.2em;
 }
 
      </style>
