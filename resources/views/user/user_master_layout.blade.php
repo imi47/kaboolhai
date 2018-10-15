@@ -69,6 +69,11 @@
 				display:block;
 				width:40px;
 			}
+
+			.shrink-nav .logo-light {
+				opacity:1 !important;
+				display:table-cell !important;
+	 		}
 		}
 
 		section .row .blockcontain .frownumdiv .textowndiv {
@@ -437,8 +442,8 @@
 				<!-- logo -->
 				<div class="col-md-2" id='test'>
 					<a class="logo-light" href="{{ url('/') }}">
-						<img alt="" src="{{ $user_assets }}/images/kaboolhai.png" class="logo" />
 						<img alt="" src="{{ $user_assets }}/db_images/KH-logo2.png" class="logo-mobile" />
+						<img alt="" src="{{ $user_assets }}/images/kaboolhai.png" class="logo" />
 					</a>
 					<a class="logo-dark" href="{{ url('/') }}">
 						<img alt="" src="{{ $user_assets }}/images/kaboolhai.png" class="logo" />
