@@ -128,6 +128,12 @@
     top: 60px !important;
   }
 
+  @media (max-width:320px) {
+    .searchcontainer button {
+      margin-top:-44px !important;
+      padding-top:12px;
+    }
+
   #username-dropdown-toggle .dropdown-menu {
     top: 52px !important;
 

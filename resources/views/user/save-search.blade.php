@@ -25,6 +25,14 @@
   }
 }
 
+@media (max-width:380px) {
+  .search-container {
+    padding-left:0;
+    padding-right:0;
+    font-size:3vw;
+  }
+}
+
 .fa-google-plus-square, .fa-linkedin-square {
     font-size:3.25em;
   }
@@ -48,7 +56,7 @@
                     <p class="alert alert-success">{{ Session::get('success') }}</p>
                 @endif
       <div class="col-md-9">
-        <div class="well" style="box-shadow: none;">
+        <div class="well search-container" style="box-shadow: none;">
           <div class="about_text">
             <h2 class="text-center">Show Save Search</h2>
             <p class="ptext"><table class="table">

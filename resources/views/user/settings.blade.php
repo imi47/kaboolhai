@@ -100,6 +100,9 @@ footer .footer-middle {
 .go_more {
   margin-top:-22px !important;
 }
+    tr.dosrch th a {
+      font-size:14px;
+    }
 
   #friends-dropdown a, #messages-dropdown a, #notifications-dropdown a{
     padding:10px;
@@ -181,6 +184,10 @@ footer .footer-middle {
 
   #username-dropdown-toggle .dropdown-menu {
     top: 47px !important;
+  }
+
+  tr.dosrch th a {
+    font-size:12px;
   }
 }
 
