@@ -25,6 +25,19 @@
   }
 }
 
+@media (max-width:410px) {
+  table.table {
+    font-size:2.5vw;
+  }
+}
+
+@media (max-width:380px) {
+  .notes-container {
+    padding-left:5px;
+    padding-right:5px;
+  }
+}
+
 .fa-google-plus-square, .fa-linkedin-square {
     font-size:3.25em;
   }
@@ -48,7 +61,7 @@
                 @endif
 
       <div class="col-md-9">
-        <div class="well" style="box-shadow: none;">
+        <div class="well notes-container" style="box-shadow: none;">
           <div class="about_text">
             <h2 class="text-center">Add Notes</h2>
             <p class="ptext"><table class="table">
