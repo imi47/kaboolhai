@@ -9,6 +9,10 @@
   font-size:3.2em;
 }
 
+ .top-searches-by div > a, tr.tpsrch th a, tr.dosrch th a {
+      font-size:12px;
+ }
+
   .headin-color{
     background-color: #ccc;
     padding: 5px;
@@ -24,6 +28,7 @@
     .sticky-nav .navbar-nav > li > .dropdown-menu {
       top:48px !important;
   }
+
 }
 
 @media (max-width: 685px) {
@@ -33,7 +38,10 @@
 
   #username-dropdown-toggle .dropdown-menu {
     top: 47px !important;
+  }
 
+  tr.dosrch th a {
+    font-size:12px;
   }
 }
 </style>

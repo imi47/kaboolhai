@@ -88,6 +88,10 @@
   .top-searches-by div > a, tr.tpsrch th a, tr.dosrch th a {
     font-size:12px;
   }
+
+  .copyright p {
+    font-size:8px;
+  }
 }
 </style>
 <div class="col-md-12">

@@ -2,6 +2,15 @@
 @section('data')
 
 <style>
+
+tr.dosrch th a {
+  font-size:14px;
+}
+
+.box_time {
+  padding-top:10px;
+}
+
    @media (max-width:991px) {
     #friends-dropdown, #messages-dropdown, #notifications-dropdown {
             margin-top:21px !important;
@@ -48,6 +57,35 @@
      #username-dropdown-toggle ul.dropdown-menu {
         top:52px !important;
       }
+
+      tr.dosrch th a {
+        font-size:12px;
+    }
+
+    .box_msg {
+      padding-left:50px;
+    }
+
+    .box_time {
+      padding-top:30px !important;
+   }
+  }
+
+  @media (max-width:341px) {
+    .notify_blok {
+      height: 117px;
+    }
+
+    .box_msg {
+      margin-top: -29px;
+      margin-left:25px;
+    }
+  }
+
+  @media (max-width:320px) {
+    .searchcontainer button {
+      margin-top:-44px !important;
+    }
   }
 
   .fa-google-plus-square, .fa-linkedin-square {

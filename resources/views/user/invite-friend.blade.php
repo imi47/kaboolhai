@@ -6,6 +6,10 @@
   height:auto !important;
 }
 
+  tr.dosrch th a {
+      font-size:14px;
+    }
+
   @media (max-width:991px) {
       .profile_stat {
         margin-bottom:20px;
@@ -58,7 +62,17 @@
     #username-dropdown-toggle ul.dropdown-menu {
         top:53px !important;
       }
+
+      tr.dosrch th a {
+      font-size:12px;
+    }
   }
+
+  @media (max-width:320px) {
+  .searchcontainer button {
+    margin-top:-44px !important;
+  }
+}
 
 .fa-google-plus-square, .fa-linkedin-square {
   font-size:2.44em;

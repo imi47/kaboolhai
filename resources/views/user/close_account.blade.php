@@ -41,6 +41,12 @@
   }
 }
 
+@media (max-width:320px) {
+  .searchcontainer button {
+    margin-top:-44px !important;
+  }
+}
+
 .fa-google-plus-square, .fa-linkedin-square {
     font-size:3.35em;
   }

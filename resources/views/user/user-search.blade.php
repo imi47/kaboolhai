@@ -11,6 +11,10 @@
      margin:10px;
    }
 
+   tr.dosrch th a {
+    font-size:14px;
+  }
+
    .bg-orange.no-padding.wow.animated {
      margin-top:53px;
    }
@@ -395,6 +399,10 @@ p.t
       .smallest {
         width:100%;   
       }
+
+      tr.dosrch th a {
+        font-size:12px;
+  }
     }
     
     @media (max-width:420px) {
@@ -417,6 +425,12 @@ p.t
 
     #username-dropdown-toggle .dropdown-menu {
       top: 48px !important;
+  }
+}
+
+@media (max-width:320px) {
+  .searchcontainer button {
+    margin-top:-44px !important;
   }
 }
 

@@ -2,6 +2,11 @@
 @section('data')
 
 <style>
+
+  tr.dosrch th a {
+    font-size:14px;
+  }
+
    @media (max-width:991px) {
     #friends-dropdown, #messages-dropdown, #notifications-dropdown {
             margin-top:21px !important;
@@ -50,6 +55,16 @@
   #username-dropdown-toggle .dropdown-menu {
     top: 47px !important;
 
+  }
+
+  tr.dosrch th a {
+    font-size:12px;
+  }
+}
+
+@media (max-width:320px) {
+  .searchcontainer button {
+    margin-top:-44px !important;
   }
 }
 
