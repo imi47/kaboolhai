@@ -496,3 +496,26 @@ ul.in_box_brdr li:hover {
   top: 60px;
    background-color:#f47e2a; 
 }
+
+@media (max-width:991px) {
+	.cnt_lod_ph
+	{
+		margin-top:-5px !important; 
+	}
+}
+
+@media (max-width:768px) {
+	.cnt_lod_ph
+	{
+		margin:auto;
+		margin-top:15px !important; 
+	}
+
+	.list_somebtn {
+		margin-top:60px;
+	}
+
+	a.unfriend {
+		margin-top:10px !important;
+	}
+}

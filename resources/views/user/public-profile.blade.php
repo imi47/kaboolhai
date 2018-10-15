@@ -86,9 +86,9 @@
 					padding: 0 10px 0 10px;
 				}
 
-				.list_somebtn {
+				/* .list_somebtn {
 					margin-top:60px;
-				}
+				} */
 			} 
 		 
 		 @media (max-width:840px) {
@@ -326,7 +326,7 @@ $('.owl-carousel').owlCarousel({
 							@if($confirm_friend)
 							<div style="margin:-26px; " class="form-inline">
           
-							 <a class="btn btn-primary " title="Reject Friend request" href="{{ url('delete-request',$confirm_friend->user_id) }}" style="padding:5px; background-color:#d35400; margin: 33px 0px 0px 23px;">Unfriend <i class=" 
+							 <a class="btn btn-primary unfriend" title="Reject Friend request" href="{{ url('delete-request',$confirm_friend->user_id) }}" style="padding:5px; background-color:#d35400; margin: 33px 0px 0px 23px;">Unfriend <i class=" 
               fa fa-close" style="text-decoration: none; color: red; font-size: 20px; margin-left: 10px;"></i></a>
               </div>
 							@endif
