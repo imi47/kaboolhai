@@ -129,3 +129,12 @@
   border:15px solid transparent;
   border-top-color:#fff; 
 }
+
+@media (max-width:500px) {
+  .main-section {
+    width:100%;
+    max-width: 90vw;
+    right:0;
+    margin-right:5vw; 
+  }
+}
