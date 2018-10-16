@@ -175,7 +175,7 @@
           <div class="col-md-4 col-sm-6 col-xs-6 right-first-section">
             <a href="#"><i class="fa fa-minus" aria-hidden="true"></i></a>
             {{-- <a href="#"><i class="fa fa-clone" aria-hidden="true"></i></a> --}}
-            <a href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-times " aria-hidden="true"></i></a>
           </div>
         </div>
       </div>
@@ -209,14 +209,15 @@
           </div>
           <a href="#">
             <div class="col-md-1">
-              <label id="#bb"> <i class="fa fa-paperclip"></i>
+              <label id="bb"> <img alt="" src="{{ $user_assets }}/images/clip.png" />
                 <input type="file" name="file" id="file" size="60">
               </label>
 
 
             </div>
             <div class="col-md-1">
-              <button class="arrow_button"><i class="fa fa-arrow-right arrow_image" aria-hidden="true"></i></button>
+              <button class="arrow_button"><svg style="enable-background:new 0 0 24 24;" version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="info"/><g id="icons"><path d="M21.5,11.1l-17.9-9C2.7,1.7,1.7,2.5,2.1,3.4l2.5,6.7L16,12L4.6,13.9l-2.5,6.7c-0.3,0.9,0.6,1.7,1.5,1.2l17.9-9   C22.2,12.5,22.2,11.5,21.5,11.1z" id="send"/></g></svg>
+</button>
             </div>
         </div>
       </form>
@@ -2430,11 +2431,11 @@ else
             scrollTop: $('#chat-scroll').get(0).scrollHeight},10);
            
             }
-            else
+            /* else
             {
              
                $('#error').html('Write message');
-            }
+            } */
            }
          });
          
