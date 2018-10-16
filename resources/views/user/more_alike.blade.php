@@ -1,6 +1,10 @@
 @extends('user/user_master_layout1') 
 @section('data') 
 <style type="text/css">
+	.you, .him {
+		font-weight:700;
+	}
+
 	.greenpartnercolor{
 		color: green;
         font-size: 30px;
@@ -8,6 +12,24 @@
 	.headin-color{
 		background-color: #ccc;
 		padding: 5px;
+	}
+
+	@media (max-width:768px) {
+		.img-thumbnail.img-circle {
+			display:block;
+			float:none !important;
+			clear:both;
+			margin:auto;
+		}
+
+		.you, .him {
+			display:block;
+			text-align:center;
+		}
+
+		.country, .city {
+			text-align:center;
+		}
 	}
 </style>
 <div style="padding-top: 90px;"></div>
@@ -32,8 +54,8 @@
     <div class="panel-heading text-center"><h3>More Alike</h3></div>
     <div class="panel-body">
     	<div class="row">
-    		<div class="col-md-2">
-                <span>You</span>
+    		<div class="col-sm-2 col-xs-12">
+                <span class='you'>You</span>
     			<a title="view profile" href="{{ url('public-profile',$user_data->id) }}">
            			@if($userphoto)
     				 <img src="{{ $user_assets }}/my_photo/{{ $userphoto->image }}" class="img-thumbnail img-circle pull-right" style="width: 100px; height: 100px;">
@@ -45,15 +67,15 @@
            			@endif
            			</a>
     		</div>
-    		<div class="col-md-7">
+    		<div class="col-sm-8 col-xs-12">
     			
     		<p class="text-center" style="padding-top: 5%; font-size: 15px;">Your profile matches with <strong id="counter"></strong> of <strong>{{ $more_alike->user_name }}</strong> preferences!</p>
     		</div>
-    		<div class="col-md-2">
+    		<div class="col-sm-2 col-xs-12">
                 @if($more_alike->gender=='Female')
                 <span>Her</span>
                 @else
-                <span>Him</span>
+                <span class='him'>Him</span>
                 @endif
     			<a title="view profile" href="{{ url('public-profile',$more_alike->id) }}">
     				@if($photo)
@@ -229,7 +251,7 @@
     	<h3 class="headin-color"><img src="{{ $user_assets }}/icons/1st-location.png"> Location Preferences</h3>
     	<hr>
 @if($more_alike->country_id==$user_data->country_id)
-    	<div class="row">
+    	<div class="row country">
     		<div class="col-md-5">
     			<h4>Country:</h4>
     		</div>
@@ -248,7 +270,7 @@
         <hr>
     			@endif
     @if($more_alike->city_id==$user_data->city_id)
-    	<div class="row">
+    	<div class="row city">
     		<div class="col-md-5">
     			<h4>City:</h4>
     		</div>
