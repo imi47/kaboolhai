@@ -511,11 +511,14 @@ ul.in_box_brdr li:hover {
 		margin-top:15px !important; 
 	}
 
-	.list_somebtn {
-		margin-top:60px;
-	}
-
 	a.unfriend {
-		margin-top:30px !important;
+		margin-top:0 !important;
 	}
 }
+
+@media (max-width:768px) and (min-width:641px) {
+	.list_somebtn {
+		margin-top:40px;
+	}
+}
+

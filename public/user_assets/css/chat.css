@@ -10,7 +10,7 @@
 }
 .open-more{
   bottom:0px;
-  transition:2s;
+  transition:1s;
 }
 .border-chat{
   border:1px solid #FD8468;
@@ -65,6 +65,7 @@
   margin: 0px;
   background-color: #F3F3F3;
   height: 300px;
+  max-height: 300px;
 }
 .left-chat,.right-chat{
   overflow: hidden;
