@@ -10,7 +10,7 @@
         iconBackgroundColor: '#eee',
         recentCount: 36,
         emojiSet: 'apple',
-        container: 'body',
+        container: '.main-section',
         button: true
       };
 

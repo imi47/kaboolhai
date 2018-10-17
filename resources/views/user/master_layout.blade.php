@@ -413,7 +413,7 @@
     <div class="row border-chat third-section">
       <form id='form' enctype="multipart/form-data">
         <div class="text-bar">
-          <div class="col-md-10 col-sm-10 col-xs-10">
+          <div class="col-xl-11 col-lg-11 col-md-11 col-sm-11 col-xs-11">
 
             {{csrf_field()}}
 
@@ -423,15 +423,16 @@
             <input type="hidden" required="" id="to_userss" name="to_user" placeholder="Write messege">
           </div>
 
-          <div class="col-md-1">
-            <label id="#bb"> <i class="fa fa-paperclip"></i>
+          <div class="col-xs-1">
+          <label id="bb"> <img alt="" src="{{ $user_assets }}/images/clip.png" />
               <input type="file" name="file" id="file" size="60">
             </label>
             {{-- <textarea id="example1"></textarea> --}}
 
           </div>
-          <div class="col-md-1">
-            <button class="arrow_button"><i class="fa fa-arrow-right arrow_image" aria-hidden="true"></i></button>
+          <div class="col-xs-1">
+            <button class="arrow_button"><svg style="enable-background:new 0 0 24 24;" version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="info"/><g id="icons"><path d="M21.5,11.1l-17.9-9C2.7,1.7,1.7,2.5,2.1,3.4l2.5,6.7L16,12L4.6,13.9l-2.5,6.7c-0.3,0.9,0.6,1.7,1.5,1.2l17.9-9   C22.2,12.5,22.2,11.5,21.5,11.1z" id="send"/></g></svg>
+  </button>
           </div>
         </div>
       </form>
@@ -2417,11 +2418,11 @@ if(string_of_words.match(filter))
             scrollTop: $('#chat-scroll').get(0).scrollHeight},10);
            
             }
-            else
-            {
+            // else
+            // {
              
-               $('#error').html('Write message');
-            }
+            //    $('#error').html('Write message');
+            // }
            }
          });
          

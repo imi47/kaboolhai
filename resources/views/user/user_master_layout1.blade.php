@@ -150,6 +150,7 @@
 
   
   </style>
+  
   <script type="text/javascript">
     $(document).ready(function (e) {
       $('#send_messgae').emojiPicker();
@@ -165,7 +166,7 @@
 
 <body>
 
-  <div class="main-section">
+<div class="main-section">
     <div class="row border-chat">
       <div class="col-md-12 col-sm-12 col-xs-12 first-section">
         <div class="row">
@@ -195,7 +196,7 @@
     <div class="row border-chat third-section">
       <form id='form' enctype="multipart/form-data">
         <div class="text-bar">
-          <div class="col-md-10 col-sm-10 col-xs-10">
+          <div class="col-xl-11 col-lg-11 col-md-11 col-sm-11 col-xs-11">
 
             {{csrf_field()}}
 
@@ -208,14 +209,14 @@
 
           </div>
           <a href="#">
-            <div class="col-md-1">
+            <div class="col-xs-1">
               <label id="bb"> <img alt="" src="{{ $user_assets }}/images/clip.png" />
                 <input type="file" name="file" id="file" size="60">
               </label>
 
 
             </div>
-            <div class="col-md-1">
+            <div class="col-xs-1">
               <button class="arrow_button"><svg style="enable-background:new 0 0 24 24;" version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="info"/><g id="icons"><path d="M21.5,11.1l-17.9-9C2.7,1.7,1.7,2.5,2.1,3.4l2.5,6.7L16,12L4.6,13.9l-2.5,6.7c-0.3,0.9,0.6,1.7,1.5,1.2l17.9-9   C22.2,12.5,22.2,11.5,21.5,11.1z" id="send"/></g></svg>
 </button>
             </div>
@@ -2501,5 +2502,6 @@ function get_message()
      
 <script type="text/javascript" src="{{ $user_assets }}/js/jquery.emojiarea.js"></script>
 <script type="text/javascript" src="{{ $user_assets }}/js/emoji-picker.js"></script>
-   </body>
+
+  </body>
 </html>

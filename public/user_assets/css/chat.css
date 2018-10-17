@@ -5,12 +5,13 @@
   bottom:-465px;
   z-index: 1;
 }
+
 .first-section:hover{
   cursor: pointer;
 }
 .open-more{
   bottom:0px;
-  transition:1s;
+  /* transition:1s; */
 }
 .border-chat{
   /* border:2px solid #ccc; */
@@ -100,13 +101,14 @@
   border-left: 2px solid #ccc;
   border-right: 2px solid #ccc;
   background-color:#f3f3f3;
+  margin-top:-1px;
 }
-.text-bar input{
+/* .text-bar input{
   width:90%;
   margin-left:-15px;
   padding:10px 10px;
   border:1px solid #fff;
-}
+} */
 .text-bar a i{
   background-color:#7553A4;
   color:#fff;
@@ -146,8 +148,20 @@
 }
 
 .emojiPicker {
-  left:965px !important;
+  /* left:62px !important;
   width:302px !important;
+  top:-42px !important; */
+  left: 7px !important;
+  width: 355px !important;
+  top: -45px !important;
+}
+
+.emojiPicker .shortcode  {
+  background-color:#f3f3f3;
+}
+
+.emojiPicker .shortcode .eod {
+  margin-top:7px;
 }
 
 .emojiPickerIcon {
@@ -159,7 +173,7 @@
   font-weight:700;
 }
 
-.emojiPickerIconWrap input[type='text']{
+.text-bar input{
   width:355px !important;
   border-radius:30px !important;
   margin-top:5px;
@@ -169,6 +183,7 @@
   margin-left:5px;
   /* margin-right:160px; */
   border: 1px solid #ccc;
+  box-sizing: border-box;
 }
 
 .emojiPickerIcon.black {
@@ -181,6 +196,7 @@
 
 #bb {
   position: relative;
+  box-sizing: border-box;
 }
 
 #bb img {
@@ -188,6 +204,7 @@
   right: 100px;
   margin-top: 14px;
   width:26px;
+  box-sizing: border-box;
 }
 
 .arrow_button {
@@ -195,19 +212,13 @@
   border:none;
   background-color:#f3f3f3;
   border-radius: 99px;
-  margin-top:14px;
+  margin-top:9px;
+  padding:0;
 }
 
 .arrow_button svg{
   width:23px !important;
   fill: #7553A4;
-}
-
-@media (max-width:991px) {
-  .arrow_button {
-    margin-left:17px !important;
-    margin-top:7px;
-  }
 }
 
 @media (max-width:640px) {
@@ -220,9 +231,13 @@
     width:36px;
   }
 
-  .emojiPickerIconWrap input[type='text'] {
+  .text-bar input {
     padding-top:10px;
     padding-bottom:10px;
+  }
+
+  #user_name {
+    font-size:14px;
   }
 }
 
@@ -238,13 +253,24 @@
     height:240px;
   }
 
-  #bb {
-    position:relative;
-    right:80px !important; 
+  #bb img{
+   
+    right:21vw; 
   }
-  .emojiPickerIconWrap input[type='text'] {
-    width:70vw !important;
-    /* max-width:400px !important; */
+  .text-bar input {
+    width:75vw !important;
+    /* max-width:390px !important; */
+  }
+
+  .arrow_button {
+    margin-left: -11vw !important;
+    margin-top: 9px;
+  }
+
+  .emojiPicker {
+    left: 10px !important;
+    width: 74vw !important;
+    top: -102px !important;
   }
 }
 
@@ -253,11 +279,41 @@
   .second-section{
     height:200px;
   }
+
+  .emojiPicker {
+    left: 9px !important;
+    width: 74vw !important;
+    top: -137px !important;
+  }
 }
 
 @media (max-width:320px) {
 
   .second-section{
     height:180px;
+  }
+
+  .emojiPicker {
+    left: 8px !important;
+    width: 74vw !important;
+    top: -155px !important;
+  }
+}
+
+@media (max-width:370px) {
+  .text-bar .col-xs-11 {
+    width:91%;
+  }
+}
+
+@media (max-width:341px) {
+  .text-bar .col-xs-11 {
+    width:90%;
+  }
+}
+
+@media (max-width:304px) {
+  .text-bar .col-xs-11 {
+    width:89%;
   }
 }
