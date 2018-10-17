@@ -99,6 +99,12 @@ input[type='checkbox'] {
 	}
 }
 
+@media (max-width:768px) {
+	#username-dropdown-toggle .dropdown-menu {
+		left:-64px !important;
+	}
+}
+
 @media (max-width:475px) {
 	ul.mp-form-list span{
 		font-size:2.9vw;
