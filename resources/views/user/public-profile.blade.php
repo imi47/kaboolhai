@@ -30,6 +30,10 @@
 			 margin:0;
 		 }
 
+		 .unfriend {
+			 margin-top:0 !important;
+		 }
+
 		 @media (max-width:1125px) {
 			#btn a button {
 					width:180px !important;
