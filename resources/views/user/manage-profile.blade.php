@@ -140,45 +140,45 @@ $limit = 1;
 <div class="mp-religious-info mp-basic-info">
 <ul class="mp-form-list">
 <li>
-<span class="mp-bio-label">Name</span>
-<span class="mp-bio-ans">: {{$user_data->firstname.' '.$user_data->lastname}}</span>
+<span class="mp-bio-label">Name:</span>
+<span class="mp-bio-ans"> {{$user_data->firstname.' '.$user_data->lastname}}</span>
 </li>
 <li>
-<span class="mp-bio-label">User Name</span>
-<span class="mp-bio-ans">: {{$user_data->user_name}}</span>
+<span class="mp-bio-label">User Name::</span>
+<span class="mp-bio-ans"> {{$user_data->user_name}}</span>
 </li>
 <li>
-<span class="mp-bio-label">Age</span>
+<span class="mp-bio-label">Age:</span>
 
-<span class="mp-bio-ans">:{{ date('Y')-$user_data->year }} Years</span>
+<span class="mp-bio-ans">{{ date('Y')-$user_data->year }} Years</span>
 </li>
 <li>
-<span class="mp-bio-label">Date of Birth</span>
-<span class="mp-bio-ans">: {{ $user_data->day.'-'.$user_data->month.'-'.$user_data->year }}</span>
+<span class="mp-bio-label">Date of Birth:</span>
+<span class="mp-bio-ans"> {{ $user_data->day.'-'.$user_data->month.'-'.$user_data->year }}</span>
 </li>
 <li>
-<span class="mp-bio-label">Gender</span>
-<span class="mp-bio-ans">: {{ $user_data->gender }}</span>
+<span class="mp-bio-label">Gender:</span>
+<span class="mp-bio-ans"> {{ $user_data->gender }}</span>
 </li>
 <li>
-<span class="mp-bio-label">Email</span>
-<span class="mp-bio-ans">: {{ $user_data->email }}</span>
+<span class="mp-bio-label">Email:</span>
+<span class="mp-bio-ans"> {{ $user_data->email }}</span>
 </li>
 <li>
-<span class="mp-bio-label">Phone #</span>
-<span class="mp-bio-ans">: {{ $user_data->code.$user_data->phone_code.$user_data->phone }}</span>
+<span class="mp-bio-label">Phone #:</span>
+<span class="mp-bio-ans"> {{ $user_data->code.$user_data->phone_code.$user_data->phone }}</span>
 </li>
 
-<span class="mp-bio-label">Country</span>
-<span class="mp-bio-ans">: {{ $user_data->country_name }}</span>
+<span class="mp-bio-label">Country:</span>
+<span class="mp-bio-ans"> {{ $user_data->country_name }}</span>
 </li>
 <li>
-<span class="mp-bio-label">State</span>
-<span class="mp-bio-ans">: {{ $user_data->state_name }}</span>
+<span class="mp-bio-label">State:</span>
+<span class="mp-bio-ans"> {{ $user_data->state_name }}</span>
 </li>
 <li>
-<span class="mp-bio-label">City</span>
-<span class="mp-bio-ans">: {{ $user_data->city_name }}</span>
+<span class="mp-bio-label">City:</span>
+<span class="mp-bio-ans"> {{ $user_data->city_name }}</span>
 </li>
 </ul>
 </div>
@@ -326,51 +326,51 @@ $limit = 1;
 
 
 <li>
-<span class="mp-bio-label">Allegiance to Islamic Orgn</span>
+<span class="mp-bio-label">Allegiance to Islamic Orgn:</span>
 @if($user_data->sect_are)
-<span class="mp-bio-ans">: {{ $user_data->sect_are }}</span>
+<span class="mp-bio-ans"> {{ $user_data->sect_are }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#sect_are_model">Add Islami Orgn</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#sect_are_model">Add Islami Orgn</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label">Perform Namaaz</span>
+<span class="mp-bio-label">Perform Namaaz:</span>
 @if($user_data->pray)
-<span class="mp-bio-ans">: {{ $user_data->pray }}</span>
+<span class="mp-bio-ans"> {{ $user_data->pray }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#pray_model">Add Perform Namaz</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#pray_model">Add Perform Namaz</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label">Religiousness</span>
+<span class="mp-bio-label">Religiousness:</span>
 @if($user_data->religiousness)
-<span class="mp-bio-ans">:{{ $user_data->religiousness }}</span>
+<span class="mp-bio-ans">{{ $user_data->religiousness }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#religiousness_model">Add religiousness</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#religiousness_model">Add religiousness</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label">Attend religious services</span>
+<span class="mp-bio-label">Attend religious services:</span>
 @if($user_data->attend_religious_service)
-<span class="mp-bio-ans">:{{ $user_data->attend_religious_service }}</span>
+<span class="mp-bio-ans">{{ $user_data->attend_religious_service }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#attend_religious_modal">Add Attend religious</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#attend_religious_modal">Add Attend religious</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label">Read Qur'an</span>
+<span class="mp-bio-label">Read Qur'an:</span>
 @if($user_data->read_quran)
-<span class="mp-bio-ans">: {{ $user_data->read_quran }}</span>
+<span class="mp-bio-ans"> {{ $user_data->read_quran }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#read_quran_modal">Add Read Qur'an</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#read_quran_modal">Add Read Qur'an</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label">Ethnic Origin</span>
+<span class="mp-bio-label">Ethnic Origin:</span>
 @if($user_data->ethnic_type)
-<span class="mp-bio-ans">: {{ $user_data->ethnic_type }}</span>
+<span class="mp-bio-ans"> {{ $user_data->ethnic_type }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#ethnic_modal">Add Ethnic Origin</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#ethnic_modal">Add Ethnic Origin</a></span>
 @endif
 </li>
 
@@ -534,36 +534,36 @@ $limit = 1;
 
 
 <li>
-<span class="mp-bio-label">Complexion</span>
+<span class="mp-bio-label">Complexion:</span>
 @if($user_data->skin_color)
-<span class="mp-bio-ans">: {{ $user_data->skin_color }}</span>
+<span class="mp-bio-ans"> {{ $user_data->skin_color }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#skin_color_modal">Add Complexion</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#skin_color_modal">Add Complexion</a></span>
 @endif
 </li>
 
 <li>
-<span class="mp-bio-label">Physical Status</span>
+<span class="mp-bio-label">Physical Status:</span>
 @if($user_data->physical_status)
-<span class="mp-bio-ans">: {{ $user_data->physical_status }}</span>
+<span class="mp-bio-ans"> {{ $user_data->physical_status }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#physical_status_modal">Add Physical Status</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#physical_status_modal">Add Physical Status</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label"> Beard</span>
+<span class="mp-bio-label"> Beard:</span>
 @if($user_data->bread)
-<span class="mp-bio-ans">: {{ $user_data->bread }}</span>
+<span class="mp-bio-ans"> {{ $user_data->bread }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#beard_modal"> Add Beard</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#beard_modal"> Add Beard</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label"> Height & Weight</span>
+<span class="mp-bio-label"> Height & Weight:</span>
 @if($user_data->height)
-<span class="mp-bio-ans">: {{ $user_data->height.'/'.$user_data->weight }}</span>
+<span class="mp-bio-ans"> {{ $user_data->height.'/'.$user_data->weight }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#height_wheight_modal"> Add Height & Weight</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#height_wheight_modal"> Add Height & Weight</a></span>
 @endif
 </li>
 
@@ -766,43 +766,43 @@ $limit = 1;
 
 
 <li>
-<span class="mp-bio-label">Education</span>
+<span class="mp-bio-label">Education:</span>
 @if($user_data->qualification)
-<span class="mp-bio-ans">: {{ $user_data->qualification }}</span>
+<span class="mp-bio-ans"> {{ $user_data->qualification }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#education_modal">Add Education</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#education_modal">Add Education</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label">Education Details</span>
+<span class="mp-bio-label">Education Details:</span>
 @if($user_data->edu_detail)
-<span class="mp-bio-ans">: {{ $user_data->edu_detail }}</span>
+<span class="mp-bio-ans"> {{ $user_data->edu_detail }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#education_detail_modal">Add Education Details</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#education_detail_modal">Add Education Details</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label">Occupation</span>
+<span class="mp-bio-label">Occupation:</span>
 @if($user_data->job)
-<span class="mp-bio-ans">:{{ $user_data->job }}</span>
+<span class="mp-bio-ans">{{ $user_data->job }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#occupation_modal">Add Occupation</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#occupation_modal">Add Occupation</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label"> Occupation Detail</span>
+<span class="mp-bio-label"> Occupation Detail:</span>
 @if($user_data->occupation_detail)
-<span class="mp-bio-ans">:{{ $user_data->occupation_detail }}</span>
+<span class="mp-bio-ans">{{ $user_data->occupation_detail }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#occupation_detail_modal">Add  Occupation Detail</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#occupation_detail_modal">Add  Occupation Detail</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label">Annual Income</span>
+<span class="mp-bio-label">Annual Income:</span>
 @if($user_data->a_income)
-<span class="mp-bio-ans">: {{ $user_data->a_income }}</span>
+<span class="mp-bio-ans"> {{ $user_data->a_income }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#annual_income_modal">Add Annual Income</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#annual_income_modal">Add Annual Income</a></span>
 @endif
 </li>
 
@@ -1066,44 +1066,44 @@ $limit = 1;
 
 
 <li>
-<span class="mp-bio-label">Present Country</span>
+<span class="mp-bio-label">Present Country:</span>
 @if(!empty($present->country_name))
-<span class="mp-bio-ans">: {{ $present->country_name }}</span>
+<span class="mp-bio-ans"> {{ $present->country_name }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#present_modal">Add Present Country</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#present_modal">Add Present Country</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label">Native Country</span>
+<span class="mp-bio-label">Native Country:</span>
 @if(!empty($native->country_name))
-<span class="mp-bio-ans">: {{ $native->country_name }}</span>
+<span class="mp-bio-ans"> {{ $native->country_name }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#native_modal">Add Native Country</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#native_modal">Add Native Country</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label">Native State</span>
+<span class="mp-bio-label">Native State:</span>
 @if(!empty($native->state_name))
-<span class="mp-bio-ans">:{{ $native->state_name }}</span>
+<span class="mp-bio-ans">{{ $native->state_name }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#native_modal">Add Native State</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#native_modal">Add Native State</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label">Native City</span>
+<span class="mp-bio-label">Native City:</span>
 @if(!empty($native->city_name))
-<span class="mp-bio-ans">: {{$native->city_name }}</span>
+<span class="mp-bio-ans"> {{$native->city_name }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#native_modal">Add Native City</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#native_modal">Add Native City</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label">Convenient time to call</span>
+<span class="mp-bio-label">Convenient time to call:</span>
 
 @if($user_data->convenient_time)
-<span class="mp-bio-ans">: {{ $user_data->convenient_time }}</span>
+<span class="mp-bio-ans"> {{ $user_data->convenient_time }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#time_modal">Add Convenient time to call</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#time_modal">Add Convenient time to call:</a></span>
 @endif
 </li>
 
@@ -1193,44 +1193,44 @@ $limit = 1;
 
 
 <li>
-<span class="mp-bio-label">Blood Group</span>
+<span class="mp-bio-label">Blood Group:</span>
 @if($user_data->blood_group)
-<span class="mp-bio-ans">: {{ $user_data->blood_group }}</span>
+<span class="mp-bio-ans"> {{ $user_data->blood_group }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#blood_modal">Add Blood Group</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#blood_modal">Add Blood Group</a></span>
 @endif
 
 </li>
 <li>
-<span class="mp-bio-label">Body type</span>
+<span class="mp-bio-label">Body type:</span>
 @if($user_data->body_type)
-<span class="mp-bio-ans">: {{ $user_data->body_type }}</span>
+<span class="mp-bio-ans"> {{ $user_data->body_type }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#body_modal">Add Body type</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#body_modal">Add Body type</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label">Diet</span>
+<span class="mp-bio-label">Diet:</span>
 @if($user_data->diet)
-<span class="mp-bio-ans">: {{ $user_data->diet }}</span>
+<span class="mp-bio-ans"> {{ $user_data->diet }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#diet_modal">Add Diet</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#diet_modal">Add Diet</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label">Smoking</span>
+<span class="mp-bio-label">Smoking:</span>
 @if($user_data->smoking)
-<span class="mp-bio-ans">:{{ $user_data->smoking }}</span>
+<span class="mp-bio-ans">{{ $user_data->smoking }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#smoking_modal">Add Smoking</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#smoking_modal">Add Smoking</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label">Patient of thelisimia</span>
+<span class="mp-bio-label">Patient of thelisimia:</span>
 @if($user_data->thelisimia)
-<span class="mp-bio-ans">: {{ $user_data->thelisimia }}</span>
+<span class="mp-bio-ans"> {{ $user_data->thelisimia }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#thelisimia_modal">Add Patient of thelisimia</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#thelisimia_modal">Add Patient of thelisimia</a></span>
 @endif
 </li>
 
@@ -1331,9 +1331,9 @@ $limit = 1;
 
 <li>
 
-<span class="mp-bio-label">Description</span>
+<span class="mp-bio-label">Description:</span>
 @if($user_data->description)
-<span class="mp-bio-ans">: {{ str_limit($user_data->description,15) }}<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#read_description_modal">Read More</a></span></span>
+<span class="mp-bio-ans"> {{ str_limit($user_data->description,15) }}<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#read_description_modal">Read More</a></span></span>
 
 
 
@@ -1342,43 +1342,43 @@ $limit = 1;
 
 
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#description_modal">Add Description</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#description_modal">Add Description</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label">Profile Created for</span>
+<span class="mp-bio-label">Profile Created for:</span>
 @if($user_data->profile_created)
-<span class="mp-bio-ans">: {{ $user_data->profile_created }}</span>
+<span class="mp-bio-ans"> {{ $user_data->profile_created }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#profile_modal">Add Profile Created for</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#profile_modal">Add Profile Created for</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label">Guardian Name</span>
+<span class="mp-bio-label">Guardian Name:</span>
 @if($user_data->gardian_name)
-<span class="mp-bio-ans">: {{ $user_data->gardian_name }}</span>
+<span class="mp-bio-ans"> {{ $user_data->gardian_name }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#guardian_name_modal">Add Guardian Name</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#guardian_name_modal">Add Guardian Name</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label">Guardian Number</span>
+<span class="mp-bio-label">Guardian Number:</span>
 @if($user_data->gardian_number)
-<span class="mp-bio-ans">: {{ $user_data->gardian_number }}</span>
+<span class="mp-bio-ans"> {{ $user_data->gardian_number }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#guardian_number_modal">Add Guardian Number</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#guardian_number_modal">Add Guardian Number</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label">Mother Tongue</span>
+<span class="mp-bio-label">Mother Tongue:</span>
 @if($user_data->language)
-<span class="mp-bio-ans">: {{ $user_data->language }}</span>
+<span class="mp-bio-ans"> {{ $user_data->language }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#language_modal">Add Mother Tongue</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#language_modal">Add Mother Tongue</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label">Other Language</span>
+<span class="mp-bio-label">Other Language:</span>
 @if(count($other_language))
 									@php $data = '' @endphp
 									<span class="mp-bio-ans">  
@@ -1433,29 +1433,29 @@ $limit = 1;
 										<a class="read-more" href="javascript:;" data-toggle="modal" data-target="#myModal">Read more</a>
 										@endif
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#other_language_modal">Add Other Language</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#other_language_modal">Add Other Language</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label">Caste</span>
+<span class="mp-bio-label">Caste:</span>
 @if($user_data->cast)
-<span class="mp-bio-ans">: {{ $user_data->cast }}</span>
+<span class="mp-bio-ans"> {{ $user_data->cast }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#cast_modal">Add Caste</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#cast_modal">Add Caste</a></span>
 @endif
 </li>
 
 <li>
-<span class="mp-bio-label">Clan</span>
+<span class="mp-bio-label">Clan:</span>
 @if($user_data->clan)
-<span class="mp-bio-ans">: {{ $user_data->clan }}</span>
+<span class="mp-bio-ans"> {{ $user_data->clan }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#clan_modal">Add Clan</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#clan_modal">Add Clan</a></span>
 @endif
 </li>
 
 <li>
-<span class="mp-bio-label">Hobbies/Interest</span>
+<span class="mp-bio-label">Hobbies/Interest:</span>
 @if(count($hobbies))
 							 
 									<span class="mp-bio-ans"> 
@@ -1508,17 +1508,17 @@ $limit = 1;
 									</span>
 						
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#hobbies_modal">Add Hobbies/Interest</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#hobbies_modal">Add Hobbies/Interest</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label">Marital Status</span>
+<span class="mp-bio-label">Marital Status:</span>
 @if($user_data->martial_status)
-<span class="mp-bio-ans">:{{ $user_data->martial_status }}</span>
+<span class="mp-bio-ans">{{ $user_data->martial_status }}</span>
 @else
 
 
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#martial_status_modal">Add Marital Status</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#martial_status_modal">Add Marital Status</a></span>
 @endif
 </li>
 </ul>
@@ -2056,130 +2056,130 @@ $limit = 1;
 
 
 <li>
-<span class="mp-bio-label">Family Type</span>
+<span class="mp-bio-label">Family Type:</span>
 @if($user_data->family_type)
-<span class="mp-bio-ans">: {{ $user_data->family_type }}</span>
+<span class="mp-bio-ans"> {{ $user_data->family_type }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#family_type_modal">Add Family Type</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#family_type_modal">Add Family Type</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label">Finacial Status</span>
+<span class="mp-bio-label">Finacial Status:</span>
 @if($user_data->finacial_status)
-<span class="mp-bio-ans">: {{ $user_data->finacial_status }}</span>
+<span class="mp-bio-ans"> {{ $user_data->finacial_status }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#finacial_status_modal">    Add Finacial Status</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#finacial_status_modal">    Add Finacial Status</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label">Assets</span>
+<span class="mp-bio-label">Assets:</span>
 @if($user_data->assets)
-<span class="mp-bio-ans">: {{ $user_data->assets }}</span>
+<span class="mp-bio-ans"> {{ $user_data->assets }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#assets_modal">Add Assets</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#assets_modal">Add Assets</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label">Father's Details</span>
+<span class="mp-bio-label">Father's Details:</span>
 @if($user_data->father_detail)
-<span class="mp-bio-ans">:{{ $user_data->father_detail }}</span>
+<span class="mp-bio-ans">{{ $user_data->father_detail }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#father_detail_modal">Add Father's Details</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#father_detail_modal">Add Father's Details</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label">Father's occupation</span>
+<span class="mp-bio-label">Father's occupation:</span>
 @if($user_data->father_occupation)
-<span class="mp-bio-ans">: {{ $user_data->father_occupation }}</span>
+<span class="mp-bio-ans"> {{ $user_data->father_occupation }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#father_occupation_modal">Add Father's occupation</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#father_occupation_modal">Add Father's occupation</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label">Mother's Details</span>
+<span class="mp-bio-label">Mother's Details:</span>
 @if($user_data->mother_detail)
-<span class="mp-bio-ans">: {{ $user_data->mother_detail }}</span>
+<span class="mp-bio-ans"> {{ $user_data->mother_detail }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#mother_detail_modal">Add Mother's Details</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#mother_detail_modal">Add Mother's Details</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label">Mother's occupation</span>
+<span class="mp-bio-label">Mother's occupation:</span>
 @if($user_data->mother_occupation)
-<span class="mp-bio-ans">:{{ $user_data->mother_occupation }}</span>
+<span class="mp-bio-ans">{{ $user_data->mother_occupation }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#mother_occupation_modal">Add Mother's occupation</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#mother_occupation_modal">Add Mother's occupation</a></span>
 @endif
 </li>
 
-<span class="mp-bio-label">Elder Brother</span>
+<span class="mp-bio-label">Elder Brother:</span>
 @if($user_data->elder_brother)
-<span class="mp-bio-ans">:{{ $user_data->elder_brother }}</span>
+<span class="mp-bio-ans">{{ $user_data->elder_brother }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#elder_brother_modal">Add Elder Brother</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#elder_brother_modal">Add Elder Brother</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label">Younger Brother</span>
+<span class="mp-bio-label">Younger Brother:</span>
 @if($user_data->younger_brother)
-<span class="mp-bio-ans">:{{ $user_data->younger_brother }}</span>
+<span class="mp-bio-ans">{{ $user_data->younger_brother }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#younger_brother_modal">Add Younger Brother</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#younger_brother_modal">Add Younger Brother</a></span>
 @endif
 </li>
 
 <li>
-<span class="mp-bio-label">Brother Unmarried</span>
+<span class="mp-bio-label">Brother Unmarried:</span>
 @if($user_data->brother_unmarried)
-<span class="mp-bio-ans">:{{ $user_data->brother_unmarried }}</span>
+<span class="mp-bio-ans">{{ $user_data->brother_unmarried }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#brother_unmarried_modal">Add Brother Unmarried</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#brother_unmarried_modal">Add Brother Unmarried</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label">Brother Married</span>
+<span class="mp-bio-label">Brother Married:</span>
 @if($user_data->brother_married)
-<span class="mp-bio-ans">:{{ $user_data->brother_married }}</span>
+<span class="mp-bio-ans">{{ $user_data->brother_married }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#brother_married_modal">Add Brother Married</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#brother_married_modal">Add Brother Married</a></span>
 @endif
 </li>
 
 <li>
-<span class="mp-bio-label">Elder Sister</span>
+<span class="mp-bio-label">Elder Sister:</span>
 @if($user_data->elder_sister)
-<span class="mp-bio-ans">:{{ $user_data->elder_sister }}</span>
+<span class="mp-bio-ans">{{ $user_data->elder_sister }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#elder_sister_modal">Add Elder Sister</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#elder_sister_modal">Add Elder Sister</a></span>
 @endif
 </li>
 
 <li>
-<span class="mp-bio-label">Younger Sister</span>
+<span class="mp-bio-label">Younger Sister:</span>
 @if($user_data->younger_sister)
-<span class="mp-bio-ans">:{{ $user_data->younger_sister }}</span>
+<span class="mp-bio-ans">{{ $user_data->younger_sister }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#younger_sister_modal">Add Younger Sister</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#younger_sister_modal">Add Younger Sister</a></span>
 @endif
 </li>
 
 
 
 <li>
-<span class="mp-bio-label">Unmarried Sister</span>
+<span class="mp-bio-label">Unmarried Sister:</span>
 @if($user_data->sister_unmarried)
-<span class="mp-bio-ans">:{{ $user_data->sister_unmarried }}</span>
+<span class="mp-bio-ans">{{ $user_data->sister_unmarried }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#sister_unmarried_modal">Add Unmarried Sister</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#sister_unmarried_modal">Add Unmarried Sister</a></span>
 @endif
 </li>
 
 <li>
-<span class="mp-bio-label">Married Sister</span>
+<span class="mp-bio-label">Married Sister:</span>
 @if($user_data->sister_married)
-<span class="mp-bio-ans">:{{ $user_data->sister_married }}</span>
+<span class="mp-bio-ans">{{ $user_data->sister_married }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#sister_married_modal">Add married Sister</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#sister_married_modal">Add married Sister</a></span>
 @endif
 </li>
 
@@ -2396,15 +2396,15 @@ $limit = 1;
 
 
 <li>
-<span class="mp-bio-label">Looking Age from/to</span>
+<span class="mp-bio-label">Looking Age from/to:</span>
 @if($user_data->loking_age_from AND $user_data->loking_age_to)
-<span class="mp-bio-ans">: {{ $user_data->loking_age_from}}<span style="color: red; font-size: 19px;"> | </span>{{$user_data->loking_age_to }}</span>
+<span class="mp-bio-ans"> {{ $user_data->loking_age_from}}<span style="color: red; font-size: 19px;"> | </span>{{$user_data->loking_age_to }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#loking_age_modal">Add Age Preference</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#loking_age_modal">Add Age Preference:</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label">Eating Habits</span>
+<span class="mp-bio-label">Eating Habits:</span>
 @if(count($loking_eating))
 
 							
@@ -2460,20 +2460,20 @@ $limit = 1;
 							
 							
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#loking_eating_modal">Add Eating Habits</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#loking_eating_modal">Add Eating Habits</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label">Mother Tongue</span>
+<span class="mp-bio-label">Mother Tongue:</span>
 @if($user_data->loking_language)
 
-<span class="mp-bio-ans">:{{ $user_data->loking_language }}</span>
+<span class="mp-bio-ans">{{ $user_data->loking_language }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#loking_langaugee_modal">Add Mother Tongue</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#loking_langaugee_modal">Add Mother Tongue</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label">Other Languages</span>
+<span class="mp-bio-label">Other Languages:</span>
 @if(count($loking_other_language))
 									@php $data = '' @endphp
 									<span class="mp-bio-ans">  
@@ -2530,7 +2530,7 @@ $limit = 1;
 								
 									
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#loking_other_language_modal">Add other languages</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#loking_other_language_modal">Add other languages</a></span>
 @endif
 </li>
 <li>
@@ -2913,11 +2913,11 @@ $limit = 1;
 
 
 <li>
-<span class="mp-bio-label">Height Preference</span>
+<span class="mp-bio-label">Height Preference:</span>
 @if($user_data->loking_height_from AND $user_data->loking_height_from)
-<span class="mp-bio-ans">: {{ $user_data->loking_height_from}}<span style="color: red; font-size: 19px;"> | </span>{{$user_data->loking_height_to }}</span>
+<span class="mp-bio-ans"> {{ $user_data->loking_height_from}}<span style="color: red; font-size: 19px;"> | </span>{{$user_data->loking_height_to }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#loking_height_modal">Add Height Preference</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#loking_height_modal">Add Height Preference</a></span>
 @endif
 </li>
 	@if($user_data->gender=='Female')
@@ -2977,16 +2977,16 @@ $limit = 1;
 							</ul>
 						
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#loking_hijab_modal">Add Hijab</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#loking_hijab_modal">Add Hijab</a></span>
 @endif
 </li>
 @endif
 <li>
-<span class="mp-bio-label">Physical Status</span>
+<span class="mp-bio-label">Physical Status:</span>
 @if($user_data->loking_physcial_status)
-<span class="mp-bio-ans">:{{ $user_data->loking_physcial_status }}</span>
+<span class="mp-bio-ans">{{ $user_data->loking_physcial_status }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#loking_physical_status_modal">Add Physical Status</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#loking_physical_status_modal">Add Physical Status</a></span>
 @endif
 </li>
 <li>
@@ -3171,35 +3171,35 @@ $limit = 1;
 
 
 <li>
-<span class="mp-bio-label">Education</span>
+<span class="mp-bio-label">Education:</span>
 @if($user_data->loking_education)
-<span class="mp-bio-ans">: {{ $user_data->loking_education }}</span>
+<span class="mp-bio-ans"> {{ $user_data->loking_education }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#loking_education_modal">Add Education</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#loking_education_modal">Add Education</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label">Occupation</span>
+<span class="mp-bio-label">Occupation:</span>
 @if($user_data->loking_job)
-<span class="mp-bio-ans">: {{ $user_data->loking_job }}</span>
+<span class="mp-bio-ans"> {{ $user_data->loking_job }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#loking_occupation_modal">Add Occupation</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#loking_occupation_modal">Add Occupation</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label">Employed in </span>
+<span class="mp-bio-label">Employed in: </span>
 @if($user_data->employed_in)
-<span class="mp-bio-ans">:{{ $user_data->employed_in }}</span>
+<span class="mp-bio-ans">{{ $user_data->employed_in }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#employed_in_modal">Add Employed in </a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#employed_in_modal">Add Employed in </a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label">Annual Income</span>
+<span class="mp-bio-label">Annual Income:</span>
 @if($user_data->loking_a_income)
-<span class="mp-bio-ans">:{{ $user_data->loking_a_income }}</span>
+<span class="mp-bio-ans">{{ $user_data->loking_a_income }}</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#loking_a_income_modal">Add Annual Income</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#loking_a_income_modal">Add Annual Income</a></span>
 @endif
 </li>
 
@@ -3451,7 +3451,7 @@ $limit = 1;
 
 
 <li>
-<span class="mp-bio-label">Religious History</span>
+<span class="mp-bio-label">Religious History:</span>
 @if(count($religious_history))
 							
 									<span class="mp-bio-ans"> 
@@ -3504,11 +3504,11 @@ $limit = 1;
 										@endif
 									</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#religious_history_modal">Add Religious History</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#religious_history_modal">Add Religious History</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label">living with</span>
+<span class="mp-bio-label">living with:</span>
 @if(count($living_with))
 							
 									<span class="mp-bio-ans"> 
@@ -3561,11 +3561,11 @@ $limit = 1;
 							
 
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#living_with_modal">Add living with</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#living_with_modal">Add living with</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label">Sect are you looking</span>
+<span class="mp-bio-label">Sect are you looking:</span>
 @if(count($sects))
 							 
 									<span class="mp-bio-ans"> 
@@ -3616,11 +3616,11 @@ $limit = 1;
 										@endif
 									</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#loiking_sect_modal">Add Sect are you looking</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#loiking_sect_modal">Add Sect are you looking</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label">Pray</span>
+<span class="mp-bio-label">Pray:</span>
 @if(count($pray))
 							
 									<span class="mp-bio-ans"> 
@@ -3674,11 +3674,11 @@ $limit = 1;
 										@endif
 									</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#loiking_pray_modal">Add Pray</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#loiking_pray_modal">Add Pray</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label">Has Children</span>
+<span class="mp-bio-label">Has Children:</span>
 @if(count($has_children))
 							
 									<span class="mp-bio-ans"> 
@@ -3730,11 +3730,11 @@ $limit = 1;
 										@endif
 									</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#has_chiled_modal">Add Has Children</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#has_chiled_modal">Add Has Children</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label">Looking for body type</span>
+<span class="mp-bio-label">Looking for body type:</span>
 @if(count($loking_body_type))
 							
 									<span class="mp-bio-ans"> 
@@ -3786,11 +3786,11 @@ $limit = 1;
 										@endif
 									</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#loking_body_modal">Add Looking for body type</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#loking_body_modal">Add Looking for body type</a></span>
 @endif
 </li>
 <li>
-	<span class="mp-bio-label">Africa</span>
+	<span class="mp-bio-label">Africa:</span>
 @if(count($africa))
 							
 									<span class="mp-bio-ans"> 
@@ -3842,13 +3842,13 @@ $limit = 1;
 										@endif
 									</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#africa_modal">Add Africa</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#africa_modal">Add Africa</a></span>
 @endif
 
 </li>
 
 <li>
-<span class="mp-bio-label">Antarctica</span>
+<span class="mp-bio-label">Antarctica:</span>
 @if(count($antarctica))
 							
 									<span class="mp-bio-ans"> 
@@ -3900,11 +3900,11 @@ $limit = 1;
 										@endif
 									</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#antarctica_modal">Add Antarctica</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#antarctica_modal">Add Antarctica</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label">Asia</span>
+<span class="mp-bio-label">Asia:</span>
 @if(count($asia))
 							
 									<span class="mp-bio-ans"> 
@@ -3957,7 +3957,7 @@ $limit = 1;
 									</span>
 
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#asia_modal">Add Asia</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#asia_modal">Add Asia</a></span>
 @endif
 </li>
 <li>
@@ -3983,7 +3983,7 @@ $limit = 1;
       <div class="modal-content" style="margin-top: 115px;">
       
         <div class="modal-header">
-          <h3>Europe</h3>
+          <h3>Europe:</h3>
         </div>
         <div class="modal-body">
          
@@ -4012,11 +4012,11 @@ $limit = 1;
 										@endif
 									</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#europe_modal">Add Europe</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#europe_modal">Add Europe</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label">North America</span>
+<span class="mp-bio-label">North America:</span>
 @if(count($north_america))
 							
 									<span class="mp-bio-ans"> 
@@ -4067,11 +4067,11 @@ $limit = 1;
 										@endif
 									</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#north_america_modal">Add North America</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#north_america_modal">Add North America</a></span>
 @endif
 </li>
 <li>
-<span class="mp-bio-label">South America</span>
+<span class="mp-bio-label">South America:</span>
 @if(count($south_america))
 							
 									<span class="mp-bio-ans"> 
@@ -4123,7 +4123,7 @@ $limit = 1;
 										@endif
 									</span>
 @else
-<span class="mp-bio-ans">: <a href="javascript:;" data-toggle="modal" data-target="#south_america_modal">Add South America</a></span>
+<span class="mp-bio-ans"> <a href="javascript:;" data-toggle="modal" data-target="#south_america_modal">Add South America</a></span>
 @endif
 
 </li>
