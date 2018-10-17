@@ -97,7 +97,7 @@ input[type='checkbox'] {
 
 @media (max-width:475px) {
 	ul.mp-form-list span{
-		font-size:2.8vw;
+		font-size:2.9vw;
 	}
 
 	.basic-info-form, .mp-content {
@@ -144,7 +144,7 @@ $limit = 1;
 <span class="mp-bio-ans"> {{$user_data->firstname.' '.$user_data->lastname}}</span>
 </li>
 <li>
-<span class="mp-bio-label">User Name::</span>
+<span class="mp-bio-label">User Name:</span>
 <span class="mp-bio-ans"> {{$user_data->user_name}}</span>
 </li>
 <li>
