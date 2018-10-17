@@ -1,5 +1,24 @@
 @extends('user/user_master_layout1') 
 @section('data')
+
+<style>
+  @media (max-width:768px) {
+    .al-main ul.al-log li {
+    }
+
+    .al-main ul.al-log li em {
+      display:block;
+      float:none !important;
+    }
+  }
+
+  @media (max-width:500px) {
+    .al-main ul.al-log li,  .al-main ul.al-log li em {
+      font-size:3.3vw;
+    }
+  }
+</style>
+
 <div style="padding-top:90px;"></div>
   
   <div class="container-fluid"> 
