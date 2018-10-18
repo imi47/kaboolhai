@@ -8,7 +8,7 @@ html, body {
 }
 
 select {
-  padding:4px;
+  padding:5px;
   height:unset !important;
 }
 
@@ -20,6 +20,10 @@ select {
   .well #regform{
     margin:0 !important;
     padding:0 !important;
+  }
+
+  .form_error {
+    margin-top:4px;
   }
 
   #year.form_error {
@@ -43,7 +47,7 @@ select {
   }
 
   #regform input[type] {
-    padding:15px;
+    padding:17px;
     border:1px solid #ccc;
     border-radius: 3px;
     margin-bottom:-15px !important;
