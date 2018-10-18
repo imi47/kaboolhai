@@ -3850,9 +3850,10 @@ public function user_register_step_2(Request $request)
 		}
 	$messages = array(
        
-          'word_1.required' => 'You must enter first word',
-          'word_2.required' => 'You must enter second word',
-          'word_3.required' => 'You must enter third word', 
+         //  'word_1.required' => 'You must enter first word',
+         //  'word_2.required' => 'You must enter second word',
+			//  'word_3.required' => 'You must enter third word', 
+				'word_1.required' => 'You must enter all three words',			
            'pray.required' => 'You must select your perform namaz',
            'profile_created.required' => 'You must enter profile created for',
            'gardian_name.required' =>'You must enter your guardian name',
@@ -3861,8 +3862,9 @@ public function user_register_step_2(Request $request)
             'martial_status.required' => 'You must enter martial status',
             
              'body_type.required' => 'You must checked your body type',
-             'height.required' => 'You must select your height',
-             'weight.required' => 'You must select your weight',
+            //  'height.required' => 'You must select your height',
+				//  'weight.required' => 'You must select your weight',
+				'height.required' => 'You must select your height and weight',				
             'sect_are.required' => 'You must select your Allegiance to Islamic Origin',
             'ethnic_type.required' => 'You must enter your ethnic origen',
             'qualification.required' => 'You must enter Education',

@@ -102,6 +102,17 @@
 	}
 }
 
+.error {
+	position:absolute;
+	left:15px;
+	top:-15px;
+	margin:0 !important;
+}
+
+label {
+	margin-bottom:15px;
+}
+
 </style>
 
 <div class="container">
@@ -168,14 +179,15 @@
 
 <span class="on-focus">
 <input type="text"  data-toggle="tooltip" data-placement="top" title="Fill the fields with three best words that describe your personality e.g kind, loving, honest" value="{{ old('word_1') }}" name="word_1" placeholder="1" class="midlinput">
-<span style="color:red; font-size: 10px;">{{ $errors->first('word_1') }}</span>
+<span class='error error-1' style="color:red; font-size: 10px;">{{ $errors->first('word_1') }}</span>
 {{-- <div class="tool-tip  slideIn words">Fill the fields with three best words that describe your personality e.g kind, loving, honest </div> --}}
 </span>
 
 <span class="colons"></span>
 <span class="on-focus">
 <input placeholder="2" type="text" data-toggle="tooltip" data-placement="top" title="Fill the fields with three best words that describe your personality e.g kind, loving, honest" value="{{ old('word_2') }}" name="word_2" class="midlinput">
-<span style="color:red; font-size: 10px;">{{ $errors->first('word_2') }}</span>
+<!-- <span class='error error-2' style="color:red; font-size: 10px;">{{ $errors->first('word_2') }}</span> -->
+<span class='error error-2' style="color:red; font-size: 10px;">{{ $errors->first('word_1') }}</span>
 {{-- <div class="tool-tip  slideIn words">Fill the fields with three best words that describe your personality e.g kind, loving, honest </div> --}}
 </span>
 
@@ -184,7 +196,9 @@
 <input placeholder="3" value="{{ old('word_3') }}" type="text" data-toggle="tooltip" data-placement="top" title="Fill the fields with three best words that describe your personality e.g kind, loving, honest" name="word_3" class="midlinput">
 
 </span>
-<span style="color:red; font-size: 10px;">{{ $errors->first('word_3') }}</span>
+<!-- <span class='error error-3' style="color:red; font-size: 10px;">{{ $errors->first('word_3') }}</span> -->
+<span class='error error-2' style="color:red; font-size: 10px;">{{ $errors->first('word_1') }}</span>
+
 </div>
 </li>
 <div class="btpad"></div>
@@ -214,7 +228,7 @@
 <option value="Relatives">Relatives</option>
 </select>
 </span>
-<span style="color:red; font-size: 10px;">{{ $errors->first('profile_created') }}</span>
+<span class='error' style="color:red; font-size: 10px;">{{ $errors->first('profile_created') }}</span>
 </div>
 </li>
 <div class="btpad"></div>
@@ -229,7 +243,7 @@
 <input type="text"  data-toggle="tooltip" data-placement="top" title="Kindly fill in your guardian name" value="{{ old('gardian_name') }}" name="gardian_name" placeholder="Enter guardian name" class="allselects">
 
 </span>
-<span style="color:red; font-size: 10px;">{{ $errors->first('gardian_name') }}</span>
+<span class='error' style="color:red; font-size: 10px;">{{ $errors->first('gardian_name') }}</span>
 </div>
 </li>
 <div class="btpad"></div>
@@ -244,7 +258,7 @@
 <input type="number" data-toggle="tooltip" data-placement="top" title="Kindly enter the working phone number of your guardian so that we may contact him/her when required" value="{{ old('gardian_number') }}" name="gardian_number" placeholder="Enter guardian number" class="allselects">
 
 </span>
-<span style="color:red; font-size: 10px;">{{ $errors->first('gardian_number') }}</span>
+<span class='error' style="color:red; font-size: 10px;">{{ $errors->first('gardian_number') }}</span>
 </div>
 </li>
 <div class="btpad"></div>
@@ -347,7 +361,7 @@
 <option value="Tripuri">Tripuri</option> 
 <option value="Tulu">Tulu</option> 
 </select>
-<span style="color:red; font-size: 10px;">{{ $errors->first('language') }}</span>
+<span class='error' style="color:red; font-size: 10px;">{{ $errors->first('language') }}</span>
 </div>
 <div class="btpad"></div>
 <li class="row" class="listtopmarg">
@@ -666,7 +680,7 @@ position: absolute;color: #8E8E8F;"></span>
 <option value="separated">Separated</option>
 <option value="Annulled">Annulled</option>
 </select>
-<span style="color:red; font-size: 10px;">{{ $errors->first('martial_status') }}</span>
+<span class='error' style="color:red; font-size: 10px;">{{ $errors->first('martial_status') }}</span>
 </div>
 </li>
 <div class="btpad"></div>
@@ -819,7 +833,7 @@ position: absolute;color: #8E8E8F;"></span>
 <input type="checkbox" name="hobbies_type[]" class="check_hobies" value="Football">Football <br>
 <input type="checkbox" name="hobbies_type[]" class="check_hobies" value="Reading News">Reading News <br>
 <input type="checkbox" onchange="other_hobi(this)" value="Other">Other<br>
-<span style="color:red; font-size: 10px;">{{ $errors->first('hobbies_type') }}</span>
+<span class='error' style="color:red; font-size: 10px;">{{ $errors->first('hobbies_type') }}</span>
 </div>
 
 </div>
@@ -975,7 +989,7 @@ $('#user_status1').hide('slow');
 <div class="radiyn">
 <input type="radio" name="body_type" @if(old('body_type')=='Slim') checked="" @endif value="Slim"> Slim &nbsp <input @if(old('body_type')=='Average') checked="" @endif type="radio" name="body_type" value="Average"> Average &nbsp <input @if(old('body_type')=='Athletic') checked="" @endif type="radio" name="body_type" value="Athletic"> Athletic &nbsp <input type="radio"
 name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy"> Heavy
-<span style="color:red; font-size: 10px;">{{ $errors->first('body_type') }}</span>
+<span class='error' style="color:red; font-size: 10px;">{{ $errors->first('body_type') }}</span>
 </div>
 </div>
 </li>
@@ -1027,7 +1041,7 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 <option value="7ft - 213cm">7ft - 213cm</option>
 <option value="Above 7ft - 213c">Above 7ft - 213cm</option>
 </select>
-<span style="color:red; font-size: 10px;">{{ $errors->first('height') }}</span>
+<span class='error' style="color:red; font-size: 10px;">{{ $errors->first('height') }}</span>
 <select id="" name="weight">
 @if(old('weight'))
 	
@@ -1115,7 +1129,8 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 <option value="116 kg">116 Kg</option>
 <option value="117 kg">117 Kg</option>
 </select>
-<span style="color:red; font-size: 10px;">{{ $errors->first('weight') }}</span>
+<!-- <span class='error' style="color:red; font-size: 10px;">{{ $errors->first('weight') }}</span> -->
+<span class='error' style="color:red; font-size: 10px;">{{ $errors->first('height') }}</span>
 </div>
 
 </li>
@@ -1178,7 +1193,7 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 <option value="Bohra">Bohra</option>
 {{-- <option value="Pathan">Pathan</option> --}}
 </select>
-<span style="color:red; font-size: 10px;">{{ $errors->first('sect_are') }}</span>
+<span class='error' style="color:red; font-size: 10px;">{{ $errors->first('sect_are') }}</span>
 </div>
 </li>
 <div class="btpad"></div>
@@ -1227,7 +1242,7 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 <option value="Eid Salah only">Eid Salah only</option>
 <option value="Rarely miss a prayer and make Qadah Sala">Rarely miss a prayer and make Qadah Sala</option>
 </select>
-<span style="color:red; font-size: 10px;">{{ $errors->first('pray') }}</span>
+<span class='error' style="color:red; font-size: 10px;">{{ $errors->first('pray') }}</span>
 </div>
 </li>
 <div class="btpad"></div>
@@ -1355,7 +1370,7 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 <option value='OTHER'>Other Ethnicity</option>
 </optgroup>
 </select>
-<span style="color:red; font-size: 10px;">{{ $errors->first('ethnic_type') }}</span>
+<span class='error' style="color:red; font-size: 10px;">{{ $errors->first('ethnic_type') }}</span>
 
 </div>
 </li>
@@ -1523,7 +1538,7 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 <option value='Other Education'>Other Education</option>
 </optgroup>
 </select>
-<span style="color:red; font-size: 10px;">{{ $errors->first('qualification') }}</span>
+<span class='error' style="color:red; font-size: 10px;">{{ $errors->first('qualification') }}</span>
 </div>
 </li>
 <div class="btpad"></div>
@@ -1536,7 +1551,7 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 <!-- <span class="colons">:</span> -->
 <span class="on-focus">
 <input type="text" data-toggle="tooltip" data-placement="top" title="Kindly provide us with more information about your education" value="{{ old('edu_detail') }}" name="edu_detail" class="allinputs">
-<span style="color:red; font-size: 10px;">{{ $errors->first('edu_detail') }}</span>
+<span class='error' style="color:red; font-size: 10px;">{{ $errors->first('edu_detail') }}</span>
 
 </div>
 </li>
@@ -1594,7 +1609,7 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 <option value="Other">Other</option>
 
 </select>
-<span style="color:red; font-size: 10px;">{{ $errors->first('job') }}</span>
+<span class='error' style="color:red; font-size: 10px;">{{ $errors->first('job') }}</span>
 <input type="text" value="{{ old('user_other_job') }}" name="user_other_job" placeholder="Specify other occupation" class="allselects" id="user_other_job" style="display: none">
 </div>
 </li>
@@ -1620,7 +1635,7 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 <span class="on-focus">
 <input type="text" data-toggle="tooltip" data-placement="top" title="Occupation detail" value="{{ old('occupation_detail') }}" name="occupation_detail" placeholder="Please enter occupation detail" class="allselects">
 
-<span style="color:red; font-size: 10px;">{{ $errors->first('occupation_detail') }}</span>
+<span class='error' style="color:red; font-size: 10px;">{{ $errors->first('occupation_detail') }}</span>
 </div>
 </li>
 <div class="btpad"></div>
@@ -1912,7 +1927,7 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 <option value="255">Zambia - ZMK</option>                                      
 <option value="256">Zimbabwe - ZWD</option>
 </select>
-<span style="color:red; font-size: 10px;">{{ $errors->first('a_income') }}</span>
+<span class='error' style="color:red; font-size: 10px;">{{ $errors->first('a_income') }}</span>
 </div>
 </li>
 <div class="btpad"></div>
@@ -1950,7 +1965,7 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 @endforeach
 </select>
 </select>
-<span style="color:red; font-size: 10px;">{{ $errors->first('present_country_id') }}</span>
+<span class='error' style="color:red; font-size: 10px;">{{ $errors->first('present_country_id') }}</span>
 <span class="on-focus">
 
 
@@ -1976,7 +1991,7 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 </option>
 @endforeach
 </select>
-<span style="color:red; font-size: 10px;">{{ $errors->first('native_country_id') }}</span>
+<span class='error' style="color:red; font-size: 10px;">{{ $errors->first('native_country_id') }}</span>
 </div>
 </li>
 <div class="btpad"></div>
@@ -1994,7 +2009,7 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 <option value="">Please select</option>
 
 </select>
-<span style="color:red; font-size: 10px;">{{ $errors->first('native_state_id') }}</span>
+<span class='error' style="color:red; font-size: 10px;">{{ $errors->first('native_state_id') }}</span>
 </div>
 </li>
 <div class="btpad"></div>
@@ -2011,7 +2026,7 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 	
 <option value="">Please select</option>
 </select>
-<span style="color:red; font-size: 10px;">{{ $errors->first('native_city_id') }}</span>
+<span class='error' style="color:red; font-size: 10px;">{{ $errors->first('native_city_id') }}</span>
 </div>
 </li>
 <div class="btpad"></div>
@@ -2082,7 +2097,7 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 
 {{-- <textarea name="full_address" placeholder="We guarantee that your address details will remain invisible to other members and will not be shared!" id="" cols="15" class="prfdesctxt"></textarea>                                    --}}
 <textarea name="full_address" data-toggle="tooltip" data-placement="top" title="Kindly provide us with your complete address. Your address will remain confidential only with us." placeholder="" id="" cols="30">{{ old('full_address') }}</textarea>
-<span style="color:red; font-size: 10px;">{{ $errors->first('full_address') }}</span>
+<span class='error' style="color:red; font-size: 10px;">{{ $errors->first('full_address') }}</span>
 
 </div>
 </li>
@@ -2267,7 +2282,7 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 <div class="col-md-7 col-xs-12">
 <div class="agreestat">
 <input type="checkbox" @if(old('agreed')) checked="" @endif name="agreed">&nbsp I have read and agreed to the <a href="{{ url('term-condation') }}">T&C</a> and <a href="{{ url('policy-privacy') }}">Privacy Policy</a>
-<span style="color:red; font-size: 10px;">{{ $errors->first('agreed') }}</span>
+<span class='error' style="color:red; font-size: 10px;">{{ $errors->first('agreed') }}</span>
 </div>
 </div>
 </li>
