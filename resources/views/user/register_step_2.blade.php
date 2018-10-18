@@ -1,12 +1,115 @@
 @extends('user/master_layout2') 
 @section('data') 
 
+<style>
+	input {
+		padding:15px !important;
+	}
+
+	textarea {
+		width:100%;
+	}
+
+	.midlinput {
+    height: 27px;
+    width: 20.8%;
+}
+
+	select {
+		padding:6px !important;
+		height:unset !important;
+	}
+
+	input[type='number'], input[type='text']:not(.midlinput) , .allselects {
+		width:69%;
+	}
+
+	.half-width {
+		width:35%;
+	}
+
+	.half-width + span input, .half-width + select {
+		width:32.5%;
+	}
+
+	.form_area .row {
+		margin-bottom:10px;
+	}
+
+	input[type=number]::-webkit-inner-spin-button, 
+	input[type=number]::-webkit-outer-spin-button { 
+	-webkit-appearance: none; 
+		margin: 0; 
+}
+
+@media (max-width:991px) {
+	input[type='number'], input[type='text']:not(.midlinput) , .allselects {
+		width:100%;
+	}
+
+	.half-width {
+		width:48%;
+	}
+
+	.half-width + span input, .half-width + select {
+		width:48%;
+	}
+
+	.midlinput {
+		width:29%;
+	}
+
+	#city {
+		width:48%;
+	}
+}
+
+@media (max-width:768px) {
+	.midlinput {
+		width:31%;
+	}
+
+	#basicinfo {
+		padding:10px;
+	}
+
+	.sechead {
+		padding:5px;
+	}
+}
+
+@media (max-width:508px) {
+	.col-md-7.col-xs-12 .on-focus:first-child .midlinput, .col-md-7.col-xs-12 .on-focus:nth-child(3) .midlinput, .col-md-7.col-xs-12 .on-focus:nth-child(5) .midlinput{
+		width:100%;
+		box-sizing:border-box;
+	}
+}
+
+@media (max-width:400px) {
+	.form_area .row:not(.listtopmarg) *{
+		font-size:4vw;
+	}
+
+	.sechead {
+		padding:7px;
+	}
+}
+
+@media (max-width:345px) {
+	select, input[type='text'] {
+		width:100% !important;
+		margin-bottom:5px;
+	}
+}
+
+</style>
+
 <div class="container">
 <div id="wait" style="display: none;"></div>
 <br>
 <div class="row">
 
-<div class="col-sm-9">
+<div class="col-md-9 col-sm-12">
 <div class="well" style="background-color: #f5f5f5">
 <br>
 <div class="menuwizard">
@@ -36,7 +139,7 @@
 <div class="col-0">
 <img src="{{ $user_assets }}/icons/message.png" class="welmsgimg">
 </div>
-<div class="col-10">
+<div class="col-xs-10">
 
 
 <p style="font-size: 12px;"><b>Dear <strong> {{ $fname.' '.$lname }} </strong> we sincerely want to help you in your search for best match according to your preference therefore we need additional information. Kindly provide us with your personal information and preferences.</b></p>
@@ -47,7 +150,7 @@
 <div class="col-0">
 <img src="{{ $user_assets }}/icons/basic-info.png">
 </div>
-<div class="col-10 main">
+<div class="col-xs-10 main">
 <p class="sechead" >Basic Information</p>
 </div>
 </li>
@@ -56,12 +159,12 @@
 
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
-<label>Which 3 words best describe you<span style="color: red" >*</span> </label>
+<div class="col-md-5 col-xs-12">
+<label>Which 3 words best describe you:<span style="color: red" >*</span> </label>
 </div>
 
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 
 <span class="on-focus">
 <input type="text"  data-toggle="tooltip" data-placement="top" title="Fill the fields with three best words that describe your personality e.g kind, loving, honest" value="{{ old('word_1') }}" name="word_1" placeholder="1" class="midlinput">
@@ -89,11 +192,11 @@
 
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
-<label for=""> Profile Created for <span style="color: red" >*</span></label>
+<div class="col-md-5 col-xs-12">
+<label for=""> Profile Created for: <span style="color: red" >*</span></label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 <span class="on-focus">
 <select selected="selected"  name="profile_created" id="profile_created" class="allselects">
 
@@ -117,11 +220,11 @@
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
-<label for=""> Guardian Name <span style="color: red" >*</span></label>
+<div class="col-md-5 col-xs-12">
+<label for=""> Guardian Name: <span style="color: red" >*</span></label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 <span class="on-focus">
 <input type="text"  data-toggle="tooltip" data-placement="top" title="Kindly fill in your guardian name" value="{{ old('gardian_name') }}" name="gardian_name" placeholder="Enter guardian name" class="allselects">
 
@@ -132,11 +235,11 @@
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg" id="gardian_number">
-<div class="col-4">
-<label for=""> Guardian Number <span style="color: red" >*</span></label>
+<div class="col-md-5 col-xs-12">
+<label for=""> Guardian Number: <span style="color: red" >*</span></label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 <span class="on-focus">
 <input type="number" data-toggle="tooltip" data-placement="top" title="Kindly enter the working phone number of your guardian so that we may contact him/her when required" value="{{ old('gardian_number') }}" name="gardian_number" placeholder="Enter guardian number" class="allselects">
 
@@ -146,11 +249,11 @@
 </li>
 <div class="btpad"></div>
 <li class="row" class="listtopmarg">
-<div class="col-4">
-<label for=""> Postal/Zip Code</label>
+<div class="col-md-5 col-xs-12">
+<label for=""> Postal/Zip Code:</label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 <span class="on-focus">
 <input type="number" data-toggle="tooltip" data-placement="top" title="Enter your postal/zip code in the field" value="{{ old('postal_code') }}" name="postal_code" placeholder="Please enter postal/zip code" class="allselects">
 
@@ -159,11 +262,11 @@
 </li>
 <div class="btpad"></div>
 <li class="row" class="listtopmarg">
-<div class="col-4">
-<label for="">Mother Tongue <span class="imporatant">*</span></label>
+<div class="col-md-5 col-xs-12">
+<label for="">Mother Tongue: <span class="imporatant">*</span></label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 <select name="language" selected="selected" id="" class="allselects">
 
 @if(old('language'))
@@ -248,13 +351,13 @@
 </div>
 <div class="btpad"></div>
 <li class="row" class="listtopmarg">
-<div class="col-4">
-<label for=""> Other Language <span class="imporatant"></span></label>
+<div class="col-md-5 col-xs-12">
+<label for=""> Other Language: <span class="imporatant"></span></label>
 </div>
-<div class="col-8">
+<div class="col-md-7 col-xs-12">
 {{-- chang --}}
 <div class="input-group">
-:<input type="text" readonly="" value="Other language" name="other_language" class="allselects" style="margin-left: 13px;">
+<input type="text" readonly="" value="Other language" name="other_language" class="allselects">
 <div class="input-group-append">
 <a href="javascript:;" id="other_language">
 <span class="fa fa-angle-down arrows" style="color: #8E8E8F; color: #8E8E8F;" id="do_other"></span>
@@ -416,17 +519,17 @@ position: absolute;color: #8E8E8F;"></span>
 </li>
 <div class="btpad"></div>
 <li class="row" class="listtopmarg">
-<div class="col-4">
-<label for="">Caste/Clan</label>
+<div class="col-md-5 col-xs-12">
+<label for="">Caste/Clan:</label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
-<select name="cast" id="" onchange="cast_change(this)" class="allselects">
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
+<select name="cast" id="" onchange="cast_change(this)" class="allselects half-width">
 	@if(old('cast'))
 	
 	<option value="{{ old('language') }}">{{ old('language') }}</option>
 	@else
-<option value="">Please select..</option>
+<option value="">Please select</option>
 	@endif
 <option value="Abbasi">Abbasi</option>
 <option value="Achakzai">Achakzai</option>
@@ -517,11 +620,11 @@ position: absolute;color: #8E8E8F;"></span>
 
 
 <li class="row" class="listtopmarg" id="other_caste" style="display: none;">
-<div class="col-4">
-<label for="">Other Caste <span class="imporatant">*</span></label>
+<div class="col-md-5 col-xs-12">
+<label for="">Other Caste: <span class="imporatant">*</span></label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 <span class="on-focus">
 
 <input type="text" value="{{ old('other_caste') }}" placeholder="Please specify other caste" name="other_caste" class="allselects">
@@ -539,17 +642,17 @@ position: absolute;color: #8E8E8F;"></span>
 
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
-<label for="">Marital Status <span class="imporatant">*</span></label>
+<div class="col-md-5 col-xs-12">
+<label for="">Marital Status: <span class="imporatant">*</span></label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 <select name="martial_status" onchange="martil_sts(this)" id="" class="allselects">
 		@if(old('martial_status'))
 	
 	<option value="{{ old('martial_status') }}">{{ old('martial_status') }}</option>
 	@else
-<option value="">Please select..</option>
+<option value="">Please select</option>
 	@endif
 
 <option value="Married">Married</option>
@@ -568,19 +671,19 @@ position: absolute;color: #8E8E8F;"></span>
 </li>
 <div class="btpad"></div>
 <li class="row" class="listtopmarg" id="poly"  style="display: none;">
-<div class="col-4">
+<div class="col-md-5 col-xs-12">
 <label for="">Polygamy </label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 <select name="marige_type" id="" onchange="test_marit(this)" class="allselects">
 	@if(old('marige_type'))
 	
 	<option value="{{ old('marige_type') }}">{{ old('marige_type') }}</option>
 	@else
-<option value="">Please select..</option>
+<option value="">Please select</option>
 	@endif
-{{-- <option value="">Please select..</option> --}}
+{{-- <option value="">Please select</option> --}}
 <option value="Second marriage">Second marriage</option>
 <option value="Third marriage">Third marriage</option>
 <option value="Fourth marriage">Fourth marriage</option>
@@ -591,11 +694,11 @@ position: absolute;color: #8E8E8F;"></span>
 </li>
 <div class="btpad"></div>
 <li class="row" class="listtopmarg" id="have_chiled" style="display: none;">
-<div class="col-4">
+<div class="col-md-5 col-xs-12">
 <label for="">Do you have kids ?<span class="imporatant"></span></label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 <div class="radiyn">
 
 <input type="radio" @if(old('have_chiled')=='Yes') checked="" @endif name="have_chiled" class="have_chiled" value="Yes"> Yes &nbsp <input type="radio" class="have_chiled" @if(old('have_chiled')=='No') checked="" @endif name="have_chiled" value="No"> No
@@ -603,19 +706,19 @@ position: absolute;color: #8E8E8F;"></span>
 </div>
 
 <li class="row" class="listtopmarg" id="how_many" style="display: none">
-<div class="col-4">
+<div class="col-md-5 col-xs-12">
 <label for="">Number of kids <span class="imporatant"></span></label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 <select name="how_many" id="" class="allselects">
 		@if(old('how_many'))
 	
 	<option value="{{ old('how_many') }}">{{ old('how_many') }}</option>
 	@else
-<option value="">Please select..</option>
+<option value="">Please select</option>
 	@endif
-{{-- <option value="">Please select..</option> --}}
+{{-- <option value="">Please select</option> --}}
 <option value="1">1</option>
 <option value="2">2</option>
 <option value="3">3</option>
@@ -630,13 +733,13 @@ position: absolute;color: #8E8E8F;"></span>
 {{-- </li>
 <div class="btpad"></div> --}}
 {{-- <li class="row" class="listtopmarg" id="marige_type" style="display: none;">
-<div class="col-4">
+<div class="col-md-5 col-xs-12">
 <label for="">Marital Status <span class="imporatant">*</span></label>
 </div>
-<div class="col-8">
+<div class="col-md-7 col-xs-12">
 
 <div class="input-group">
-:<input type="text" value="Marital Status" name="mart_status" class="allselects" style="margin-left: 13px;">
+:<input type="text" value="Marital Status" name="mart_status" class="allselects">
 <div class="input-group-append">
 <a href="javascript:;" id="hobi1">
 <span class="fa fa-angle-down arrows" style="color: #8E8E8F; color: #8E8E8F;" id="do1"></span>
@@ -680,13 +783,13 @@ position: absolute;color: #8E8E8F;"></span>
 
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
-<label for=""> Hobbies/Interest <span class="imporatant"></span></label>
+<div class="col-md-5 col-xs-12">
+<label for=""> Hobbies/Interest: <span class="imporatant"></span></label>
 </div>
-<div class="col-8">
+<div class="col-md-7 col-xs-12">
 {{-- chang --}}
 <div class="input-group">
-:<input type="text" readonly="" value="Hobbies" name="hobbies" class="allselects" style="margin-left: 13px;">
+<input type="text" readonly="" value="Hobbies" name="hobbies" class="allselects">
 <div class="input-group-append">
 <a href="javascript:;" id="hobi">
 <span class="fa fa-angle-down arrows" style="color: #8E8E8F;"style="color: #8E8E8F;" id="do"></span>
@@ -726,11 +829,11 @@ position: absolute;color: #8E8E8F;"></span>
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg" id="other_hobies" style="display: none;">
-<div class="col-4">
+<div class="col-md-5 col-xs-12">
 <label for="">Other hobbies/interest</label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 <input type="text" name="other_hobbies_type" class="check_hobies" placeholder="please specify other Hobbies" class="allselects">
 </div>
 </li>
@@ -742,23 +845,23 @@ position: absolute;color: #8E8E8F;"></span>
 <div class="col-0">
 <img src="{{ $user_assets }}/icons/religion.png">
 </div>
-<div class="col-10 main">
+<div class="col-xs-10 main">
 <p class="sechead">Appearance</p>
 </div>
 </li>
 <hr class="lineinhead">
 <li class="row" class="listtopmarg">
-<div class="col-4">
-<label for="">Complexion (Skin Color)</label>
+<div class="col-md-5 col-xs-12">
+<label for="">Complexion (Skin Color):</label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 <select id="" name="skin_color" class="allselects">
 		@if(old('skin_color'))
 	
 	<option value="{{ old('skin_color') }}">{{ old('skin_color') }}</option>
 	@else
-<option value="">Please select..</option>
+<option value="">Please select</option>
 	@endif
 {{-- <option value="">Select</option> --}}
 <option value="Very Fair">Very Fair</option>
@@ -771,11 +874,11 @@ position: absolute;color: #8E8E8F;"></span>
 </li>
 <div class="btpad"></div>
 <li class="row" class="listtopmarg">
-<div class="col-4">
-<label for="">Disabilty</label>
+<div class="col-md-5 col-xs-12">
+<label for="">Disabilty:</label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 <div class="radiyn">
 <input type="radio" name="disabilty" class="disabilty_type" value="Yes"> Yes &nbsp <input type="radio" class="disabilty_type" name="disabilty" value="No"> No
 </div>
@@ -783,11 +886,11 @@ position: absolute;color: #8E8E8F;"></span>
 </li>
 <div class="btpad"></div>
 <li class="row" class="listtopmarg" id="disabilty_type" style="display: none">
-<div class="col-4">
+<div class="col-md-5 col-xs-12">
 <label for=""> Disabilty Type</label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 <span class="on-focus">
 <input type="text" name="disabilty_type" placeholder="Enter Disabilty Type" class="allselects">
 <div class="tool-tip  slideIn">If yes, tell us which disability you have</div>
@@ -796,17 +899,17 @@ position: absolute;color: #8E8E8F;"></span>
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
-<label for="">Physical Status</label>
+<div class="col-md-5 col-xs-12">
+<label for="">Physical Status:</label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 <select id="" name="physical_status" onchange="other_status1(this)" class="allselects">
 	@if(old('physical_status'))
 	
 	<option value="{{ old('physical_status') }}">{{ old('physical_status') }}</option>
 	@else
-<option value="">Please select..</option>
+<option value="">Please select</option>
 	@endif
 <option  value="Normal Person">Normal Person</option>
 <option value="Deaf/Dumb">Deaf/Dumb</option>
@@ -841,17 +944,17 @@ $('#user_status1').hide('slow');
 <div class="btpad"></div>
 @if($gender=='Male')
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-md-5 col-xs-12">
 <label for="">Beard</label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 <select name="bread" id="" class="allselects">
 @if(old('bread'))
 	
 	<option value="{{ old('bread') }}">{{ old('bread') }}</option>
 	@else
-<option value="">Please select..</option>
+<option value="">Please select</option>
 	@endif
 <option value="Yes">Yes</option>
 <option value="No">No</option>
@@ -864,11 +967,11 @@ $('#user_status1').hide('slow');
 
 @endif
 <li class="row" class="listtopmarg">
-<div class="col-4">
-<label for="">Body type <span class="imporatant">*</span></label>
+<div class="col-md-5 col-xs-12">
+<label for="">Body type: <span class="imporatant">*</span></label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 <div class="radiyn">
 <input type="radio" name="body_type" @if(old('body_type')=='Slim') checked="" @endif value="Slim"> Slim &nbsp <input @if(old('body_type')=='Average') checked="" @endif type="radio" name="body_type" value="Average"> Average &nbsp <input @if(old('body_type')=='Athletic') checked="" @endif type="radio" name="body_type" value="Athletic"> Athletic &nbsp <input type="radio"
 name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy"> Heavy
@@ -878,17 +981,17 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 </li>
 <div class="btpad"></div>
 <li class="row" class="listtopmarg">
-<div class="col-4">
-<label for="">Height & Weight<span class="imporatant">*</span></label>
+<div class="col-md-5 col-xs-12">
+<label for="">Height & Weight:<span class="imporatant">*</span></label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
-<select id="" name="height" class="allselects">
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
+<select id="" name="height" class="allselects half-width">
 @if(old('height'))
 	
 	<option value="{{ old('height') }}">{{ old('height') }}</option>
 	@else
-<option value="">Please select..</option>
+<option value="">Please select</option>
 	@endif
 <option value="Below 4ft 6in - 137cm">Below 4ft 6in - 137cm</option>
 <option value="4ft 6in - 137cm">4ft 6in - 137cm</option>
@@ -925,12 +1028,12 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 <option value="Above 7ft - 213c">Above 7ft - 213cm</option>
 </select>
 <span style="color:red; font-size: 10px;">{{ $errors->first('height') }}</span>
-<select id="" name="weight" class="midlinput">
+<select id="" name="weight">
 @if(old('weight'))
 	
 	<option value="{{ old('weight') }}">{{ old('weight') }}</option>
 	@else
-<option value="">Please select..</option>
+<option value="">Please select</option>
 	@endif
 <option value="40 kg">40 Kg</option>
 <option value="41 kg">41 Kg</option>
@@ -1025,7 +1128,7 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 <div class="col-0">
 <img src="{{ $user_assets }}/icons/religion.png">
 </div>
-<div class="col-10 main">
+<div class="col-xs-10 main">
 <p class="sechead">Religious Interest</p>
 </div>
 </li>
@@ -1033,10 +1136,10 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 
 <li class="row" class="listtopmarg">
 <div class="col-5">
-<label for=""> Are you or your parents reverted to Islam ?</label>
+<label for=""> Are you or your parents reverted to Islam?</label>
 </div>
 <div class="col-7">
-<span class="colons">:</span>
+<!-- <span class="colons">:</span> -->
 <div class="radiyn">
 <input type="radio" name="religious_type" @if(old('religious_type')=='Yes') checked="" @endif value="Yes"> Yes &nbsp <input type="radio" name="religious_type" @if(old('religious_type')=='No') checked="" @endif  value="No"> No
 
@@ -1046,17 +1149,17 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
-<label for=""> Allegiance to Islamic Origin<span class="imporatant">*</span></label>
+<div class="col-md-5 col-xs-12">
+<label for=""> Allegiance to Islamic Origin:<span class="imporatant">*</span></label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 <select selected="selected" name="sect_are" id="" class="allselects">
 @if(old('sect_are'))
 	
 	<option value="{{ old('weight') }}">{{ old('sect_are') }}</option>
 	@else
-<option value="">Please select..</option>
+<option value="">Please select</option>
 	@endif
 <option value="A Muslim">Just a Muslim</option>
 <option value="Sunni">Sunni</option>
@@ -1081,17 +1184,17 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
-<label for=""> Religiousness </label>
+<div class="col-md-5 col-xs-12">
+<label for=""> Religiousness: </label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 <select name="religiousness" id="" class="allselects">
 @if(old('religiousness'))
 	
 	<option value="{{ old('sect_are') }}">{{ old('religiousness') }}</option>
 	@else
-<option value="">Please select..</option>
+<option value="">Please select</option>
 	@endif
 <option value="Very religious">Very religious</option>
 <option value="Religious">Religious</option>
@@ -1103,17 +1206,17 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
-<label for=""> Perform Namaz <span class="imporatant">*</span></label>
+<div class="col-md-5 col-xs-12">
+<label for=""> Perform Namaz: <span class="imporatant">*</span></label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 <select selected="selected" name="pray" id="" class="allselects">
 	@if(old('pray'))
 	
 	<option value="{{ old('pray') }}">{{ old('pray') }}</option>
 	@else
-<option value="">Please select..</option>
+<option value="">Please select</option>
 	@endif
 <option value="Always Pray">Always Pray</option>
 <option value="sometime pray">Sometime pray</option>
@@ -1130,17 +1233,17 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
-<label for=""> Read Quran </label>
+<div class="col-md-5 col-xs-12">
+<label for=""> Read Quran: </label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 <select name="read_quran" id="" class="allselects">
 @if(old('read_quran'))
 	
 	<option value="{{ old('read_quran') }}">{{ old('read_quran') }}</option>
 	@else
-<option value="">Please select..</option>
+<option value="">Please select</option>
 	@endif
 <option value="Daily" >Daily</option>
 <option value="Ocassionally" >Ocassionally</option>
@@ -1155,17 +1258,17 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
-<label for=""> Attend religious services </label>
+<div class="col-md-5 col-xs-12">
+<label for=""> Attend religious services: </label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 <select name="attend_religious_service" id="" class="allselects">
 @if(old('attend_religious_service'))
 	
 	<option value="{{ old('attend_religious_service') }}">{{ old('attend_religious_service') }}</option>
 	@else
-<option value="">Please select..</option>
+<option value="">Please select</option>
 	@endif
 <option value="Daily" >Daily</option>
 <option value="Only on Jummah / Fridays">Only on Jummah / Fridays</option>
@@ -1179,11 +1282,11 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 
 {{--
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-md-5 col-xs-12">
 <label for="">Polygamy <span class="imporatant">*</span></label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 <select name="polygamy" id="" class="allselects">
 <<option value="" >Please Select</option>
 <option value="Accept polygamy" >Accept polygamy</option>
@@ -1195,17 +1298,17 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 <div class="btpad"></div> --}}
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
-<label for="">What is your Ethnic Origin ? <span class="imporatant">*</span></label>
+<div class="col-md-5 col-xs-12">
+<label for="">What is your Ethnic Origin? <span class="imporatant">*</span></label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 <select name="ethnic_type" id="" class="allselects">
 	@if(old('ethnic_type'))
 	
 	<option value="{{ old('ethnic_type') }}">{{ old('ethnic_type') }}</option>
 	@else
-<option value="">Please select..</option>
+<option value="">Please select</option>
 	@endif
 <option value='Rather not say'>Rather not say</option>
 <option value='Algerian'>Algerian</option>
@@ -1264,7 +1367,7 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 <div class="col-0">
 <img src="{{ $user_assets }}/icons/education.png">
 </div>
-<div class="col-10 main">
+<div class="col-xs-10 main">
 <p class="sechead">Education and Occupation</p>
 </div>
 </li>
@@ -1272,17 +1375,17 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 <hr class="lineinhead">
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
-<label for="">Education <span class="imporatant">*</span></label>
+<div class="col-md-5 col-xs-12">
+<label for="">Education: <span class="imporatant">*</span></label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 <select name="qualification" id="" class="allselects">
 	@if(old('qualification'))
 	
 	<option value="{{ old('qualification') }}">{{ old('qualification') }}</option>
 	@else
-<option value="">Please select..</option>
+<option value="">Please select</option>
 	@endif
 <optgroup label='Bachelors - Engineering/Computer'>
 <option value='BCA'>BCA</option>
@@ -1426,13 +1529,13 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
-<label for="">Education Details <span class="imporatant">*</span></label>
+<div class="col-md-5 col-xs-12">
+<label for="">Education Details: <span class="imporatant">*</span></label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 <span class="on-focus">
-<input type="text" data-toggle="tooltip" data-placement="top" title="Kindly provide us with more information about your education" value="{{ old('edu_detail') }}" name="edu_detail" class="allinputs" style="width:232.5px;">
+<input type="text" data-toggle="tooltip" data-placement="top" title="Kindly provide us with more information about your education" value="{{ old('edu_detail') }}" name="edu_detail" class="allinputs">
 <span style="color:red; font-size: 10px;">{{ $errors->first('edu_detail') }}</span>
 
 </div>
@@ -1440,17 +1543,17 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg" id="users_job">
-<div class="col-4">
-<label for=""> Occupation <span class="imporatant">*</span></label>
+<div class="col-md-5 col-xs-12">
+<label for=""> Occupation: <span class="imporatant">*</span></label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 <select name="job" onchange="user_job(this)" class="allselects">
 	@if(old('job'))
 	
 	<option value="{{ old('job') }}">{{ old('job') }}</option>
 	@else
-<option value="">Please select..</option>
+<option value="">Please select</option>
 	@endif
 <option value="Software Engineer">Software Engineer</option>
 <option value="Producer/Director">Producer/Director</option>
@@ -1498,22 +1601,22 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 <div class="btpad"></div>
 {{--
 <li class="row" class="listtopmarg" id="user_other_job" style="display: none">
-<div class="col-4">
-<label for=""> Occupation</label>
+<div class="col-md-5 col-xs-12">
+<label for=""> Occupation:</label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 <input type="text" name="user_other_job" placeholder="please specify other Occupation" class="allselects">
 
 </div>
 </li>
 <div class="btpad"></div> --}}
 <li class="row" class="listtopmarg">
-<div class="col-4">
-<label for="">Occupation Detail <span class="imporatant">*</span></label>
+<div class="col-md-5 col-xs-12">
+<label for="">Occupation Detail: <span class="imporatant">*</span></label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 <span class="on-focus">
 <input type="text" data-toggle="tooltip" data-placement="top" title="Occupation detail" value="{{ old('occupation_detail') }}" name="occupation_detail" placeholder="Please enter occupation detail" class="allselects">
 
@@ -1522,19 +1625,19 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 </li>
 <div class="btpad"></div>
 <li class="row" class="listtopmarg">
-<div class="col-4">
-<label for=""> Annual Income <span class="imporatant">*</span></label>
+<div class="col-md-5 col-xs-12">
+<label for=""> Annual Income: <span class="imporatant">*</span></label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
-<select name="a_income" id="" class="allselects">
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
+<select name="a_income" id="" class="allselects half-width">
 
 
 @if(old('a_income'))
 	
 	<option value="{{ old('a_income') }}">{{ old('a_income') }}</option>
 	@else
-<option value="">Please select..</option>
+<option value="">Please select</option>
 	@endif
 <option value="Prefer not to say">Prefer not to say</option>
 <option value="Less than 50000">Less than 50000</option>
@@ -1571,7 +1674,7 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 	
 	<option value="{{ old('courncy') }}">{{ old('courncy') }}</option>
 	@else
-<option value="">Please select..</option>
+<option value="">Please select</option>
 	@endif
 <option value="166">Pakistan - PKR</option> 
 <option value="12">India - INR</option>
@@ -1819,7 +1922,7 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 <div class="col-0">
 <img src="{{ $user_assets }}/icons/contact-details.png">
 </div>
-<div class="col-10 main">
+<div class="col-xs-10 main">
 <p class="sechead">Contact Details</p>
 </div>
 </li>
@@ -1829,16 +1932,16 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
-<label for=""> Present Country <span class="imporatant">*</span></label>
+<div class="col-md-5 col-xs-12">
+<label for=""> Present Country: <span class="imporatant">*</span></label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 
-<select name="present_country_id" class="allselects">
+<select name="present_country_id" class="allselects half-width">
 
 	
-<option value="">Please select..</option>
+<option value="">Please select</option>
 
 @foreach ($country as $row)
 <option value="{{ $row->country_id }}">
@@ -1851,21 +1954,21 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 <span class="on-focus">
 
 
-<input type="text" data-toggle="tooltip" data-placement="top" title="Kindly provide the name of your city" value="{{ old('present_city') }}" name="present_city" class="midlinput" placeholder="City">
+<input type="text" data-toggle="tooltip" data-placement="top" title="Kindly provide the name of your city" value="{{ old('present_city') }}" name="present_city" placeholder="City" id='city'>
 
 </div>
 </li>
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
-<label for="">Native Country <span class="imporatant">*</span></label>
+<div class="col-md-5 col-xs-12">
+<label for="">Native Country: <span class="imporatant">*</span></label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 <select id="country" onchange="country_change1(this)" name="native_country_id" class="allselects">
 
-<option value="">Please select..</option>
+<option value="">Please select</option>
 	
 @foreach ($country as $row)
 <option value="{{ $row->country_id }}">
@@ -1879,16 +1982,16 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
-<label for="">Native State <span class="imporatant">*</span></label>
+<div class="col-md-5 col-xs-12">
+<label for="">Native State: <span class="imporatant">*</span></label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 <select selected="selected" id="native_state" onchange="state_change1(this)" name="native_state_id" class="allselects">
 
 	
 	
-<option value="">Please select..</option>
+<option value="">Please select</option>
 
 </select>
 <span style="color:red; font-size: 10px;">{{ $errors->first('native_state_id') }}</span>
@@ -1897,16 +2000,16 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
-<label for=""> Native City (eg: Lahore) <span class="imporatant">*</span></label>
+<div class="col-md-5 col-xs-12">
+<label for=""> Native City (eg: Lahore): <span class="imporatant">*</span></label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 <select name="native_city_id" id="native_city" selected="selected" class="allselects">
 
 	
 	
-<option value="">Please select..</option>
+<option value="">Please select</option>
 </select>
 <span style="color:red; font-size: 10px;">{{ $errors->first('native_city_id') }}</span>
 </div>
@@ -1915,11 +2018,11 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 
 {{--
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-md-5 col-xs-12">
 <label for="">Mobile Number <span class="imporatant">*</span></label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 <select name="" id="" class="allselects">
 <option value="">Pakistan</option>
 <option value="">India</option>
@@ -1929,11 +2032,11 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 <div class="btpad"></div>
 --}}
 <li class="row" class="listtopmarg">
-<div class="col-4">
-<label for="">Convenient time to call</label>
+<div class="col-md-5 col-xs-12">
+<label for="">Convenient time to call:</label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 
 <input type="text" data-toggle="tooltip" data-placement="top" title="Enter convenient time to call" name="convenient_time" class="allselects">
 
@@ -1942,7 +2045,7 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 	
 	<option value="{{ old('convenient_time') }}">{{ old('convenient_time') }}</option>
 	@else
-<option value="">Please select..</option>
+<option value="">Please select</option>
 	@endif
 <option value="7 AM">7 AM</option>
 <option value="12 AM">12 AM</option>
@@ -1954,25 +2057,25 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
-<label for="">Contact Person & Relationship </label>
+<div class="col-md-5 col-xs-12">
+<label for="">Contact Person & Relationship: </label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 <span class="on-focus">
 
-<input type="text" data-toggle="tooltip" data-placement="top" title="If you are the person to contact then write your contact number or if not then provide us with your relationship contact" value="{{ old('contact_person') }}" name="contact_person" class="allinputs" style="width: 232.5px;">
+<input type="text" data-toggle="tooltip" data-placement="top" title="If you are the person to contact then write your contact number or if not then provide us with your relationship contact" value="{{ old('contact_person') }}" name="contact_person" class="allinputs">
 
 </div>
 </li>
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
-<label for=""> Full Address <span class="imporatant"></label>
+<div class="col-md-5 col-xs-12">
+<label for=""> Full Address: <span class="imporatant"></label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 <span class="on-focus">
 
 
@@ -1990,7 +2093,7 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 <div class="col-0">
 <img src="{{ $user_assets }}/icons/general-attributes.png">
 </div>
-<div class="col-10 main">
+<div class="col-xs-10 main">
 <p class="sechead">General Attributes</p>
 </div>
 </li>
@@ -1998,18 +2101,18 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 <hr class="lineinhead">
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
-<label for="">Blood Group </label>
+<div class="col-md-5 col-xs-12">
+<label for="">Blood Group: </label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 
 <select name="blood_group" class="allselects">
 	@if(old('blood_group'))
 	
 	<option value="{{ old('blood_group') }}">{{ old('blood_group') }}</option>
 	@else
-<option value="">Please select..</option>
+<option value="">Please select</option>
 	@endif
 <option value="A+">A+</option>
 <option value="A-">A-</option>
@@ -2028,18 +2131,18 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
-<label for="">Diet</label>
+<div class="col-md-5 col-xs-12">
+<label for="">Diet:</label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 
 <select name="diet" class="allselects">
 	@if(old('diet'))
 	
 	<option value="{{ old('diet') }}">{{ old('diet') }}</option>
 	@else
-<option value="">Please select..</option>
+<option value="">Please select</option>
 	@endif
 <option value="vegetarian">vegetarian</option>
 <option value="Non-vegetarian">Non-vegetarian</option>
@@ -2050,18 +2153,18 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 <div class="btpad"></div>
 @if($gender=='Male')
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-md-5 col-xs-12">
 <label for="">Do you Smoke ?</label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 <div class="radiyn">
 <select name="smoking" class="allselects">
 	@if(old('smoking'))
 	
 	<option value="{{ old('smoking') }}">{{ old('smoking') }}</option>
 	@else
-<option value="">Please select..</option>
+<option value="">Please select</option>
 	@endif
 <option value="Chain smoker">Chain Smoker</option>
 <option value="Occasionally">Occasionally</option>
@@ -2075,11 +2178,11 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 <div class="btpad"></div>
 @endif
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-md-5 col-xs-12">
 <label for="">Are you the patient of thalassemia?</label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 <div class="radiyn">
 <input type="radio" @if(old('thelisimia')=='Yes') checked="" @endif name="thelisimia" value="Yes"> Yes <input type="radio" name="thelisimia" @if(old('thelisimia')=='No') checked="" @endif value="No"> No
 </div>
@@ -2088,22 +2191,22 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
-<label for="">Are you suffering any Disease’? </label>
+<div class="col-md-5 col-xs-12">
+<label for="">Are you suffering any Disease? </label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 <input type="radio" @if(old('diseace')=='Yes') checked="" @endif name="diseace" id="diseace" onchange="suffering(this)" value="Yes"> Yes <input type="radio" @if(old('diseace')=='No') checked="" @endif name="diseace" onchange="suffering(this)" value="No"> No
 </div>
 </li>
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg" id="diseace_type" style="display: none;">
-<div class="col-4">
+<div class="col-md-5 col-xs-12">
 <label for="">Please specify other disease<span class="imporatant"></span></label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 <span class="on-focus">
 
 
@@ -2117,11 +2220,11 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 {{-- </li>
 <div class="btpad"></div> --}} {{--
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-md-5 col-xs-12">
 <label for="">Disability</label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 <select name="disabilty" id="" class="allselects">
 <option value="Normal Person">Normal Person</option>
 <option value="Deaf/Dumb">Deaf/Dumb</option>
@@ -2135,17 +2238,17 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 <div class="btpad"></div> --}}
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-md-5 col-xs-12">
 <label for="">How did you find about us?</label>
 </div>
-<div class="col-8">
-<span class="colons">:</span>
+<div class="col-md-7 col-xs-12">
+<!-- <span class="colons">:</span> -->
 <select name="how_did" id="" class="allselects">
 	@if(old('how_did'))
 	
 	<option value="{{ old('how_did') }}">{{ old('how_did') }}</option>
 	@else
-<option value="">Please select..</option>
+<option value="">Please select</option>
 	@endif
 <option value="Google">Google</option>
 <option value="Facebook">Facebook</option>
@@ -2158,10 +2261,10 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 </li>
 <div class="btpad"></div>
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-md-5 col-xs-12">
 
 </div>
-<div class="col-8">
+<div class="col-md-7 col-xs-12">
 <div class="agreestat">
 <input type="checkbox" @if(old('agreed')) checked="" @endif name="agreed">&nbsp I have read and agreed to the <a href="{{ url('term-condation') }}">T&C</a> and <a href="{{ url('policy-privacy') }}">Privacy Policy</a>
 <span style="color:red; font-size: 10px;">{{ $errors->first('agreed') }}</span>
