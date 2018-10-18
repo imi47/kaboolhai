@@ -12,10 +12,6 @@ select {
   height:unset !important;
 }
 
-.form_error {
-    margin-left:287px !important;
-  }
-
   #form-container {
     width:100% !important;
     margin:0 !important;
@@ -39,7 +35,7 @@ select {
   }
 
   #regform input[type=text],input[type=email], input[type=text],input[type=password], select {
-    width:200px !important;
+    width:387px !important;
   }
 
   #full {
@@ -62,23 +58,57 @@ select {
     width:100% !important;
     height:auto !important;
   }
+
+   @media (min-width:991px) {
+   .form_error {
+     margin-left:242px;
+   }
+
+   #year.form_error {
+    margin-left: 56px !important;
+  }
+
+  #phone.form_error {
+    margin-left: 229px;
+  }
+
+  
+ }
  
+ @media (min-width:1200px) {
+   .form_error {
+     margin-left:286px;
+   }
+
+   #year.form_error {
+    margin-left: 69px !important;
+  }
+
+  #phone.form_error {
+    margin-left: 273px;
+  }
+
+ }
+
+ @media (max-width:991px) {
+   .form_error {
+     margin-left:16px;
+   }
+
+   #year.form_error {
+    margin-left: -123px !important;
+  }
+
+  #phone.form_error {
+    margin-left: 1px;
+  }
+ }
 
   @media (max-width:1200px) {
     #full {
       /* width:40% !important; */
       display:inline;
       margin-top:10px !important;
-    }
-
-    .form_error {
-      margin-left:229px !important;
-    }
-  }
-
-   @media (max-width:991px) {
-    .form_error {
-      margin-left:170px !important;
     }
   }
 
@@ -87,28 +117,36 @@ select {
       width:100% !important;
     }
 
-    .form_error {
-      margin-left:173px !important;
-    }
-
     #full {
       /* width:90%; */
     }
 
-    @media (max-width:575px) {
-      #date-container {
-        margin-left:0 !important;
-      }
+  }
 
-      .form_error {
-        margin-left:144px !important;
-      }
+  @media (max-width: 768px) {
+    .col-sm-8 {
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 66.666667%;
+      flex: 0 0 100%;
+      max-width: 100% !important;
+  }
+
+  #regform input[type=text], input[type=email], input[type=text], input[type=password], select {
+    width: 100% !important;
     }
+}
 
-    #phone.form_error {
-      margin-left:100px !important;
+  @media (max-width:575px) {
+    #year.form_error {
+      margin-left: -22vw !important;
     }
   }
+
+  @media (max-width:400px) {
+    #register_step_1{
+		font-size:4.2vw;
+	}
+ }
 
       /* For Firefox */
   input[type='number'] {
@@ -659,7 +697,7 @@ border-bottom-left-radius: 10px;*/
 
 </span>
 </div>
-<span id="firstname" class="form_error" style="color:red; font-size:13px; margin-left: 237px;"></span>
+<span id="firstname" class="form_error" style="color:red; font-size:13px;"></span>
 </li><div class="btpad"></div>
 <li class="row listtopmarg">
 <div class="col-lg-4 col-md-4-col-sm-4 col-xs-12">
@@ -673,7 +711,7 @@ border-bottom-left-radius: 10px;*/
 </span>
 
 </div>
-<span id="lastname" class="form_error" style="color:red; font-size: 13px; margin-left: 237px;"></span>
+<span id="lastname" class="form_error" style="color:red; font-size: 13px;"></span>
 </li><div class="btpad"></div>
 <li class="row listtopmarg" >
 <div class="col-lg-4 col-md-4-col-sm-4 col-xs-12">
@@ -687,7 +725,7 @@ border-bottom-left-radius: 10px;*/
 
 </span>
 </div>
-<span id="user_name" class="form_error" style="color:red; font-size: 13px; margin-left: 237px;"></span>
+<span id="user_name" class="form_error" style="color:red; font-size: 13px;"></span>
 </li><div class="btpad"></div>
 
 <li class="row listtopmarg" >
@@ -702,7 +740,7 @@ border-bottom-left-radius: 10px;*/
 </span>
 
 </div>
-<span id="email" class="form_error" style="color:red; font-size: 13px; margin-left: 237px;"></span>
+<span id="email" class="form_error" style="color:red; font-size: 13px;"></span>
 </li><div class="btpad"></div>
 
 <li class="row listtopmarg" >
@@ -722,7 +760,7 @@ border-bottom-left-radius: 10px;*/
 
 </span>
 </div>
-<span id="password" title="Password" class="form_error" style="color:red; font-size: 13px; margin-left: 237px;"></span>
+<span id="password" title="Password" class="form_error" style="color:red; font-size: 13px;"></span>
 </li><div class="btpad"></div>
 
 <li class="row listtopmarg" >
@@ -738,7 +776,7 @@ border-bottom-left-radius: 10px;*/
 </span>
 
 </div>
-<span id="password_confirmation" class="form_error" style="color:red; margin-left: 237px; font-size: 13px;"></span>
+<span id="password_confirmation" class="form_error" style="color:red; font-size: 13px;"></span>
 </li><div class="btpad"></div>
 
 <li class="row listtopmarg" >
@@ -757,7 +795,7 @@ border-bottom-left-radius: 10px;*/
 </span> --}}
 {{-- <span id="ged" class="firs" style="display: none;"> sample text sample text sample text sample text sample text sample text sample text </span> --}}
 </div>
-<span id="gender" class="form_error" style="color:red; font-size: 13px; margin-left: 237px;"></span>
+<span id="gender" class="form_error" style="color:red; font-size: 13px;"></span>
 </li><div class="btpad"></div>
 
 <li class="row listtopmarg">
@@ -778,7 +816,7 @@ border-bottom-left-radius: 10px;*/
 </select>
 
 </div>
-<span id="country_id" class="form_error" style="color:red; margin-left: 237px; font-size: 13px;"></span>
+<span id="country_id" class="form_error" style="color:red; font-size: 13px;"></span>
 </li><div class="btpad"></div>
 
 <li class="row listtopmarg" >
@@ -793,7 +831,7 @@ border-bottom-left-radius: 10px;*/
 <option value="">Select</option>
 </select>
 </div>
-<span id="state_id" class="form_error" style="color:red; margin-left: 237px; font-size: 13px;"></span>
+<span id="state_id" class="form_error" style="color:red; font-size: 13px;"></span>
 </li><div class="btpad"></div>
 
 <li class="row listtopmarg">
@@ -809,7 +847,7 @@ border-bottom-left-radius: 10px;*/
 </select>
 
 </div>
-<span id="city_id" class="form_error" style="color:red; font-size:13px; margin-left: 237px;"></span>
+<span id="city_id" class="form_error" style="color:red; font-size:13px;"></span>
 </li><div class="btpad"></div>
 
 <li class="row listtopmarg">
