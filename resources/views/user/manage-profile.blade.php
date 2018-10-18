@@ -13,6 +13,10 @@ html, body {
 		margin-top: 10px;
 }
 
+.emojiPicker {
+	top: 25px !important;
+}
+
 .mp-btns {
    position: absolute;
 	right:37px;

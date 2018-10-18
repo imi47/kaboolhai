@@ -221,10 +221,10 @@ Explain more about your personality, family and educational background, professi
 
 <li class="row" class="listtopmarg">
 <div class="col-4">
-<label for=""> Family Value <span class="imporatant">*</span></label>
+<label for=""> Family Value: <span class="imporatant">*</span></label>
 </div>
 <div class="col-8">
-<span class="colons">:</span>
+<!-- <span class="colons">:</span> -->
 <select name="family_value" id="" class="allselects">
 @if(old('family_value'))
 	
@@ -247,10 +247,10 @@ Explain more about your personality, family and educational background, professi
 
 <li class="row" class="listtopmarg">
 <div class="col-4">
-<label for=""> Family Type <span class="imporatant">*</span></label>
+<label for=""> Family Type: <span class="imporatant">*</span></label>
 </div>
 <div class="col-8">
-<span class="colons">:</span>
+<!-- <span class="colons">:</span> -->
 <select name="family_type" id="" class="allselects">
 @if(old('family_type'))
 	
@@ -272,7 +272,7 @@ Explain more about your personality, family and educational background, professi
 <label for="">Relocate?<span class="imporatant">*</span></label>
 </div>
 <div class="col-8">
-<span class="colons">:</span> {{--
+<!-- <span class="colons">:</span> {{-- -->
 <div class="radiyn">
 <input type="radio" name="relocate" value="Yes"> Yes &nbsp <input type="radio" name="relocate" value="No"> Maybe &nbsp <input type="radio" name="relocate" value="No"> Never
 </div> --}}
@@ -300,7 +300,7 @@ Explain more about your personality, family and educational background, professi
 <label for=""> Financial Status <span class="imporatant">*</span></label>
 </div>
 <div class="col-8">
-<span class="colons">:</span>
+<!-- <span class="colons">:</span> -->
 <select name="finacial_status" id="" class="allselects">
 @if(old('finacial_status'))
 	
@@ -321,10 +321,10 @@ Explain more about your personality, family and educational background, professi
 
 <li class="row" class="listtopmarg" id="test_assets">
 <div class="col-4">
-<label for="">Asset <span class="imporatant">*</span></label>
+<label for="">Asset: <span class="imporatant">*</span></label>
 </div>
 <div class="col-8">
-<span class="colons">:</span>
+<!-- <span class="colons">:</span> -->
 <select name="assets" id="" onchange="assets_change(this)" class="allselects">
 @if(old('assets'))
 	
@@ -348,7 +348,7 @@ Explain more about your personality, family and educational background, professi
 <label for="">Other Asset</label>
 </div>
 <div class="col-8">
-<span class="colons">:</span>
+<!-- <span class="colons">:</span> -->
 <input type="text" value="{{ old('other_assets') }}" name="other_assets" placeholder="please specify other Asset" class="allselects">
 
 </div>
@@ -358,10 +358,10 @@ Explain more about your personality, family and educational background, professi
 
 <li class="row" class="listtopmarg">
 <div class="col-4">
-<label for="">Father's Details</label>
+<label for="">Father's Details:</label>
 </div>
 <div class="col-8">
-<span class="colons">:</span> {{--
+<!-- <span class="colons">:</span> {{-- -->
 <div class="parntdet"> --}}
 <input type="radio" @if(old('father_detail')=='Alive') checked="" @endif name="father_detail" value="Alive"> Alive &nbsp <input type="radio" @if(old('father_detail')=='Died') checked="" @endif name="father_detail" value="Died"> Died &nbsp Occupation <input type="text" data-toggle="tooltip" data-placement="top" title="Enter father details" name="father_occupation" value="{{ old('father_occupation') }}" class="allinputs"> {{--
 </div> --}}
@@ -374,7 +374,7 @@ Explain more about your personality, family and educational background, professi
 <label for="">Mother's Details</label>
 </div>
 <div class="col-8">
-<span class="colons">:</span>
+<!-- <span class="colons">:</span> -->
 <div class="parntdet">
 <input type="radio" @if(old('mother_detail')=='Alive') checked="" @endif name="mother_detail" value="Alive"> Alive &nbsp <input type="radio" name="mother_detail" @if(old('mother_detail')=='Alive') checked="" @endif value="Died"> Died &nbsp Occupation <input value="{{ old('mother_occupation') }}" type="text" data-toggle="tooltip" data-placement="top" title="Enter monther details" name="mother_occupation" class="allinputs">
 </div>
@@ -384,10 +384,10 @@ Explain more about your personality, family and educational background, professi
 
 <li class="row" class="listtopmarg">
 <div class="col-4">
-<label for="">Brothers Details</label>
+<label for="">Brothers Details:</label>
 </div>
 <div class="col-8">
-<span class="colons">:</span>
+<!-- <span class="colons">:</span> -->
 <div class="childdet">
 Elder <select name="elder_brother" id="" class="smallselect">
 	@if(old('elder_brother'))
@@ -421,10 +421,10 @@ Elder <select name="elder_brother" id="" class="smallselect">
 <div class="btpad"></div>
 <li class="row" class="listtopmarg">
 <div class="col-4">
-<label for=""> Married</label>
+<label for=""> Married:</label>
 </div>
 <div class="col-8">
-<span class="colons">:</span>
+<!-- <span class="colons">:</span> -->
 <select name="brother_married" id="" class="allselects">
 	@if(old('brother_married'))
 	
@@ -443,10 +443,10 @@ Elder <select name="elder_brother" id="" class="smallselect">
 <div class="btpad"></div>
 <li class="row" class="listtopmarg">
 <div class="col-4">
-<label for=""> Un Married</label>
+<label for=""> Un Married:</label>
 </div>
 <div class="col-8">
-<span class="colons">:</span>
+<!-- <span class="colons">:</span> -->
 <select name="brother_unmarried" id="" class="allselects">
 	@if(old('brother_unmarried'))
 	
@@ -465,10 +465,10 @@ Elder <select name="elder_brother" id="" class="smallselect">
 <div class="btpad"></div>
 <li class="row" class="listtopmarg">
 <div class="col-4">
-<label for="">Sisters Details</label>
+<label for="">Sisters Details:</label>
 </div>
 <div class="col-8">
-<span class="colons">:</span>
+<!-- <span class="colons">:</span> -->
 <div class="childdet">
 Elder <select name="elder_sister" id="" class="smallselect">
 	@if(old('elder_sister'))
@@ -501,10 +501,10 @@ Elder <select name="elder_sister" id="" class="smallselect">
 <div class="btpad"></div>
 <li class="row" class="listtopmarg">
 <div class="col-4">
-<label for=""> Married</label>
+<label for=""> Married:</label>
 </div>
 <div class="col-8">
-<span class="colons">:</span>
+<!-- <span class="colons">:</span> -->
 <select name="sister_married" id="" class="allselects">
 	@if(old('sister_married'))
 	
@@ -523,10 +523,10 @@ Elder <select name="elder_sister" id="" class="smallselect">
 <div class="btpad"></div>
 <li class="row" class="listtopmarg">
 <div class="col-4">
-<label for=""> Un Married</label>
+<label for=""> Un Married:</label>
 </div>
 <div class="col-8">
-<span class="colons">:</span>
+<!-- <span class="colons">:</span> -->
 <select name="sister_unmarried" id="" class="allselects">
 	@if(old('sister_unmarried'))
 	
@@ -545,11 +545,11 @@ Elder <select name="elder_sister" id="" class="smallselect">
 <div class="btpad"></div>
 <li class="row" class="listtopmarg">
 <div class="col-4">
-<label for=""> Family Details <span class="imporatant"></span></label>
+<label for=""> Family Details: <span class="imporatant"></span></label>
 </div>
 <div class="col-8">
 	<span style="color:red; font-size: 10px;">{{ $errors->first('family_detail') }}</span>
-<span class="colons">:</span>
+<!-- <span class="colons">:</span> -->
 <textarea name="family_detail" data-toggle="tooltip" data-placement="top" title="Enter family details" id="" class="famdet">{{ old('family_detail') }}</textarea>
 
 
@@ -582,10 +582,10 @@ Elder <select name="elder_sister" id="" class="smallselect">
 
 <li class="row" class="listtopmarg">
 <div class="col-4">
-<label for=""> Age Preference <span class="imporatant">*</span></label>
+<label for=""> Age Preference: <span class="imporatant">*</span></label>
 </div>
 <div class="col-8">
-<span class="colons">:</span>
+<!-- <span class="colons">:</span> -->
 <select name="loking_age_from" class="midlinput">
 	@if(old('loking_age_from'))
 	
@@ -616,10 +616,10 @@ Elder <select name="elder_sister" id="" class="smallselect">
 <div class="btpad"></div>
 <li class="row" class="listtopmarg">
 <div class="col-4">
-<label for=""> Marital Status <span class="imporatant">*</span></label>
+<label for=""> Marital Status: <span class="imporatant">*</span></label>
 </div>
 <div class="col-8">
-<span class="colons">:</span>
+<!-- <span class="colons">:</span> -->
 <div class="radiyn">
 <input type="hidden" name="martial" value="martial_status">
 <input type="checkbox" @if(old('loking_martial_status')=='Unmaried') checked="" @endif name="loking_martial_status[]" value="Unmaried"> Unmaried &nbsp <input @if(old('loking_martial_status')=='Widow/Widower') checked="" @endif type="checkbox" name="loking_martial_status[]" value="Widow/Widower"> Widow/Widower &nbsp <input type="checkbox" @if(old('loking_martial_status')=='Divorcee') checked="" @endif name="loking_martial_status[]"
@@ -630,10 +630,10 @@ value="Divorcee"> Divorcee &nbsp <input @if(old('loking_martial_status')=='Sepra
 <div class="btpad"></div>
 <li class="row" class="listtopmarg">
 <div class="col-4">
-<label for="">Eating Habits</label>
+<label for="">Eating Habits:</label>
 </div>
 <div class="col-8">
-<span class="colons">:</span>
+<!-- <span class="colons">:</span> -->
 <div class="radiyn">
 <input type="hidden" name="eating_type" value="eating type">
 <input type="checkbox" @if(old('loking_eating_habits')=='Dose not matter') checked="" @endif name="loking_eating_habits[]" value="Dose not"> Does not matter &nbsp <input @if(old('loking_eating_habits')=='Veg') checked="" @endif type="checkbox" name="loking_eating_habits[]" value="Veg"> Veg &nbsp <input @if(old('loking_eating_habits')=='Occasionally Non-veg') checked="" @endif type="checkbox" name="loking_eating_habits[]"
@@ -645,10 +645,10 @@ value="Occasionally Non-veg"> Occasionally Non-veg &nbsp <input type="checkbox" 
 
 <li class="row" class="listtopmarg">
 <div class="col-4">
-<label for=""> Mother Tongue <span class="imporatant">*</span></label>
+<label for=""> Mother Tongue: <span class="imporatant">*</span></label>
 </div>
 <div class="col-8">
-<span class="colons">:</span>
+<!-- <span class="colons">:</span> -->
 <select name="loking_language" id="" class="allselects">
 @if(old('loking_language'))
 	
@@ -736,12 +736,12 @@ value="Occasionally Non-veg"> Occasionally Non-veg &nbsp <input type="checkbox" 
 <div class="btpad"></div>
 <li class="row" class="listtopmarg">
 <div class="col-4">
-<label for=""> Other language <span class="imporatant"></span></label>
+<label for=""> Other language: <span class="imporatant"></span></label>
 </div>
 <div class="col-8">
 {{-- chang --}}
 <div class="input-group">
-:<input type="text" readonly="" value="Partner other language" name="loking_other_lang" class="allselects" style="margin-left: 13px;">
+<input type="text" readonly="" value="Partner other language" name="loking_other_lang" class="allselects" style="margin-left: 13px;">
 <div class="input-group-append">
 <a href="javascript:;" id="loking_other_language">
 <span class="fa fa-angle-down arrows" style="color: #8E8E8F; color: #8E8E8F;" id="loking_do_other"></span>
@@ -927,11 +927,11 @@ position: absolute;color: #8E8E8F;"></span>
 
 <li class="row" class="listtopmarg">
 <div class="col-4">
-<label for=""> Height Preference </label>
+<label for=""> Height Preference: </label>
 </div>
 <div class="col-8">
 
-<span class="colons">:</span>
+<!-- <span class="colons">:</span> -->
 <select name="loking_height_from" class="midlinput">
 @if(old('loking_height_from'))
 	
@@ -1023,11 +1023,11 @@ position: absolute;color: #8E8E8F;"></span>
 
 <li class="row" class="listtopmarg">
 <div class="col-4">
-<label for=""> Weight Preference </label>
+<label for=""> Weight Preference: </label>
 </div>
 <div class="col-8">
 
-<span class="colons">:</span>
+<!-- <span class="colons">:</span> -->
 <select id="" name="loking_weight_form" class="midlinput">
 @if(old('loking_weight_form'))
 	
@@ -1214,7 +1214,7 @@ position: absolute;color: #8E8E8F;"></span>
 <label for="">Beard</label>
 </div>
 <div class="col-8">
-<span class="colons">:</span>
+<!-- <span class="colons">:</span> -->
 <select name="loking_bread" id="" class="allselects">
 @if(old('loking_bread'))
 	
@@ -1234,12 +1234,12 @@ position: absolute;color: #8E8E8F;"></span>
 
 <li class="row" class="listtopmarg">
 <div class="col-4">
-<label for=""> Observes Hijab </label>
+<label for=""> Observes Hijab: </label>
 </div>
 <div class="col-8">
 
 <div class="input-group">
-: <input type="text" readonly="" value="Observes Hijab" name="observes_hijab" class="allselects" style="margin-left: 13px;">
+ <input type="text" readonly="" value="Observes Hijab" name="observes_hijab" class="allselects" style="margin-left: 13px;">
 <div class="input-group-append">
 <a href="javascript:;" id="obshij">
 <span class="fa fa-angle-down arrows" style="color: #8E8E8F;" id="downobshij"></span>
@@ -1280,7 +1280,7 @@ position: absolute;color: #8E8E8F;"></span>
 <div class="btpad"></div>
 <li class="row" class="listtopmarg">
 <div class="col-4">
-<label for=""> Body Type </label>
+<label for=""> Body Type: </label>
 </div>
 <div class="col-8">
 
@@ -1288,7 +1288,7 @@ position: absolute;color: #8E8E8F;"></span>
 
 
 <div class="input-group">
-:&nbsp &nbsp<input readonly="" type="text" value="Body Type" name="loking_body_type" class="allselects">
+&nbsp &nbsp<input readonly="" type="text" value="Body Type" name="loking_body_type" class="allselects">
 <div class="input-group-append">
 <a href="javascript:;" id="bodut">
 <span class="fa fa-angle-down arrows" style="color: #8E8E8F;" id="downbdyty"></span>
@@ -1331,12 +1331,12 @@ position: absolute;color: #8E8E8F;"></span>
 <div class="btpad"></div>
 <li class="row" class="listtopmarg">
 <div class="col-4">
-<label for=""> Complexion Preference </label>
+<label for=""> Complexion Preference: </label>
 </div>
 <div class="col-8">
 
 <div class="input-group">
-: &nbsp &nbsp<input readonly="" type="text" value="Complexion" name="complexion" class="allselects">
+ &nbsp &nbsp<input readonly="" type="text" value="Complexion" name="complexion" class="allselects">
 <div class="input-group-append">
 <a href="javascript:;" id="skin">
 <span class="fa fa-angle-down arrows" style="color: #8E8E8F;" id="down_skin"></span>
@@ -1379,7 +1379,7 @@ position: absolute;color: #8E8E8F;"></span>
 <label for="">Complexion Preference</label>
 </div>
 <div class="col-8">
-<span class="colons">:</span>
+<!-- <span class="colons">:</span> -->
 <select name="loking_skin_color" id="" class="allselects">
 <option value="Very Fair">Very Fair</option>
 <option value="Fair">Fair</option>
@@ -1393,10 +1393,10 @@ position: absolute;color: #8E8E8F;"></span>
 
 <li class="row" class="listtopmarg">
 <div class="col-4">
-<label for=""> Physical Status</label>
+<label for=""> Physical Status:</label>
 </div>
 <div class="col-8">
-<span class="colons">:</span>
+<!-- <span class="colons">:</span> -->
 <select name="loking_physcial_status" onchange="other_status(this)" id="" class="allselects">
 	@if(old('loking_physcial_status'))
 	
@@ -1455,10 +1455,10 @@ $('#user_status').hide('slow');
 <div class="btpad"></div>
 <li class="row" class="listtopmarg">
 <div class="col-4">
-<label for=""> Education </label>
+<label for=""> Education: </label>
 </div>
 <div class="col-8">
-<span class="colons">:</span>
+<!-- <span class="colons">:</span> -->
 <select name="loking_education" id="" class="allselects">
 @if(old('loking_education'))
 	
@@ -1608,10 +1608,10 @@ $('#user_status').hide('slow');
 
 <li class="row" class="listtopmarg" id="loking_job">
 <div class="col-4">
-<label for=""> Occupation</label>
+<label for=""> Occupation:</label>
 </div>
 <div class="col-8">
-<span class="colons">:</span>
+<!-- <span class="colons">:</span> -->
 <select name="loking_job" onchange="job_test(this)" class="allselects">
 	@if(old('loking_job'))
 	
@@ -1667,7 +1667,7 @@ $('#user_status').hide('slow');
 <label for=""> Occupation</label>
 </div>
 <div class="col-8">
-<span class="colons">:</span>
+<!-- <span class="colons">:</span> -->
 <input type="text" name="loking_job_type" placeholder="please specify other Occupation" class="allselects">
 
 </div>
@@ -1676,10 +1676,10 @@ $('#user_status').hide('slow');
 
 <li class="row" class="listtopmarg">
 <div class="col-4">
-<label for="">Employed in</label>
+<label for="">Employed in:</label>
 </div>
 <div class="col-8">
-<span class="colons">:</span>
+<!-- <span class="colons">:</span> -->
 <input type="text" value="{{ old('employed_in') }}" name="employed_in" placeholder="employed in" class="allselects">
 
 </div>
@@ -1688,10 +1688,10 @@ $('#user_status').hide('slow');
 
 <li class="row" class="listtopmarg">
 <div class="col-4">
-<label for=""> Annual Income </label>
+<label for=""> Annual Income: </label>
 </div>
 <div class="col-8">
-<span class="colons">:</span>
+<!-- <span class="colons">:</span> -->
 <select name="loking_a_income" id="" class="allselects">
 @if(old('loking_a_income'))
 	
@@ -1990,10 +1990,10 @@ $('#user_status').hide('slow');
 <div class="btpad"></div>
 <li class="row" class="listtopmarg">
 <div class="col-4">
-<label for=""> Country Living in</label>
+<label for=""> Country Living in:</label>
 </div>
 <div class="col-8">
-<span class="colons">:</span>
+<!-- <span class="colons">:</span> -->
 <select id="country" onchange="country_change(this)" name="living_country_id" class="allselects">
 <option selected="" value="">Select country 
 </option>
@@ -2012,7 +2012,7 @@ $('#user_status').hide('slow');
 <label for=""> State</label>
 </div>
 <div class="col-8">
-<span class="colons">:</span> {{-- <select name="" id="" class="allselects"> --}}
+<!-- <span class="colons">:</span> {{-- <select name="" id="" class="allselects"> --}} -->
 
 {{--  <select selected="selected" id="living_state1" onchange="state_change2(this)"  name="living_state_id" class="allselects" > --}}
 {{--  <option>Select</option> --}}
@@ -2029,7 +2029,7 @@ $('#user_status').hide('slow');
 <label for=""> District/City</label>
 </div>
 <div class="col-8">
-<span class="colons">:</span>
+<!-- <span class="colons">:</span> -->
 {{--  <select name="living_city_id" id="living_city" selected="selected" class="allselects">
 <option>Select</option>
 </select> --}}
@@ -2045,7 +2045,7 @@ $('#user_status').hide('slow');
 <label for="">Relocate?<span class="imporatant">*</span></label>
 </div>
 <div class="col-8">
-<span class="colons">:</span>
+<!-- <span class="colons">:</span> -->
 <select name="relocate" id="relocate" class="allselects">
 @if(old('relocate'))
 	
@@ -2068,7 +2068,7 @@ $('#user_status').hide('slow');
 <label for=""> Reason </label>
 </div>  
 <div class="col-8">
-<span class="colons">:</span>
+<!-- <span class="colons">:</span> -->
 <input type="text" value="{{ old('relocate') }}" name="reason_relocate" placeholder="Enter Reason No Relocate" class="allselects">
 </div>
 </li>
@@ -2078,7 +2078,7 @@ $('#user_status').hide('slow');
 <label for=""> Citizenship</label>
 </div>
 <div class="col-8">
-<span class="colons">:</span>
+<!-- <span class="colons">:</span> -->
 <select name="" id="" class="allselects">
 <option value="">Pakistan</option>
 <option value="">India</option>
@@ -2109,14 +2109,14 @@ $('#user_status').hide('slow');
 
 <li class="row" class="listtopmarg">
 <div class="col-4">
-<label for=""> Africa</label>
+<label for=""> Africa:</label>
 </div>
 <div class="col-8">
 
 
 
 <div class="input-group">
-: &nbsp &nbsp<input readonly="" type="text" value="Africa" name="affrica" class="allselects">
+ &nbsp &nbsp<input readonly="" type="text" value="Africa" name="affrica" class="allselects">
 <div class="input-group-append">
 <a href="javascript:;" id="affrica">
 <span class="fa fa-angle-down arrows" style="color: #8E8E8F;" id="downafr"></span>
@@ -2215,12 +2215,12 @@ position: absolute;color: #8E8E8F;"></span>
 
 <li class="row" class="listtopmarg">
 <div class="col-4">
-<label for=""> Antarctica</label>
+<label for=""> Antarctica:</label>
 </div>
 <div class="col-8">
 
 <div class="input-group">
-: &nbsp &nbsp<input readonly="" type="text" value="Antarctica" name="antarctica" class="allselects">
+ &nbsp &nbsp<input readonly="" type="text" value="Antarctica" name="antarctica" class="allselects">
 <div class="input-group-append">
 <a href="javascript:;" id="antar">
 <span class="fa fa-angle-down arrows" style="color: #8E8E8F;" id="downantar"></span>
@@ -2260,12 +2260,12 @@ position: absolute;color: #8E8E8F;"></span>
 
 <li class="row" class="listtopmarg">
 <div class="col-4">
-<label for=""> Asia</label>
+<label for=""> Asia:</label>
 </div>
 <div class="col-8">
 
 <div class="input-group">
-: &nbsp &nbsp<input readonly="" type="text" value="Asia" name="asia" class="allselects">
+ &nbsp &nbsp<input readonly="" type="text" value="Asia" name="asia" class="allselects">
 <div class="input-group-append">
 <a href="javascript:;" id="aisa">
 <span class="fa fa-angle-down arrows" style="color: #8E8E8F;" id="downasia"></span>
@@ -2358,12 +2358,12 @@ position: absolute;color: #8E8E8F;"></span>
 
 <li class="row" class="listtopmarg">
 <div class="col-4">
-<label for=""> Europe</label>
+<label for=""> Europe:</label>
 </div>
 <div class="col-8">
 
 <div class="input-group">
-: &nbsp &nbsp<input readonly="" type="text" value="Europe" name="europe" class="allselects">
+ &nbsp &nbsp<input readonly="" type="text" value="Europe" name="europe" class="allselects">
 <div class="input-group-append">
 <a href="javascript:;" id="europ">
 <span class="fa fa-angle-down arrows" style="color: #8E8E8F;" id="downeurop"></span>
@@ -2454,12 +2454,12 @@ position: absolute;color: #8E8E8F;"></span>
 
 <li class="row" class="listtopmarg">
 <div class="col-4">
-<label for=""> North America</label>
+<label for=""> North America:</label>
 </div>
 <div class="col-8">
 
 <div class="input-group">
-: &nbsp &nbsp<input readonly="" type="text" value="North America" name="north_america" class="allselects">
+ &nbsp &nbsp<input readonly="" type="text" value="North America" name="north_america" class="allselects">
 <div class="input-group-append">
 <a href="javascript:;" id="namrica">
 <span class="fa fa-angle-down arrows" style="color: #8E8E8F;" id="downnotamr"></span>
@@ -2540,12 +2540,12 @@ position: absolute;color: #8E8E8F;"></span>
 
 <li class="row" class="listtopmarg">
 <div class="col-4">
-<label for=""> Australasia</label>
+<label for=""> Australasia:</label>
 </div>
 <div class="col-8">
 
 <div class="input-group">
-: &nbsp &nbsp<input readonly="" type="text" value="Australasia" name="australasia" class="allselects">
+ &nbsp &nbsp<input readonly="" type="text" value="Australasia" name="australasia" class="allselects">
 <div class="input-group-append">
 <a href="javascript:;" id="austrailia">
 <span class="fa fa-angle-down arrows" style="color: #8E8E8F;" id="downaurt"></span>
@@ -2617,12 +2617,12 @@ position: absolute;color: #8E8E8F;"></span>
 
 <li class="row" class="listtopmarg">
 <div class="col-4">
-<label for=""> South America</label>
+<label for=""> South America:</label>
 </div>
 <div class="col-8">
 
 <div class="input-group">
-: &nbsp &nbsp<input readonly="" type="text" value="South America" name="south_america" class="allselects">
+ &nbsp &nbsp<input readonly="" type="text" value="South America" name="south_america" class="allselects">
 <div class="input-group-append">
 <a href="javascript:;" id="southafric">
 <span class="fa fa-angle-down arrows" style="color: #8E8E8F;" id="downsouamr"></span>
@@ -2677,13 +2677,13 @@ position: absolute;color: #8E8E8F;"></span>
 
 <li class="row" class="listtopmarg">
 <div class="col-4">
-<label for=""> Residency Status</label>
+<label for=""> Residency Status:</label>
 </div>
 <div class="col-8">
 
 <div class="input-group">
 
-: &nbsp &nbsp<input readonly="" type="text" value="Residency Status" name="loking_residency_status" class="allselects">
+ &nbsp &nbsp<input readonly="" type="text" value="Residency Status" name="loking_residency_status" class="allselects">
 <div class="input-group-append">
 <a href="javascript:;" id="residance">
 <span class="fa fa-angle-down arrows" style="color: #8E8E8F;" id="downressta"></span>
@@ -2728,12 +2728,12 @@ position: absolute;color: #8E8E8F;"></span>
 
 <li class="row" class="listtopmarg">
 <div class="col-4">
-<label for=""> Ethnic Origin </label>
+<label for=""> Ethnic Origin: </label>
 </div>
 <div class="col-8">
 
 <div class="input-group">
-: &nbsp &nbsp<input readonly="" type="text" value="Ethnic Origin" name="loking_ethnic_origin" class="allselects">
+ &nbsp &nbsp<input readonly="" type="text" value="Ethnic Origin" name="loking_ethnic_origin" class="allselects">
 <div class="input-group-append">
 <a href="javascript:;" id="ethnicorg">
 <span class="fa fa-angle-down arrows" style="color: #8E8E8F;" id="downethnorg"></span>
@@ -2838,12 +2838,12 @@ White"> Indian Carribean <br> White <br>
 
 <li class="row" class="listtopmarg">
 <div class="col-4">
-<label for=""> Religious History </label>
+<label for=""> Religious History: </label>
 </div>
 <div class="col-8">
 
 <div class="input-group">
-: &nbsp &nbsp<input readonly="" type="text" value="Religious History" name="religious_history" class="allselects">
+ &nbsp &nbsp<input readonly="" type="text" value="Religious History" name="religious_history" class="allselects">
 <div class="input-group-append">
 <a href="javascript:;" id="releghist">
 <span class="fa fa-angle-down arrows" style="color: #8E8E8F;"id="downrehis"></span>
@@ -2882,12 +2882,12 @@ position: absolute;color: #8E8E8F;"></span>
 
 <li class="row" class="listtopmarg">
 <div class="col-4">
-<label for=""> Living with her in-laws </label>
+<label for=""> Living with her in-laws: </label>
 </div>
 <div class="col-8">
 
 <div class="input-group">
-: &nbsp &nbsp<input readonly="" type="text" value="Living with" name="living_with" class="allselects">
+ &nbsp &nbsp<input readonly="" type="text" value="Living with" name="living_with" class="allselects">
 <div class="input-group-append">
 <a href="javascript:;" id="livelaws">
 <span class="fa fa-angle-down arrows" style="color: #8E8E8F;" id="downlivlaws"></span>
@@ -2930,7 +2930,7 @@ position: absolute;color: #8E8E8F;"></span>
 <div class="col-8">
 
 <div class="input-group">
-: &nbsp &nbsp<input readonly="" type="text" value="Sects" name="loking_sects" class="allselects">
+ &nbsp &nbsp<input readonly="" type="text" value="Sects" name="loking_sects" class="allselects">
 <div class="input-group-append">
 <a href="javascript:;" id="sectlook">
 <span class="fa fa-angle-down arrows" style="color: #8E8E8F;" id="downsect"></span>
@@ -2982,12 +2982,12 @@ position: absolute;color: #8E8E8F;"></span>
 <div class="btpad"></div>
 <li class="row" class="listtopmarg">
 <div class="col-4">
-<label for=""> Pray </label>
+<label for=""> Pray: </label>
 </div>
 <div class="col-8">
 
 <div class="input-group">
-: &nbsp &nbsp<input readonly="" type="text" value="Pray" name="loking_pray" class="allselects">
+ &nbsp &nbsp<input readonly="" type="text" value="Pray" name="loking_pray" class="allselects">
 <div class="input-group-append">
 <a href="javascript:;" id="pray">
 <span class="fa fa-angle-down arrows" style="color: #8E8E8F;" id="downpray"></span>
@@ -3032,12 +3032,12 @@ position: absolute;color: #8E8E8F;"></span>
 
 <li class="row" class="listtopmarg">
 <div class="col-4">
-<label for=""> Has Children </label>
+<label for=""> Has Children: </label>
 </div>
 <div class="col-8">
 
 <div class="input-group">
-: &nbsp &nbsp<input readonly="" type="text" value="Has Children" name="has_child" class="allselects">
+ &nbsp &nbsp<input readonly="" type="text" value="Has Children" name="has_child" class="allselects">
 <div class="input-group-append">
 <a href="javascript:;" id="hasch">
 <span class="fa fa-angle-down arrows" style="color: #8E8E8F;" id="downhaschild"></span>
@@ -3080,12 +3080,12 @@ position: absolute;color: #8E8E8F;"></span>
 
 <li class="row" class="listtopmarg">
 <div class="col-4">
-<label for=""> Like to have children </label>
+<label for=""> Like to have children: </label>
 </div>
 <div class="col-8">
 
 <div class="input-group">
-: &nbsp &nbsp<input readonly="" type="text" value="Like to Have" name="like_child" class="allselects">
+ &nbsp &nbsp<input readonly="" type="text" value="Like to Have" name="like_child" class="allselects">
 <div class="input-group-append">
 <a href="javascript:;" id="hvechil">
 <span class="fa fa-angle-down arrows" style="color: #8E8E8F;" id="downhavchil"></span>
@@ -3170,7 +3170,7 @@ position: absolute;color: #8E8E8F;"></span>
 <label for=""> Expectations you may have about your expected partner.  (Mention here location, education, job, character etc..)</label>
 </div>
 <div class="col-8">
-<span class="colons">:</span>
+<!-- <span class="colons">:</span> -->
 <textarea data-toggle="tooltip" data-placement="top" title="Kindly provide the details about your preferences for the partner and what you are looking for in your partner for instance type of personality, family and educational background, hobbies, etc." placeholder="Kindly provide the details about your preferences for the partner and what you are looking for in your partner for instance type of personality, family and educational background, hobbies, etc." name="loking_description" id="" style="height:75px;width:91%;"></textarea>
 </div>
 </li>
