@@ -7,6 +7,11 @@ html, body {
   overflow-x:hidden;
 }
 
+select {
+  padding:4px;
+  height:unset !important;
+}
+
 .form_error {
     margin-left:287px !important;
   }
@@ -77,7 +82,7 @@ html, body {
     }
   }
 
-  @media (max-width:768px) {
+  @media (max-width:991px) {
     #regform input[type=text],input[type=email], input[type=text],input[type=password], select {
       width:100% !important;
     }
