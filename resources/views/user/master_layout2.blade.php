@@ -274,6 +274,10 @@
 		right: 0;
 		cursor: pointer;
 	}
+
+	.sidebar .item.well img{
+		height:auto !important;
+	}
 	
 	/* mobile navbar toggle code begin */
 </style>
