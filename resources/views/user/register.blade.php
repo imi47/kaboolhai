@@ -5,6 +5,30 @@
 		overflow-y: scroll;
 		height: 300px;
 	}
+
+.allselects {
+   width: 83%;
+}
+
+.smallselect {
+	width:auto;
+}
+
+.midlinput {
+    width: 37%;
+}
+
+/* .error  {
+	position:absolute;
+	left:0;
+} */
+
+@media (max-width:991px) {
+	.allselects {
+   	width: 88%;
+	}
+}
+
 </style>
 <div class="container">
 <div id="wait" style="display: none;"></div>
@@ -19,7 +43,7 @@
         </ul>
     </div>
 @endif --}}
-<div class="col-sm-9">
+<div class=" col-md-9 col-sm-12">
 <div class="well" style="background-color: #f5f5f5">
 <br>
 <div class="menuwizard">
@@ -240,7 +264,7 @@ Explain more about your personality, family and educational background, professi
 <option value="Religious">Religious</option>
 
 </select>
-<span style="color:red; font-size: 10px;">{{ $errors->first('family_value') }}</span>
+<span  class='error' style="color:red; font-size: 10px;">{{ $errors->first('family_value') }}</span>
 </div>
 </li>
 <div class="btpad"></div>
@@ -262,7 +286,7 @@ Explain more about your personality, family and educational background, professi
 <option value="joint Family">Joint Family</option>
 
 </select>
-<span style="color:red; font-size: 10px;">{{ $errors->first('family_type') }}</span>
+<span  class='error' style="color:red; font-size: 10px;">{{ $errors->first('family_type') }}</span>
 </div>
 </li>
 <div class="btpad"></div>
@@ -291,7 +315,7 @@ Explain more about your personality, family and educational background, professi
 <option value="Not sure about relocating">Not sure about relocating</option>
 <option value="Not Willing to relocate">Not Willing to relocate</option>
 </select>
-<span style="color:red; font-size: 10px;">{{ $errors->first('loking_relocate') }}</span>
+<span  class='error' style="color:red; font-size: 10px;">{{ $errors->first('loking_relocate') }}</span>
 </div>
 </li>
 <div class="btpad"></div>
@@ -314,7 +338,7 @@ Explain more about your personality, family and educational background, professi
 <option value="Lower Upper Middle Class">Lower Upper Middle Class</option>
 <option value="Do not want to tell at this time">Do not want to tell at this time</option>
 </select>
-<span style="color:red; font-size: 10px;">{{ $errors->first('finacial_status') }}</span>
+<span  class='error' style="color:red; font-size: 10px;">{{ $errors->first('finacial_status') }}</span>
 </div>
 </li>
 <div class="btpad"></div>
@@ -338,7 +362,7 @@ Explain more about your personality, family and educational background, professi
 <option value="Nothing">Nothing</option>
 <option value="other">Other</option>
 </select>
-<span style="color:red; font-size: 10px;">{{ $errors->first('assets') }}</span>
+<span  class='error' style="color:red; font-size: 10px;">{{ $errors->first('assets') }}</span>
 </div>
 </li>
 <div class="btpad"></div>
@@ -548,7 +572,7 @@ Elder <select name="elder_sister" id="" class="smallselect">
 <label for=""> Family Details: <span class="imporatant"></span></label>
 </div>
 <div class="col-8">
-	<span style="color:red; font-size: 10px;">{{ $errors->first('family_detail') }}</span>
+	<span  class='error' style="color:red; font-size: 10px;">{{ $errors->first('family_detail') }}</span>
 <!-- <span class="colons">:</span> -->
 <textarea name="family_detail" data-toggle="tooltip" data-placement="top" title="Enter family details" id="" class="famdet">{{ old('family_detail') }}</textarea>
 
@@ -608,9 +632,9 @@ Elder <select name="elder_sister" id="" class="smallselect">
 <option value="{{ $i }}" >{{ $i }}</option>
 @endfor 
 </select> {{-- <input type="text"> --}}
-<span style="color:red; font-size: 10px;">{{ $errors->first('loking_age_from') }}</span>
+<span  class='error' style="color:red; font-size: 10px;">{{ $errors->first('loking_age_from') }}</span>
 
-<span style="color:red; font-size: 10px;">{{ $errors->first('loking_age_to') }}</span>
+<span  class='error' style="color:red; font-size: 10px;">{{ $errors->first('loking_age_to') }}</span>
 </div>
 </li>
 <div class="btpad"></div>
@@ -622,8 +646,19 @@ Elder <select name="elder_sister" id="" class="smallselect">
 <!-- <span class="colons">:</span> -->
 <div class="radiyn">
 <input type="hidden" name="martial" value="martial_status">
-<input type="checkbox" @if(old('loking_martial_status')=='Unmaried') checked="" @endif name="loking_martial_status[]" value="Unmaried"> Unmaried &nbsp <input @if(old('loking_martial_status')=='Widow/Widower') checked="" @endif type="checkbox" name="loking_martial_status[]" value="Widow/Widower"> Widow/Widower &nbsp <input type="checkbox" @if(old('loking_martial_status')=='Divorcee') checked="" @endif name="loking_martial_status[]"
-value="Divorcee"> Divorcee &nbsp <input @if(old('loking_martial_status')=='Seprated') checked="" @endif type="checkbox" name="loking_martial_status[]" value="Seprated"> Seprated
+<div class="checkbox-container">
+	<input type="checkbox" @if(old('loking_martial_status')=='Unmaried') checked="" @endif name="loking_martial_status[]" value="Unmaried"> Unmaried &nbsp
+</div>
+<div class="checkbox-container">
+	<input @if(old('loking_martial_status')=='Widow/Widower') checked="" @endif type="checkbox" name="loking_martial_status[]" value="Widow/Widower"> Widow/Widower &nbsp
+</div>
+<div class="checkbox-container">
+	<input type="checkbox" @if(old('loking_martial_status')=='Divorcee') checked="" @endif name="loking_martial_status[]"
+	value="Divorcee"> Divorcee &nbsp
+</div>
+<div class="checkbox-container">
+	<input @if(old('loking_martial_status')=='Seprated') checked="" @endif type="checkbox" name="loking_martial_status[]" value="Seprated"> Seprated
+</div>
 </div>
 </div>
 </li>
@@ -636,8 +671,16 @@ value="Divorcee"> Divorcee &nbsp <input @if(old('loking_martial_status')=='Sepra
 <!-- <span class="colons">:</span> -->
 <div class="radiyn">
 <input type="hidden" name="eating_type" value="eating type">
-<input type="checkbox" @if(old('loking_eating_habits')=='Dose not matter') checked="" @endif name="loking_eating_habits[]" value="Dose not"> Does not matter &nbsp <input @if(old('loking_eating_habits')=='Veg') checked="" @endif type="checkbox" name="loking_eating_habits[]" value="Veg"> Veg &nbsp <input @if(old('loking_eating_habits')=='Occasionally Non-veg') checked="" @endif type="checkbox" name="loking_eating_habits[]"
-value="Occasionally Non-veg"> Occasionally Non-veg &nbsp <input type="checkbox" name="loking_eating_habits[]" value="Eggetarian"> Eggetarian
+<input type="checkbox" @if(old('loking_eating_habits')=='Dose not matter') checked="" @endif name="loking_eating_habits[]" value="Dose not"> Does not matter &nbsp
+<div class="checkbox-container">
+	<input @if(old('loking_eating_habits')=='Veg') checked="" @endif type="checkbox" name="loking_eating_habits[]" value="Veg"> Veg &nbsp
+</div>
+<div class="checkbox-container">
+	<input @if(old('loking_eating_habits')=='Occasionally Non-veg') checked="" @endif type="checkbox" name="loking_eating_habits[]" value="Occasionally Non-veg"> Occasionally Non-veg &nbsp
+</div>
+<div class="checkbox-container">
+	<input type="checkbox" name="loking_eating_habits[]" value="Eggetarian"> Eggetarian
+</div>
 </div>
 </div>
 </li>
@@ -730,7 +773,7 @@ value="Occasionally Non-veg"> Occasionally Non-veg &nbsp <input type="checkbox" 
 <option value="Tripuri">Tripuri</option> 
 <option value="Tulu">Tulu</option> 
 </select>
-<span style="color:red; font-size: 10px;">{{ $errors->first('loking_language') }}</span>
+<span  class='error' style="color:red; font-size: 10px;">{{ $errors->first('loking_language') }}</span>
 </div>
 </li>
 <div class="btpad"></div>
@@ -741,7 +784,7 @@ value="Occasionally Non-veg"> Occasionally Non-veg &nbsp <input type="checkbox" 
 <div class="col-8">
 {{-- chang --}}
 <div class="input-group">
-<input type="text" readonly="" value="Partner other language" name="loking_other_lang" class="allselects" style="margin-left: 13px;">
+<input type="text" readonly="" value="Partner other language" name="loking_other_lang" class="allselects">
 <div class="input-group-append">
 <a href="javascript:;" id="loking_other_language">
 <span class="fa fa-angle-down arrows" style="color: #8E8E8F; color: #8E8E8F;" id="loking_do_other"></span>
@@ -1239,7 +1282,7 @@ position: absolute;color: #8E8E8F;"></span>
 <div class="col-8">
 
 <div class="input-group">
- <input type="text" readonly="" value="Observes Hijab" name="observes_hijab" class="allselects" style="margin-left: 13px;">
+ <input type="text" readonly="" value="Observes Hijab" name="observes_hijab" class="allselects">
 <div class="input-group-append">
 <a href="javascript:;" id="obshij">
 <span class="fa fa-angle-down arrows" style="color: #8E8E8F;" id="downobshij"></span>
@@ -2058,7 +2101,7 @@ $('#user_status').hide('slow');
 <option value="Not sure about relocating">Not sure about relocating</option>
 <option value="Not Willing to relocate">Not Willing to relocate</option>
 </select>
-<span style="color:red; font-size: 10px;">{{ $errors->first('relocate') }}</span>
+<span  class='error' style="color:red; font-size: 10px;">{{ $errors->first('relocate') }}</span>
 </div>
 </li>
 <div class="btpad"></div>
