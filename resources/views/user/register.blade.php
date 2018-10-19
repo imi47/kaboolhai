@@ -10,12 +10,16 @@
    width: 83%;
 }
 
+.income-select {
+	margin-right:20px;
+}
+
 .smallselect {
 	width:auto;
 }
 
 .midlinput {
-    width: 37%;
+    width: 38.65%;
 }
 
 /* .error  {
@@ -23,12 +27,72 @@
 	left:0;
 } */
 
+.move-left {
+	margin-left:-12px;
+}
+
+@media (max-width:1200px) {
+	.father-occupation {
+		display:block;
+	}
+}
+
 @media (max-width:991px) {
 	.allselects {
    	width: 88%;
 	}
+
+	.smallselect {
+		width:auto;
+	}
+
+	.income-select + select {
+		width:88%;
+		margin-top:15px;
+	}
+
+	.last-textarea {
+		width: 88% !important;
+	}
 }
 
+@media (max-width:575px) {
+	#advanceinfo {
+		padding:0 0 0 5px;
+	}
+
+	.col-xl-3.col-lg-3.col-sm-3.col-xs-6 img, .col-xl-3.col-lg-3.col-sm-3.col-xs-6 img + br{
+		display:none;
+	}
+
+	.help-me-write-this {
+		margin-bottom: 15px;
+    	display: inline-block;
+	}
+
+	#first_step {
+		float:none;
+		text-align:center;
+		margin-right:0;
+		margin-top:15px;
+	}
+}
+
+@media (max-width:345px) {
+	#advanceinfo,  #advanceinfo select{
+		font-size:4vw;
+	}
+
+	.sechead {
+		padding:5px;
+	}
+}
+
+@media (min-width:991px) {
+	.famdet, .last-textarea {
+		width: 83% !important;
+	}
+}
 </style>
 <div class="container">
 <div id="wait" style="display: none;"></div>
@@ -197,7 +261,7 @@ Select
 <div class="col-0">
 <img src="{{ $user_assets }}/icons/basic-info.png">
 </div>
-<div class="col-10 main">
+<div class="col-xs-10 main">
 <p class="sechead">Profile Description</p>
 </div>
 </li>
@@ -211,13 +275,13 @@ Explain more about your personality, family and educational background, professi
 </li>
 <br>
 <li class="row" class="listtopmarg">
-<div class="col-9">
+<div class="col-xl-9 col-lg-9 col-sm-9 col-xs-6">
 <textarea name="description" data-toggle="tooltip" data-placement="top" title="Kindly provide more details about your personality, family, education, hobbies, profession and anything else which gives better overview of your life." placeholder="Kindly provide more details about your personality, family, education, hobbies, profession and anything else which gives better overview of your life." id="myTextarea" cols="20" class="prfdesctxt">{{ old('description') }}</textarea>
 </div>
-<div class="col-3">
+<div class="col-xl-3 col-lg-3 col-sm-3 col-xs-6">
 	{{-- <button type="button" >Try it</button> --}}
 	
-<img src="{{ $user_assets }}/icons/arrow.png" alt=""><br><span><a href="javascript:;" data-toggle="modal" data-target="#help">Help me Write this</a></span>
+<img src="{{ $user_assets }}/icons/arrow.png" alt=""><br><span class='help-me-write-this'><a href="javascript:;" data-toggle="modal" data-target="#help">Help me Write this</a></span>
 <script type="text/javascript">
 	function myFunction(id)
 	{
@@ -236,7 +300,7 @@ Explain more about your personality, family and educational background, professi
 <div class="col-0">
 <img src="{{ $user_assets }}/icons/religion.png">
 </div>
-<div class="col-10 main">
+<div class="col-xs-10 main">
 <p class="sechead">Family Details</p>
 </div>
 </li>
@@ -244,10 +308,10 @@ Explain more about your personality, family and educational background, professi
 <hr class="lineinhead">
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Family Value: <span class="imporatant">*</span></label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 <!-- <span class="colons">:</span> -->
 <select name="family_value" id="" class="allselects">
 @if(old('family_value'))
@@ -270,10 +334,10 @@ Explain more about your personality, family and educational background, professi
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Family Type: <span class="imporatant">*</span></label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 <!-- <span class="colons">:</span> -->
 <select name="family_type" id="" class="allselects">
 @if(old('family_type'))
@@ -292,10 +356,10 @@ Explain more about your personality, family and educational background, professi
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for="">Relocate?<span class="imporatant">*</span></label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 <!-- <span class="colons">:</span> {{-- -->
 <div class="radiyn">
 <input type="radio" name="relocate" value="Yes"> Yes &nbsp <input type="radio" name="relocate" value="No"> Maybe &nbsp <input type="radio" name="relocate" value="No"> Never
@@ -320,10 +384,10 @@ Explain more about your personality, family and educational background, professi
 </li>
 <div class="btpad"></div>
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Financial Status <span class="imporatant">*</span></label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 <!-- <span class="colons">:</span> -->
 <select name="finacial_status" id="" class="allselects">
 @if(old('finacial_status'))
@@ -344,10 +408,10 @@ Explain more about your personality, family and educational background, professi
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg" id="test_assets">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for="">Asset: <span class="imporatant">*</span></label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 <!-- <span class="colons">:</span> -->
 <select name="assets" id="" onchange="assets_change(this)" class="allselects">
 @if(old('assets'))
@@ -368,10 +432,10 @@ Explain more about your personality, family and educational background, professi
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg" id="other_assets" style="display: none">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for="">Other Asset</label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 <!-- <span class="colons">:</span> -->
 <input type="text" value="{{ old('other_assets') }}" name="other_assets" placeholder="please specify other Asset" class="allselects">
 
@@ -381,10 +445,10 @@ Explain more about your personality, family and educational background, professi
 
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for="">Father's Details:</label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 <!-- <span class="colons">:</span> {{-- -->
 <div class="parntdet"> --}}
 <input type="radio" @if(old('father_detail')=='Alive') checked="" @endif name="father_detail" value="Alive"> Alive &nbsp <input type="radio" @if(old('father_detail')=='Died') checked="" @endif name="father_detail" value="Died"> Died &nbsp Occupation <input type="text" data-toggle="tooltip" data-placement="top" title="Enter father details" name="father_occupation" value="{{ old('father_occupation') }}" class="allinputs"> {{--
@@ -394,23 +458,23 @@ Explain more about your personality, family and educational background, professi
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for="">Mother's Details</label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 <!-- <span class="colons">:</span> -->
 <div class="parntdet">
-<input type="radio" @if(old('mother_detail')=='Alive') checked="" @endif name="mother_detail" value="Alive"> Alive &nbsp <input type="radio" name="mother_detail" @if(old('mother_detail')=='Alive') checked="" @endif value="Died"> Died &nbsp Occupation <input value="{{ old('mother_occupation') }}" type="text" data-toggle="tooltip" data-placement="top" title="Enter monther details" name="mother_occupation" class="allinputs">
+<input type="radio" @if(old('mother_detail')=='Alive') checked="" @endif name="mother_detail" value="Alive"> Alive &nbsp <input type="radio" name="mother_detail" @if(old('mother_detail')=='Alive') checked="" @endif value="Died"> Died &nbsp Occupation <input value="{{ old('mother_occupation') }}" type="text" data-toggle="tooltip" data-placement="top" title="Enter monther details" name="mother_occupation" class="allinputs father-occupation">
 </div>
 </div>
 </li>
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for="">Brothers Details:</label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 <!-- <span class="colons">:</span> -->
 <div class="childdet">
 Elder <select name="elder_brother" id="" class="smallselect">
@@ -444,12 +508,12 @@ Elder <select name="elder_brother" id="" class="smallselect">
 </li>
 <div class="btpad"></div>
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Married:</label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 <!-- <span class="colons">:</span> -->
-<select name="brother_married" id="" class="allselects">
+<select name="brother_married" id="" class="allselects smallselect">
 	@if(old('brother_married'))
 	
 	<option value="{{ old('brother_married') }}">{{ old('brother_married') }}</option>
@@ -466,12 +530,12 @@ Elder <select name="elder_brother" id="" class="smallselect">
 </li>
 <div class="btpad"></div>
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Un Married:</label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 <!-- <span class="colons">:</span> -->
-<select name="brother_unmarried" id="" class="allselects">
+<select name="brother_unmarried" id="" class="allselects smallselect">
 	@if(old('brother_unmarried'))
 	
 	<option value="{{ old('brother_married') }}">{{ old('brother_unmarried') }}</option>
@@ -488,10 +552,10 @@ Elder <select name="elder_brother" id="" class="smallselect">
 </li>
 <div class="btpad"></div>
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for="">Sisters Details:</label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 <!-- <span class="colons">:</span> -->
 <div class="childdet">
 Elder <select name="elder_sister" id="" class="smallselect">
@@ -524,12 +588,12 @@ Elder <select name="elder_sister" id="" class="smallselect">
 </li>
 <div class="btpad"></div>
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Married:</label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 <!-- <span class="colons">:</span> -->
-<select name="sister_married" id="" class="allselects">
+<select name="sister_married" id="" class="allselects smallselect">
 	@if(old('sister_married'))
 	
 	<option value="{{ old('sister_married') }}">{{ old('sister_married') }}</option>
@@ -546,12 +610,12 @@ Elder <select name="elder_sister" id="" class="smallselect">
 </li>
 <div class="btpad"></div>
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Un Married:</label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 <!-- <span class="colons">:</span> -->
-<select name="sister_unmarried" id="" class="allselects">
+<select name="sister_unmarried" id="" class="allselects smallselect">
 	@if(old('sister_unmarried'))
 	
 	<option value="{{ old('sister_unmarried') }}">{{ old('sister_unmarried') }}</option>
@@ -568,10 +632,10 @@ Elder <select name="elder_sister" id="" class="smallselect">
 </li>
 <div class="btpad"></div>
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Family Details: <span class="imporatant"></span></label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 	<span  class='error' style="color:red; font-size: 10px;">{{ $errors->first('family_detail') }}</span>
 <!-- <span class="colons">:</span> -->
 <textarea name="family_detail" data-toggle="tooltip" data-placement="top" title="Enter family details" id="" class="famdet">{{ old('family_detail') }}</textarea>
@@ -587,7 +651,7 @@ Elder <select name="elder_sister" id="" class="smallselect">
 <div class="col-0">
 <img src="{{ $user_assets }}/icons/religion.png">
 </div>
-<div class="col-10 main">
+<div class="col-xs-10 main">
 <p class="partpref"><b>Partner Preference</b></p>
 </div>
 </li>
@@ -605,10 +669,10 @@ Elder <select name="elder_sister" id="" class="smallselect">
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Age Preference: <span class="imporatant">*</span></label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 <!-- <span class="colons">:</span> -->
 <select name="loking_age_from" class="midlinput">
 	@if(old('loking_age_from'))
@@ -639,10 +703,10 @@ Elder <select name="elder_sister" id="" class="smallselect">
 </li>
 <div class="btpad"></div>
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Marital Status: <span class="imporatant">*</span></label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 <!-- <span class="colons">:</span> -->
 <div class="radiyn">
 <input type="hidden" name="martial" value="martial_status">
@@ -664,10 +728,10 @@ Elder <select name="elder_sister" id="" class="smallselect">
 </li>
 <div class="btpad"></div>
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for="">Eating Habits:</label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 <!-- <span class="colons">:</span> -->
 <div class="radiyn">
 <input type="hidden" name="eating_type" value="eating type">
@@ -687,10 +751,10 @@ Elder <select name="elder_sister" id="" class="smallselect">
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Mother Tongue: <span class="imporatant">*</span></label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 <!-- <span class="colons">:</span> -->
 <select name="loking_language" id="" class="allselects">
 @if(old('loking_language'))
@@ -778,10 +842,10 @@ Elder <select name="elder_sister" id="" class="smallselect">
 </li>
 <div class="btpad"></div>
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Other language: <span class="imporatant"></span></label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 {{-- chang --}}
 <div class="input-group">
 <input type="text" readonly="" value="Partner other language" name="loking_other_lang" class="allselects">
@@ -960,7 +1024,7 @@ position: absolute;color: #8E8E8F;"></span>
 <div class="col-0">
 <img src="{{ $user_assets }}/icons/education.png">
 </div>
-<div class="col-10 main">
+<div class="col-xs-10 main">
 <p class="sechead">Appearance </p>
 </div>
 </li>
@@ -969,10 +1033,10 @@ position: absolute;color: #8E8E8F;"></span>
 
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Height Preference: </label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 
 <!-- <span class="colons">:</span> -->
 <select name="loking_height_from" class="midlinput">
@@ -1065,10 +1129,10 @@ position: absolute;color: #8E8E8F;"></span>
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Weight Preference: </label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 
 <!-- <span class="colons">:</span> -->
 <select id="" name="loking_weight_form" class="midlinput">
@@ -1253,10 +1317,10 @@ position: absolute;color: #8E8E8F;"></span>
 
 @if($gender=='Female')
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for="">Beard</label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 <!-- <span class="colons">:</span> -->
 <select name="loking_bread" id="" class="allselects">
 @if(old('loking_bread'))
@@ -1276,10 +1340,10 @@ position: absolute;color: #8E8E8F;"></span>
 
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Observes Hijab: </label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 
 <div class="input-group">
  <input type="text" readonly="" value="Observes Hijab" name="observes_hijab" class="allselects">
@@ -1294,7 +1358,7 @@ position: absolute;color: #8E8E8F;"></span>
 
 <div id="obshijpro" style="display:none;">
 <div class="row" style="padding-top:5px;padding-bottom:10px;">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <a href="javascript:;" onclick="hijab_check()">Select All</a>
 </div>
 <div class="col-6">
@@ -1304,7 +1368,7 @@ position: absolute;color: #8E8E8F;"></span>
 
 
 <div class="row">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <input type="checkbox" name="hijab_time[]" class="hijab_select" value="Always"> Always<br>
 <input type="checkbox" name="hijab_time[]" class="hijab_select" value="Always with Niqab"> Always with Niqab<br>
 
@@ -1322,16 +1386,16 @@ position: absolute;color: #8E8E8F;"></span>
 </li>
 <div class="btpad"></div>
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Body Type: </label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 
 
 
 
 <div class="input-group">
-&nbsp &nbsp<input readonly="" type="text" value="Body Type" name="loking_body_type" class="allselects">
+&nbsp &nbsp<input readonly="" type="text" value="Body Type" name="loking_body_type" class="allselects move-left">
 <div class="input-group-append">
 <a href="javascript:;" id="bodut">
 <span class="fa fa-angle-down arrows" style="color: #8E8E8F;" id="downbdyty"></span>
@@ -1343,7 +1407,7 @@ position: absolute;color: #8E8E8F;"></span>
 
 <div id="bodutpro" style="display:none;">
 <div class="row" style="padding-top:5px;padding-bottom:10px;">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <a href="javascript:;" onclick="body_check()">Select All</a>
 </div>
 <div class="col-6">
@@ -1353,7 +1417,7 @@ position: absolute;color: #8E8E8F;"></span>
 
 
 <div class="row">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <input type="checkbox" name="loking_body[]" class="body_select" value="Slim Skinny"> Slim/Skinny<br>
 <input type="checkbox" name="loking_body[]" class="body_select" value="Average"> Average<br>
 <input type="checkbox" name="loking_body[]" class="body_select" value="Athletic"> Athletic<br>
@@ -1373,13 +1437,13 @@ position: absolute;color: #8E8E8F;"></span>
 </li>
 <div class="btpad"></div>
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Complexion Preference: </label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 
 <div class="input-group">
- &nbsp &nbsp<input readonly="" type="text" value="Complexion" name="complexion" class="allselects">
+ &nbsp &nbsp<input readonly="" type="text" value="Complexion" name="complexion" class="allselects move-left">
 <div class="input-group-append">
 <a href="javascript:;" id="skin">
 <span class="fa fa-angle-down arrows" style="color: #8E8E8F;" id="down_skin"></span>
@@ -1391,7 +1455,7 @@ position: absolute;color: #8E8E8F;"></span>
 
 <div id="skin_color" style="display:none;">
 <div class="row" style="padding-top:5px;padding-bottom:10px;">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <a href="javascript:;" onclick="skin_check()">Select All</a>
 </div>
 <div class="col-6">
@@ -1401,11 +1465,11 @@ position: absolute;color: #8E8E8F;"></span>
 
 
 <div class="row">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <input type="checkbox" name="loking_skin_color[]" class="skin_select" value="Very Fair"> Very Fair<br>
 <input type="checkbox" name="loking_skin_color[]" class="skin_select" value="Fair"> Fair<br>
 </div>
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <input type="checkbox" name="loking_skin_color[]" class="skin_select" value="Wheatish">Wheatish<br>
 <input type="checkbox" name="loking_skin_color[]" class="skin_select" value="Dark">Dark<br>
 </div>
@@ -1418,10 +1482,10 @@ position: absolute;color: #8E8E8F;"></span>
 </li>
 <div class="btpad"></div>
 {{-- <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for="">Complexion Preference</label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 <!-- <span class="colons">:</span> -->
 <select name="loking_skin_color" id="" class="allselects">
 <option value="Very Fair">Very Fair</option>
@@ -1435,10 +1499,10 @@ position: absolute;color: #8E8E8F;"></span>
 <div class="btpad"></div> --}}
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Physical Status:</label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 <!-- <span class="colons">:</span> -->
 <select name="loking_physcial_status" onchange="other_status(this)" id="" class="allselects">
 	@if(old('loking_physcial_status'))
@@ -1490,17 +1554,17 @@ $('#user_status').hide('slow');
 <div class="col-0">
 <img src="{{ $user_assets }}/icons/education.png">
 </div>
-<div class="col-10 main">
+<div class="col-xs-10 main">
 <p class="sechead">Professional Preferences</p>
 </div>
 </li>
 <hr class="lineinhead">
 <div class="btpad"></div>
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Education: </label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 <!-- <span class="colons">:</span> -->
 <select name="loking_education" id="" class="allselects">
 @if(old('loking_education'))
@@ -1650,10 +1714,10 @@ $('#user_status').hide('slow');
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg" id="loking_job">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Occupation:</label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 <!-- <span class="colons">:</span> -->
 <select name="loking_job" onchange="job_test(this)" class="allselects">
 	@if(old('loking_job'))
@@ -1706,10 +1770,10 @@ $('#user_status').hide('slow');
 <div class="btpad"></div>
 {{--
 <li class="row" class="listtopmarg" id="other_job" style="display: none">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Occupation</label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 <!-- <span class="colons">:</span> -->
 <input type="text" name="loking_job_type" placeholder="please specify other Occupation" class="allselects">
 
@@ -1718,10 +1782,10 @@ $('#user_status').hide('slow');
 <div class="btpad"></div> --}}
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for="">Employed in:</label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 <!-- <span class="colons">:</span> -->
 <input type="text" value="{{ old('employed_in') }}" name="employed_in" placeholder="employed in" class="allselects">
 
@@ -1730,12 +1794,12 @@ $('#user_status').hide('slow');
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Annual Income: </label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 <!-- <span class="colons">:</span> -->
-<select name="loking_a_income" id="" class="allselects">
+<select name="loking_a_income" id="" class="allselects midlinput income-select">
 @if(old('loking_a_income'))
 	
 	<option value="{{ old('loking_a_income') }}">{{ old('loking_a_income') }}</option>
@@ -2025,17 +2089,17 @@ $('#user_status').hide('slow');
 <div class="col-0">
 <img src="{{ $user_assets }}/icons/1st-location.png">
 </div>
-<div class="col-10 main">
+<div class="col-xs-10 main">
 <p class="sechead">Location Preferences</p>
 </div>
 </li>
 <hr class="lineinhead">
 <div class="btpad"></div>
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Country Living in:</label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 <!-- <span class="colons">:</span> -->
 <select id="country" onchange="country_change(this)" name="living_country_id" class="allselects">
 <option selected="" value="">Select country 
@@ -2051,10 +2115,10 @@ $('#user_status').hide('slow');
 <div class="btpad"></div>
 
 <li class="row living_scroll" id="sts" class="listtopmarg" style="display: none;">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> State</label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 <!-- <span class="colons">:</span> {{-- <select name="" id="" class="allselects"> --}} -->
 
 {{--  <select selected="selected" id="living_state1" onchange="state_change2(this)"  name="living_state_id" class="allselects" > --}}
@@ -2068,10 +2132,10 @@ $('#user_status').hide('slow');
 <div class="btpad"></div>
 
 <li class="row living_scroll" id="cties" class="listtopmarg" style="display: none;">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> District/City</label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 <!-- <span class="colons">:</span> -->
 {{--  <select name="living_city_id" id="living_city" selected="selected" class="allselects">
 <option>Select</option>
@@ -2084,10 +2148,10 @@ $('#user_status').hide('slow');
 </li>
 <div class="btpad"></div>
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for="">Relocate?<span class="imporatant">*</span></label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 <!-- <span class="colons">:</span> -->
 <select name="relocate" id="relocate" class="allselects">
 @if(old('relocate'))
@@ -2107,20 +2171,20 @@ $('#user_status').hide('slow');
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg" id="relocate_type" style="display: none">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Reason </label>
 </div>  
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 <!-- <span class="colons">:</span> -->
 <input type="text" value="{{ old('relocate') }}" name="reason_relocate" placeholder="Enter Reason No Relocate" class="allselects">
 </div>
 </li>
 <div class="btpad"></div>  {{--
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Citizenship</label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 <!-- <span class="colons">:</span> -->
 <select name="" id="" class="allselects">
 <option value="">Pakistan</option>
@@ -2143,7 +2207,7 @@ $('#user_status').hide('slow');
 <div class="col-0">
 <img src="{{ $user_assets }}/icons/1st-location.png">
 </div>
-<div class="col-10 main">
+<div class="col-xs-10 main">
 <p class="sechead">2nd Location Preferences</p>
 </div>
 </li>
@@ -2151,15 +2215,15 @@ $('#user_status').hide('slow');
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Africa:</label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 
 
 
 <div class="input-group">
- &nbsp &nbsp<input readonly="" type="text" value="Africa" name="affrica" class="allselects">
+ &nbsp &nbsp<input readonly="" type="text" value="Africa" name="affrica" class="allselects move-left">
 <div class="input-group-append">
 <a href="javascript:;" id="affrica">
 <span class="fa fa-angle-down arrows" style="color: #8E8E8F;" id="downafr"></span>
@@ -2172,7 +2236,7 @@ position: absolute;color: #8E8E8F;"></span>
 
 <div id="allaffrica" style="display:none;">
 <div class="row" style="padding-top:5px;padding-bottom:10px;">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <a href="javascript:;" onclick="africa_check()">Select All </a>
 </div>
 <div class="col-6">
@@ -2182,7 +2246,7 @@ position: absolute;color: #8E8E8F;"></span>
 
 
 <div class="row">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <input type="checkbox" value="Algeria" class="africa_select" name="africa_country[]"> Algeria <br>
 <input type="checkbox" value="Angola" class="africa_select" name="africa_country[]"> Angola <br>
 <input type="checkbox" value="Benin" class="africa_select" name="africa_country[]"> Benin <br>
@@ -2205,7 +2269,7 @@ position: absolute;color: #8E8E8F;"></span>
 <input type="checkbox" value="Egypt" class="africa_select" name="africa_country[]"> Egypt <br>
 
 </div>
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <input type="checkbox" class="africa_select" name="africa_country[]" value="Equatorial Guinea"> Equatorial Guinea <br>
 <input type="checkbox" class="africa_select" name="africa_country[]" value="Eritrea"> Eritrea <br>
 <input type="checkbox" class="africa_select" name="africa_country[]" value="Ethiopia"> Ethiopia <br>
@@ -2257,13 +2321,13 @@ position: absolute;color: #8E8E8F;"></span>
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Antarctica:</label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 
 <div class="input-group">
- &nbsp &nbsp<input readonly="" type="text" value="Antarctica" name="antarctica" class="allselects">
+ &nbsp &nbsp<input readonly="" type="text" value="Antarctica" name="antarctica" class="allselects move-left">
 <div class="input-group-append">
 <a href="javascript:;" id="antar">
 <span class="fa fa-angle-down arrows" style="color: #8E8E8F;" id="downantar"></span>
@@ -2302,13 +2366,13 @@ position: absolute;color: #8E8E8F;"></span>
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Asia:</label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 
 <div class="input-group">
- &nbsp &nbsp<input readonly="" type="text" value="Asia" name="asia" class="allselects">
+ &nbsp &nbsp<input readonly="" type="text" value="Asia" name="asia" class="allselects move-left">
 <div class="input-group-append">
 <a href="javascript:;" id="aisa">
 <span class="fa fa-angle-down arrows" style="color: #8E8E8F;" id="downasia"></span>
@@ -2320,7 +2384,7 @@ position: absolute;color: #8E8E8F;"></span>
 
 <div id="aisacity" style="display:none;">
 <div class="row" style="padding-top:5px;padding-bottom:10px;">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <a href="javascript:;" onclick="asia_check()">Select All</a>
 </div>
 <div class="col-6">
@@ -2330,7 +2394,7 @@ position: absolute;color: #8E8E8F;"></span>
 
 
 <div class="row">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <input type="checkbox" name="asia_country[]" class="asia_select" value="Afghanistan"> Afghanistan <br>
 <input type="checkbox" name="asia_country[]" class="asia_select" value="Armenia"> Armenia <br>
 <input type="checkbox" name="asia_country[]" class="asia_select" value="Azerbaijan"> Azerbaijan <br>
@@ -2353,7 +2417,7 @@ position: absolute;color: #8E8E8F;"></span>
 <input type="checkbox" name="asia_country[]" class="asia_select" value="Israel"> Israel <br>
 
 </div>
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <input type="checkbox" name="asia_country[]" class="asia_select" value="Japan"> Japan <br>
 <input type="checkbox" name="asia_country[]" class="asia_select" value="Kazakhstan"> Kazakhstan <br>
 <input type="checkbox" name="asia_country[]" class="asia_select" value="Korea, DPR"> Korea, DPR <br>
@@ -2400,13 +2464,13 @@ position: absolute;color: #8E8E8F;"></span>
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Europe:</label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 
 <div class="input-group">
- &nbsp &nbsp<input readonly="" type="text" value="Europe" name="europe" class="allselects">
+ &nbsp &nbsp<input readonly="" type="text" value="Europe" name="europe" class="allselects move-left">
 <div class="input-group-append">
 <a href="javascript:;" id="europ">
 <span class="fa fa-angle-down arrows" style="color: #8E8E8F;" id="downeurop"></span>
@@ -2418,7 +2482,7 @@ position: absolute;color: #8E8E8F;"></span>
 
 <div id="europcity" style="display:none;">
 <div class="row" style="padding-top:5px;padding-bottom:10px;">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <a href="javascript:;" onclick="europ_check()">Select All</a>
 </div>
 <div class="col-6">
@@ -2428,7 +2492,7 @@ position: absolute;color: #8E8E8F;"></span>
 
 
 <div class="row">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <input type="checkbox" name="europe_country[]" class="europ_select" value="Aland Islands"> Aland Islands <br>
 <input type="checkbox" name="europe_country[]" class="europ_select" value="Albania"> Albania <br>
 <input type="checkbox" name="europe_country[]" class="europ_select" value="Andorra"> Andorra <br>
@@ -2451,7 +2515,7 @@ position: absolute;color: #8E8E8F;"></span>
 <input type="checkbox" name="europe_country[]" class="europ_select" value="Hungary"> Hungary <br>
 
 </div>
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <input type="checkbox" name="europe_country[]" class="europ_select" value="Iceland"> Iceland <br>
 <input type="checkbox" name="europe_country[]" class="europ_select" value="Ireland"> Ireland <br>
 <input type="checkbox" name="europe_country[]" class="europ_select" value="Isle of Man"> Isle of Man <br>
@@ -2496,13 +2560,13 @@ position: absolute;color: #8E8E8F;"></span>
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> North America:</label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 
 <div class="input-group">
- &nbsp &nbsp<input readonly="" type="text" value="North America" name="north_america" class="allselects">
+ &nbsp &nbsp<input readonly="" type="text" value="North America" name="north_america" class="allselects move-left">
 <div class="input-group-append">
 <a href="javascript:;" id="namrica">
 <span class="fa fa-angle-down arrows" style="color: #8E8E8F;" id="downnotamr"></span>
@@ -2524,7 +2588,7 @@ position: absolute;color: #8E8E8F;"></span>
 
 
 <div class="row">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <input type="checkbox" name="north_america_country[]" class="north_select" value="Anguilla"> Anguilla <br>
 <input type="checkbox" name="north_america_country[]" class="north_select" value="Antigua and Barbuda"> Antigua and Barbuda <br>
 <input type="checkbox" name="north_america_country[]" class="north_select" value="Aruba"> Aruba <br>
@@ -2547,7 +2611,7 @@ position: absolute;color: #8E8E8F;"></span>
 <input type="checkbox" name="north_america_country[]" class="north_select" value="Honduras"> Honduras <br>
 
 </div>
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <input type="checkbox" name="north_america_country[]" class="north_select" value="Jamaica"> Jamaica <br>
 <input type="checkbox" name="north_america_country[]" class="north_select" value="Martinique"> Martinique <br>
 <input type="checkbox" name="north_america_country[]" class="north_select" value="Mexico"> Mexico <br>
@@ -2582,13 +2646,13 @@ position: absolute;color: #8E8E8F;"></span>
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Australasia:</label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 
 <div class="input-group">
- &nbsp &nbsp<input readonly="" type="text" value="Australasia" name="australasia" class="allselects">
+ &nbsp &nbsp<input readonly="" type="text" value="Australasia" name="australasia" class="allselects move-left">
 <div class="input-group-append">
 <a href="javascript:;" id="austrailia">
 <span class="fa fa-angle-down arrows" style="color: #8E8E8F;" id="downaurt"></span>
@@ -2610,7 +2674,7 @@ position: absolute;color: #8E8E8F;"></span>
 
 
 <div class="row">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <input type="checkbox" name="australasia_country[]" class="austra_select" value="American Samoa"> American Samoa <br>
 <input type="checkbox" name="australasia_country[]" class="austra_select" value="Australia"> Australia <br>
 <input type="checkbox" name="australasia_country[]" class="austra_select" value="Cook Islands"> Cook Islands <br>
@@ -2627,7 +2691,7 @@ position: absolute;color: #8E8E8F;"></span>
 <input type="checkbox" name="australasia_country[]" class="austra_select" value="Norfolk Island"> Norfolk Island <br>
 
 </div>
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <input type="checkbox" name="australasia_country[]" class="austra_select" value="Northern Mariana"> Northern Mariana Is <br>
 <input type="checkbox" name="australasia_country[]" class="austra_select" value="Palau"> Palau <br>
 <input type="checkbox" name="australasia_country[]" class="austra_select" value="Papua New Guinea"> Papua New Guinea <br>
@@ -2659,13 +2723,13 @@ position: absolute;color: #8E8E8F;"></span>
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> South America:</label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 
 <div class="input-group">
- &nbsp &nbsp<input readonly="" type="text" value="South America" name="south_america" class="allselects">
+ &nbsp &nbsp<input readonly="" type="text" value="South America" name="south_america" class="allselects move-left">
 <div class="input-group-append">
 <a href="javascript:;" id="southafric">
 <span class="fa fa-angle-down arrows" style="color: #8E8E8F;" id="downsouamr"></span>
@@ -2687,7 +2751,7 @@ position: absolute;color: #8E8E8F;"></span>
 
 
 <div class="row">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <input type="checkbox" name="south_america_country[]" class="south_select" value="Argentina"> Argentina <br>
 <input type="checkbox" name="south_america_country[]" class="south_select" value="Bolivia"> Bolivia <br>
 <input type="checkbox" name="south_america_country[]" class="south_select" value="Brazil"> Brazil <br>
@@ -2696,7 +2760,7 @@ position: absolute;color: #8E8E8F;"></span>
 <input type="checkbox" name="south_america_country[]" class="south_select" value="Ecuador"> Ecuador <br>
 
 </div>
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <input type="checkbox" name="south_america_country[]" class="south_select" value="Falkland Islands">Falkland Islands <br>
 <input type="checkbox" name="south_america_country[]" class="south_select" value="French Guiana"> French Guiana <br>
 <input type="checkbox" name="south_america_country[]" class="south_select" value="Guyana"> Guyana <br>
@@ -2719,14 +2783,14 @@ position: absolute;color: #8E8E8F;"></span>
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Residency Status:</label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 
 <div class="input-group">
 
- &nbsp &nbsp<input readonly="" type="text" value="Residency Status" name="loking_residency_status" class="allselects">
+ &nbsp &nbsp<input readonly="" type="text" value="Residency Status" name="loking_residency_status" class="allselects move-left">
 <div class="input-group-append">
 <a href="javascript:;" id="residance">
 <span class="fa fa-angle-down arrows" style="color: #8E8E8F;" id="downressta"></span>
@@ -2738,7 +2802,7 @@ position: absolute;color: #8E8E8F;"></span>
 
 <div id="residancecity" style="display:none;">
 <div class="row" style="padding-top:5px;padding-bottom:10px;">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <a href="javascript:;" onclick="residency_check()">Select All</a>
 </div>
 <div class="col-6">
@@ -2748,13 +2812,13 @@ position: absolute;color: #8E8E8F;"></span>
 
 
 <div class="row">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <input type="checkbox" name="residency_name[]" class="resdency_select" value="Citizen"> Citizen <br>
 <input type="checkbox" name="residency_name[]" class="resdency_select" value="Permanent Resident"> Permanent Resident <br>
 <input type="checkbox" name="residency_name[]" class="resdency_select" value="Student Visa"> Student Visa <br>
 
 </div>
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <input type="checkbox" name="residency_name[]" class="resdency_select" value="Temporary Visa"> Temporary Visa <br>
 <input type="checkbox" name="residency_name[]" class="resdency_select" value="Work Permit"> Work Permit <br>
 <input type="checkbox" name="residency_name[]" class="resdency_select" value="Other"> Other <br>
@@ -2770,13 +2834,13 @@ position: absolute;color: #8E8E8F;"></span>
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Ethnic Origin: </label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 
 <div class="input-group">
- &nbsp &nbsp<input readonly="" type="text" value="Ethnic Origin" name="loking_ethnic_origin" class="allselects">
+ &nbsp &nbsp<input readonly="" type="text" value="Ethnic Origin" name="loking_ethnic_origin" class="allselects move-left">
 <div class="input-group-append">
 <a href="javascript:;" id="ethnicorg">
 <span class="fa fa-angle-down arrows" style="color: #8E8E8F;" id="downethnorg"></span>
@@ -2788,7 +2852,7 @@ position: absolute;color: #8E8E8F;"></span>
 
 <div id="ethnicorgpro" style="display:none;">
 <div class="row" style="padding-top:5px;padding-bottom:10px;">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <a href="javascript:;" onclick="ethic_check()">Select All</a>
 </div>
 <div class="col-6">
@@ -2798,7 +2862,7 @@ position: absolute;color: #8E8E8F;"></span>
 
 
 <div class="row">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <input type="checkbox" name="origin_name[]" class="ethnic_select" value="Algerian"> Algerian <br>
 <input type="checkbox" name="origin_name[]" class="ethnic_select"  value="Arab"> Arab <br>
 <input type="checkbox" name="origin_name[]" class="ethnic_select" value="Carribean"> Carribean <br>
@@ -2815,7 +2879,7 @@ position: absolute;color: #8E8E8F;"></span>
 <input type="checkbox" name="origin_name[]" class="ethnic_select"> Asian - Malay <br>
 
 </div>
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <input type="checkbox" name="origin_name[]" class="ethnic_select" value="Asian - Maldives"> Asian - Maldives <br>
 <input type="checkbox" name="origin_name[]" class="ethnic_select" value="Asian - Pakistani"> Asian - Pakistani <br>
 <input type="checkbox" name="origin_name[]" class="ethnic_select" value="Asian - Sri Lankan"> Asian - Sri Lankan <br>
@@ -2871,7 +2935,7 @@ White"> Indian Carribean <br> White <br>
 <div class="col-0">
 <img src="{{ $user_assets }}/icons/basic-info.png">
 </div>
-<div class="col-10 main">
+<div class="col-xs-10 main">
 <p class="sechead">My Preferences</p>
 </div>
 </li>
@@ -2880,13 +2944,13 @@ White"> Indian Carribean <br> White <br>
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Religious History: </label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 
 <div class="input-group">
- &nbsp &nbsp<input readonly="" type="text" value="Religious History" name="religious_history" class="allselects">
+ &nbsp &nbsp<input readonly="" type="text" value="Religious History" name="religious_history" class="allselects move-left">
 <div class="input-group-append">
 <a href="javascript:;" id="releghist">
 <span class="fa fa-angle-down arrows" style="color: #8E8E8F;"id="downrehis"></span>
@@ -2898,7 +2962,7 @@ position: absolute;color: #8E8E8F;"></span>
 
 <div id="releghistpro" style="display:none;">
 <div class="row" style="padding-top:5px;padding-bottom:10px;">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <a href="javascript:;" onclick="history_check()">Select All</a>
 </div>
 <div class="col-6">
@@ -2908,10 +2972,10 @@ position: absolute;color: #8E8E8F;"></span>
 
 
 <div class="row">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <input type="checkbox" name="rel_history[]" class="history_select" value="Muslim Since Birth"> Muslim Since Birth<br>
 </div>
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <input type="checkbox" name="rel_history[]" class="history_select" value="Revert Muslim"> Revert Muslim<br>
 </div>
 
@@ -2924,13 +2988,13 @@ position: absolute;color: #8E8E8F;"></span>
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Living with her in-laws: </label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 
 <div class="input-group">
- &nbsp &nbsp<input readonly="" type="text" value="Living with" name="living_with" class="allselects">
+ &nbsp &nbsp<input readonly="" type="text" value="Living with" name="living_with" class="allselects move-left">
 <div class="input-group-append">
 <a href="javascript:;" id="livelaws">
 <span class="fa fa-angle-down arrows" style="color: #8E8E8F;" id="downlivlaws"></span>
@@ -2942,7 +3006,7 @@ position: absolute;color: #8E8E8F;"></span>
 
 <div id="livelawspro" style="display:none;">
 <div class="row" style="padding-top:5px;padding-bottom:10px;">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <a href="javascript:;" onclick="living_check()">Select All</a>
 </div>
 <div class="col-6">
@@ -2967,13 +3031,13 @@ position: absolute;color: #8E8E8F;"></span>
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> What Sect are you looking for? </label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 
 <div class="input-group">
- &nbsp &nbsp<input readonly="" type="text" value="Sects" name="loking_sects" class="allselects">
+ &nbsp &nbsp<input readonly="" type="text" value="Sects" name="loking_sects" class="allselects move-left">
 <div class="input-group-append">
 <a href="javascript:;" id="sectlook">
 <span class="fa fa-angle-down arrows" style="color: #8E8E8F;" id="downsect"></span>
@@ -2985,7 +3049,7 @@ position: absolute;color: #8E8E8F;"></span>
 
 <div id="sectlookpro" style="display:none;">
 <div class="row" style="padding-top:5px;padding-bottom:10px;">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <a href="javascript:;" onclick="sect_check()">Select All</a>
 </div>
 <div class="col-6">
@@ -2994,7 +3058,7 @@ position: absolute;color: #8E8E8F;"></span>
 </div>
 
 <div class="row">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <input type="checkbox" name="sects_type[]" class="sect_select" value="Just Muslim"> Just Muslim<br>
 <input type="checkbox" name="sects_type[]" class="sect_select" value="Sunni Muslim"> Sunni Muslim<br>
 <input type="checkbox" name="sects_type[]" class="sect_select" value="Shia Muslim"> Shia Muslim<br>
@@ -3024,13 +3088,13 @@ position: absolute;color: #8E8E8F;"></span>
 </li>
 <div class="btpad"></div>
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Pray: </label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 
 <div class="input-group">
- &nbsp &nbsp<input readonly="" type="text" value="Pray" name="loking_pray" class="allselects">
+ &nbsp &nbsp<input readonly="" type="text" value="Pray" name="loking_pray" class="allselects move-left">
 <div class="input-group-append">
 <a href="javascript:;" id="pray">
 <span class="fa fa-angle-down arrows" style="color: #8E8E8F;" id="downpray"></span>
@@ -3042,7 +3106,7 @@ position: absolute;color: #8E8E8F;"></span>
 
 <div id="praypro" style="display:none;">
 <div class="row" style="padding-top:5px;padding-bottom:10px;">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <a href="javascript:;" onclick="pray_check()">Select All</a>
 </div>
 <div class="col-6">
@@ -3074,13 +3138,13 @@ position: absolute;color: #8E8E8F;"></span>
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Has Children: </label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 
 <div class="input-group">
- &nbsp &nbsp<input readonly="" type="text" value="Has Children" name="has_child" class="allselects">
+ &nbsp &nbsp<input readonly="" type="text" value="Has Children" name="has_child" class="allselects move-left">
 <div class="input-group-append">
 <a href="javascript:;" id="hasch">
 <span class="fa fa-angle-down arrows" style="color: #8E8E8F;" id="downhaschild"></span>
@@ -3092,7 +3156,7 @@ position: absolute;color: #8E8E8F;"></span>
 
 <div id="haschpro" style="display:none;">
 <div class="row" style="padding-top:5px;padding-bottom:10px;">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <a href="javascript:;" onclick="has_check()">Select All</a>
 </div>
 <div class="col-6">
@@ -3102,7 +3166,7 @@ position: absolute;color: #8E8E8F;"></span>
 
 
 <div class="row">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <input type="checkbox" name="child_count[]" class="has_select" value="None"> None<br>
 <input type="checkbox" name="child_count[]" class="has_select" value="one"> one<br>
 
@@ -3122,13 +3186,13 @@ position: absolute;color: #8E8E8F;"></span>
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Like to have children: </label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 
 <div class="input-group">
- &nbsp &nbsp<input readonly="" type="text" value="Like to Have" name="like_child" class="allselects">
+ &nbsp &nbsp<input readonly="" type="text" value="Like to Have" name="like_child" class="allselects move-left">
 <div class="input-group-append">
 <a href="javascript:;" id="hvechil">
 <span class="fa fa-angle-down arrows" style="color: #8E8E8F;" id="downhavchil"></span>
@@ -3140,7 +3204,7 @@ position: absolute;color: #8E8E8F;"></span>
 
 <div id="hvechilpro" style="display:none;">
 <div class="row" style="padding-top:5px;padding-bottom:10px;">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <a href="javascript:;" onclick="like_check()">Select All</a>
 </div>
 <div class="col-6">
@@ -3150,7 +3214,7 @@ position: absolute;color: #8E8E8F;"></span>
 
 
 <div class="row">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <input type="checkbox" name="child_like[]" class="like_select" like_select value="Yes"> Yes<br>
 
 </div>
@@ -3173,10 +3237,10 @@ position: absolute;color: #8E8E8F;"></span>
 
 {{--
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Minimum Qualification</label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 
 <select name="" id="" class="allselects">
 <option value="">Master</option>
@@ -3199,7 +3263,7 @@ position: absolute;color: #8E8E8F;"></span>
 <div class="col-0">
 <img src="{{ $user_assets }}/icons/basic-info.png">
 </div>
-<div class="col-10 main">
+<div class="col-xs-10 main">
 <p class="sechead">I am looking for</p>
 </div>
 </li>
@@ -3209,12 +3273,12 @@ position: absolute;color: #8E8E8F;"></span>
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Expectations you may have about your expected partner.  (Mention here location, education, job, character etc..)</label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 <!-- <span class="colons">:</span> -->
-<textarea data-toggle="tooltip" data-placement="top" title="Kindly provide the details about your preferences for the partner and what you are looking for in your partner for instance type of personality, family and educational background, hobbies, etc." placeholder="Kindly provide the details about your preferences for the partner and what you are looking for in your partner for instance type of personality, family and educational background, hobbies, etc." name="loking_description" id="" style="height:75px;width:91%;"></textarea>
+<textarea class='last-textarea' data-toggle="tooltip" data-placement="top" title="Kindly provide the details about your preferences for the partner and what you are looking for in your partner for instance type of personality, family and educational background, hobbies, etc." placeholder="Kindly provide the details about your preferences for the partner and what you are looking for in your partner for instance type of personality, family and educational background, hobbies, etc." name="loking_description" id="" style="height:75px;width:91%;"></textarea>
 </div>
 </li>
 <div class="btpad"></div>
@@ -3234,10 +3298,10 @@ position: absolute;color: #8E8E8F;"></span>
 <div class="btpad"></div>
 
 <li class="row" class="listtopmarg">
-<div class="col-4">
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for="">Image</label>
 </div>
-<div class="col-8">
+<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
 
 <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Upload</button>
 
