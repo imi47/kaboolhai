@@ -856,7 +856,7 @@
             <a href="{{ url('dashboard') }}" class="M">
               <span>
                 <!-- <img width="40" height="40" src="{{ $user_assets }}/login.svg" alt="" /> -->
-                <img width="40" height="40" src="http://localhost/KBH/public/user_assets/dashboard.svg" alt="">
+                <img width="40" height="40" src="{{ $user_assets }}/dashboard.svg" alt="">
               </span>
               <span style="padding-left:15px;">Dashboard</span>
             </a>
@@ -894,11 +894,11 @@
                   Center</span></a></li>
             
             @if(Session::get('user_id'))
-            <li class="wow fadeInDown" data-wow-delay="0.9s"><a href="#" class="M" id='side-go-more-li'><span><img width="40" height="40" src="http://localhost/KBH/public/user_assets/more.svg" alt="go more"></span> <span style="padding-left:10px;">Go more</span></a></li>
+            <li class="wow fadeInDown" data-wow-delay="0.9s"><a href="#" class="M" id='side-go-more-li'><span><img width="40" height="40" src="{{ $user_assets }}/more.svg" alt="go more"></span> <span style="padding-left:10px;">Go more</span></a></li>
           <li class="wow fadeInDown" data-wow-delay="1s">
             <a href="{{ url('logout') }}" class="M">
               <span>
-              <img width="40" height="40" src="http://localhost/KBH/public/user_assets/logout.svg" alt="log out">
+              <img width="40" height="40" src="{{ $user_assets }}/logout.svg" alt="log out">
               </span>
               <span style="padding-left:15px;">Log out</span>
             </a>
