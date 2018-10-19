@@ -10,6 +10,19 @@
    width: 83%;
 }
 
+input[type='text'] {
+	padding:15px;
+}
+
+label {
+	margin-bottom:20px;
+}
+
+.allselects, .smallselect {
+	height:auto;
+	padding:6px;
+}
+
 .income-select {
 	margin-right:20px;
 }
@@ -22,10 +35,9 @@
     width: 38.65%;
 }
 
-/* .error  {
-	position:absolute;
-	left:0;
-} */
+.error  {
+	display:block;
+}
 
 .move-left {
 	margin-left:-12px;
@@ -75,6 +87,10 @@
 		text-align:center;
 		margin-right:0;
 		margin-top:15px;
+	}
+
+	label {
+		margin-bottom:0;
 	}
 }
 
