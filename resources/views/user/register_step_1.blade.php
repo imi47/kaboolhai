@@ -1,6 +1,8 @@
 @extends('user/master_layout2') 
 @section('data')
 
+<link rel="stylesheet" href="{{ $user_assets }}/css/style.css" />
+
 <style>
 
 html, body {
@@ -10,6 +12,14 @@ html, body {
 select {
   padding:5px;
   height:unset !important;
+}
+
+input, textarea {
+    border: 1px solid #dfdfdf;
+}
+
+select {
+	border: 1px solid #ccc;
 }
 
   #form-container {
@@ -168,6 +178,10 @@ select {
 
   
 </style>
+
+<script>
+	document.querySelector("#nav-wrapper nav").classList.remove('sticky-nav')
+</script>
 
 <div class="modal wow fadeInDown" id="myModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="false" >
 <div class="modal-dialog modal-lg" style="height: 700px; box-shadow: 0 4px 8px 0 rgba(0,0,0, 0.5), 0 6px 20px 0 rgba(0,0, 0, 0.5;);">

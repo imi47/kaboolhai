@@ -285,6 +285,39 @@
 <body>
 	<link rel="stylesheet" href="{{ $user_assets }}/css/muzamil.css" />
 
+	<style>
+		@media (max-width:932px) and (min-width:768px){
+			.searchcontainer input[type='text'] {
+				font-size:1.35vw;
+			}
+		}
+
+		@media (max-width:575px) {
+
+			.bg-orange.no-padding.wow {
+				padding:15px !important;
+			}
+		}
+
+		@media (max-width:520px) {
+			.top-searches-by div > a, tr.dosrch th a, .copyright {
+				font-size:2.9vw !important;
+			}
+		}
+
+		@media (max-width:768px) {
+			.copyright {
+				margin-left:12px;
+			}
+		}
+
+		/* @media (min-width: 576px) { */
+			footer + div .container:first-child {
+				max-width: unset !important;
+			}
+		/* } */
+	</style>
+
 	<!--  -->
 	<!-- navigation panel -->
 	<div class="wrapper" id='nav-wrapper'>
@@ -544,7 +577,7 @@
 	</div>
 	</div>
 	@endif
-	<footer>
+	<!-- <footer>
 		<section class="bg-orange no-padding wow" style="background-color:#ed6c05;">
 			<div class="container">
 				<div class="row padding-two sm-text-center">
@@ -689,14 +722,6 @@
 
 
 
-
-									<!-- <tr>
-                        <td class="flinks"><a href="#"> (PK): +92 423 570 0007</a></td>
-                    </tr>
-                    <tr>
-                        <td class="flinks"><a href="#">Phase 6 DHA Lahore Pakistan
-                        </a></td>
-                    </tr> -->
 									<tr>
 										<td><br></td>
 									</tr>
@@ -771,13 +796,194 @@
 							<div><a href="{{ url( 'canada') }}">CANADA Muslim Matrimony</a></div>
 					    </div>
 
-						<!-- scroll to top -->
-						<a href="javascript:;" class="scrollToTop"></a>
-					</div>
-					<!-- scroll to top End... -->
+						 scroll to top -->
+						<!-- <a href="javascript:;" class="scrollToTop"></a>
+					</div> -->
+					<!-- scroll to top End...
 
 
-	</footer>
+	</footer> -->
+
+
+
+	<footer>
+         <section class="bg-orange no-padding wow">
+            <div class="container">
+               <div class="row padding-two sm-text-center">
+                  <div class="col-md-9 no-padding">
+                     <h4 class="white-text font-weight-600" style="font-family:sans-serif;">Stay tuned for the launch of Best & Secure Matrimonial App!</h4>
+                     <p class="white-text" style="font-family:sans-serif;text-align:justify;">It has been our utmost desire to introduce an outstanding and easy to use matrimonial application for IOS and Android users. We have been working hard in this stance and are planning to come up with a user-friendly and secure Matrimonial App so that our users stay updated while on the go!</p>
+                     <p class="white-text" style="font-family:sans-serif;text-align:justify;">The app will be soon available for both Android and Apple iPhone users in the respective play stores. Stay tuned for the launch of our ‘Kabool Hai Matrimonial app’ as the early birds will be given early access and will get free subscription.</p>
+                  </div>
+                  <div class="col-md-3 padding-one no-padding-bottom">
+                     <a class="" href="#"><img src="{{ $user_assets }}/images/google-play.png" width="193" height="58"></a><br><br>
+                     <a class="" href="#"><img src="{{ $user_assets }}/images/apple-store.png" width="193" height="58"></a>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <div class="container-fluid footer-middle">
+            <div class="row">
+               <div class="col-md-2">
+                  <table>
+                     <tr>
+                        <th class="fhead">Kaboolhai</th>
+                     </tr>
+                     </tr>
+                     <tr>
+                        <td class="flinks"><a href="{{url('about-us')}}">About</a></td>
+                     </tr>
+                     <tr>
+                        <td class="flinks"><a href="http://kaboolhai.com/blog/" target="_blank">Blog</a></td>
+                     </tr>
+                     <tr>
+                        <td class="flinks"><a href="#">Download app</a></td>
+                     </tr>
+                     <tr>
+                        <td class="flinks"><a href="{{ url('term-condation') }}">Terms and Conditions</a></td>
+                     </tr>
+                     <tr>
+                        <td class="flinks"><a href="#">Testimonials</a></td>
+                     </tr>
+                     <tr>
+                        <td class="flinks"><a href="{{ url('policy-privacy') }}">Privacy Policy</a></td>
+                     </tr>
+                     <tr>
+                        <td class="flinks"><a href="{{ url('payment') }}">Payment</a></td>
+                     </tr>
+                  </table>
+               </div>
+               <div class="col-md-2">
+                  <table>
+                     <tr>
+                        <th class="fhead">Help & Support</th>
+                     </tr>
+                     <tr>
+                        <td class="flinks"><a href="{{ url('help-center') }}">24x7 Live help</a></td>
+                     </tr>
+                     <tr>
+                        <td class="flinks"><a href="{{ url('contact-us') }}">Contact Us</a></td>
+                     </tr>
+                     <tr>
+                        <td class="flinks"><a href="{{ url('feedback') }}">Feedback</a></td>
+                     </tr>
+                     <tr>
+                        <td class="flinks"><a href="{{ url('faqs') }}">FAQ'S</a></td>
+                     </tr>
+                     <tr>
+                        <td class="flinks"><a href="{{ url('payment') }}">Upgrade Account</a></td>
+                     </tr>
+                     <tr>
+                        <td class="flinks"><a href="{{ url('assisted-service') }}">Assisted Service</a></td>
+                     </tr>
+                     {{-- <tr>
+                        <td class="flinks"><a href="#">Payment</a></td>
+                     </tr> --}}
+                  </table>
+               </div>
+               <div class="col-md-2">
+                  <table>
+                     <tr>
+                        <th class="fhead">Search Profile</th>
+                     </tr>
+                     <tr>
+                        <td class="flinks">
+                           <a href="javascript:;" data-toggle="modal" data-target="#basic_search">Basic Search</a>
+                     </tr>
+                     <tr>
+                        <td class="flinks">
+                           <a href="javascript:;" data-toggle="modal" data-target="#advance_search">Advance Search</a>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="flinks">
+                           <a href="javascript:;" data-toggle="modal" data-target="#keyword_search">Keyword Search</a>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="flinks">
+                           <a href="javascript:;" data-toggle="modal" data-target="#job_search">occupational Search</a>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="flinks">
+                           <a href="javascript:;" data-toggle="modal" data-target="#edu_search">Educational</a>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="flinks">
+                           <a href="javascript:;" data-toggle="modal" data-target="#id_search">ID Search</a>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+               <div class="col-md-3">
+                  <table>
+                     <tr>
+                        <th class="fhead">Contact Us</th>
+                     </tr>
+                     <tr>
+                        <td class="flinks"><a href="#">contact@kaboolhai.com</a></td>
+                     </tr>
+                     <!-- <tr>
+                        <td class="flinks"><a href=""> (PK): +92 423 570 0007</a></td>
+                        </tr>
+                        <tr>
+                        <td class="flinks"><a href="">Phase 6 DHA Lahore Pakistan
+                        </a></td>
+                        </tr> -->
+                     <tr>
+                        <td><br></td>
+                     </tr>
+                     <tr>
+                        <td class="flinks"><a href="https://www.facebook.com/Saykaboolhai/" target="__blank"><i class="fa fa-facebook-square fa-3x"></i></a><a href="#"><i class="fa fa-youtube-square fa-3x"></i></a> <a href="https://twitter.com/kaboolhaitweet" target="__blank"><i class="fa fa-twitter-square fa-3x"></i></a><i class="fa fa-google-plus-square fa-3x"></i><i class="fa fa-linkedin-square fa-3x" style="color:white;"></i></a></td>
+                     </tr>
+                  </table>
+               </div>
+               <div class="col-md-3">
+                  <p class="fhead">Subscribe to Our Newsletters</p>
+                  <p class="subt">Never miss our special offers</p>
+                  <div class="searchcontainer">
+                     <form action="{{ url('subscribe') }}" method="post">
+                        {{ csrf_field() }}
+                        <input type="text" required="" class="form-control" style="height:44px;border-radius-left: 5%;" placeholder="Enter Your Email" name="search">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                     </form>
+                  </div>
+                  <div class="paymg">
+                     <img alt="" src="{{ $user_assets }}/payment-methods.png" />
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-12" style="padding-top:50px;">
+                  <table>
+                     <tr>
+                        <p style="color:#ffffff">Top Searches by:</p>
+                     </tr>
+                      <tr class="tpsrch">
+                       <th><a href="{{ url('pakistani') }}">Pakistani Muslim Matrimony</a></th>
+                        <th><a href="{{ url('UAE') }}">UAE Muslim Matrimony</a></th>
+                        <th><a href="{{ url('United-Kingdom') }}">United Kingdom Muslim Matrimony</a></th>
+                        <th><a href="{{ url('USA') }}">USA Muslim Matrimony Muslim Matrimony</a></th>
+                        <th><a href="{{ url('canada') }}" style="border:none;">CANADA Muslim Matrimony</a></th>
+                    </tr>
+                  </table>
+               </div>
+            </div>
+
+            <div class="top-searches-by">
+              <div><a href="{{ url( 'pakistani') }}">Pakistani Muslim Matrimony</a></div>
+              <div><a href="{{ url( 'UAE') }}">UAE Muslim Matrimony</a></div>
+              <div><a href="{{ url( 'United-Kingdom') }}">United Kingdom Muslim Matrimony</a></div>
+              <div><a href="{{ url( 'USA') }}">USA Muslim Matrimony Muslim Matrimony</a></div>
+              <div><a href="{{ url( 'canada') }}">CANADA Muslim Matrimony</a></div>
+					 </div>
+            <!-- scroll to top -->
+            <a href="javascript:;" class="scrollToTop"></a>
+         </div>
+         <!-- scroll to top End... -->
+      </footer>
 	</section>
 	<div style="width:100%;background-color:#222;">
 		<div class="container">
@@ -787,10 +993,10 @@
 						<tr class="dosrch">
 							<th><a href="#" style="color: white; font-weight: normal; padding: 0px 5px;
     font-size: 14px;">Terms
-									|</a></th>
+									</a></th>
 							<th><a href="#" style="color: white; font-weight: normal; padding: 0px 5px;
     font-size: 14px;">Privacy
-									Policy |</a></th>
+									Policy</a></th>
 							<th><a href="{{ url('sitemap') }}" style="border:none; color: white; font-weight: normal; padding: 0px 5px;
     font-size: 14px;">Site
 									Map </a></th>
@@ -799,7 +1005,7 @@
 				</div>
 
 				<div class="col-md-6">
-					<p class="pull-right" style="color:#ffffff;">&copy;2018 Kaboolhai. All rights reserved. Powered By
+					<p class="pull-right copyright" style="color:#ffffff;">&copy;2018 Kaboolhai. All rights reserved. Powered By
 						<a style="color:white;" href="https://www.ranglerz.com/" target="_blank">Ranglerz</a></p>
 				</div>
 			</div>

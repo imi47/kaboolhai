@@ -1,5 +1,8 @@
 @extends('user/master_layout2') 
 @section('data') 
+
+<link rel="stylesheet" href="{{ $user_assets }}/css/style.css" />
+
 <style>
 .test{
   color: black;

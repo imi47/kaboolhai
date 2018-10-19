@@ -1,6 +1,8 @@
 @extends('user/master_layout2') 
 @section('data') 
 
+<link rel="stylesheet" href="{{ $user_assets }}/css/style.css" />
+
 <style>
 	input {
 		padding:15px !important;
@@ -10,36 +12,48 @@
 		width:100%;
 	}
 
+	input[type='checkbox'], input[type='radio'] {
+		width:auto !important;
+	}
+
 	.midlinput {
     height: 27px;
     width: 20.8%;
 }
 
-	select {
-		padding:6px !important;
-		height:unset !important;
-	}
+input, textarea {
+    border: 1px solid #dfdfdf;
+}
 
-	input[type='number'], input[type='text']:not(.midlinput) , .allselects {
-		width:69%;
-	}
+select {
+	border: 1px solid #ccc;
+}
 
-	.half-width {
-		width:35%;
-	}
+select {
+	padding:6px !important;
+	height:unset !important;
+}
 
-	.half-width + span input, .half-width + select {
-		width:32.5%;
-	}
+input[type='number'], input[type='text']:not(.midlinput) , .allselects {
+	width:69%;
+}
 
-	.form_area .row {
-		margin-bottom:10px;
-	}
+.half-width {
+	width:35%;
+}
 
-	input[type=number]::-webkit-inner-spin-button, 
-	input[type=number]::-webkit-outer-spin-button { 
-	-webkit-appearance: none; 
-		margin: 0; 
+.half-width + span input, .half-width + select {
+	width:32.5%;
+}
+
+.form_area .row {
+	margin-bottom:10px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+-webkit-appearance: none; 
+	margin: 0; 
 }
 
 @media (max-width:991px) {
@@ -100,12 +114,16 @@
 		width:100% !important;
 		margin-bottom:5px;
 	}
+	.searchcontainer button {
+		padding: 13px 16px;
+    	margin-top: -57px;
+	}
 }
 
 .error {
 	position:absolute;
 	left:15px;
-	top:-15px;
+	top:-19px;
 	margin:0 !important;
 }
 
@@ -113,7 +131,32 @@ label {
 	margin-bottom:15px;
 }
 
+.sidebar h3.text-center {
+    font-size: 1.54rem;
+    padding: 10px;
+}
+
+.searchcontainer input[type='text'] {
+	width:86%;
+}
+
+.bg-orange.no-padding.wow {
+	margin-top:50px;
+	padding:10px;
+}
+
+@media (max-width:767px) {
+	.searchcontainer input[type='text'] {
+		width:94%;
+	}
+}
+
+
 </style>
+
+<script>
+	document.querySelector("#nav-wrapper nav").classList.remove('sticky-nav')
+</script>
 
 <div class="container">
 <div id="wait" style="display: none;"></div>

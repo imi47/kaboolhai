@@ -1,10 +1,26 @@
 @extends('user/master_layout2') 
 @section('data')
+
+<link rel="stylesheet" href="{{ $user_assets }}/css/style.css" />
+
 <style type="text/css">
-	.living_scroll{
-		overflow-y: scroll;
-		height: 300px;
-	}
+
+input, textarea {
+    border: 1px solid #dfdfdf;
+}
+
+input[type='checkbox'], input[type='radio'] {
+	width:auto !important;
+}
+
+select {
+	border: 1px solid #ccc;
+}
+
+.living_scroll{
+	overflow-y: scroll;
+	height: 300px;
+}
 
 .allselects {
    width: 83%;
@@ -18,7 +34,7 @@ label {
 	margin-bottom:20px;
 }
 
-.allselects, .smallselect {
+.allselects, .smallselect, .midlinput {
 	height:auto;
 	padding:6px;
 }
@@ -95,12 +111,16 @@ label {
 }
 
 @media (max-width:345px) {
-	#advanceinfo,  #advanceinfo select{
+	#advanceinfo,  #advanceinfo select, .radiyn{
 		font-size:4vw;
 	}
 
 	.sechead {
 		padding:5px;
+	}
+
+	.allselects, .smallselect, .midlinput {
+		padding:0.5vw !important;
 	}
 }
 
@@ -109,11 +129,38 @@ label {
 		width: 83% !important;
 	}
 }
+
+.sidebar h3.text-center {
+    font-size: 1.54rem;
+    padding: 10px;
+}
+
+.bg-orange.no-padding.wow {
+	margin-top:50px;
+	padding:10px;
+}
+
+.sidebar .well {
+	min-height: 20px;
+	padding: 19px;
+	/* background-color: #f5f5f5; */
+	border: 1px solid #e3e3e3;
+	/* border-radius: 4px; */
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+
 </style>
+
+<script>
+	document.querySelector("#nav-wrapper nav").classList.remove('sticky-nav');
+</script>
+
 <div class="container">
 <div id="wait" style="display: none;"></div>
 <br>
-<div class="row">
+<div class="row form-and-sidebar-container">
 {{-- @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
