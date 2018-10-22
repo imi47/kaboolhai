@@ -1,6 +1,7 @@
 @extends('user/user_master_layout1') 
 @section('data') 
 <style type="text/css">
+
   .greenpartnercolor{
     color: green;
   }

@@ -2,6 +2,28 @@
 @section('data')
 
 <style>
+  .main-section {
+    width:420px;
+  }
+
+  .main-section .arrow_button {
+    margin-left:-21px;
+  }
+
+  #bb img {
+    margin-top: 14px;
+  }
+
+  .emojiPicker {
+    left: 19px !important;
+  }
+
+  .emojiPickerIcon.black {
+    height: 37px !important;
+    width: 37px !important;
+    top: 7px !important;
+  }
+
 .fa-google-plus-square, .fa-linkedin-square {
     font-size:3.85rem;
   }

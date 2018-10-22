@@ -97,15 +97,26 @@
 
 
       <div class="col-md-9">
-        <div class="well" style="box-shadow: none;">
-          <div class="about_text">
+        <!-- <div class="well" style="box-shadow: none;"> -->
+          <!-- <div class="about_text">
             <h1 class="bigheading">About Us</h1>
             <p class="ptext">Kaboolhai is a match making website. You might find many matrimonial websites out there but most of them are unable to provide you with the right match within the Muslim community.  Another commonly used way of finding a life partner by families is through female match makers or the marriage bureaus who are sitting out there looting innocent people. Their sole purpose is to take money from helpless clients and at the end nothing fruitful comes up for the victims. These people charge high fees for introducing people with only one or two families and most of the time the families have nothing in common among them.</p>
             <p class="ptext">Kaboolhai.com is a matrimonial site of its kind. Our clients have access to unlimited profiles that are uploaded on the site. You can connect will people who match your interests and then carry on with further proceedings. We have no hidden dilemmas. Everything is crystal clear and easy to handle. Our services are available 24/7. Although our clients have easy access to different profiles, yet our team makes sure and investigates properly each and everything about the other party before opening the profile of the potential member. The detailed information about the potential member is only visible after our team is satisfied. The pictures of the members are hidden and can only be seen by the other members once they have approved by the owner. Your phone number or email address can also be seen by the other party only if you allow it. In case anyone uses vulgar or derogatory remarks in the messages, they are at once blocked by our team. So, our website is totally private and secure for all the members and it is our utmost priority that all your personal details are in perfect lock and key.</p> 
             <h3 class="smallhead">Our Aim and CEO’S message</h3><br>
             <p class="ptext">Our basic aim is to provide suitable proposals for you, your daughter/son or any family member in the vicinity of your homes. We make sure that we can save you from the marriage match maker aunties and provide proper and true information about the matches we have in store on our site. It is a special instruction to our female candidates to not give out their information to anyone or chat with the other members without the presence of their guardians. This act will not only keep you safe but your parents or guardians will also be a part of this and their blessings are there too. It is a request that all the members please keep in mind the sanctity of this precious bond that is marriage. We pray whole heartedly that everyone finds a perfect match from our matrimonial site and enjoy the most loving bond of marriage! Ameen!</p> 
-          </div> 
-        </div>
+          </div>  -->
+
+           <div class="panel panel-default">
+             <div class="panel-heading text-center">
+               <h3>About Us</h3>
+           </div>
+     </div>
+     <p>Kaboolhai is a match making website. You might find many matrimonial websites out there but most of them are unable to provide you with the right match within the Muslim community.  Another commonly used way of finding a life partner by families is through female match makers or the marriage bureaus who are sitting out there looting innocent people. Their sole purpose is to take money from helpless clients and at the end nothing fruitful comes up for the victims. These people charge high fees for introducing people with only one or two families and most of the time the families have nothing in common among them.</p>
+     <p>Kaboolhai.com is a matrimonial site of its kind. Our clients have access to unlimited profiles that are uploaded on the site. You can connect will people who match your interests and then carry on with further proceedings. We have no hidden dilemmas. Everything is crystal clear and easy to handle. Our services are available 24/7. Although our clients have easy access to different profiles, yet our team makes sure and investigates properly each and everything about the other party before opening the profile of the potential member. The detailed information about the potential member is only visible after our team is satisfied. The pictures of the members are hidden and can only be seen by the other members once they have approved by the owner. Your phone number or email address can also be seen by the other party only if you allow it. In case anyone uses vulgar or derogatory remarks in the messages, they are at once blocked by our team. So, our website is totally private and secure for all the members and it is our utmost priority that all your personal details are in perfect lock and key.</p> 
+            <h2>Our Aim and CEO’S message</h2><br>
+            <p>Our basic aim is to provide suitable proposals for you, your daughter/son or any family member in the vicinity of your homes. We make sure that we can save you from the marriage match maker aunties and provide proper and true information about the matches we have in store on our site. It is a special instruction to our female candidates to not give out their information to anyone or chat with the other members without the presence of their guardians. This act will not only keep you safe but your parents or guardians will also be a part of this and their blessings are there too. It is a request that all the members please keep in mind the sanctity of this precious bond that is marriage. We pray whole heartedly that everyone finds a perfect match from our matrimonial site and enjoy the most loving bond of marriage! Ameen!</p> 
+
+        <!-- </div> -->
       </div>
 
       

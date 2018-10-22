@@ -215,6 +215,12 @@
       text-transform:capitalize;
   }
 
+  @media (min-width:641px) {
+    .text-bar .emojiPickerIconWrap input {
+        padding:10px;
+    }
+  }
+
 </style>
  
       <div id="home"></div>

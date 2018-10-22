@@ -14,6 +14,28 @@
    clear: both;
   }
 
+  .main-section {
+    width:420px;
+  }
+
+  .main-section .arrow_button {
+    margin-left:-21px;
+  }
+
+  #bb img {
+    margin-top: 13px;
+  }
+
+  .emojiPicker {
+    left: 19px !important;
+  }
+
+  .emojiPickerIcon.black {
+    height: 37px !important;
+    width: 37px !important;
+    top: 6px !important;
+  }
+
   .form-control {
     width: 200px !important;
   }

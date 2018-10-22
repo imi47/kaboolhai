@@ -7,6 +7,28 @@
    <link rel="stylesheet" href="{{ $user_assets }}/css/advance-profile.css" />
 
    <style type="text/css">
+    .main-section {
+    width:420px;
+  }
+
+  .main-section .arrow_button {
+    margin-left:-21px;
+  }
+
+  #bb img {
+    margin-top: 14px;
+  }
+
+  .emojiPicker {
+    left: 19px !important;
+  }
+
+  .emojiPickerIcon.black {
+    height: 37px !important;
+    width: 37px !important;
+    top: 7px !important;
+  }
+
    .add-margin {
      margin:10px;
    }
