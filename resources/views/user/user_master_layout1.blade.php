@@ -524,10 +524,11 @@
                 <li class="dropdown">
                   <a class="dropdown-toggle menudesign" data-toggle="dropdown" href="#">Go More <span class="caret"></span></a>
                   <ul class="dropdown-menu go_more " style="background-color: #ffffff;">
-                    {{-- <li><a href="{{ url('edit-profile',user_data()->id) }}" style="background-color: #ffffff; color: black !important;">Edit
-                        Profile</a></li> --}}
-                    <li><a href="{{ url('manage-profile') }}" style="background-color: #ffffff; color: black !important;">Edit
-                        Profile</a></li>
+                    <!-- {{-- <li><a href="{{ url('edit-profile',user_data()->id) }}" style="background-color: #ffffff; color: black !important;">Edit
+                        Profile</a></li> --}} -->
+                    <li><a href="{{ url('manage-profile') }}" class="menudesign" style='color:black;'>Manage Profile</a></li>
+                    <!-- <li><a href="{{ url('manage-profile') }}" style="background-color: #ffffff; color: black !important;">Manage
+                        Profile</a></li> -->
 
 
                     <li><a href="{{ url('my-photo') }}" style="background-color: #ffffff; color: black !important;">My
@@ -877,7 +878,8 @@
       <span>&times</span>
       @if(Session::get('user_id'))
       <ul>
-      <li><a href="{{ url('edit-profile',user_data()->id) }}">Edit Profile</a></li> 
+      <!-- <li><a href="{{ url('edit-profile',user_data()->id) }}">Edit Profile</a></li>  -->
+      <li><a href="{{ url('manage-profile') }}" class="menudesign">Manage Profile</a></li>
       <li><a href="{{ url('my-photo') }}">My Photos</a></li>
       <li><a href="{{ url('favourite-list') }}">My
                         Favourite</a></li>

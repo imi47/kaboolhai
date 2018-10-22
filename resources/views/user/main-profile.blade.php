@@ -45,6 +45,13 @@
 .social_icon {
   text-align:center;
 }
+
+@media (max-width:1357px) {
+  .navbar-form.navbar-right {
+    display:none;
+  }
+}
+
 @media (max-width:991px) and (min-width:768px) {
     .profile_stat.hvr-grow a img {
       width:180px !important;

@@ -572,8 +572,8 @@
           <li><a href="{{ url('sent-items') }}" class="menudesign">Sent Items</a></li>
           <li><a href="{{ url('blocked-list') }}" class="menudesign">Block List</a></li>
 
-          {{-- <li><a href="{{ url('edit-profile',user_data()->id) }}" class="menudesign">Edit Profile</a></li> --}}
-          <li><a href="{{ url('manage-profile') }}" class="menudesign">Edit Profile</a></li>
+          <!-- {{-- <li><a href="{{ url('edit-profile',user_data()->id) }}" class="menudesign">Edit Profile</a></li> --}} -->
+          <li><a href="{{ url('manage-profile') }}" class="menudesign">Manage Profile</a></li>
 
           <li><a href="{{ url('my-photo') }}" class="menudesign">My Photos</a></li>
 
@@ -915,7 +915,8 @@
       <span>&times</span>
       
       <ul>
-      <li><a href="{{ url('edit-profile',user_data()->id) }}">Edit Profile</a></li> 
+      <!-- <li><a href="{{ url('edit-profile',user_data()->id) }}">Edit Profile</a></li>  -->
+      <li><a href="{{ url('manage-profile') }}" class="menudesign">Manage Profile</a></li>
       <li><a href="{{ url('my-photo') }}">My Photos</a></li>
       <li><a href="{{ url('favourite-list') }}">My
                         Favourite</a></li>
