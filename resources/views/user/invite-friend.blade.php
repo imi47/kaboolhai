@@ -6,10 +6,6 @@
   height:auto !important;
 }
 
-.emojiPicker .active {
-  height:auto;
-}
-
   tr.dosrch th a {
       font-size:14px;
     }

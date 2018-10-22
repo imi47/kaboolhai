@@ -25,7 +25,16 @@
 <style>
 	html {
         overflow-x:hidden;
-    }
+	 }
+	 
+	 .sticky-nav .navbar-nav > li > .dropdown-menu {
+   	 right: 38px;
+}
+
+.dropdown-menu {
+    min-width: 144px;
+    padding: 5px 15px 6px;
+}
 
     @media (max-width:1200px) {
 
