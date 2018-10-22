@@ -27,6 +27,18 @@
         overflow-x:hidden;
 	 }
 	 
+	 .imgwithh2 {
+		 width:3%;
+		 top:-4px;
+	 }
+
+	 .how-to-discover {
+		 display:inline;
+		 font-size:21px !important;
+	 }
+
+
+	 
 	 .sticky-nav .navbar-nav > li > .dropdown-menu {
    	 right: 38px;
 }
@@ -102,7 +114,13 @@
 
         #our-partners-section {
            overflow:hidden;
-        }
+		  }
+		  
+		  .container.responsive-screen {
+			margin-top:40px;
+			padding-top:40px;
+			border-top:2px solid #EEE8F9;
+	 	}
     }
 
     @media (max-width:660px) {
@@ -200,7 +218,7 @@
 							<div class="seeking-form">
 								<h1 class=" lightblue-text big text-center no-letter-spacing" style="font-family:sans-serif;">Search
 									Now<span style="color:#ed6c05; font-weight:bold"> Its Free </span></h1>
-								<h4 class="lightblue-text text-center">Search your ideal life partner through: Location
+								<h4 class="lightblue-text text-center" style='margin: auto 14px;'>Search your ideal life partner through: Location
 									| Lifestyle | Profession | Choices.</h4>
 
 								<form method="get" class="padding-three" action="{{ url('user-search') }}">
@@ -461,9 +479,8 @@
 	<div class="container ">
 		<div class="row">
 			<div class="col-lg-7">
-				<h1 style="font-family:sans-serif;font-size:26px;" class=" blue-text font-weight-500 text-transform-none margin-four-bottom"><img
-					 class="imgwithh2" src="{{ $user_assets }}/images/puzzle.png" /> HOW TO DISCOVER THE PERFECT
-					MATCH</h1>
+			<img class="imgwithh2" src="{{ $user_assets }}/images/puzzle.png" /> 
+				<h1 style="font-family:sans-serif;font-size:26px;" class=" blue-text font-weight-500 text-transform-none margin-four-bottom how-to-discover">HOW TO DISCOVER THE PERFECT MATCH</h1>
 				<p style="font-family:sans-serif;"><strong>"And of His signs is that He has created spouses for
 						yourselves from your own selves so you might take comfort in them and He has created love and
 						mercy among both of you. In this there is evidence (of the truth) for the people who
@@ -481,7 +498,7 @@
 				<p style="font-family:sans-serif;">The following steps will help you find the person you have been
 					waiting for all your life</p>
 			</div>
-			<div class="col-lg-5 destop-show wow slideInRight " style="transition-timing-function:ease;transition-delay:0.25s;">
+			<div class="col-lg-5 destop-show wow slideInRight" style="transition-timing-function:ease;transition-delay:0.25s;">
 				<div class="axat_img1"><img src="{{ $user_assets }}/images/home04.png">
 					<h2 class="text-line2 alt-font"><strong style="font-family:sans-serif;">Introduce Yourself</strong></h2>
 					<p style="margin: 0 25px;font-family:sans-serif;">The first step is to create a profile of the

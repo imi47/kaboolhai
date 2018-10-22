@@ -29,6 +29,22 @@
 		border: 2px solid #ddd;
 	}
 
+	@media (max-width:500px) {
+		#navsidebare {
+			width:100%;
+		}
+
+		#navsidebare #cross{
+			position:absolute;
+			right:5px;
+			top:5px;
+		}
+	}
+
+	.well .btn {
+		margin: 25px auto;
+	}
+
 		.top-searches-by div > a {
 			color:#fff !important;
 		}
@@ -69,14 +85,14 @@
 		}
 
 		@media (max-width:420px) {
-			.logo {
+			/* .logo {
 				display:none;
-			}
+			} */
 			
-			.logo-mobile {
+			/* .logo-mobile {
 				display:block;
 				width:40px;
-			}
+			} */
 
 			.shrink-nav .logo-light {
 				opacity:1 !important;
@@ -138,8 +154,16 @@
       }
 
       .navbar-toggle .icon-bar {
-        background-color:#fff !important;
-      }
+		  background-color:#fff !important;
+		  height:3px !important;
+		}
+
+		.navbar-toggle {
+			background:none !important;
+			border: 1px solid #fff !important;
+			border-radius:5px !important;
+		}
+	
 
 		#username {
 			color:#fff;
@@ -453,9 +477,9 @@
 						<img alt="" src="{{ $user_assets }}/db_images/KH-logo2.png" class="logo-mobile" />
 						<img alt="" src="{{ $user_assets }}/images/kaboolhai.png" class="logo" />
 					</a>
-					<a class="logo-dark" href="{{ url('/') }}">
+					<!-- <a class="logo-dark" href="{{ url('/') }}">
 						<img alt="" src="{{ $user_assets }}/images/kaboolhai.png" class="logo" />
-					</a>
+					</a> -->
 				</div>
 				<!-- end logo -->
 				<!-- search and cart  -->

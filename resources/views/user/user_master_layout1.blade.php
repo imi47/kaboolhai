@@ -34,6 +34,18 @@
       height:100% !important;
       position:fixed !important;
     }
+
+    @media (max-width:500px) {
+		#navsidebare {
+			width:100%;
+		}
+
+		#navsidebare #cross{
+			position:absolute;
+			right:5px;
+			top:5px;
+		}
+	}
     
     .label {
       display: none;
@@ -43,14 +55,14 @@
 		}
 
 		@media (max-width:420px) {
-			.logo-light, .logo-dark {
+			/* .logo-light, .logo-dark {
 				display:none !important;
 			}
 			
 			.logo-mobile {
 				display:block;
 				width:40px;
-      }
+      } */
       
       #logo-div {
         margin-top:6px;
