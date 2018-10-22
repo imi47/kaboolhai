@@ -19,10 +19,6 @@
      margin-top:53px;
    }
 
-   .emojiPicker{
-    
-   height: 0px !important;
-   }
    .li-image img{
 
      border-radius: 50%; width: 80px; height: 80px;

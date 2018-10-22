@@ -6,6 +6,10 @@
         color:#000;
     } */
 
+    .main-section {
+        z-index:9999;
+    }
+
     #navsidebare a, #sidebar-2 a {
         text-transform:none;
     }

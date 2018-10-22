@@ -1,8 +1,6 @@
 @extends('user/master_layout') 
 @section('data')
 
-  <link rel="icon shortcut" href="{{ $user_assets }}/block.png">
-
   <style>
   /* html, body {
     width:100vw;
