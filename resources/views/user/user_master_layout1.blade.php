@@ -44,7 +44,13 @@
 			right:5px;
 			top:5px;
 		}
-	}
+    
+    .logo-light img, .logo-dark img {
+      width: 34vw;
+      margin-bottom: 5px;
+    }
+       
+    }
     
     .label {
       display: none;

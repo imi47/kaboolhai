@@ -28,9 +28,9 @@
 	 }
 	 
 	 .imgwithh2 {
-		width: 2.25%;
-		top: -3px;
-}
+		width: 16px;
+    	top: -4px;
+	}
 
 	 .how-to-discover {
 		 display:inline;
