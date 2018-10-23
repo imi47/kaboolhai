@@ -49,6 +49,11 @@
       width: 34vw;
       margin-bottom: 5px;
     }
+
+   #sidebar-2 {
+     width:100% !important;
+   }
+
        
     }
     
@@ -102,7 +107,8 @@
       height:100%;
       width:260px;
       position:fixed;
-      right:-260px;
+      /* right:-260px; */
+      right:-2000px;
       transition:500ms;
       z-index:999999;
       overflow:scroll;
@@ -1014,7 +1020,8 @@
         $("#sidebar-2").css('right', '0');
       });
       $('#sidebar-2 span').click(function(){
-        $('#sidebar-2').css('right', '-260px');
+        // $('#sidebar-2').css('right', '-260px');
+        $('#sidebar-2').css('right', '-2000px');
         $('#btntoshowmenu').show();
       });
 

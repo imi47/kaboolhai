@@ -12,15 +12,11 @@ html, body {
 select {
   padding:0px;
   height:27px !important;
-}
-
-input, textarea {
-    border: 1px solid #888;
-}
-
-select {
-  border: 1px solid #999;
   background-color:#eee;
+}
+
+input, textarea, select {
+    border: 1px solid #a2a2a2;
 }
 
   #form-container {

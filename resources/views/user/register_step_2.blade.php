@@ -4,12 +4,13 @@
 <link rel="stylesheet" href="{{ $user_assets }}/css/style.css" />
 
 <style>
-	input {
-		padding:15px !important;
-	}
 
 	textarea {
 		width:100%;
+	}
+
+	.error {
+		font-size:12px !important;
 	}
 
 	input[type='checkbox'], input[type='radio'] {
@@ -21,17 +22,14 @@
     width: 20.8%;
 }
 
-input, textarea {
-    border: 1px solid #dfdfdf;
+input, textarea, select {
+    border: 1px solid #a2a2a2;
 }
 
 select {
-	border: 1px solid #ccc;
-}
-
-select {
-	padding:6px !important;
-	height:unset !important;
+  padding:0px;
+  height:27px !important;
+  background-color:#eee;
 }
 
 input[type='number'], input[type='text']:not(.midlinput) , .allselects {

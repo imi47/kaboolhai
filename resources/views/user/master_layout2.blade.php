@@ -33,6 +33,10 @@
 			right:5px;
 			top:5px;
 		}
+
+		#sidebar-2 {
+      	width:100% !important;
+    	}
 	}
 
 	 #navsidebare {

@@ -13,10 +13,6 @@ input[type='checkbox'], input[type='radio'] {
 	width:auto !important;
 }
 
-select {
-	border: 1px solid #ccc;
-}
-
 .living_scroll{
 	overflow-y: scroll;
 	height: 300px;
@@ -26,8 +22,14 @@ select {
    width: 83%;
 }
 
-input[type='text'] {
-	padding:15px;
+select {
+  padding:0px;
+  height:27px !important;
+  background-color:#eee;
+}
+
+input, textarea, select {
+    border: 1px solid #a2a2a2;
 }
 
 label {
@@ -36,7 +38,6 @@ label {
 
 .allselects, .smallselect, .midlinput {
 	height:auto;
-	padding:6px;
 }
 
 .income-select {
@@ -53,6 +54,8 @@ label {
 
 .error  {
 	display:block;
+	margin-top:-11px;
+	font-size:12px !important;
 }
 
 .move-left {

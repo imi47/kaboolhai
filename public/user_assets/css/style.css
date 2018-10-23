@@ -5834,3 +5834,7 @@ li a.M:hover
     /*background-color: orange;*/
     padding: 3px 10px !important;
 }
+
+input[type='checkbox'] {
+    width:auto;
+}
