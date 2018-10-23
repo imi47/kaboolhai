@@ -110,23 +110,51 @@
 					width:200px !important;
 				}
 
-				.box_body, .txt_fetched {
-					font-size:2.75vw;
+				
+
+				.in_box_brdr {
+					margin-top:10px;
+				}
+
+				.in_box_brdr {
+					margin-bottom:20px;
+				}
+
+				#profile .box_txt_lb {
+					display:block;
+				}
+
+				#profile .txt_fetched, #profile .self, #profile .self1 {
+					float:none;
 				}
 				
 				#btn {
-				display:block !important;
-				width:100% !important;
-				text-align:center;
-				margin-bottom:15px;
+					display:block !important;
+					width:100% !important;
+					text-align:center;
+					margin-bottom:15px;
 				}
 
 				.container1 {
 					padding-bottom:120px;
 				}
 
-				.box_body, .box_header {
+				.box_header {
 					padding-left:0;
+				}
+
+				.box_body {
+					padding-left:15px;
+				}
+
+				.txt_fetched, .self, .self1 {
+					margin-left:23px;
+				}
+		 }
+
+		 @media (max-width:360px) {
+			.box_body, .txt_fetched {
+					font-size:3.6vw;
 				}
 		 }
 
