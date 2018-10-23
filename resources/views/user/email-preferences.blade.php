@@ -20,6 +20,16 @@
 		.sticky-nav .navbar-nav > li > .dropdown-menu {
       top:60px !important;
   }
+
+	.nav-white.sticky-nav .navbar-nav li a, .nav-white.sticky-nav .navbar-nav li a {
+		margin-top:6px;
+	}
+
+	#username-dropdown-toggle .dropdown-toggle {
+		margin-top:1px;
+	}
+
+	
 }
 
 @media (max-width: 768px) {

@@ -9,6 +9,10 @@ html, body {
   overflow-x:hidden;
 }
 
+.sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
+    width: 500px !important;
+}
+
 footer .footer-middle {
   margin-left:10px;
   margin-right:10px;
@@ -140,6 +144,14 @@ footer .footer-middle {
         top:47px !important;
 
       }
+
+      #friends-dropdown, #messages-dropdown, #notifications-dropdown {
+        margin-top: 5px !important;
+    }
+
+    #username-dropdown-toggle .dropdown-toggle {
+      margin-top:-3px;
+    }
    }
 
    @media (min-width:991px) {
@@ -167,6 +179,10 @@ footer .footer-middle {
     .bg-orange.no-padding.wow .row {
       margin-left:10px;
       margin-right:10px;
+    }
+
+    #username-dropdown-toggle .dropdown-toggle {
+      margin-top:5px;
     }
   }
 

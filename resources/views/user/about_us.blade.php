@@ -58,6 +58,51 @@
     .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
       top:55px !important;
     }
+
+    #username-dropdown-toggle ul.dropdown-menu {
+        top:58px !important;
+      }
+
+      .nav-white.sticky-nav .navbar-nav li a:hover, .nav-white.sticky-nav .navbar-nav > .open > a {
+        display:block;
+      }
+
+       .nav-white.sticky-nav .navbar-nav > .open > a {
+        padding-right:14px;
+      }
+
+      .nav-white.sticky-nav .navbar-nav li a:hover, .nav-white.sticky-nav .navbar-nav li a:hover {
+        padding-right:0;
+      }
+
+      #username-dropdown-toggle  a {
+        padding-right: 15px;
+        padding-top: 10px;
+      }
+
+      #username-dropdown-toggle a {
+        display:inline !important;
+        padding-bottom:10px !important;
+      }
+
+      #username-dropdown-toggle ul.dropdown-menu {
+        text-align:left !important;
+      }
+
+       .nav-white.sticky-nav .navbar-nav li a, .nav-white.sticky-nav .navbar-nav li a{
+         padding-right:14px !important;
+       }
+
+      .nav-white.sticky-nav .navbar-nav li a:hover, .nav-white.sticky-nav .navbar-nav li a:hover {
+       padding-right: 14px !important;
+    }
+
+    #username-dropdown-toggle .dropdown-toggle {
+      margin-top: 3px;
+      padding-bottom: 12px !important;
+      padding-top: 10px !important;
+}
+    
   }
 
   @media (max-width:768px) {

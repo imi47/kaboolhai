@@ -22,6 +22,12 @@
     .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu,  #username-dropdown-toggle ul.dropdown-menu  {
         top:60px !important;
       }
+
+      #username-dropdown-toggle .dropdown-toggle {
+        display: inline !important;
+        margin-top: 0px !important;
+        padding-top: 12px !important;
+    }
 }
 
  @media (max-width:768px) {

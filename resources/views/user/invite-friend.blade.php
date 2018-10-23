@@ -35,6 +35,25 @@
       #username-dropdown-toggle ul.dropdown-menu {
         top:58px !important;
       }
+
+      .navbar-nav {
+        margin-top:2px;
+      }
+      
+      .nav-white.sticky-nav .navbar-nav > .open > a {
+        margin-top: -15px;
+        padding-top: 14px;
+      }
+
+      .nav-white.sticky-nav .navbar-nav > .open > a {
+        margin-top:-12px;
+      }
+
+      #username-dropdown-toggle .dropdown-toggle {
+        padding-top: 9px !important;
+        display: inline !important;
+      }
+      
     }
 
     @media (min-width:991px) {

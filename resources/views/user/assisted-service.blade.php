@@ -51,7 +51,7 @@
             margin-bottom:-15px !important;
         }
         .humburger {
-            margin-top:13px !important;
+            margin-top:8px !important;
         }
 
         html, body {
@@ -70,6 +70,36 @@
         .sticky-nav .navbar-nav > li > .dropdown-menu {
             top:40px !important;
 
+        }
+
+         #username-dropdown-toggle {
+          margin-top:2px !important;
+        }
+
+      #username-dropdown-toggle ul.dropdown-menu {
+        top:58px !important;
+      }
+
+      .navbar-nav {
+        margin-top:2px;
+      }
+      
+      .nav-white.sticky-nav .navbar-nav > .open > a {
+        margin-top: -15px;
+        padding-top: 14px;
+      }
+
+      .nav-white.sticky-nav .navbar-nav > .open > a {
+        margin-top:-12px;
+      }
+
+      #username-dropdown-toggle .dropdown-toggle {
+        padding-top: 9px !important;
+        display: inline !important;
+      }
+
+      .navbar-nav {
+        margin-top: 5px;
         }
     }
 
@@ -97,9 +127,6 @@
         #friends-dropdown, #messages-dropdown, #notifications-dropdown {
             margin-top:12px !important;
             margin-bottom:-12px !important;
-        }
-        .humburger {
-            margin-top:7px !important;
         }
 
         .arrow-boxdiv#loading, .topboxstrip, .stripdisplay, .arrow-box {

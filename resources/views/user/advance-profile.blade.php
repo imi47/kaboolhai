@@ -38,6 +38,13 @@
   .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
       top:55px !important;
     }
+
+    .nav-white.sticky-nav .navbar-nav > .open > a {
+      padding-right: 14px;
+      padding-bottom: -2px;
+      margin-top: 2px;
+      padding-top: 0;
+  }
 }
 
   @media (max-width:716px) {

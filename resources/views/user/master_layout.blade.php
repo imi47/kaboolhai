@@ -43,6 +43,17 @@
    clear: both;
   }
 
+  @media (max-width:500px) {
+		#navsidebare {
+			width:100%;
+		}
+ 		#navsidebare #cross{
+			position:absolute;
+			right:5px;
+			top:5px;
+		}
+	}
+
   #navsidebare {
     height:100% !important;
     position:fixed !important;

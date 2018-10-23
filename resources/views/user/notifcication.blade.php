@@ -32,6 +32,48 @@ tr.dosrch th a {
     #username-dropdown-toggle ul.dropdown-menu {
         top:58px !important;
       }
+
+       .nav-white.sticky-nav .navbar-nav > .open > a {
+        padding-right:14px;
+      }
+
+      #username-dropdown-toggle a {
+        display:inline !important;
+        padding-bottom:10px !important;
+      }
+
+      #username-dropdown-toggle ul.dropdown-menu {
+        text-align:left !important;
+      }
+
+      #username-dropdown-toggle {
+          margin-top:2px !important;
+        }
+        .humburger {
+            margin-top:14px !important;
+      }
+
+      #username-dropdown-toggle ul.dropdown-menu {
+        top:58px !important;
+      }
+
+      .navbar-nav {
+        margin-top:2px;
+      }
+      
+      .nav-white.sticky-nav .navbar-nav > .open > a {
+        margin-top: -15px;
+        padding-top: 14px;
+      }
+
+      .nav-white.sticky-nav .navbar-nav > .open > a {
+        margin-top:-12px;
+      }
+
+      #username-dropdown-toggle .dropdown-toggle {
+        padding-top: 9px !important;
+        display: inline !important;
+      }
    }
 
    @media (min-width:991px) {

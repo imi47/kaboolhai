@@ -64,7 +64,7 @@ footer section {
     }
 
     #username-dropdown-toggle {
-        margin-top:2px !important;
+        margin-top:9px !important;
     }
     .humburger {
         margin-top:14px !important;
@@ -82,6 +82,33 @@ footer section {
     #username-dropdown-toggle ul.dropdown-menu {
       top:53px !important;
     }
+        .humburger {
+            margin-top:14px !important;
+      }
+
+      #username-dropdown-toggle ul.dropdown-menu {
+        top: 48px !important;
+        left: -88px !important;
+      }
+
+      .navbar-nav {
+        margin-top:-1px;
+      }
+      
+      .nav-white.sticky-nav .navbar-nav > .open > a {
+        margin-top: -15px;
+        padding-top: 14px;
+      }
+
+      .nav-white.sticky-nav .navbar-nav > .open > a {
+        margin-top:-12px;
+      }
+
+      #username-dropdown-toggle .dropdown-toggle {
+        padding-top: 13px !important;
+        display: inline !important;
+        padding-bottom: 12px !important;
+      }
 }
 
 @media (min-width:991px) {
@@ -89,25 +116,13 @@ footer section {
       margin-top:-56px !important;
       padding-top:15px;
     }
+
+    .dropdown-toggle .fas, .dropdown-toggle .fa-envelope, .dropdown-toggle .fa-bell {
+        font-weight: 900;
+        margin-top: 3px;
+    }
 }
 
-@media (max-width:768px) {
-    #friends-dropdown, #messages-dropdown, #notifications-dropdown {
-        margin-top:12px !important;
-        margin-bottom:-12px !important;
-    }
-
-    #username-dropdown-toggle {
-    margin-top:-0px !important;
-    }
-    .humburger {
-        margin-top:8px !important;
-    }
-
-    #username-dropdown-toggle ul.dropdown-menu {
-      top:47px !important;
-    }
-}
 
  @media (max-width: 685px) {
   .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {

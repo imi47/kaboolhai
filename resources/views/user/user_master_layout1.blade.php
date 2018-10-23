@@ -34,6 +34,17 @@
       height:100% !important;
       position:fixed !important;
     }
+
+    @media (max-width:500px) {
+		#navsidebare {
+			width:100%;
+		}
+ 		#navsidebare #cross{
+			position:absolute;
+			right:5px;
+			top:5px;
+		}
+	}
     
     .label {
       display: none;
@@ -43,14 +54,14 @@
 		}
 
 		@media (max-width:420px) {
-			.logo-light, .logo-dark {
+			/* .logo-light, .logo-dark {
 				display:none !important;
-			}
+			} */
 			
-			.logo-mobile {
+			/* .logo-mobile {
 				display:block;
 				width:40px;
-      }
+      } */
       
       #logo-div {
         margin-top:6px;
@@ -372,10 +383,16 @@
         margin-bottom:-5px !important;
       }
 
-      .nav-white.sticky-nav .navbar-nav li a:hover, .nav-white.sticky-nav .navbar-nav > .open > a {
-        padding-right:14px;
-        padding-bottom:25px;
-        display:inline-block;
+      .nav-white.sticky-nav .navbar-nav > .open > a {
+        padding-right: 14px;
+        padding-bottom: -2px;
+        margin-top: -15px;
+        padding-top: 14px;
+      }
+
+      #username-dropdown-toggle .dropdown-toggle {
+        padding-top:0;
+        margin-top:0;
       }
 
     }
@@ -1010,6 +1027,19 @@
         display:none;
       }
 
+      .navbar-nav {
+        margin-top: 5px;
+        /* margin-bottom:-2px; */
+      }
+
+     .navbar-default .navbar-nav > li > a {
+        line-height: 3.5;
+      }
+
+      .nav-white.sticky-nav .navbar-nav li a {
+        padding-right:14px;
+      }
+
       .dropdown-menu {
         min-width: 160px !important;
         padding: 5px !important;
@@ -1050,6 +1080,40 @@
     position: absolute !important;
     right: 0 !important;
     }
+
+    .nav-white.sticky-nav .navbar-nav li a, .nav-white.sticky-nav .navbar-nav li a{
+         padding-right:14px !important;
+         margin-top:3px;
+       }
+
+      .nav-white.sticky-nav .navbar-nav li a:hover, .nav-white.sticky-nav .navbar-nav li a:hover {
+       padding-right: 14px !important;
+    }
+
+    #username-dropdown-toggle .dropdown-toggle {
+      margin-top:3px;
+    }
+
+
+    #username-dropdown-toggle a {
+        display: inline-block !important;
+        padding-top: -0 !important;
+        padding-bottom: 10px !important;
+      }
+
+      .nav-white.sticky-nav .navbar-nav > .open > a {
+        padding-right: 14px;
+        padding-bottom: -2px;
+        margin-top: 2px;
+        padding-top: 0;
+    }
+
+    .humburger {
+      margin-top:8px !important;
+    }
+  }
+
+
     @media (max-width:768px) {
       .navbar-header {
         display:none;

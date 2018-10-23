@@ -396,6 +396,37 @@ p.t
     .pl-top-selection img {
       width:15% !important;
     }
+
+    #username-dropdown-toggle {
+          margin-top:6px !important;
+        }
+        .humburger {
+            margin-top:14px !important;
+      }
+
+      #username-dropdown-toggle ul.dropdown-menu {
+        top: 37px !important;
+        left: -89px !important;
+      }
+
+      .navbar-nav {
+        margin-top:2px;
+      }
+      
+      .nav-white.sticky-nav .navbar-nav > .open > a {
+        margin-top: -15px;
+        padding-top: 14px;
+      }
+
+      .nav-white.sticky-nav .navbar-nav > .open > a {
+        margin-top:-12px;
+      }
+
+      #username-dropdown-toggle .dropdown-toggle {
+        padding-top: 9px !important;
+        display: inline !important;
+        padding-top: 11px !important;
+      }
   }
 
   @media (max-width:768px) {

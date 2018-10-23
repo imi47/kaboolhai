@@ -19,6 +19,39 @@
       margin-top:-56px !important;
       padding-top:15px;
       }
+
+      #username-dropdown-toggle {
+          margin-top:2px !important;
+        }
+        .humburger {
+            margin-top:14px !important;
+      }
+
+      #username-dropdown-toggle ul.dropdown-menu {
+        top:43px !important;
+      }
+
+      .navbar-nav {
+        margin-top:2px;
+      }
+      
+      .nav-white.sticky-nav .navbar-nav > .open > a {
+        margin-top: -15px;
+        padding-top: 14px;
+      }
+
+      .nav-white.sticky-nav .navbar-nav > .open > a {
+        margin-top:-12px;
+      }
+
+      #username-dropdown-toggle {
+        margin-top:8px;
+      }
+
+      #username-dropdown-toggle .dropdown-toggle {
+        margin-top:5px;
+      }
+      
    }
 
    @media (max-width:768px) {
