@@ -43,18 +43,6 @@
    clear: both;
   }
 
-  @media (max-width:500px) {
-		#navsidebare {
-			width:100%;
-		}
-
-		#navsidebare #cross{
-			position:absolute;
-			right:5px;
-			top:5px;
-		}
-	}
-
   #navsidebare {
     height:100% !important;
     position:fixed !important;
@@ -284,6 +272,11 @@
         float:right;
       } */
     }
+
+
+    .msgMenu li{border-bottom: 1px solid #e6e6e6; margin-top: -2px !important}
+
+.msgMenu li:hover{background: #e6e6e6 !important; } 
 
     @media (max-width:1031px) {
       #myNavbar .nav:nth-child(1):nth-child(-n+6) {
@@ -584,7 +577,7 @@
           <li><a href="{{ url('sent-items') }}" class="menudesign">Sent Items</a></li>
           <li><a href="{{ url('blocked-list') }}" class="menudesign">Block List</a></li>
 
-          <!-- {{-- <li><a href="{{ url('edit-profile',user_data()->id) }}" class="menudesign">Edit Profile</a></li> --}} -->
+          {{-- <li><a href="{{ url('edit-profile',user_data()->id) }}" class="menudesign">Edit Profile</a></li> --}}
           <li><a href="{{ url('manage-profile') }}" class="menudesign">Manage Profile</a></li>
 
           <li><a href="{{ url('my-photo') }}" class="menudesign">My Photos</a></li>
@@ -658,14 +651,13 @@
               @if(count(get_friend()))
               @foreach(get_friend() as $row)
               <div class="friend" id="friends">
-                <hr>
+               
 
-                <li style="margin-left:20px;">
+                <li>
                   @if(!empty($row->photo->image))
-                  <img src="{{ $user_assets }}/my_photo/{{ $row->photo->image }}" class="img-circle" alt="" width="45"
-                    style="margin-left: 20px; ">
+                  <img src="{{ $user_assets }}/my_photo/{{ $row->photo->image }}" style="width: 45px; height: 45px; border-radius:100px; " alt="">
                   @else
-                  <img src="{{ $user_assets }}/dashbord/userpic.jpg" class="img-circle" alt="" width="45" height="45">
+                  <img src="{{ $user_assets }}/dashbord/userpic.jpg" style="width: 45px; height: 45px; border-radius:100px; " alt="">
 
                   @endif
                   <a href="{{ url('public-profile',$row->user_id) }}">{{ $row->user->user_name }} send friend request</a><a
@@ -677,45 +669,43 @@
               @endforeach
               @else
 
-              <span style="margin-left: 20px;">no new request</span>
+              <span style="margin-left: 20px;">No New Request</span>
               @endif
               <hr style="width: 100%;">
 
-              <span style="margin-left: 20px; font-size: 20px;"> Recent join user</span>
+              <span style="margin-left: 20px; font-size: 20px;"> Recent Join User</span>
               <hr style="width: 100%;">
               @if(count(recent_join()))
               @foreach(recent_join() as $row)
               <div>
                 <li style="margin-left: 4.3333%">
+                  <a style="background-color: #ffffff; color: #666666 !important;" href="{{ url('public-profile',$row->id) }}">
                   @if(!empty($row->image))
-                  <a style="background-color: #ffffff; color: black !important;" href="{{ url('public-profile',$row->id) }}"><img
-                      src="{{ $user_assets }}/my_photo/{{ $row->image }}" class="img-circle" alt="" width="45">
-                  </a>
-                  @elseif($row->profile_image)
-                  <a style="background-color: #ffffff; color: black !important;" href="{{ url('public-profile',$row->id) }}"><img
-                      src="{{ $user_assets }}/profile_image/{{ $row->image_name }}" class="img-circle" alt="" width="45">
-                  </a>
-                  @else
-                  <a style="background-color: #ffffff; color: black !important;" href="{{ url('public-profile',$row->id) }}">
-                    <img src="{{ $user_assets }}/dashbord/userpic.jpg" class="img-circle" alt="" width="45">
-                  </a>
+                  <img src="{{ $user_assets }}/my_photo/{{ $row->image }}" style="width: 45px; height: 45px; border-radius:100px; " alt="">
+                 
+                  @else($row->profile_image)
+                  <img src="{{ $user_assets }}/profile_image/{{ $row->image_name }}" style="width: 45px; height: 45px; border-radius:100px; " onerror="this.src='http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=Image +Not+Found'" alt="">
+                  
+                 
                   @endif
-                  <a style="background-color: #ffffff; color: black !important;" href="{{ url('public-profile',$row->id) }}">
 
                     <strong>{{ $row->user_name }}</strong>
-                    {{ $row->height .' '.$row->martial_status.' '.$row->language}} <span style="color: blue;">veiw
-                      Profile</span>
+                     <span style="font-size: 12px;">
+                    {{ $row->height .' '.$row->martial_status.' '.$row->language}} </span> <span style="color: blue ; float: right; margin-top: 14px;">veiw
+                            Profile</span>
                   </a>
-                  <br><br>
+                  <hr>
+                  </li>
                   @endforeach
                   @endif
-                  <hr style="width: 100%;">
-                  <a href="{{ url('recent-join') }}">
-                    <div class="text-center">
-                      <span style="font-size: 30px; color: black;">View All</span>
-                    </div>
-                  </a>
-                </li>
+                <li class="text-center">
+                        {{-- <hr style="width: 100%;"> --}}
+                        <a href="{{ url('recent-join') }}">
+                         
+                            <span style="font-size: 30px; color: #666666;">View All</span>
+                         
+                        </a>
+                      </li>
 
             </ul>
           </li>
@@ -729,26 +719,21 @@
 
               @if(!empty(tochat()))
               @foreach(tochat() as $row)
-              <li class="notify_section">
-                <a href="#" style="background-color: #ffffff !important">
-
-                  {{-- <img src="{{ $user_assets }}/dashbord/userpic.jpg" class="img-circle" alt="" width="45" height="45">
-                  --}}
-                </a>
-              </li>
-              <li class="divider"></li>
+             
+             
               @if($row->to_user==Session::get('user_id'))
               <li>
                 <a class="left-first-section" style="background-color: #ffffff; color: black !important;" rel="{{ $row->from_users->id }}"
                   href="#">
-                  <span style="margin-left: 30px;">{{ $row->from_users->user_name}}</span>
                   @if(!empty($row->photo->image))
-                  <img src="{{ $user_assets }}/my_photo/{{ $row->photo->image }}" class="img-circle" alt="" width="10%"
-                    style="margin-left: -20%;">
+                  <img src="{{ $user_assets }}/my_photo/{{ $row->photo->image }}" style="width: 45px; height: 45px; border-radius:100px; ">
+                 
+                 
                   @else
-                  <img src="{{ $user_assets }}/sunrise.jpg" class="img-circle" alt="" width="10%" style="margin-left: -27%;">
-
+                  <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=Image +Not+Found" style="width: 45px; height: 45px; border-radius:100px; ">
                   @endif
+                  <span>{{ $row->from_users->user_name}}</span>
+                  <hr>
                   <span>{{ $row->message }}</span></a></li>
               {{-- @elseif($row->from_users->id==Session::get('user_id'))
               <li><a class="left-first-section" style="background-color: #ffffff; color: black !important;" href="#"
@@ -790,8 +775,9 @@
 
           <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;" onclick="return read_notification()">
-              <span class="noti_counts">@if(!empty(count_friend())) {{ count_notification() }} @endif</span>
-              <span class="glyphicon glyphicon-bell icon_color"></span></a>
+               <span class="glyphicon glyphicon-bell icon_color">
+             <span class="noti_counts" style="font-size:13px; color:#ed6c05; margin: -8px;">@if(!empty(count_notification())) {{ count_notification() }} @endif</span></span>
+             </a>
             <ul class="dropdown-menu lenght icon-dropdown">
               @if(!empty(get_notification()))
               @foreach(get_notification() as $row)
@@ -799,20 +785,18 @@
                 <li class="notify_section">
                   <a href="{{ url('public-profile',$row->sender_id) }}">
                     @if(!empty($row->photo->image))
-                    <img src="{{ $user_assets }}/my_photo/{{ $row->photo->image }}" class="img-circle" alt="" width="10%"
-                      style="margin-left: 20px; ">
+                    <img src="{{ $user_assets }}/my_photo/{{ $row->photo->image }}" style="width: 45px; height: 45px; border-radius:100px; " alt="">
                     @else
-                    <img src="{{ $user_assets }}/dashbord/userpic.jpg" class="img-circle" alt="" width="45" height="45">
+                    <img src="{{ $user_assets }}/dashbord/userpic.jpg" style="width: 45px; height: 45px; border-radius:100px; " alt="">
 
                     @endif
 
-                    <span style=" margin-left: 15px; font-family: Arial;text-transform: capitalize;">{{
-                      $row->user->user_name.' '.$row->notification_type }}</span>
+                    <span >{{
+                            $row->user->user_name.' '.$row->notification_type }}</span>
 
                   </a>
                 </li>
 
-                <li class="divider"></li>
               </div>
               @endforeach
 
@@ -927,8 +911,7 @@
       <span>&times</span>
       
       <ul>
-      <!-- <li><a href="{{ url('edit-profile',user_data()->id) }}">Edit Profile</a></li>  -->
-      <li><a href="{{ url('manage-profile') }}" class="menudesign">Manage Profile</a></li>
+      <li><a href="{{ url('edit-profile',user_data()->id) }}">Edit Profile</a></li> 
       <li><a href="{{ url('my-photo') }}">My Photos</a></li>
       <li><a href="{{ url('favourite-list') }}">My
                         Favourite</a></li>

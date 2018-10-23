@@ -34,18 +34,6 @@
       height:100% !important;
       position:fixed !important;
     }
-
-    @media (max-width:500px) {
-		#navsidebare {
-			width:100%;
-		}
-
-		#navsidebare #cross{
-			position:absolute;
-			right:5px;
-			top:5px;
-		}
-	}
     
     .label {
       display: none;
@@ -55,14 +43,14 @@
 		}
 
 		@media (max-width:420px) {
-			/* .logo-light, .logo-dark {
+			.logo-light, .logo-dark {
 				display:none !important;
 			}
 			
 			.logo-mobile {
 				display:block;
 				width:40px;
-      } */
+      }
       
       #logo-div {
         margin-top:6px;
@@ -160,7 +148,10 @@
 		}
   }
 
-  
+
+.msgMenu li{border-bottom: 1px solid #e6e6e6; margin-top: -2px !important}
+
+.msgMenu li:hover{background: #e6e6e6 !important; } 
   </style>
   
   <script type="text/javascript">
@@ -536,11 +527,10 @@
                 <li class="dropdown">
                   <a class="dropdown-toggle menudesign" data-toggle="dropdown" href="#">Go More <span class="caret"></span></a>
                   <ul class="dropdown-menu go_more " style="background-color: #ffffff;">
-                    <!-- {{-- <li><a href="{{ url('edit-profile',user_data()->id) }}" style="background-color: #ffffff; color: black !important;">Edit
-                        Profile</a></li> --}} -->
-                    <li><a href="{{ url('manage-profile') }}" class="menudesign" style='color:black;'>Manage Profile</a></li>
-                    <!-- <li><a href="{{ url('manage-profile') }}" style="background-color: #ffffff; color: black !important;">Manage
-                        Profile</a></li> -->
+                    {{-- <li><a href="{{ url('edit-profile',user_data()->id) }}" style="background-color: #ffffff; color: black !important;">Edit
+                        Profile</a></li> --}}
+                    <li><a href="{{ url('manage-profile') }}" style="background-color: #ffffff; color: black !important;">Edit
+                        Profile</a></li>
 
 
                     <li><a href="{{ url('my-photo') }}" style="background-color: #ffffff; color: black !important;">My
@@ -606,66 +596,62 @@
                       {{ count_friend() }} @endif</span>
                     <span id="request_counts"></span>
                   </a>
-                  <ul class="dropdown-menu lenght icon-dropdown">
-                    <li class="notify_section">
-                    </li>
+                  <ul class="dropdown-menu lenght icon-dropdown msgMenu">
+                   
                     @if(count(get_friend()))
                     @foreach(get_friend() as $row)
-                    <div class="friend" id="friends">
-                      <li>
+                    
+                      <li class="friend" id="friends">
                         @if(!empty($row->photo->image))
-                        <a style="background-color: #ffffff; color: black !important;" href="{{ url('public-profile',$row->user_id) }}"><img
-                            src="{{ $user_assets }}/my_photo/{{ $row->photo->image }}" class="img-circle" alt="" width="45">
+                        <a style="background-color: #ffffff; color: #666666 !important;" href="{{ url('public-profile',$row->user_id) }}"><img
+                            src="{{ $user_assets }}/my_photo/{{ $row->photo->image }}" style="width: 45px; height: 45px; border-radius:100px; " alt="">
                           @else
-                          <img src="{{ $user_assets }}/dashbord/userpic.jpg" class="img-circle" alt="" width="45">
+                          <img src="{{ $user_assets }}/dashbord/userpic.jpg" style="width: 45px; height: 45px; border-radius:100px; " alt="">
                           @endif
-                          {{ $row->user->user_name }} send friend request</a><a style="background-color: #ffffff; color: black !important;"
-                          href="{{ url('delete-request',$row->user_id) }}" class="btn pull-right">Delete</a><a style="background-color: #ffffff; color: black !important;"
+                          {{ $row->user->user_name }} send friend request</a><a style="background-color: #ffffff; color: #666666 !important;"
+                          href="{{ url('delete-request',$row->user_id) }}" class="btn pull-right">Delete</a><a style="background-color: #ffffff; color: #666666 !important;"
                           href="{{ url('confirm-friend',$row->user_id) }}" class="btn pull-right">Confirm</a>
-                      </li>
-                    </div>
-                    <hr style="width: 100%;">
+                       <hr style="width: 100%;">
+                      </li> 
+                 
                     @endforeach
                     @else
 
-                    <span style="margin-left: 20px;">no new request</span>
+                    <span style="margin-left: 20px;">No New Request</span>
                     @endif
-                    <hr style="width: 100%;">
-
-                    <span style="margin-left: 20px; font-size: 20px;"> Recent join user</span>
-                    <hr style="width: 100%;">
+                    <hr>
+                    <span style="margin-left: 20px; font-size: 20px;"> Recent Join User</span>
+                    <hr>
                     @if(count(recent_join()))
                     @foreach(recent_join() as $row)
-                    <div>
-                      <li style="margin-left: 4.3333%">
+                    
+                      <li >
+                        <a style="color: #666666 !important;" href="{{ url('public-profile',$row->id) }}">
                         @if(!empty($row->image))
-                        <a style="background-color: #ffffff; color: black !important;" href="{{ url('public-profile',$row->id) }}"><img
-                            src="{{ $user_assets }}/my_photo/{{ $row->image }}" class="img-circle" alt="" width="45">
-                        </a>
-                        @elseif($row->profile_image)
-                        <a style="background-color: #ffffff; color: black !important;" href="{{ url('public-profile',$row->id) }}"><img
-                            src="{{ $user_assets }}/profile_image/{{ $row->image_name }}" class="img-circle" alt=""
-                            width="45">
-                        </a>
-                        @else
-                        <a style="background-color: #ffffff; color: black !important;" href="{{ url('public-profile',$row->id) }}">
-                          <img src="{{ $user_assets }}/dashbord/userpic.jpg" class="img-circle" alt="" width="45">
-                        </a>
-                        @endif
-                        <a style="background-color: #ffffff; color: black !important;" href="{{ url('public-profile',$row->id) }}">
-
+                        <img src="{{ $user_assets }}/my_photo/{{ $row->image }}" style="width: 45px; height: 45px; border-radius:100px; " alt="">
+                      
+                        @else($row->profile_image)
+                        <img src="{{ $user_assets }}/profile_image/{{ $row->image_name }}" style="width: 45px; height: 45px; border-radius:100px; " onerror="this.src='http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=Image +Not+Found'" alt="">
+                        
+                       @endif
+                        
                           <strong>{{ $row->user_name }}</strong>
-                          {{ $row->height .' '.$row->martial_status.' '.$row->language}} <span style="color: blue;">veiw
+                          <span style="font-size: 12px;">
+                          {{ $row->height .' '.$row->martial_status.' '.$row->language}}</span> <span style="color: blue ; float: right; margin-top: 14px;">veiw
                             Profile</span>
-                        </a>
-                        <br><br>
+                        </a> 
+                      </li>
+                         
                         @endforeach
                         @endif
-                        <hr style="width: 100%;">
+
+                        <li class="text-center">
+                        {{-- <hr style="width: 100%;"> --}}
                         <a href="{{ url('recent-join') }}">
-                          <div class="text-center">
-                            <span style="font-size: 30px; color: black;">View All</span>
-                          </div>
+                          
+                            <span style="font-size: 30px; color: #666666;">View All</span>
+                         
+                         
                         </a>
                       </li>
                   </ul>
@@ -674,33 +660,30 @@
                   <a class="dropdown-toggle" data-toggle="dropdown" href="#" title="Message" onclick="return get_message()">
                     <span class="fa fa-envelope icon_color"></span><span id="message_count" style="color: red">@if(!empty(count_message()))
                       {{ count_message() }} @endif</span></a>
-                  <ul class="dropdown-menu lenght icon-dropdown">
+                  <ul class="dropdown-menu lenght icon-dropdown msgMenu">
 
                     @if(!empty(tochat()))
                     @foreach(tochat() as $row)
-                    <li class="notify_section">
-                      <a href="#" style="background-color: #ffffff !important">
-
-                        {{-- <img src="{{ $user_assets }}/dashbord/userpic.jpg" class="img-circle" alt="" width="45"
-                          height="45"> --}}
-                      </a>
-                    </li>
-                    <li class="divider"></li>
+                    
+                   
                     @if($row->to_user==Session::get('user_id'))
-                    <li>
-                      <a class="left-first-section" style="background-color: #ffffff; color: black !important;" rel="{{ $row->from_users->id }}"
+                    <li class='msgNoti'>
+                      <a class="left-first-section" style="color: #666666 !important;" rel="{{ $row->from_users->id }}"
                         href="#">
-                        <span style="margin-left: 55px;">{{ $row->from_users->user_name}}</span>
                         @if(!empty($row->photo->image))
-                        <span style="margin-left: -23%;">
-                          <img src="{{ $user_assets }}/my_photo/{{ $row->photo->image }}" class="img-circle" alt=""
-                            width="10%">
+                        <span >
+                          <img src="{{ $user_assets }}/my_photo/{{ $row->photo->image }}" style="width: 45px; height: 45px; border-radius:100px; " alt=""
+                          >
+                        
                         </span>
                         @else
-                        <span style="margin-left: -30%;">
-                          <img src="{{ $user_assets }}/dashbord/userpic.jpg" class="img-circle" alt="" width="10%">
+                        <span>
+                         <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=Image +Not+Found" style="width: 45px; height: 45px; border-radius:100px; ">
                         </span>
                         @endif
+
+                          <span>{{ $row->from_users->user_name}}</span>
+                         
                         {{-- <span>{{ $row->message }}</span> --}}
                       </a>
 
@@ -739,14 +722,22 @@
                     @endforeach
                     @endif
                     --}}
-
-
                   </ul>
-                <li class="dropdown" id='notifications-dropdown'>
+                </li>
+
+
+
+
+
+
+                
+               {{--  <li class="dropdown" id='notifications-dropdown' >
                   <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;" onclick="return read_notification()"
                     title="Notification">
-                    <span class="noti_counts">@if(!empty(count_friend())) {{ count_notification() }} @endif</span>
-                    <span class="fa fa-bell icon_color"></span></a>
+                   
+                    <span class="fa fa-bell icon_color"> <span class="noti_counts" style="font-size:13px; color:#ed6c05;   ">@if(!empty(count_notification())) {{ count_notification() }} @endif 3</span></span>
+
+                  </a>
                   <ul class="dropdown-menu lenght icon-dropdown">
                     @if(count(get_notification()))
                     @foreach(get_notification() as $row)
@@ -754,13 +745,11 @@
                       <li class="notify_section">
                         <a href="{{ url('public-profile',$row->sender_id) }}">
                           @if(!empty($row->photo->image))
-                          <img src="{{ $user_assets }}/my_photo/{{ $row->photo->image }}" class="img-circle" alt=""
-                            width="10%" style="margin-left: 20px; ">
+                          <img src="{{ $user_assets }}/my_photo/{{ $row->photo->image }}" style="width: 45px; height: 45px; border-radius:100px; " alt="">
                           @else
-                          <img src="{{ $user_assets }}/dashbord/userpic.jpg" class="img-circle" alt="" width="45"
-                            height="45">
+                          <img src="{{ $user_assets }}/dashbord/userpic.jpg" style="width: 45px; height: 45px; border-radius:100px; " alt="">
                           @endif
-                          <span style=" margin-left: 15px; font-family: Arial;text-transform: capitalize; ; color: black !important;">{{
+                          <span >{{
                             $row->user->user_name.' '.$row->notification_type }}</span>
                         </a>
                       </li>
@@ -776,7 +765,56 @@
 
                         Show all
                       </li>
-                    </a>
+                    </a> --}}
+
+
+
+
+                   <li class="dropdown" id='notifications-dropdown' >
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;" onclick="return read_notification()"
+                    title="Notification">
+                    <span class="fa fa-bell icon_color"><span class="noti_counts" style="font-size:13px; color:#ed6c05;">@if(!empty(count_notification())) {{ count_notification() }} @endif</span></span>
+                  </a>
+                   <ul class="dropdown-menu lenght icon-dropdown">
+
+                    @if(count(get_notification()))
+                    @foreach(get_notification() as $row)
+                    
+                    <li class='msgNoti get_notifi notify_section' id="get_noti">
+                      <a class="left-first-section" style="color: #666666 !important;" href="{{ url('public-profile',$row->sender_id) }}">
+                          @if(!empty($row->photo->image))
+
+                      {{-- <a class="left-first-section" style="color: #666666 !important;" rel="{{ $row->from_users->id }}" --}}
+                        {{-- href="#"> --}}
+                       {{--  @if(!empty($row->photo->image))
+                        <span > --}}
+                         <img src="{{ $user_assets }}/my_photo/{{ $row->photo->image }}" style="width: 45px; height: 45px; border-radius:100px; " alt="">
+                          @else
+                          <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=Image +Not+Found" style="width: 45px; height: 45px; border-radius:100px; ">
+                          @endif
+                          {{-- <span>{{ $row->from_users->user_name}}</span> --}}
+                        {{-- </span> --}}
+                        {{-- @endif --}}
+                       <span >{{
+                            $row->user->user_name.' '.$row->notification_type }}</span>
+                        </a>
+                     
+
+                    </li>
+                    {{-- @elseif($row->from_users->id==Session::get('user_id'))
+                    <li><a class="left-first-section" style="background-color: #ffffff; color: black !important;" href="#"
+                        onclick="current_chat()">{{ $row->to_users->user_name}}<span id="id_value" style="display: none;">{{
+                          $row->to_users->id }}</span></a></li> --}}
+                   
+                    @endforeach
+                    @endif
+                     {{-- @endif --}}
+                    <a href="{{ url('notification') }}">
+                      <li style="color: black;" class="text-center">
+
+                        Show all
+                      </li>
+                    </a> 
                   </ul>
                 </li>
                 <li class="dropdown username-dropdown-toggle" id='username-dropdown-toggle'>
@@ -890,8 +928,7 @@
       <span>&times</span>
       @if(Session::get('user_id'))
       <ul>
-      <!-- <li><a href="{{ url('edit-profile',user_data()->id) }}">Edit Profile</a></li>  -->
-      <li><a href="{{ url('manage-profile') }}" class="menudesign">Manage Profile</a></li>
+      <li><a href="{{ url('edit-profile',user_data()->id) }}">Edit Profile</a></li> 
       <li><a href="{{ url('my-photo') }}">My Photos</a></li>
       <li><a href="{{ url('favourite-list') }}">My
                         Favourite</a></li>

@@ -151,15 +151,15 @@ footer section {
              <div class="container-1">
        	        @if($title=='Inbox')
        		       @if(!empty($row->photo->image))
-                      <img src="{{ $user_assets }}/my_photo/{{ $row->photo->image }}" class="img-circle" alt="" width="100%" >
+                      <img src="{{ $user_assets }}/my_photo/{{ $row->photo->image }}" style="width: 45px; height: 45px; border-radius:100px; ">
                       @else
-                      <img src="{{ $user_assets }}/dashbord/userpic.jpg" class="img-circle" alt="" width="45" height="45">
+                     <img src="{{ $user_assets }}/sunrise.jpg" style="width: 45px; height: 45px; border-radius:100px; ">
                    @endif
                   @else
                    @if(!empty($row->to_photo->image))
-                    <img src="{{ $user_assets }}/my_photo/{{ $row->to_photo->image }}" class="img-circle" alt="" width="100%" >
+                    <img src="{{ $user_assets }}/my_photo/{{ $row->to_photo->image }}" style="width: 45px; height: 45px; border-radius:100px; ">
                     @else
-                    <img src="{{ $user_assets }}/dashbord/userpic.jpg" class="img-circle" alt="" width="45" height="45">
+                   <img src="{{ $user_assets }}/sunrise.jpg" style="width: 45px; height: 45px; border-radius:100px; ">
                     @endif
                    @endif
                   @if($title=='Inbox')<p> {{ $row->from_users->user_name}}</p> @else {{ $row->to_users->user_name }} @endif

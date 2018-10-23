@@ -1407,15 +1407,15 @@ public function accept_photo_request($request_id)
         	if(!empty($value->photo->image))
         	{
 
-        	echo '<li><a style="margin-left:20px; color:black;" href="'.url("public-profile/$value->sender_id").'"><img class="img-circle" style="margin:20px; color:black !important;" width="10%" src="'.url("public/user_assets/my_photo/".$value->photo->image).'">'.$value->user->user_name.' '.$value->notification_type.'</a></li><hr>';
+        	echo '<li class="msgNoti get_notifi notify_section" id="get_noti" style="margin-left:10px;"><a class="left-first-section" style="color: #666666 !important;"  href="'.url("public-profile/$value->sender_id").'"><img style="width: 45px; height: 45px; border-radius:100px; " src="'.url("public/user_assets/my_photo/".$value->photo->image).'">'.'  '.$value->user->user_name.' '.$value->notification_type.'</a></li><hr>';
         	}
         	else if($value->user->image_name)
         	{
-        		echo '<li><a style="margin-left:20px; color:black;" href="'.url("public-profile/$value->sender_id").'"><img class="img-circle" style="margin:20px; color:black !important;" width="10%" src="'.url("public/user_assets/profile_image/".$value->image_name).'">'.$value->user->user_name.' '.$value->notification_type.'</a></li><hr>';
+        		echo '<li class="msgNoti get_notifi notify_section" id="get_noti" style="margin-left:10px;"> <a class="left-first-section" style="color: #666666 !important;" href="'.url("public-profile/$value->sender_id").'"><img style="width: 45px; height: 45px; border-radius:100px; " alt="" src="'.url("public/user_assets/profile_image/".$value->image_name).'">'.'  '.$value->user->user_name.' '.$value->notification_type.'</a></li><hr>';
         	}
           else
           {
-            echo '<li><a style="margin-left:20px; color:black;" href="'.url("public-profile/$value->sender_id").'"><img class="img-circle" style="margin:20px; color:black !important;" width="10%" src="'.url("public/user_assets/dashbord/userpic.jpg").'">'.$value->user->user_name.' '.$value->notification_type.'</a></li><hr>';
+            echo '<li class="msgNoti get_notifi notify_section" id="get_noti" style="margin-left:10px;"><a class="left-first-section" style="color: #666666 !important;" href="'.url("public-profile/$value->sender_id").'"><img style="width: 45px; height: 45px; border-radius:100px; " alt="" src="'.url("http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=Image +Not+Found").'">'.'  '.$value->user->user_name.' '.$value->notification_type.'</a></li><hr>';
           }
         }
 	}

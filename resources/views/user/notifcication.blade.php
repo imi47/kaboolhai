@@ -125,9 +125,9 @@ tr.dosrch th a {
                   <img src="{{ $user_assets }}/my_photo/{{ $row->photo->image }}" class="img-circle" alt="" width="100%" >
                  
                       @elseif($row->profile_image)
-                                      <img src="{{ $user_assets }}/profile_image/{{ $row->image_name }}" class="img-circle" alt="" width="45">
+                                      <img src="{{ $user_assets }}/profile_image/{{ $row->image_name }}" style="width: 45px; height: 45px; border-radius:100px; ">
                       @else
-                      <img src="{{ $user_assets }}/dashbord/userpic.jpg" class="img-circle" alt="" width="45" height="45">
+                      <img src="{{ $user_assets }}/sunrise.jpg" style="width: 45px; height: 45px; border-radius:100px; ">
                                        @endif
                 </div>  
                </div>

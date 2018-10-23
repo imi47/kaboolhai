@@ -1,7 +1,6 @@
 @extends('user/user_master_layout1') 
 @section('data') 
 <style type="text/css">
-
   .greenpartnercolor{
     color: green;
   }
@@ -76,7 +75,7 @@
                 @if(!empty($row->image_name))
                 <img style="width: 100px; height: 100px;" class="img-thumbnail  pull-right" src="{{ $user_assets }}/profile_image/{{ $row->image_name }}">
                 @else
-                <img src="{{ $user_assets }}/sunrise.jpg"  style="width: 100px; height: 100px;" class="img-thumbnail  pull-right">
+                <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=Image +Not+Found"  style="width: 100px; height: 100px;" class="img-thumbnail  pull-right">
               @endif
         </div>
         <div class="col-md-8">
