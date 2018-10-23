@@ -10,16 +10,17 @@ html, body {
 }
 
 select {
-  padding:5px;
-  height:unset !important;
+  padding:0px;
+  height:27px !important;
 }
 
 input, textarea {
-    border: 1px solid #dfdfdf;
+    border: 1px solid #888;
 }
 
 select {
-	border: 1px solid #ccc;
+  border: 1px solid #999;
+  background-color:#eee;
 }
 
   #form-container {
@@ -32,9 +33,9 @@ select {
     padding:0 !important;
   }
 
-  .form_error {
-    margin-top:4px;
-  }
+  /* .form_error {
+    margin-top:-13px;
+  } */
 
   #year.form_error {
     margin-left:30px !important;
@@ -56,12 +57,12 @@ select {
     width:200px;
   }
 
-  #regform input[type] {
+  /* #regform input[type] {
     padding:17px;
     border:1px solid #ccc;
     border-radius: 3px;
     margin-bottom:-15px !important;
-  }
+  } */
 
   #register_step_1 .progress {
     margin-top:5px !important;
@@ -74,9 +75,10 @@ select {
   }
 
    @media (min-width:991px) {
-   .form_error {
-     margin-left:242px;
-   }
+   /* .form_error {
+     margin-left:-234px;
+     margin-top:25px;
+   } */
 
    #year.form_error {
     margin-left: 56px !important;
@@ -86,12 +88,12 @@ select {
     margin-left: 229px;
   }
 
-  
  }
  
  @media (min-width:1200px) {
    .form_error {
      margin-left:286px;
+     margin-top:-14px;
    }
 
    #year.form_error {
@@ -105,8 +107,9 @@ select {
  }
 
  @media (max-width:991px) {
-   .form_error {
-     margin-left:16px;
+  .form_error {
+     margin-left:-234px;
+     margin-top:25px;
    }
 
    #year.form_error {
@@ -116,6 +119,13 @@ select {
   #phone.form_error {
     margin-left: 1px;
   }
+ }
+
+ @media (max-width:1199px) and (min-width:992px) {
+   .form_error {
+     margin-left:240px;
+     margin-top:-13px;
+   }
  }
 
   @media (max-width:1200px) {
@@ -148,11 +158,41 @@ select {
   #regform input[type=text], input[type=email], input[type=text], input[type=password], select {
     width: 100% !important;
     }
+
+    .form_error {
+     margin-left:-485px;
+     margin-top:27px;
+   }
 }
 
   @media (max-width:575px) {
     #year.form_error {
       margin-left: -22vw !important;
+    }
+  }
+
+  @media (max-width:530px) {
+    .form-area {
+      position:relative;
+    }
+    
+    .form_error {
+      position:absolute;
+      margin:55px  0 0 0;
+      left:35px;
+      /* top:50px; */
+    }
+
+    #phone.form_error {
+     position:absolute;
+     margin:-25px 0 0 0;
+    }
+
+    #year.form_error {
+      position:absolute;
+     margin:0;
+     top:-35px;
+     left:10px;
     }
   }
 
@@ -184,7 +224,7 @@ select {
 </script>
 
 <div class="modal wow fadeInDown" id="myModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="false" >
-<div class="modal-dialog modal-lg" style="height: 700px; box-shadow: 0 4px 8px 0 rgba(0,0,0, 0.5), 0 6px 20px 0 rgba(0,0, 0, 0.5;);">
+<div class="modal-dialog modal-lg" style="height: 700px;   box-shadow: 0 4px 8px 0 rgba(0,0,0, 0.5), 0 6px 20px 0 rgba(0,0, 0, 0.5;);">
 <div class="modal-content">
 
 <!-- Modal Header -->
@@ -707,7 +747,7 @@ border-bottom-left-radius: 10px;*/
 <div class="col-lg-4 col-md-4-col-sm-4 col-xs-12">
 <label for="">First Name: <span class="imporatant">*</span></label>
 </div>
-<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
 
 <!-- <span class="colons">:</span> -->
 <span class="on-focus">
@@ -721,7 +761,7 @@ border-bottom-left-radius: 10px;*/
 <div class="col-lg-4 col-md-4-col-sm-4 col-xs-12">
 <label for="">Last Name: <span class="imporatant">*</span></label>
 </div>
-<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
 <!-- <span class="colons">:</span> -->
 <span class="on-focus">
 <input type="text" data-toggle="tooltip" data-placement="top" title="Kindly enter your last name in the field" id="li" onblur="lst()" onkeypress="lt()" onfocus="last();" name="lastname" title="Last name" value="{{ $lname }}"  class="allinputs" placeholder ="Enter Last Name">
@@ -736,7 +776,7 @@ border-bottom-left-radius: 10px;*/
 <label for="">Username: <span class="imporatant">*</span></label>
 </div>
 {{ csrf_field() }}
-<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
 <!-- <span class="colons">:</span> -->
 <span class="on-focus">
 <input maxlength="8" type="text" data-toggle="tooltip" data-placement="top" title="Create your user name. It must not exceed 8 letters." id="ui" onblur="un()" onkeypress="us()" onfocus="usr()" name="user_name" title="User name" class="allinputs" placeholder ="Enter User Name">
@@ -750,7 +790,7 @@ border-bottom-left-radius: 10px;*/
 <div class="col-lg-4 col-md-4-col-sm-4 col-xs-12">
 <label for="">Email: <span class="imporatant">*</span></label>
 </div>
-<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
 
 <!-- <span class="colons">:</span> -->
 <span class="on-focus">
@@ -765,7 +805,7 @@ border-bottom-left-radius: 10px;*/
 <div class="col-lg-4 col-md-4-col-sm-4 col-xs-12">
 <label for="">Password: <span class="imporatant">*</span></label>
 </div>
-<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
 
 <!-- <span class="colons">:</span> -->
 <span class="on-focus">
@@ -785,7 +825,7 @@ border-bottom-left-radius: 10px;*/
 <div class="col-lg-4 col-md-4-col-sm-4 col-xs-12">
 <label for="">Confirm Password: <span class="imporatant">*</span></label>
 </div>
-<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
 
 <!-- <span class="colons">:</span> -->
 <span class="on-focus">
@@ -801,7 +841,7 @@ border-bottom-left-radius: 10px;*/
 <div class="col-lg-4 col-md-4-col-sm-4 col-xs-12">
 <label for="">Gender: <span class="imporatant">*</span></label>
 </div>
-<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
 <!-- <span class="colons">:</span> -->
 {{-- <span class="on-focus"> --}}
 <select name="gender" id="gend" onblur="gen()" onchange="genders(this)" onfocus="gendr()" class="allselects" title="Gender">
@@ -820,7 +860,7 @@ border-bottom-left-radius: 10px;*/
 <div class="col-lg-4 col-md-4-col-sm-4 col-xs-12">
 <label for="">Country: <span class="imporatant">*</span></label>
 </div>
-<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
 <!-- <span class="colons">:</span> -->
 {{-- <select name="" id="" > --}}
 <select title="Country" id="cont" onblur="count()" onfocus="conry()" onchange="country_change(this)" name="country_id" class="allselects" >
@@ -842,7 +882,7 @@ border-bottom-left-radius: 10px;*/
 <label for="">Province: <span class="imporatant">*</span></label>
 
 </div>
-<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
 <!-- <span class="colons">:</span> -->
 {{-- <select name="" id="" > --}}
 <select title="State" onblur="stat()" onfocus="statuss()" selected="selected" id="state" onchange="state_change(this)"  name="state_id" class="allselects" >
@@ -857,7 +897,7 @@ border-bottom-left-radius: 10px;*/
 <label for="">City: <span class="imporatant">*</span></label>
 
 </div>
-<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
 <!-- <span class="colons">:</span> -->
 
 <select title="City"  onblur="city_blour()" onchange="city_change(this)" onfocus="city_focus()" name="city_id" id="city" selected="selected" class="allselects">
@@ -872,7 +912,7 @@ border-bottom-left-radius: 10px;*/
 <div class="col-lg-4 col-md-4-col-sm-4 col-xs-12">
 <label for="">Phone: <span class="imporatant">*</span></label>
 </div>
-<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
 <!-- <span class="colons">:</span> -->
 <img style="margin-top: 4px; margin-bottom: 6px;" src="{{ $user_assets }}/flags/pk.png" width="20" id="falgimg">
 

@@ -158,7 +158,7 @@
 
     <div class="panel panel-default">
              <div class="panel-heading text-center">
-               <h2>Privacy Policy</h2>
+               <h3>Privacy Policy</h3>
            </div>
   </div>
 

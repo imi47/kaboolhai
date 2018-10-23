@@ -1318,7 +1318,7 @@ section.box.primary .actions i:hover, section.box.purple .actions i:hover, secti
     FORM ELEMENTS
 -------------------------------*/
 
-input[type=checkbox], input[type=color], input[type=date], input[type=datetime-local], input[type=datetime], input[type=email], input[type=month], input[type=number], input[type=password], input[type=radio], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], select, textarea, .form-control {
+/* input[type=checkbox], input[type=color], input[type=date], input[type=datetime-local], input[type=datetime], input[type=email], input[type=month], input[type=number], input[type=password], input[type=radio], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], select, textarea, .form-control {
     box-shadow: none;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
@@ -1330,7 +1330,7 @@ input[type=checkbox], input[type=color], input[type=date], input[type=datetime-l
     -moz-border-radius: 0px;
     -webkit-border-radius: 0px;
     border: 1px solid #e1e1e1;
-}
+} */
 .form-control:focus, .has-focus .form-control {
     background: #f8f8f8;
     border-color: #3F51B5;
