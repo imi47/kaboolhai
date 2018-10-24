@@ -151,11 +151,7 @@
   }
   
 }
-@media (max-width:360px) {
-  #myNavbar .nav.navbar-nav.navbar-right li.dropdown:nth-child(5){
-    display:none !important;
-  }
-}
+
 body, html {
   overflow-x:hidden;
 }

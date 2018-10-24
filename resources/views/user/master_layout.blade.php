@@ -43,6 +43,28 @@
    clear: both;
   }
 
+  .logo-light {
+    /* display:none */
+  }
+
+  .navbar-default .navbar-nav>li>a.menudesign {
+    font-size:12px;
+  }
+
+  .logo-light img {
+    width: 160px;
+    margin-top: 3px;
+  }
+
+  .navbar-form.navbar-right .form-control{
+    text-align:center;
+    width:187px !important;
+  }
+
+  .navbar-form.navbar-right button i.glyphicon-search {
+    padding: 2px;
+  }
+
   @media (max-width:500px) {
 		#navsidebare {
 			width:100%;
@@ -278,7 +300,7 @@
 
 .msgMenu li:hover{background: #e6e6e6 !important; } 
 
-    @media (max-width:1031px) {
+    @media (max-width:1088px) {
       #myNavbar .nav:nth-child(1):nth-child(-n+6) {
         display:none;
       }
@@ -287,6 +309,13 @@
       font-size:12px;
     }
   }
+
+  @media (max-width:500px) {
+    .logo-light img {
+      width: 35vw;
+      margin-top: 6px;
+    }
+   }
 
     @media (max-width:768px) {
       /* #myNavbar .nav, #myNavbar, .nav {
@@ -325,6 +354,12 @@
       text-align:center; */
     }
       
+  }
+
+    @media (max-width:406px) {
+      #myNavbar .nav.navbar-nav.navbar-right li.dropdown:nth-child(5){
+        display:none !important;
+      }
     }
 
 
@@ -548,11 +583,19 @@
     box-shadow: 0 6px 12px rgba(0,0,0,.175) !important;
     max-width: 500px !important;
   }
+
+  #username-dropdown-toggle ul.dropdown-menu {
+      left: -76px !important;
+    }
 }
 
 @media (max-width:505px) {
       .icon-dropdown {
         width:100vw !important;
+      }
+
+      .navbar-nav {
+        margin: 7.5px -43px;
       }
     }
 
@@ -566,7 +609,8 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a href="{{ url('/') }}"><img src="{{ $user_assets }}/db_images/KH-logo2.png" alt="" width='40px'></a>
+        <!-- <a href="{{ url('/') }}"><img src="{{ $user_assets }}/db_images/KH-logo2.png" alt="" width='40px'></a> -->
+        <a class="logo-light" href="{{ url('/') }}"><img alt="" src="{{ $user_assets }}/images/kaboolhai.png" class="logo" /></a>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
