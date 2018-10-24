@@ -590,7 +590,7 @@
 	<div class="container ">
 		<div class="row">
 			<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
-			<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 text-justify">
+			<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
 				<h3 class="chosehed"><span style="text-transform:capitalize;">Say</span> <span style="text-transform:lowercase;">it
 						with a pure heart</span> ‘KABOOL HAI’</h3>
 				<p class="tdt"><strong style="text-align:center;">You shall encourage those of you who are single to
