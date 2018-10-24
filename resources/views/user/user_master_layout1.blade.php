@@ -74,9 +74,9 @@
 				width:40px;
       } */
       
-      #logo-div {
+      /* #logo-div {
         margin-top:6px;
-      }
+      } */
 		}
 
     #navsidebare a {
@@ -1149,6 +1149,10 @@
       }
       .humburger {
         margin-top:6px !important;
+      }
+
+      #menu-div .collapse {
+        margin-top:1px;
       }
     }
     @media (max-width:380px) {

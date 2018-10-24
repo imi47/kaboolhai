@@ -571,7 +571,7 @@
     padding: 5px !important;
     margin: 2px 0 0 !important;
     font-size: 14px !important;
-    text-align: center !important;
+    /* text-align: center !important; */
     list-style: none !important;
     background-color: #fff !important;
     -webkit-background-clip: padding-box !important;
