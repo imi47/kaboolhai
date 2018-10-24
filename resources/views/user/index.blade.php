@@ -43,6 +43,13 @@
    	 right: 38px;
 }
 
+.shrink-nav .logo-light {
+    display: block !important;
+    opacity: 1;
+	 margin-bottom: -8px;
+    margin-top: 12px;
+}
+
 .dropdown-menu {
     min-width: 144px;
     padding: 5px 15px 6px;

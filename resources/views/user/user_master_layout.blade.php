@@ -29,6 +29,8 @@
 		border: 2px solid #ddd;
 	}
 
+	
+
 	@media (max-width:500px) {
 		#navsidebare {
 			width:100%;
