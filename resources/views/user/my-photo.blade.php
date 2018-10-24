@@ -47,8 +47,12 @@
       #username-dropdown-toggle {
         margin-top:-10px !important;
       }
+
+      #username-dropdown-toggle .dropdown-toggle {
+        margin-top:9px;
+      }
       .humburger {
-          margin-top:17px !important;
+          margin-top:4px !important;
     }
 
     .nav-white.sticky-nav .navbar-nav li a:hover, .nav-white.sticky-nav .navbar-nav > .open > a.menudesign {
@@ -58,6 +62,18 @@
     .icon-dropdown {
       margin-top:-16px !important;
     }
+
+    #menu-div .navbar-collapse.collapse {
+      float: right;
+      margin-top: 7px;
+      margin-bottom: -3px;
+    }
+
+    .nav-white.sticky-nav .navbar-nav li a:hover, .nav-white.sticky-nav .navbar-nav > .open > a.menudesign {
+      padding-bottom: 0;
+      padding: 11px 11px 11px 12px;
+    } 
+
   }
 
   @media (max-width:768px) {
@@ -67,7 +83,17 @@
       }
 
       .humburger {
-          margin-top:11px !important;
+        margin-top: 4px !important;
+      }
+
+      .nav-white.sticky-nav .navbar-nav li a, .nav-white.sticky-nav .navbar-nav li a {
+
+      margin-top: 9px;
+
+    }
+
+    #menu-div {
+      margin-bottom: -7px;
     }
 
     footer section div div {

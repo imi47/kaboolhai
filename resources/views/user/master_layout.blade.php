@@ -43,6 +43,10 @@
    clear: both;
   }
 
+  .view-profile {
+    margin-right: 15px;
+  }
+
   .logo-light {
     /* display:none */
   }
@@ -65,7 +69,15 @@
     padding: 2px;
   }
 
-  @media (max-width:500px) {
+  .view-profile {
+    float:right ;
+    display:table;
+    
+  }
+
+  
+
+  @media (max-width:600px) {
 		#navsidebare {
 			width:100%;
 		}
@@ -78,7 +90,15 @@
     #sidebar-2 {
       width:100% !important;
     }
+
+    .view-profile {
+      float: none !important;
+      display: block ;
+      margin-left: 48px ;
+    }
 	}
+
+  
 
   #navsidebare {
     height:100% !important;
@@ -735,7 +755,7 @@
 
                     <strong>{{ $row->user_name }}</strong>
                      <span style="font-size: 12px;">
-                    {{ $row->height .' '.$row->martial_status.' '.$row->language}} </span> <span style="color: blue ; float: right; margin-top: 14px;">veiw
+                    {{ $row->height .' '.$row->martial_status.' '.$row->language}} </span> <span style="color: blue ; margin-top: 14px;" class='view-profile'>veiw
                             Profile</span>
                   </a>
                   <hr>
@@ -746,7 +766,7 @@
                         {{-- <hr style="width: 100%;"> --}}
                         <a href="{{ url('recent-join') }}">
                          
-                            <span style="font-size: 30px; color: #666666;">View All</span>
+                            <span style="font-size: 18px; color: #666666;">View All</span>
                          
                         </a>
                       </li>
@@ -955,7 +975,7 @@
       <span>&times</span>
       
       <ul>
-      <li><a href="{{ url('edit-profile',user_data()->id) }}">Edit Profile</a></li> 
+      <li><a href="{{ url('manage-profile') }}">Manage Profile</a></li> 
       <li><a href="{{ url('my-photo') }}">My Photos</a></li>
       <li><a href="{{ url('favourite-list') }}">My
                         Favourite</a></li>

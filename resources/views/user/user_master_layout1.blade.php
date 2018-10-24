@@ -30,6 +30,11 @@
       /* position:relative; */
     }
 
+    .dropdown-menu.lenght.icon-dropdown.msgMenu li a {
+      margin-bottom: 13px;
+      padding-top: 15px !important;
+    }
+
     #navsidebare {
       height:100% !important;
       position:fixed !important;
@@ -54,8 +59,18 @@
      width:100% !important;
    }
 
-       
+   .view-profile {
+      float: none !important;
+      display: block !important;
+      margin-left: 48px !important;
     }
+  }
+
+  @media (min-width:501px) {
+    .view-profile {
+      margin-top: 8px !important;
+    }
+  }
     
     .label {
       display: none;
@@ -407,6 +422,9 @@
         margin-top:0;
       }
 
+      .dropdown-menu li a {
+        height: unset !important;
+
     }
 
     .shrink-nav .accordion-menu {
@@ -556,9 +574,8 @@
                 <li class="dropdown">
                   <a class="dropdown-toggle menudesign" data-toggle="dropdown" href="#">Go More <span class="caret"></span></a>
                   <ul class="dropdown-menu go_more " style="background-color: #ffffff;">
-                    {{-- <li><a href="{{ url('edit-profile',user_data()->id) }}" style="background-color: #ffffff; color: black !important;">Edit
-                        Profile</a></li> --}}
-                    <li><a href="{{ url('manage-profile') }}" style="background-color: #ffffff; color: black !important;">Edit
+                   
+                    <li><a href="{{ url('manage-profile') }}" style="background-color: #ffffff; color: black !important;">Manage
                         Profile</a></li>
 
 
@@ -666,7 +683,7 @@
                         
                           <strong>{{ $row->user_name }}</strong>
                           <span style="font-size: 12px;">
-                          {{ $row->height .' '.$row->martial_status.' '.$row->language}}</span> <span style="color: blue ; float: right; margin-top: 14px;">veiw
+                          {{ $row->height .' '.$row->martial_status.' '.$row->language}}</span> <span class="view-profile" style="color: blue ; float: right; margin-top: 14px;">veiw
                             Profile</span>
                         </a> 
                       </li>
@@ -676,9 +693,9 @@
 
                         <li class="text-center">
                         {{-- <hr style="width: 100%;"> --}}
-                        <a href="{{ url('recent-join') }}">
+                        <a style="text-align:center;" href="{{ url('recent-join') }}">
                           
-                            <span style="font-size: 30px; color: #666666;">View All</span>
+                            <span style="font-size: 18px; color: #666666;">View All</span>
                          
                          
                         </a>
@@ -957,7 +974,7 @@
       <span>&times</span>
       @if(Session::get('user_id'))
       <ul>
-      <li><a href="{{ url('edit-profile',user_data()->id) }}">Edit Profile</a></li> 
+      <li><a href="{{ url('manage-profile') }}">Manage Profile</a></li> 
       <li><a href="{{ url('my-photo') }}">My Photos</a></li>
       <li><a href="{{ url('favourite-list') }}">My
                         Favourite</a></li>
