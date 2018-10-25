@@ -44,12 +44,20 @@
    clear: both;
   }
 
+  #accordion {
+    font-weight:600;
+  }
+
+  .fa-user-friends, .fa-envelope, .glyphicon-bell {
+      font-size:16px;
+    }
+
   a {
     text-decoration:none !important;
   }
 
-  .bg-orange.no-padding.wow {
-      margin:auto 30px;
+  .footer_sec.orange {
+      margin:auto 30px !important;
     }
 
   .view-profile {
@@ -329,7 +337,7 @@
 
 .msgMenu li:hover{background: #e6e6e6 !important; } 
 
-    @media (max-width:1088px) {
+    @media (max-width:1095px) {
       #myNavbar .nav:nth-child(1):nth-child(-n+6) {
         display:none;
       }
@@ -344,7 +352,16 @@
       width: 35vw;
       margin-top: 6px;
     }
-   }
+
+    .jumbotron.jumbotron-fluid {
+      display:none;
+    }
+
+    .well {
+      margin-top:90px;
+      margin-left:0 !important;
+    }
+  }
 
     @media (max-width:768px) {
       /* #myNavbar .nav, #myNavbar, .nav {
@@ -385,7 +402,7 @@
       
   }
 
-    @media (max-width:406px) {
+    @media (max-width:424px) {
       #myNavbar .nav.navbar-nav.navbar-right li.dropdown:nth-child(5){
         display:none !important;
       }
@@ -568,6 +585,25 @@
 
     }
 
+    #navsidebare ul {
+    width:88% !important;
+    margin-left: 27px !important;
+    margin-top:45px !important;
+}
+
+    #navsidebare img  {
+      margin-right: 7px;
+      margin-top:8px !important;
+    }
+
+  li a.M:hover {
+   background-color: #ED6C05 !important;
+  }
+
+  li a.M {
+    border-radius:10px;
+  }
+
     /* @media (max-width: 768px) {
 .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
     border-top: 1px solid rgba(255, 255, 255, 0.06);
@@ -627,6 +663,19 @@
         margin: 7.5px -43px;
       }
     }
+
+     
+
+@media (min-width:501px) {
+    li a.M {
+        width:90% !important;
+    }
+
+    #navsidebare ul {
+    width:90% !important;
+    margin-top:10px !important;
+    }
+}
 
 
   </style>
@@ -930,6 +979,15 @@
               <span style="padding-left:15px;">Dashboard</span>
             </a>
           </li>
+
+          <li class="wow fadeInDown" data-wow-delay="1s">
+            <a href="{{ url('logout') }}" class="M">
+              <span>
+              <img width="40" height="40" src="{{ $user_assets }}/logout.svg" alt="log out">
+              </span>
+              <span style="padding-left:15px;">Log out</span>
+            </a>
+          </li>
           @endif
 
             @if(empty(Session::get('user_id')))
@@ -964,14 +1022,6 @@
             
             @if(Session::get('user_id'))
             <li class="wow fadeInDown" data-wow-delay="0.9s"><a href="#" class="M" id='side-go-more-li'><span><img width="40" height="40" src="{{ $user_assets }}/more.svg" alt="go more"></span> <span style="padding-left:10px;">Go more</span></a></li>
-          <li class="wow fadeInDown" data-wow-delay="1s">
-            <a href="{{ url('logout') }}" class="M">
-              <span>
-              <img width="40" height="40" src="{{ $user_assets }}/logout.svg" alt="log out">
-              </span>
-              <span style="padding-left:15px;">Log out</span>
-            </a>
-          </li>
 
             @endif
 
@@ -1151,7 +1201,11 @@
      @yield('data')
 
      <footer>
-        <section class="footer_sec" style="margin-bottom:-19px;">
+        
+      
+      <section class="no-padding footer_sec" style="background-color:#5a378c;">
+
+      <section class="footer_sec orange" style="margin-bottom:-19px;">
           <div class="container">
               <div class="row padding-two sm-text-center" style="padding-top:20px;padding-bottom: 43px;">
                   <div class="col-md-9" >
@@ -1166,8 +1220,7 @@
               </div>
           </div>
       </section>
-      
-      <section class="no-padding footer_sec" style="background-color:#5a378c;">
+
         <div class="container mgtd">
           <div class="row">
             
@@ -1258,7 +1311,7 @@
                     <tr>
 
                       <td class="flinks">
-                      <a href="javascript:;" data-toggle="modal" data-target="#job_search">occupational Search</a></td>
+                      <a href="javascript:;" data-toggle="modal" data-target="#job_search">Occupational Search</a></td>
                       
                     </tr>
                     <tr>

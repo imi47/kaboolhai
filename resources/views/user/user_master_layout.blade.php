@@ -29,6 +29,26 @@
 		border: 2px solid #ddd;
 	}
 
+	.col-md-3.logsbdr .well {
+		background-color:floralwhite;
+	}
+
+	/* #navsidebare ul {
+		width:84% !important;
+		margin-top:44px;
+		margin-left: 32px;
+	}
+
+	li a.M {
+		width:100% !important;
+	} */
+
+
+
+	#accordion {
+      font-weight:600;
+    }
+
 	.bg-orange.no-padding.wow {
       margin:auto 30px;
 	 }
@@ -349,6 +369,15 @@
 							<span style="padding-left:15px;">Dashboard</span>
 						</a>
 					</li>
+
+					<li class="wow fadeInDown" data-wow-delay="1s">
+						<a href="{{ url('logout') }}" class="M">
+							<span>
+							<img width="40" height="40" src="{{ $user_assets }}/logout.svg" alt="log out" />
+							</span>
+							<span style="padding-left:15px;">Log out</span>
+						</a>
+					</li>
 					@endif
 
 					@if(empty(Session::get('user_id')))
@@ -457,16 +486,6 @@
 							<span style="padding-left:15px;">Advanced Search</span>
 						</a>
 					</li>
-					@if(Session::get('user_id')) 
-					<li class="wow fadeInDown" data-wow-delay="1s">
-						<a href="{{ url('logout') }}" class="M">
-							<span>
-							<img width="40" height="40" src="{{ $user_assets }}/logout.svg" alt="log out" />
-							</span>
-							<span style="padding-left:15px;">Log out</span>
-						</a>
-					</li>
-					@endif 
 				</ul>
 			</div>
 		</div>

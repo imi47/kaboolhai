@@ -14,6 +14,15 @@
    clear: both;
   }
 
+  .navbar-default {
+    border:none;
+  }
+
+  .col-md-3 .well {
+      border:none !important;
+      margin-left: 25px;
+  }
+
   @media (min-width:992px) {
     .box-reduce-margin-top {
       margin-top:-54px;
@@ -30,6 +39,16 @@
     .box-reduce-margin-top {
       margin-top:-100px;
     }
+
+    @media (max-width:500px) {
+      .jumbotron.jumbotron-fluid {
+      display:none;
+    }
+
+    .well {
+      margin-top:90px;
+    }
+  }
 
     .hvr-grow {
       margin-bottom: 45px !important;
@@ -87,7 +106,9 @@
       width:100% !important;
     }
 
-    
+    .well {
+      margin-left:0 !important;
+    }
   }
 .social_icon {
   text-align:center;

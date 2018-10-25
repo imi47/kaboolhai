@@ -25,7 +25,15 @@
 
 	 a {
     	text-decoration:none !important;
-  	}
+	  }
+	  
+	  #accordion {
+      font-weight:600;
+	 }
+	 
+	 .fa-user-friends, .fa-envelope, .fa-bell {
+      font-size:16px;
+    }
 
 	 .bg-orange.no-padding.wow {
       margin:auto 30px;

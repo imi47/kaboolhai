@@ -14,6 +14,10 @@
     box-shadow:none;
   }
 
+  .panel h3:first-child {
+    color:#ED6C05;
+  }
+
   .bigheading
   {
     font-size: 46px;

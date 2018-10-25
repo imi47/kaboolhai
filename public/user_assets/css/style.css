@@ -2814,7 +2814,8 @@ nav .container{ display: table-cell; vertical-align: middle; height: 80px; posit
 .shrink-nav .container { height: 60px; }
 .shrink-nav { background-color:#FFF; }
 .sticky-nav{ position: fixed; top: 0px; display: inline-table; z-index:999999 !important}
-.logo { max-width: 240px; }
+/* .logo { max-width: 240px; } */
+.logo { max-width: 200px; }
 .logo-style-2 { max-width: 177px; }
 .logo-style-3 { max-width: 210px; }
 .sticky-nav .logo-light { height: 55px; vertical-align: middle; display: table-cell; position:relative; top:0;}
@@ -5837,4 +5838,37 @@ li a.M:hover
 
 input[type='checkbox'] {
     width:auto;
+}
+
+#navsidebare ul {
+    width:88% !important;
+    margin-left: 27px !important;
+    margin-top:45px !important;
+}
+
+#navsidebare img  {
+    padding-left:5px;
+}
+
+li a.M {
+    width:100% !important;
+}
+
+li a.M:hover {
+    background-color: #ED6C05 !important;
+}
+
+.sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
+    text-align:left !important;
+}
+
+@media (min-width:501px) {
+    li a.M {
+        width:90% !important;
+    }
+
+    #navsidebare ul {
+     width:90% !important;
+     margin-top:10px !important;
+    }
 }

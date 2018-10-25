@@ -29,6 +29,10 @@
         a {
             text-decoration:none !important;
         }
+
+        .fa-user-friends, .fa-envelope, .fa-bell {
+            font-size:16px;
+        }
     </style>
 </head>
 <!-- END HEAD -->
