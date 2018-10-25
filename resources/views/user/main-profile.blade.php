@@ -14,6 +14,28 @@
    clear: both;
   }
 
+  @media (min-width:992px) {
+    .box-reduce-margin-top {
+      margin-top:-54px;
+    }
+  }
+
+  @media (max-width:991px) {
+    .box-reduce-margin-top {
+      margin-top:-50px;
+    }
+  }
+
+  @media (max-width:768px) {
+    .box-reduce-margin-top {
+      margin-top:-100px;
+    }
+
+    .hvr-grow {
+      margin-bottom: 45px !important;
+    }
+  }
+
   .main-section {
     width:420px;
   }
@@ -76,10 +98,11 @@
       height:180px !important;
     }
   }
-@media (max-width:1200px) and (min-width:991px) {
+@media (max-width:1199px) and (min-width:991px) {
     .profile_stat.hvr-grow a img {
       width:280px !important;
       height:280px !important;
+      margin-top:70px;
     }
   }
   @media (max-width: 768px) {
@@ -200,7 +223,7 @@ footer .searchcontainer {
 
     <br><br><br><br>
 
-    <div class="row">
+    <div class="row box-reduce-margin-top">
       <div class="col-xl-3 col-lg-3 col-md-5 col-sm-3 col-xs-6 col-xl-offset-0 col-lg-offset-0 col-md-offset-1 col-sm-offset-0">
         <div class="profile_stat hvr-grow">
           <a href="#">
@@ -233,7 +256,7 @@ footer .searchcontainer {
 
     <br><br><br><br>
 
-    <div class="row">
+    <div class="row box-reduce-margin-top">
       <div class="col-xl-3 col-lg-3 col-md-5 col-sm-3 col-xs-6 col-xl-offset-0 col-lg-offset-0 col-md-offset-1 col-sm-offset-0">
         <div class="profile_stat hvr-grow">
           <a href="{{ url('blocked-list') }}">

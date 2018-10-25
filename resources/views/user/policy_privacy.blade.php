@@ -8,6 +8,14 @@
      font-family: "Source Sans Pro", sans-serif;
      
   }
+
+  .panel-default {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border:none;
+    box-shadow:none;
+  }
+
   .bigheading
   {
     font-size: 46px;
@@ -157,17 +165,17 @@
 
 
     <div class="panel panel-default">
-             <div class="panel-heading text-center">
+             <div>
                <h3>Privacy Policy</h3>
            </div>
   </div>
 
   <p>This Privacy Policy sets out the policies adopted by <a href="www.kaboolhai.com/kaboolhai" style="color: blue;">http://www.kaboolhai.com</a> regarding the collection and use of your Personal Information collected or provided by you.</p>    
 
-<h2>1.PRIVACY</h2>
+<h3>1.PRIVACY</h3>
 <p>We, at Kaboolhai.com understand that the visitors of the Website are often anxious when it comes to providing personal information online. This website considers the privacy and confidentiality of the information provided by its users a sacred trust and shall take all important measures to protect it.</p>
 
-<h2>2.COLLECTION OF INFORMATION</h2>
+<h3>2.COLLECTION OF INFORMATION</h3>
 <p>The Company is committed to protecting its user’s and client’s privacy. We comprehend the concerns of the users regarding their privacy and the required steps to be taken for the protection of the private information they provide.</p>
 
 <div class="yyyy" style="padding-left:25px;">
@@ -222,7 +230,7 @@
 
 </div>
 <br>
-<h2>USE OF PROVIDED INFORMATION AND ITS DISCLOSURE </h2><br>
+<h3>USE OF PROVIDED INFORMATION AND ITS DISCLOSURE </h3><br>
 <div class="yyyy" style="padding-left:25px;">
 
 <h4 >3.1 Disclosure</h4>
@@ -251,9 +259,9 @@
 <p>20.the precluding, discovery, probing or remedy of seriously inappropriate conduct or violation of the laid down conduct.</p>
 
 </div>
-<h2>QUALITY OF DATA</h2>
+<h3>QUALITY OF DATA</h3>
 <p>We will take responsibility of collecting, disclosing and using only correct, complete and updated information.</p>
-<h2>SECURITY OF COLLECTED DATA</h2>
+<h3>SECURITY OF COLLECTED DATA</h3>
 <div class="yyyy" style="padding-left:25px;"> 
 <h4>Security</h4>
 <p>We shall take the required rational steps while collecting your data to ensure that it is secured from abuse, dispossession, third-party access, alteration or unauthorized revelation. Misuse of the information provided shall not be accepted at any cost ad the website will take measures to amend it in any way it can.</p>

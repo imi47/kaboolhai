@@ -29,7 +29,13 @@
 		border: 2px solid #ddd;
 	}
 
-	
+	.bg-orange.no-padding.wow {
+      margin:auto 30px;
+	 }
+	 
+	 a {
+    	text-decoration:none !important;
+  	}
 
 	@media (max-width:500px) {
 		#navsidebare {

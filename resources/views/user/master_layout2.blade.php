@@ -22,6 +22,14 @@
     #navsidebare * {
       box-sizing:border-box;
 	 } */
+
+	 a {
+    	text-decoration:none !important;
+  	}
+
+	 .bg-orange.no-padding.wow {
+      margin:auto 30px;
+    }
 	 
 	 @media (max-width:500px) {
 		#navsidebare {

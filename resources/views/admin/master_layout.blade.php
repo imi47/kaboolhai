@@ -20,10 +20,21 @@
     <!-- For iPad -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ $admin_assets }}/images/apple-touch-icon-144-precomposed.png">
     @stack('css')
+
+    <style>
+        .bg-orange.no-padding.wow {
+            margin:auto 30px;
+        }
+
+        a {
+            text-decoration:none !important;
+        }
+    </style>
 </head>
 <!-- END HEAD -->
 
 <!-- BEGIN BODY -->
+
 
 <body class=" ">
     <!-- START TOPBAR -->

@@ -25,6 +25,13 @@
     min-height: 250px;
     max-height: 450px;
 		 }
+
+
+		.contentbox, .contentbox .box1 {
+		
+		}
+		 
+
 		 
 		 #btn a button {
 			 margin:0;
@@ -970,7 +977,7 @@ $('.owl-carousel').owlCarousel({
 			
 			<div class="row">	
 				<div class="col-xs-12">
-					<div class="contentbox box1" style="border-bottom:none;">
+					<div class="contentbox box1">
 						<div class="box_header cl6" >
 							<div class="bkborder">
 								<h3 class="box_header_heading patti"> <img class="border" src="{{ $user_assets }}/icons/general-attributes.png"> General Attributes</h3>

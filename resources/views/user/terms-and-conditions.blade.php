@@ -6,6 +6,14 @@
      line-height: 200%;
      font-family: sans-serif;   
   }
+
+  .panel-default {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border:none;
+    box-shadow:none;
+  }
+
   .bigheading
   {
     font-size: 46px;
@@ -82,13 +90,13 @@
       <div class="col-md-9">
 
             <div class="panel panel-default">
-              <div class="panel-heading text-center">
+              <div>
                 <h3>TERMS AND CONDITIONS</h3>
               </div>
             </div>
 
             <p>It is imperative to read all the terms and condition regarding the membership before you get registered with Kaboolhai. By being a member of this site, you have agreed to accept the rules and regulations of the site. Any violation of rules later on will not be overlooked and your profile will be banned immediately from the site.</p><br>
-            <h2>Membership: When and How!</h2><br>
+            <h3>Membership: When and How!</h3><br>
             <div style="padding-left:15px;">
             <p>•  The candidate should be over 18 years old and all his/her credentials should be true.</p>
             <p>• Any candidate under 18 will be banned immediately and their IP address will be blocked too.</p>
@@ -108,7 +116,7 @@
             <p>• All photographs you upload to Kaboolhai should be your own, and should be your recent photograph.</p><br>
             </div>
 
-            <h2>Private and Confidential</h2><br>
+            <h3>Private and Confidential</h3><br>
             <p>Your privacy and the confidentiality of your credentials is our prime concern. We make sure that it is maintained in all possible ways. The way we guard it is as follows:</p>
 
             <div style="padding-left:15px;">
@@ -123,11 +131,11 @@
             
             </div>
 
-            <h2>Be Warned of Frauds and Scam</h2><br>
+            <h3>Be Warned of Frauds and Scam</h3><br>
             <p>We do make sure that all the profiles that are uploaded on Kaboolhai are real and there is no member that has created a fake pofile. But to keep a track of everyone is quite impossible. In order to keep yourself free from any kind of fraud or scam please do not in any case give or lend money to any person who asks you to do so. We later on won’t be responsible of any such money scam. We are just a matrimonial site whose main objective is to unite people of similar interests so that they can enjoy the bliss of marriage. Other than that, we aren’t responsible in any other way.</p>
             <p>Kaboolhai has the right to suspend or ban any account due to any of the misuses that has been mentioned above. We are  afair dealing matrimonial site and will not tolerate misuse of our site in any way.</p>
             <br>
-            <h2>Kabool Hai and Pristine Clear Content Policy</h2><br>
+            <h3>Kabool Hai and Pristine Clear Content Policy</h3><br>
             
 
             <div style="padding-left: 15px;">
@@ -138,7 +146,7 @@
     
       </div>
             <br>
-            <h2>The Monitoring Policy at Kabool Hai</h2><br>
+            <h3>The Monitoring Policy at Kabool Hai</h3><br>
 
             <div style="padding-left:15px;">
             <p>• Kaboolhai wants to make this site a safe place for the members. It is our sole duty to make sure that the site is a safe and pleasant experience for our members. In this regard, we check and approves profiles, as well as messages between members. This is to protect the dignity of our members.</p>
@@ -148,7 +156,7 @@
           </div>
 
             <br>
-            <h2>Kabool Hai: Agreement on Receiving Mails</h2><br>
+            <h3>Kabool Hai: Agreement on Receiving Mails</h3><br>
             <p>Kaboolhai can send electronic mail to you and to other members. The purpose of this communication includes:</p>
 
             <div style="padding-left: 15px;">
@@ -159,7 +167,7 @@
             </div>
             <p>Make sure that you donot mark our emails as spam or junk. You can unsubscribe us at any time using the unsubscribe links at the bottom of the emails you get.</p>
             <p>Emails sent from our system regarding important changes cannot be unsubscribed because it is obligatory to inform members of important changes.</p><br>
-            <h2>Copyright Claim: All Rights Reserved</h2><br>
+            <h3>Copyright Claim: All Rights Reserved</h3><br>
             <p>Kaboolhai claims full copyright protection in all content published on the website by our partners, our members, and other users. It should be agreed upon thatthe original content on the website will not be copied, modified, or shared at all.</p>
 
           <!-- </div>  -->

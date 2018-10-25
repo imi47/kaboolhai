@@ -22,13 +22,16 @@
   }
 
 	.nav-white.sticky-nav .navbar-nav li a, .nav-white.sticky-nav .navbar-nav li a {
-		margin-top:6px;
+		margin-top:2px;
 	}
 
 	#username-dropdown-toggle .dropdown-toggle {
 		margin-top:1px;
 	}
 
+	.humburger {
+    margin-top: 10px !important;
+	}
 	
 }
 
@@ -36,6 +39,14 @@
     .sticky-nav .navbar-nav > li > .dropdown-menu {
       top:52px !important;
   }
+
+	.nav-white.sticky-nav .navbar-nav li a, .nav-white.sticky-nav .navbar-nav li a {
+    margin-top: 4px;
+	}
+
+	#username-dropdown-toggle .dropdown-toggle {
+    margin-top: 5px;
+	}
 }
 
 @media (max-width: 685px) {

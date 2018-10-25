@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
 
+
 <head>
   <title>{{ $title }}</title>
   <meta name="description" content="">
@@ -42,6 +43,14 @@
    height: 0;
    clear: both;
   }
+
+  a {
+    text-decoration:none !important;
+  }
+
+  .bg-orange.no-padding.wow {
+      margin:auto 30px;
+    }
 
   .view-profile {
     margin-right: 15px;

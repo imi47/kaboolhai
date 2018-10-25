@@ -65,7 +65,14 @@
 
   }
 }
+
+@media (max-width:500px) {
+  .bigheading {
+    font-size:8vw;
+  }
+}
 </style> 
+
 <div style="padding-top: 90px;"></div>
     <div class="container-fluid">
       <div class="well">

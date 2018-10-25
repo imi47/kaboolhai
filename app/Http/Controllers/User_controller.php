@@ -3884,8 +3884,8 @@ public function user_register_step_2(Request $request)
          );
          $rules = array(
        'word_1' =>'required',
-         'word_2' => 'required',
-         'word_3' => 'required',
+         // 'word_2' => 'required',
+         // 'word_3' => 'required',
          'pray' => 'required',
          'profile_created' => 'required',
          'gardian_name' => 'required',
@@ -3895,7 +3895,7 @@ public function user_register_step_2(Request $request)
           
          'body_type' => 'required',
          'height' => 'required',
-         'weight' => 'required',
+         // 'weight' => 'required',
          'sect_are' => 'required',
          'ethnic_type' => 'required',
           'qualification' => 'required',
@@ -4167,7 +4167,7 @@ $data['living_cities'] = Loking::where('user_id',$user->id)->where('loking_type'
           
           'family_value.required' => 'You must enter family value',
           'family_type.required' => 'You must enter family type', 
-           'loking_relocate.required' => 'You must select loking relocate',
+         //   'loking_relocate.required' => 'You must select loking relocate',
            'finacial_status.required' => 'You must select finacial status',
            'assets.required' =>'You must select assets',
             
@@ -4180,7 +4180,7 @@ $data['living_cities'] = Loking::where('user_id',$user->id)->where('loking_type'
          $rules = array(
          'family_value' =>'required',
          'family_type' => 'required',
-         'loking_relocate' => 'required',
+         // 'loking_relocate' => 'required',
          'finacial_status' => 'required',
          'assets' => 'required',
          'loking_age_to' => 'required',

@@ -218,7 +218,10 @@ ul.in_box_brdr li:hover {
 		height:auto;
 
 		border-radius: 5px;
-		border-bottom: 1px solid #c3c3c3;
+		/* border-bottom: 1px solid #c3c3c3; */
+			padding-right: 18px;
+    	border: 1px solid #666;
+    	margin-bottom: 10px;
 	}
 	.box_header
 	{

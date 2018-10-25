@@ -30,6 +30,14 @@
       /* position:relative; */
     }
 
+    a {
+    	text-decoration:none !important;
+  	}
+
+    .bg-orange.no-padding.wow {
+      margin:auto 30px;
+    }
+
     .dropdown-menu.lenght.icon-dropdown.msgMenu li a {
       margin-bottom: 13px;
       padding-top: 15px !important;
