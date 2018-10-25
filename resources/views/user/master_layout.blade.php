@@ -44,6 +44,24 @@
    clear: both;
   }
 
+  .navbar-form {
+    position:relative;
+  }
+
+  .navbar-form .form-group input {
+    height:30px;
+    border-radius: 3px;
+  }
+
+  .navbar-form button {
+    position:absolute;
+    border:none;
+    padding: 5px 13px;
+    right: 16px;
+    top: 1px;
+    background-color: #ececec;
+  }
+
   #accordion {
     font-weight:600;
   }
@@ -78,7 +96,6 @@
   }
 
   .navbar-form.navbar-right .form-control{
-    text-align:center;
     width:187px !important;
   }
 
@@ -752,7 +769,7 @@
           <div class="form-group">
             <input type="text" name="user_name" class="form-control" placeholder="Search by name">
           </div>
-          <button type="submit" class="btn btn-default"><i class=" glyphicon glyphicon-search"></i> Search</button>
+          <button type="submit" class="btn btn-default"><i class=" glyphicon glyphicon-search"></i></button>
         </form>
 
 

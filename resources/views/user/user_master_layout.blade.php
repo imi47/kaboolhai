@@ -33,6 +33,10 @@
 		background-color:floralwhite;
 	}
 
+	.navbar-container .main-nav .navbar-collapse {
+		margin-top:5px;
+	}
+
 	/* #navsidebare ul {
 		width:84% !important;
 		margin-top:44px;

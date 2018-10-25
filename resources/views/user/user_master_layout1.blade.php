@@ -33,6 +33,24 @@
       font-weight:600;
     }
 
+/* .navbar-form {
+    position:relative;
+  }
+
+  .navbar-form .form-group input {
+    height:30px;
+    border-radius: 3px;
+  }
+
+  .navbar-form button {
+    position:absolute;
+    border:none;
+    padding: 5px 13px;
+    right: 16px;
+    top: 1px;
+    background-color: #ececec;
+  } */
+
     .humburger {
       margin-right:10px;
     }
@@ -905,7 +923,7 @@
     border-color: #ccc;
     margin-bottom: 11px;
     padding: 7px;"
-                    type="submit" class="btn btn-default"><i class=" glyphicon glyphicon-search"></i> Search</button>
+                    type="submit" class="btn btn-default"><i class=" glyphicon glyphicon-search"></i></button>
                 </form>
             </div>
             </ul>
