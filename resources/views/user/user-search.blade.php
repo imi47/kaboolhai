@@ -11,6 +11,22 @@
     width:420px;
   }
 
+  .pagination {
+    margin:0;
+}
+
+.well {
+  padding-top:32px;
+}
+
+.pl-profile {
+  box-shadow: 0 0 16px #ccc !important;
+}
+
+.pl-profile:hover {
+  border: 4px solid #ccff00;
+}
+
   .main-section .arrow_button {
     margin-left:-21px;
   }
@@ -18,6 +34,10 @@
   #bb img {
     margin-top: 14px;
   }
+
+  .pagination a {
+    margin: 0;
+}
 
   .emojiPicker {
     left: 19px !important;
@@ -445,15 +465,21 @@ p.t
       }
     }
 
-    @media (max-width:500px) {
-      .smallest {
-        width:100%;   
+    @media (max-width:640px) {
+      .pagination > li > span {
+        line-height: 1.7 !important;
       }
+    }
+ 
+    @media (max-width:500px) {
+      /* .smallest {
+        width:100%;   
+      } */
 
       tr.dosrch th a {
         font-size:12px;
-  }
     }
+  }
     
     @media (max-width:420px) {
         .pl-top-selection img {
