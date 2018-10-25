@@ -148,141 +148,15 @@
   }
 }
 </style>
-
-<div class="container-fluid">
-   <div class="row mrtp">
-   	<div class="col-md-3">
-   		<div class="well">
-   			<ul class="listofmenu">
-   				
-   				<!--<li><a href="">Profile View</a><span><img class="badge_img" src="{{ $user_assets }}/profileview.png" alt=""></span></li>-->
-   				
-   				<li style="margin: 10px 0px 20px 45px;">
-   					 <div class="col-xs-6 col-sm-3">
-                    <div class="inner-content text-center">
-
-                        <div class="c100 p12 center">
-                            <span>12%</span>
-                            <div class="slice"><div class="bar"></div><div class="fill"></div></div>
-                        </div>
-                    </div>
-                </div><!-- /.col -->
-                <div class="clearfix"></div>
-                <p class='no-of-conv' style="color:black; margin-top: 10px;">No. Of Conversation</p>
-   				</li>
-   				<a href="{{ url('favourite-list') }}">
-   				<li class="stat-li">
-   					<div class="stats-circle circle1">
-   						<div class="stat-counter">
-   							<p>{{ count($favourit) }}</p>
-   						</div>
-   					</div>
-   				</li>
-   				</a>
-          <a href="{{ url('iprofileview-list') }}">
-   				<li class="stat-li">
-   					<div class="stats-circle circle2">
-   						<div class="stat-counter">
-   							<p>{{ count($iprofileview) }}</p>
-   						</div>
-   					</div>
-   				</li>
-   	    </a>
-        <a href="{{ url('sent-items') }}">			
-   				<li class="stat-li">
-   					<div class="stats-circle circle3">
-   						<div class="stat-counter">
-   							<p>{{ count($sent_items) }}</p>
-   						</div>
-   					</div>
-   				</li>
-        </a>
-   				<a href="{{ url('view-send-request') }}">
-   				<li class="stat-li">
-   					<div class="stats-circle circle4">
-   						<div class="stat-counter">
-   							<p>{{ count($request) }}</p>
-   						</div>
-   					</div>
-   				</li>
-   				</a>
-          <a href="{{ url('photo-permission-list') }}">
-   				<li class="stat-li">
-   					<div class="stats-circle circle5">
-   						<div class="stat-counter">
-   							<p>{{ count($photo_permission) }}</p>
-   						</div>
-   					</div>
-   				</li>
-   				</a>
-   				<li class="stat-li">
-   					<div class="stats-circle circle6">
-   						<div class="stat-counter">
-   							<p>{{ count($photo_permission_reci) }}</p>
-   						</div>
-   					</div>
-   				</li>
-   				<a href="#">
-   				<li class="stat-li">
-   					<div class="stats-circle circle7">
-   						<div class="stat-counter">
-   							<p>{{ count($hide_profile) }}</p>
-   						</div>
-   					</div>
-   				</li>
-   				</a>
-          <a href="{{ url('blocked-list') }}">
-   				<li class="stat-li">
-   					<div class="stats-circle circle8">
-   						<div class="stat-counter">
-   							<p>{{ count($blockuser) }}</p>
-   						</div>
-   					</div>
-   				</li>
-   				</a>
-          <a href="{{ url('invite-view-profile-list') }}">
-   				<li class="stat-li">
-   					<div class="stats-circle circle9">
-   						<div class="stat-counter">
-   							<p>{{ count($invite) }}</p>
-   						</div>
-   					</div>
-   				</li>
-   				</a>
-   				<li class="stat-li">
-   					<div class="stats-circle circle10">
-   						<div class="stat-counter">
-   							<p>12</p>
-   						</div>
-   					</div>
-   				</li>
-   				<a href="{{ url('friend-delete-list') }}">
-   				<li class="stat-li">
-   					<div class="stats-circle circle11">
-   						<div class="stat-counter">
-   							<p>{{ count($delete) }}</p>
-   						</div>
-   					</div>
-   				</li>
-          </a>
-   				
-   			</ul>
-   		</div>
-   	</div>
-    
-	   <script type="text/javascript">
-	   	$(document).ready(function(){
-			$('.progressWrapper progress').each(function(){
-			  var prgsVal = $(this).data('value');
-			  var maxN = $(this).attr('max');
-			  var pop = prgsVal/maxN * 100
-
-			  $(this).prev().css('left', pop + '%').text(prgsVal);
-			  $(this).val(prgsVal);
-			});
-		});
-	   </script>
-    
+<div style="padding-top:90px;"></div>
+<div class="container-fluid"> 
+    <div class="row">
+      
+    <div class="col-md-3 hidden-sm hidden-xs">
+        <div class="well" style="box-shadow: none;">
+          @include('user/side_bar')
+        </div>
+      </div>
     
     
    	<div class="col-md-9">

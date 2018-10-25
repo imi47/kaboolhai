@@ -99,8 +99,8 @@
       <div class="col-md-9">
         <div class="well" style="box-shadow: none;">
           <div class="about_text">
-            <h1 class="bigheading">Sample text</h1>
-            <p class="ptext">Sample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample textSample text
+            <h1 class="bigheading">Comming Soon</h1>
+            <p class="ptext">
           </div> 
         </div>
       </div>

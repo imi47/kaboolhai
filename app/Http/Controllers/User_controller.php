@@ -52,7 +52,7 @@ class User_Controller extends Controller
                 'dologin','profile','about_us','add_oth','resend','update_num','contact_us','advance_search','faqs','assisted_service','our_police','policy_privacy','services','oth','term_condation','single','widow','divorcee','user_register_step_1',
                 'login','reset_password','forgot','forgot_password',
                  'update_password','annulled','separated','polygamy','register','register_step_2','register_step_3','blog','our_partnar','get_email','get_state','get_living_state','get_living_city'
-                 ,'get_city','signup','user_search','testimonials','register_user','verify','prev_register_step_2','user_register_step_2','verifies','sitemap','pakistani','UAE','United_Kingdom','USA','canada','public_profile','test','view_verify','add_assisted','payment','help_center','save_request']]);
+                 ,'get_city','signup','user_search','testimonials','register_user','verify','prev_register_step_2','user_register_step_2','verifies','sitemap','pakistani','UAE','United_Kingdom','USA','canada','public_profile','test','view_verify','subscribe','add_assisted','payment','help_center','save_request']]);
 
 }
 public function chat(Request $request)
@@ -418,12 +418,16 @@ public function divorcee()
   {
     $search=new SaveSearch();
     $search->link=$result->link;
-    $search->search_comment=$result->search_comment;
+    // dd($result->link);
+    // $search->search_comment=$result->search_comment;
     $search->user_id=Session::get('user_id');
-    $check=SaveSearch::where('link',$result->link)->orwhere('search_comment',$result->search_comment)->first();
+    $check=SaveSearch::where('user_id',Session::get('user_id'))->first();
     if(!empty($check))
     {
-     Session::flash('error', 'This search already exist!'); 
+      
+      $check->link=$result->link;
+      $check->save();
+     Session::flash('success', 'update Save Search'); 
      return back(); 
     }
     else
@@ -4167,7 +4171,7 @@ $data['living_cities'] = Loking::where('user_id',$user->id)->where('loking_type'
           
           'family_value.required' => 'You must enter family value',
           'family_type.required' => 'You must enter family type', 
-         //   'loking_relocate.required' => 'You must select loking relocate',
+           // 'loking_relocate.required' => 'You must select loking relocate',
            'finacial_status.required' => 'You must select finacial status',
            'assets.required' =>'You must select assets',
             
@@ -4237,7 +4241,7 @@ $data['living_cities'] = Loking::where('user_id',$user->id)->where('loking_type'
 		$user->reason_relocate=$request->reason_relocate;
 		$user->employed_in=$request->employed_in;
 		$user->family_detail=$request->family_detail;
-        $user->loking_age_from=$request->loking_age_from;
+    $user->loking_age_from=$request->loking_age_from;
 		$user->loking_age_to=$request->loking_age_to;
 	   $user->loking_height_to=$request->loking_height_to;
 	    $user->loking_height_from=$request->loking_height_from;

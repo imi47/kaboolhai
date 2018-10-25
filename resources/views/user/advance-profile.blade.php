@@ -544,9 +544,9 @@
               <button class="btn btn-success" id='search-btn'>Search</button>
 
             </div>
-            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 ">
+           {{--  <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 ">
               <button class="btn btn-success" id='save-search-btn'>Save search</button>
-            </div>
+            </div> --}}
           </div>
         </form>
       </div>
@@ -1266,9 +1266,9 @@
             <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
               <button class="btn btn-success" id='search-btn'>Search</button>
             </div>
-            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+           {{--  <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
               <button class="btn btn-success" id='save-search-btn'>Save search</button>
-            </div>
+            </div> --}}
           </div>
       </div>
       </form>
@@ -1385,10 +1385,10 @@
             <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
               <button type="submit" class="btn btn-success" id='search-btn'>Search</button>
             </div>
-            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+            {{-- <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
               <a href="#" type="submit" class="btn btn-success" id='save-search-btn' data-toggle="modal" data-target="#loginmodal">Save
                 search</a>
-            </div>
+            </div> --}}
           </div>
 
         </form>

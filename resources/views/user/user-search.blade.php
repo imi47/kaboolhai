@@ -145,9 +145,9 @@
     margin-bottom: 25px;
   }
   .list-active{
-     border: 3px solid darkgrey;
-    margin-bottom: 18px;
-    width: 100%;
+     border: 3px solid #ccff00;
+    /*margin-bottom: 18px;*/
+    /*width: 100%;*/
   }
 /*  .pl-top-selection:focus
    {
@@ -362,6 +362,7 @@ p.t
 
   .perdiv{
     width: 32.777%;
+    margin-bottom: 20px;
   }
 
   @media (min-width:991px) {
@@ -497,7 +498,7 @@ p.t
    
      
     <div class="col-md-9">
-    <div class="well" style="background-color: #ffffff;border-radius:10px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);height:auto;">
+    <div class="well" style="background-color: currentColor;border-radius:10px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);height:auto;">
 
       {{-- <div class="row">
         <div class="col-sm-12">
@@ -508,8 +509,8 @@ p.t
       //   $search = \Request::segment(1);
       // print_r($search);die();
       @endphp
-      <div class="row" {{-- @if($search == 'user-search') hidden="" --}} {{-- @endif --}}>
-        <form method="get" action="{{ url('user-search') }}">
+      {{-- <div class="row" @if($search == 'user-search') hidden="" {{-- @endif --}}
+        {{-- <form method="get" action="{{ url('user-search') }}">
         <div class="col-sm-3 add-margin">
           <select name="country_id" id="" class="serach_relative">
             <option value="">Country</option>
@@ -756,7 +757,7 @@ p.t
                     <option value="Cival Engineer">Cival Engineer </option>
                     <option value="Electrical Engineer">Electrical Engineer</option>
                     {{-- <option value="MBBS">MBBS</option> --}}
-                    <option value="Doctor">Doctor</option>
+                    {{-- <option value="Doctor">Doctor</option>
                     <option value="BBA">BBA</option>
                     <option value="Chartered Accountant">Chartered Accountant</option>
 
@@ -801,20 +802,20 @@ p.t
                       <option value="Female">Female</option>
                       
           </select>
-        </div>
-        
+        </div> --}}
+         
         {{-- <div class="col-sm-3 add-margin">
           <select name="" id="" class="serach_relative">
              <option value="">Height to</option>
           </select>
         </div> --}}
-        <div class="col-sm-3 add-margin">
+       {{--  <div class="col-sm-3 add-margin">
           <input type="hidden" name="search" value="{{ $search }}">
           <button type="submit" class="s_r_btn">Search</button>
         </div>
         </form>
-      </div>
-      <form method="post" action="{{ url('save-search') }}">
+      </div> --}}
+     {{--  <form method="post" action="{{ url('save-search') }}">
         <div class="row">
           {{ csrf_field() }}
         <input type="hidden" name="link" value="{{ $save_search }}">
@@ -825,7 +826,7 @@ p.t
         <button class="btn btn-success">Save Search</button>
       </div>
       </div>
-      </form>
+      </form> --}}
        @if(Session::has('error'))
                     <p class="alert alert-danger">{{ Session::get('error') }}</p>
                 @endif
@@ -922,12 +923,12 @@ p.t
               <div class="pl-profile-content">
                 <div class="pl-content-top">
                   @if($row->login_status==1)
-                  <img src="{{ $user_assets }}/public_profile/online.gif" class="pl-content-top-img" width="30px"  title="Online" />
+                  {{-- <img src="{{ $user_assets }}/public_profile/online.gif" class="pl-content-top-img" width="30px"  title="Online" /> --}}
                   
                    <i class="log1">Online</i>
-                  @else
+                 {{--  @else
                   <img src="{{ $user_assets }}/public_profile/offline.png" class="pl-content-top-img" width="30px"  title="offline" />
-                  <i class="log">Offline</i>
+                  <i class="log">Offline</i> --}}
                   @endif
                 </div>
                {{--  <div class="pl-status">
@@ -1088,6 +1089,341 @@ p.t
             </div>
           </a>
         </div>
+      </div>
+    </div>
+     <div class="well w">
+      <div class="row">
+        <form method="get" action="{{ url('user-search') }}">
+        <div class="col-sm-6">
+          <select name="country_id" id="" class="serach_relative">
+            <option value="">Country</option>
+             @foreach ($country as $row)
+                              <option value="{{ $row->country_id }}">
+                                {{ $row->country_name }}
+                              </option>
+                             @endforeach
+          </select>
+        </div>
+        <div class="col-sm-6">
+          <select name="language" id="" class="serach_relative">
+            <option value="">Language</option>
+            <option value="Urdu">Urdu</option> 
+<option value="Punjabi">Punjabi</option>
+<option value="Pashto">Pashto</option> 
+<option value="Sindhi">Sindhi</option> 
+<option value="Saraiki">Saraiki</option> 
+<option value="Balochi">Balochi</option>  
+<option value="Hindko">Hindko</option>
+<option value="English">English</option>
+<option disabled="">..............................................................</option> 
+<option value="Malayalam">Malayalam</option>    
+<option value="Aka">Aka</option>
+<option value="Angika">Angika</option>
+<option value="Arabic">Arabic</option> 
+<option value="Arunachali">Arunachali</option>
+<option value="Assamese">Assamese</option> 
+<option value="Awadhi">Awadhi</option> 
+<option value="Badaga">Badaga</option> 
+<option value="Bengali">Bengali </option>
+<option value="Bhojpuri">Bhojpuri</option> 
+<option value="Bihari">Bihari</option> 
+<option value="Brij">Brij</option> 
+<option value="Chatisgarhi">Chatisgarhi</option>
+<option value="Coorgi">Coorgi</option> 
+<option value="Dogri">Dogri</option> 
+ 
+<option value="French">French</option> 
+<option value="Garhwali">Garhwali</option> 
+<option value="Garo">Garo</option> 
+<option value="Gujarati">Gujarati</option>
+<option value="Haryanvi">Haryanvi</option>
+<option value="Himachali/Pahari">Himachali/Pahari</option> 
+<option value="Hindi">Hindi</option> 
+<option value="Hindko">Hindko</option> 
+<option value="Kanauji">Kanauji</option> 
+<option value="Kannada">Kannada</option> 
+<option value="Kashmiri">Kashmiri</option> 
+<option value="Khandesi">Khandesi</option> 
+<option value="Khasi">Khasi</option> 
+<option value="Konkani">Konkani</option> 
+<option value="Koshali">Koshali</option> 
+<option value="Kumaoni">Kumaoni</option> 
+<option value="Kutchi">Kutchi</option> 
+<option value="Ladacki">Ladacki</option> 
+<option value="Lepcha">Lepcha</option> 
+<option value="Magahi">Magahi</option> 
+<option value="Maithili">Maithili</option> 
+<option value="Malay">Malay</option> 
+<option value="Malayalam">Malayalam
+</option> 
+<option value="Manipuri">Manipuri</option> 
+<option value="Marathi">Marathi</option> 
+<option value="Marwari">Marwari</option> 
+<option value="Miji">Miji</option> 
+<option value="Miza">Miza</option> 
+<option value="Monpa">Monpa</option> 
+<option value="Nepali">Nepali</option> 
+<option value="Nicobarese">Nicobarese</option> 
+<option value="Oriya">Oriya</option> 
+
+<option value="Persian">Persian</option> 
+
+<option value="Rajasthani">Rajasthani</option> 
+<option value="Russian">Russian</option> 
+<option value="Sanskrit">Sanskrit</option> 
+<option value="Santhali">Santhali</option> 
+
+<option value="Sinhala">Sinhala</option> 
+<option value="Sourashtra">Sourashtra</option> 
+<option value="Spanish">Spanish</option> 
+<option value="Tamil">Tamil</option> 
+<option value="Telugu">Telugu</option> 
+<option value="Tripuri">Tripuri</option> 
+<option value="Tulu">Tulu</option> 
+          </select>
+        </div>
+        <div class="col-sm-6">
+          <select name="qualification" id="" class="serach_relative">
+             <option value="">Qualification</option>
+             Select ---</option>
+<optgroup label='Bachelors - Engineering/Computer'>
+<option value='BCA'>BCA</option>
+<option value='B Arch'>B Arch</option>
+<option value='B Plan'>B Plan</option>
+<option value='BE'>BE</option>
+<option value='B Tech'>B Tech</option>
+<option value='Aeronautical Engineering'>Aeronautical Engineering</option>
+<option value='BSc Computer Science'>BSc Computer Science</option>
+<option value='BSc IT'>BSc IT</option>
+<option value='Bachelor of Engineering'>Bachelor of Engineering</option>
+</optgroup>
+<optgroup label='Masters - Engineering/Computer'>
+<option value='MS (Engg.)'>MS (Engg.)</option>
+<option value='M Arch'>M Arch</option>
+<option value='MCA'>MCA</option>
+<option value='PGDCA'>PGDCA</option>
+<option value='ME'>ME</option>
+<option value='M Tech'>M Tech</option>
+<option value='MSc Computer Science'>MSc Computer Science</option>
+<option value='MSc IT'>MSc IT</option>
+<option value='Master of Engineering'>Master of Engineering</option>
+</optgroup>
+<optgroup label='Bachelors - Arts/Science/Commerce/Other'>
+<option value='B Phil'>B Phil</option>
+<option value='B Com'>B Com</option>
+<option value='BSc'>BSc</option>
+<option value='BA'>BA</option>
+<option value='BFA'>BFA</option>
+<option value='BLIS'>BLIS</option>
+<option value='BSW'>BSW</option>
+<option value='BMM (MASS MEDIA)'>BMM (MASS MEDIA)</option>
+<option value='Bachelors Degree'>Bachelors Degree</option>
+</optgroup>
+<optgroup label='Masters - Arts/Science/Commerce/Other'>
+<option value='M Phil'>M Phil</option>
+<option value='M Com'>M Com</option>
+<option value='M Sc'>M Sc</option>
+<option value='MA'>MA</option>
+<option value='MLIS'>MLIS</option>
+<option value='MSW'>MSW</option>
+<option value='Masters Degree'>Masters Degree</option>
+</optgroup>
+<optgroup label='Teachers Education - BEd/MEd'>
+<option value='BEd'>BEd</option>
+<option value='MEd'>MEd</option>
+</optgroup>
+<optgroup label='Management - MBA/BBA/Other'>
+<option value='MHM'>MHM</option>
+<option value='MBA'>MBA</option>
+<option value='PGDM'>PGDM</option>
+<option value='MFM (Financial Management)'>MFM (Financial Management)</option>
+<option value='Master Degree in Management'>Master Degree in Management</option>
+<option value='BHM'>BHM</option>
+<option value='BBA'>BBA</option>
+<option value='BFM (Financial Management)'>BFM (Financial Management)</option>
+<option value='Bachelor Degree in Management'>Bachelor Degree in Management</option>
+</optgroup>
+<optgroup label='Medicine - MBBS/MD/MS'>
+<option value='MBBS'>MBBS</option>
+<option value='MD / MS (Medical)'>MD / MS (Medical)</option>
+<option value='MCh - Master of Chirurgiae'>MCh - Master of Chirurgiae</option>
+<option value='DM - Doctorate of Medicine'>DM - Doctorate of Medicine</option>
+</optgroup>
+<optgroup label='Medicine - Dental/Homeo/Ayu/Vet'>
+<option value='BDS'>BDS</option>
+<option value='MDS'>MDS</option>
+<option value='BHMS'>BHMS</option>
+<option value='MHMS'>MHMS</option>
+<option value='BAMS'>BAMS</option>
+<option value='MAMS'>MAMS</option>
+<option value='Bachelor of Veterinary Science'>Bachelor of Veterinary Science</option>
+<option value='Master of Veterinary Science'>Master of Veterinary Science</option>
+<option value='Degree in Medicine'>Degree in Medicine</option>
+<option value='Master in Medicine'>Master in Medicine</option>
+</optgroup>
+
+<optgroup label='Medicine - Pharmacy/Nursing/Lab/Health'>
+<option value='BPT'>BPT</option>
+<option value='MPT'>MPT</option>
+<option value='B.Pharm'>B.Pharm</option>
+<option value='M.Pharm'>M.Pharm</option>
+<option value='BSc Nursing'>BSc Nursing</option>
+<option value='MSc Nursing'>MSc Nursing</option>
+<option value='Medical Course'>Medical Course</option>
+<option value='Diploma in Nursing'>Diploma in Nursing</option>
+<option value='Medical Laboratory Technology'>Medical Laboratory Technology</option>
+</optgroup>
+
+<optgroup label='Legal - BL/ML/LLB/LLM'>
+<option value='BGL'>BGL</option>
+<option value='Bachelor of Law'>Bachelor of Law</option>
+<option value='LLB'>LLB</option>
+<option value='Master of Law'>Master of Law</option>
+<option value='LLM'>LLM</option>
+<option value='Course in Legal'>Course in Legal</option>
+</optgroup>
+
+<optgroup label='Finance - CA/ICWAI/CS'>
+<option value='CA Inter'>CA Inter</option>
+<option value='CA Final'>CA Final</option>
+<option value='ICWA'>ICWA</option>
+<option value='Company Secretary (CS)'S>Company Secretary (CS)</option>
+<option value='CFA (Chartered Financial Analyst)'>CFA (Chartered Financial Analyst)</option>
+<option value='Course in Finance'>Course in Finance</option>
+</optgroup>
+
+<optgroup label='Doctorate'>
+<option value='Ph D'>Ph D</option>
+</optgroup>
+
+<optgroup label='Civil Service'>
+<option value='IAS'>IAS</option>
+<option value='IPS'>IPS</option>
+<option value='IRS'>IRS</option>
+<option value='154'>IES</option>
+<option value='155'>IFS</option>
+<option value='156'>Civil Service</option>
+</optgroup>
+
+
+<optgroup label='Diploma'>
+<option value='Diploma'>Diploma</option>
+<option value='Polytechnic'>Polytechnic</option>
+</optgroup>
+
+<optgroup label='Higher Secondery/TTC/ITI'>
+<option value='TTC'>TTC</option>
+<option value='ITI'>ITI</option>
+<option value='Higher Secondery'>Higher Secondery</option>
+</optgroup>
+<optgroup label='Other Education'>
+<option value='High School'>High School</option>
+<option value='Less than high school'>Less than high school</option>
+<option value='Other Education'>Other Education</option>
+</optgroup>
+          </select>
+        </div>
+        <div class="col-sm-6">
+          <select name="job" id="" class="serach_relative">
+             <option value="">Occupation</option>
+             <option value="Softwarw Engineer">Softwarw Engineer</option>
+                    <option value="Producer/Director">Producer/Director</option>
+                    <option value="Media">Media</option>
+                    <option value="Marketing Manager">Marketing Manager</option>
+                    <option value="HR Manager">HR Manager</option>
+                    <option value="Lawyer">Lawyer</option>
+                    <option value="I.T Porfissional">I.T Porfissional</option>
+                    <option value="Teacher">Teacher</option>
+                    <option value="University Lacturer">University Lacturer</option>
+                     <option value="Business Administration">Business Administration</option>
+                     <option value="Admin Officer"> Admin Officer</option>
+                    <option value="Cival Engineer">Cival Engineer </option>
+                    <option value="Electrical Engineer">Electrical Engineer</option>
+                    {{-- <option value="MBBS">MBBS</option> --}}
+                    <option value="Doctor">Doctor</option>
+                    <option value="BBA">BBA</option>
+                    <option value="Chartered Accountant">Chartered Accountant</option>
+
+                    <option value="CSS Officer">CSS Officer </option>
+                    <option value="No Occupation">No Occupation </option>
+                    <option value="Business">Business</option>
+                    <option value="Pilot">Pilot</option>
+                    <option value="Police Officer">Police Officer</option>
+                    <option value="Army Officer">Army Officer</option>
+                    <option value="Air Force">Air Force</option>
+                    <option value="Designer">Designer</option>
+                    <option value="Computer Hardware">Computer Hardware</option>
+                    <option value="Auto Mobile">Auto Mobile</option>
+                    <option value="Traffic Warden">Traffic Warden</option>
+                    <option value="Farmer">Farmer</option>
+                    <option value="Shop Keeper">Shop Keeper</option>
+
+                    <option value="Real Estate">Real Estate</option>
+          </select>
+        </div>
+        <div class="col-sm-6">
+          <select name="age_from" id="" class="serach_relative">
+             <option value="">Age from</option>
+             @for($i =  date('y');  $i <= date('y')+82 ; $i++)
+  <option value="{{ $i }}" >{{ $i }}</option>
+@endfor 
+          </select>
+        </div>
+        
+        <div class="col-sm-6">
+          <select name="age_to" id="" class="serach_relative">
+             <option value="">Age to</option>
+              @for($i = date('y')+82; $i >= date('y'); $i--)
+  <option value="{{ $i }}" >{{ $i }}</option>
+@endfor 
+          </select>
+        </div>
+        <div class="col-sm-6">
+          <select name="loking_for" id="" class="serach_relative">
+ <option value="">Gender</option>
+                   <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      
+          </select>
+        </div>
+        <div class="col-sm-6">
+             <select name="martial_status" id="" class="serach_relative">
+             <option value="">Martial Status</option>
+             <option value="Unmaried">Unmaried</option>
+                    <option value="Widow Widower">Widow/Widower</option>
+                    <option value="Media">Media</option>
+                    <option value="Divorcee">Divorcee</option>
+                    <option value="Seprated">Seprated</option>
+                    <option value="Annulled">Annulled</option>
+                    
+          </select>
+            </div>
+        
+        {{-- <div class="col-sm-3 add-margin">
+          <select name="" id="" class="serach_relative">
+             <option value="">Height to</option>
+          </select>
+        </div> --}}
+        <div class="col-sm-6">
+          <input type="hidden" name="search" value="{{ $search }}">
+          <button type="submit" class="s_r_btn">Search</button>
+        </div>
+        </form>
+
+         <form method="post" action="{{ url('save-search') }}">
+        <div class="row">
+          {{ csrf_field() }}
+        <input type="hidden" name="link" value="{{ $save_search }}">
+        {{-- <div class="col-md-6">
+        <input type="text" required="" name="search_comment" class="form-control">
+        </div> --}}
+        <div class="col-md-6">
+        <button class="btn btn-success">Save Search</button>
+      </div>
+     
+      </form>
+      </div>
+        
         <div class="clearfix"></div>
         <hr class="pl-hr" />
       </div>
