@@ -18,6 +18,23 @@ footer .footer-middle {
   margin-right:10px;
 }
 
+.navbar-form {
+  margin-top:18px;
+}
+
+.navbar-form button .glyphicon {
+    top: 1px;
+  }
+
+  .navbar-form button {
+    right: -4px;
+    padding: 6px 11px !important;
+}
+
+.accordion-menu {
+  margin-top:-8px;
+}
+
 
 
 #accordion.nav.navbar-nav {
@@ -92,6 +109,14 @@ footer .footer-middle {
   margin-right:10px;
 }
 
+.nav-white.sticky-nav .navbar-nav li a {
+  margin-top:4px;
+}
+
+.nav-white.sticky-nav .navbar-nav li a span {
+  margin-top:-1px;
+}
+
 #friends-dropdown, #messages-dropdown, #notifications-dropdown {
     margin-top:13px !important;
     margin-bottom:-13px !important;
@@ -113,7 +138,7 @@ footer .footer-middle {
   }
 
   #username-dropdown-toggle {
-    margin-top:18px !important;
+    margin-top:21px !important;
   }
   .humburger {
       margin-top:14px !important;
@@ -127,30 +152,10 @@ footer .footer-middle {
         #username-dropdown-toggle {
           margin-top:9px !important;
         }
-        .humburger {
-            margin-top:14px !important;
-      }
+      
 
-      .searchcontainer button {
-        margin-top:-56px !important;
-        padding-top:15px;
-    }
-
-    .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
-        top:42px !important;
-      }
-
-      #username-dropdown-toggle ul.dropdown-menu {
-        top:47px !important;
-
-      }
-
-      #friends-dropdown, #messages-dropdown, #notifications-dropdown {
-        margin-top: 5px !important;
-    }
-
-    #username-dropdown-toggle .dropdown-toggle {
-      margin-top:-3px;
+    .nav-white.sticky-nav .navbar-nav li a {
+      margin-top: 0px;
     }
    }
 
@@ -160,31 +165,6 @@ footer .footer-middle {
       padding-top:15px;
     }
 }
-
-
-
-   @media (max-width:768px) {
-     #friends-dropdown, #messages-dropdown, #notifications-dropdown {
-            margin-top:5px !important;
-            margin-bottom:-5px !important;
-        }
-
-      #username-dropdown-toggle {
-        margin-top:-0px !important;
-      }
-      .humburger {
-          margin-top:8px !important;
-    }
-
-    .bg-orange.no-padding.wow .row {
-      margin-left:10px;
-      margin-right:10px;
-    }
-
-    #username-dropdown-toggle .dropdown-toggle {
-      margin-top:5px;
-    }
-  }
 
   @media (min-width: 768px) {
   .navbar-nav>li>a {

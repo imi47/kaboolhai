@@ -29,8 +29,48 @@
     body {
       /* position:relative; */
     }
-    #accordion {
+    #accordion, #username-dropdown-toggle a {
       font-weight:600;
+    }
+
+   #username-dropdown-toggle li a {
+      font-weight:normal;
+    }
+
+    .humburger {
+      margin-top: 8px;
+    }
+
+
+    .navbar-form .form-control {
+      font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+      height:30px;
+      border-radius:3px;
+      letter-spacing: 0;
+    }
+
+    .navbar-form {
+      position:relative;
+      margin-top: 13px;
+      margin-bottom: 2px;
+    }
+
+    .navbar-form button {
+      top: 1px;
+      right: -4px;
+      position: absolute;
+      padding: 3px 11px !important;
+      background-color:#ececec;
+    }
+
+    .navbar-form button:hover {
+      border:1px solid #ececec;
+    }
+
+    .navbar-form button .glyphicon {
+      top: 3px;
+      right: -2px;
+      color:#333;
     }
 
 /* .navbar-form {
@@ -67,10 +107,15 @@
       margin:auto 30px;
     }
 
-    .dropdown-menu.lenght.icon-dropdown.msgMenu li a {
-      margin-bottom: 13px;
-      padding-top: 15px !important;
+    .dropdown-menu.lenght.icon-dropdown.msgMenu hr{
+      margin-bottom:0;
     }
+
+    .dropdown-menu.lenght.icon-dropdown.msgMenu li a {
+      padding:9px !important;
+      margin:0;
+    }
+
 
     #navsidebare {
       height:100% !important;
@@ -414,7 +459,7 @@
       background-color:#000;
     }
 
-    @media (max-width:1250px) {
+    @media (max-width:1205px) {
       .navbar .accordion-menu #accordion>li,
       #signin {
         display: none;
@@ -565,6 +610,8 @@
             <div class="navbar-collapse collapse">
               <ul id="accordion" class="nav navbar-nav {{-- panel-group --}}">
                 <!-- <li> <a href="register.html">Register</a> </li> -->
+
+                <li class="{{ Request::is('/') ? 'active1' : '' }}"> <a href="{{url('/')}}">Home</a>
 
                 @if(empty(Session::get('user_id')))
                 <li class="{{ Request::is('about-us') ? 'active1' : '' }}"> <a href="{{url('about-us')}}">About Us</a>
@@ -918,12 +965,7 @@
                   <div class="form-group">
                     <input type="text" name="user_name" class="form-control" placeholder="Search by name">
                   </div>
-                  <button style="color: #333;
-    background-color: #fff;
-    border-color: #ccc;
-    margin-bottom: 11px;
-    padding: 7px;"
-                    type="submit" class="btn btn-default"><i class=" glyphicon glyphicon-search"></i></button>
+                  <button type="submit" class="btn btn-default"><i class=" glyphicon glyphicon-search"></i></button>
                 </form>
             </div>
             </ul>
@@ -957,7 +999,7 @@
             </a>
           </li>
 
-          <li class="wow fadeInDown" data-wow-delay="1s">
+          <li class="wow fadeInDown" data-wow-delay="0.2s">
             <a href="{{ url('logout') }}" class="M">
               <span>
               <img width="40" height="40" src="{{ $user_assets }}/logout.svg" alt="log out" />
@@ -968,37 +1010,37 @@
           @endif
 
             @if(empty(Session::get('user_id')))
-            <li class="wow fadeInDown login-li" data-wow-delay="0.1s"><a href="#" class="M" id='signin-li'><span><img width="40"
+            <li class="wow fadeInDown login-li" data-wow-delay="0.2s"><a href="#" class="M" id='signin-li'><span><img width="40"
                     height="40" src="{{ $user_assets }}/login.svg" alt="" /></span><span style="padding-left:15px;">Sign
                   in</span></a></li>
-            <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="{{ url('register') }}" class="M"><span><img width="40"
+            <li class="wow fadeInDown" data-wow-delay="0.3s"><a href="{{ url('register') }}" class="M"><span><img width="40"
                     height="40" src="{{ $user_assets }}/create_account.png" alt="" /></span><span style="padding-left:15px;">Create
                   Account</span></a></li>
             @endif
-            <li class="wow fadeInDown" data-wow-delay="0.3"><a href="{{url('about-us')}}" class="M"><span><img width="40"
+            <li class="wow fadeInDown" data-wow-delay="0.4s"><a href="{{url('about-us')}}" class="M"><span><img width="40"
                     height="40" src="{{ $user_assets }}/about_us.png" alt="" /></span> <span style="padding-left:10px;">About
                   Us</span></a></li>
-            <li class="wow fadeInDown" data-wow-delay="0.4s"><a href="{{ url('advance-search') }}" class="M"><span><img
+            <li class="wow fadeInDown" data-wow-delay="0.5s"><a href="{{ url('advance-search') }}" class="M"><span><img
                     width="40" height="40" src="{{ $user_assets }}/find_match.png" alt="" /></span><span style="padding-left:15px;">Find
                   Match</span></a></li>
-            {{-- <li class="wow fadeInDown" data-wow-delay="0.5s"><a href="{{ url('our-police') }}" class="M"><span><img
+            {{-- <li class="wow fadeInDown" data-wow-delay="0.6s"><a href="{{ url('our-police') }}" class="M"><span><img
                     width="40" height="40" src="{{ $user_assets }}/our_policy.png" alt="" /></span><span style="padding-left:15px;">Our
                   Policy</span></a></li> --}}
-            <li class="wow fadeInDown" data-wow-delay="0.6s"><a href="{{ url('policy-privacy') }}" class="M"><span><img
+            <li class="wow fadeInDown" data-wow-delay="0.7s"><a href="{{ url('policy-privacy') }}" class="M"><span><img
                     width="40" height="40" src="{{ $user_assets }}/privacy.png" alt="" /></span> <span style="padding-left:10px;">Privacy</span></a></li>
-            <li class="wow fadeInDown" data-wow-delay="0.7s"><a href="http://kaboolhai.com/blog/" target="_blank" class="M"><span><img
+            <li class="wow fadeInDown" data-wow-delay="0.8s"><a href="http://kaboolhai.com/blog/" target="_blank" class="M"><span><img
                     width="40" height="40" src="{{ $user_assets }}/blog.svg" alt="" /></span><span style="padding-left:15px;">Blogs</span></a></li>
             <li class="wow fadeInDown" data-wow-delay="0.9s"><a href="{{ url('faqs') }}" class="M"><span><img width="40"
                     height="40" src="{{ $user_assets }}/faqs.png" alt="" /></span> <span style="padding-left:10px;">FAQs</span></a></li>
-            <li class="wow fadeInDown" data-wow-delay="0.8s"><a href="our-partnar" class="M"><span><img width="40" height="40" src="{{ $user_assets }}/our_partners.png"
+            <li class="wow fadeInDown" data-wow-delay="1s"><a href="our-partnar" class="M"><span><img width="40" height="40" src="{{ $user_assets }}/our_partners.png"
                     alt="" /></span><span style="padding-left:15px;">Our Partners</span></a></li>
-            <li class="wow fadeInDown" data-wow-delay="0.99s"><a href="{{ url('contact-us') }}" class="M"><span><img
+            <li class="wow fadeInDown" data-wow-delay="1.1s"><a href="{{ url('contact-us') }}" class="M"><span><img
                     width="40" height="40" src="{{ $user_assets }}/contact_us.png" alt="" /></span><span style="padding-left:15px;">Contact</span></a></li>
-            <li class="wow fadeInDown" data-wow-delay="0.99s"><a href="{{ url('help-center') }}" class="M"><span><img width="39" src="{{ $user_assets }}/images/support.png" alt="" style="margin-left:2px;"></span><span style="padding-left:15px;">Help
+            <li class="wow fadeInDown" data-wow-delay="1.2s"><a href="{{ url('help-center') }}" class="M"><span><img width="39" src="{{ $user_assets }}/images/support.png" alt="" style="margin-left:2px;"></span><span style="padding-left:15px;">Help
                   Center</span></a></li>
             
             @if(Session::get('user_id'))
-            <li class="wow fadeInDown" data-wow-delay="0.9s"><a href="#" class="M" id='side-go-more-li'><span><img width="40" height="40" src="{{ $user_assets }}/more.svg" alt="go more" /></span> <span style="padding-left:10px;">Go more</span></a></li>
+            <li class="wow fadeInDown" data-wow-delay="1.3s"><a href="#" class="M" id='side-go-more-li'><span><img width="40" height="40" src="{{ $user_assets }}/more.svg" alt="go more" /></span> <span style="padding-left:10px;">Go more</span></a></li>
           
 
             @endif
@@ -1418,7 +1460,7 @@
                      </tr>
                      <tr>
                         <td class="flinks">
-                           <a href="javascript:;" data-toggle="modal" data-target="#job_search">occupational Search</a>
+                           <a href="javascript:;" data-toggle="modal" data-target="#job_search">Occupational Search</a>
                         </td>
                      </tr>
                      <tr>

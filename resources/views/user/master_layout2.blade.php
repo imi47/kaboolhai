@@ -27,9 +27,13 @@
     	text-decoration:none !important;
 	  }
 	  
-	  #accordion {
+	  #accordion, #username-dropdown-toggle a {
       font-weight:600;
-	 }
+    }
+
+	 #username-dropdown-toggle li a {
+      font-weight:normal;
+    }
 	 
 	 .fa-user-friends, .fa-envelope, .fa-bell {
       font-size:16px;
@@ -421,14 +425,14 @@
 					</a>
 					<ul style="margin-left:25px;list-style-type:none;width:100px;line-height:50px;margin-top:15px;">
 						@if(empty(Session::get('user_id')))
-						<li class="wow fadeInDown login-li" data-wow-delay="0.8s"><a href="#" class="M"><span><img width="40" height="40"
+						<li class="wow fadeInDown login-li" data-wow-delay="0.1s"><a href="#" class="M"><span><img width="40" height="40"
 									 src="{{ $user_assets }}/login.svg" alt="" /></span><span style="padding-left:15px;">Sign
 									in</span></a></li>
 						<li class="wow fadeInDown" data-wow-delay="0.2s"><a href="{{ url('register') }}" class="M"><span><img width="40"
 									 height="40" src="{{ $user_assets }}/create_account.png" alt="" /></span><span style="padding-left:15px;">Create
 									Account</span></a></li>
 						@endif
-						<li class="wow fadeInDown" data-wow-delay="0.3"><a href="{{url('about-us')}}" class="M"><span><img width="40"
+						<li class="wow fadeInDown" data-wow-delay="0.3s"><a href="{{url('about-us')}}" class="M"><span><img width="40"
 									 height="40" src="{{ $user_assets }}/about_us.png" alt="" /></span>
 								<span style="padding-left:10px;">About Us</span></a></li>
 						<li class="wow fadeInDown" data-wow-delay="0.4s"><a href="{{ url('advance-search') }}" class="M"><span><img width="40"
@@ -442,11 +446,11 @@
 								<span style="padding-left:10px;">Privacy</span></a></li>
 						<li class="wow fadeInDown" data-wow-delay="0.7s"><a href="http://kaboolhai.com/blog/" target="_blank" class="M"><span><img
 									 width="40" height="40" src="{{ $user_assets }}/blog.svg" alt="" /></span><span style="padding-left:15px;">Blogs</span></a></li>
-						<li class="wow fadeInDown" data-wow-delay="0.9s"><a href="{{ url('faqs') }}" class="M"><span><img width="40"
+						<li class="wow fadeInDown" data-wow-delay="0.8s"><a href="{{ url('faqs') }}" class="M"><span><img width="40"
 									 height="40" src="{{ $user_assets }}/faqs.png" alt="" /></span> <span style="padding-left:10px;">FAQs</span></a></li>
 						<li class="wow fadeInDown" data-wow-delay="0.8s"><a href="our-partnar" class="M"><span><img width="40" height="40" src="{{ $user_assets }}/our_partners.png"
 									 alt="" /></span><span style="padding-left:15px;">Our Partners</span></a></li>
-						<li class="wow fadeInDown" data-wow-delay="0.99s"><a href="{{ url('contact-us') }}" class="M"><span><img width="40"
+						<li class="wow fadeInDown" data-wow-delay="0.9s"><a href="{{ url('contact-us') }}" class="M"><span><img width="40"
 									 height="40" src="{{ $user_assets }}/contact_us.png" alt="" /></span><span style="padding-left:15px;">Contact</span></a></li>
 					</ul>
 				</div>
@@ -934,7 +938,7 @@
                      </tr>
                      <tr>
                         <td class="flinks">
-                           <a href="javascript:;" data-toggle="modal" data-target="#job_search">occupational Search</a>
+                           <a href="javascript:;" data-toggle="modal" data-target="#job_search">Occupational Search</a>
                         </td>
                      </tr>
                      <tr>

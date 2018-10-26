@@ -9,6 +9,15 @@
     margin-top:30px;
   }
 
+  .navbar-form button .glyphicon {
+    top: 1px;
+  }
+
+  .navbar-form button {
+    right: -4px;
+    padding: 6px 11px !important;
+}
+
   tr.dosrch th a {
     font-size:14px;
   }

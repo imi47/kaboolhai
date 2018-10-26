@@ -117,8 +117,6 @@
 					width:200px !important;
 				}
 
-				
-
 				.in_box_brdr {
 					margin-top:10px;
 				}
@@ -127,11 +125,11 @@
 					margin-bottom:20px;
 				}
 
-				#profile .box_txt_lb {
+				#profile .box_txt_lb, #partner .box_txt_lb {
 					display:block;
 				}
 
-				#profile .txt_fetched, #profile .self, #profile .self1 {
+				#profile .txt_fetched, #profile .self, #profile .self1, #partner .txt_fetched, #partner .self, #partner .self1 {
 					float:none;
 				}
 				
@@ -156,6 +154,11 @@
 
 				.txt_fetched, .self, .self1 {
 					margin-left:23px;
+				}
+
+				.contentbox.box1 {
+					padding-left:10px;
+					padding-right:10px;
 				}
 		 }
 
@@ -377,11 +380,11 @@ $('.owl-carousel').owlCarousel({
 							<ul class="list_somebtn">
 								<li class="agea"><a href="{{ url('more-alike',$user_data->id) }}"><span><img src="{{ $user_assets }}/more-alike.png" alt="" class="icon_size"></span> <span class="linkT">More alike</span></a></li>
                  @if(count($block_users))
-                  <li class="agea"><a href="javascript:;" data-toggle="modal" data-target="#unblock" ><span><img src="{{ $user_assets }}/send message.png" alt="" class="icon_size"></span><span class="linkT"> Send Message </span></a></li>
+                  <li class="agea"><a href="javascript:;" data-toggle="modal" data-target="#unblock" ><span><img src="{{ $user_assets }}/send message.png" alt="" class="" style='margin-left:-2px; width:24px;'></span><span class="linkT"> Send Message </span></a></li>
 								@elseif(count($confirm_friend))
-								<li class="agea"><a rel="{{ $user_data->id }}" href="javascript:;" class="left-first-section"><span><img src="{{ $user_assets }}/send message.png" alt="" class="icon_size"></span><span class="linkT"> Send Message</span></a></li> 
+								<li class="agea"><a rel="{{ $user_data->id }}" href="javascript:;" class="left-first-section"><span><img src="{{ $user_assets }}/send message.png" alt="" class="" style='margin-left:-2px; width:24px;'></span><span class="linkT"> Send Message</span></a></li> 
 								@else
-								<li class="agea"><a href="javascript:;" data-toggle="modal" data-target="#nofriend" ><span><img src="{{ $user_assets }}/send message.png" alt="" class="icon_size"></span><span class="linkT"> Send Message </span></a></li>
+								<li class="agea"><a href="javascript:;" data-toggle="modal" data-target="#nofriend" ><span><img src="{{ $user_assets }}/send message.png" alt="" class="" style='margin-left:-2px; width:24px;'></span><span class="linkT"> Send Message </span></a></li>
 								@endif
               
                
@@ -390,16 +393,16 @@ $('.owl-carousel').owlCarousel({
 
 								@else <li class="agea"><a href="{{ url('delete-favourite-user',$user_data->id) }}"><span><img src="{{ $user_assets }}/favorite.png" alt="" class="icon_size"></span><span class="linkT">Remove from my favorite </span></a></li> @endif
 								@if(empty($photo))
-								<li class="agea"><a href="{{ url('photo-permission',$user_data->id) }}"><span><img src="{{ $user_assets }}/photorequest.png" alt="" class="icon_size"></span><span class="linkT"> Ask to Photo Permission</span></a></li>
+								<li class="agea"><a href="{{ url('photo-permission',$user_data->id) }}"><span><img src="{{ $user_assets }}/photorequest.png" alt="" style='width:23px; margin-left:-1px;'></span><span class="linkT" > Ask to Photo Permission</span></a></li>
 								@else
-								<li class="agea"><a onclick="return false;" href="{{ url('photo-permission',$user_data->id) }}"><span><img src="{{ $user_assets }}/photorequest.png" alt="" class="icon_size"></span><span class="linkT"> Ask to Photo Permission</span></a>  (Permission request sent)</li>
+								<li class="agea"><a onclick="return false;" href="{{ url('photo-permission',$user_data->id) }}"><span><img src="{{ $user_assets }}/photorequest.png" alt="" style='width:23px; margin-left:-1px'></span><span class="linkT"> Ask to Photo Permission</span></a>  (Permission request sent)</li>
 								@endif
 								@if(empty($invite))
 								<li class="agea"><a href="{{ url('invite-view-profile',$user_data->id) }}"><span><img src="{{ $user_assets }}/invite.png" alt="" class="icon_size"></span><span class="linkT"> Invite to view my profile</span></a></li>
 								@else
 								<li class="agea"><a onclick="return false" href="{{ url('invite-view-profile',$user_data->id) }}"><span><img src="{{ $user_assets }}/invite.png" alt="" class="icon_size"></span><span class="linkT"> Invite to view my profile</span></a> (invitation request sent)</li>
 								@endif
-                <li class="agea"><a href="{{ url('addquestionlist',$user_data->id) }}"><span class="fa fa-question icon_size linkT" style="font-size: 25px;"></span> Question</a></li>
+                <li class="agea"><a href="{{ url('addquestionlist',$user_data->id) }}"><span class="linkT" style="    margin-left: 0px; width:22px;"><img src="{{ $user_assets }}/images/question.png" alt="" class="icon_size" style='width:22px;'></span> Question</a></li>
                 @if(empty($hideprofile))
 								<li class="agea"><a href="{{ url('hide-profile',$user_data->id) }}" onclick="return confirm('Are you sure you want to hide this user?');" ><span><img src="{{ $user_assets }}/dontshowagain.png" alt="" class="icon_size"></span> <span class="linkT">Don't show me again</span></a></li>
                 @else
@@ -414,7 +417,7 @@ $('.owl-carousel').owlCarousel({
 								  @if(empty($request))
 								<li class="agea"><a href="{{ url('add-friend',$user_data->id) }}"><span><img src="{{ $user_assets }}/sendrequest.png" alt="" class="icon_size"></span> <span class="linkT">Sent Request</span></a></li>
 								@else
-								<li class="agea"><a onclick="return false" href="{{ url('add-friend',$user_data->id) }}"><span><img src="{{ $user_assets }}/sendrequest.png" alt="" class="icon_size"></span> <span class="linkT">Sent Request</span></a> (Friend request sent)</li>
+								<li class="agea"><a onclick="return false" href="{{ url('add-friend',$user_data->id) }}"><span><img src="{{ $user_assets }}/sendrequest.png" alt="" class="icon_size" style='width:25px; margin-left:0px;'></span> <span class="linkT">Sent Request</span></a> (Friend request sent)</li>
 								@endif
 							</ul>	
 						</div>

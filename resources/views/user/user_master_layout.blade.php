@@ -29,8 +29,12 @@
 		border: 2px solid #ddd;
 	}
 
-	.col-md-3.logsbdr .well {
+	.logsbdr .well, .logsbdr + div  > .well {
 		background-color:floralwhite;
+	}
+
+	.logsbdr .well h3, .logsbdr + div  > .well h3 {
+		color:dimgrey;
 	}
 
 	.navbar-container .main-nav .navbar-collapse {
@@ -49,8 +53,12 @@
 
 
 
-	#accordion {
+	#accordion, #username-dropdown-toggle a {
       font-weight:600;
+    }
+
+	 #username-dropdown-toggle li a {
+      font-weight:normal;
     }
 
 	.bg-orange.no-padding.wow {
@@ -374,7 +382,7 @@
 						</a>
 					</li>
 
-					<li class="wow fadeInDown" data-wow-delay="1s">
+					<li class="wow fadeInDown" data-wow-delay="0.2s">
 						<a href="{{ url('logout') }}" class="M">
 							<span>
 							<img width="40" height="40" src="{{ $user_assets }}/logout.svg" alt="log out" />
@@ -385,7 +393,7 @@
 					@endif
 
 					@if(empty(Session::get('user_id')))
-					<li class="wow fadeInDown signin1" data-wow-delay="0.1s">
+					<li class="wow fadeInDown signin1" data-wow-delay="0.3s">
 						<a href="#" class="M">
 							<span>
 								<img width="40" height="auto" src="{{ $user_assets }}/login.svg" alt="" />
@@ -393,7 +401,7 @@
 							<span style="padding-left:15px;">Sign In</span>
 						</a>
 					</li>
-					<li class="wow fadeInDown" data-wow-delay="0.2s">
+					<li class="wow fadeInDown" data-wow-delay="0.4s">
 						<a href="{{ url('register') }}" class="M">
 							<span>
 								<img width="40" height="40" src="{{ $user_assets }}/create_account.png" alt="" />
@@ -402,7 +410,7 @@
 						</a>
 					</li>
 					@endif
-					<li class="wow fadeInDown" data-wow-delay="0.3">
+					<li class="wow fadeInDown" data-wow-delay="0.5s">
 						<a href="{{url('about-us')}}" class="M">
 							<span>
 								<img width="40" height="40" src="{{ $user_assets }}/about_us.png" alt="" />
@@ -411,7 +419,7 @@
 						</a>
 					</li>
 
-					<li class="wow fadeInDown" data-wow-delay="0.4s">
+					<li class="wow fadeInDown" data-wow-delay="0.6s">
 						<a href="{{ url('advance-search') }}" class="M">
 							<span>
 								<img width="40" height="40" src="{{ $user_assets }}/find_match.png" alt="" />
@@ -421,7 +429,7 @@
 					</li>
 
 					{{--
-					<li class="wow fadeInDown" data-wow-delay="0.5s">
+					<li class="wow fadeInDown" data-wow-delay="0.7s">
 						<a href="{{ url('our-police') }}" class="M">
 							<span>
 								<img width="40" height="40" src="{{ $user_assets }}/our_policy.png" alt="" />
@@ -430,7 +438,7 @@
 						</a>
 					</li> --}}
 
-					<li class="wow fadeInDown" data-wow-delay="0.6s">
+					<li class="wow fadeInDown" data-wow-delay="0.8s">
 						<a href="{{ url('policy-privacy') }}" class="M">
 							<span>
 								<img width="40" height="40" src="{{ $user_assets }}/privacy.png" alt="" />
@@ -439,7 +447,7 @@
 						</a>
 					</li>
 
-					<li class="wow fadeInDown" data-wow-delay="0.7s">
+					<li class="wow fadeInDown" data-wow-delay="0.9s">
 						<a href="{{ url('blog') }}" class="M">
 							<span>
 								<img width="40" height="40" src="{{ $user_assets }}/blog.svg" alt="" />
@@ -448,7 +456,7 @@
 						</a>
 					</li>
 
-					<li class="wow fadeInDown" data-wow-delay="0.9s">
+					<li class="wow fadeInDown" data-wow-delay="1s">
 						<a href="{{ url('faqs') }}" class="M">
 							<span>
 								<img width="40" height="40" src="{{ $user_assets }}/faqs.png" alt="" />
@@ -457,7 +465,7 @@
 						</a>
 					</li>
 
-					<li class="wow fadeInDown" data-wow-delay="0.8s">
+					<li class="wow fadeInDown" data-wow-delay="1.1s">
 						<a href="{{ url('our-partnar') }}" class="M">
 							<span>
 								<img width="40" height="40" src="{{ $user_assets }}/our_partners.png" alt="" />
@@ -466,7 +474,7 @@
 						</a>
 					</li>
 
-					<li class="wow fadeInDown" data-wow-delay="0.99s">
+					<li class="wow fadeInDown" data-wow-delay="1.2s">
 						<a href="{{ url('contact-us') }}" class="M">
 							<span>
 								<img width="40" height="40" src="{{ $user_assets }}/contact_us.png" alt="" />
@@ -474,7 +482,7 @@
 							<span style="padding-left:15px;">Contact</span>
 						</a>
 					</li>
-					<li class="wow fadeInDown" data-wow-delay="0.99s">
+					<li class="wow fadeInDown" data-wow-delay="1.3s">
 						<a href="{{ url('help-center') }}" class="M">
 							<span>
 							<img width="39" src="{{ $user_assets }}/images/support.png" alt="" style="margin-left:2px;">
@@ -482,7 +490,7 @@
 							<span style="padding-left:15px;">Help Center</span>
 						</a>
 					</li>
-					<li class="wow fadeInDown" data-wow-delay="1s">
+					<li class="wow fadeInDown" data-wow-delay="1.4s">
 						<a href="{{ url('advance-search') }}" class="M">
 							<span>
 								<img width="40" height="40" src="{{ $user_assets }}/advanced search.png" alt="" />
@@ -538,8 +546,8 @@
 					<div class="navbar-collapse collapse">
 						<ul id="accordion" class="nav navbar-nav panel-group">
 							<!-- <li> <a href="register.html">Register</a> </li> -->
-							<!-- <li class="{{ Request::is('/') ? 'active1' : '' }}">
-		 <a href="{{url('/')}}">Home</a> </li> -->
+							<li class="{{ Request::is('/') ? 'active1' : '' }}">
+		 <a href="{{url('/')}}">Home</a> </li>
 							<li class="{{ Request::is('about-us') ? 'active1' : '' }}">
 								<a href="{{url('about-us')}}">About Us</a>
 							</li>
@@ -889,7 +897,7 @@
 						<tr>
 
 							<td class="flinks">
-								<a href="javascript:;" data-toggle="modal" data-target="#job_search">occupational
+								<a href="javascript:;" data-toggle="modal" data-target="#job_search">Occupational
 									Search</a>
 							</td>
 

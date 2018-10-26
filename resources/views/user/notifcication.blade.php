@@ -11,6 +11,15 @@ tr.dosrch th a {
   padding-top:10px;
 }
 
+.navbar-form button .glyphicon {
+    top: 1px;
+  }
+
+  .navbar-form button {
+    right: -4px;
+    padding: 6px 11px !important;
+}
+
    @media (max-width:991px) {
     #friends-dropdown, #messages-dropdown, #notifications-dropdown {
             margin-top:21px !important;

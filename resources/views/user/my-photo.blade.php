@@ -10,6 +10,15 @@
     float:right;
   }
 
+  .navbar-form button .glyphicon {
+    top: 1px;
+  }
+
+  .navbar-form button {
+    right: -4px;
+    padding: 6px 11px !important;
+}
+
 .top-searches-by div > a, tr.tpsrch th a, tr.dosrch th a {
   font-size:14px;
 }

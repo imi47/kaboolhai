@@ -10,6 +10,15 @@
         z-index:9999;
     }
 
+    .navbar-form button .glyphicon {
+    top: 1px;
+  }
+
+  .navbar-form button {
+    right: -4px;
+    padding: 6px 11px !important;
+}
+
     #navsidebare a, #sidebar-2 a {
         text-transform:none;
     }

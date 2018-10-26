@@ -44,6 +44,17 @@
    clear: both;
   }
 
+  .dropdown-menu.lenght.icon-dropdown hr{
+    margin:8px auto;
+  }
+
+  @media (min-width:1200px) {
+    .jumbotron {
+      margin-left: 24px;
+      width: 96.1%;
+    }
+  }
+
   .navbar-form {
     position:relative;
   }
@@ -62,9 +73,13 @@
     background-color: #ececec;
   }
 
-  #accordion {
-    font-weight:600;
+  #accordion, #username-dropdown-toggle a {
+      font-weight:600;
   }
+
+  #username-dropdown-toggle li a {
+      font-weight:normal;
+    }
 
   .fa-user-friends, .fa-envelope, .glyphicon-bell {
       font-size:16px;
@@ -86,8 +101,13 @@
     /* display:none */
   }
 
+  .nav>li>a {
+    padding-left:13px;
+    padding-right:13px;
+  }
+
   .navbar-default .navbar-nav>li>a.menudesign {
-    font-size:12px;
+    font-size:14px;
   }
 
   .logo-light img {
@@ -319,7 +339,7 @@
 }
   
 
-   @media (max-width:1349px) {
+   @media (max-width:1360px) {
       #myNavbar .navbar-form {
         display:none;
       }
@@ -354,7 +374,7 @@
 
 .msgMenu li:hover{background: #e6e6e6 !important; } 
 
-    @media (max-width:1095px) {
+    @media (max-width:1199px) {
       #myNavbar .nav:nth-child(1):nth-child(-n+6) {
         display:none;
       }
@@ -709,6 +729,7 @@
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
+        <li><a href="{{ url('/') }}" class="menudesign">Home</a></li>
           <li class="{{ Request::is('/') ? 'active1' : '' }}"><a href="{{ url('public-profile',user_data()->id) }}"
               class="menudesign">My Profile</a></li>
 
@@ -997,7 +1018,7 @@
             </a>
           </li>
 
-          <li class="wow fadeInDown" data-wow-delay="1s">
+          <li class="wow fadeInDown" data-wow-delay="0.2s">
             <a href="{{ url('logout') }}" class="M">
               <span>
               <img width="40" height="40" src="{{ $user_assets }}/logout.svg" alt="log out">
@@ -1008,37 +1029,37 @@
           @endif
 
             @if(empty(Session::get('user_id')))
-            <li class="wow fadeInDown login-li" data-wow-delay="0.1s"><a href="#" class="M"><span><img width="40"
+            <li class="wow fadeInDown login-li" data-wow-delay="0.3s"><a href="#" class="M"><span><img width="40"
                     height="40" src="{{ $user_assets }}/login.svg" alt="" /></span><span style="padding-left:15px;">Sign
                   in</span></a></li>
-            <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="{{ url('register') }}" class="M"><span><img width="40"
+            <li class="wow fadeInDown" data-wow-delay="0.4s"><a href="{{ url('register') }}" class="M"><span><img width="40"
                     height="40" src="{{ $user_assets }}/create_account.png" alt="" /></span><span style="padding-left:15px;">Create
                   Account</span></a></li>
             @endif
-            <li class="wow fadeInDown" data-wow-delay="0.3"><a href="{{url('about-us')}}" class="M"><span><img width="40"
+            <li class="wow fadeInDown" data-wow-delay="0.5s"><a href="{{url('about-us')}}" class="M"><span><img width="40"
                     height="40" src="{{ $user_assets }}/about_us.png" alt="" /></span> <span style="padding-left:10px;">About
                   Us</span></a></li>
-            <li class="wow fadeInDown" data-wow-delay="0.4s"><a href="{{ url('advance-search') }}" class="M"><span><img
+            <li class="wow fadeInDown" data-wow-delay="0.6s"><a href="{{ url('advance-search') }}" class="M"><span><img
                     width="40" height="40" src="{{ $user_assets }}/find_match.png" alt="" /></span><span style="padding-left:15px;">Find
                   Match</span></a></li>
-            {{-- <li class="wow fadeInDown" data-wow-delay="0.5s"><a href="{{ url('our-police') }}" class="M"><span><img
+            {{-- <li class="wow fadeInDown" data-wow-delay="0.7s"><a href="{{ url('our-police') }}" class="M"><span><img
                     width="40" height="40" src="{{ $user_assets }}/our_policy.png" alt="" /></span><span style="padding-left:15px;">Our
                   Policy</span></a></li> --}}
-            <li class="wow fadeInDown" data-wow-delay="0.6s"><a href="{{ url('policy-privacy') }}" class="M"><span><img
+            <li class="wow fadeInDown" data-wow-delay="0.8s"><a href="{{ url('policy-privacy') }}" class="M"><span><img
                     width="40" height="40" src="{{ $user_assets }}/privacy.png" alt="" /></span> <span style="padding-left:10px;">Privacy</span></a></li>
-            <li class="wow fadeInDown" data-wow-delay="0.7s"><a href="http://kaboolhai.com/blog/" target="_blank" class="M"><span><img
+            <li class="wow fadeInDown" data-wow-delay="0.9s"><a href="http://kaboolhai.com/blog/" target="_blank" class="M"><span><img
                     width="40" height="40" src="{{ $user_assets }}/blog.svg" alt="" /></span><span style="padding-left:15px;">Blogs</span></a></li>
-            <li class="wow fadeInDown" data-wow-delay="0.9s"><a href="{{ url('faqs') }}" class="M"><span><img width="40"
+            <li class="wow fadeInDown" data-wow-delay="1s"><a href="{{ url('faqs') }}" class="M"><span><img width="40"
                     height="40" src="{{ $user_assets }}/faqs.png" alt="" /></span> <span style="padding-left:10px;">FAQs</span></a></li>
-            <li class="wow fadeInDown" data-wow-delay="0.8s"><a href="our-partnar" class="M"><span><img width="40" height="40" src="{{ $user_assets }}/our_partners.png"
+            <li class="wow fadeInDown" data-wow-delay="1.1s"><a href="our-partnar" class="M"><span><img width="40" height="40" src="{{ $user_assets }}/our_partners.png"
                     alt="" /></span><span style="padding-left:15px;">Our Partners</span></a></li>
-            <li class="wow fadeInDown" data-wow-delay="0.99s"><a href="{{ url('contact-us') }}" class="M"><span><img
+            <li class="wow fadeInDown" data-wow-delay="1.2s"><a href="{{ url('contact-us') }}" class="M"><span><img
                     width="40" height="40" src="{{ $user_assets }}/contact_us.png" alt="" /></span><span style="padding-left:15px;">Contact</span></a></li>
-            <li class="wow fadeInDown" data-wow-delay="0.99s"><a href="{{ url('help-center') }}" class="M"><span><img width="39" src="{{ $user_assets }}/images/support.png" alt="" style='margin-left:2px;'/></span><span style="padding-left:15px;">Help
+            <li class="wow fadeInDown" data-wow-delay="1.3s"><a href="{{ url('help-center') }}" class="M"><span><img width="39" src="{{ $user_assets }}/images/support.png" alt="" style='margin-left:2px;'/></span><span style="padding-left:15px;">Help
                   Center</span></a></li>
             
             @if(Session::get('user_id'))
-            <li class="wow fadeInDown" data-wow-delay="0.9s"><a href="#" class="M" id='side-go-more-li'><span><img width="40" height="40" src="{{ $user_assets }}/more.svg" alt="go more"></span> <span style="padding-left:10px;">Go more</span></a></li>
+            <li class="wow fadeInDown" data-wow-delay="1.4s"><a href="#" class="M" id='side-go-more-li'><span><img width="40" height="40" src="{{ $user_assets }}/more.svg" alt="go more"></span> <span style="padding-left:10px;">Go more</span></a></li>
 
             @endif
 

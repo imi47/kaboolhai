@@ -158,8 +158,8 @@
 </style>
 
 <div style="padding-top: 90px;"></div>
-<div class="container-fluid">
-  <div class="row">
+<!-- <div class="container-fluid"> -->
+  <!-- <div class="row"> -->
  
 <div class="col-md-3 hidden-sm hidden-xs">
         <div class="well" style="box-shadow: none;">
@@ -180,10 +180,10 @@
 
   <p>This Privacy Policy sets out the policies adopted by <a href="www.kaboolhai.com/kaboolhai" style="color: blue;">http://www.kaboolhai.com</a> regarding the collection and use of your Personal Information collected or provided by you.</p>    
 
-<h3>1.PRIVACY</h3>
+<h3>1.Privacy</h3>
 <p>We, at Kaboolhai.com understand that the visitors of the Website are often anxious when it comes to providing personal information online. This website considers the privacy and confidentiality of the information provided by its users a sacred trust and shall take all important measures to protect it.</p>
 
-<h3>2.COLLECTION OF INFORMATION</h3>
+<h3>2.Collection of Information</h3>
 <p>The Company is committed to protecting its user’s and client’s privacy. We comprehend the concerns of the users regarding their privacy and the required steps to be taken for the protection of the private information they provide.</p>
 
 <div class="yyyy" style="padding-left:25px;">
@@ -238,7 +238,7 @@
 
 </div>
 <br>
-<h3>USE OF PROVIDED INFORMATION AND ITS DISCLOSURE </h3><br>
+<h3>Use of Provided Information and its Disclosure</h3><br>
 <div class="yyyy" style="padding-left:25px;">
 
 <h4 >3.1 Disclosure</h4>

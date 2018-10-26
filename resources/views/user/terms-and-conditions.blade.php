@@ -95,7 +95,7 @@
 
             <div class="panel panel-default">
               <div>
-                <h3>TERMS AND CONDITIONS</h3>
+                <h3>Terms and Conditions</h3>
               </div>
             </div>
 
