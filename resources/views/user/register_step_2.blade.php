@@ -21,6 +21,9 @@
     height: 27px;
     width: 20.8%;
 }
+.tooltip-inner {
+    max-width: 100% !important;
+}
 
 input, textarea, select {
     border: 1px solid #a2a2a2;
@@ -209,7 +212,7 @@ label {
 <hr class="lineinhead">
 
 
-
+<div style="border:1px solid; padding: 25px; border-radius:5px; ">
 <li class="row" class="listtopmarg">
 <div class="col-md-5 col-xs-12">
 <label>Which 3 words best describe you:<span style="color: red" >*</span> </label>
@@ -892,6 +895,8 @@ position: absolute;color: #8E8E8F;"></span>
 <input type="text" name="other_hobbies_type" class="check_hobies" placeholder="please specify other Hobbies" class="allselects">
 </div>
 </li>
+
+</div>
 <div class="btpad"></div>
 {{-- </li>
 <div class="btpad"></div> --}}
@@ -905,6 +910,7 @@ position: absolute;color: #8E8E8F;"></span>
 </div>
 </li>
 <hr class="lineinhead">
+<div style="border:1px solid; padding: 25px; border-radius:5px; ">
 <li class="row" class="listtopmarg">
 <div class="col-md-5 col-xs-12">
 <label for="">Complexion (Skin Color):</label>
@@ -1175,6 +1181,8 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 </div>
 
 </li>
+
+</div>
 <div class="btpad"></div>
 
 
@@ -1189,7 +1197,7 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 </div>
 </li>
 <hr class="lineinhead">
-
+<div style="border:1px solid; padding: 25px; border-radius:5px; ">
 <li class="row" class="listtopmarg">
 <div class="col-5">
 <label for=""> Are you or your parents reverted to Islam?</label>
@@ -1415,6 +1423,7 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 
 </div>
 </li>
+</div>
 <div class="btpad"></div>
 
 <!-- ******************************************************** -->
@@ -1429,7 +1438,7 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 </li>
 
 <hr class="lineinhead">
-
+<div style="border:1px solid; padding: 25px; border-radius:5px; ">
 <li class="row" class="listtopmarg">
 <div class="col-md-5 col-xs-12">
 <label for="">Education: <span class="imporatant">*</span></label>
@@ -1971,6 +1980,8 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 <span class='error' style="color:red; font-size: 10px;">{{ $errors->first('a_income') }}</span>
 </div>
 </li>
+
+</div>
 <div class="btpad"></div>
 <!-- *********************************************** -->
 
@@ -1986,7 +1997,7 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 <hr class="lineinhead">
 
 
-
+<div style="border:1px solid; padding: 25px; border-radius:5px; ">
 <li class="row" class="listtopmarg">
 <div class="col-md-5 col-xs-12">
 <label for=""> Present Country: <span class="imporatant">*</span></label>
@@ -2142,6 +2153,8 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 
 </div>
 </li>
+
+</div>
 <div class="btpad"></div>
 <!-- *********************************************** -->
 
@@ -2155,7 +2168,7 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 </li>
 
 <hr class="lineinhead">
-
+<div style="border:1px solid; padding: 25px; border-radius:5px; ">
 <li class="row" class="listtopmarg">
 <div class="col-md-5 col-xs-12">
 <label for="">Blood Group: </label>
@@ -2327,6 +2340,8 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 </div>
 </div>
 </li>
+
+</div>
 <div class="btpad"></div>
 
 
@@ -2346,9 +2361,11 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 </ul>
 
 <div id="first_step">
-
+<br>
 {{-- <a href="#" class="btn prevtofirstbtn" id="previous">previous</a> --}}
-<button type="submit" class="btn nexttothirdbtn">Next</button>
+<button type="submit" 
+           style="background-color:#5a378c;; border-radius: 10px; border-color: white; color: white; width:81px;height:46px; margin:-9px;  ">Next</button>
+{{-- <button type="submit" class="btn nexttothirdbtn">Next</button> --}}
 {{-- <a href="#" class="btn nexttothirdbtn" id="second">Next</a> --}}
 </div>
 

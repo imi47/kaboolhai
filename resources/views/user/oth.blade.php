@@ -85,7 +85,7 @@
   }
   
 </style>
-<div style="padding-top: 90px;"></div>
+<div style="padding-top: 160px;"></div>
    @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -133,7 +133,7 @@
                      <br>
                      <div class="row">
                   <div class="col-md-3"> 
-                   <label for="">CNIC SCAN IMAGE <span class="imporatant">*</span></label>
+                   <label for="">CNIC SCAN IMAGE </label>
                    </div>
                    
                    <div class="col-md-6">
@@ -141,8 +141,10 @@
                      </div>
                      </div>
                      <div class="row">
-                       <div class="col-md-9 col-md-offset-2">
-                         <p class="text-muted" style="padding-left: 18px; font-size: 13px;padding-top: 2px; margin-left: 43px;" >Kindly fill your CNIC number if you are a visitor from Pakistan.</p>
+                      <div class="col-md-3"></div>
+                       <div class="col-md-9">
+
+                         <p class="text-muted" style="padding-left: 18px; font-size: 13px;padding-top: 2px;" >Kindly fill your CNIC number if you are a visitor from Pakistan.</p>
                        </div>
                      </div>
                       @else
@@ -157,15 +159,16 @@
                      <br>
                      <div class="row">
                   <div class="col-md-3"> 
-                   <label for="">Passport No. or SSN Scan Image<span class="imporatant">*</span></label>
+                   <label for="">Passport No. or SSN Scan Image</label>
                    </div>
                    <div class="col-md-6">
                      <input  type="file" name="image" class="form-control"  style="display: block;" accept=".jpg,.png,.jpeg,.gif"/>
                      </div>
                      </div>
                      <div class="row">
-                       <div class="col-md-9 col-md-offset-2">
-                         <p class="text-muted" style="padding-left: 18px; font-size: 13px;padding-top: 2px; margin-left: 43px;" >If you are from any other country, kindly fill in your Passport Number or Social Security Number (SSN).</p>
+                       <div class="col-md-3"></div>
+                       <div class="col-md-9">
+                         <p class="text-muted" style="padding-left: 18px; font-size: 13px;padding-top: 2px;" >If you are from any other country, kindly fill in your Passport Number or Social Security Number (SSN).</p>
 
                        </div>
                      </div>
@@ -213,7 +216,7 @@
 @push('css')
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 {{-- <link rel="stylesheet" href="{{ $user_assets }}/css/style.css"> --}}
-<link rel="stylesheet" href="{{ $user_assets }}/css/style2.css">
+{{-- <link rel="stylesheet" href="{{ $user_assets }}/css/style2.css"> --}}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 
 

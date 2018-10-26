@@ -34,6 +34,7 @@ input, textarea, select {
 
 label {
 	margin-bottom:20px;
+	/*font-weight: 500;*/
 }
 
 .allselects, .smallselect, .midlinput {
@@ -108,9 +109,10 @@ label {
 		margin-top:15px;
 	}
 
-	label {
+	/*label {
 		margin-bottom:0;
-	}
+
+	}*/
 }
 
 @media (max-width:345px) {
@@ -152,6 +154,9 @@ label {
 	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
 	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
 }
+.tooltip-inner {
+    max-width: 100% !important;
+}
 
 
 </style>
@@ -191,35 +196,35 @@ label {
 
 <div class="form-group">
 	@if($gender=='Male')
-	<a id="1stp" href="javascript:;" data-dismiss="modal" onclick="myFunction('1stp')">I belong to an upper middle class family. I am a graduate from a reputed institution and do an executive level job at an organization. I am capable enough to support my family. I have strong moral, ethical values and beliefs. I am yet a modern thinker but uphold Islamic values and traditions of ancestors. I am an extrovert and like to spend time with people and enjoy outdoor activities. </a>
+	<span><input type="checkbox" name=""></span> <span id="1stp">I belong to an upper middle class family. I am a graduate from a reputed institution and do an executive level job at an organization. I am capable enough to support my family. I have strong moral, ethical values and beliefs. I am yet a modern thinker but uphold Islamic values and traditions of ancestors. I am an extrovert and like to spend time with people and enjoy outdoor activities.</span><a  href="javascript:;" data-dismiss="modal" onclick="myFunction('1stp')" style="font-size: 20px;"> Add </a>
 <br><br>
-	<a id="2ndp" href="javascript:;" data-dismiss="modal" onclick="myFunction('2ndp')">I belong to a middle class family and whatever I am today is due to my hard work and dedication. I am not a very outgoing person and enjoy spending time with my family and friends. I have a good academic background which earned me a respected job. I can afford to have my own family and give a respectable living. I believe in following Islamic principles and a practicing Muslim.</a>
+	<span><input type="checkbox" name=""></span><span id="2ndp"> I belong to a middle class family and whatever I am today is due to my hard work and dedication. I am not a very outgoing person and enjoy spending time with my family and friends. I have a good academic background which earned me a respected job. I can afford to have my own family and give a respectable living. I believe in following Islamic principles and a practicing Muslim.</span> <a  href="javascript:;" data-dismiss="modal" onclick="myFunction('2ndp')" style="font-size: 20px;"> Add</a>
 
 	<br><br>
-	<a id="3rd" href="javascript:;" data-dismiss="modal" onclick="myFunction('3rd')">I belong to a religious family background where everything is done according to Islamic principles and practices. I also ardently follow Islamic way of life. I am well-educated and sensible person. I like spending time with my family and friends. I enjoy life and the blessings of Allah. I believe in giving due space and rights to the partner.</a>
+	<span><input type="checkbox" name=""></span><span id="3rd"> I belong to a religious family background where everything is done according to Islamic principles and practices. I also ardently follow Islamic way of life. I am well-educated and sensible person. I like spending time with my family and friends. I enjoy life and the blessings of Allah. I believe in giving due space and rights to the partner.</span><a  href="javascript:;" data-dismiss="modal" onclick="myFunction('3rd')" style="font-size: 20px;"> Add </a></p>
 
 	<br><br>
-	<a id="4rthp" href="javascript:;" data-dismiss="modal" onclick="myFunction('4rthp')">I am an open-mined, smart and cultured person. I completed my graduation from. I am very outgoing and have a modern mind set but Islamic values are kept in consideration. I enjoy humor, like travelling, reading, music etc. I am a homely and warm person full of life.</a>
+	<span><input type="checkbox" name=""></span><span id="4rthp"> I am an open-mined, smart and cultured person. I completed my graduation from. I am very outgoing and have a modern mind set but Islamic values are kept in consideration. I enjoy humor, like travelling, reading, music etc. I am a homely and warm person full of life.</span><a  href="javascript:;" data-dismiss="modal" onclick="myFunction('4rthp')" style="font-size: 20px;"> Add </a></p>
 	<br><br>
-	<a id="fithp" href="javascript:;" data-dismiss="modal" onclick="myFunction('fithp')">I am a simple and God fearing person belonging to a middle class family. I am trustworthy and kind hearted who believe in the motto, ‘Live and Let Live’. I am doing a job in corporate industry and have a handsome salary which means I can easily afford a good living. I am an optimistic and fun loving so expect to have plenty of fun and enjoyment with me.</a>
+	<span><input type="checkbox" name=""></span><span id="fithp"> I am a simple and God fearing person belonging to a middle class family. I am trustworthy and kind hearted who believe in the motto, ‘Live and Let Live’. I am doing a job in corporate industry and have a handsome salary which means I can easily afford a good living. I am an optimistic and fun loving so expect to have plenty of fun and enjoyment with me.</span><a  href="javascript:;" data-dismiss="modal" onclick="myFunction('fithp')" style="font-size: 20px;"> Add </a></p>
 	<br><br>
-	<a id="sixp" href="javascript:;" data-dismiss="modal" onclick="myFunction('sixp')">I am self-motivated, ambitious and hard-working person who believe in achieving the goals in life through own hard-work and dedication. I know how to balance my personal and professional life. I am confident about starting a family and completion of my deen as a Muslim. I like arranging family get together, attending parties, reading and watching movies.</a>
+	<span><input type="checkbox" name=""></span><span id="sixp"> I am self-motivated, ambitious and hard-working person who believe in achieving the goals in life through own hard-work and dedication. I know how to balance my personal and professional life. I am confident about starting a family and completion of my deen as a Muslim. I like arranging family get together, attending parties, reading and watching movies. </span><a  href="javascript:;" data-dismiss="modal" onclick="myFunction('sixp')" style="font-size: 20px;"> Add </a></p>
 	<br><br>
-	<a id="7p" href="javascript:;" data-dismiss="modal" onclick="myFunction('7p')">I am warm and caring person who have a very close bond with the family and friends around. I am very good at keeping secrets that is why everyone trust me and confide with me for their secrets. I like to solve problems of people around me which gives me satisfaction and happiness. I have a good job with a decent salary to support my family. I like singing, reading, travelling and cooking.</a>
+	 <span><input type="checkbox" name=""></span><span id="7p"> I am warm and caring person who have a very close bond with the family and friends around. I am very good at keeping secrets that is why everyone trust me and confide with me for their secrets. I like to solve problems of people around me which gives me satisfaction and happiness. I have a good job with a decent salary to support my family. I like singing, reading, travelling and cooking.</span><a  href="javascript:;" data-dismiss="modal" onclick="myFunction('7p')" style="font-size: 20px;"> Add </a>
 
 	<br><br>
-	<a id="8p" href="javascript:;" data-dismiss="modal" onclick="myFunction('8p')">I am a clever, intelligent and sharp witted person who is good at judging people. I belong to a religious yet modern Muslim family who are completely aware about girl’s right to marriage. I have completed my studies from a well-known educational institute and want to pursue my professional career. I am currently doing a job at an organization and I look forward to continue it after my marriage. I like to cook, read and do gardening in my spare time. I also enjoy spending time with my friends and family.</a>
+	<span><input type="checkbox" name=""></span><span id="8p"> I am a clever, intelligent and sharp witted person who is good at judging people. I belong to a religious yet modern Muslim family who are completely aware about girl’s right to marriage. I have completed my studies from a well-known educational institute and want to pursue my professional career. I am currently doing a job at an organization and I look forward to continue it after my marriage. I like to cook, read and do gardening in my spare time. I also enjoy spending time with my friends and family.</span><a  href="javascript:;" data-dismiss="modal" onclick="myFunction('8p')" style="font-size: 20px;"> Add </a>
 
 	<br><br>
-	<a id="9p" href="javascript:;" data-dismiss="modal" onclick="myFunction('9p')">I am an accomplished and well-educated girl who knows how to keep the balance between home and professional life. I am loving, caring and outgoing person. My family has given me strong ethical and moral values which have made me strong and religiously firm in my beliefs. I believe that I am going to be a compassionate and inspiring life partner. My hobbies are enjoying with friends, watching movies, reading books etc.</a>
+	<span><input type="checkbox" name=""></span><span id="9p"> I am an accomplished and well-educated girl who knows how to keep the balance between home and professional life. I am loving, caring and outgoing person. My family has given me strong ethical and moral values which have made me strong and religiously firm in my beliefs. I believe that I am going to be a compassionate and inspiring life partner. My hobbies are enjoying with friends, watching movies, reading books etc</span>.<a  href="javascript:;" data-dismiss="modal" onclick="myFunction('9p')" style="font-size: 20px;"> Add </a>
 	@else
-	<a id="f1p" href="javascript:;" data-dismiss="modal" onclick="myFunction('f1p')">I am a girl who is honest, caring and loving. I have completed my studies but preferred to stay at home to learn household skills and provide comfort to my family. My family is a source of courage and inspiration to me. It has given me strong family and religious values and ethics. I firmly believe in following the righteous path Allah has shown us. I am looking forward to start my family with some family oriented and religious person. I love cooking, gardening, sewing and other household stuff.</a>
+	 <span><input type="checkbox" name=""></span> <span id="f1p"> I am a girl who is honest, caring and loving. I have completed my studies but preferred to stay at home to learn household skills and provide comfort to my family. My family is a source of courage and inspiration to me. It has given me strong family and religious values and ethics. I firmly believe in following the righteous path Allah has shown us. I am looking forward to start my family with some family oriented and religious person. I love cooking, gardening, sewing and other household stuff.</span><a  href="javascript:;" data-dismiss="modal" onclick="myFunction('f1p')" style="font-size: 20px;"> Add</a>
 	<br><br>
-	<a id="f2p" href="javascript:;" data-dismiss="modal" onclick="myFunction('f2p')">I am an easy going and caring person who do not lose hope with the downs in one’s life. I belong to an upper-middle class Muslim family. It is a source of strength and confidence for me. I have pursued my higher education and look forward to do a respectable job after completion of my studies. I am a spiritual person and have an inclination towards learning more about Quran and Sunnah. I like participating in intellectual and religious discussions.</a>
+	 <span><input type="checkbox" name=""></span> <span id="f2p"> I am an easy going and caring person who do not lose hope with the downs in one’s life. I belong to an upper-middle class Muslim family. It is a source of strength and confidence for me. I have pursued my higher education and look forward to do a respectable job after completion of my studies. I am a spiritual person and have an inclination towards learning more about Quran and Sunnah. I like participating in intellectual and religious discussions.</span><a id="" href="javascript:;" data-dismiss="modal" onclick="myFunction('f2p')" style="font-size: 20px;"> Add</a>
 	<br><br>
-	<a id="f3p" href="javascript:;" data-dismiss="modal" onclick="myFunction('f3p')">I have a modern outlook on life but I believe in traditional values such as respect for parents and helping others in need. I am willing to change my opinions if you can convince me and you should be open-minded about your opinions as well. I travel occasionally and I am hoping to find someone who will be available to spend time with me. I prefer a teeto taler. Smoking is also a strict no-no. </a>
+	<span><input type="checkbox" name=""><span id="f3p"> I have a modern outlook on life but I believe in traditional values such as respect for parents and helping others in need. I am willing to change my opinions if you can convince me and you should be open-minded about your opinions as well. I travel occasionally and I am hoping to find someone who will be available to spend time with me. I prefer a teeto taler. Smoking is also a strict no-no.</span><a  href="javascript:;" data-dismiss="modal" onclick="myFunction('f3p')" style="font-size: 20px;"> Add</a>
 	<br><br>
-	<a id="f4p" href="javascript:;" data-dismiss="modal" onclick="myFunction('f4p')">My job has made me a patient man and improved my negotiation skills! My job also keeps me on my toes, as I am always trying to learn new skills to keep pace with the changing technology landscape. I especially value humour, ability to laugh at yourself, being able to communicate, respect for culture, staying healthy, and the freedom to think out of the box.</a>
+	 <span><input type="checkbox" name=""></span> <span id="f4p"> My job has made me a patient man and improved my negotiation skills! My job also keeps me on my toes, as I am always trying to learn new skills to keep pace with the changing technology landscape. I especially value humour, ability to laugh at yourself, being able to communicate, respect for culture, staying healthy, and the freedom to think out of the box.</span><a  href="javascript:;" data-dismiss="modal" onclick="myFunction('f4p')" style="font-size: 20px;"> Add </a>
 	@endif
 </div>
 
@@ -333,7 +338,7 @@ Select
 </li>
 
 <hr class="lineinhead">
-
+<div style="border:1px solid; padding: 25px; border-radius:5px; ">
 <li class="row" class="listtopmarg">
 <div class="col-12">
 Explain more about your personality, family and educational background, profession and hobbies
@@ -359,6 +364,8 @@ Explain more about your personality, family and educational background, professi
 </script>
 </div>
 </li>
+</div>
+<br>
 
 <!-- **************************************************** -->
 
@@ -373,6 +380,7 @@ Explain more about your personality, family and educational background, professi
 
 <hr class="lineinhead">
 
+<div style="border:1px solid; padding: 25px; border-radius:5px; ">
 <li class="row" class="listtopmarg">
 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Family Value: <span class="imporatant">*</span></label>
@@ -426,13 +434,13 @@ Explain more about your personality, family and educational background, professi
 <label for="">Relocate?<span class="imporatant">*</span></label>
 </div>
 <div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
-<!-- <span class="colons">:</span> {{-- -->
+<!-- <span class="colons">:</span> {{-- 
 <div class="radiyn">
 <input type="radio" name="relocate" value="Yes"> Yes &nbsp <input type="radio" name="relocate" value="No"> Maybe &nbsp <input type="radio" name="relocate" value="No"> Never
-</div> --}}
+</div>
 
 
-<select name="loking_relocate" id="" class="allselects">\
+<select name="loking_relocate" id="" class="allselects">
 @if(old('loking_relocate'))
 	
 	<option value="{{ old('loking_relocate') }}">{{ old('loking_relocate') }}</option>
@@ -448,13 +456,14 @@ Explain more about your personality, family and educational background, professi
 <span  class='error' style="color:red; font-size: 10px;">{{ $errors->first('loking_relocate') }}</span>
 </div>
 </li>
+--}}-->
 <div class="btpad"></div>
 <li class="row" class="listtopmarg">
 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Financial Status <span class="imporatant">*</span></label>
 </div>
 <div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
-<!-- <span class="colons">:</span> -->
+{{-- <span class="colons">:</span> --}}
 <select name="finacial_status" id="" class="allselects">
 @if(old('finacial_status'))
 	
@@ -515,10 +524,10 @@ Explain more about your personality, family and educational background, professi
 <label for="">Father's Details:</label>
 </div>
 <div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
-<!-- <span class="colons">:</span> {{-- -->
-<div class="parntdet"> --}}
-<input type="radio" @if(old('father_detail')=='Alive') checked="" @endif name="father_detail" value="Alive"> Alive &nbsp <input type="radio" @if(old('father_detail')=='Died') checked="" @endif name="father_detail" value="Died"> Died &nbsp Occupation <input type="text" data-toggle="tooltip" data-placement="top" title="Enter father details" name="father_occupation" value="{{ old('father_occupation') }}" class="allinputs"> {{--
-</div> --}}
+{{-- <span class="colons">:</span>  --}}
+<div class="parntdet"> 
+<input type="radio" @if(old('father_detail')=='Alive') checked="" @endif name="father_detail" value="Alive"> Alive &nbsp <input type="radio" @if(old('father_detail')=='Died') checked="" @endif name="father_detail" value="Died"> Died &nbsp Occupation <input type="text" data-toggle="tooltip" data-placement="top" title="Enter father details" name="father_occupation" value="{{ old('father_occupation') }}" class="allinputs"> 
+</div> 
 </div>
 </li>
 <div class="btpad"></div>
@@ -528,7 +537,7 @@ Explain more about your personality, family and educational background, professi
 <label for="">Mother's Details</label>
 </div>
 <div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
-<!-- <span class="colons">:</span> -->
+{{-- <span class="colons">:</span>  --}}
 <div class="parntdet">
 <input type="radio" @if(old('mother_detail')=='Alive') checked="" @endif name="mother_detail" value="Alive"> Alive &nbsp <input type="radio" name="mother_detail" @if(old('mother_detail')=='Alive') checked="" @endif value="Died"> Died &nbsp Occupation <input value="{{ old('mother_occupation') }}" type="text" data-toggle="tooltip" data-placement="top" title="Enter monther details" name="mother_occupation" class="allinputs father-occupation">
 </div>
@@ -710,6 +719,7 @@ Elder <select name="elder_sister" id="" class="smallselect">
 </div>
 
 </li>
+</div>
 <div class="btpad"></div>
 <!-- **************************************************** -->
 
@@ -723,7 +733,6 @@ Elder <select name="elder_sister" id="" class="smallselect">
 </li>
 
 <hr class="lineinhead">
-
 <li class="row" class="listtopmarg">
 <div class="well" style="width:95%;background-color:#F2F2F2;box-shadow:none;border:1px solid #E6E6E6">
 <div class="col-12">
@@ -734,6 +743,7 @@ Elder <select name="elder_sister" id="" class="smallselect">
 </li>
 <div class="btpad"></div>
 
+<div style="border:1px solid; padding: 25px; border-radius:5px; ">
 <li class="row" class="listtopmarg">
 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Age Preference: <span class="imporatant">*</span></label>
@@ -1076,6 +1086,7 @@ position: absolute;color: #8E8E8F;"></span>
 </div>
 </div>
 </li>
+</div>
 <div class="btpad"></div>
 {{-- <li class="row" class="listtopmarg">
 <div class="well" style="width:95%;background-color:#F2F2F2;box-shadow:none;border:1px solid #E6E6E6">
@@ -1096,7 +1107,7 @@ position: absolute;color: #8E8E8F;"></span>
 </li>
 <hr class="lineinhead">
 <div class="btpad"></div>
-
+<div style="border:1px solid; padding: 25px; border-radius:5px; ">
 
 <li class="row" class="listtopmarg">
 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -1587,6 +1598,7 @@ position: absolute;color: #8E8E8F;"></span>
 <input type="text" name="other_loking_physcial_status" placeholder="Specify other physical status" class="allselects" id="user_status" style="display: none">
 </div>
 </li>
+</div>
 <div class="btpad"></div>
 
 <script type="text/javascript">
@@ -1626,6 +1638,7 @@ $('#user_status').hide('slow');
 </li>
 <hr class="lineinhead">
 <div class="btpad"></div>
+<div style="border:1px solid; padding: 25px; border-radius:5px; ">
 <li class="row" class="listtopmarg">
 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Education: </label>
@@ -2139,6 +2152,7 @@ $('#user_status').hide('slow');
 </select>
 </div>
 </li>
+</div>
 <div class="btpad"></div>
 
 {{-- 
@@ -2161,6 +2175,7 @@ $('#user_status').hide('slow');
 </li>
 <hr class="lineinhead">
 <div class="btpad"></div>
+<div style="border:1px solid; padding: 25px; border-radius:5px; ">
 <li class="row" class="listtopmarg">
 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Country Living in:</label>
@@ -2245,6 +2260,7 @@ $('#user_status').hide('slow');
 <input type="text" value="{{ old('relocate') }}" name="reason_relocate" placeholder="Enter Reason No Relocate" class="allselects">
 </div>
 </li>
+</div>
 <div class="btpad"></div>  {{--
 <li class="row" class="listtopmarg">
 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -2279,7 +2295,7 @@ $('#user_status').hide('slow');
 </li>
 <hr class="lineinhead">
 <div class="btpad"></div>
-
+<div style="border:1px solid; padding: 25px; border-radius:5px; ">
 <li class="row" class="listtopmarg">
 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Africa:</label>
@@ -2982,6 +2998,8 @@ White"> Indian Carribean <br> White <br>
 </div>
 
 </li>
+{{-- </li> --}}
+</div>
 <div class="btpad"></div>
 
 </li>
@@ -3008,7 +3026,7 @@ White"> Indian Carribean <br> White <br>
 
 <hr class="lineinhead">
 <div class="btpad"></div>
-
+<div style="border:1px solid; padding: 25px; border-radius:5px; ">
 <li class="row" class="listtopmarg">
 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Religious History: </label>
@@ -3295,6 +3313,7 @@ position: absolute;color: #8E8E8F;"></span>
 </div>
 
 </li>
+</div>
 <div class="btpad"></div>
 
 
@@ -3337,7 +3356,7 @@ position: absolute;color: #8E8E8F;"></span>
 <hr class="lineinhead">
 
 <div class="btpad"></div>
-
+<div style="border:1px solid; padding: 25px; border-radius:5px; ">
 <li class="row" class="listtopmarg">
 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Expectations you may have about your expected partner.  (Mention here location, education, job, character etc..)</label>
@@ -3347,6 +3366,7 @@ position: absolute;color: #8E8E8F;"></span>
 <textarea class='last-textarea' data-toggle="tooltip" data-placement="top" title="Kindly provide the details about your preferences for the partner and what you are looking for in your partner for instance type of personality, family and educational background, hobbies, etc." placeholder="Kindly provide the details about your preferences for the partner and what you are looking for in your partner for instance type of personality, family and educational background, hobbies, etc." name="loking_description" id="" style="height:75px;width:91%;"></textarea>
 </div>
 </li>
+</div>
 <div class="btpad"></div>
 
 
@@ -3362,7 +3382,7 @@ position: absolute;color: #8E8E8F;"></span>
 
 </li>
 <div class="btpad"></div>
-
+<div style="border:1px solid; padding: 25px; border-radius:5px; ">
 <li class="row" class="listtopmarg">
 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for="">Image</label>
@@ -3374,6 +3394,9 @@ position: absolute;color: #8E8E8F;"></span>
 
 </div>
 </li>
+</div>
+<div class="btpad"></div>
+<div class="btpad"></div>
 <div class="btpad"></div>
 
 
@@ -3387,7 +3410,10 @@ position: absolute;color: #8E8E8F;"></span>
 <div id="first_step">
 
 {{-- <a href="{{ url('prev-user-step-2')}}" class="btn prevsecbtn">Previous</a> --}}
-<button type="submit" class="btn submitbtn" type="submit">Submit</button>
+<button type="submit" 
+           style="background-color:#5a378c;; border-radius: 10px; border-color: white; color: white; width:81px;height:46px;">Submit</button>
+
+{{-- <button type="submit" class="btn submitbtn" type="submit">Submit</button> --}}
 </div>
 
 
@@ -3765,6 +3791,7 @@ background-size: 150px 150px;
  @endsection
 @push('css')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+{{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> --}}
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js">

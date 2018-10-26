@@ -160,6 +160,9 @@ input, textarea, select {
      margin-top:27px;
    }
 }
+.tooltip-inner {
+    max-width: 100% !important;
+}
 
   @media (max-width:575px) {
     #year.form_error {
@@ -224,15 +227,15 @@ input, textarea, select {
 <div class="modal-content">
 
 <!-- Modal Header -->
-<div class="modal-header" style="color:#ffffff; height:75px; background-color:#e6e6e6; border-bottom-color:#000000; ">
-<div class="container">
-<div class="row">
+{{-- <div class="modal-header" style="color:#ffffff; height:75px; background-color:#e6e6e6; border-bottom-color:#000000; "> --}}
+{{-- <div class="container"> --}}
+{{-- <div class="row">
 <div class="col-sm-4">
 <img width="100%" src="{{ $user_assets }}/KH-logo-blog-logo.png" style="width: 177px; height: 57px;" >
 </div>
-</div>
-</div>
-</div>
+</div> --}}
+{{-- </div> --}}
+{{-- </div> --}}
 
 <!-- Modal body -->
 <div class="modal-body" style="text-align:center;background-color:#e6e6e6; ">
@@ -240,10 +243,10 @@ input, textarea, select {
 
 <div class="row">
 <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
-<h3 class="mfh">Thank you for registering with us. Your Kaboolhai username is <span id="verfi_user"></span></h3>
+<h3>Thank you for registering with us. Your Kaboolhai username is <span id="verfi_user"></span></h3>
 <hr>
-<h1 class="mvt">Verify your mobile number</h1>
-<h5 class="pinn">Enter the pin that was sent via sms to <span id="num_code"></span> <span id="p_code"></span> <span id="num"></span> (<a href="#" onclick="return edit_num()"> Edit</a>)</h5>
+<h1>Verify your mobile number</h1>
+<h5>Enter the pin that was sent via sms to <span id="num_code"></span> <span id="p_code"></span> <span id="num"></span> (<a href="#" onclick="return edit_num()"> Edit</a>)</h5>
 </div>
 </div>
 <script type="text/javascript">
@@ -327,7 +330,7 @@ border: 1px;
 <!-- Modal footer -->
 <div class="modal-footer" style="border-top-color:#000000;text-align:center;">
 <div class="col-sm-12">
-<h5 style="font-size:12px">Copyright &copy; 2018.All rights reserved.</h5>
+<h5 style="font-size:12px"><img src="{{ $user_assets }}/db_images/kabool-hai-verify.png" style="width: 30px;"> Copyright &copy; 2018.All rights reserved.</h5>
 </div>
 </div>
 
@@ -807,7 +810,7 @@ border-bottom-left-radius: 10px;*/
 <span class="on-focus">
 <input type="password" data-toggle="tooltip" data-placement="top" title="Password should be between 8-25 characters " {{-- id="password" --}} id="pa" name="password" onkeypress="passwordss()" onblur="pas()" onfocus="pass()" class="allinputs" placeholder ="Enter Password">
 
-<div class="col-6">
+<div class="col-12">
 
 <div class="pwstrength_viewport_progress" style="display: none;"></div>
 </div>
@@ -908,14 +911,14 @@ border-bottom-left-radius: 10px;*/
 <div class="col-lg-4 col-md-4-col-sm-4 col-xs-12">
 <label for="">Phone: <span class="imporatant">*</span></label>
 </div>
-<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+<div class="col-lg-8 col-md-6 col-sm-12 col-xs-12">
 <!-- <span class="colons">:</span> -->
 <img style="margin-top: 4px; margin-bottom: 6px;" src="{{ $user_assets }}/flags/pk.png" width="20" id="falgimg">
 
 <input type="text" readonly="" id="code" name="code2" value="+92" placeholder="Code" class="smallselect">
-<input type="number" data-toggle="tooltip" data-placement="top" title="Kindly enter your correct phone number" onfocus="myFunction(this)" placeholder="Code" id="code1" name="phone_code" class="smallselect" style="width:100px;">
+<input type="number" data-toggle="tooltip" data-placement="top" title="Kindly enter your correct phone number" onfocus="myFunction(this)" placeholder="Code" id="code1" name="phone_code" class="smallselect">
 <span class="on-focus">
-<input type="number" data-toggle="tooltip" data-placement="top" title="Kindly enter your correct phone number" id="full" onblur="phone_blur()" onfocus="phone_focus()" onkeypress="phone_press()"  placeholder=" Number" name="phone" class="midlinput">
+<input type="number" data-toggle="tooltip" data-placement="top" title="Kindly enter your correct phone number" id="full" onblur="phone_blur()" onfocus="phone_focus()" onkeypress="phone_press()"  placeholder=" Number" name="phone" class="smallselect" style="width: 100px;">
 
 </span>
 </div>
@@ -923,7 +926,7 @@ border-bottom-left-radius: 10px;*/
 
 <span id="phone" class="form_error" style="color:red; font-size: 13px;"></span>
 
-<span id="ppp" class="form_error" style="color:#9b9b9b; display: none; margin-left: 213px; margin-top: -18px; font-size: 13px;">Your contact will not be visble to other members and will remain private.</span>
+<span id="ppp" style="color:#9b9b9b; display: none; margin-left: 0px; margin-top: -18px; font-size: 13px;">Your contact will not be visble to other members and will remain private.</span>
 </li><div class="btpad"></div>
 <li class="row" class="listtopmarg">
 <div class="col-lg-4 col-md-4-col-sm-4 col-xs-12 ">
@@ -977,8 +980,9 @@ border-bottom-left-radius: 10px;*/
 
 </ul>
 
-
-<button class="btn btn-success edit_next_btn"  type="submit">Next</button>
+<button type="submit" 
+           style="background-color:#5a378c;; border-radius: 10px; border-color: white; color: white; width:81px;height:46px; margin:-9px;  float: right;">Next</button>
+{{-- <button class="btn btn-success edit_next_btn"  type="submit">Next</button> --}}
 
 
 
