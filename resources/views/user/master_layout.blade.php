@@ -48,6 +48,10 @@
     margin:8px auto;
   }
 
+  .dropdown-menu.lenght.icon-dropdown li:hover, .dropdown-menu.lenght.icon-dropdown li:hover strong {
+    background-color:#f5f5f5;
+  }
+
   @media (min-width:1200px) {
     .jumbotron {
       margin-left: 24px;

@@ -127,11 +127,11 @@
 					margin-bottom:20px;
 				}
 
-				#profile .box_txt_lb {
+				#profile .box_txt_lb, #partner .box_txt_lb {
 					display:block;
 				}
 
-				#profile .txt_fetched, #profile .self, #profile .self1 {
+				#profile .txt_fetched, #profile .self, #profile .self1, #partner .txt_fetched, #partner .self, #partner .self1 {
 					float:none;
 				}
 				
@@ -399,7 +399,7 @@ $('.owl-carousel').owlCarousel({
 								@else
 								<li class="agea"><a onclick="return false" href="{{ url('invite-view-profile',$user_data->id) }}"><span><img src="{{ $user_assets }}/invite.png" alt="" class="icon_size"></span><span class="linkT"> Invite to view my profile</span></a> (invitation request sent)</li>
 								@endif
-                <li class="agea"><a href="{{ url('addquestionlist',$user_data->id) }}"><span class="fa fa-question icon_size linkT" style="font-size: 25px;"></span> Question</a></li>
+                <li class="agea"><a href="{{ url('addquestionlist',$user_data->id) }}"><span class="icon_size linkT" style="font-size: 25px;"><img style='margin-left:-7px;' src="{{ $user_assets }}/images/question.png" alt="" class="icon_size"></span> Question</a></li>
                 @if(empty($hideprofile))
 								<li class="agea"><a href="{{ url('hide-profile',$user_data->id) }}" onclick="return confirm('Are you sure you want to hide this user?');" ><span><img src="{{ $user_assets }}/dontshowagain.png" alt="" class="icon_size"></span> <span class="linkT">Don't show me again</span></a></li>
                 @else
