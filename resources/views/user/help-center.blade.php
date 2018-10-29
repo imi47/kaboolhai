@@ -134,10 +134,6 @@
     }
 }
 
-.fa-google-plus-square, .fa-linkedin-square {
-    font-size:2.44em;
-  }
-
 </style>
 <div style="padding-top:90px;"></div>
 <div class="container-fluid">

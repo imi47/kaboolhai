@@ -71,9 +71,6 @@
 	text-align:center;
 }
 
-.fa-google-plus-square, .fa-linkedin-square {
-  font-size:3.2em;
-}
 </style>
 
 <div style="padding-top:90px;"></div>

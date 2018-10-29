@@ -5,10 +5,6 @@
     color: green;
   }
 
-  .fa-google-plus-square, .fa-linkedin-square {
-  font-size:3.2em;
-}
-
  .top-searches-by div > a, tr.tpsrch th a, tr.dosrch th a {
       font-size:12px;
  }

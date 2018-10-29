@@ -243,10 +243,6 @@
     }
 }
 
-.fa-google-plus-square, .fa-linkedin-square {
-    font-size:2.44em;
-  }
-
   .top-searches-by div > a {
       text-transform:capitalize;
   }

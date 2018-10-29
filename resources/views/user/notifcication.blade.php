@@ -139,10 +139,6 @@ tr.dosrch th a {
     }
   }
 
-  .fa-google-plus-square, .fa-linkedin-square {
-    font-size:2.44em;
-  }
-
   footer section .container {
     margin-top:20px;
   }

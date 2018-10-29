@@ -24,10 +24,6 @@
     top: 7px !important;
   }
 
-.fa-google-plus-square, .fa-linkedin-square {
-    font-size:3.85rem;
-  }
-
   @media (max-width:991px) {
     #carousel-default img {
     width:90% !important;

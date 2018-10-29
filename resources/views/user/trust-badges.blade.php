@@ -6,10 +6,7 @@
     margin-top:-56px !important;
     padding-top:12px;
   }
-
-  .fa-google-plus-square, .fa-linkedin-square {
-    font-size:3.25em;
-  }
+  
    .top-searches-by div > a {
       text-transform:capitalize;
   }

@@ -26,10 +26,6 @@ footer section {
     margin-top:50px;
 }
 
-.fa-google-plus-square, .fa-linkedin-square {
-  font-size:2.44em;
-}
-
 
 
 .container-1::after {
