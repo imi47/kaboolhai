@@ -33,6 +33,14 @@
       font-weight:600;
     }
 
+    footer .searchcontainer .form-control {
+		border-radius:3px;
+	}
+
+	  footer .searchcontainer button {
+		border-radius:0 3px 3px 0;
+	}
+
    #username-dropdown-toggle li a {
       font-weight:normal;
     }

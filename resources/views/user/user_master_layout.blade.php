@@ -28,10 +28,16 @@
 		right: 26px;
 		border: 2px solid #ddd;
 	}
+	footer .searchcontainer .form-control {
+		border-radius:3px;
+	}
+
+	footer .searchcontainer button {
+		border-radius:0 3px 3px 0;
+	}
 
 	.fa-google-plus-square, .fa-linkedin-square, .fa-facebook-square, .fa-youtube-square, .fa-twitter-square {
-	 font-size: 2.5
-	 rem !important;
+	 font-size: 2.5rem !important;
 }
 
 	.logsbdr .well, .logsbdr + div  > .well {

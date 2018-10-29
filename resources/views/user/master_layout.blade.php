@@ -52,6 +52,10 @@
     background-color:#f5f5f5;
   }
 
+	footer .searchcontainer button {
+		border-radius:0 3px 3px 0;
+	}
+
   @media (min-width:1200px) {
     .jumbotron {
       margin-left: 24px;
