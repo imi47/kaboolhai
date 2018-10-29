@@ -41,6 +41,10 @@
       margin-top: 2px;
       padding-top: 0;
   }
+
+  .well.menu {
+    display:none;
+  }
 }
 
   @media (max-width:716px) {
@@ -1314,7 +1318,7 @@
           </div>
         </div>
         </form>
-        <div class="well w" style="background-color:#ffffff;border-radius:10px;">
+        <div class="well w menu" style="background-color:#ffffff;border-radius:10px;">
           @include('user/side_bar')
         </div>
 
