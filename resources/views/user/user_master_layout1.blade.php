@@ -29,6 +29,11 @@
     body {
       /* position:relative; */
     }
+
+    .lmis {
+      width:40px;
+    }
+
     #accordion, #username-dropdown-toggle a {
       font-weight:600;
     }
@@ -133,6 +138,7 @@
     #navsidebare {
       height:100% !important;
       position:fixed !important;
+      margin-top: 58px;
     }
 
     @media (max-width:500px) {
