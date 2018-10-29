@@ -140,135 +140,7 @@
 <div class="container-fluid"">
      <div id=" wait" style="display: none;"></div>
 <div class="row">
-  <div class="scroll">
-    <div class="wrapper cf">
-      <div class="col-md-3 content">
-
-        <div class="well w">
-          <div class="row">
-            <form method="get" action="{{ url('user-search') }}">
-              <h2 class="qsh">Quick Search</h2>
-              <div class="col-sm-12">
-                <label>Country</label>
-                <select id="country" name="country_id" class="form-control">
-                  <option selected="" value="">Select country
-                  </option>
-                  @foreach ($country as $row)
-                  <option value="{{ $row->country_id }}">
-                    {{ $row->country_name }}
-                  </option>
-                  @endforeach
-                </select>
-              </div>
-              <div class="col-sm-6">
-
-
-                <label>Age from</label>
-                <select name="age_from" id="" class="form-control qs">
-                  <option value="">Select</option>
-
-                  @for($i = date('y'); $i <= date('y')+82 ; $i++) <option value="{{ $i }}">{{ $i }}</option>
-                    @endfor
-                </select>
-              </div>
-              <div class="col-sm-6">
-                <label>Age to</label>
-                <select name="age_to" id="" class="form-control qs">
-                  <option value="">Select</option>
-                  @for($i = date('y')+82; $i >= date('y'); $i--)
-                  <option value="{{ $i }}">{{ $i }}</option>
-                  @endfor
-                </select>
-              </div>
-              <div class="col-sm-12">
-                <button class="bn">Search Now</button>
-              </div>
-          </div>
-        </div>
-        </form>
-        <div class="well w" style="background-color:#ffffff;border-radius:10px;">
-          @include('user/side_bar')
-        </div>
-
-
-        <div class="well w sidebar" id="" style="background-color:#f47e2a; border-radius:10px;">
-          <div style="padding-bottom:0px;">
-            <div class="row">
-              <h4 class="qsh">Recently Joined</h4>
-            </div>
-            <div class="row">
-              <section class="carousel-default">
-                <div id="carousel-default" class="carousel slide" data-ride="carousel">
-                  <ol class="carousel-indicators">
-                    <li data-target="#carousel-default" data-slide-to="0" class=""></li>
-                    <li data-target="#carousel-default" data-slide-to="1" class=""></li>
-                    <li data-target="#carousel-default" data-slide-to="2" class="active"></li>
-                  </ol>
-                  <div class="carousel-inner" role="listbox">
-                    <!-- NOTE: Bootstrap v4 changes class name to carousel-item -->
-                    @if(!empty($recent))
-                    @if(count($recent))
-                    @foreach($recent as $key =>$recnt_slid)
-                    <div @if($key==0) class="item active" @else class="item" @endif>
-                      <a href="{{ url('public-profile',$recnt_slid->id) }}" title="{{ $recnt_slid->user_name }} view public profile">
-                        @if($recnt_slid->image)
-
-                        <img src="{{ $user_assets }}/my_photo/{{ $recnt_slid->image }}" class="img-thumbnail" style="width: 100%; height: 200px;">
-
-                        @elseif($recnt_slid->image_name)
-                        <img src="{{ $user_assets }}/profile_image/{{ $recnt_slid->image_name }}" class="img-thumbnail"
-                          style="width: 100%; height: 200px;">
-                        @else
-
-                        <img src="{{ $user_assets }}/default_slider.jpg" class="img-thumbnail" style="width: 100%; height: 200px;">
-                        @endif
-
-                        <div class="carousel-caption">
-                          <h2>{{ $recnt_slid->user_name }}</h2>
-                          <h3>{{ $recnt_slid->gender }}</h3>
-                        </div>
-
-                        <br><br><br><br>
-                        {{ $recnt_slid->country_name.' '.$recnt_slid->city_name.' '.$recnt_slid->martial_status }}
-                        <span style="color: blue;"><b>View Profile</b></span>
-                      </a>
-                    </div>
-                    @endforeach
-                    @else
-
-                    <div class="item active">
-
-
-                      <img src="{{ $user_assets }}/default_slider.jpg" class="img-thumbnail" style="width: 100%; height: 200px;">
-
-                      {{-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/158072/hearthand.jpg" alt="Third slide">
-                      --}}
-                      <div class="carousel-caption">
-                        <h2>Recent User</h2>
-                        <h3>Not Available</h3>
-
-                      </div>
-
-                    </div>
-                    @endif
-                    @endif
-                  </div>
-                  <a class="left carousel-control" href="#carousel-default" role="button" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                  </a>
-                  <a class="right carousel-control" href="#carousel-default" role="button" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                  </a>
-                </div>
-              </section>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  
 
   <div class="col-md-9">
     <div class="well" style="background-color: #ffffff;border-radius:10px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
@@ -1392,6 +1264,137 @@
 
       </div>
 
+    </div>
+  </div>
+
+
+  <div class="scroll">
+    <div class="wrapper cf">
+      <div class="col-md-3 content">
+
+        <div class="well w">
+          <div class="row">
+            <form method="get" action="{{ url('user-search') }}">
+              <h2 class="qsh">Quick Search</h2>
+              <div class="col-sm-12">
+                <label>Country</label>
+                <select id="country" name="country_id" class="form-control">
+                  <option selected="" value="">Select country
+                  </option>
+                  @foreach ($country as $row)
+                  <option value="{{ $row->country_id }}">
+                    {{ $row->country_name }}
+                  </option>
+                  @endforeach
+                </select>
+              </div>
+              <div class="col-sm-6">
+
+
+                <label>Age from</label>
+                <select name="age_from" id="" class="form-control qs">
+                  <option value="">Select</option>
+
+                  @for($i = date('y'); $i <= date('y')+82 ; $i++) <option value="{{ $i }}">{{ $i }}</option>
+                    @endfor
+                </select>
+              </div>
+              <div class="col-sm-6">
+                <label>Age to</label>
+                <select name="age_to" id="" class="form-control qs">
+                  <option value="">Select</option>
+                  @for($i = date('y')+82; $i >= date('y'); $i--)
+                  <option value="{{ $i }}">{{ $i }}</option>
+                  @endfor
+                </select>
+              </div>
+              <div class="col-sm-12">
+                <button class="bn">Search Now</button>
+              </div>
+          </div>
+        </div>
+        </form>
+        <div class="well w" style="background-color:#ffffff;border-radius:10px;">
+          @include('user/side_bar')
+        </div>
+
+
+        <div class="well w sidebar" id="" style="background-color:#f47e2a; border-radius:10px;">
+          <div style="padding-bottom:0px;">
+            <div class="row">
+              <h4 class="qsh">Recently Joined</h4>
+            </div>
+            <div class="row">
+              <section class="carousel-default">
+                <div id="carousel-default" class="carousel slide" data-ride="carousel">
+                  <ol class="carousel-indicators">
+                    <li data-target="#carousel-default" data-slide-to="0" class=""></li>
+                    <li data-target="#carousel-default" data-slide-to="1" class=""></li>
+                    <li data-target="#carousel-default" data-slide-to="2" class="active"></li>
+                  </ol>
+                  <div class="carousel-inner" role="listbox">
+                    <!-- NOTE: Bootstrap v4 changes class name to carousel-item -->
+                    @if(!empty($recent))
+                    @if(count($recent))
+                    @foreach($recent as $key =>$recnt_slid)
+                    <div @if($key==0) class="item active" @else class="item" @endif>
+                      <a href="{{ url('public-profile',$recnt_slid->id) }}" title="{{ $recnt_slid->user_name }} view public profile">
+                        @if($recnt_slid->image)
+
+                        <img src="{{ $user_assets }}/my_photo/{{ $recnt_slid->image }}" class="img-thumbnail" style="width: 100%; height: 200px;">
+
+                        @elseif($recnt_slid->image_name)
+                        <img src="{{ $user_assets }}/profile_image/{{ $recnt_slid->image_name }}" class="img-thumbnail"
+                          style="width: 100%; height: 200px;">
+                        @else
+
+                        <img src="{{ $user_assets }}/default_slider.jpg" class="img-thumbnail" style="width: 100%; height: 200px;">
+                        @endif
+
+                        <div class="carousel-caption">
+                          <h2>{{ $recnt_slid->user_name }}</h2>
+                          <h3>{{ $recnt_slid->gender }}</h3>
+                        </div>
+
+                        <br><br><br><br>
+                        {{ $recnt_slid->country_name.' '.$recnt_slid->city_name.' '.$recnt_slid->martial_status }}
+                        <span style="color: blue;"><b>View Profile</b></span>
+                      </a>
+                    </div>
+                    @endforeach
+                    @else
+
+                    <div class="item active">
+
+
+                      <img src="{{ $user_assets }}/default_slider.jpg" class="img-thumbnail" style="width: 100%; height: 200px;">
+
+                      {{-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/158072/hearthand.jpg" alt="Third slide">
+                      --}}
+                      <div class="carousel-caption">
+                        <h2>Recent User</h2>
+                        <h3>Not Available</h3>
+
+                      </div>
+
+                    </div>
+                    @endif
+                    @endif
+                  </div>
+                  <a class="left carousel-control" href="#carousel-default" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="right carousel-control" href="#carousel-default" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
