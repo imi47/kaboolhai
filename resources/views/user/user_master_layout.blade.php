@@ -29,6 +29,11 @@
 		border: 2px solid #ddd;
 	}
 
+	.fa-google-plus-square, .fa-linkedin-square, .fa-facebook-square, .fa-youtube-square, .fa-twitter-square {
+	 font-size: 2.5
+	 rem !important;
+}
+
 	.logsbdr .well, .logsbdr + div  > .well {
 		background-color:floralwhite;
 	}
