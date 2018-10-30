@@ -30,6 +30,59 @@
       /* position:relative; */
     }
 
+    .sticky-nav {
+      position: fixed;
+      top: -4px;
+    }
+
+    .ham {
+			cursor: pointer;
+			-webkit-tap-highlight-color: transparent;
+			transition: transform 400ms;
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			-ms-user-select: none;
+      user-select: none;
+      float:right;
+      width:57px;
+		 }
+		 .hamRotate.active {
+			transform: rotate(45deg);
+		 }
+		 .hamRotate180.active {
+			transform: rotate(180deg);
+		 }
+		 .line {
+			fill:none;
+			transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+			stroke:#fff;
+			stroke-width:5.5;
+			stroke-linecap:round;
+		 }
+		
+		 .ham8 .top {
+			stroke-dasharray: 40 160;
+		 }
+		 .ham8 .middle {
+			stroke-dasharray: 40 142;
+			transform-origin: 50%;
+			transition: transform 400ms;
+		 }
+		 .ham8 .bottom {
+			stroke-dasharray: 40 85;
+			transform-origin: 50%;
+			transition: transform 400ms, stroke-dashoffset 400ms;
+		 }
+		 .ham8.active .top {
+			stroke-dashoffset: -64px;
+		 }
+		 .ham8.active .middle {
+			transform: rotate(90deg);
+		 }
+		 .ham8.active .bottom {
+			stroke-dashoffset: -64px;
+		 }
+
     .lmis {
       width:40px;
     }
@@ -87,24 +140,6 @@
       color:#333;
     }
 
-/* .navbar-form {
-    position:relative;
-  }
-
-  .navbar-form .form-group input {
-    height:30px;
-    border-radius: 3px;
-  }
-
-  .navbar-form button {
-    position:absolute;
-    border:none;
-    padding: 5px 13px;
-    right: 16px;
-    top: 1px;
-    background-color: #ececec;
-  } */
-
     .humburger {
       margin-right:10px;
     }
@@ -134,26 +169,23 @@
       margin:0;
     }
 
+    #navsidebare ul {
+      margin-bottom:80px;
+    }
 
     #navsidebare {
       height:100% !important;
       position:fixed !important;
-      margin-top: 58px;
+      margin-top: 52px;
     }
 
     @media (max-width:500px) {
 		#navsidebare {
 			width:100%;
 		}
- 		#navsidebare #cross{
-			position:absolute;
-			right:5px;
-			top:5px;
-		}
     
     .logo-light img, .logo-dark img {
       width: 34vw;
-      margin-bottom: 5px;
     }
 
    #sidebar-2 {
@@ -165,6 +197,7 @@
       display: block !important;
       margin-left: 48px !important;
     }
+  }
   }
 
   @media (min-width:501px) {
@@ -178,21 +211,6 @@
     }
     .logo-mobile {
 			display:none;
-		}
-
-		@media (max-width:420px) {
-			/* .logo-light, .logo-dark {
-				display:none !important;
-			} */
-			
-			/* .logo-mobile {
-				display:block;
-				width:40px;
-      } */
-      
-      /* #logo-div {
-        margin-top:6px;
-      } */
 		}
 
     #navsidebare a {
@@ -221,6 +239,7 @@
       color:#fff;
       opacity:0.9;
       height:100%;
+      margin-top:52px;
       width:260px;
       position:fixed;
       /* right:-260px; */
@@ -229,16 +248,10 @@
       z-index:999999;
       overflow:scroll;
     }
-    #sidebar-2 span:not(.divider) {
-      font-size:xx-large;
-      font-weight:600;
-      position:absolute;
-      right:15px;
-      top:10px;
-      cursor:pointer;
-    }
+
      #sidebar-2 ul {
-       margin-top:40px;
+       margin-top:10px;
+       margin-bottom:50px;
      }
     #sidebar-2 ul li:not(.divider) {
       padding:10px;
@@ -269,16 +282,21 @@
 			margin-left:8px;
     }
 
-    @media (max-width:767px) {
+    
+    
+  .navbar-nav>li>a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  
+}
+
+@media (max-width:767px) {
     .modal input[type=checkbox], input[type=radio] {
       /* display:block; */
       width:6%;
 	  }
-  }
-    
-    /* .to {
-      margin-top:7px !important;
-    } */
   }
 
   @media (max-width:320px) {
@@ -291,6 +309,10 @@
 .msgMenu li{border-bottom: 1px solid #e6e6e6; margin-top: -2px !important}
 
 .msgMenu li:hover{background: #e6e6e6 !important; } 
+
+.navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse {
+  max-height:0 !important;
+}
   </style>
   
   <script type="text/javascript">
@@ -301,8 +323,8 @@
       //   height: '200px'
       // });
     });
-
-   
+    
+    var sideGoMoreOpen = false;
   </script>
 </head>
 
@@ -494,11 +516,6 @@
       #menu-div {
         background-color: inherit;
         float: right;
-        /* width: auto; */
-        /* position: relative; */
-        /* min-height: 0 !important; */
-        /* position:relative; */
-        /* width:100%; */
       }
       .dropdown-menu {
         left: unset !important;
@@ -523,6 +540,13 @@
         margin-top:0;
       }
 
+      .nav.navbar-nav .dropdown {
+        margin-top: 9px !important;
+      }
+
+      .nav.navbar-nav .dropdown a.dropdown-toggle {
+        line-height: 41px !important;
+      }
   }
 
     .dropdown-menu li a {
@@ -532,11 +556,6 @@
     .shrink-nav .accordion-menu {
     top: 0px;
 }
-    .navbar-header {
-      position: absolute;
-      top: 3px;
-      right: 5px;
-    }
     .navbar-toggle {
       background-color: #5a378c !important;
       border-radius: 5px;
@@ -586,12 +605,7 @@
   @media (max-width: 727px) {
     .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
     position: fixed !important;
-    left: 0 !important;
-}
-
-/* #username-dropdown-toggle .dropdown-menu {
-    left: -75px !important;
-    } */
+  }
 }
 @media (max-width:515px) {
   .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
@@ -618,12 +632,7 @@
           <!-- end logo -->
           <!-- search and cart  -->
           <!-- end search and cart  -->
-          <!-- toggle navigation -->
-          <div class="navbar-header col-lg-9 col-md-9 col-sm-6 col-xs-2">
-            <!-- removeed data-target=".navbar-collapse" from button -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse"> <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-          </div>
+
           <!-- toggle navigation end -->
           <!-- main menu -->
           <div class="col-lg-10 no-padding-right accordion-menu" id='menu-div'>
@@ -978,9 +987,44 @@
 
                 </li>
 
+                <svg class="ham hamRotate ham8" viewBox="0 0 100 100" width="80" onclick="ham()">
+                  <path
+                      class="line top"
+                      d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
+                  <path
+                      class="line middle"
+                      d="m 30,50 h 40" />
+                  <path
+                      class="line bottom"
+                      d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20" />
+               </svg>
+
+               <script>
+
+                function ham() {
+                  document.querySelector('.ham').classList.toggle('active');
+                }
+
+                
+                  // document.querySelector('.ham').classList.remove('active');
 
 
-                <a href="javascript:;" id="btntoshowmenu"><i class="fa fa-bars humburger pull-right"></i></a>
+                 $('.ham').click(function() {
+                   if(!sideGoMoreOpen)
+                      $('#navsidebare').toggle('slow');
+                    else {
+                      $('#sidebar-2').css('right', '-2000px');
+                      sideGoMoreOpen = false;
+                    }
+                 });
+
+                //  document.querySelector('#signin-li').onclick = function() {
+                //   alert('hi');
+                // }
+
+
+               </script>
+
                 <form class="navbar-form navbar-right" method="get" action="{{ url('user-search') }}">
                   <div class="form-group">
                     <input type="text" name="user_name" class="form-control" placeholder="Search by name">
@@ -1002,11 +1046,7 @@
       <div class="navsidebar wow slideInRight" id="navsidebare" style="display:none;">
         <div class="row">
 
-          <a href="javascript:;" id="cross" style="margin-left:230px;">
-            <!-- <i class="fa fa-arrow-right fa-3x" style="color:white;margin-top:10px;"></i> -->
-            <img width="20" height="20" style="margin-top:15px;" src="{{ $user_assets }}/cross.png" alt="" />
-          </a>
-          <ul style="margin-left:25px;list-style-type:none;width:100px;line-height:50px;margin-top:15px;">
+          <ul style="margin-left:25px;list-style-type:none;width:100px;line-height:50px;">
 
          <li class="wow fadeInDown" data-wow-delay="0.1s">
         @if(Session::get('user_id'))
@@ -1072,7 +1112,6 @@
 
 
     <div id="sidebar-2">
-      <span>&times</span>
       @if(Session::get('user_id'))
       <ul>
       <li><a href="{{ url('manage-profile') }}">Manage Profile</a></li> 
@@ -1133,20 +1172,19 @@
     </div>
 
     <script>
+    
       $('#side-go-more-li').click(function(){
         $('#navsidebare').hide('fast');
         $("#sidebar-2").css('right', '0');
-      });
-      $('#sidebar-2 span').click(function(){
-        // $('#sidebar-2').css('right', '-260px');
-        $('#sidebar-2').css('right', '-2000px');
-        $('#btntoshowmenu').show();
+        sideGoMoreOpen = true;
       });
 
-      document.querySelector('#signin-li').onclick = function() {
-        $('#navsidebare').hide('slow');
-        $('#btntoshowmenu').show();
-      }
+      $('.ham').click(function(){
+        $('#sidebar-2').css('right', '-2000px');
+        sideGoMoreOpen = false;
+      });
+
+      
     </script>
 
   </div>
@@ -1156,15 +1194,6 @@
     @media (max-width:991px) {
       .navbar-form {
         display:none;
-      }
-
-      .navbar-nav {
-        margin-top: 5px;
-        /* margin-bottom:-2px; */
-      }
-
-     .navbar-default .navbar-nav > li > a {
-        line-height: 3.5;
       }
 
       .nav-white.sticky-nav .navbar-nav li a {
@@ -1214,10 +1243,10 @@
         padding-right:15px !important;
       }
 
-    .nav-white.sticky-nav .navbar-nav li a, .nav-white.sticky-nav .navbar-nav li a{
+    /* .nav-white.sticky-nav .navbar-nav li a, .nav-white.sticky-nav .navbar-nav li a{
          padding-right:14px !important;
          margin-top:3px;
-       }
+       } */
 
       .nav-white.sticky-nav .navbar-nav li a:hover, .nav-white.sticky-nav .navbar-nav li a:hover {
        padding-right: 14px !important;
@@ -1248,82 +1277,53 @@
 
 
     @media (max-width:768px) {
-      .navbar-header {
-        display:none;
-      }
       #menu-div {
         float:right !important;
       }
      #menu-div .collapse {
         display:inline-block !important;
-        /* float:right !important; */
       }
-      /* #menu-div {
-        display:inline-block !important;
-      } */
-      .dropdown-menu {
-        /* position:absolute; */
-      }
-      .navbar-default .navbar-nav > li > a { 
-        line-height:40px;
-      }
+
+
+     .navbar-nav {
+        margin: -0.5px -15px;
+      } 
       .humburger {
         margin-top:6px !important;
       }
 
       #menu-div .collapse {
-        margin-top:1px;
+        margin-bottom: -30px;
+        margin-top: 3px;
       }
+
+      /* .nav-white.sticky-nav .navbar-nav li a, .nav-white.sticky-nav .navbar-nav li a {
+        margin-top: 19px !important;
+      }
+
+      .dropdown.username-dropdown-toggle {
+        margin-top: 17px !important;
+      }
+
+      .dropdown.username-dropdown-toggle a.dropdown-toggle.menudesign {
+        margin-top:70px  !important;
+      } */
+
+      .nav.navbar-nav .dropdown {
+        margin-top: 7px !important;
+      }
+
     }
     @media (max-width:424px) {
       /* #menu-div .nav li.dropdown:not(.username-dropdown-toggle) { */
         #menu-div .nav li.dropdown.username-dropdown-toggle {
         display:none !important;
       }
-        .icon-dropdown {
-        /* position:absolute !important; */
-        max-width: 400px !important;
-      }
     }
   </style>
   @endif
   <script>
-    // old code
-        //  $("#btntoshowmenu").click(function(){
-         $(".navbar-header").click(function(){
-             $("#navsidebare").show();
-            //  $("#signin").hide();
-             $("#logindivv").hide();
-            //  $("#btntoshowmenu").hide();
-            $(".navbar-header").hide();
-         });
-         $("#btntoshowmenu").click(function() {
-          $("#navsidebare").show();
-          $(this).hide();
-           
-         });
-         $('.login-li').click(function(){
-          $("#logindivv").show();
-         })
-         
-         $("#cross").click(function() {
-            
-            $("#navsidebare").hide("slow");
-            // $("#signin").show();
-             $("#btntoshowmenu").show();
-            // $(".navbar-header").show();
-         });
-           @if(empty(Session::get('user_id')))
-            $(".navbar-header").click(function(){
-              $("#cross").click(function() {
-              
-              $("#navsidebare").hide("slow");
-              // $("#signin").show();
-              // $("#btntoshowmenu").show();
-              $(".navbar-header").show();
-            });
-          });
-          @endif
+          
          mq = window.matchMedia( "(max-width: 1230px)" );
          
         mq.addListener(mediaQueryResponse) // attach listener function to listen in on state changes so a page refresh will not be required
@@ -1378,12 +1378,17 @@
 </div>
   </div>
   <script>
-    $("#signin").click(function(){
-            $("#logindivv").toggle();
-         });
+    // $("#signin").click(function(){
+    //         $("#logindivv").toggle();
+    //      });
+         
          $("#login-div-x").click(function(){
           $('#logindivv').hide();
         });
+
+         $("#signin").click(function() {
+          alert('hi');
+  });
       </script>
       @yield('data')
       <footer>
@@ -2754,6 +2759,13 @@ function get_message()
      
 <script type="text/javascript" src="{{ $user_assets }}/js/jquery.emojiarea.js"></script>
 <script type="text/javascript" src="{{ $user_assets }}/js/emoji-picker.js"></script>
+<script>
+  document.querySelector('#signin-li').onclick = function() {
+    document.querySelector('.ham').classList.remove('active');
+      $('#navsidebare').hide('slow');
+      $('#logindivv').show('fast');
+  }
 
+</script>
   </body>
 </html>

@@ -44,6 +44,65 @@
    clear: both;
   }
 
+  .innermenu {
+    margin-top: 0px;
+}
+
+.navbar-default {
+  height:0;
+}
+
+  .ham {
+			cursor: pointer;
+			-webkit-tap-highlight-color: transparent;
+			transition: transform 400ms;
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+      width: 55px;
+      position: absolute;
+      right: 10px;
+      top: -2px;
+      display:none;
+		 }
+		 .hamRotate.active {
+			transform: rotate(45deg);
+		 }
+		 .hamRotate180.active {
+			transform: rotate(180deg);
+		 }
+		 .line {
+			fill:none;
+			transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+			stroke:#fff;
+			stroke-width:5.5;
+			stroke-linecap:round;
+		 }
+		
+		 .ham8 .top {
+			stroke-dasharray: 40 160;
+		 }
+		 .ham8 .middle {
+			stroke-dasharray: 40 142;
+			transform-origin: 50%;
+			transition: transform 400ms;
+		 }
+		 .ham8 .bottom {
+			stroke-dasharray: 40 85;
+			transform-origin: 50%;
+			transition: transform 400ms, stroke-dashoffset 400ms;
+		 }
+		 .ham8.active .top {
+			stroke-dashoffset: -64px;
+		 }
+		 .ham8.active .middle {
+			transform: rotate(90deg);
+		 }
+		 .ham8.active .bottom {
+			stroke-dashoffset: -64px;
+		 }
+
   .dropdown-menu.lenght.icon-dropdown hr{
     margin:8px auto;
   }
@@ -120,7 +179,7 @@
 
   .logo-light img {
     width: 160px;
-    margin-top: 3px;
+    margin-top: 2px;
   }
 
   .navbar-form.navbar-right .form-control{
@@ -165,6 +224,11 @@
   #navsidebare {
     height:100% !important;
     position:fixed !important;
+    margin-top:50px;
+  }
+
+  #navsidebare ul {
+    margin-bottom:50px;
   }
 
   #navsidebare a {
@@ -254,23 +318,12 @@
       transition:500ms;
       z-index:9999;
       overflow:scroll;
+      margin-top: 50px;
     }
 
     #sidebar-2 ul {
-      margin-top:40px;
+      margin-bottom:40px;
     }
-
-    #sidebar-2 span:not(.divider) {
-      font-size:xx-large;
-      font-weight:600;
-      position:absolute;
-      right:15px;
-      cursor:pointer;
-    }
-
-     /* #sidebar-2 ul {
-       margin-top:100px;
-     } */
 
     #sidebar-2 ul li:not(.divider) {
       padding:10px;
@@ -337,6 +390,12 @@
       }
       .top-searches-by {
         display:none;
+      }
+    }
+
+    @media (max-width:1349px) {
+      .ham {
+        display:block;
       }
     }
 
@@ -587,6 +646,8 @@
         $('.main-section').toggleClass("open-more");
       });
     });
+
+    var sideGoMoreOpen = false;
   </script>
 
   <style type="text/css">
@@ -997,22 +1058,22 @@
     </div>
 
 
-    <!-- navbar header 2 -->
-    <div class="navbar-toggle-2">
-      <div></div>
-      <div></div>
-      <div></div>                    
-    </div>  
+    <svg class="ham hamRotate ham8" viewBox="0 0 100 100" width="80" onclick="this.classList.toggle('active')">
+		<path
+				class="line top"
+				d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
+		<path
+				class="line middle"
+				d="m 30,50 h 40" />
+		<path
+				class="line bottom"
+				d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20" />
+	 </svg>  
   </nav>
 
 
    <div class="navsidebar wow slideInRight" id="navsidebare" style="display:none;">
         <div class="row">
-
-          <a href="javascript:;" id="cross" style="margin-left:230px;">
-            <!-- <i class="fa fa-arrow-right fa-3x" style="color:white;margin-top:10px;"></i> -->
-            <img width="20" height="20" style="margin-top:15px;" src="{{ $user_assets }}/cross.png" alt="" />
-          </a>
           <ul style="margin-left:25px;list-style-type:none;width:100px;line-height:50px;margin-top:15px;">
 
          <li class="wow fadeInDown" data-wow-delay="0.1s">
@@ -1076,9 +1137,7 @@
       </div>
     </nav>
 
-    <div id="sidebar-2">
-      <span>&times</span>
-      
+    <div id="sidebar-2"> 
       <ul>
       <li><a href="{{ url('manage-profile') }}">Manage Profile</a></li> 
       <li><a href="{{ url('my-photo') }}">My Photos</a></li>
@@ -1137,18 +1196,16 @@
     </div>
 
     <script>
-      $('.navbar-toggle-2').click(function(){
-        $('#navsidebare').show('slow');
-        $(this).hide();
+      $('.ham').click(function(){
+        if(!sideGoMoreOpen)
+          $('#navsidebare').toggle('slow');
+
+        else {
+          // document.querySelector('#sidebar-2').style.right = '-260px';
+          $('#sidebar-2').css('right', '-2000px');
+          sideGoMoreOpen = false;
+        }
       });
-
-      $("#cross").click(function() {
-            
-            $("#navsidebare").hide("slow");
-            // $("#signin").show();
-             $(".navbar-toggle-2").show();
-
-         });
 
           mq = window.matchMedia( "(max-width: 1349px)" );
          
@@ -1167,15 +1224,7 @@
          $('#side-go-more-li').click(function(){
           $('#navsidebare').hide('fast');
           $("#sidebar-2").css('right', '0');
-      });
-
-      $('#sidebar-2 span').click(function(){
-
-        
-
-        // $('#sidebar-2').css('right', '-260px');
-        $('#sidebar-2').css('right', '-2000px');
-        $('.navbar-toggle-2').show();
+          sideGoMoreOpen = true;
       });
 
 

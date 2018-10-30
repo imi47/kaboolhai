@@ -23,6 +23,12 @@
 </div> -->
 
 <style>
+
+	/* @media (max-width:991px) {
+		.nav.navbar-nav {
+			display:block !important;
+		}
+	 } */
 	html {
         overflow-x:hidden;
 	 }
@@ -37,17 +43,9 @@
 		 font-size:21px !important;
 	 }
 
-
-	 
-	 .sticky-nav .navbar-nav > li > .dropdown-menu {
-   	 right: 38px;
-}
-
 .shrink-nav .logo-light {
     display: block !important;
     opacity: 1;
-	 margin-bottom: -8px;
-    margin-top: 12px;
 }
 
 .dropdown-menu {

@@ -22,10 +22,83 @@
 
 	<style>
 
+		.sticky-nav {
+			top:-11px !important;
+		}
+
+		.logo {
+			margin-top:13px;
+		}
+
+		.shrink-nav .logo {
+			margin-top:17px;
+			margin-bottom:-15px;
+		}
+
+		.sticky-nav li a {
+			margin-bottom: -10px;
+    		margin-top: 10px;
+		}
+
+		.dropdown-menu {
+			padding-top: 0;
+    		padding-bottom: 20px !important;
+		}
+
+		.ham {
+			cursor: pointer;
+			-webkit-tap-highlight-color: transparent;
+			transition: transform 400ms;
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			width:57px;
+			float:right;
+			display:none;
+			margin-top: 8px;
+    		margin-bottom: -9px;
+		 }
+		 .hamRotate.active {
+			transform: rotate(45deg);
+		 }
+		 .hamRotate180.active {
+			transform: rotate(180deg);
+		 }
+		 .line {
+			fill:none;
+			transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+			stroke:#fff;
+			stroke-width:5.5;
+			stroke-linecap:round;
+		 }
+		
+		 .ham8 .top {
+			stroke-dasharray: 40 160;
+		 }
+		 .ham8 .middle {
+			stroke-dasharray: 40 142;
+			transform-origin: 50%;
+			transition: transform 400ms;
+		 }
+		 .ham8 .bottom {
+			stroke-dasharray: 40 85;
+			transform-origin: 50%;
+			transition: transform 400ms, stroke-dashoffset 400ms;
+		 }
+		 .ham8.active .top {
+			stroke-dashoffset: -64px;
+		 }
+		 .ham8.active .middle {
+			transform: rotate(90deg);
+		 }
+		 .ham8.active .bottom {
+			stroke-dashoffset: -64px;
+		 }
+
 	.sticky-nav .navbar-nav > li > .dropdown-menu {
-		top: 45px !important;
 		border-radius: 5px;
-		right: 26px;
+		right: 6px;
 		border: 2px solid #ddd;
 	}
 	footer .searchcontainer .form-control {
@@ -46,10 +119,6 @@
 
 	.logsbdr .well h3, .logsbdr + div  > .well h3 {
 		color:dimgrey;
-	}
-
-	.navbar-container .main-nav .navbar-collapse {
-		margin-top:5px;
 	}
 
 	/* #navsidebare ul {
@@ -84,12 +153,6 @@
 		#navsidebare {
 			width:100%;
 		}
-
-		#navsidebare #cross{
-			position:absolute;
-			right:5px;
-			top:5px;
-		}
 	}
 
 	.well .btn {
@@ -108,7 +171,12 @@
       height:100% !important;
       position:fixed !important;
 		z-index:9999999;
+		margin-top:50px;
     }
+	 
+	 #navsidebare ul {
+		 margin-bottom:80px;
+	 }
 
 		/* #navsidebare {
       		box-sizing:border-box;
@@ -166,14 +234,7 @@
 			padding:10px;
 		}
 		@media (max-width:1250px) {
-			/* .main-nav {
-                display:none;
-            } */
-			.navbar-header {
-				position: absolute;
-				top: -8px;
-				right: 20px;
-			}
+
 	 }
 	 
 	 @media (max-width:520px) {
@@ -194,10 +255,18 @@
 			}
 		}
 
-    @media (max-width:1066px) {
-      .main-nav {
+    @media (max-width:1112px) {
+      .main-nav #accordion li {
         display:none;
       }
+
+		.ham {
+			display:block;
+		}
+
+		.navbar-nav {
+			display:none;
+		}
 
        .navbar-toggle {
         display:block !important;
@@ -376,10 +445,6 @@
 
 	<div class="navsidebar wow slideInRight" id="navsidebare" style="display:none;">
 			<div class="row">
-				<a href="javascript:;" id="cross" style="margin-left:230px;">
-					<!-- <i class="fa fa-arrow-right fa-3x" style="color:white;margin-top:10px;"></i> -->
-					<img width="20" height="20" style="margin-top:15px;" src="{{ $user_assets }}/cross.png" alt="" />
-				</a>
 
 				<ul style="margin-left:25px;list-style-type:none;width:100px;line-height:50px;margin-top:15px;">
 				<li class="wow fadeInDown" data-wow-delay="0.1s">
@@ -522,7 +587,7 @@
 		<div class="container-fluid navbar-container">
 			<div class="row">
 				<!-- logo -->
-				<div class="col-md-2" id='test'>
+				<div class="col-xs-2" id='test'>
 					<a class="logo-light" href="{{ url('/') }}">
 						<img alt="" src="{{ $user_assets }}/db_images/KH-logo2.png" class="logo-mobile" />
 						<img alt="" src="{{ $user_assets }}/images/kaboolhai.png" class="logo" />
@@ -535,29 +600,14 @@
 				<!-- search and cart  -->
 
 				<!-- end search and cart  -->
-				<!-- toggle navigation -->
-				<div class="navbar-header">
 
-					<!-- old code -->
-					<!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> -->
-
-					<button type="button" class="navbar-toggle" data-toggle="collapse">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-				<!-- @if(Session::get('user_id'))
-				<span id='username'> {{ Session::get('user_name') }}</span>
-				@endif -->
-				</div>
 				<!-- toggle navigation end -->
 				<!-- main menu -->
-				<div class="col-md-10 main-nav">
+				<div class="col-xs-10 main-nav">
 					<div class="navbar-collapse collapse">
 						<ul id="accordion" class="nav navbar-nav panel-group">
 							<!-- <li> <a href="register.html">Register</a> </li> -->
-							<li class="{{ Request::is('/') ? 'active1' : '' }}">
+							<li class="{{ Request::is('/') }}">
 		 <a href="{{url('/')}}">Home</a> </li>
 							<li class="{{ Request::is('about-us') ? 'active1' : '' }}">
 								<a href="{{url('about-us')}}">About Us</a>
@@ -614,12 +664,23 @@
 								</ul>
 								@endif
 							</li>
-							<a href="javascript:;" id="btntoshowmenu">
-								<i class="fa fa-bars humburger"></i>
-							</a>
+							
 					</div>
 
+					
+
 					</ul>
+					<svg class="ham hamRotate ham8" viewBox="0 0 100 100" width="80" onclick="this.classList.toggle('active')">
+								<path
+										class="line top"
+										d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
+								<path
+										class="line middle"
+										d="m 30,50 h 40" />
+								<path
+										class="line bottom"
+										d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20" />
+							</svg>
 				</div>
 				<!-- end main menu -->
 			</div>
@@ -628,47 +689,22 @@
 		
 	</nav>
 
-	<!-- <style>
-		@media (max-width:991px) {
-			.menudesign + .dropdown-menu {
-				/* display:none !important; */
-				z-index:1;
-			}
-		}
-	</style> -->
-
 	<script>
 		// i named signin1 instead of signin because other code interferes
     $('.signin1').click(function(){
       $('#logindivv').toggle();
       $('#navsidebare').hide('slow');
-	  $('.navbar-header').show();
-	  $("#btntoshowmenu").css('visibility', 'visible');
     });
 
   </script>
 
 
 	<script>
-		$("#btntoshowmenu").click(function() {
-			$("#navsidebare").show();
+		$(".ham").click(function() {
+			$("#navsidebare").toggle('fast');
 			// $(".signin").hide();
 			$("#logindivv").hide();
-			$("#btntoshowmenu").css('visibility', 'hidden');
 		});
-
-		$("#cross").click(function() {
-
-			$("#navsidebare").hide("slow");
-			$(".signin").show();
-			$("#btntoshowmenu").css('visibility', 'visible');
-			$('.navbar-header').show();
-		});
-
-    $('.navbar-toggle').click(function(){
-			$("#navsidebare").show();
-			$(this).hide();
-    });
 
         // hide login div when clicked anywhere else        
         $(document).mouseup(function(e) 
@@ -2419,8 +2455,8 @@
 								 "></script> -->
     @stack('js')
 
-    <style type=" text/css
-								 ">
+	 <style type=" text/css">
+	
 #wait {
         position: fixed;
         left: 0px;
@@ -2475,6 +2511,14 @@ function timerIncrement() {
 </script>
 
 @endif
+
+<script>
+  document.querySelector('.signin1').onclick = function() {
+    document.querySelector('.ham').classList.remove('active');
+      $('#navsidebare').hide('slow');
+      $('#logindivv').show('fast');
+  }
+</script>
 
 </body>
 
