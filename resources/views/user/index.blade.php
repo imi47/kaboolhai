@@ -32,6 +32,32 @@
 	html {
         overflow-x:hidden;
 	 }
+
+	 ::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+	background-color: #F5F5F5;
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar
+{
+	width: 0.35rem;
+	height: 0.35rem;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: #FFF;
+	background-image: -webkit-gradient(linear,
+  40% 0%,
+  75% 84%,
+  from(#f47e2a),
+  to(#8B5BD1),
+  color-stop(.6,#B88FF3))
+}
 	 
 	 .imgwithh2 {
 		width: 16px;

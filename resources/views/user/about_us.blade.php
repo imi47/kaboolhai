@@ -67,13 +67,7 @@
   }
 
   @media (max-width:991px) {
-    .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
-      top:55px !important;
-    }
-
-    #username-dropdown-toggle ul.dropdown-menu {
-        top:58px !important;
-      }
+   
 
       .nav-white.sticky-nav .navbar-nav li a:hover, .nav-white.sticky-nav .navbar-nav > .open > a {
         display:block;

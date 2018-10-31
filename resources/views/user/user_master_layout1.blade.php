@@ -30,9 +30,43 @@
       /* position:relative; */
     }
 
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+	background-color: #F5F5F5;
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar
+{
+	width: 0.5rem;
+	height: 0.5rem;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: #FFF;
+	background-image: -webkit-gradient(linear,
+  40% 0%,
+  75% 84%,
+  from(#f47e2a),
+  to(#8B5BD1),
+  color-stop(.6,#B88FF3))
+}
+
     .sticky-nav {
       position: fixed;
       top: -4px;
+    }
+
+    .hdlist .fa-question {
+      margin-left:11px;
+    }
+
+    .nav.navbar-nav {
+      margin-right:70px;
     }
 
     .ham {
@@ -44,7 +78,9 @@
 			-ms-user-select: none;
       user-select: none;
       float:right;
-      width:57px;
+      margin-bottom: -5px;
+      width: 57px;
+      margin-top: -54px;
 		 }
 		 .hamRotate.active {
 			transform: rotate(45deg);
@@ -87,6 +123,10 @@
       width:40px;
     }
 
+    #username-dropdown-toggle {
+
+    }
+
     #accordion, #username-dropdown-toggle a {
       font-weight:600;
     }
@@ -118,7 +158,7 @@
 
     .navbar-form {
       position:relative;
-      margin-top: 13px;
+      margin-top: 14px;
       margin-bottom: 2px;
     }
 
@@ -283,14 +323,20 @@
     }
 
     
+
+    
     
   .navbar-nav>li>a {
     padding-top: 15px;
     padding-bottom: 15px;
   }
 
-  
+  /* #ham2 {
+    display:block;
+  } */
 }
+
+
 
 @media (max-width:767px) {
     .modal input[type=checkbox], input[type=radio] {
@@ -500,6 +546,12 @@
       background-color:#000;
     }
 
+    @media (max-width:1300px) {
+      .navbar-form {
+        display:none;
+      }
+    }
+
     @media (max-width:1205px) {
       .navbar .accordion-menu #accordion>li,
       #signin {
@@ -512,6 +564,13 @@
         float: right;
       }
     }
+
+    /* @media (min-width:991px) { */
+      .sticky-nav .navbar-nav > li > .dropdown-menu {
+        top:56px;
+      }
+    /* } */
+
     @media (max-width: 991px) {
       #menu-div {
         background-color: inherit;
@@ -546,6 +605,10 @@
 
       .nav.navbar-nav .dropdown a.dropdown-toggle {
         line-height: 41px !important;
+      }
+
+      #username-dropdown-toggle ul.dropdown-menu {
+        top:47px !important;
       }
   }
 
@@ -614,6 +677,7 @@
 }
   #username-dropdown-toggle ul.dropdown-menu{
        width:100px !important;
+       
      }
   </style>
   <!--  -->
@@ -626,9 +690,11 @@
           <div class="col-lg-2 col-sm-2 col-xs-2" id="logo-div">
             <a class="logo-light" href="{{ url('/') }}"><img alt="" src="{{ $user_assets }}/images/kaboolhai.png" class="logo" /></a>
             <a class="logo-dark" href="{{ url('/') }}"><img alt="" src="{{ $user_assets }}/images/kaboolhai.png" class="logo" /></a> 
-            <a  class="logo-mobile" href="{{ url('/') }}"><img alt="" src="{{ $user_assets }}/db_images/KH-logo2.png" /></a> 
+            <a  class="logo-mobile" href="{{ url('/') }}"><img alt="" src="{{ $user_assets }}/db_images/KH-logo2.png" /></a>
+
+              
                 
-                </div>
+            </div>
           <!-- end logo -->
           <!-- search and cart  -->
           <!-- end search and cart  -->
@@ -987,36 +1053,9 @@
 
                 </li>
 
-                <svg class="ham hamRotate ham8" viewBox="0 0 100 100" width="80" onclick="ham()">
-                  <path
-                      class="line top"
-                      d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
-                  <path
-                      class="line middle"
-                      d="m 30,50 h 40" />
-                  <path
-                      class="line bottom"
-                      d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20" />
-               </svg>
+                
 
                <script>
-
-                function ham() {
-                  document.querySelector('.ham').classList.toggle('active');
-                }
-
-                
-                  // document.querySelector('.ham').classList.remove('active');
-
-
-                 $('.ham').click(function() {
-                   if(!sideGoMoreOpen)
-                      $('#navsidebare').toggle('slow');
-                    else {
-                      $('#sidebar-2').css('right', '-2000px');
-                      sideGoMoreOpen = false;
-                    }
-                 });
 
                 //  document.querySelector('#signin-li').onclick = function() {
                 //   alert('hi');
@@ -1043,6 +1082,35 @@
           <!-- end main menu -->
         </div>
       </div>
+
+      <svg class="ham hamRotate ham8" viewBox="0 0 100 100" width="80" onclick="ham()">
+          <path
+              class="line top"
+              d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
+          <path
+              class="line middle"
+              d="m 30,50 h 40" />
+          <path
+              class="line bottom"
+              d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20" />
+        </svg>
+
+        <script>
+          function ham() {
+            document.querySelector('.ham').classList.toggle('active');
+          }
+
+          $('.ham').click(function() {
+            if(!sideGoMoreOpen)
+              $('#navsidebare').toggle('slow');
+            else {
+              $('#sidebar-2').css('right', '-2000px');
+              sideGoMoreOpen = false;
+            }
+          });
+        </script>
+
+
       <div class="navsidebar wow slideInRight" id="navsidebare" style="display:none;">
         <div class="row">
 
@@ -1387,7 +1455,7 @@
         });
 
          $("#signin").click(function() {
-          alert('hi');
+          $('#logindivv').toggle('fast');
   });
       </script>
       @yield('data')
