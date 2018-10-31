@@ -59,8 +59,25 @@
   75% 84%,
   from(#f47e2a),
   to(#8B5BD1),
-  color-stop(.6,#B88FF3))
+  color-stop(.6,#B88FF3));
 }
+
+.search-dropdown-toggle {
+    display:none;
+    font-size: 2.1rem;
+    color:#f1e7ff;
+    position: absolute;
+    top: 14px;
+    right: 75px;
+  }
+
+    .orange {
+      color:#ed6c05;
+    }
+
+    .search-dropdown-toggle:hover{
+      color:#ed6c05;
+    }
 
 .clearfix:after {
    content: " "; /* Older browser do not support empty content */
@@ -212,10 +229,6 @@
     margin-top: 2px;
   }
 
-  .navbar-form.navbar-right .form-control{
-    width:187px !important;
-  }
-
   .navbar-form.navbar-right button i.glyphicon-search {
     padding: 2px;
   }
@@ -226,7 +239,15 @@
     
   }
 
-  
+  @media (max-width:370px) {
+    .search-dropdown-toggle {
+      display:none !important;
+    }
+
+    .navbar-nav {
+      margin-right: -47px !important;
+    }
+  }
 
   @media (max-width:600px) {
 		#navsidebare {
@@ -434,11 +455,59 @@
         position: unset !important;
     }
 }
-  
+
+@media (max-width:1360px) and (min-width:769px) {
+  #myNavbar .navbar-form {
+    right: 70px !important;
+  }
+}
+
+@media (max-width:768px) {
+  #myNavbar .navbar-form {
+    right: -15px !important;
+    top: 46px !important;
+  }
+}
+
+
+@media (min-width:1361px) {
+  .navbar-form {
+    display:block !important;
+  }
+}
 
    @media (max-width:1360px) {
+    .navbar-collapse.collapse {
+      margin-right:92px;
+    }
+
       #myNavbar .navbar-form {
         display:none;
+
+        position: absolute;
+        border-radius: 3px;
+        margin:0;
+        padding:0px;
+        border:none;
+        
+        top: 51px;
+      }
+
+      .navbar-form input {
+        margin:0;
+        border: 3px solid #936BCB !important;
+        padding:14px;
+        width: 232px !important;
+      }
+
+      .navbar-form button {
+        top: 3px;
+        border-radius: 0;
+        right: 3px;
+      }
+
+      .search-dropdown-toggle {
+        display:inline-block
       }
 
       #myNavbar {
@@ -471,7 +540,7 @@
 
 .msgMenu li:hover{background: #e6e6e6 !important; } 
 
-    @media (max-width:1199px) {
+    @media (max-width:1250px) {
       #myNavbar .nav:nth-child(1):nth-child(-n+6) {
         display:none;
       }
@@ -533,12 +602,27 @@
       /* padding:0 10px !important;
       text-align:center; */
     }
+
+    .search-dropdown-toggle {
+      top: 9px;
+      right: -14px;
+    } 
       
   }
 
-    @media (max-width:424px) {
+  /* @media (min-width:769px) {
+    .nav.navbar-nav.navbar-right {
+      margin-right:140px;
+    }
+  } */
+
+    @media (max-width:500px) {
       #myNavbar .nav.navbar-nav.navbar-right li.dropdown:nth-child(5){
         display:none !important;
+      }
+
+      .navbar-nav {
+        margin:0;
       }
     }
 
@@ -740,19 +824,6 @@
     border-radius:10px;
   }
 
-    /* @media (max-width: 768px) {
-.sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-    left: 0;
-    top: inherit !important;
-    width: 100% !important;
-    transform: translateX(0);
-    -webkit-transform: translateX(0);
-    -moz-transform: translateX(0);
-    -o-transform: translateX(0);
-}
-} */
-
 
 @media (max-width: 767px) {
   .navbar-nav .open .dropdown-menu {
@@ -793,10 +864,6 @@
 @media (max-width:505px) {
       .icon-dropdown {
         width:100vw !important;
-      }
-
-      .navbar-nav {
-        margin: 7.5px -43px;
       }
     }
 
@@ -885,6 +952,8 @@
           </li>
         </ul>
 
+        
+
         <form class="navbar-form navbar-right" method="get" action="{{ url('user-search') }}">
           <div class="form-group">
             <input type="text" name="user_name" class="form-control" placeholder="Search by name">
@@ -892,7 +961,15 @@
           <button type="submit" class="btn btn-default"><i class=" glyphicon glyphicon-search"></i></button>
         </form>
 
+          <i class='glyphicon glyphicon-search search-dropdown-toggle' onclick='toggleSearch()'></i>
 
+        <script>
+          function toggleSearch() {
+            $('.navbar-form').toggle();
+            $('.search-dropdown-toggle').toggleClass('orange');
+            // $('.navbar-form').css{'position','absolute'}
+          }
+        </script>
 
         <ul class="nav navbar-nav navbar-right">
 
@@ -2732,11 +2809,34 @@ if(string_of_words.match(filter))
            
               $('#get_noti').html(response);
             
-              $('#noti_counts').show();
+              
           }
 
         });
   },1000);
+  setInterval(function() {
+           
+
+           $.ajax({
+         url:'{{url('/unsean-notification')}}',
+                 type: 'POST',
+                 data: {
+                   "_token": "{{ csrf_token() }}",
+                   "user_id" : {{user_data()->id}}
+                 },
+               success:function(response) {
+               
+                if(response!=0)
+                {
+                  $('.noti_counts').html(response);
+                }
+
+                 
+                   
+               }
+     
+             });
+       },1000);
 
 
   

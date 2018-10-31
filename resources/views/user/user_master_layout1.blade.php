@@ -69,6 +69,21 @@
       margin-right:70px;
     }
 
+    .search-dropdown-toggle {
+      display:none;
+      font-size: 2.1rem;
+      top: 20px;
+      color:#f1e7ff;
+    }
+
+    .orange {
+      color:#ed6c05;
+    }
+
+    .search-dropdown-toggle:hover{
+      color:#ed6c05;
+    }
+
     .ham {
 			cursor: pointer;
 			-webkit-tap-highlight-color: transparent;
@@ -491,6 +506,10 @@
 			.top-searches-by {
 				display:block;
 			}
+
+      .navbar-form input {
+        width:232px;
+      }
 		}
 		@media (min-width:521px) {
 			.tpsrch {
@@ -546,9 +565,39 @@
       background-color:#000;
     }
 
+    @media (min-width:1301px) {
+      .navbar-form {
+        display:block !important;
+      }
+    }
+
     @media (max-width:1300px) {
       .navbar-form {
         display:none;
+
+        position: absolute;
+        border-radius: 3px;
+        top: 57px;
+        right: 72px;
+        margin:0;
+        padding:0px;
+        border:none;
+      }
+
+      .navbar-form input {
+        margin:0;
+        border: 3px solid #936BCB !important;
+        padding:14px;
+      }
+
+      .navbar-form button {
+        top: 3px;
+        border-radius: 0;
+        right: -17px;
+      }
+
+      .search-dropdown-toggle {
+        display:inline-block
       }
     }
 
@@ -563,6 +612,10 @@
       #accordion {
         float: right;
       }
+
+      .navbar-form { 
+        margin-right: 69px !important;
+        }
     }
 
     /* @media (min-width:991px) { */
@@ -650,6 +703,15 @@
       right: 0;
       cursor: pointer;
     }
+
+    
+
+    @media (max-width:375px) {
+      .search-dropdown-toggle {
+        display:none;
+      }
+    }
+
     @media (max-width:430px) {
 			#logindivv {
 				width:100vw;
@@ -1070,6 +1132,17 @@
                   </div>
                   <button type="submit" class="btn btn-default"><i class=" glyphicon glyphicon-search"></i></button>
                 </form>
+
+                  <i class='glyphicon glyphicon-search search-dropdown-toggle' onclick='toggleSearch()'></i>
+
+                  <script>
+                    function toggleSearch() {
+                      $('.navbar-form').toggle();
+                      $('.search-dropdown-toggle').toggleClass('orange');
+                      // $('.navbar-form').css{'position','absolute'}
+                    }
+                  </script>
+
             </div>
             </ul>
           </div>
@@ -1380,13 +1453,20 @@
       .nav.navbar-nav .dropdown {
         margin-top: 7px !important;
       }
+      .navbar-form {
+        margin-right: 14px !important;
+      }
 
     }
-    @media (max-width:424px) {
+    @media (max-width:520px) {
       /* #menu-div .nav li.dropdown:not(.username-dropdown-toggle) { */
         #menu-div .nav li.dropdown.username-dropdown-toggle {
         display:none !important;
       }
+
+      .nav.navbar-nav {
+        margin-right:45px;
+     }
     }
   </style>
   @endif
@@ -2604,10 +2684,35 @@ function timerIncrement() {
            
               $('#get_noti').html(response);
             
-              $('#noti_counts').show();
+             
           }
         });
   },1000);
+
+    setInterval(function() {
+           
+
+           $.ajax({
+         url:'{{url('/unsean-notification')}}',
+                 type: 'POST',
+                 data: {
+                   "_token": "{{ csrf_token() }}",
+                   "user_id" : {{user_data()->id}}
+                 },
+               success:function(response) {
+               
+                if(response!=0)
+                {
+                  $('.noti_counts').html(response);
+                }
+
+                 
+                   
+               }
+     
+             });
+       },1000);
+
          setInterval(function() {
          
          
@@ -2835,5 +2940,16 @@ function get_message()
   }
 
 </script>
+<style>
+ @media (max-width:550px) {
+      .nav.navbar-nav {
+      margin-right:50px;
+      }
+
+      .navbar-form {
+        margin-right: -6px !important;
+      }
+    }
+</style>
   </body>
 </html>

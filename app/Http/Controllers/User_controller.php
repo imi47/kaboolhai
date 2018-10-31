@@ -1395,7 +1395,18 @@ public function accept_photo_request($request_id)
 	}
 
 }
-
+public function unsean_notification(Request $request)
+  {   
+		$user_id=$request->user_id;
+			 $notification=Notification::where('receiver_id',$user_id)->where('status',0)->count();
+				  if($notification)
+				      {      
+							return $notification;  
+						  }    
+						  else 
+						     {   
+									  echo 0;   
+		 }  }
 
 	public function get_notification(Request $request)
 	{

@@ -135,6 +135,7 @@ Route::get("invite-view-profile-list","User_controller@invite_view_profile_list"
 Route::get("notification","User_controller@notification");
 Route::post("read-notification","User_controller@read_notification");
 Route::post("get-notification","User_controller@get_notification");
+Route::post("unsean-notification","User_controller@unsean_notification");
 Route::get("addquestionlist/{user_id}","User_controller@addquestionlist");
 Route::get("question","User_controller@question");
 Route::get("add-question/{question_id}","User_controller@add_question");

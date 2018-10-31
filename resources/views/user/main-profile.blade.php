@@ -90,11 +90,7 @@
     background-color:#000;
   }
 
-  @media (min-width:769px) {
-    .nav.navbar-nav.navbar-right {
-      margin-right:40px;
-    }
-  }
+  
   @media (min-width:1350px) {
     .nav.navbar-nav.navbar-right {
       margin-right:0;
@@ -129,7 +125,7 @@
   @media (max-width: 768px) {
     #myNavbar {
       position: absolute !important;
-      right: 100px;
+      right: 0;
       top: 5px;
     }
     .profile_stat.hvr-grow a img {
@@ -374,4 +370,5 @@ footer .searchcontainer {
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 </body>
+
 </html>
