@@ -176,6 +176,10 @@
   }
 }
 
+.fa-google-plus-square, .fa-linkedin-square {
+  font-size:3.2em;
+}
+
      </style>
 <script type="text/javascript">
 	
@@ -734,7 +738,7 @@ $('.owl-carousel').owlCarousel({
       <div class="modal-content">
       
         <div class="modal-header">
-          <h3>Other Languages</h3>
+          <h3> Other Languages</h3>
         </div>
         <div class="modal-body">
          
@@ -767,12 +771,12 @@ $('.owl-carousel').owlCarousel({
 							</ul>
 							@endif			
 							<ul class="in_box_brdr">
-								<li><span class="box_txt_lb"><img src="{{ $user_assets }}/public_profile_icon/caste.png" alt="" width="20px" height="20px;">Caste/Clan</span> <span class="txt_fetched">{{ $user_data->cast.' '.$user_data->clan }}</span></li>
+								<li><span class="box_txt_lb"><img src="{{ $user_assets }}/public_profile_icon/caste.png" alt="" width="20px" height="20px;"> Caste/Clan</span> <span class="txt_fetched">{{ $user_data->cast.' '.$user_data->clan }}</span></li>
 							</ul>
 							
 							@if(count($hobbies))
 							<ul class="in_box_brdr">
-								<li><span class="box_txt_lb"><img src="{{ $user_assets }}/hobbies.png" alt="" width="20px" height="20px;">Hobbies/Interest</span> 
+								<li><span class="box_txt_lb"><img src="{{ $user_assets }}/hobbies.png" alt="" width="20px" height="20px;"> Hobbies/Interest</span> 
 									<span class="txt_fetched"> 
 									@php $data=''; @endphp 
 										@foreach($hobbies as $k => $row )
@@ -793,7 +797,7 @@ $('.owl-carousel').owlCarousel({
       <div class="modal-content">
       
         <div class="modal-header">
-          <h3>Hobbies</h3>
+          <h3> Hobbies</h3>
         </div>
         <div class="modal-body">
          
@@ -837,6 +841,23 @@ $('.owl-carousel').owlCarousel({
 							<ul class="in_box_brdr">
 								<li><span class="box_txt_lb"><img src="{{ $user_assets }}/public_profile_icon/merital-status.png" alt="" width="20px" height="20px;"> Marital Status </span> <span class="txt_fetched">{{ $user_data->martial_status }}</span></li>
 							</ul>
+								@if(!empty($user_data->marige_type))
+							<ul class="in_box_brdr">
+								<li><span class="box_txt_lb"><img src="{{ $user_assets }}//polygamy.png" alt="" width="20px" height="20px;"> Marriage Type </span> <span class="txt_fetched">{{ $user_data->marige_type }}</span></li>
+							</ul>
+							@endif
+
+							@if(!empty($user_data->have_chiled))
+							<ul class="in_box_brdr">
+								<li><span class="box_txt_lb"><img src="{{ $user_assets }}/public_profile_icon/children.png" alt="" width="20px" height="20px;"> Have Child </span> <span class="txt_fetched">{{ $user_data->have_chiled }}</span></li>
+							</ul>
+							@endif
+
+							@if(!empty($user_data->how_many))
+							<ul class="in_box_brdr">
+								<li><span class="box_txt_lb"><img src="{{ $user_assets }}/public_profile_icon/children.png" alt="" width="20px" height="20px;"> How Many </span> <span class="txt_fetched">{{ $user_data->how_many }}</span></li>
+							</ul>
+							@endif
 			
 						</div>
 					</div>
@@ -1051,12 +1072,25 @@ $('.owl-carousel').owlCarousel({
 								<li><span class="box_txt_lb"><img src="{{ $user_assets }}/public_profile_icon/sisterdetails.png" alt="" width="20px" height="20px;"> Sisters unmarried</span> <span class="txt_fetched">{{ $user_data->sister_unmarried }}</span></li>
 							</ul>
 
-							<h2>Family Information</h2>
-							{{ $user_data->family_detail }} 	
+
+
+								
 						</div>
 					</div>
+
+					<div class="contentbox box1" style="border-bottom: none;" >
+						<div class="box_header cl7">
+							<div class="bkborder">
+								<h3 class="box_header_heading patti"><img class="border" src="{{ $user_assets }}/icons/family.png"> Family Information</h3>
+							</div>	
+						</div>
+						<div class="box_body">
+					
+							{{ $user_data->family_detail }} 
 				</div>
 			</div>
+		</div>
+	</div>
 			<div style="display: none;" id="partner">
 			<div class="row">
 				<div class="col-md-12">
@@ -1103,7 +1137,7 @@ $('.owl-carousel').owlCarousel({
 
 							@if(count($loking_martial))
 							<ul class="in_box_brdr">
-								<li><span class="box_txt_lb"><img src="{{ $user_assets }}/public_profile_icon/merital-status.png" alt="" width="20px" height="20px;">looking martial status</span> 
+								<li><span class="box_txt_lb"><img src="{{ $user_assets }}/public_profile_icon/merital-status.png" alt="" width="20px" height="20px;"> looking martial status</span> 
 									<span class="txt_fetched"> 
 									@php $data=''; @endphp 
 										@foreach($loking_martial as $k => $row )
@@ -1157,7 +1191,7 @@ $('.owl-carousel').owlCarousel({
 
 							@if(count($loking_eating))
 							<ul class="in_box_brdr">
-								<li><span class="box_txt_lb"><img src="{{ $user_assets }}/public_profile_icon/eatinghabits.png" alt="" width="20px" height="20px;">Eating Habits</span> 
+								<li><span class="box_txt_lb"><img src="{{ $user_assets }}/public_profile_icon/eatinghabits.png" alt="" width="20px" height="20px;"> Eating Habits</span> 
 									<span class="txt_fetched"> 
 									@php $data=''; @endphp 
 										@foreach($loking_eating as $k => $row )
@@ -1220,7 +1254,7 @@ $('.owl-carousel').owlCarousel({
 
 							@if(count($loking_other_language))
 							<ul class="in_box_brdr">
-								<li><span class="box_txt_lb"><img src="{{ $user_assets }}/public_profile_icon/mothertongue.png" alt="" width="20px" height="20px;">Looking for other languages</span> 
+								<li><span class="box_txt_lb"><img src="{{ $user_assets }}/public_profile_icon/mothertongue.png" alt="" width="20px" height="20px;"> Looking for other languages</span> 
 									<span class="txt_fetched"> 
 									@php $data=''; @endphp 
 										@foreach($loking_other_language as $k => $row )
@@ -1292,7 +1326,7 @@ $('.owl-carousel').owlCarousel({
 
 							@if(count($hijab))
 							<ul class="in_box_brdr">
-								<li><span class="box_txt_lb"><img src="{{ $user_assets }}/public_profile_icon/hijab.png" alt="" width="20px" height="20px;">Hijab</span> 
+								<li><span class="box_txt_lb"><img src="{{ $user_assets }}/public_profile_icon/hijab.png" alt="" width="20px" height="20px;"> Hijab</span> 
 									<span class="txt_fetched"> 
 									@php $data=''; @endphp 
 										@foreach($hijab as $k => $row )
