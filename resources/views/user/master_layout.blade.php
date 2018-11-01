@@ -464,7 +464,7 @@
 
 @media (max-width:768px) {
   #myNavbar .navbar-form {
-    right: -15px !important;
+    right: -16px !important;
     top: 46px !important;
   }
 }

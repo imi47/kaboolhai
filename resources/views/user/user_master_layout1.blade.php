@@ -80,6 +80,7 @@
       color:#ed6c05;
     }
 
+
     .search-dropdown-toggle:hover{
       color:#ed6c05;
     }
@@ -213,7 +214,27 @@
 
     .icon-dropdown {
       left:-449px;
+
     }
+
+    /* wrapper in thie media query because these styles don't work below 992 */
+
+    @media (min-width:992px) {
+      .icon-dropdown li:last-child {
+      position:fixed;
+      width: 493px;
+      padding: 0;
+      border: 1px solid #aaa;
+      top: 425px;
+      background-color:#eee;
+    }
+
+    .icon-dropdown li:last-child a {
+      padding: 0 !important;
+    }
+  }
+
+    
 
     .dropdown-menu.lenght.icon-dropdown.msgMenu hr{
       margin-bottom:0;
@@ -222,6 +243,10 @@
     .dropdown-menu.lenght.icon-dropdown.msgMenu li a {
       padding:9px !important;
       margin:0;
+    }
+
+    .dropdown-menu.lenght.icon-dropdown.msgMenu li:last-child a {
+      padding:0px !important;
     }
 
     #navsidebare ul {

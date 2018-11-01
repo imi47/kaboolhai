@@ -1395,18 +1395,7 @@ public function accept_photo_request($request_id)
 	}
 
 }
-public function unsean_notification(Request $request)
-  {   
-		$user_id=$request->user_id;
-			 $notification=Notification::where('receiver_id',$user_id)->where('status',0)->count();
-				  if($notification)
-				      {      
-							return $notification;  
-						  }    
-						  else 
-						     {   
-									  echo 0;   
-		 }  }
+
 
 	public function get_notification(Request $request)
 	{
@@ -1448,6 +1437,20 @@ public function unsean_notification(Request $request)
 			echo "false";
 		}
 	}
+  public function unsean_notification(Request $request)
+  {
+    $user_id=$request->user_id;
+
+    $notification=Notification::where('receiver_id',$user_id)->where('status',0)->count();
+    if($notification)
+    {
+      return $notification;
+    }
+    else
+    {
+      echo 0;
+    }
+  }
 	public function notification()
 	{
 		$user_id=Session::get('user_id');
@@ -3781,8 +3784,8 @@ public function iprofileview_list()
               // return redirect()->back()->withErrors($validator->errors());
           }
 
-   	$data['fname']=Session::get('fname');
-		$data['lname']=Session::get('lname');
+   	$data['fname']=Session::get('firstname');
+		$data['lname']=Session::get('lastname');
 		$data['email']=Session::get('email');
 		$data['gender']=Session::get('gender');
    	 $data['email']=Session::get('email');
@@ -3832,8 +3835,8 @@ public function iprofileview_list()
 
 			
 		}
-    $data['fname']=Session::get('fname');
-		$data['lname']=Session::get('lname');
+      $data['fname']=Session::get('firstname');
+    $data['lname']=Session::get('lastname');
 		$data['email']=Session::get('email');
 		$data['gender']=Session::get('gender');
 		$data['country'] = DB::table('countries')->get();
@@ -4269,14 +4272,14 @@ $data['living_cities'] = Loking::where('user_id',$user->id)->where('loking_type'
       
 	    $user->loking_education=$request->loking_education;
 		$loking_job_type=$request->loking_job;
-	    if($loking_job_type)
+	    if($loking_job_type=='Other')
 
 	    {
-	    $user->loking_job=$request->loking_job;
-	   }
-	   else
-	   {
 	   		$user->loking_job=$request->loking_job_type;
+     }
+     else
+     {
+      $user->loking_job=$request->loking_job;
 	   }
 	    
 	    $user->loking_a_income=$request->loking_a_income;
