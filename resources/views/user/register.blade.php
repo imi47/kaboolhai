@@ -342,8 +342,8 @@ Select
 </div>
 </li>
 
-<hr class="lineinhead">
-<div style="border:1px solid; padding: 25px; border-radius:5px; ">
+<!-- <hr class="lineinhead"> -->
+<div style="border:1px solid; padding: 25px; border-radius:5px; margin-bottom:25px;">
 <li class="row" class="listtopmarg">
 <div class="col-12">
 Explain more about your personality, family and educational background, profession and hobbies
@@ -383,9 +383,9 @@ Explain more about your personality, family and educational background, professi
 </div>
 </li>
 
-<hr class="lineinhead">
+<!-- <hr class="lineinhead"> -->
 
-<div style="border:1px solid; padding: 25px; border-radius:5px; ">
+<div style="border:1px solid; padding: 25px; border-radius:5px; margin-bottom:25px;">
 <li class="row" class="listtopmarg">
 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Family Value: <span class="imporatant">*</span></label>
@@ -737,7 +737,7 @@ Elder <select name="elder_sister" id="" class="smallselect">
 </div>
 </li>
 
-<hr class="lineinhead">
+<!-- <hr class="lineinhead"> -->
 <li class="row" class="listtopmarg">
 <div class="well" style="width:95%;background-color:#F2F2F2;box-shadow:none;border:1px solid #E6E6E6">
 <div class="col-12">
@@ -748,7 +748,7 @@ Elder <select name="elder_sister" id="" class="smallselect">
 </li>
 <div class="btpad"></div>
 
-<div style="border:1px solid; padding: 25px; border-radius:5px; ">
+<div style="border:1px solid; padding: 25px; border-radius:5px; margin-bottom:25px;">
 <li class="row" class="listtopmarg">
 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Age Preference: <span class="imporatant">*</span></label>
@@ -1110,9 +1110,9 @@ position: absolute;color: #8E8E8F;"></span>
 <p class="sechead">Appearance </p>
 </div>
 </li>
-<hr class="lineinhead">
+<!-- <hr class="lineinhead"> -->
 <div class="btpad"></div>
-<div style="border:1px solid; padding: 25px; border-radius:5px; ">
+<div style="border:1px solid; padding: 25px; border-radius:5px; margin-bottom:25px;">
 
 <li class="row" class="listtopmarg">
 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -1641,9 +1641,9 @@ $('#user_status').hide('slow');
 <p class="sechead">Professional Preferences</p>
 </div>
 </li>
-<hr class="lineinhead">
+<!-- <hr class="lineinhead"> -->
 <div class="btpad"></div>
-<div style="border:1px solid; padding: 25px; border-radius:5px; ">
+<div style="border:1px solid; padding: 25px; border-radius:5px; margin-bottom:25px;">
 <li class="row" class="listtopmarg">
 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Education: </label>
@@ -2178,9 +2178,9 @@ $('#user_status').hide('slow');
 <p class="sechead">Location Preferences</p>
 </div>
 </li>
-<hr class="lineinhead">
+<!-- <hr class="lineinhead"> -->
 <div class="btpad"></div>
-<div style="border:1px solid; padding: 25px; border-radius:5px; ">
+<div style="border:1px solid; padding: 25px; border-radius:5px; margin-bottom:25px;">
 <li class="row" class="listtopmarg">
 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Country Living in:</label>
@@ -2298,9 +2298,9 @@ $('#user_status').hide('slow');
 <p class="sechead">2nd Location Preferences</p>
 </div>
 </li>
-<hr class="lineinhead">
+<!-- <hr class="lineinhead"> -->
 <div class="btpad"></div>
-<div style="border:1px solid; padding: 25px; border-radius:5px; ">
+<div style="border:1px solid; padding: 25px; border-radius:5px; margin-bottom:25px;">
 <li class="row" class="listtopmarg">
 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Africa:</label>
@@ -3029,9 +3029,9 @@ White"> Indian Carribean <br> White <br>
 </div>
 </li>
 
-<hr class="lineinhead">
+<!-- <hr class="lineinhead"> -->
 <div class="btpad"></div>
-<div style="border:1px solid; padding: 25px; border-radius:5px; ">
+<div style="border:1px solid; padding: 25px; border-radius:5px; margin-bottom:25px;">
 <li class="row" class="listtopmarg">
 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Religious History: </label>
@@ -3358,10 +3358,10 @@ position: absolute;color: #8E8E8F;"></span>
 </div>
 </li>
 
-<hr class="lineinhead">
+<!-- <hr class="lineinhead"> -->
 
 <div class="btpad"></div>
-<div style="border:1px solid; padding: 25px; border-radius:5px; ">
+<div style="border:1px solid; padding: 25px; border-radius:5px; margin-bottom:25px;">
 <li class="row" class="listtopmarg">
 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <label for=""> Expectations you may have about your expected partner.  (Mention here location, education, job, character etc..)</label>
@@ -3378,25 +3378,21 @@ position: absolute;color: #8E8E8F;"></span>
 
 
 <li class="row" class="listtopmarg">
-<div class="well" style="width:95%;background-color:#F2F2F2;box-shadow:none;border:1px solid #E6E6E6">
-<div class="col-12">
-<label for="" style="padding-top:5px;font-weight:bold;">Upload profile image</label>
+<div>
+<div class="col-12" style='margin-bottom:0;'>
+<label for="" style="padding-top:5px;font-weight:bold; margin-bottom:0;">Upload profile image</label>
 
 </div>
 </div>
 
 </li>
 <div class="btpad"></div>
-<div style="border:1px solid; padding: 25px; border-radius:5px; ">
+<div style="border:1px solid; padding: 25px; border-radius:5px; margin-bottom:25px;">
 <li class="row" class="listtopmarg">
 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
-<label for="">Image</label>
 </div>
-<div class="col-xl-8 col-lg-8 col-sm-8 col-sm-8 col-xs-12">
-
-<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Upload</button>
-
-
+<div style='width:100%;'>
+	<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Upload image</button>
 </div>
 </li>
 </div>

@@ -209,10 +209,10 @@ label {
 <p class="sechead" >Basic Information</p>
 </div>
 </li>
-<hr class="lineinhead">
+<!-- <hr class="lineinhead"> -->
 
 
-<div style="border:1px solid; padding: 25px; border-radius:5px; ">
+<div style="border:1px solid; padding: 25px; border-radius:5px; margin-bottom:25px; ">
 <li class="row" class="listtopmarg">
 <div class="col-md-5 col-xs-12">
 <label>Which 3 words best describe you:<span style="color: red" >*</span> </label>
@@ -909,8 +909,8 @@ position: absolute;color: #8E8E8F;"></span>
 <p class="sechead">Appearance</p>
 </div>
 </li>
-<hr class="lineinhead">
-<div style="border:1px solid; padding: 25px; border-radius:5px; ">
+<!-- <hr class="lineinhead"> -->
+<div style="border:1px solid; padding: 25px; border-radius:5px; margin-bottom:25px; ">
 <li class="row" class="listtopmarg">
 <div class="col-md-5 col-xs-12">
 <label for="">Complexion (Skin Color):</label>
@@ -1196,8 +1196,8 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 <p class="sechead">Religious Interest</p>
 </div>
 </li>
-<hr class="lineinhead">
-<div style="border:1px solid; padding: 25px; border-radius:5px; ">
+<!-- <hr class="lineinhead"> -->
+<div style="border:1px solid; padding: 25px; border-radius:5px; margin-bottom:25px; ">
 <li class="row" class="listtopmarg">
 <div class="col-5">
 <label for=""> Are you or your parents reverted to Islam?</label>
@@ -1437,8 +1437,8 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 </div>
 </li>
 
-<hr class="lineinhead">
-<div style="border:1px solid; padding: 25px; border-radius:5px; ">
+<!-- <hr class="lineinhead"> -->
+<div style="border:1px solid; padding: 25px; border-radius:5px; margin-bottom:25px; ">
 <li class="row" class="listtopmarg">
 <div class="col-md-5 col-xs-12">
 <label for="">Education: <span class="imporatant">*</span></label>
@@ -1994,10 +1994,10 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 </div>
 </li>
 
-<hr class="lineinhead">
+<!-- <hr class="lineinhead"> -->
 
 
-<div style="border:1px solid; padding: 25px; border-radius:5px; ">
+<div style="border:1px solid; padding: 25px; border-radius:5px; margin-bottom:25px; ">
 <li class="row" class="listtopmarg">
 <div class="col-md-5 col-xs-12">
 <label for=""> Present Country: <span class="imporatant">*</span></label>
@@ -2167,8 +2167,8 @@ name="body_type" @if(old('body_type')=='Heavy') checked="" @endif value="Heavy">
 </div>
 </li>
 
-<hr class="lineinhead">
-<div style="border:1px solid; padding: 25px; border-radius:5px; ">
+<!-- <hr class="lineinhead"> -->
+<div style="border:1px solid; padding: 25px; border-radius:5px; margin-bottom:25px; ">
 <li class="row" class="listtopmarg">
 <div class="col-md-5 col-xs-12">
 <label for="">Blood Group: </label>
