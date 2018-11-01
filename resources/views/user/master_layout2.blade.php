@@ -23,9 +23,9 @@
       box-sizing:border-box;
 	 } */
 
-	 a {
-    	text-decoration:none !important;
-	  }
+	 a, a:hover, a:active, a:visited, a:focus {
+    	text-decoration:none;
+  }
 	  
 	  #accordion, #username-dropdown-toggle a {
       font-weight:600;

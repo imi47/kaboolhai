@@ -147,8 +147,8 @@
       margin:auto 30px;
 	 }
 	 
-	 a {
-    	text-decoration:none !important;
+	 a, a:hover, a:active, a:visited, a:focus {
+    	text-decoration:none;
   	}
 
 	@media (max-width:500px) {

@@ -199,8 +199,8 @@
       font-size:16px;
     }
 
-  a {
-    text-decoration:none !important;
+  a, a:hover, a:active, a:visited, a:focus {
+    text-decoration:none;
   }
 
   .footer_sec.orange {

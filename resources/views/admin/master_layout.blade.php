@@ -33,6 +33,10 @@
         .fa-user-friends, .fa-envelope, .fa-bell {
             font-size:16px;
         }
+
+        a, a:hover, a:active, a:visited, a:focus {
+            text-decoration:none;
+        }
     </style>
 </head>
 <!-- END HEAD -->

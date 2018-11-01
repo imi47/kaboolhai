@@ -5876,3 +5876,7 @@ li a.M:hover {
 .fa-google-plus-square, .fa-linkedin-square, .fa-facebook-square, .fa-youtube-square, .fa-twitter-square {
     font-size:4rem;
   }
+
+  a, a:hover, a:active, a:visited, a:focus {
+    text-decoration:none !important;
+}
