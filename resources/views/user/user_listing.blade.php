@@ -88,11 +88,13 @@
         </div>
         @else
         <div class="col-md-2">
-          <a href="{{ url('remove-user',[$row->id,$title]) }}" onclick="return confirm('Are you sure you want to remove this user?');" class="btn btn-block">Remove</a>
+          @if($title=='Block user list')
+          <a href="{{ url('remove-user',[$row->id,$title]) }}" onclick="return confirm('Are you sure you want to remove this user?');" class="btn btn-block">Unblock</a>
+          @else<a href="{{ url('remove-user',[$row->id,$title]) }}" onclick="return confirm('Are you sure you want to remove this user?');" class="btn btn-block">Remove</a>
+          @endif
         </div> 
         @endif
       </div>
-      <hr>
       @endforeach
         @else
         <p class="alert alert-danger text-center">Empty</p>
