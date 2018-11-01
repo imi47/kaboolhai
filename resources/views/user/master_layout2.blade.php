@@ -15,13 +15,63 @@
 </head>
 <style type="text/css">
 
-   /* #navsidebare {
-      box-sizing:border-box;
-    }
+	#navsidebare {
+		overflow-x:hidden;
+		margin-top:60px;
+	}
 
-    #navsidebare * {
-      box-sizing:border-box;
-	 } */
+	#navsidebare ul {
+		margin-bottom:70px;
+	}
+
+   .ham {
+		cursor: pointer;
+		-webkit-tap-highlight-color: transparent;
+		transition: transform 400ms;
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+      user-select: none;
+      float:right;
+      margin-bottom: -5px;
+      width: 57px;
+		 }
+		 .hamRotate.active {
+			transform: rotate(45deg);
+		 }
+		 .hamRotate180.active {
+			transform: rotate(180deg);
+		 }
+		 .line {
+			fill:none;
+			transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+			stroke:#fff;
+			stroke-width:5.5;
+			stroke-linecap:round;
+		 }
+		
+		 .ham8 .top {
+			stroke-dasharray: 40 160;
+		 }
+		 .ham8 .middle {
+			stroke-dasharray: 40 142;
+			transform-origin: 50%;
+			transition: transform 400ms;
+		 }
+		 .ham8 .bottom {
+			stroke-dasharray: 40 85;
+			transform-origin: 50%;
+			transition: transform 400ms, stroke-dashoffset 400ms;
+		 }
+		 .ham8.active .top {
+			stroke-dashoffset: -64px;
+		 }
+		 .ham8.active .middle {
+			transform: rotate(90deg);
+		 }
+		 .ham8.active .bottom {
+			stroke-dashoffset: -64px;
+		 }
 
 	 a, a:hover, a:active, a:visited, a:focus {
     	text-decoration:none;
@@ -48,12 +98,6 @@
 			width:100%;
 		}
 
-		#navsidebare #cross{
-			position:absolute;
-			right:5px;
-			top:5px;
-		}
-
 		#sidebar-2 {
       	width:100% !important;
     	}
@@ -61,7 +105,8 @@
 
 	 #navsidebare {
       height:100% !important;
-      position:fixed !important;
+		position:fixed !important;
+		/* margin-top:60px; */
     }
 
 	 #sidebar-2 {
@@ -152,7 +197,7 @@
 	}
 
 	@media (max-width: 1193px) {
-		.top-menu-main {
+		.top-menu-main ul {
 			display: none;
 		}
 	}
@@ -364,11 +409,7 @@
 					<div class="col-md-2 pull-left"> <a class="logo-light" href="{{ url('/') }}"><img alt="" src="{{ $user_assets }}/images/kaboolhai.png"
 							 class="logo" /></a></div>
 
-					<div class="navbar-header col-lg-9 col-md-9 col-sm-6 col-xs-2">
-						<!-- removeed data-target=".navbar-collapse" from button -->
-						<button type="button" class="navbar-toggle" data-toggle="collapse"> <span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-					</div>
+					
 
 					<div class="col-md-10">
 
@@ -408,21 +449,28 @@
 						<li id="signin" style="padding-right:0px;text-transform:capitalize;"> <a href="#"> Sign In </a>
 						</li>
 						@endif
-						<a href="javascript:;" id="btntoshowmenu"><i class="fa fa-bars humburger pull-right"></i></a>
+						
 					</ul>
+					<svg class="ham hamRotate ham8" viewBox="0 0 100 100" width="80" onclick="this.classList.toggle('active')">
+							<path
+									class="line top"
+									d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
+							<path
+									class="line middle"
+									d="m 30,50 h 40" />
+							<path
+									class="line bottom"
+									d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20" />
+						</svg>
 				</div>
-
+				
 			</div>
-
+			
 
 
 			<div class="navsidebar wow slideInRight" id="navsidebare" style="display:none;">
 				<div class="row">
 
-					<a href="javascript:;" id="cross" style="margin-left:230px;">
-						<!-- <i class="fa fa-arrow-right fa-3x" style="color:white;margin-top:10px;"></i> -->
-						<img width="20" height="20" style="margin-top:15px;" src="{{ $user_assets }}/cross.png" alt="" />
-					</a>
 					<ul style="margin-left:25px;list-style-type:none;width:100px;line-height:50px;margin-top:15px;">
 						@if(empty(Session::get('user_id')))
 						<li class="wow fadeInDown login-li" data-wow-delay="0.1s"><a href="#" class="M"><span><img width="40" height="40"
@@ -459,33 +507,15 @@
 	</div>
 
 	<script>
-		$("#btntoshowmenu").click(function(){
-             $("#navsidebare").show('slow');
-            //  $("#signin").hide();
+		$(".ham").click(function(){
+             $("#navsidebare").toggle('slow');
              $("#logindivv").hide();
-             $("#btntoshowmenu").css('visibility', 'hidden');
          });
-         
-         $("#cross").click(function() {       
-            $("#navsidebare").hide("slow");
-            $("#signin").show();
-            //  $("#btntoshowmenu").show();
-             $("#btntoshowmenu").css('visibility', 'visible');				 
-				 $('.navbar-toggle').show();
-
-				 mq = window.matchMedia( "(min-width: 1194px)" );
-				 if(mq.matches) {
-				 $('.navbar-toggle').hide();					 
-				 }
-         });
-
-			$('.navbar-toggle').click(function(){
-				$("#navsidebare").show('slow');
-				$(this).hide();
-			});
 
 			$('.login-li').click(function(){
           $("#logindivv").show('fast');
+			 $('#navsidebare').hide('slow');
+			 document.querySelector('.ham').classList.remove('active');
          })
 
 			mq = window.matchMedia( "(max-width: 1194px)" );

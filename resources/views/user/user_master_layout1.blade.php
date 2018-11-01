@@ -133,7 +133,11 @@
 		 }
 		 .ham8.active .bottom {
 			stroke-dashoffset: -64px;
-		 }
+     }
+     
+     .col-md-3.hidden-sm.hidden-xs .well a {
+       color:#333;
+     }
 
     .lmis {
       width:40px;

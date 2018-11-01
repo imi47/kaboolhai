@@ -14,6 +14,10 @@ input, textarea {
 	 top: -700px !important;
 }
 
+.sidebar .well {
+	box-shadow: 0 4px 1px 0 rgba(0, 0, 0, 0.2), 0 6px 1px 0 rgba(0, 0, 0, 0.19) !important;
+}
+
 input[type='checkbox'], input[type='radio'] {
 	width:auto !important;
 }
