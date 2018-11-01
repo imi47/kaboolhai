@@ -9,6 +9,17 @@ input, textarea {
     border: 1px solid #dfdfdf;
 }
 
+.sidebar {
+	background-color:#fff !important;
+	top: -688px;
+}
+
+.sidebar .well {
+	margin-bottom:15px;
+	background-color: #f47e2a;
+	border-radius:5px;
+}
+
 input[type='checkbox'], input[type='radio'] {
 	width:auto !important;
 }

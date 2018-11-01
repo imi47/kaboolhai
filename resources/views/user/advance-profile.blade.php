@@ -2,6 +2,7 @@
 @section('data')
 
 <style>
+
   .main-section {
     width:420px;
   }
