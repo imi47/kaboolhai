@@ -5,14 +5,15 @@
 
 <style>
 
-html, body {
-  overflow-x:hidden;
-}
-
 select {
   padding:0px;
   height:27px !important;
   background-color:#eee;
+}
+
+.sidebar h3 {
+  font-size: 1.54rem;
+  padding: 10px;
 }
 
 input, textarea, select {

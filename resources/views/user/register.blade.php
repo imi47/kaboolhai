@@ -10,14 +10,8 @@ input, textarea {
 }
 
 .sidebar {
-	background-color:#fff !important;
-	top: -688px;
-}
-
-.sidebar .well {
-	margin-bottom:15px;
-	background-color: #f47e2a;
-	border-radius:5px;
+    position: sticky !important;
+	 top: -700px !important;
 }
 
 input[type='checkbox'], input[type='radio'] {
