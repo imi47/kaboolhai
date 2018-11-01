@@ -7,6 +7,14 @@ html, body {
 	overflow-x:hidden;
 }
 
+.hdlist {
+    font-size:16px;
+  }
+
+  .hdlist li {
+	 padding:10px 0;
+  }
+
 .main-section {
     width:420px;
   }
