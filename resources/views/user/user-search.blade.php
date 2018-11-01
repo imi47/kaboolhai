@@ -416,6 +416,12 @@ p.t
     .pl-top-selection img {
       width:21.5% !important;
     }
+
+    @media (max-width:1300px) {
+    .navbar-form button {
+      right: -17px;
+    }
+  }
     
     .searchcontainer button {
       margin-top:-56px !important;

@@ -56,6 +56,12 @@
     }
 }
 
+@media (max-width:1300px) {
+    .navbar-form button {
+      right: -17px;
+    }
+  }
+
   @media (max-width:768px) {
     .stat-li {
       width:24%;

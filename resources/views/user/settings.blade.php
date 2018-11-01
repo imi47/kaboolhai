@@ -166,6 +166,16 @@ footer .footer-middle {
     }
 }
 
+@media (max-width:1300px) {
+    .navbar-form button {
+      right: -17px;
+    }
+
+    .search-dropdown-toggle {
+     top: 26px;
+    }
+  }
+
   @media (min-width: 768px) {
   .navbar-nav>li>a {
       padding-top: 0;

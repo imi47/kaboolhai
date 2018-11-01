@@ -128,6 +128,12 @@ footer section {
     }
 }
 
+@media (max-width:1300px) {
+    .navbar-form button {
+      right: -17px;
+    }
+  }
+
 
  @media (max-width: 685px) {
   .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {

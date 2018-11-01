@@ -86,6 +86,12 @@
         display: inline !important;
       }
   }
+  
+  @media (max-width:1300px) {
+    .navbar-form button {
+      right: -17px;
+    }
+  }
 
   @media (min-width:991px) {
    .searchcontainer button {
