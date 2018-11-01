@@ -44,9 +44,27 @@
     margin-top: 14px;
   }
 
-  .pagination a {
-    margin: 0;
+  .pagination a, .pagination span {
+    margin: 0 10px;
+    border-radius: 99px !important;
+    font-weight:600;
+    color:#5a378c !important;
 }
+
+.pagination li:not(.active) span {
+  color:#ed6c05;
+}
+
+  .pagination .active span{
+    background-color:#ed6c05;
+    border-color: #ed6c05;
+    color:#fff !important;
+  }
+
+  .pagination .active:hover span {
+    background-color:#ed6c05;
+    border-color: #ed6c05;
+  }
 
   .emojiPicker {
     left: 19px !important;
@@ -1053,15 +1071,9 @@ p.t
           <p class="alert alert-danger">Not Available user list</p>
          @endif
          
-       </div>
-         
+       </div>  
           
-             {{ $user_data->links() }}
-           
-        
-
-      
-
+          {{ $user_data->links() }}
 
       </div>
     </div>
