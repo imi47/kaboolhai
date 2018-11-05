@@ -155,10 +155,6 @@ label {
 
 </style>
 
-<script>
-	document.querySelector("#nav-wrapper nav").classList.remove('sticky-nav')
-</script>
-
 <div class="container">
 <div id="wait" style="display: none;"></div>
 <br>

@@ -219,10 +219,6 @@ input, textarea, select {
   
 </style>
 
-<script>
-	document.querySelector("#nav-wrapper nav").classList.remove('sticky-nav')
-</script>
-
 <div class="modal wow fadeInDown" id="myModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="false" >
 <div class="modal-dialog modal-lg" style="height: 700px;   box-shadow: 0 4px 8px 0 rgba(0,0,0, 0.5), 0 6px 20px 0 rgba(0,0, 0, 0.5;);">
 <div class="modal-content">

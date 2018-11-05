@@ -15,9 +15,11 @@
 </head>
 <style type="text/css">
 
+
+
 	#navsidebare {
 		overflow-x:hidden;
-		margin-top:60px;
+		margin-top: 50px;
 	}
 
 	#navsidebare ul {
@@ -402,12 +404,11 @@
 	<!--  -->
 	<!-- navigation panel -->
 	<div class="wrapper" id='nav-wrapper'>
-		<nav class="navbar navbar-default navbar-fixed-top  sticky-nav nav-white nav-border-bottom" role="navigation" style="height: 60px;background-color: #5a378c">
+		<nav class="navbar navbar-default navbar-fixed-top sticky-nav nav-white nav-border-bottom" role="navigation" style="height: 60px;background-color: #5a378c">
 			<div class="container-fluid">
 				<div class="row">
 					<!-- logo -->
-					<div class="col-md-2 pull-left"> <a class="logo-light" href="{{ url('/') }}"><img alt="" src="{{ $user_assets }}/images/kaboolhai.png"
-							 class="logo" /></a></div>
+					<div class="col-md-2 pull-left"> <a class="logo-light" href="{{ url('/') }}"><img alt="" src="{{ $user_assets }}/images/kaboolhai.png" class="logo" /></a></div>
 
 					
 
@@ -421,7 +422,7 @@
 				<div class="top-menu-main">
 					<ul>
 						<li class="{{ Request::is('/') ? 'active1' : '' }}">
-							<!-- <a href="{{url('/')}}">Home</a> </li> -->
+							<a href="{{url('/')}}">Home</a> </li>
 						<li class="{{ Request::is('about-us') ? 'active1' : '' }}"> <a href="{{url('about-us')}}">About
 								Us</a> </li>
 						<li class="{{ Request::is('faqs') ? 'active1' : '' }}"> <a href="{{url('faqs')}}">FAQs</a>

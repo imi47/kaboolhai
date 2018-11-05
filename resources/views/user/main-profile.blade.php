@@ -136,7 +136,7 @@
     }
 
     .navbar-nav .open .dropdown-menu {
-      top:58px !important;
+      top:47px !important;
     }
 
     #username-dropdown-toggle ul.dropdown-menu {

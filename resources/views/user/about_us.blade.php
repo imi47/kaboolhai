@@ -96,13 +96,8 @@
       }
 
        .nav-white.sticky-nav .navbar-nav li a, .nav-white.sticky-nav .navbar-nav li a{
-         padding-right:14px !important;
          margin-top:1px;
        }
-
-      .nav-white.sticky-nav .navbar-nav li a:hover, .nav-white.sticky-nav .navbar-nav li a:hover {
-       padding-right: 14px !important;
-    }
 
     #username-dropdown-toggle .dropdown-toggle {
       margin-top: 3px;
