@@ -3035,7 +3035,8 @@ function get_message()
   }
 
 </script>
-<style>
+<style> 
+
  @media (max-width:550px) {
       .nav.navbar-nav {
       margin-right:50px;
