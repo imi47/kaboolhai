@@ -215,8 +215,7 @@ public function send_message_user(Request $request)
         }
             	
    $new_message->save();
-
-   return json_encode($new_message);
+   return $new_message;
  } 
 	public function login()
 	{
@@ -3119,33 +3118,13 @@ public function iprofileview_list()
 		 $data['title']='Send Item'; 
 		 return view('user/inbox',$data);
 	}
-   public function friend_chat($friend_id)
-  {
-     $data['title']='Inbox'; 
-    $user_id=Session::get('user_id');
-   $data['inbox']=chats::with('from_users','to_users')
-    ->where(function($q) use ($friend_id){
-      $q->where('from_user',Session::get('user_id'))->where('to_user',$friend_id);
-    })
-    ->orwhere(function($q) use ($friend_id){
-        $q->whereToUser(Session::get('user_id'));
-        $q->whereFromUser($friend_id);
-        
-    })->orderBy('created_at','asc')->get();
-    // dd($data['inbox']);
-       $data['friend']=UserRequest::where('requested_user_id',$user_id)->where('friend_status',1)->join('users','users.id','=','usersrequets.user_id')->join('profile-image','profile-image.image_id','=','users.profile_image','left')->orderBy('users.id','desc')->get();
-       $data['friend_id']=$friend_id;
-    return view('user/inbox',$data);
-  }
 	public function inbox()
 	{
-		$data['friend_id']=215;
+		
+		
 		$user_id=Session::get('user_id');
-    
-    // $data['inbox']=chats::with('to_users','to_photo')->where('to_user',$user_id)->where('from_user',$friend_id)->orderBy('chats.id','desc')->get();
-
-    $data['friend']=UserRequest::where('requested_user_id',$user_id)->where('friend_status',1)->join('users','users.id','=','usersrequets.user_id','left')->join('profile-image','profile-image.image_id','=','users.profile_image','left')->orderBy('users.id','desc')->get();
-    dd($data['friend']);
+		
+		$data['inbox']=chats::with('from_users','photo')->where('to_user',$user_id)->orderBy('chats.id','desc')->get();
 		// dd($data['notification']);
 		 $data['title']='Inbox'; 
 		 return view('user/inbox',$data);
