@@ -7,8 +7,8 @@ tr.dosrch th a {
   font-size:14px;
 }
 
-.box_time {
-  padding-top:10px;
+.navbar-default {
+  height:unset;
 }
 
 .navbar-form button .glyphicon {
@@ -98,47 +98,6 @@ tr.dosrch th a {
     }
   }
 
-   @media (max-width:768px) {
-     #friends-dropdown, #messages-dropdown, #notifications-dropdown {
-            margin-top:12px !important;
-            margin-bottom:-12px !important;
-        }
-
-      #username-dropdown-toggle {
-        margin-top:-0px !important;
-      }
-      .humburger {
-          margin-top:8px !important;
-    }
-
-     #username-dropdown-toggle ul.dropdown-menu {
-        top:52px !important;
-      }
-
-      tr.dosrch th a {
-        font-size:12px;
-    }
-
-    .box_msg {
-      padding-left:50px;
-    }
-
-    .box_time {
-      padding-top:30px !important;
-   }
-  }
-
-  @media (max-width:341px) {
-    .notify_blok {
-      height: 117px;
-    }
-
-    .box_msg {
-      margin-top: -29px;
-      margin-left:25px;
-    }
-  }
-
   @media (max-width:320px) {
     .searchcontainer button {
       margin-top:-44px !important;
@@ -186,10 +145,10 @@ tr.dosrch th a {
                </div>
                <div class="notify_ar">
                  <div class="box_msg">
-                   {{ $row->user->user_name .' '. $row->notification_type}} 
+                 <strong>  {{ $row->user->user_name}} </strong> {{$row->notification_type}}
                  </div>
                  <div class="box_time">
-                   {{ $row->created_at }}
+                  <span class='time'> {{ $row->created_at }} </span>
                  </div>
                  </a>
                </div>
