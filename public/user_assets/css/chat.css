@@ -1,5 +1,5 @@
 .main-section{
-  width: 400px;
+  width: 300px;
   position: fixed;
   right:50px;
   bottom:-465px;
@@ -19,17 +19,23 @@
 }
 .border-chat{
   /* border:2px solid #ccc; */
-  margin: 0px;
   border-bottom: none;
   border-top: none;
+  margin:0 !important;
 }
+
+.border-chat:first-child > div {
+  height:28px;
+  border-radius: 5px 5px 0 0;
+}
+
 .first-section{
   background-color:#7553A4;
 }
 .first-section p{
   color:#fff;
   margin:0px;
-  padding: 10px 0px;
+  padding: 3px 0px;
 }
 .first-section p:hover{
   color:#fff;
@@ -41,7 +47,7 @@
 .right-first-section i{
   color:#fff;
   font-size: 15px;
-  padding: 12px 3px;
+  padding: 5px 0;
 }
 .right-first-section i:hover{
   color:#fff;
@@ -74,7 +80,10 @@
   height: 300px;
   border-left: 2px solid #ccc;
   border-right: 2px solid #ccc;
+  height:255px !important;
+  padding:0 !important;
 }
+
 .left-chat,.right-chat{
   overflow: hidden;
 }
@@ -107,12 +116,11 @@
   background-color:#f3f3f3;
   margin-top:-1px;
 }
-/* .text-bar input{
-  width:90%;
-  margin-left:-15px;
-  padding:10px 10px;
-  border:1px solid #fff;
-} */
+
+.text-bar > div {
+  padding: 0px 2px;
+}
+
 .text-bar a i{
   background-color:#7553A4;
   color:#fff;
@@ -152,12 +160,9 @@
 }
 
 .emojiPicker {
-  /* left:62px !important;
-  width:302px !important;
-  top:-42px !important; */
-  left: 5px !important;
+  left: -209px !important;
   width: 355px !important;
-  top: -5px !important;
+  top: -65px !important;
 }
 
 .emojiPicker .sections {
@@ -182,7 +187,7 @@
 }
 
 .text-bar input{
-  width:355px !important;
+  width: 255px !important;
   border-radius:30px !important;
   margin-top:5px;
   padding:8px;
@@ -203,15 +208,15 @@
 }
 
 #bb {
-  position: relative;
-  box-sizing: border-box;
+  position: absolute;
+  bottom: 32px;
 }
 
 #bb img {
   position: fixed;
   right: 100px;
-  margin-top: 14px;
   width:26px;
+  margin-right: -6px;
   box-sizing: border-box;
 }
 
@@ -220,8 +225,10 @@
   border:none;
   background-color:#f3f3f3;
   border-radius: 99px;
-  margin-top:9px;
   padding:0;
+  position: absolute;
+  right: -226px;
+  top: -38px;
 }
 
 .arrow_button svg{
@@ -264,15 +271,6 @@
   #bb img{
    
     right:21vw; 
-  }
-  .text-bar input {
-    width:75vw !important;
-    /* max-width:390px !important; */
-  }
-
-  .arrow_button {
-    margin-left: -11vw !important;
-    margin-top: 9px;
   }
 
   .emojiPicker {

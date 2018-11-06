@@ -6,6 +6,11 @@
   .stat-li {
       width:48%;
     }
+
+    #con_new, #fav_new, #prof_new, #s_m_new, #s_r_new, #p_p_s_new, #p_p_r_new, #h_p_new, #b_p_new, #i_t_v_p_new, #h_m_new, #d_new {
+      color: #A769FF;
+      /* color:#A06AEC; */
+    }
   
   .listofmenu li {
     margin:0 !important;

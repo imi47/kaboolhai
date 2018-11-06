@@ -680,7 +680,7 @@ body::-webkit-scrollbar-thumb, body *::-webkit-scrollbar-thumb
 		</div>
 
 		<div class="row">
-			<div class="col-sm-8 col-sm-offset-4">
+			<div class="col-xs-8 col-xs-offset-4">
 				<button class="pureregbtn"><a href="{{ url('register') }}" style="color:white">Register Now </a></button>
 				{{-- <a href="" style="background-color:#ED6C05; width: 200px; ">Register Now </a> --}}
 			</div>

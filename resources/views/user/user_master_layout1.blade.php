@@ -80,6 +80,23 @@
       color:#ed6c05;
     }
 
+    .close {
+      margin-top: -3px;
+      height: 35px;
+      margin-right: -13px;
+      width: 35px;
+      opacity: 0.7;
+      padding: 11px;
+    }
+
+    .close path {
+      stroke-width:"10";
+    }
+
+    .close:hover {
+      opacity:1;
+    }
+
     .ham {
 			cursor: pointer;
 			-webkit-tap-highlight-color: transparent;
@@ -431,7 +448,49 @@
           <div class="col-md-4 col-sm-6 col-xs-6 right-first-section">
             <a href="#"><i class="fa fa-minus" aria-hidden="true"></i></a>
             {{-- <a href="#"><i class="fa fa-clone" aria-hidden="true"></i></a> --}}
-            <a href="#"><i class="fa fa-times " aria-hidden="true"></i></a>
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
+ viewBox="0 0 47.971 47.971" style="enable-background:new 0 0 47.971 47.971;" xml:space="preserve" class='close'>
+	<g>
+		<path d="M28.228,23.986L47.092,5.122c1.172-1.171,1.172-3.071,0-4.242c-1.172-1.172-3.07-1.172-4.242,0L23.986,19.744L5.121,0.88   c-1.172-1.172-3.07-1.172-4.242,0c-1.172,1.171-1.172,3.071,0,4.242l18.865,18.864L0.879,42.85c-1.172,1.171-1.172,3.071,0,4.242   C1.465,47.677,2.233,47.97,3,47.97s1.535-0.293,2.121-0.879l18.865-18.864L42.85,47.091c0.586,0.586,1.354,0.879,2.121,0.879   s1.535-0.293,2.121-0.879c1.172-1.171,1.172-3.071,0-4.242L28.228,23.986z"
+		 fill="#FFFFFF" />
+	</g>
+	<g>
+	</g>
+	<g>
+	</g>
+	<g>
+	</g>
+	<g>
+	</g>
+	<g>
+	</g>
+	<g>
+	</g>
+	<g>
+	</g>
+	<g>
+	</g>
+	<g>
+	</g>
+	<g>
+	</g>
+	<g>
+	</g>
+	<g>
+	</g>
+	<g>
+	</g>
+	<g>
+	</g>
+	<g>
+	</g>
+</svg>
+
+<script>
+  $('.close').click(function() {
+    $('.main-section').css('bottom', '-465px');
+  });
+</script>
           </div>
         </div>
       </div>
@@ -484,16 +543,6 @@
   <script type="text/javascript">
     $(document).ready(function () {
       $(".left-first-section").click(function () {
-        $('.main-section').toggleClass("open-more");
-      });
-    });
-    $(document).ready(function () {
-      $(".fa-minus").click(function () {
-        $('.main-section').toggleClass("open-more");
-      });
-    });
-    $(document).ready(function () {
-      $(".fa-times").click(function () {
         $('.main-section').toggleClass("open-more");
       });
     });
