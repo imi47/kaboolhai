@@ -903,8 +903,8 @@
 
                 <li><a href="
           {{ url('inbox') }}" class="menudesign">Inbox</a></li>
-                <li><a href="{{ url('sent-items') }}" class="menudesign">Sent Items</a></li>
-                <li><a href="{{ url('blocked-list') }}" class="menudesign">Block List</a></li>
+                <!-- <li><a href="{{ url('sent-items') }}" class="menudesign">Sent Items</a></li> -->
+                <!-- <li><a href="{{ url('blocked-list') }}" class="menudesign">Block List</a></li> -->
 
 
                 <li class="dropdown">
