@@ -78,6 +78,7 @@ Route::get("delete-favourite-user/{favourite_user_id}","User_controller@delete_f
 Route::get("favourite-list","User_controller@favourite_list");
 Route::get("friend-delete-list","User_controller@friend_delete_list");
 Route::get("confirm-friend/{friend_id}","User_controller@confirm_friend");
+Route::get("friend-chat/{friend_id}","User_controller@friend_chat");
 
 
 Route::get("active-user/{block_user_id}","User_controller@active_user");
