@@ -84,10 +84,19 @@
   width:300px !important;
 }
 
+.text-bar input {
+    width: 259px !important;
+}
+
 .arrow_button {
   position: absolute;
-  right: 10px;
-  top: 10px;
+  right: 5px;
+  top: 12px;
+}
+
+#bb {
+  position:fixed;
+  display:none;
 }
 
 /* .emojiPicker {
@@ -624,6 +633,14 @@
       margin-top:90px;
       margin-left:0 !important;
     }
+
+    .text-bar input {
+      width: 258px !important;
+    }
+
+    #bb img {
+      right: 21vw;
+    }
   }
 
     @media (max-width:768px) {
@@ -683,6 +700,12 @@
 
       .navbar-nav {
         margin:0;
+      }
+    }
+
+    @media (max-width:341px) {
+      .text-bar input {
+        width: 75vw !important;
       }
     }
 
@@ -778,6 +801,7 @@
 <script>
   $('.close').click(function() {
     $('.main-section').css('bottom', '-465px');
+    $('#bb').hide();
   });
 </script>
           </div>
@@ -850,11 +874,13 @@
     $(document).ready(function () {
       $(".left-first-section").click(function () {
         $('.main-section').toggleClass("open-more");
+        $('#bb').toggle();
       });
     });
     $(document).ready(function () {
       $(".close").click(function () {
         $('.main-section').toggleClass("open-more");
+        $('#bb').toggle();
       });
     });
 

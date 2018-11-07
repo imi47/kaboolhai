@@ -176,10 +176,6 @@
   }
 }
 
-.fa-google-plus-square, .fa-linkedin-square {
-  font-size:3.2em;
-}
-
      </style>
 <script type="text/javascript">
 	

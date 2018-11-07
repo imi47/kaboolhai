@@ -63,10 +63,6 @@
     margin-left:-21px;
   }
 
-  #bb img {
-    margin-top: 13px;
-  }
-
   .emojiPicker {
     left: 19px !important;
   }

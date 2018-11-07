@@ -177,7 +177,7 @@
 
 .emojiPickerIcon {
   border-radius:99px;
-  left:0;
+  left:6px;
 }
 
 #user_name {
@@ -302,7 +302,7 @@
   }
 
   .text-bar input {
-    width: 385px !important;
+    width: 310px !important;
   }
 }
 
