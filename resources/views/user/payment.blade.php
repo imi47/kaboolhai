@@ -1,3 +1,29 @@
+<style>
+.hdlist {
+    line-height:400%;
+  }
+
+.menulists {
+  font-size: 16px;
+}
+
+.searchcontainer button {
+    padding: 12px 14px !important;
+    margin-top: -53px !important;
+    margin-right: 0px !important;
+}
+
+.searchcontainer input[type='text'] {
+  height: 41px !important;
+}
+
+@media (max-width: 320px) {
+  .searchcontainer button {
+    margin-top: -41px !important;
+    }
+}
+</style>
+
 @extends('user/user_master_layout1') 
 @section('data') 
 <div style="padding-top:90px;"></div>

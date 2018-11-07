@@ -5,6 +5,14 @@
     overflow-x:hidden;
   }
 
+  .hdlist {
+    line-height:400%;
+  }
+
+.menulists {
+  font-size: 16px;
+}
+
   footer section .container {
     margin-top:30px;
   }

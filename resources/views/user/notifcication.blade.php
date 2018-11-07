@@ -2,6 +2,14 @@
 @section('data')
 
 <style>
+  
+  .hdlist {
+    line-height:400%;
+  }
+
+.menulists {
+  font-size: 16px;
+}
 
 tr.dosrch th a {
   font-size:14px;

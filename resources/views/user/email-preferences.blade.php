@@ -3,6 +3,14 @@
 
 <style>
 
+	.hdlist {
+    line-height:400%;
+  }
+
+.menulists {
+  font-size: 16px;
+}
+
 @media (min-width:991px) {
    .searchcontainer button {
       margin-top:-56px !important;

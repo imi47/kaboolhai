@@ -12,6 +12,14 @@
     padding: 6px 11px !important;
 }
 
+.hdlist {
+    line-height:400%;
+  }
+
+.menulists {
+  font-size: 16px;
+}
+
    @media (max-width:991px) {
     #friends-dropdown, #messages-dropdown, #notifications-dropdown {
             margin-top:21px !important;

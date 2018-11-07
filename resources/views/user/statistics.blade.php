@@ -3,6 +3,14 @@
 
 <style>
 
+  .hdlist {
+    line-height:400%;
+  }
+
+.menulists {
+  font-size: 16px;
+}
+
   .stat-li {
       width:48%;
     }

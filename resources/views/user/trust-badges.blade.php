@@ -7,6 +7,14 @@
     padding-top:12px;
   }
   
+  .hdlist {
+    line-height:400%;
+  }
+
+.menulists {
+  font-size: 16px;
+}
+
    .top-searches-by div > a {
       text-transform:capitalize;
   }

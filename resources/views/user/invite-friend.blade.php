@@ -2,6 +2,14 @@
 @section('data')
 
 <style>
+  .hdlist {
+    line-height:400%;
+  }
+
+.menulists {
+  font-size: 16px;
+}
+
 .profile_stat.hvr-grow img {
   height:auto !important;
 }

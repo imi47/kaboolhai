@@ -9,6 +9,14 @@ html, body {
   overflow-x:hidden;
 }
 
+.hdlist {
+    line-height:400%;
+  }
+
+.menulists {
+  font-size: 16px;
+}
+
 .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
     width: 500px !important;
 }

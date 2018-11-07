@@ -3,6 +3,15 @@
 
 <style>
   
+  .hdlist {
+    line-height:400%;
+  }
+
+  .menulists {
+    font-size: 16px;
+    color:#333;
+  }
+
   #menu-div .navbar-collapse.collapse {
     float:right;
   }

@@ -2,6 +2,14 @@
 @section('data') 
 
 <style>
+  .hdlist {
+    line-height:400%;
+  }
+
+.menulists {
+  font-size: 16px;
+}
+
   @media (max-width:991px) {
     .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
       top:55px !important;

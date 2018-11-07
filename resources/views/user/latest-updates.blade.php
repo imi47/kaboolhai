@@ -2,6 +2,15 @@
 @section('data') 
 
 <style>
+
+  .hdlist {
+    line-height:400%;
+  }
+
+.menulists {
+  font-size: 16px;
+}
+
   img {
     height:auto !important;
   }

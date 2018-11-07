@@ -497,7 +497,6 @@
 		}
   }
 
-
 .msgMenu li{border-bottom: 1px solid #e6e6e6; margin-top: -2px !important}
 
 .msgMenu li:hover{background: #e6e6e6 !important; } 

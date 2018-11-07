@@ -38,6 +38,14 @@
   }
 }
 
+.hdlist {
+    line-height:400%;
+  }
+
+.menulists {
+  font-size: 16px;
+}
+
 </style>
 
 <div style="padding-top: 90px;"></div>

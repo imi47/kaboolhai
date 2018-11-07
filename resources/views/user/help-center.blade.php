@@ -8,7 +8,17 @@
     line-height: 50px;
   }
 
+  .hdlist {
+    line-height:400%;
+  }
 
+  .col-md-3 .well {
+    padding: 15px 19px;
+  }
+
+  .menulists {
+    font-size: 16px;
+  }
 
   .navbar-form button .glyphicon {
     top: 1px;

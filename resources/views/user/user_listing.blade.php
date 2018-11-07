@@ -5,6 +5,14 @@
     color: green;
   }
 
+  .hdlist {
+    line-height:400%;
+  }
+
+  .menulists {
+    font-size: 16px;
+  }
+
  .top-searches-by div > a, tr.tpsrch th a, tr.dosrch th a {
       font-size:12px;
  }
