@@ -367,6 +367,7 @@
 
 <body>
 	<link rel="stylesheet" href="{{ $user_assets }}/css/muzamil.css" />
+	<link rel="stylesheet" href="{{ $user_assets }}/css/user card.css" />
 
 	<style>
 		@media (max-width:932px) and (min-width:768px){
@@ -593,56 +594,32 @@
 	@if(!empty($recent))
 	<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 		<div class="sidebar" id="">
-			<h3 class="text-center">Recently Joined</h3>
-			@if(count($recent))
-			@foreach($recent as $key =>$recnt_slid)
-
-			<div @if($key==0) class="item active well" @else class="item well " @endif style="padding-bottom: 20px;">
-				<a href="{{ url('public-profile',$recnt_slid->id) }}" title="{{ $recnt_slid->user_name }} view public profile">
-					@if($recnt_slid->image)
-
-					<img src="{{ $user_assets }}/my_photo/{{ $recnt_slid->image }}" class="img-thumbnail" style="width: 100%; height: 100px;">
-
-					@elseif($recnt_slid->image_name)
-					<img src="{{ $user_assets }}/profile_image/{{ $recnt_slid->image_name }}" class="img-thumbnail" style="width: 100%; height: 100px;">
-					@else
-
-					<img src="{{ $user_assets }}/default_slider.jpg" class="img-thumbnail" style="width: 100%; height: 100px;">
-					@endif
-
-
-					<h4 style="color: white;">{{ $recnt_slid->user_name.' '.$recnt_slid->gender }}</h4>
-
-
-					<p style="color: white;"> {{ $recnt_slid->country_name.' '.$recnt_slid->city_name.'
-						'.$recnt_slid->martial_status}} </p><span style="color: blue;"><b>View Profile</b></span>
-				</a>
-			</div>
-
-
-			@endforeach
-			@else
-
-			<div class="well">
-
-
-				<img src="{{ $user_assets }}/default_slider.jpg" class="img-thumbnail" style="width: 100%; height: 200px;">
-
-				{{-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/158072/hearthand.jpg" alt="Third slide">
-				--}}
-				<div>
-					<h2>Recent User</h2>
-					<h3>Not Available</h3>
-
-				</div>
-
-				@endif
-
-			</div>
-
-		</div>
+			<!-- <h3 class="text-center">Recently Joined</h3> -->
+			<div class="card-container">
+		<h3 class="title">Recently Joined</h3>
+		<div class="row cf">
+		  <div id="card1" class="card four col">
+			 <div class="image-wrapper"></div>
+			 <h3 class="name">User name</h3>
+			 <div class="info cf">
+				<div class="four col"><span class="number">100</span>Posts</div>
+				<div class="four col"><span class="number">28</span>Tasks</div>
+				<div class="four col"><span class="number">179</span>Likes</div>
+			 </div>
+			 <div class="options">
+				<ul>
+				  <li><span class="icon"><i class="fa fa-plus" aria-hidden="true"></i></span>Add to team</li>
+				  <li><span class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></span>Send a message</li>
+				</ul>
+			 </div>
+		  </div>
+		  </div>
+		  </div>
 	</div>
 	</div>
+	</div>
+	</div>
+	
 	@endif
 	<!-- <footer>
 		<section class="bg-orange no-padding wow" style="background-color:#ed6c05;">

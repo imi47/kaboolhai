@@ -2857,6 +2857,7 @@ $('.owl-carousel').owlCarousel({
   });</script>
 <link rel="shortcut icon" href="{{ $user_assets }}/images/favicon.png">
     <link rel="stylesheet" href="{{ $user_assets }}/css/animate.css" />
+    <link rel="stylesheet" href="{{ $user_assets }}/css/user card.css" />
 <!-- bootstrap -->
 <link rel="stylesheet" href="{{ $user_assets }}/css/chat.css" />
 <!-- et line icon -->
