@@ -56,6 +56,23 @@
   color-stop(.6,#B88FF3))
 }
 
+#message_count, .noti_counts, #friend_counts {
+  color: white !important;
+  background-color: #FF4646;
+  border-radius: 99px;
+  right: 5px;
+  font-size: 11px;
+  top: 5px;
+  position: absolute;
+  padding: 0px 8px 0px 6px;
+  line-height:20px;
+}
+
+.noti_counts {
+  top: -11px;
+  right: -10px;
+}
+
     .sticky-nav {
       position: fixed;
       top: -4px;
@@ -746,6 +763,15 @@
       #username-dropdown-toggle ul.dropdown-menu {
         top:47px !important;
       }
+
+      #message_count {
+        top: 0;
+        padding: 0px 7px 0px 6px;
+      }
+
+      #friend_counts {
+        top: 0px;
+      }
   }
 
     .dropdown-menu li a {
@@ -1040,7 +1066,7 @@
                 </li>
                 <li class="dropdown" id='messages-dropdown'>
                   <a class="dropdown-toggle" data-toggle="dropdown" href="#" title="Message" onclick="return get_message()">
-                    <span class="fa fa-envelope icon_color"></span><span id="message_count" style="color: red">@if(!empty(count_message()))
+                    <span class="fa fa-envelope icon_color"></span><span id="message_count">@if(!empty(count_message()))
                       {{ count_message() }} @endif</span></a>
                   <ul class="dropdown-menu lenght icon-dropdown msgMenu">
 
@@ -1117,7 +1143,7 @@
                   <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;" onclick="return read_notification()"
                     title="Notification">
                    
-                    <span class="fa fa-bell icon_color"> <span class="noti_counts" style="font-size:13px; color:#ed6c05;   ">@if(!empty(count_notification())) {{ count_notification() }} @endif 3</span></span>
+                    <span class="fa fa-bell icon_color"> <span class="noti_counts">@if(!empty(count_notification())) {{ count_notification() }} @endif</span></span>
 
                   </a>
                   <ul class="dropdown-menu lenght icon-dropdown">

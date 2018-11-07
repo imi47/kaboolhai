@@ -62,6 +62,24 @@
   color-stop(.6,#B88FF3));
 }
 
+#message_count, .noti_counts, #friend_counts {
+  color: white !important;
+  background-color: #FF4646;
+  border-radius: 99px;
+  right: 5px;
+  font-size: 11px;
+  top: 5px;
+  position: absolute;
+  padding: 0px 8px 0px 6px;
+  line-height:20px;
+}
+
+.noti_counts {
+  top: -4px !important;
+  left: 14px !important;
+  padding: 0px 14px 1px 7px;
+}
+
 .main-section {
   width:300px !important;
 }
@@ -75,10 +93,6 @@
 /* .emojiPicker {
     left: -209px !important;
 } */
-
-#bb {
-  bottom:-3px;
-}
 
 .search-dropdown-toggle {
     display:none;
@@ -413,13 +427,11 @@
      }
 
   #friend_counts {
-    color: red;
     position: absolute;
     top: 5px;
   }
 
   .noti_counts {
-    color: red;
     position: absolute;
     top: 5px;
     left: 25px;
@@ -487,6 +499,10 @@
   #myNavbar .navbar-form {
     right: -16px !important;
     top: 46px !important;
+  }
+
+  #message_count, #friend_counts {
+    top:0;
   }
 
   .logo-light {
@@ -1218,7 +1234,10 @@
           <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;" onclick="return read_notification()">
                <span class="glyphicon glyphicon-bell icon_color">
-             <span class="noti_counts" style="font-size:13px; color:#ed6c05; margin: -8px;">@if(!empty(count_notification())) {{ count_notification() }} @endif</span></span>
+             <span class="noti_counts" style="margin: -8px;" >
+             @if(empty(count_notification())) <style>.noti_counts{background-color:#5a378c;}</style> @endif
+             @if(!empty(count_notification())) {{ count_notification() }}
+             <style>.noti_counts{background-color:#FF4646;}</style> @endif</span></span>
              </a>
             <ul class="dropdown-menu lenght icon-dropdown">
               @if(!empty(get_notification()))
