@@ -9,11 +9,6 @@ input, textarea {
     border: 1px solid #dfdfdf;
 }
 
-.sidebar {
-    position: sticky !important;
-	 top: -700px !important;
-}
-
 .sidebar .well {
 	box-shadow: 0 4px 1px 0 rgba(0, 0, 0, 0.2), 0 6px 1px 0 rgba(0, 0, 0, 0.19) !important;
 }
@@ -167,6 +162,10 @@ label {
     max-width: 100% !important;
 }
 
+.sidebar h3 {
+	font-size: 1.54rem;
+	padding: 10px;
+}
 
 </style>
 

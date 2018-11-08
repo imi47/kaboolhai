@@ -5,7 +5,7 @@
  
  /* CONTAINERS */ 
  
- .card-container {max-width: 940px; width: 100%; margin: 0 auto; } 
+ .card-container {max-width: 940px; width: 100%; margin: 0 auto; margin-bottom:20px;} 
  .twelve { width: 100%; } 
  .eleven { width: 91.53%; } 
  .ten { width: 83.06%; } 
@@ -14,7 +14,8 @@
  .seven { width: 57.66%; } 
  .six { width: 49.2%; } 
  .five { width: 40.73%; } 
- .four { width: 32.26%;} 
+ /* .four { width: 32.26%;}  */
+ .four { width:30%; }
  .three { width: 23.8%; } 
  .two { width: 15.33%; } 
  .one{ width: 6.866%;}
@@ -25,6 +26,7 @@
 	 display: block; 
 	 float:left;
 	 margin: 1% 0 1% 1.6%; 
+	 font-size:14px;
  } 
  
  .col:first-of-type { margin-left: 0; }
@@ -49,7 +51,7 @@
  .card{
 	 max-width: 100%;
 	 height: 400px;
-	 background-color: #fff;
+	 background-color: #ece1fd;
 	 font-family: 'Arimo', sans-serif;
 	 font-size: 14px;
 	 border-radius:5px;
@@ -60,22 +62,24 @@
  #card1{
 	 text-align: center;
 	 color: #2c3e50;
-	 padding: 15px;
+	 /* padding: 15px; */
 	 -webkit-box-sizing: border-box;
 	 -moz-box-sizing: border-box;
 	 box-sizing: border-box;
  }
  
  #card1 .image-wrapper{
-	 width: 100px;
-	 height: 100px;
 	 margin: 20px auto;
-	 border-radius: 100%;
-	 background-image: url("https://static.pexels.com/photos/7096/people-woman-coffee-meeting.jpg");
-	 background-size: cover;
-	 background-repeat: no-repeat;
+
  }
  
+ #card1 .image-wrapper img {
+	width:120px;
+	height:120px;
+	border: 2px solid #9070BF;
+	border-radius:100%;
+ }
+
  #card1 .info .four{
 	 text-align: center;
 	 border-right: 1px solid #2c3e50;
@@ -90,13 +94,13 @@
  
  #card1 .info .four .number{
 	 display: block;
-	 font-size: 20px;
+	 font-size: 14px;
 	 padding: 3px 0;
 	 font-weight: 700;
  }
  
  #card1 .options{
-	 margin-top: 30px;
+	 /* margin-top: 30px; */
 	 text-align: left;
  }
  
@@ -118,7 +122,52 @@
 	 line-height: 30px;
 	 text-align: center;
  }
+
+ #card1 .options ul .icon:first-child {
+	background-color:transparent;
+}
  
  #card1 .options ul li{
-	 margin: 12px 0;
+	 /* margin: 12px 0; */
+	 margin: 0 0 12px 0;
  }
+
+ .four {
+	 padding:0 0 20px 0;
+ }
+
+ #card1 li {
+	 padding-left: 15px;
+ }
+
+ #card1 a {
+	color:inherit;
+ }
+
+ .name {
+	color:inherit;
+ }
+
+ /* #card1 .info .four {
+	max-width: 82px;
+} */
+
+@media (max-width:768px) {
+	.sidebar {
+		margin:0 15px;
+	}
+
+	.card {
+		height:410px;
+	}
+
+	.card .options {
+		margin-top: 30px;
+	}
+}
+
+@media (max-width:991px) and (min-width:769) {
+	.card .col, .number {
+		font-size:13px !important;
+	}
+}

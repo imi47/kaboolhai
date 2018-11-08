@@ -5,6 +5,10 @@
 
 <style>
 
+  body, body * {
+    overflow:unset !important;
+  }
+
 select {
   padding:0px;
   height:27px !important;

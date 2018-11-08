@@ -58,7 +58,7 @@ footer .searchcontainer button {
 
 .sidebar {
     position: sticky;
-    top: -688px;
+    top: -410px;
     /* background-color:#f47e2a;  */
 	background-color:#fff;
     border-radius:10px;
@@ -355,5 +355,11 @@ h4 {
     font-size: 17px;
     border: none;
     cursor: pointer;
+}
+
+@media (min-width:769px) {
+    .sidebar {
+        margin-top: -19px;
+    }
 }
 

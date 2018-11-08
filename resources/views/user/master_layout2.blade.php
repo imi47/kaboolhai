@@ -14,8 +14,10 @@
 	@stack('css')
 </head>
 <style type="text/css">
-
-
+	
+	#nav-wrapper {
+		margin-bottom: 75px;
+	}
 
 	#navsidebare {
 		overflow-x:hidden;
@@ -536,6 +538,7 @@
 			}
 			mediaQueryResponse(mq);
 
+
       </script>
 	<div class="logindiv wow fadeIn" id="logindivv">
 		<div class="row" style="padding:15px;">
@@ -592,33 +595,57 @@
 
 
 	@if(!empty($recent))
-	<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-		<div class="sidebar" id="">
-			<!-- <h3 class="text-center">Recently Joined</h3> -->
-			<div class="card-container">
+<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+	<div class="sidebar" id="">
+		<!-- <h3 class="text-center">Recently Joined</h3> -->
 		<h3 class="title">Recently Joined</h3>
-		<div class="row cf">
-		  <div id="card1" class="card four col">
-			 <div class="image-wrapper"></div>
-			 <h3 class="name">User name</h3>
-			 <div class="info cf">
-				<div class="four col"><span class="number">100</span>Posts</div>
-				<div class="four col"><span class="number">28</span>Tasks</div>
-				<div class="four col"><span class="number">179</span>Likes</div>
-			 </div>
-			 <div class="options">
-				<ul>
-				  <li><span class="icon"><i class="fa fa-plus" aria-hidden="true"></i></span>Add to team</li>
-				  <li><span class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></span>Send a message</li>
-				</ul>
-			 </div>
-		  </div>
-		  </div>
-		  </div>
+		<div class="card-container">
+			<div class="row cf">
+				<div id="card1" class="card four col">
+					<div class="image-wrapper"><img src="http://localhost/KBH/public/user_assets/default_slider.jpg" alt=""></div>
+					<h3 class="name">Hamza</h3>
+					<div class="info cf">
+						<div class="four col">Age<span class="number">20</span></div>
+						<div class="four col">Gender<span class="number">Male</span></div>
+						<div class="four col">Marital Status<span class="number">Unmarried</span></div>
+					</div>
+					<div class="options">
+						<ul>
+							<li><object class='icon' data="{{ $user_assets }}/images/address.svg" type="image/svg+xml"></object>Lahore,
+								Pakistan</li>
+							<li><object class='icon' data="{{ $user_assets }}/images/user.svg" type="image/svg+xml"></object><a href="">View
+									profile</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="card-container">
+			<div class="row cf">
+				<div id="card1" class="card four col">
+				<div class="image-wrapper"><img src="http://localhost/KBH/public/user_assets/default_slider.jpg" alt=""></div>
+					<h3 class="name">Fatima</h3>
+					<div class="info cf">
+						<div class="four col">Age<span class="number">20</span></div>
+						<div class="four col">Gender<span class="number">Female</span></div>
+						<div class="four col">Marital Status<span class="number">Single</span></div>
+					</div>
+					<div class="options">
+						<ul>
+							<li><object class='icon' data="{{ $user_assets }}/images/address.svg" type="image/svg+xml"></object>Lahore,
+								Pakistan</li>
+							<li><object class='icon' data="{{ $user_assets }}/images/user-f.svg" type="image/svg+xml"></object><a href="">View
+									profile</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
-	</div>
-	</div>
-	</div>
+</div>
+</div>
+</div>
 	
 	@endif
 	<!-- <footer>
@@ -1960,6 +1987,21 @@
 	</div>
 	<!-- <script src="{{ $user_assets }}/js/bootstrap.min.js"></script> -->
 	@stack('js')
+
+	<style>
+		@media (min-width: 768px) {
+			.container {
+				max-width: 912px;
+			}
+		}
+
+		@media (min-width: 992px) {
+			.container {
+				max-width: 1095px;
+			}
+		}
+
+	</style>
 </body>
 
 </html>

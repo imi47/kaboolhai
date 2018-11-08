@@ -9,6 +9,10 @@
     margin: 10px 0;
 }
 
+footer, .container {
+  display:none;
+}
+
 tr.dosrch th a {
     font-size:14px;
 }
@@ -152,14 +156,18 @@ footer section {
 
 .container{max-width:1170px; margin:auto;}
 img{ max-width:100%;}
+
+.messaging *{
+  letter-spacing:0;
+}
+
 .inbox_people {
   background: #f8f8f8 none repeat scroll 0 0;
   float: left;
   overflow: hidden;
-  width: 25%; border-right:1px solid #c4c4c4;
+  width: 340px; border-right:1px solid #c4c4c4;
 }
 .inbox_msg {
-  border: 1px solid #c4c4c4;
   clear: both;
   overflow: hidden;
 }
@@ -190,16 +198,18 @@ img{ max-width:100%;}
 .srch_bar .input-group-addon { margin: 0 0 0 -27px;}
 
 .chat_ib h5{ font-size:15px; color:#464646; margin:0 0 8px 0;}
-.chat_ib h5 span{ font-size:13px; float:right;}
+.chat_ib h5 span{ font-size:11px; float:right; color:#989898;}
 .chat_ib p{ font-size:14px; color:#989898; margin:auto}
 .chat_img {
   float: left;
-  width: 11%;
+  width: 50px;
 }
 .chat_ib {
   float: left;
   padding: 0 0 0 15px;
-  width: 88%;
+  margin-left: 53px;
+  margin-top: -50px;
+  width: 82%;
 }
 
 .chat_people{ overflow:hidden; clear:both;}
@@ -222,11 +232,11 @@ img{ max-width:100%;}
   display: inline-block;
   padding: 0 0 0 10px;
   vertical-align: top;
-  width: 92%;
+  width: 38%;
  }
  .received_withd_msg p {
   background: #ebebeb none repeat scroll 0 0;
-  border-radius: 3px;
+  border-radius: 99px;
   color: #646464;
   font-size: 14px;
   margin: 0;
@@ -239,55 +249,82 @@ img{ max-width:100%;}
   font-size: 12px;
   margin: 8px 0 0;
 }
-.received_withd_msg { width: 57%;}
+/* .received_withd_msg { width: 57%;} */
 .mesgs {
   float: left;
   padding: 30px 15px 0 25px;
-  width: 75%;
+  width: 73%;
 }
 
  .sent_msg p {
   background: #05728f none repeat scroll 0 0;
-  border-radius: 3px;
+  border-radius: 99px;
   font-size: 14px;
   margin: 0; color:#fff;
   padding: 5px 10px 5px 12px;
   width:100%;
 }
-.outgoing_msg{ overflow:hidden; margin:26px 0 26px;}
+.outgoing_msg{ overflow:hidden; margin:26px 0 26px; margin-right:2.5%;}
 .sent_msg {
   float: right;
-  width: 46%;
+  width: 46.5%;
 }
+
+/* .input_msg_write {
+  position:fixed;
+  bottom:0;
+  width:70%;
+} */
+
 .input_msg_write input {
-  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
   border: medium none;
   color: #4c4c4c;
   font-size: 15px;
-  min-height: 48px;
   width: 100%;
 }
 
-.type_msg {border-top: 1px solid #c4c4c4;position: relative;}
+.type_msg {
+  border-top: 1px solid #c4c4c4;
+  position: fixed;
+  bottom: 0;
+  width: 70.1%;
+}
+
 .msg_send_btn {
   background: #05728f none repeat scroll 0 0;
-  border: medium none;
-  border-radius: 50%;
-  color: #fff;
+  border:none;
   cursor: pointer;
-  font-size: 17px;
-  height: 33px;
+  background-color: transparent;
   position: absolute;
   right: 0;
   top: 11px;
   width: 33px;
 }
+
+.msg_send_btn svg {
+  width: 23px !important;
+  fill: #7553A4;
+}
+
 .messaging { padding: 0 0 50px 0;}
 .msg_history {
   height: 516px;
   overflow-y: auto;
 }
 
+@media (max-width:768px) {
+  .chat_ib {
+    display:none;
+  }
+
+  .inbox_people {
+    width:109px;
+  }
+
+  .chat_list {
+    padding: 7px 0 7px 26px;
+  }
+}
 </style>
 <div style="padding-top:90px; "></div>
 {{-- <div class="container"> --}}
@@ -379,10 +416,10 @@ img{ max-width:100%;}
             <div class="input_msg_write">
               <input type="text" id="send_messgae" name="send_messgae" class="write_msg" placeholder="Type a message"/>
               <input type="hidden" id="to_userss" value="{{ $friend_id }}" name="to_user">
-               <label id="" style="float: right; margin-right: 50px; margin-top: -50px;"> <img alt="" src="{{ $user_assets }}/images/clip.png" />
+               <label id="" style="float: right; margin-right: 50px; margin-top: -42px;"> <img alt="" src="{{ $user_assets }}/images/clip.png" />
                 <input type="file" name="file" id="file" size="60">
               </label>
-              <button class="msg_send_btn" type="submit" ><i class="fa fa-paper-plane-o"></i></button>
+              <button class="msg_send_btn" type="submit" ><svg style="enable-background:new 0 0 24 24;" version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="info"/><g id="icons"><path d="M21.5,11.1l-17.9-9C2.7,1.7,1.7,2.5,2.1,3.4l2.5,6.7L16,12L4.6,13.9l-2.5,6.7c-0.3,0.9,0.6,1.7,1.5,1.2l17.9-9   C22.2,12.5,22.2,11.5,21.5,11.1z" id="send"/></g></svg></button>
             </div>
           </div>
           </form>

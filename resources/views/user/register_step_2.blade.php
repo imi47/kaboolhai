@@ -4,6 +4,11 @@
 <link rel="stylesheet" href="{{ $user_assets }}/css/style.css" />
 
 <style>
+	
+	.sidebar h3 {
+		font-size: 1.54rem;
+		padding: 10px;
+}
 
 	textarea {
 		width:100%;
