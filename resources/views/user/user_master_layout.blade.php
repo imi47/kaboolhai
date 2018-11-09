@@ -361,6 +361,12 @@
    margin-bottom:50px;
 }
 
+	@media (max-width:991px) {
+		.say-it {
+			font-size: 34px !important;
+		}
+	}
+
 	@media (max-width:768px) {
 		.copyright p {
 			float:none !important;
@@ -393,6 +399,10 @@
 		footer .container-fluid.footer-middle {
 			margin-left:0 !important;
 			width:100% !important;
+		}
+
+		.say-it {
+			font-size: 4.18vw !important;
 		}
 	}
 

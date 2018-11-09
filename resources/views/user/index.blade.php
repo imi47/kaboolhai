@@ -159,6 +159,23 @@ body::-webkit-scrollbar-thumb, body *::-webkit-scrollbar-thumb
             margin-left:19vw;
         }
     }
+	 
+	 @media (max-width:500px) {
+		 .how-to-discover {
+			 font-size:4vw !important;
+		 }
+
+		 .imgwithh2 {
+			 width:3vw;
+			 top: -0.5vw;
+		 }
+	 }
+
+	  @media (max-width:403px) {
+		 .how-to-discover {
+			 font-size:3.7vw !important;
+		 }
+	 }
 
     .footer-middle {
         text-align:left;
@@ -615,7 +632,7 @@ body::-webkit-scrollbar-thumb, body *::-webkit-scrollbar-thumb
 		<div class="row">
 			<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
 			<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-				<h3 class="chosehed"><span style="text-transform:capitalize;">Say</span> <span style="text-transform:lowercase;">it
+				<h3 class="chosehed say-it"><span style="text-transform:capitalize;">Say</span> <span style="text-transform:lowercase;">it
 						with a pure heart</span> ‘KABOOL HAI’</h3>
 				<p class="tdt"><strong style="text-align:center;">You shall encourage those of you who are single to
 						get married. They may marry the righteous among your male and female servants, if they are

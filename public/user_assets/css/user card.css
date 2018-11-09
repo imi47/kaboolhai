@@ -50,11 +50,12 @@
  
  .card{
 	 max-width: 100%;
-	 height: 400px;
 	 background-color: #ece1fd;
 	 font-family: 'Arimo', sans-serif;
 	 font-size: 14px;
 	 border-radius:5px;
+	 height: 580px;
+	 border:1px solid #777;
  }
  
  /* CARD ! */
@@ -92,15 +93,8 @@
 	 border-right: none;
  }
  
- #card1 .info .four .number{
-	 display: block;
-	 font-size: 14px;
-	 padding: 3px 0;
-	 font-weight: 700;
- }
- 
  #card1 .options{
-	 /* margin-top: 30px; */
+	 margin-top: 30px;
 	 text-align: left;
  }
  
@@ -128,7 +122,6 @@
 }
  
  #card1 .options ul li{
-	 /* margin: 12px 0; */
 	 margin: 0 0 12px 0;
  }
 
@@ -148,26 +141,37 @@
 	color:inherit;
  }
 
- /* #card1 .info .four {
-	max-width: 82px;
-} */
+.key-value-container {
+	width:80%;
+	margin:auto;
+	clear:both;
+	overflow: hidden !important;
+	border-bottom: 1px solid #C2C2C2;
+	padding: 7px 0;
+}
+
+.key {
+	font-weight: 700;
+}
+
+.value {
+	margin-right:5px;
+	color: #5F5F5F;
+}
+
+@media (max-width:991px) and (min-width:769px) {
+	
+	.card .col, .number {
+		font-size:13px !important;
+	}
+
+	.key, .value {
+		float:none;
+	}
+}
 
 @media (max-width:768px) {
 	.sidebar {
 		margin:0 15px;
-	}
-
-	.card {
-		height:410px;
-	}
-
-	.card .options {
-		margin-top: 30px;
-	}
-}
-
-@media (max-width:991px) and (min-width:769) {
-	.card .col, .number {
-		font-size:13px !important;
 	}
 }

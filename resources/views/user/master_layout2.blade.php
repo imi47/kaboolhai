@@ -605,9 +605,22 @@
 					<div class="image-wrapper"><img src="http://localhost/KBH/public/user_assets/default_slider.jpg" alt=""></div>
 					<h3 class="name">Hamza</h3>
 					<div class="info cf">
-						<div class="four col">Age<span class="number">20</span></div>
-						<div class="four col">Gender<span class="number">Male</span></div>
-						<div class="four col">Marital Status<span class="number">Unmarried</span></div>
+						<div class="key-value-container">
+							<div class="key">Age</div>
+							<div class="value">20</div>
+						</div>
+						<div class="key-value-container">
+							<div class="key">Gender</div>
+							<div class="value">Male</div>
+						</div>
+						<div class="key-value-container">
+							<div class="key">Marital status</div>
+							<div class="value">Single</div>
+						</div>
+						<div class="key-value-container">
+							<div class="key">Occupation</div>
+							<div class="value">Software Engineer</div>
+						</div>
 					</div>
 					<div class="options">
 						<ul>
@@ -627,9 +640,22 @@
 				<div class="image-wrapper"><img src="http://localhost/KBH/public/user_assets/default_slider.jpg" alt=""></div>
 					<h3 class="name">Fatima</h3>
 					<div class="info cf">
-						<div class="four col">Age<span class="number">20</span></div>
-						<div class="four col">Gender<span class="number">Female</span></div>
-						<div class="four col">Marital Status<span class="number">Single</span></div>
+					<div class="key-value-container">
+							<div class="key">Age</div>
+							<div class="value">20</div>
+						</div>
+						<div class="key-value-container">
+							<div class="key">Gender</div>
+							<div class="value">Female</div>
+						</div>
+						<div class="key-value-container">
+							<div class="key">Marital status</div>
+							<div class="value">Single</div>
+						</div>
+						<div class="key-value-container">
+							<div class="key">Occupation</div>
+							<div class="value">Doctor</div>
+						</div>
 					</div>
 					<div class="options">
 						<ul>
@@ -1997,7 +2023,7 @@
 
 		@media (min-width: 992px) {
 			.container {
-				max-width: 1095px;
+				max-width: 1200px;
 			}
 		}
 
