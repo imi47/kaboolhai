@@ -661,6 +661,13 @@
     .top-searches-by div > a {
     color: #fff !important;
     }
+
+    @media (max-width:768px) and (min-width:521px) {
+      .navbar-form input[type='text'] {
+        width:232px;
+      }
+    }
+
     @media (max-width:520px) {
 			.tpsrch {
 				display:none;
@@ -731,6 +738,10 @@
       .navbar-form {
         display:block !important;
       }
+
+      #friends-dropdown, #messages-dropdown, #notifications-dropdown {
+        visibility:visible !important;
+      }
     }
 
     @media (max-width:1300px) {
@@ -739,8 +750,8 @@
 
         position: absolute;
         border-radius: 3px;
-        top: 57px;
-        right: 72px;
+        top: 13px;
+        right: 104px;
         margin:0;
         padding:0px;
         border:none;
@@ -879,16 +890,10 @@
       cursor: pointer;
     }
 
-    @media (max-width:430px) {
-			#logindivv {
-				width:100vw;
-			}
-    }
-
     @media (max-width:375px) {
-      .search-dropdown-toggle {
+      /* .search-dropdown-toggle {
        margin-right: -7px;
-      }
+      } */
 
       .nav.navbar-nav {
         margin-right: 37px;
@@ -900,8 +905,8 @@
     }
 
     @media (max-width:319px) {
-      .search-dropdown-toggle {
-        display:none;
+      .search-dropdown-toggle, .navbar-form {
+        display:none !important;
       }
     }
     
@@ -1323,12 +1328,23 @@
                   <i class='glyphicon glyphicon-search search-dropdown-toggle' onclick='toggleSearch()'></i>
 
                   <script>
+                  var dropdownsVisible = true;
                     function toggleSearch() {
                       $('.navbar-form').toggle();
+                      
                       $('.search-dropdown-toggle').toggleClass('orange');
-                      // $('.navbar-form').css{'position','absolute'}
+                      // alert('hi');
+
+                      if(dropdownsVisible) {
+                        $('#friends-dropdown, #messages-dropdown, #notifications-dropdown').css('visibility', 'hidden');
+                        dropdownsVisible = false;
+                      }
+                      else {
+                        $('#friends-dropdown, #messages-dropdown, #notifications-dropdown').css('visibility', 'visible');
+                        dropdownsVisible = true;
+                      }
                     }
-                  </script>
+                </script>
 
             </div>
             </ul>
@@ -1651,8 +1667,18 @@
         display:none !important;
       }
 
-      .nav.navbar-nav {
+      /* .nav.navbar-nav {
         margin-right:45px;
+     } */
+
+     .navbar-form button {
+      padding: 3px 3px !important;
+     }
+
+     .navbar-form input[type='text'] {
+        width: 35vw;
+        font-size: 12px;
+        padding-left: 7px;
      }
     }
   </style>
@@ -3130,12 +3156,34 @@ function get_message()
 <style> 
 
  @media (max-width:550px) {
-      .nav.navbar-nav {
+      /* .nav.navbar-nav {
       margin-right:50px;
+      } */
+
+      /* .nav .glyphicon-search {
+        right: -25px;
+      } */
+
+      .navbar-form {
+        right: 80px;
+      }
+
+      .nav.navbar-nav {
+        margin-right:45px;
+     }
+    }
+
+    @media (max-width:430px) {
+			#logindivv {
+				width:100vw;
+			}
+
+      .search-dropdown-toggle {
+        right: -10px;
       }
 
       .navbar-form {
-        margin-right: -6px !important;
+        right: 70px;
       }
     }
 </style>

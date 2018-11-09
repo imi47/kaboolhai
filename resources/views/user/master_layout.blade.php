@@ -293,29 +293,6 @@
     
   }
 
-  @media (max-width:600px) {
-		#navsidebare {
-			width:100%;
-		}
- 		#navsidebare #cross{
-			position:absolute;
-			right:5px;
-			top:5px;
-    }
-    
-    #sidebar-2 {
-      width:100% !important;
-    }
-
-    .view-profile {
-      float: none !important;
-      display: block ;
-      margin-left: 48px ;
-    }
-	}
-
-  
-
   #navsidebare {
     height:100% !important;
     position:fixed !important;
@@ -392,14 +369,6 @@
       right:0;
       z-index:999999;
   }
-
-  /* .remove-top-margin {
-    margin-top:-70px;
-    }
-
-    .remove-top-margin:last-child {
-    margin-top:-5px;
-  } */
   
   #sidebar-2 {
       background-color:#000;
@@ -475,6 +444,18 @@
       .top-searches-by {
         display:block;
       }
+
+      .navbar-form button {
+        position: absolute;
+        border: none;
+        padding: 5px 6px;
+      }
+
+      .navbar-form .form-group input {
+        width: 35vw !important;
+        font-size: 12px;
+        padding-left: 7px;
+      }
     }
 
     @media (min-width:521px) {
@@ -504,26 +485,10 @@
   }
 }
 
-@media (max-width:768px) {
-  #myNavbar .navbar-form {
-    right: -16px !important;
-    top: 46px !important;
-  }
-
-  #message_count, #friend_counts {
-    top:0;
-  }
-
-  .logo-light {
-    margin-left: 10px;
-
-  }
-}
-
-
 @media (min-width:1361px) {
   .navbar-form {
     display:block !important;
+    
   }
 }
 
@@ -541,7 +506,8 @@
         padding:0px;
         border:none;
         
-        top: 51px;
+        top: 8px;
+        right: 106px !important;
       }
 
       .navbar-form input {
@@ -576,15 +542,23 @@
       .nav.navbar-nav.navbar-right li:nth-child(5) {
         margin-right:25px;
       }
-
-      /* ul.nav .navbar-nav .navbar-right {
-        float:right !important;
-      }
-      
-      #myNavbar ul.nav {
-        float:right;
-      } */
     }
+
+  @media (max-width:768px) {
+    #myNavbar .navbar-form {
+      right: 30px !important;
+      top: 3px !important;
+    }
+
+    #message_count, #friend_counts {
+      top:0;
+    }
+
+    .logo-light {
+      margin-left: 10px;
+
+    }
+}
 
 
     .msgMenu li{border-bottom: 1px solid #e6e6e6; margin-top: -2px !important}
@@ -607,41 +581,6 @@
     }
   }
 
-  @media (max-width:500px) {
-    .logo-light img {
-      width: 35vw;
-      margin-top: 6px;
-    }
-
-    .search-dropdown-toggle {
-      right: -30px !important;
-    }
-
-    .navbar-nav {
-    margin-right: -15px !important;
-    }
-
-    .ham {
-      margin-right:-10px;
-    }
-
-    .jumbotron.jumbotron-fluid {
-      display:none;
-    }
-
-    .well {
-      margin-top:90px;
-      margin-left:0 !important;
-    }
-
-    .text-bar input {
-      width: 258px !important;
-    }
-
-    #bb img {
-      right: 21vw;
-    }
-  }
 
     @media (max-width:768px) {
       /* #myNavbar .nav, #myNavbar, .nav {
@@ -687,11 +626,70 @@
       
   }
 
-  /* @media (min-width:769px) {
-    .nav.navbar-nav.navbar-right {
-      margin-right:140px;
+  @media (max-width:600px) {
+		#navsidebare {
+			width:100%;
+		}
+ 		#navsidebare #cross{
+			position:absolute;
+			right:5px;
+			top:5px;
     }
-  } */
+    
+    #sidebar-2 {
+      width:100% !important;
+    }
+
+    .view-profile {
+      float: none !important;
+      display: block ;
+      margin-left: 48px ;
+    }
+
+    #myNavbar .navbar-form {
+      right: 20px !important;
+    }
+	}
+
+  @media (max-width:500px) {
+    .logo-light img {
+      width: 35vw;
+      margin-top: 6px;
+    }
+
+    .search-dropdown-toggle {
+      right: -30px !important;
+    }
+
+    .navbar-nav {
+    margin-right: -15px !important;
+    }
+
+    .ham {
+      margin-right:-10px;
+    }
+
+    .jumbotron.jumbotron-fluid {
+      display:none;
+    }
+
+    .well {
+      margin-top:90px;
+      margin-left:0 !important;
+    }
+
+    .text-bar input {
+      width: 258px !important;
+    }
+
+    #bb img {
+      right: 21vw;
+    }
+
+    #myNavbar .navbar-form { 
+      right:0 !important;
+    }
+  }
 
     @media (max-width:500px) {
       #myNavbar .nav.navbar-nav.navbar-right li.dropdown:nth-child(5){
@@ -703,47 +701,21 @@
       }
     }
 
+    @media (max-width:375px) {
+      .search-dropdown-toggle {
+        right: -37px !important;
+      }
+
+      #myNavbar .navbar-form {
+        right: -10px !important;
+      }   
+    }
+
     @media (max-width:341px) {
       .text-bar input {
         width: 75vw !important;
       }
     }
-
-
-
-    /* partially fixes icon dropdown menu z-index and going out of screen */
-    /* @media (max-width:767px) {
-      .navbar-nav .open .dropdown-menu {
-        position:absolute;
-        left:-280px !important;
-      }
-    } */
-
-   
-
-    /* @media (max-width:550px) {
-      .navbar-nav .open .dropdown-menu {
-        position:absolute;
-        max-width:100vw !important;
-        left:-310px !important;
-      }
-    } */
-
-/* @media (min-width: 500px) {
-  .navbar-collapse.collapse {
-      display: block!important;
-      height: auto!important;
-      padding-bottom: 0;
-      overflow: visible!important;
-    margin:0 !important;
-
-  }
-
-  .nav.navbar-nav.navbar-right li.dropdown{
-    display:inline-block !important;
-    margin:0 !important;
-  }
-} */
 
 </style>
 
@@ -1008,7 +980,7 @@
   }
 
   @media (max-width:319px) {
-    .search-dropdown-toggle {
+    .search-dropdown-toggle, .navbar-form {
       display:none !important;
     }
 
@@ -1112,11 +1084,43 @@
           <i class='glyphicon glyphicon-search search-dropdown-toggle' onclick='toggleSearch()'></i>
 
         <script>
+          var dropdownsVisible = true;
+
+          
+
+
+          
+
           function toggleSearch() {
             $('.navbar-form').toggle();
             $('.search-dropdown-toggle').toggleClass('orange');
             // $('.navbar-form').css{'position','absolute'}
+
+            if(dropdownsVisible) {
+                $('.navbar-nav.navbar-right, .navbar-nav>li:last-child').css('visibility', 'hidden');
+                dropdownsVisible = false;
+              }
+              else {
+                $('.navbar-nav.navbar-right, .navbar-nav>li:last-child').css('visibility', 'visible');
+                dropdownsVisible = true;
+              }
           }
+
+          mq = window.matchMedia( "(min-width: 1360px)" );
+         
+         mq.addListener(mediaQueryResponse) // attach listener function to listen in on state changes so a page refresh will not be required
+ 
+         // search option will stay in the same line in tablet mode 
+         function mediaQueryResponse(mq) {
+ 
+           if(mq.matches == true && dropdownsVisible == false) {
+               $( ".navbar-nav.navbar-right, .navbar-nav>li:last-child" ).css('visibility', 'visible');
+               // alert('hi');
+           } if (mq.matches == false && dropdownsVisible == false) {
+            $( ".navbar-nav.navbar-right, .navbar-nav>li:last-child" ).css('visibility', 'hidden');
+           }
+         }
+         mediaQueryResponse(mq);
         </script>
 
         <ul class="nav navbar-nav navbar-right">
@@ -3065,7 +3069,6 @@ function get_message()
      <script type="text/javascript" src="{{ $user_assets }}/js/jquery.emojiarea.js"></script>
 
 <script type="text/javascript" src="{{ $user_assets }}/js/emoji-picker.js"></script>
-
 </body>
 
 </html>
