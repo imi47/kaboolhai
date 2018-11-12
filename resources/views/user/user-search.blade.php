@@ -5,8 +5,36 @@
   {{-- <link rel="stylesheet" href="{{ $user_assets }}/jquery.min2.js"> --}}
   {{-- <link rel="stylesheet" href="{{ $user_assets }}/css/owl.carousel2.css" /> --}}
    <link rel="stylesheet" href="{{ $user_assets }}/css/advance-profile.css" />
+	<link rel="stylesheet" href="{{ $user_assets }}/css/user-card.css" />
 
    <style type="text/css">
+
+    .col-md-3.content {
+      position: sticky;
+      top: -850px;
+    } 
+    
+     #myCarousel {
+		border:1px solid #777;
+		border-radius: 5px;
+    margin-top: 10px;
+    height: 582px;
+  }
+  
+  #myCarousel .carousel-inner {
+    background: lavender;
+  }
+
+	.card-container {
+		height:0;
+		width: 89%;
+	}
+
+	.card {
+		width:100%;
+		border:none;
+  }
+  
     .main-section {
     width:420px;
   }
@@ -1478,6 +1506,144 @@ p.t
         <hr class="pl-hr" />
       </div>
    </div>
+   
+    <h2 class="text-center">Recently Joined</h2>
+   <!-- <div class="well w">
+      
+   </div> -->
+
+   <div id="myCarousel" class="carousel slide" data-ride="carousel">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+				<li data-target="#myCarousel" data-slide-to="2"></li>
+			</ol>
+	
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner">
+				<div class="item active">
+						<div class="card-container">
+						<div class="row cf">
+							<div id="card1" class="card four col">
+								<div class="image-wrapper"><img src="{{ $user_assets }}/default_slider.jpg" alt=""></div>
+								<h3 class="name">Hamza</h3>
+								<div class="info cf">
+									<div class="key-value-container">
+										<div class="key">Age</div>
+										<div class="value">20</div>
+									</div>
+									<div class="key-value-container">
+										<div class="key">Gender</div>
+										<div class="value">Male</div>
+									</div>
+									<div class="key-value-container">
+										<div class="key">Marital status</div>
+										<div class="value">Single</div>
+									</div>
+									<div class="key-value-container">
+										<div class="key">Occupation</div>
+										<div class="value">Software Engineer</div>
+									</div>
+								</div>
+								<div class="options">
+									<ul>
+										<li><object class='icon' data="{{ $user_assets }}/images/address.svg" type="image/svg+xml"></object>Lahore,
+											Pakistan</li>
+										<li><object class='icon' data="{{ $user_assets }}/images/user.svg" type="image/svg+xml"></object><a href="">View
+												profile</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+	
+				<div class="item">
+						<div class="card-container">
+						<div class="row cf">
+							<div id="card1" class="card four col">
+								<div class="image-wrapper"><img src="{{ $user_assets }}/default_slider.jpg" alt=""></div>
+								<h3 class="name">Hamza</h3>
+								<div class="info cf">
+									<div class="key-value-container">
+										<div class="key">Age</div>
+										<div class="value">20</div>
+									</div>
+									<div class="key-value-container">
+										<div class="key">Gender</div>
+										<div class="value">Male</div>
+									</div>
+									<div class="key-value-container">
+										<div class="key">Marital status</div>
+										<div class="value">Single</div>
+									</div>
+									<div class="key-value-container">
+										<div class="key">Occupation</div>
+										<div class="value">Software Engineer</div>
+									</div>
+								</div>
+								<div class="options">
+									<ul>
+										<li><object class='icon' data="{{ $user_assets }}/images/address.svg" type="image/svg+xml"></object>Lahore,
+											Pakistan</li>
+										<li><object class='icon' data="{{ $user_assets }}/images/user.svg" type="image/svg+xml"></object><a href="">View
+												profile</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+	
+				<div class="item">
+					<div class="card-container">
+						<div class="row cf">
+							<div id="card1" class="card four col">
+								<div class="image-wrapper"><img src="{{ $user_assets }}/default_slider.jpg" alt=""></div>
+								<h3 class="name">Fatima</h3>
+								<div class="info cf">
+									<div class="key-value-container">
+										<div class="key">Age</div>
+										<div class="value">20</div>
+									</div>
+									<div class="key-value-container">
+										<div class="key">Gender</div>
+										<div class="value">Female</div>
+									</div>
+									<div class="key-value-container">
+										<div class="key">Marital status</div>
+										<div class="value">Single</div>
+									</div>
+									<div class="key-value-container">
+										<div class="key">Occupation</div>
+										<div class="value">Doctor</div>
+									</div>
+								</div>
+								<div class="options">
+									<ul>
+										<li><object class='icon' data="{{ $user_assets }}/images/address.svg" type="image/svg+xml"></object>Lahore,
+											Pakistan</li>
+										<li><object class='icon' data="{{ $user_assets }}/images/user-f.svg" type="image/svg+xml"></object><a href="">View
+												profile</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	
+			<!-- Left and right controls -->
+			<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="right carousel-control" href="#myCarousel" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
  </div>
  <script type="text/javascript">
    $('.pl-top-selection').on('click' , function(){
