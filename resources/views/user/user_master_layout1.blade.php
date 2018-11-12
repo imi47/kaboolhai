@@ -998,10 +998,9 @@
                 {{-- <li class="{{ Request::is('/') ? 'active1' : '' }}"><a href="{{ url('public-profile',user_data()->id) }}"
                     class="menudesign">My Profile</a></li> --}}
 
-                <li><a href="
-          {{ url('inbox') }}" class="menudesign">Inbox</a></li>
-                <!-- <li><a href="{{ url('sent-items') }}" class="menudesign">Sent Items</a></li> -->
-                <!-- <li><a href="{{ url('blocked-list') }}" class="menudesign">Block List</a></li> -->
+                <!-- <li><a href="{{ url('inbox') }}" class="menudesign">Inbox</a></li> -->
+                <li><a href="{{ url('sent-items') }}" class="menudesign">Sent Items</a></li>
+                <li><a href="{{ url('blocked-list') }}" class="menudesign">Block List</a></li>
 
 
                 <li class="dropdown">
@@ -1509,7 +1508,7 @@
             Service</a></li>
             <li class="divider"></li>
             <!-- <li><a href="{{ url('inbox') }}" class="menudesign">Inbox</a></li> -->
-            <!-- <li><a href="{{ url('sent-items') }}" class="menudesign">Sent Items</a></li> -->
+            <li><a href="{{ url('sent-items') }}" class="menudesign">Sent Items</a></li>
             <li><a href="{{ url('blocked-list') }}" class="menudesign">Block List</a></li>
       </ul>  
       @endif
