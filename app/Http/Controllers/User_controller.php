@@ -626,6 +626,7 @@ public function divorcee()
          $d['save_search']=$request->fullUrl();
          $d['country']=DB::table('countries')->get();
          $d['search']=$data1;
+         $d['recent']=User::orderBy('id', 'desc')->join('my_photos','my_photos.user_id','=','users.id','left')->join('profile-image','profile-image.image_id','=','users.profile_image','left')->join('countries','countries.country_id','=','users.country_id','left')->join('cities','cities.city_id','users.city_id','left')->limit(4)->get();
 
          $d['title']='User Listing';
          // @foreach ($d['user_data'] as $value)
@@ -2479,6 +2480,15 @@ public function make_profile_image($image_id)
 
     Public function test(request $reques) 
     {
+     
+       ob_start();
+              system('ipconfig /all');
+              $mycom=ob_get_contents();
+              ob_clean();
+              $findme = "Physical";
+              $pmac = strpos($mycom, $findme);
+              $mac=substr($mycom,($pmac+36),17);
+      
       $data['title']='user listing';
        return view('user/test',$data);
     }
@@ -3203,7 +3213,7 @@ public function iprofileview_list()
 		$data['email']=Session::get('email');
 		$data['gender']=Session::get('gender');	
 		$data['country'] = DB::table('countries')->get();
-     $data['recent']=User::orderBy('id', 'desc')->join('my_photos','my_photos.user_id','=','users.id','left')->join('profile-image','profile-image.image_id','=','users.profile_image','left')->join('countries','countries.country_id','=','users.country_id','left')->join('cities','cities.city_id','users.city_id','left')->limit(3)->get();
+     $data['recent']=User::orderBy('id', 'desc')->join('my_photos','my_photos.user_id','=','users.id','left')->join('profile-image','profile-image.image_id','=','users.profile_image','left')->join('countries','countries.country_id','=','users.country_id','left')->join('cities','cities.city_id','users.city_id','left')->limit(2)->get();
     // dd($data['recent']);
 		$data['title']='Register'; 
 
@@ -3239,7 +3249,7 @@ public function iprofileview_list()
 		$data['gender']=$request->gender;
 		$data['country'] = DB::table('countries')->get();
 		$data['title']='Signup'; 
-    $data['recent']=User::orderBy('id', 'desc')->join('my_photos','my_photos.user_id','=','users.id','left')->join('profile-image','profile-image.image_id','=','users.profile_image','left')->join('countries','countries.country_id','=','users.country_id','left')->join('cities','cities.city_id','users.city_id','left')->limit(4)->get();
+    $data['recent']=User::orderBy('id', 'desc')->join('my_photos','my_photos.user_id','=','users.id','left')->join('profile-image','profile-image.image_id','=','users.profile_image','left')->join('countries','countries.country_id','=','users.country_id','left')->join('cities','cities.city_id','users.city_id','left')->limit(3)->get();
 		return view('user/register_step_1',$data);
 	}
 	public function get_state(Request $request)
@@ -3862,7 +3872,7 @@ public function iprofileview_list()
 		$data['gender']=Session::get('gender');
 		$data['country'] = DB::table('countries')->get();
 		$data['title']='Register Step 2';
-    $data['recent']=User::orderBy('id', 'desc')->join('my_photos','my_photos.user_id','=','users.id','left')->join('profile-image','profile-image.image_id','=','users.profile_image','left')->join('countries','countries.country_id','=','users.country_id','left')->join('cities','cities.city_id','users.city_id','left')->limit(4)->get();
+    $data['recent']=User::orderBy('id', 'desc')->join('my_photos','my_photos.user_id','=','users.id','left')->join('profile-image','profile-image.image_id','=','users.profile_image','left')->join('countries','countries.country_id','=','users.country_id','left')->join('cities','cities.city_id','users.city_id','left')->limit(3)->get();
 		return view('user/register_step_2',$data);
    }
    public function prev_register_step_2()
@@ -4187,7 +4197,7 @@ $data['living_cities'] = Loking::where('user_id',$user->id)->where('loking_type'
 		$data['fimage'] = DB::table('profile-image')->where('gender_id',0)->get();
 		 $result=User::where('email',$data['email'])->first();
 		 $user=User::find($result->id);
-     $data['recent']=User::orderBy('id', 'desc')->join('my_photos','my_photos.user_id','=','users.id','left')->join('profile-image','profile-image.image_id','=','users.profile_image','left')->join('countries','countries.country_id','=','users.country_id','left')->join('cities','cities.city_id','users.city_id','left')->limit(4)->get();
+     $data['recent']=User::orderBy('id', 'desc')->join('my_photos','my_photos.user_id','=','users.id','left')->join('profile-image','profile-image.image_id','=','users.profile_image','left')->join('countries','countries.country_id','=','users.country_id','left')->join('cities','cities.city_id','users.city_id','left')->limit(3)->get();
 		 return view('user/register',$data);
 	}
 	public function register_user(Request $request)

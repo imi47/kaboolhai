@@ -20,11 +20,6 @@
 
   <style type="text/css">
 
-	.sidebar-container-container {
-		position:sticky;
-		top:-1350px;
-	}
-	
 	.sidebar-container .sidebar, .sidebor {
 		background:transparent;
 		box-shadow: none;
@@ -32,10 +27,6 @@
 
 	.sidebar-container .sidebar {
 		padding:15px;
-	}
-
-	.sidebar-container h2 {
-		font-weight: 600;
 	}
 
 	.sidebor {
@@ -2329,7 +2320,7 @@ $('.owl-carousel').owlCarousel({
 	</div>
 	</div>
 
-		<div class="sidebar-container-container col-md-3">
+		<div class="sidebar-container-container col-md-3" style='position:sticky; top:-1300px';>
 			<div class=" sidebar-container">
 	
 			<div class="well w" style="background-color:#ffffff;border-radius:10px;">
@@ -2431,125 +2422,76 @@ $('.owl-carousel').owlCarousel({
 					<h2 class="text-center">Similar Matches</h2>
 					<div id="myCarousel2" class="carousel slide" data-ride="carousel">
 						<!-- Indicators -->
-						<ol class="carousel-indicators">
+						{{-- <ol class="carousel-indicators">
 							<li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
 							<li data-target="#myCarousel2" data-slide-to="1"></li>
 							<li data-target="#myCarousel2" data-slide-to="2"></li>
-						</ol>
+						</ol> --}}
 	
 						<!-- Wrapper for slides -->
 						<div class="carousel-inner">
-							<div class="item active">
-									<div class="card-container">
-									<div class="row cf">
-										<div id="card1" class="card four col">
-											<div class="image-wrapper"><img src="{{ $user_assets }}/default_slider.jpg" alt=""></div>
-											<h3 class="name">Hamza</h3>
-											<div class="info cf">
-												<div class="key-value-container">
-													<div class="key">Age</div>
-													<div class="value">20</div>
-												</div>
-												<div class="key-value-container">
-													<div class="key">Gender</div>
-													<div class="value">Male</div>
-												</div>
-												<div class="key-value-container">
-													<div class="key">Marital status</div>
-													<div class="value">Single</div>
-												</div>
-												<div class="key-value-container">
-													<div class="key">Occupation</div>
-													<div class="value">Software Engineer</div>
-												</div>
-											</div>
-											<div class="options">
-												<ul>
-													<li><object class='icon' data="{{ $user_assets }}/images/address.svg" type="image/svg+xml"></object>Lahore,
-														Pakistan</li>
-													<li><object class='icon' data="{{ $user_assets }}/images/user.svg" type="image/svg+xml"></object><a href="">View
-															profile</a></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-	
-							<div class="item">
-									<div class="card-container">
-									<div class="row cf">
-										<div id="card1" class="card four col">
-											<div class="image-wrapper"><img src="{{ $user_assets }}/default_slider.jpg" alt=""></div>
-											<h3 class="name">Hamza</h3>
-											<div class="info cf">
-												<div class="key-value-container">
-													<div class="key">Age</div>
-													<div class="value">20</div>
-												</div>
-												<div class="key-value-container">
-													<div class="key">Gender</div>
-													<div class="value">Male</div>
-												</div>
-												<div class="key-value-container">
-													<div class="key">Marital status</div>
-													<div class="value">Single</div>
-												</div>
-												<div class="key-value-container">
-													<div class="key">Occupation</div>
-													<div class="value">Software Engineer</div>
-												</div>
-											</div>
-											<div class="options">
-												<ul>
-													<li><object class='icon' data="{{ $user_assets }}/images/address.svg" type="image/svg+xml"></object>Lahore,
-														Pakistan</li>
-													<li><object class='icon' data="{{ $user_assets }}/images/user.svg" type="image/svg+xml"></object><a href="">View
-															profile</a></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-	
-							<div class="item">
-								<div class="card-container">
-									<div class="row cf">
-										<div id="card1" class="card four col">
-											<div class="image-wrapper"><img src="{{ $user_assets }}/default_slider.jpg" alt=""></div>
-											<h3 class="name">Fatima</h3>
-											<div class="info cf">
-												<div class="key-value-container">
-													<div class="key">Age</div>
-													<div class="value">20</div>
-												</div>
-												<div class="key-value-container">
-													<div class="key">Gender</div>
-													<div class="value">Female</div>
-												</div>
-												<div class="key-value-container">
-													<div class="key">Marital status</div>
-													<div class="value">Single</div>
-												</div>
-												<div class="key-value-container">
-													<div class="key">Occupation</div>
-													<div class="value">Doctor</div>
-												</div>
-											</div>
-											<div class="options">
-												<ul>
-													<li><object class='icon' data="{{ $user_assets }}/images/address.svg" type="image/svg+xml"></object>Lahore,
-														Pakistan</li>
-													<li><object class='icon' data="{{ $user_assets }}/images/user-f.svg" type="image/svg+xml"></object><a href="">View
-															profile</a></li>
-												</ul>
-											</div>
-										</div>
-									</div>
+							@if(count($simlar))
+          @foreach($simlar as $key => $row)
+				<div class="item @if($key==0) active @endif">
+						<div class="card-container">
+						<div class="row cf">
+        <div id="card1" class="card four col">
+
+           @if($row->image_name)
+           <a href="{{ url('public-profile'.$row->id) }}" title="View Profile">
+                     <div class="image-wrapper"> <img  src="{{ $user_assets }}/profile_image/{{ $row->image_name }}"></div>
+                      </a>
+                    
+
+                       @else
+                       
+              {{-- <img src="{{ $user_assets }}/dp-img-2.png"> --}}
+              <a href="{{ url('public-profile',$row->id) }}" title="View Profile">
+         <div class="image-wrapper"> <img src="{{ $user_assets }}/sunrise.jpg"></div>
+                     </a>
+                     
+                    @endif
+
+          {{-- <div class="image-wrapper"><img src="{{ $user_assets }}/default_slider.jpg" alt=""></div> --}}
+          
+
+          <h3 class="name">{{ $row->user_name }}</h3>
+          <div class="info cf">
+            <div class="key-value-container">
+              <div class="key">Age</div>
+              <div class="value">@php $age=date('Y')-$row->year @endphp
+              {{ $age }}</div>
+            </div>
+            <div class="key-value-container">
+              <div class="key">Gender</div>
+              <div class="value">{{ $row->gender }}</div>
+            </div>
+            <div class="key-value-container">
+              <div class="key">Marital status</div>
+              <div class="value">{{ $row->martial_status }}</div>
+            </div>
+            <div class="key-value-container">
+              <div class="key">Occupation</div>
+              <div class="value">{{ $row->job }}</div>
+            </div>
+          </div>
+          <div class="options">
+            <ul>
+              <li><object class='icon' data="{{ $user_assets }}/images/address.svg" type="image/svg+xml"></object>{{ $row->city_name }},
+                {{ $row->country_name }}</li>
+              <li><object class='icon' @if($row->gender=='Male') data="{{ $user_assets }}/images/user.svg" @else  data="{{ $user_assets }}/images/user-f.svg" @endif type="image/svg+xml"></object><a title="View Profile" href="{{ url('public-profile',$row->id) }}">View
+                  profile</a></li>
+            </ul>
 								</div>
 							</div>
 						</div>
+					</div>
+				</div>
+       
+        @endforeach
+        @endif
+	
+				</div>
 	
 						<!-- Left and right controls -->
 						<a class="left carousel-control" href="#myCarousel2" data-slide="prev">
@@ -2842,125 +2784,76 @@ $('.owl-carousel').owlCarousel({
 	<div class="row">
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
 			<!-- Indicators -->
-			<ol class="carousel-indicators">
+			{{-- <ol class="carousel-indicators">
 				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 				<li data-target="#myCarousel" data-slide-to="1"></li>
 				<li data-target="#myCarousel" data-slide-to="2"></li>
-			</ol>
+			</ol> --}}
 	
 			<!-- Wrapper for slides -->
 			<div class="carousel-inner">
-				<div class="item active">
+				@if(count($recent))
+          @foreach($recent as $key => $row)
+				<div class="item @if($key==0) active @endif">
 						<div class="card-container">
 						<div class="row cf">
-							<div id="card1" class="card four col">
-								<div class="image-wrapper"><img src="{{ $user_assets }}/default_slider.jpg" alt=""></div>
-								<h3 class="name">Hamza</h3>
-								<div class="info cf">
-									<div class="key-value-container">
-										<div class="key">Age</div>
-										<div class="value">20</div>
-									</div>
-									<div class="key-value-container">
-										<div class="key">Gender</div>
-										<div class="value">Male</div>
-									</div>
-									<div class="key-value-container">
-										<div class="key">Marital status</div>
-										<div class="value">Single</div>
-									</div>
-									<div class="key-value-container">
-										<div class="key">Occupation</div>
-										<div class="value">Software Engineer</div>
-									</div>
-								</div>
-								<div class="options">
-									<ul>
-										<li><object class='icon' data="{{ $user_assets }}/images/address.svg" type="image/svg+xml"></object>Lahore,
-											Pakistan</li>
-										<li><object class='icon' data="{{ $user_assets }}/images/user.svg" type="image/svg+xml"></object><a href="">View
-												profile</a></li>
-									</ul>
+        <div id="card1" class="card four col">
+
+           @if($row->image_name)
+           <a href="{{ url('public-profile'.$row->id) }}" title="View Profile">
+                     <div class="image-wrapper"> <img  src="{{ $user_assets }}/profile_image/{{ $row->image_name }}"></div>
+                      </a>
+                    
+
+                       @else
+                       
+              {{-- <img src="{{ $user_assets }}/dp-img-2.png"> --}}
+              <a href="{{ url('public-profile',$row->id) }}" title="View Profile">
+         <div class="image-wrapper"> <img src="{{ $user_assets }}/sunrise.jpg"></div>
+                     </a>
+                     
+                    @endif
+
+          {{-- <div class="image-wrapper"><img src="{{ $user_assets }}/default_slider.jpg" alt=""></div> --}}
+          
+
+          <h3 class="name">{{ $row->user_name }}</h3>
+          <div class="info cf">
+            <div class="key-value-container">
+              <div class="key">Age</div>
+              <div class="value">@php $age=date('Y')-$row->year @endphp
+              {{ $age }}</div>
+            </div>
+            <div class="key-value-container">
+              <div class="key">Gender</div>
+              <div class="value">{{ $row->gender }}</div>
+            </div>
+            <div class="key-value-container">
+              <div class="key">Marital status</div>
+              <div class="value">{{ $row->martial_status }}</div>
+            </div>
+            <div class="key-value-container">
+              <div class="key">Occupation</div>
+              <div class="value">{{ $row->job }}</div>
+            </div>
+          </div>
+          <div class="options">
+            <ul>
+              <li><object class='icon' data="{{ $user_assets }}/images/address.svg" type="image/svg+xml"></object>{{ $row->city_name }},
+                {{ $row->country_name }}</li>
+              <li><object class='icon' @if($row->gender=='Male') data="{{ $user_assets }}/images/user.svg" @else  data="{{ $user_assets }}/images/user-f.svg" @endif type="image/svg+xml"></object><a title="View Profile" href="{{ url('public-profile',$row->id) }}">View
+                  profile</a></li>
+            </ul>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+       
+        @endforeach
+        @endif
 	
-				<div class="item">
-						<div class="card-container">
-						<div class="row cf">
-							<div id="card1" class="card four col">
-								<div class="image-wrapper"><img src="{{ $user_assets }}/default_slider.jpg" alt=""></div>
-								<h3 class="name">Hamza</h3>
-								<div class="info cf">
-									<div class="key-value-container">
-										<div class="key">Age</div>
-										<div class="value">20</div>
-									</div>
-									<div class="key-value-container">
-										<div class="key">Gender</div>
-										<div class="value">Male</div>
-									</div>
-									<div class="key-value-container">
-										<div class="key">Marital status</div>
-										<div class="value">Single</div>
-									</div>
-									<div class="key-value-container">
-										<div class="key">Occupation</div>
-										<div class="value">Software Engineer</div>
-									</div>
-								</div>
-								<div class="options">
-									<ul>
-										<li><object class='icon' data="{{ $user_assets }}/images/address.svg" type="image/svg+xml"></object>Lahore,
-											Pakistan</li>
-										<li><object class='icon' data="{{ $user_assets }}/images/user.svg" type="image/svg+xml"></object><a href="">View
-												profile</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
 				</div>
-	
-				<div class="item">
-					<div class="card-container">
-						<div class="row cf">
-							<div id="card1" class="card four col">
-								<div class="image-wrapper"><img src="{{ $user_assets }}/default_slider.jpg" alt=""></div>
-								<h3 class="name">Fatima</h3>
-								<div class="info cf">
-									<div class="key-value-container">
-										<div class="key">Age</div>
-										<div class="value">20</div>
-									</div>
-									<div class="key-value-container">
-										<div class="key">Gender</div>
-										<div class="value">Female</div>
-									</div>
-									<div class="key-value-container">
-										<div class="key">Marital status</div>
-										<div class="value">Single</div>
-									</div>
-									<div class="key-value-container">
-										<div class="key">Occupation</div>
-										<div class="value">Doctor</div>
-									</div>
-								</div>
-								<div class="options">
-									<ul>
-										<li><object class='icon' data="{{ $user_assets }}/images/address.svg" type="image/svg+xml"></object>Lahore,
-											Pakistan</li>
-										<li><object class='icon' data="{{ $user_assets }}/images/user-f.svg" type="image/svg+xml"></object><a href="">View
-												profile</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
 	
 			<!-- Left and right controls -->
 			<a class="left carousel-control" href="#myCarousel" data-slide="prev">
@@ -2972,8 +2865,8 @@ $('.owl-carousel').owlCarousel({
 				<span class="sr-only">Next</span>
 			</a>
 		</div>
-		<!-- carousel end -->
 	</div>
+	<!-- carousel end -->
 	</div>
 	</div>      
 	@endif
