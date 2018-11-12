@@ -2527,7 +2527,7 @@ $('.owl-carousel').owlCarousel({
 						<strong>No similar match found</strong>
 				</div>
 				<style>
-					.carousel-control {
+					#myCarousel2 .carousel-control {
 						display:none;
 					}
 				</style>
