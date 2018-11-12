@@ -25,18 +25,51 @@
 		box-shadow: none;
 	}
 
+	#myCarousel, #myCarousel2 {
+		border:1px solid #777;
+		border-radius: 5px;
+		margin-top: 10px;
+		height: 545px;
+	}
+	</style>
+
+	@if(count($simlar))
+	<style>
+	.sidebar-container-container {
+		position:sticky;
+		top:-1270px;
+	}
+	</style>
+	@else
+	<style>
+	.sidebar-container-container {
+		position:sticky;
+		top:-770px;
+	}
+
+	#myCarousel2 {
+		height:unset;
+	}
+	</style>
+	@endif
+	
+<style>
+	.sidebar-container .alert-warning {
+    margin: 0;
+		padding: 10px;
+		text-align:center;
+	}
+
+	.sidebar-container h2 {
+		font-weight: 600;
+	}
+
 	.sidebar-container .sidebar {
 		padding:15px;
 	}
 
 	.sidebor {
 		padding:0;
-	}
-
-	#myCarousel, #myCarousel2 {
-		border:1px solid #777;
-		border-radius: 5px;
-		margin-top: 10px;
 	}
 
 	.card-container {
@@ -2320,7 +2353,7 @@ $('.owl-carousel').owlCarousel({
 	</div>
 	</div>
 
-		<div class="sidebar-container-container col-md-3" style='position:sticky; top:-1300px';>
+		<div class="sidebar-container-container col-md-3">
 			<div class=" sidebar-container">
 	
 			<div class="well w" style="background-color:#ffffff;border-radius:10px;">
@@ -2489,6 +2522,15 @@ $('.owl-carousel').owlCarousel({
 				</div>
        
         @endforeach
+				@else
+				<div class='alert alert-warning'>
+						<strong>No similar match found</strong>
+				</div>
+				<style>
+					.carousel-control {
+						display:none;
+					}
+				</style>
         @endif
 	
 				</div>
@@ -2865,8 +2907,8 @@ $('.owl-carousel').owlCarousel({
 				<span class="sr-only">Next</span>
 			</a>
 		</div>
+		<!-- carousel end -->
 	</div>
-	<!-- carousel end -->
 	</div>
 	</div>      
 	@endif

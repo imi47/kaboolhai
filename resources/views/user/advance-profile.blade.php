@@ -8,6 +8,14 @@
     border-radius: 5px;
     background: lavender;
   }
+
+  .carousel-indicators {
+    display:none;
+  }
+
+  .carousel-inner {
+    height:545px;
+  }
   
   .well.sidebar {
     padding-left:15px;

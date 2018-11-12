@@ -265,6 +265,7 @@ public function polygamy()
          $d['user_data']=$data;
          $d['search']=$search;
          $d['save_search']=url()->current();
+         $d['recent']=User::orderBy('id', 'desc')->join('my_photos','my_photos.user_id','=','users.id','left')->join('profile-image','profile-image.image_id','=','users.profile_image','left')->join('countries','countries.country_id','=','users.country_id','left')->join('cities','cities.city_id','users.city_id','left')->limit(4)->get();
     $d['title']='polygamy User Listing';
 	$d['country']=DB::table('countries')->get();
 	    	 return view('user/user-search',$d);
@@ -277,6 +278,7 @@ public function separated()
          $d['user_data']=$data;
          $d['search']=$search;
          $d['save_search']=url()->current();
+         $d['recent']=User::orderBy('id', 'desc')->join('my_photos','my_photos.user_id','=','users.id','left')->join('profile-image','profile-image.image_id','=','users.profile_image','left')->join('countries','countries.country_id','=','users.country_id','left')->join('cities','cities.city_id','users.city_id','left')->limit(4)->get();
          $d['title']='Separated User Listing';
 	$d['country']=DB::table('countries')->get();
 	    	 return view('user/user-search',$d);
@@ -289,6 +291,7 @@ public function annulled()
          $d['user_data']=$data;
          $d['search']=$search;
          $d['save_search']=url()->current();
+         $d['recent']=User::orderBy('id', 'desc')->join('my_photos','my_photos.user_id','=','users.id','left')->join('profile-image','profile-image.image_id','=','users.profile_image','left')->join('countries','countries.country_id','=','users.country_id','left')->join('cities','cities.city_id','users.city_id','left')->limit(4)->get();
          $d['title']='Annulled User Listing';
 	$d['country']=DB::table('countries')->get();
 	    	 return view('user/user-search',$d);
@@ -301,6 +304,7 @@ public function divorcee()
          $d['user_data']=$data;
          $d['search']=$search;
          $d['save_search']=url()->current();
+         $d['recent']=User::orderBy('id', 'desc')->join('my_photos','my_photos.user_id','=','users.id','left')->join('profile-image','profile-image.image_id','=','users.profile_image','left')->join('countries','countries.country_id','=','users.country_id','left')->join('cities','cities.city_id','users.city_id','left')->limit(4)->get();
          $d['title']='Divorcee User Listing';
 	$d['country']=DB::table('countries')->get();
 	    	 return view('user/user-search',$d);
@@ -311,6 +315,7 @@ public function divorcee()
 		 $data=User::where('martial_status','unmarried')->join('cities','cities.city_id','=','users.city_id','left')->join('countries','countries.country_id','=','users.country_id','left')->join('profile-image','profile-image.image_id','=','users.profile_image','left')->orderBy('id','desc')->paginate('12');
          $search='single';
           $d['save_search']=url()->current();
+          $d['recent']=User::orderBy('id', 'desc')->join('my_photos','my_photos.user_id','=','users.id','left')->join('profile-image','profile-image.image_id','=','users.profile_image','left')->join('countries','countries.country_id','=','users.country_id','left')->join('cities','cities.city_id','users.city_id','left')->limit(4)->get();
          $d['user_data']=$data;
          $d['search']=$search;
 		 // dd($d['user_data']);
@@ -327,6 +332,7 @@ public function divorcee()
          $d['user_data']=$data;
          $d['search']=$search;
          $d['save_search']=url()->current();
+         $d['recent']=User::orderBy('id', 'desc')->join('my_photos','my_photos.user_id','=','users.id','left')->join('profile-image','profile-image.image_id','=','users.profile_image','left')->join('countries','countries.country_id','=','users.country_id','left')->join('cities','cities.city_id','users.city_id','left')->limit(4)->get();
          $d['title']='Widow User Listing';
 		$d['country']=DB::table('countries')->get();
 	    	 return view('user/user-search',$d);

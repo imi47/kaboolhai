@@ -11,14 +11,19 @@
 
     .col-md-3.content {
       position: sticky;
-      top: -850px;
+      top: -800px;
     } 
+
+    .col-md-3.content h2{
+      margin-top:40px;
+      font-weight:600;
+    }
     
      #myCarousel {
-		border:1px solid #777;
-		border-radius: 5px;
-    margin-top: 10px;
-    height: 582px;
+      border:1px solid #777;
+      border-radius: 5px;
+      margin-top: 10px;
+      height: 504px;
   }
   
   #myCarousel .carousel-inner {
@@ -1507,7 +1512,7 @@ p.t
       </div>
    </div>
    
-    <h2 class="text-center">Recently Joined</h2>
+    <h2 class='text-center'>Recently Joined</h2>
    <!-- <div class="well w">
       
    </div> -->
