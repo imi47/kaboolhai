@@ -13,26 +13,51 @@
   {{-- <link rel="stylesheet" href="{{ $user_assets }}/css/owl.carousel2.css" /> --}}
 
   <link rel="stylesheet" href="{{ $user_assets }}/css/public-profile.css" />
+	<link rel="stylesheet" href="{{ $user_assets }}/css/user-card.css" />
+
   <div style="padding-top: 90px;"></div>
 <div class="container-fluid">
 
   <style type="text/css">
-     .go_more{
-      background-color: #ffffff;
-     }
-     #collapse1 {
-     	    overflow-y: scroll;
-    min-height: 250px;
-    max-height: 450px;
-		 }
 
+	.sidebar-container .sidebar, .sidebor {
+		background:transparent;
+		box-shadow: none;
+	}
 
-		.contentbox, .contentbox .box1 {
-		
-		}
-		 
+	.sidebar-container .sidebar {
+		padding:15px;
+	}
 
-		 
+	.sidebor {
+		padding:0;
+	}
+
+	#myCarousel, #myCarousel2 {
+		border:1px solid #777;
+		border-radius: 5px;
+		margin-top: 10px;
+	}
+
+	.card-container {
+		height:0;
+		width: 89%;
+	}
+
+	.card {
+		width:100%;
+		border:none;
+	}
+
+	.go_more{
+		background-color: #ffffff;
+	}
+	#collapse1 {
+		overflow-y: scroll;
+		min-height: 250px;
+		max-height: 450px;
+	}
+
 		 #btn a button {
 			 margin:0;
 		 }
@@ -1085,7 +1110,7 @@ $('.owl-carousel').owlCarousel({
 							{{ $user_data->family_detail }} 
 				</div>
 			</div>
-		</div>
+
 	</div>
 			<div style="display: none;" id="partner">
 			<div class="row">
@@ -2295,513 +2320,656 @@ $('.owl-carousel').owlCarousel({
 	</div>
 	</div>
 
-		<div class="col-md-3">
-
-		<div class="well w" style="background-color:#ffffff;border-radius:10px;">
-			<div class="row">
-				<h2 class="qsh">Quick Search</h2>
-				<form method="get" action="{{ url('user-search') }}">
-				<div class="col-sm-12">
-					<select name="" id="" class="form-control qs">
-						<option value="">--Select country--</option>
-						@foreach ($allcountry as $row)
-                              <option value="{{ $row->country_id }}">
-                                {{ $row->country_name }}
-                              </option>
-                             @endforeach
-						
-					</select>
-				</div>
-				<div class="col-sm-6">
-					<select name="age_from" id="" class="form-control qs">
-						<option value="">age from</option>
-						@for($i =  date('y');  $i <= date('y')+82 ; $i++)
-  <option value="{{ $i }}" >{{ $i }}</option>
-@endfor 
-					</select>
-				</div>
-				<div class="col-sm-6">
-					<select name="age_to" id="" class="form-control qs">
-						<option value="">age to</option>
-						@for($i = date('y')+82; $i >= date('y'); $i--)
-  <option value="{{ $i }}" >{{ $i }}</option>
-@endfor 
-					</select>
-				</div>
-				<div class="col-sm-12">
-					<button class="bn">Search Now</button>
-				</div>
-			</div>
-			</form>
-		</div>
-
-		<div class="well w" style="background-color:#ffffff;border-radius:10px;">
-			<div class="row">
-				<div class="col-sm-3 col-sm-offset-2 col-xs-3 col-xs-offset-2">
-          @if($user_data->mobile_status==1)
-					<img src="{{ $user_assets }}/public_profile_icon/mobile verified.png" alt="" class="masterTooltip" title="Phone Number is Verified!">
-          @else
-          <img src="{{ $user_assets }}/public_profile_icon/mobile unverified gray.png" alt="" class="masterTooltip" title="Phone Number is un verified!">
-          @endif	
-				</div>
-				<div class="col-sm-3 col-xs-3">
-           @if($user_data->email_status==1)
-					<img src="{{ $user_assets }}/public_profile_icon/email verified.png" alt="" class="masterTooltip" title="Email  is verified!">
-          @else
-          <img src="{{ $user_assets }}/public_profile_icon/email unverified.png" alt="" class="masterTooltip" title="Email  is unverified!">
-          @endif
-				</div>
-				<div class="col-sm-3 col-xs-3">
-          @if($user_data->ssn_status<>1)
-					<img src="{{ $user_assets }}/public_profile_icon/ssn verified.png" alt=""  class="masterTooltip" title="CNIC  is verified!">
-          @else
-          <img src="{{ $user_assets }}/public_profile_icon/ssn_unverified.png" alt=""  class="masterTooltip" title="CNIC  is unverified!">
-          @endif
-				</div>
-			</div>
-		</div>
-
-		<div style="padding:20px;">
-			<div class="row ntb">
-				<ul class="list_somebtn">
-								<li class="ageaa"><a href="{{ url('notification') }}"><span><img width="25px" height="25px" src="{{ $user_assets }}/icons/notification.png"></span> <span class="linkT">New Notifications</span></a></li>
-							</ul>
-				
-			</div>
-			<div class="row ntb">
-				{{-- <ul class="list_somebtn">
-								<li class="agea"><a href=""><span> <span class="countN icon_size">12</span> <span class="linkT">My Inbox</span></a></li>
-							</ul> --}}
-							<ul class="list_somebtn">
-								<li class="ageaa"><a href="{{ url('inbox') }}"><span><img width="28px" height="28px" src="{{ $user_assets }}/icons/message.png"><span class="linkT">My Inbox</span></a></li>
-							</ul>
-				
-			</div>
-			<div class="row ntb">
-
-				{{-- <ul class="list_somebtn">
-								<li class="ageaa"><a href=""><span> <span class="countN icon_size">20</span> <span class="linkT">My Favourites</span></a></li>
-							</ul> --}}
-							<ul class="list_somebtn">
-								<li class="ageaa"><a href="{{ url('favourite-list') }}"><span><img style="height: 25px;" src="{{ $user_assets }}/icons/favorite.png"> <span class="linkT">My Favourites</span></a></li>
-							</ul>
-
-				
-			</div>	
-		</div>			
-
-		<div class="well w sidebor" style="background-color:#4ccee8;border-radius:10px; ">
-			<div style="padding-bottom:0px;">
-			
-				<h2 class="text-center">Similar Matches</h2>
-		
+		<div class="sidebar-container-container col-md-3" style='position:sticky; top:-1300px';>
+			<div class=" sidebar-container">
+	
+			<div class="well w" style="background-color:#ffffff;border-radius:10px;">
 				<div class="row">
-					<section class="carousel-default">
-    <div id="carousel-default1" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#carousel-default1" data-slide-to="0" class=""></li>
-        <li data-target="#carousel-default1" data-slide-to="1" class=""></li>
-        <li data-target="#carousel-default1" data-slide-to="2" class="active"></li>
-      </ol>
-      <div class="carousel-inner" role="listbox">
-        <!-- NOTE: Bootstrap v4 changes class name to carousel-item -->
-        @if(!empty($simlar))
-        @if(count($simlar))
-        @foreach($simlar as $key=>$recnt_slid)
-        <div @if($key==0)  class="item active" @else class="item" @endif>
-        <a href="{{ url('public-profile',$recnt_slid->id) }}" title="{{ $recnt_slid->user_name }} view public profile">
-        	@if($recnt_slid->image)
-
-        	<img src="{{ $user_assets }}/my_photo/{{ $recnt_slid->image }}" class="img-thumbnail" style="width: 100%; height: 200px;">
-        	
-        	@elseif($recnt_slid->image_name)
-        	<img src="{{ $user_assets }}/profile_image/{{ $recnt_slid->image_name }}" class="img-thumbnail" style="width: 100%; height: 200px;">
-        	@else
-        	
-        	<img src="{{ $user_assets }}/default_slider.jpg" class="img-thumbnail" style="width: 100%; height: 200px;" >
-        	@endif
-
-         <div class="carousel-caption">
-            <h2>{{ $recnt_slid->user_name }}</h2>
-            <h3>{{ $recnt_slid->gender }}</h3>
-          </div>
-   
-           {{ $recnt_slid->country_name.' '.$recnt_slid->city_name.' '.$recnt_slid->martial_status }} <span style="color: blue;"><b>View Profile</b></span>
-           </a>
-
-        </div>
-        @endforeach
-
-        @else
-        <div class="item active">
-         <img src="{{ $user_assets }}/default_slider.jpg" class="img-thumbnail" style="width: 100%; height: 200px;" >
-          <div class="carousel-caption">
-          	<h2 style="color: white">Similar User</h2>
-            <h3 style="color: white">Not Here</h3>
-           
-            
-          </div> 
-          {{-- <br><br><br><br>  --}}
-          {{-- <h2>Similar User</h2>
-            <h3>Not Here</h3> --}}
-        </div>
-          @endif
-		@endif      
-      </div>
-      <a class="left carousel-control" href="#carousel-default1" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#carousel-default1" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-  </section>
-		
- 		</div>
-
-				<div class="modal fadeInDown" id="myphotoModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="false" >
-												
-    <div class="modal-dialog modal-lg" style="margin-top: 100px;">
-      <div class="modal-content" style="top:50px;">
-      
-        <div class="modal-header">
-          <h3>{{ $user_data->user_name }}</h3>
-        </div>
-        <div class="modal-body">
-         
-            <div class="row">
-               
-                	@foreach($myphoto as $row)
-					<div class="col-md-3">
-
-
-						<a class="example-image-link" href="{{ $user_assets }}/my_photo/{{ $row->image }}" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="{{ $user_assets }}/my_photo/{{ $row->image }}" alt=""/></a>
-
-
-						{{-- <img class="currentuserimg" src="{{ $user_assets }}/my_photo/{{ $row->image }}"> --}}
-					</div>						
-						@endforeach
-                        
-            </div>
-
-              
-             
-          </div>
-       
-        <div class="modal-footer">
-          <div class="col-sm-12">
-           <button class="btn btn-danger" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  </div>
-
-
-
-{{-- <div class="modal fadeInDown" id="chat" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="false" >
-	<div class="modal-dialog modal-md">
-      <div class="modal-content">
-      
-        <div class="modal-header">
-        	 <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="font-size: 30px; color: red;">
-          <span aria-hidden="true">&times;</span>
-        </button>
-          <h3>{{ $user_data->user_name }}</h3>
-        </div>
-        <div class="modal-body">
-         <div class="col-md-3 hidden-sm hidden-xs">
-        @if(!empty($all_chats))
-        All users<br/>
-        @foreach($all_chats as $user)
-        <a href="{{ url('chat') }}/{{$user->to_user}}">{{$user->to_user}}</a>
-        @endforeach
-        @else
-        No chat found
-        @endif
-      </div>
-      <div class="col-md-12">
-        <div class="well"  id="chat-scroll" style="box-shadow: none;height:350px !important; overflow: scroll;">
-         
-          @if(!empty($current_chat))
-          @foreach($current_chat as $key)
-         
-          @if($key->to_user==Session::get('user_id'))
-          <div class="row">
-           <div class="col-md-6"> 
-          <p class='well' style="color:black;">
-            {{$key->message}}</p>
-          </div>
-          <div class="col-md-6 "  > 
-           </div>
-         </div>
-          @else
-          <div class="row">
-           <div class="col-md-6"> 
-           </div>
-          <div class="col-md-6 well" > 
-            <p style="color:black;">{{$key->message}}</p>
-          </div>
-        </div>
-          @endif
-          @endforeach
-          @endif
-         <div class="row" id="new_message"> 
-          </div>
-        </div>
-    </div>
-         <div class="row" >
-          <div class="col-md-6"> 
-          </div>
-            <div class="row">
-               
-                    <form class="form-inline" id='form' >
-            {{csrf_field()}}
-          <div class="form-group">
-           <input type="text" class="form-control" name="send_messgae" id="send_messgae" placeholder="type message">
-           <label style="color:red; display:none;" id='error_msg'>Type a Message</label>
-           <input type="hidden" name="to_user" value="@if(!empty($user_data->id)){{$user_data->id}}@endif">
-          </div>
-          <button type="submit" class="btn" style="padding: 5px;">send</button>
-        </form>
-               
-                        
-            </div>
-              
-             
-          </div>
-       
-        <div class="modal-footer">
-          <div class="col-sm-12">
-           <button class="btn btn-danger" style="padding: 5px;" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  
-</div>
-</div> --}}
-
-  <div class="modal fadeInDown" id="unblock" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="false" >
-												
-    <div class="modal-dialog modal-md" style="margin-top: 100px;">
-      <div class="modal-content">
-      
-        <div class="modal-header">
-          <h3>{{ $user_data->user_name }}</h3>
-        </div>
-        <div class="modal-body">
-         
-            <div class="row">
-               
-                    <p class="alert alert-danger">Please unblock this friend for communication</p>
-               
-                        
-            </div>
-
-              
-             
-          </div>
-       
-        <div class="modal-footer">
-          <div class="col-sm-12">
-           <button class="btn btn-danger" style="padding: 5px;" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  </div>
-
-
-  <div class="modal fadeInDown" id="nofriend" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="false" >
-                        
-    <div class="modal-dialog modal-md" style="margin-top: 100px;">
-      <div class="modal-content">
-      
-        <div class="modal-header">
-          <h3>{{ $user_data->user_name }}</h3>
-        </div>
-        <div class="modal-body">
-         
-            <div class="row">
-               
-                    <p class="alert alert-danger">Please add friend for communication</p>
-               
-                        
-            </div>
-
-              
-             
-          </div>
-       
-        <div class="modal-footer">
-          <div class="col-sm-12">
-           <button class="btn btn-danger" style="padding: 5px;" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  </div>
-
-
-  <div class="modal fadeInDown" id="photonotModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="false" >
-												
-    <div class="modal-dialog modal-md" style="margin-top: 100px;">
-      <div class="modal-content">
-      
-        <div class="modal-header">
-          <h3>{{ $user_data->user_name }}</h3>
-        </div>
-        <div class="modal-body">
-         
-            <div class="row">
-               
-                    <p class="alert alert-danger">Not Allow view image please send photo permission request</p>
-               
-                        
-            </div>
-
-              
-             
-          </div>
-       
-        <div class="modal-footer">
-          <div class="col-sm-12">
-           <button class="btn btn-danger" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  </div>
-
-
-
-  <div class="modal fadeInDown" id="loginmodal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="false" >
-												
-    <div class="modal-dialog modal-md" style="margin-top: 100px;">
-      <div class="modal-content">
-      
-        <div class="modal-header">
-          <h3>Log in</h3>
-        </div>
-        <div class="modal-body">
-         
-            <div class="row">
-               
-                   <form class="form-inline" method="post" action="{{ url('dologin') }}">
-                   	{{ csrf_field() }}
-                   	<div class="col-md-6">
-                   		
-                   	<input type="text" placeholder="Enter Your Email" name="email" class="form-control">
-                   	</div>
-                   	<div class="col-md-6">
-                   		
-                   	<input type="password" name="password" placeholder="password" class="form-control">
-                   	</div>
-                   	
-                   
-               
-                        
-            </div>
-
-              
-             
-          </div>
-        <div class="modal-footer">
-          <div class="col-sm-12">
-           <a href="{{ url('register') }}"  class="btn btn-success" >Sign Up</a>
-           <button type="submit" class="btn btn-success" >Login</button>
-           </form>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  </div>
+					<h2 class="qsh">Quick Search</h2>
+					<form method="get" action="{{ url('user-search') }}">
+					<div class="col-sm-12">
+						<select name="" id="" class="form-control qs">
+							<option value="">--Select country--</option>
+							@foreach ($allcountry as $row)
+	                              <option value="{{ $row->country_id }}">
+	                                {{ $row->country_name }}
+	                              </option>
+	                             @endforeach
+							
+						</select>
+					</div>
+					<div class="col-sm-6">
+						<select name="age_from" id="" class="form-control qs">
+							<option value="">age from</option>
+							@for($i =  date('y');  $i <= date('y')+82 ; $i++)
+	  <option value="{{ $i }}" >{{ $i }}</option>
+	@endfor 
+						</select>
+					</div>
+					<div class="col-sm-6">
+						<select name="age_to" id="" class="form-control qs">
+							<option value="">age to</option>
+							@for($i = date('y')+82; $i >= date('y'); $i--)
+	  <option value="{{ $i }}" >{{ $i }}</option>
+	@endfor 
+						</select>
+					</div>
+					<div class="col-sm-12">
+						<button class="bn">Search Now</button>
+					</div>
+				</div>
+				</form>
+			</div>
+	
+			<div class="well w" style="background-color:#ffffff;border-radius:10px;">
+				<div class="row">
+					<div class="col-sm-3 col-sm-offset-2 col-xs-3 col-xs-offset-2">
+	          @if($user_data->mobile_status==1)
+						<img src="{{ $user_assets }}/public_profile_icon/mobile verified.png" alt="" class="masterTooltip" title="Phone Number is Verified!">
+	          @else
+	          <img src="{{ $user_assets }}/public_profile_icon/mobile unverified gray.png" alt="" class="masterTooltip" title="Phone Number is un verified!">
+	          @endif	
+					</div>
+					<div class="col-sm-3 col-xs-3">
+	           @if($user_data->email_status==1)
+						<img src="{{ $user_assets }}/public_profile_icon/email verified.png" alt="" class="masterTooltip" title="Email  is verified!">
+	          @else
+	          <img src="{{ $user_assets }}/public_profile_icon/email unverified.png" alt="" class="masterTooltip" title="Email  is unverified!">
+	          @endif
+					</div>
+					<div class="col-sm-3 col-xs-3">
+	          @if($user_data->ssn_status<>1)
+						<img src="{{ $user_assets }}/public_profile_icon/ssn verified.png" alt=""  class="masterTooltip" title="CNIC  is verified!">
+	          @else
+	          <img src="{{ $user_assets }}/public_profile_icon/ssn_unverified.png" alt=""  class="masterTooltip" title="CNIC  is unverified!">
+	          @endif
+					</div>
+				</div>
+			</div>
+	
+			<div style="padding:20px;">
+				<div class="row ntb">
+					<ul class="list_somebtn">
+									<li class="ageaa"><a href="{{ url('notification') }}"><span><img width="25px" height="25px" src="{{ $user_assets }}/icons/notification.png"></span> <span class="linkT">New Notifications</span></a></li>
+								</ul>
+					
+				</div>
+				<div class="row ntb">
+					{{-- <ul class="list_somebtn">
+									<li class="agea"><a href=""><span> <span class="countN icon_size">12</span> <span class="linkT">My Inbox</span></a></li>
+								</ul> --}}
+								<ul class="list_somebtn">
+									<li class="ageaa"><a href="{{ url('inbox') }}"><span><img width="28px" height="28px" src="{{ $user_assets }}/icons/message.png"><span class="linkT">My Inbox</span></a></li>
+								</ul>
+					
+				</div>
+				<div class="row ntb">
+	
+					{{-- <ul class="list_somebtn">
+									<li class="ageaa"><a href=""><span> <span class="countN icon_size">20</span> <span class="linkT">My Favourites</span></a></li>
+								</ul> --}}
+								<ul class="list_somebtn">
+									<li class="ageaa"><a href="{{ url('favourite-list') }}"><span><img style="height: 25px;" src="{{ $user_assets }}/icons/favorite.png"> <span class="linkT">My Favourites</span></a></li>
+								</ul>
+	
+					
+				</div>	
+			</div>			
+	
+			<div class="well w sidebor" style="border-radius:10px; ">
+				<div style="padding-bottom:0px;">
+				
+					<h2 class="text-center">Similar Matches</h2>
+					<div id="myCarousel2" class="carousel slide" data-ride="carousel">
+						<!-- Indicators -->
+						<ol class="carousel-indicators">
+							<li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
+							<li data-target="#myCarousel2" data-slide-to="1"></li>
+							<li data-target="#myCarousel2" data-slide-to="2"></li>
+						</ol>
+	
+						<!-- Wrapper for slides -->
+						<div class="carousel-inner">
+							<div class="item active">
+									<div class="card-container">
+									<div class="row cf">
+										<div id="card1" class="card four col">
+											<div class="image-wrapper"><img src="{{ $user_assets }}/default_slider.jpg" alt=""></div>
+											<h3 class="name">Hamza</h3>
+											<div class="info cf">
+												<div class="key-value-container">
+													<div class="key">Age</div>
+													<div class="value">20</div>
+												</div>
+												<div class="key-value-container">
+													<div class="key">Gender</div>
+													<div class="value">Male</div>
+												</div>
+												<div class="key-value-container">
+													<div class="key">Marital status</div>
+													<div class="value">Single</div>
+												</div>
+												<div class="key-value-container">
+													<div class="key">Occupation</div>
+													<div class="value">Software Engineer</div>
+												</div>
+											</div>
+											<div class="options">
+												<ul>
+													<li><object class='icon' data="{{ $user_assets }}/images/address.svg" type="image/svg+xml"></object>Lahore,
+														Pakistan</li>
+													<li><object class='icon' data="{{ $user_assets }}/images/user.svg" type="image/svg+xml"></object><a href="">View
+															profile</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+	
+							<div class="item">
+									<div class="card-container">
+									<div class="row cf">
+										<div id="card1" class="card four col">
+											<div class="image-wrapper"><img src="{{ $user_assets }}/default_slider.jpg" alt=""></div>
+											<h3 class="name">Hamza</h3>
+											<div class="info cf">
+												<div class="key-value-container">
+													<div class="key">Age</div>
+													<div class="value">20</div>
+												</div>
+												<div class="key-value-container">
+													<div class="key">Gender</div>
+													<div class="value">Male</div>
+												</div>
+												<div class="key-value-container">
+													<div class="key">Marital status</div>
+													<div class="value">Single</div>
+												</div>
+												<div class="key-value-container">
+													<div class="key">Occupation</div>
+													<div class="value">Software Engineer</div>
+												</div>
+											</div>
+											<div class="options">
+												<ul>
+													<li><object class='icon' data="{{ $user_assets }}/images/address.svg" type="image/svg+xml"></object>Lahore,
+														Pakistan</li>
+													<li><object class='icon' data="{{ $user_assets }}/images/user.svg" type="image/svg+xml"></object><a href="">View
+															profile</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+	
+							<div class="item">
+								<div class="card-container">
+									<div class="row cf">
+										<div id="card1" class="card four col">
+											<div class="image-wrapper"><img src="{{ $user_assets }}/default_slider.jpg" alt=""></div>
+											<h3 class="name">Fatima</h3>
+											<div class="info cf">
+												<div class="key-value-container">
+													<div class="key">Age</div>
+													<div class="value">20</div>
+												</div>
+												<div class="key-value-container">
+													<div class="key">Gender</div>
+													<div class="value">Female</div>
+												</div>
+												<div class="key-value-container">
+													<div class="key">Marital status</div>
+													<div class="value">Single</div>
+												</div>
+												<div class="key-value-container">
+													<div class="key">Occupation</div>
+													<div class="value">Doctor</div>
+												</div>
+											</div>
+											<div class="options">
+												<ul>
+													<li><object class='icon' data="{{ $user_assets }}/images/address.svg" type="image/svg+xml"></object>Lahore,
+														Pakistan</li>
+													<li><object class='icon' data="{{ $user_assets }}/images/user-f.svg" type="image/svg+xml"></object><a href="">View
+															profile</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+	
+						<!-- Left and right controls -->
+						<a class="left carousel-control" href="#myCarousel2" data-slide="prev">
+							<span class="glyphicon glyphicon-chevron-left"></span>
+							<span class="sr-only">Previous</span>
+						</a>
+						<a class="right carousel-control" href="#myCarousel2" data-slide="next">
+							<span class="glyphicon glyphicon-chevron-right"></span>
+							<span class="sr-only">Next</span>
+						</a>
+					</div>
+					<div class="row">
 			
+			
+	 				</div>
+	
+					<div class="modal fadeInDown" id="myphotoModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="false" >
+													
+	    <div class="modal-dialog modal-lg" style="margin-top: 100px;">
+	      <div class="modal-content" style="top:50px;">
+	      
+	        <div class="modal-header">
+	          <h3>{{ $user_data->user_name }}</h3>
+	        </div>
+	        <div class="modal-body">
+	         
+	            <div class="row">
+	               
+	                	@foreach($myphoto as $row)
+						<div class="col-md-3">
+	
+	
+							<a class="example-image-link" href="{{ $user_assets }}/my_photo/{{ $row->image }}" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="{{ $user_assets }}/my_photo/{{ $row->image }}" alt=""/></a>
+	
+	
+							{{-- <img class="currentuserimg" src="{{ $user_assets }}/my_photo/{{ $row->image }}"> --}}
+						</div>						
+							@endforeach
+	                        
+	            </div>
+	
+	              
+	             
+	          </div>
+	       
+	        <div class="modal-footer">
+	          <div class="col-sm-12">
+	          </div>
+	           <button class="btn btn-danger" data-dismiss="modal">Close</button>
+	        </div>
+	        
+	      </div>
+	    </div>
+	  </div>
+	
+	
+	
+	{{-- <div class="modal fadeInDown" id="chat" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="false" >
+		<div class="modal-dialog modal-md">
+	      <div class="modal-content">
+	      
+	        <div class="modal-header">
+	        	 <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="font-size: 30px; color: red;">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	          <h3>{{ $user_data->user_name }}</h3>
+	        </div>
+	        <div class="modal-body">
+	         <div class="col-md-3 hidden-sm hidden-xs">
+	        @if(!empty($all_chats))
+	        All users<br/>
+	        @foreach($all_chats as $user)
+	        <a href="{{ url('chat') }}/{{$user->to_user}}">{{$user->to_user}}</a>
+	        @endforeach
+	        @else
+	        No chat found
+	        @endif
+	      </div>
+	      <div class="col-md-12">
+	        <div class="well"  id="chat-scroll" style="box-shadow: none;height:350px !important; overflow: scroll;">
+	         
+	          @if(!empty($current_chat))
+	          @foreach($current_chat as $key)
+	         
+	          @if($key->to_user==Session::get('user_id'))
+	          <div class="row">
+	           <div class="col-md-6"> 
+	          <p class='well' style="color:black;">
+	            {{$key->message}}</p>
+	          </div>
+	          <div class="col-md-6 "  > 
+	           </div>
+	         </div>
+	          @else
+	          <div class="row">
+	           <div class="col-md-6"> 
+	           </div>
+	          <div class="col-md-6 well" > 
+	            <p style="color:black;">{{$key->message}}</p>
+	          </div>
+	        </div>
+	          @endif
+	          @endforeach
+	          @endif
+	         <div class="row" id="new_message"> 
+	          </div>
+	        </div>
+	    </div>
+	         <div class="row" >
+	          <div class="col-md-6"> 
+	          </div>
+	            <div class="row">
+	               
+	                    <form class="form-inline" id='form' >
+	            {{csrf_field()}}
+	          <div class="form-group">
+	           <input type="text" class="form-control" name="send_messgae" id="send_messgae" placeholder="type message">
+	           <label style="color:red; display:none;" id='error_msg'>Type a Message</label>
+	           <input type="hidden" name="to_user" value="@if(!empty($user_data->id)){{$user_data->id}}@endif">
+	          </div>
+	          <button type="submit" class="btn" style="padding: 5px;">send</button>
+	        </form>
+	               
+	                        
+	            </div>
+	              
+	             
+	          </div>
+	       
+	        <div class="modal-footer">
+	          <div class="col-sm-12">
+	           <button class="btn btn-danger" style="padding: 5px;" data-dismiss="modal">Close</button>
+	          </div>
+	        </div>
+	        
+	      </div>
+	    </div>
+	  
+	</div>
+	</div> --}}
+	
+	  <div class="modal fadeInDown" id="unblock" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="false" >
+													
+	    <div class="modal-dialog modal-md" style="margin-top: 100px;">
+	      <div class="modal-content">
+	      
+	        <div class="modal-header">
+	          <h3>{{ $user_data->user_name }}</h3>
+	        </div>
+	        <div class="modal-body">
+	         
+	            <div class="row">
+	               
+	                    <p class="alert alert-danger">Please unblock this friend for communication</p>
+	               
+	                        
+	            </div>
+	
+	              
+	             
+	          </div>
+	       
+	        <div class="modal-footer">
+	          <div class="col-sm-12">
+	           <button class="btn btn-danger" style="padding: 5px;" data-dismiss="modal">Close</button>
+	          </div>
+	        </div>
+	        
+	      </div>
+	    </div>
+	  </div>
+	
+	
+	  <div class="modal fadeInDown" id="nofriend" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="false" >
+	                        
+	    <div class="modal-dialog modal-md" style="margin-top: 100px;">
+	      <div class="modal-content">
+	      
+	        <div class="modal-header">
+	          <h3>{{ $user_data->user_name }}</h3>
+	        </div>
+	        <div class="modal-body">
+	         
+	            <div class="row">
+	               
+	                    <p class="alert alert-danger">Please add friend for communication</p>
+	               
+	                        
+	            </div>
+	
+	              
+	             
+	          </div>
+	       
+	        <div class="modal-footer">
+	          <div class="col-sm-12">
+	           <button class="btn btn-danger" style="padding: 5px;" data-dismiss="modal">Close</button>
+	          </div>
+	        </div>
+	        
+	      </div>
+	    </div>
+	  </div>
+	
+	
+	  <div class="modal fadeInDown" id="photonotModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="false" >
+													
+	    <div class="modal-dialog modal-md" style="margin-top: 100px;">
+	      <div class="modal-content">
+	      
+	        <div class="modal-header">
+	          <h3>{{ $user_data->user_name }}</h3>
+	        </div>
+	        <div class="modal-body">
+	         
+	            <div class="row">
+	               
+	                    <p class="alert alert-danger">Not Allow view image please send photo permission request</p>
+	               
+	                        
+	            </div>
+	
+	              
+	             
+	          </div>
+	       
+	        <div class="modal-footer">
+	          <div class="col-sm-12">
+	           <button class="btn btn-danger" data-dismiss="modal">Close</button>
+	          </div>
+	        </div>
+	        
+	      </div>
+	    </div>
+	  </div>
+	
+	
+	
+	  <div class="modal fadeInDown" id="loginmodal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="false" >
+													
+	    <div class="modal-dialog modal-md" style="margin-top: 100px;">
+	      <div class="modal-content">
+	      
+	        <div class="modal-header">
+	          <h3>Log in</h3>
+	        </div>
+	        <div class="modal-body">
+	         
+	            <div class="row">
+	               
+	                   <form class="form-inline" method="post" action="{{ url('dologin') }}">
+	                   	{{ csrf_field() }}
+	                   	<div class="col-md-6">
+	                   		
+	                   	<input type="text" placeholder="Enter Your Email" name="email" class="form-control">
+	                   	</div>
+	                   	<div class="col-md-6">
+	                   		
+	                   	<input type="password" name="password" placeholder="password" class="form-control">
+	                   	</div>
+	                   	
+	                   
+	               
+	                        
+	            </div>
+	
+	              
+	             
+	          </div>
+	        <div class="modal-footer">
+	          <div class="col-sm-12">
+	           <a href="{{ url('register') }}"  class="btn btn-success" >Sign Up</a>
+	           <button type="submit" class="btn btn-success" >Login</button>
+	           </form>
+	          </div>
+	        </div>
+	        
+	      </div>
+	    </div>
+	  </div>
+				
+			</div>
+	
+			</div>
+	<div class="well sidebar" id="" style="position: sticky;">
+	<div style="padding-bottom:0px;">
+	
+			<h2 class="text-center">Recently Joined</h2>
+	
+	<div class="row">
+		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+				<li data-target="#myCarousel" data-slide-to="2"></li>
+			</ol>
+	
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner">
+				<div class="item active">
+						<div class="card-container">
+						<div class="row cf">
+							<div id="card1" class="card four col">
+								<div class="image-wrapper"><img src="{{ $user_assets }}/default_slider.jpg" alt=""></div>
+								<h3 class="name">Hamza</h3>
+								<div class="info cf">
+									<div class="key-value-container">
+										<div class="key">Age</div>
+										<div class="value">20</div>
+									</div>
+									<div class="key-value-container">
+										<div class="key">Gender</div>
+										<div class="value">Male</div>
+									</div>
+									<div class="key-value-container">
+										<div class="key">Marital status</div>
+										<div class="value">Single</div>
+									</div>
+									<div class="key-value-container">
+										<div class="key">Occupation</div>
+										<div class="value">Software Engineer</div>
+									</div>
+								</div>
+								<div class="options">
+									<ul>
+										<li><object class='icon' data="{{ $user_assets }}/images/address.svg" type="image/svg+xml"></object>Lahore,
+											Pakistan</li>
+										<li><object class='icon' data="{{ $user_assets }}/images/user.svg" type="image/svg+xml"></object><a href="">View
+												profile</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+	
+				<div class="item">
+						<div class="card-container">
+						<div class="row cf">
+							<div id="card1" class="card four col">
+								<div class="image-wrapper"><img src="{{ $user_assets }}/default_slider.jpg" alt=""></div>
+								<h3 class="name">Hamza</h3>
+								<div class="info cf">
+									<div class="key-value-container">
+										<div class="key">Age</div>
+										<div class="value">20</div>
+									</div>
+									<div class="key-value-container">
+										<div class="key">Gender</div>
+										<div class="value">Male</div>
+									</div>
+									<div class="key-value-container">
+										<div class="key">Marital status</div>
+										<div class="value">Single</div>
+									</div>
+									<div class="key-value-container">
+										<div class="key">Occupation</div>
+										<div class="value">Software Engineer</div>
+									</div>
+								</div>
+								<div class="options">
+									<ul>
+										<li><object class='icon' data="{{ $user_assets }}/images/address.svg" type="image/svg+xml"></object>Lahore,
+											Pakistan</li>
+										<li><object class='icon' data="{{ $user_assets }}/images/user.svg" type="image/svg+xml"></object><a href="">View
+												profile</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+	
+				<div class="item">
+					<div class="card-container">
+						<div class="row cf">
+							<div id="card1" class="card four col">
+								<div class="image-wrapper"><img src="{{ $user_assets }}/default_slider.jpg" alt=""></div>
+								<h3 class="name">Fatima</h3>
+								<div class="info cf">
+									<div class="key-value-container">
+										<div class="key">Age</div>
+										<div class="value">20</div>
+									</div>
+									<div class="key-value-container">
+										<div class="key">Gender</div>
+										<div class="value">Female</div>
+									</div>
+									<div class="key-value-container">
+										<div class="key">Marital status</div>
+										<div class="value">Single</div>
+									</div>
+									<div class="key-value-container">
+										<div class="key">Occupation</div>
+										<div class="value">Doctor</div>
+									</div>
+								</div>
+								<div class="options">
+									<ul>
+										<li><object class='icon' data="{{ $user_assets }}/images/address.svg" type="image/svg+xml"></object>Lahore,
+											Pakistan</li>
+										<li><object class='icon' data="{{ $user_assets }}/images/user-f.svg" type="image/svg+xml"></object><a href="">View
+												profile</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	
+			<!-- Left and right controls -->
+			<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="right carousel-control" href="#myCarousel" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+				<span class="sr-only">Next</span>
+			</a>
 		</div>
-
+	</div>
+	<!-- carousel end -->
+	</div>
+	</div>      
+	@endif
+	</div>
 		</div>
-<div class="well sidebar" id="" style="position: sticky;">
-<div style="padding-bottom:0px;">
-
-		<h2 class="text-center">Recently Joined</h2>
-
-<div class="row">
-	<section class="carousel-default">
-       <div id="carousel-default" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#carousel-default" data-slide-to="0" class=""></li>
-        <li data-target="#carousel-default" data-slide-to="1" class=""></li>
-        <li data-target="#carousel-default" data-slide-to="2" class="active"></li>
-      </ol>
-      <div class="carousel-inner" role="listbox">
-        <!-- NOTE: Bootstrap v4 changes class name to carousel-item -->
-        @if(!empty($recent))
-        @if(count($recent))
-        @foreach($recent as $key =>$recnt_slid)
-        <div @if($key==0) class="item active" @else class="item" @endif >
-        <a href="{{ url('public-profile',$recnt_slid->id) }}" title="{{ $recnt_slid->user_name }} view public profile">
-        	@if($recnt_slid->image)
-
-        	<img src="{{ $user_assets }}/my_photo/{{ $recnt_slid->image }}" class="img-thumbnail" style="width: 100%; height: 200px;">
-        	
-        	@elseif($recnt_slid->image_name)
-        	<img src="{{ $user_assets }}/profile_image/{{ $recnt_slid->image_name }}" class="img-thumbnail" style="width: 100%; height: 200px;">
-        	@else
-        	
-        	<img src="{{ $user_assets }}/default_slider.jpg" class="img-thumbnail" style="width: 100%; height: 200px;" >
-        	@endif
-
-          <div class="carousel-caption">
-            <h2>{{ $recnt_slid->user_name }}</h2>
-            <h3>{{ $recnt_slid->gender }}</h3>
-          </div>
-        
-        <br><br><br><br>
-           {{ $recnt_slid->country_name.' '.$recnt_slid->city_name.' '.$recnt_slid->martial_status }} <span style="color: blue;"><b>View Profile</b></span>
-           </a>
-        </div>
-        @endforeach
-        @else
-       
-        <div class="item active">
-
-        
-        	<img src="{{ $user_assets }}/default_slider.jpg" class="img-thumbnail" style="width: 100%; height: 200px;" >
-
-          {{-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/158072/hearthand.jpg" alt="Third slide" > --}}
-          <div class="carousel-caption">
-            <h2>Recent User</h2>
-            <h3>Not Available</h3>
-
-          </div>
-
-        </div>
-        @endif
-        @endif
-      </div>
-      <a class="left carousel-control" href="#carousel-default" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#carousel-default" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-  </section>
-</div>
-</div>      
-@endif
-</div>
 
 </div>
 </div>

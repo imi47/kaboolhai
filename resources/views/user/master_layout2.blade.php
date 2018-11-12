@@ -369,7 +369,7 @@
 
 <body>
 	<link rel="stylesheet" href="{{ $user_assets }}/css/muzamil.css" />
-	<link rel="stylesheet" href="{{ $user_assets }}/css/user card.css" />
+	<link rel="stylesheet" href="{{ $user_assets }}/css/user-card.css" />
 
 	<style>
 		@media (max-width:932px) and (min-width:768px){
@@ -602,7 +602,7 @@
 		<div class="card-container">
 			<div class="row cf">
 				<div id="card1" class="card four col">
-					<div class="image-wrapper"><img src="http://localhost/KBH/public/user_assets/default_slider.jpg" alt=""></div>
+					<div class="image-wrapper"><img src="{{ $user_assets }}/default_slider.jpg" alt=""></div>
 					<h3 class="name">Hamza</h3>
 					<div class="info cf">
 						<div class="key-value-container">
@@ -637,7 +637,7 @@
 		<div class="card-container">
 			<div class="row cf">
 				<div id="card1" class="card four col">
-				<div class="image-wrapper"><img src="http://localhost/KBH/public/user_assets/default_slider.jpg" alt=""></div>
+				<div class="image-wrapper"><img src="{{ $user_assets }}/default_slider.jpg" alt=""></div>
 					<h3 class="name">Fatima</h3>
 					<div class="info cf">
 					<div class="key-value-container">

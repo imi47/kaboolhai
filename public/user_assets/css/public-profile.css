@@ -497,7 +497,7 @@ ul.in_box_brdr li:hover {
   position: -webkit-sticky;
   position: sticky;
   top: 60px;
-   background-color:#f47e2a; 
+   /* background-color:#f47e2a;  */
 }
 
 @media (max-width:991px) {
