@@ -20,6 +20,11 @@
 
   <style type="text/css">
 
+	.sidebar-container-container {
+		position:sticky;
+		top:-1350px;
+	}
+	
 	.sidebar-container .sidebar, .sidebor {
 		background:transparent;
 		box-shadow: none;
@@ -27,6 +32,10 @@
 
 	.sidebar-container .sidebar {
 		padding:15px;
+	}
+
+	.sidebar-container h2 {
+		font-weight: 600;
 	}
 
 	.sidebor {
@@ -2320,7 +2329,7 @@ $('.owl-carousel').owlCarousel({
 	</div>
 	</div>
 
-		<div class="sidebar-container-container col-md-3" style='position:sticky; top:-1300px';>
+		<div class="sidebar-container-container col-md-3">
 			<div class=" sidebar-container">
 	
 			<div class="well w" style="background-color:#ffffff;border-radius:10px;">
@@ -2963,8 +2972,8 @@ $('.owl-carousel').owlCarousel({
 				<span class="sr-only">Next</span>
 			</a>
 		</div>
+		<!-- carousel end -->
 	</div>
-	<!-- carousel end -->
 	</div>
 	</div>      
 	@endif
