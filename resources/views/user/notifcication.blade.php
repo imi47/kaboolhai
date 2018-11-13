@@ -11,6 +11,15 @@
   font-size: 16px;
 }
 
+.hdlist li {
+     border-radius:5px;
+     padding-left:5px;
+   }
+
+  .hdlist li:hover {
+    background-color:#ed6c05;
+  }
+
 tr.dosrch th a {
   font-size:14px;
 }

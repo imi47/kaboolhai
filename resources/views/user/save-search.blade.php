@@ -10,6 +10,15 @@
   font-size: 16px;
 }
 
+.hdlist li {
+     border-radius:5px;
+     padding-left:5px;
+   }
+
+  .hdlist li:hover {
+    background-color:#ed6c05;
+  }
+  
   @media (max-width:991px) {
     .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
       top:55px !important;

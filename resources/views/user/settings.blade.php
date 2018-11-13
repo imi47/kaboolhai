@@ -17,6 +17,15 @@ html, body {
   font-size: 16px;
 }
 
+.hdlist li {
+     border-radius:5px;
+     padding-left:5px;
+   }
+
+  .hdlist li:hover {
+    background-color:#ed6c05;
+  }
+
 .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
     width: 500px !important;
 }
@@ -812,3 +821,9 @@ footer .footer-middle {
     
 </body>
 </html>
+
+<!-- <style>
+.col-md-3.hidden-s.hidden-xs .well {
+  margin-left:15px !important;
+}
+</style> -->

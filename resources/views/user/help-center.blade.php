@@ -12,6 +12,18 @@
     line-height:400%;
   }
 
+  .hdlist li {
+     border-radius:5px;
+   }
+
+  .hdlist li:hover {
+    background-color:#ed6c05;
+  }
+
+  .carousel, .item, .active {
+    height:unset;
+  }
+
   .col-md-3 .well {
     padding: 15px 19px;
   }

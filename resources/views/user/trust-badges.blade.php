@@ -11,6 +11,15 @@
     line-height:400%;
   }
 
+  .hdlist li {
+     border-radius:5px;
+     padding-left:5px;
+   }
+
+  .hdlist li:hover {
+    background-color:#ed6c05;
+  }
+
 .menulists {
   font-size: 16px;
 }
@@ -21,6 +30,15 @@
 
   .navbar .accordion-menu .dropdown {
     margin-top:4px !important;
+  }
+
+  @media (min-width:991px) {
+    .nav.navbar-nav {
+      margin-right:0;
+      }
+       #logo-div {
+        margin-right: -61px;
+      }
   }
 
   @media (max-width:991px) {

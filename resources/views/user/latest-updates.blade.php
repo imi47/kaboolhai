@@ -11,6 +11,19 @@
   font-size: 16px;
 }
 
+.hdlist li {
+     border-radius:5px;
+     padding-left:5px;
+   }
+
+  .hdlist li:hover {
+    background-color:#ed6c05;
+  }
+
+.menulists {
+  font-size: 16px;
+}
+
   img {
     height:auto !important;
   }

@@ -7,6 +7,16 @@
     line-height:400%;
   }
 
+  .hdlist li {
+     border-radius:5px;
+     padding-left:5px;
+   }
+
+  .hdlist li:hover {
+    background-color:#ed6c05;
+  }
+  
+
   .menulists {
     font-size: 16px;
     color:#333;

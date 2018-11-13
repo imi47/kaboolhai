@@ -12,7 +12,15 @@ html, body {
   }
 
   .hdlist li {
-	 padding:10px 0;
+	 padding:10px 5px;
+  }
+
+  .hdlist li {
+     border-radius:5px;
+   }
+
+  .hdlist li:hover {
+    background-color:#ed6c05;
   }
 
 .main-section {

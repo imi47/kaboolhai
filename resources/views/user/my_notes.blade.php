@@ -46,6 +46,15 @@
   font-size: 16px;
 }
 
+.hdlist li {
+     border-radius:5px;
+     padding-left:5px;
+   }
+
+  .hdlist li:hover {
+    background-color:#ed6c05;
+  }
+  
 </style>
 
 <div style="padding-top: 90px;"></div>

@@ -2,6 +2,19 @@
 @section('data')
 
 <style>
+.hdlist li {
+     border-radius:5px;
+     padding-left:5px;
+   }
+
+  .hdlist li:hover {
+    background-color:#ed6c05;
+  }
+
+.menulists {
+  font-size: 16px;
+}
+
   .searchcontainer button {
     margin-top: -56px;
   }
