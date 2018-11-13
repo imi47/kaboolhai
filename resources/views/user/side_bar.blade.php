@@ -8,15 +8,16 @@
             
           {{--  <li class="{{ Request::is('our-police') ? 'active' : '' }} l"><a href="{{ url('our-police') }}" class="menulists"><span><img src="{{ $user_assets }}/our_policy_b.png" alt="" class="lmis"></span> Our Policy</a></li> --}}
             
-            <li class="{{ Request::is('policy-privacy') ? 'active' : '' }}"><a href="{{ url('policy-privacy') }}" class="menulists"><span><img src="{{ $user_assets }}/privacy_b.png" alt="" class="lmis"></span> Privacy & Policy</a></li>
+            <li class="{{ Request::is('policy-privacy') ? 'active' : '' }} l"><a href="{{ url('policy-privacy') }}" class="menulists"><span><img src="{{ $user_assets }}/privacy_b.png" alt="" class="lmis"></span> Privacy & Policy</a></li>
             
-            <li class="{{ Request::is('blog') ? 'active' : '' }}"><a href="http://kaboolhai.com/blog/" target="_blank" class="menulists"><span><img src="{{ $user_assets }}/blogs_b.png" alt="" class="lmis"></span> Blogs</a></li>
+            <li class="{{ Request::is('blog') ? 'active' : '' }} l"><a href="http://kaboolhai.com/blog/" target="_blank" class="menulists"><span><img src="{{ $user_assets }}/blogs_b.png" alt="" class="lmis"></span> Blogs</a></li>
             
             <li class="{{ Request::is('faqs') ? 'active' : '' }} l"><a href="{{ url('faqs') }}" class="menulists"><span><img src="{{ $user_assets }}/faqs_b.png" alt="" class="lmis"></span> FAQ's</a></li>
             
             <li class="{{ Request::is('our-partnar') ? 'active' : '' }} l"><a href="{{ url('our-partnar') }}" class="menulists"><span><img src="{{ $user_assets }}/our_partners_b.png" alt="" class="lmis"></span> Our Partners</a></li>
             
             <li class="{{ Request::is('contact-us') ? 'active' : '' }} l"><a href="{{ url('contact-us') }}" class="menulists"><span><img src="{{ $user_assets }}/contact_us_b.png" alt="" class="lmis"></span> Contact</a></li>
-           
-           <li><a href="{{ url('help-center') }}" class="menulists"><span><i class="fa fa-question" style="color:red; font-size: 45px;"></i></span> Help Center</a></li>
+
+            <li class="{{ Request::is('help-center') ? 'active' : '' }} l"><a href="{{ url('help-center') }}" class="menulists"><span><i class="fa fa-question" style="color:red; font-size: 45px;"></i></span> Help Center</a></li>
+          
           </ul>
