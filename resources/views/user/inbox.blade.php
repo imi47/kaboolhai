@@ -66,6 +66,12 @@ footer section {
   overflow-y: scroll !important;
 }
 
+@media (max-width:1360px) {
+  .navbar-form button {
+    right: -17px;
+  }
+}
+
 @media (max-width:991px) {
 #friends-dropdown, #messages-dropdown, #notifications-dropdown {
         margin-top:21px !important;
@@ -231,6 +237,7 @@ img{ max-width:100%;}
 .active_chat{ background:#ebebeb;}
 .incoming_msg{
      margin: 26px 0 26px;
+     padding-left: 25px;
 }
 .incoming_msg_img {
   display: inline-block;
@@ -259,7 +266,7 @@ img{ max-width:100%;}
 }
 /* .received_withd_msg { width: 57%;} */
 .mesgs {
-  padding: 0 0 0 25px;
+  /* padding: 0 0 0 25px; */
   width: 75%;
 }
 
@@ -289,14 +296,14 @@ img{ max-width:100%;}
   font-size: 15px;
   width: 100%;
   margin:0;
-  padding: 12px 0px;
+  padding: 12px 20px;
 }
 
 .type_msg {
   border-top: 1px solid #c4c4c4;
   position: fixed;
   bottom: 0;
-  width: 70.1%;
+  width: 75%;
 }
 
 .msg_send_btn {
@@ -317,7 +324,7 @@ img{ max-width:100%;}
 
 /* .messaging { padding: 0 0 50px 0;} */
 .msg_history {
-  height: 516px;
+  height: 92%;
   overflow-y: auto;
 }
 
@@ -347,6 +354,7 @@ img{ max-width:100%;}
 
   .inbox_people {
     width:109px;
+    z-index:9;
   }
 
   .chat_list {
@@ -355,6 +363,15 @@ img{ max-width:100%;}
 
   .mesgs {
     width: 85%;
+  }
+
+  .type_msg {
+    right: 0;
+    width: 85%;
+  }
+
+  .input_msg_write input {
+    padding: 12px 45px;
   }
 }
 </style>

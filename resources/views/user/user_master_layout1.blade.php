@@ -739,12 +739,12 @@
         display:block !important;
       }
 
-      #friends-dropdown, #messages-dropdown, #notifications-dropdown {
+      #friends-dropdown, #messages-dropdown, #notifications-dropdown, #username-dropdown-toggle {
         visibility:visible !important;
       }
     }
 
-    @media (max-width:1300px) {
+    @media (max-width:1360px) {
       .navbar-form {
         display:none;
 
@@ -1356,11 +1356,11 @@
                       // alert('hi');
 
                       if(dropdownsVisible) {
-                        $('#friends-dropdown, #messages-dropdown, #notifications-dropdown').css('visibility', 'hidden');
+                        $('#friends-dropdown, #messages-dropdown, #notifications-dropdown, #username-dropdown-toggle').css('visibility', 'hidden');
                         dropdownsVisible = false;
                       }
                       else {
-                        $('#friends-dropdown, #messages-dropdown, #notifications-dropdown').css('visibility', 'visible');
+                        $('#friends-dropdown, #messages-dropdown, #notifications-dropdown, #username-dropdown-toggle').css('visibility', 'visible');
                         dropdownsVisible = true;
                       }
                     }

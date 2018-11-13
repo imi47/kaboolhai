@@ -67,6 +67,13 @@
 
 .pl-profile:hover {
   border: 4px solid #ccff00;
+  /* height: 369px;
+  margin-bottom:0; */
+}
+
+.pl-profile:hover .pl-content-top {
+    /* width: 30px; */
+    height: 91px;
 }
 
   .main-section .arrow_button {
@@ -255,8 +262,8 @@
     position: relative;
   }
   .pl-profile img {
-        width: 100%;
-    height: 260px;
+    width: 100%;
+    height:100%;
     /*border-radius: 10px;*/
   }
   .pl-profile-content {
@@ -445,17 +452,17 @@ p.t
     margin-bottom: 20px;
   }
 
+   @media (max-width:1300px) {
+    .navbar-form button {
+      right: -17px;
+    }
+  }
+
   @media (min-width:991px) {
     .pl-top-selection img {
       width:21.5% !important;
     }
 
-    @media (max-width:1300px) {
-    .navbar-form button {
-      right: -17px;
-    }
-  }
-    
     .searchcontainer button {
       margin-top:-56px !important;
       padding-top:15px;
@@ -528,6 +535,11 @@ p.t
 
       .pl-profile {
         margin-left:0;
+      }
+
+      .pl-list {
+        margin-left:2%;
+        line-height: 15px;
       }
     }
 
