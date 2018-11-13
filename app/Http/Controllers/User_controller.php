@@ -1496,6 +1496,7 @@ public function accept_photo_request($request_id)
     $data['save_search']=url()->current();
 		 $data['search']='who';
 		 $data['title']='Who am i looking listing';
+     $data['recent']=User::orderBy('id', 'desc')->join('my_photos','my_photos.user_id','=','users.id','left')->join('profile-image','profile-image.image_id','=','users.profile_image','left')->join('countries','countries.country_id','=','users.country_id','left')->join('cities','cities.city_id','users.city_id','left')->limit(4)->get();
 		 return view('user/user-search',$data); 
 	
 	
@@ -1529,6 +1530,8 @@ public function accept_photo_request($request_id)
 		}
 		  $data['search']='who';
 		  $data['title']='Who looking for me listing';
+      
+      $data['recent']=User::orderBy('id', 'desc')->join('my_photos','my_photos.user_id','=','users.id','left')->join('profile-image','profile-image.image_id','=','users.profile_image','left')->join('countries','countries.country_id','=','users.country_id','left')->join('cities','cities.city_id','users.city_id','left')->limit(4)->get();
       $data['save_search']=url()->current();
 		return view('user/user-search',$data); 
 
@@ -2060,9 +2063,16 @@ public function accept_photo_request($request_id)
                 {
 
 
-			 $data['recent']=User::where('gender','!=',$gender->gender)->where('id','<>',$user_id)->orderBy('id', 'desc')->join('my_photos','my_photos.user_id','=','users.id','left')->join('profile-image','profile-image.image_id','=','users.profile_image','left')->join('countries','countries.country_id','=','users.country_id','left')->join('cities','cities.city_id','users.city_id','left')->limit(4)->get();
+			      $data['recent']=User::where('gender','!=',$gender->gender)->where('id','<>',$user_id)->orderBy('id', 'desc')->join('my_photos','my_photos.user_id','=','users.id','left')->join('profile-image','profile-image.image_id','=','users.profile_image','left')->join('countries','countries.country_id','=','users.country_id','left')->join('cities','cities.city_id','users.city_id','left')->limit(4)->get();
             // dd($data['recent']);
             $data['simlar']=User::where('gender','!=',$gender->gender)->where('id','<>',$user_id)->where(['country_id'=>$data['user_data']->country_id,'height'=>$data['user_data']->height,'language'=>$data['user_data']->language,'martial_status'=>$data['user_data']->martial_status])->where('id','<>',$user_id)->join('my_photos','my_photos.user_id','=','users.id','left')->join('profile-image','profile-image.image_id','=','users.profile_image','left')->limit(4)->get();
+            }
+
+            else
+            {
+              $data['recent']=User::orderBy('id', 'desc')->join('my_photos','my_photos.user_id','=','users.id','left')->join('profile-image','profile-image.image_id','=','users.profile_image','left')->join('countries','countries.country_id','=','users.country_id','left')->join('cities','cities.city_id','users.city_id','left')->limit(4)->get();
+            // dd($data['recent']);
+            $data['simlar']=User::where(['country_id'=>$data['user_data']->country_id,'height'=>$data['user_data']->height,'language'=>$data['user_data']->language,'martial_status'=>$data['user_data']->martial_status])->where('id','<>',$user_id)->join('my_photos','my_photos.user_id','=','users.id','left')->join('profile-image','profile-image.image_id','=','users.profile_image','left')->limit(4)->get();
             }
 
 			

@@ -66,12 +66,6 @@ footer section {
   overflow-y: scroll !important;
 }
 
-@media (max-width:1366px) {
-  .navbar-form button {
-    right: -17px;
-  }
-}
-
 @media (max-width:991px) {
 #friends-dropdown, #messages-dropdown, #notifications-dropdown {
         margin-top:21px !important;

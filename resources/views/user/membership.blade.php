@@ -5,6 +5,16 @@
   .searchcontainer button {
     margin-top: -56px;
   }
+
+  @media (min-width:991px) {
+    .nav.navbar-nav {
+      margin-right:0;
+      }
+
+      #logo-div {
+        margin-right: -61px;
+      }
+  }
 </style>
 
 <div style="padding-top:90px;"></div>
