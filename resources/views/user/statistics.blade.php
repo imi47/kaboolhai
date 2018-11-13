@@ -67,6 +67,14 @@
     .no-of-conv {
       font-size:1.5rem;
     }
+
+    .nav.navbar-nav {
+	    margin-right:0;
+	  }
+
+	  #logo-div {
+		  margin-right: -61px;
+	}
 }
 
 @media (max-width:1300px) {

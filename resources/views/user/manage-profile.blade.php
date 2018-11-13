@@ -125,6 +125,56 @@ input[type='checkbox'] {
 	top: 2550px;
 } */
 
+@media (min-width:991px) {
+	.nav.navbar-nav {
+	margin-right:0;
+	}
+
+	#logo-div {
+		margin-right: -61px;
+	}
+}
+
+@media (min-width:1361px) {
+      .navbar-form {
+        display:block !important;
+      }
+
+      #friends-dropdown, #messages-dropdown, #notifications-dropdown, #username-dropdown-toggle {
+        visibility:visible !important;
+      }
+    }
+
+    @media (max-width:1360px) {
+      .navbar-form {
+        display:none;
+
+        position: absolute;
+        border-radius: 3px;
+        top: 13px;
+        right: 104px;
+        margin:0;
+        padding:0px;
+        border:none;
+      }
+
+      .navbar-form input {
+        margin:0;
+        border: 3px solid #936BCB !important;
+        padding:14px;
+      }
+
+      .navbar-form button {
+        top: 3px;
+        border-radius: 0;
+        right: -17px;
+      }
+
+      .search-dropdown-toggle {
+        display:inline-block
+      }
+    }
+
 @media (max-width:768px) {
 	.mp-bio-label {
     width: auto;

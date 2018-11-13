@@ -237,6 +237,7 @@
     right: 16px;
     top: 1px;
     background-color: #ececec;
+    border-radius:3px;
   }
 
   #accordion, #username-dropdown-toggle a {

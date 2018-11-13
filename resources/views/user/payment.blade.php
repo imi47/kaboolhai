@@ -136,3 +136,13 @@ Please see the Account Upgrade screen to select a desired package and see the co
 <!-- setting -->
 <script type="text/javascript" src="{{ asset('public') }}/js/chosen.jq.js"></script>
 @endpush
+
+<style>
+.navbar-form button {
+  padding: 6px 11px !important;
+}
+
+.navbar-form button .glyphicon {
+    top: 2px;
+}
+</style>

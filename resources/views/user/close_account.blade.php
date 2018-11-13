@@ -8,6 +8,14 @@
       margin-top:-56px !important;
       padding-top:12px;
     }
+
+    .nav.navbar-nav {
+	    margin-right:0;
+	  }
+
+	  #logo-div {
+		  margin-right: -61px;
+	}
 }
 
 

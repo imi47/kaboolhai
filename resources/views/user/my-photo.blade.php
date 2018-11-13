@@ -95,6 +95,10 @@
       padding: 11px 11px 11px 12px;
     } 
 
+    .sidebar {
+      display:none;
+    }
+
   }
 
   @media (max-width:768px) {
@@ -160,7 +164,7 @@
 </div>
 <div style="padding-top:90px;"></div>
 {{-- <div class="row"> --}}
-  <div class="col-md-3">
+  <div class="col-md-3 sidebar">
         <div class="well" style="box-shadow: none;">
           @include('user/side_bar')
         </div>

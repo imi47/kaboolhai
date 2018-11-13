@@ -117,9 +117,17 @@
       margin-top:-51px !important;
       padding-top:15px;
     }
+
+    .nav.navbar-nav {
+	margin-right:0;
+	}
+
+	#logo-div {
+		margin-right: -61px;
+	}
 }
 
-@media (max-width:1300px) {
+@media (max-width:1360px) {
     .navbar-form button {
         right: -17px;
     }

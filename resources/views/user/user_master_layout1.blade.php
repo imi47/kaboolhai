@@ -217,6 +217,7 @@
       position: absolute;
       padding: 3px 11px !important;
       background-color:#ececec;
+      border-radius:3px;
     }
 
     .navbar-form button:hover {
@@ -734,7 +735,7 @@
       background-color:#000;
     }
 
-    @media (min-width:1301px) {
+    @media (min-width:1361px) {
       .navbar-form {
         display:block !important;
       }

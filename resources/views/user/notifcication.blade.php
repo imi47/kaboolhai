@@ -94,9 +94,17 @@ tr.dosrch th a {
    }
 
    @media (min-width:991px) {
-   .searchcontainer button {
-      margin-top:-56px !important;
-      padding-top:15px;
+    .searchcontainer button {
+        margin-top:-56px !important;
+        padding-top:15px;
+      }
+
+      .nav.navbar-nav {
+        margin-right:0;
+      }
+
+      #logo-div {
+        margin-right: -61px;
     }
 }
 

@@ -66,7 +66,7 @@ footer section {
   overflow-y: scroll !important;
 }
 
-@media (max-width:1360px) {
+@media (max-width:1366px) {
   .navbar-form button {
     right: -17px;
   }
