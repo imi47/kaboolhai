@@ -1,7 +1,5 @@
 <!doctype html>
 <html>
-
-
 <head>
   <title>{{ $title }}</title>
   <meta name="description" content="">
@@ -565,7 +563,7 @@
 
 .msgMenu li:hover{background: #e6e6e6 !important; } 
 
-    @media (max-width:1250px) {
+    @media (max-width:1230px) {
       #myNavbar .nav:nth-child(1):nth-child(-n+6) {
         display:none;
       }
@@ -1018,6 +1016,8 @@
         <li><a href="{{ url('/') }}" class="menudesign">Home</a></li>
           <li class="{{ Request::is('/') ? 'active1' : '' }}"><a href="{{ url('public-profile',user_data()->id) }}"
               class="menudesign">My Profile</a></li>
+
+              <li><a href="{{ url('assisted-service') }}" class="menudesign">Assisted Service</a></li>
 
           <!-- <li><a href="{{ url('inbox') }}" class="menudesign">Inbox</a></li> -->
           <!-- <li><a href="{{ url('sent-items') }}" class="menudesign">Sent Items</a></li> -->

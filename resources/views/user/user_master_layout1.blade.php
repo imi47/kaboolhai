@@ -83,7 +83,7 @@
     }
 
     .nav.navbar-nav {
-      margin-right:70px;
+      margin-right:50px;
     }
 
     .search-dropdown-toggle {
@@ -774,7 +774,24 @@
       }
     }
 
-    @media (max-width:1205px) {
+    @if(empty(Session::get('user_id')))
+      @media (max-width:1100px) {
+        .navbar .accordion-menu #accordion>li,
+        #signin {
+          display: none;
+        }
+        #accordion {
+          float: right;
+        }
+
+      .navbar-form { 
+        margin-right: 69px !important;
+        }
+    }
+
+    @else 
+
+    @media (max-width:1200px) {
       .navbar .accordion-menu #accordion>li,
       #signin {
         display: none;
@@ -790,6 +807,8 @@
         margin-right: 69px !important;
         }
     }
+
+    @endif
 
     /* @media (min-width:991px) { */
       .sticky-nav .navbar-nav > li > .dropdown-menu {
@@ -1001,6 +1020,8 @@
                 <!-- <li><a href="{{ url('inbox') }}" class="menudesign">Inbox</a></li> -->
                 <!-- <li><a href="{{ url('sent-items') }}" class="menudesign">Sent Items</a></li> -->
                 <li><a href="{{ url('blocked-list') }}" class="menudesign">Block List</a></li>
+                <li><a href="{{ url('public-profile',user_data()->id) }}" class="menudesign">Public Profile</a></li>
+                <li><a href="{{ url('assisted-service') }}" class="menudesign">Assisted Service</a></li>
 
 
                 <li class="dropdown">

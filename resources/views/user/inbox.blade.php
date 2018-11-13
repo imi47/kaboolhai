@@ -163,14 +163,22 @@ img{ max-width:100%;}
 
 .inbox_people {
   background: #f8f8f8 none repeat scroll 0 0;
-  float: left;
   overflow: hidden;
-  width: 340px; border-right:1px solid #c4c4c4;
+  width: 25%;
+  border-right:1px solid #c4c4c4;
 }
 .inbox_msg {
   clear: both;
   overflow: hidden;
+  display:flex;
+  height: 92%;
 }
+@media (max-height:656px) {
+  .inbox_msg {
+    height: 86%;
+  }
+}
+
 .top_spac{ margin: 20px 0 0;}
 
 
@@ -198,7 +206,7 @@ img{ max-width:100%;}
 .srch_bar .input-group-addon { margin: 0 0 0 -27px;}
 
 .chat_ib h5{ font-size:15px; color:#464646; margin:0 0 8px 0;}
-.chat_ib h5 span{ font-size:11px; float:right; color:#989898;}
+.chat_ib h5 + span{ font-size:11px; float:right; color:#989898;}
 .chat_ib p{ font-size:14px; color:#989898; margin:auto}
 .chat_img {
   float: left;
@@ -218,7 +226,7 @@ img{ max-width:100%;}
   margin: 0;
   padding: 18px 16px 10px;
 }
-.inbox_chat { height: 550px; overflow-y: scroll;}
+.inbox_chat { overflow-y: scroll;}
 
 .active_chat{ background:#ebebeb;}
 .incoming_msg{
@@ -251,9 +259,8 @@ img{ max-width:100%;}
 }
 /* .received_withd_msg { width: 57%;} */
 .mesgs {
-  float: left;
-  padding: 30px 15px 0 25px;
-  width: 73%;
+  padding: 0 0 0 25px;
+  width: 75%;
 }
 
  .sent_msg p {
@@ -281,6 +288,8 @@ img{ max-width:100%;}
   color: #4c4c4c;
   font-size: 15px;
   width: 100%;
+  margin:0;
+  padding: 12px 0px;
 }
 
 .type_msg {
@@ -306,10 +315,29 @@ img{ max-width:100%;}
   fill: #7553A4;
 }
 
-.messaging { padding: 0 0 50px 0;}
+/* .messaging { padding: 0 0 50px 0;} */
 .msg_history {
   height: 516px;
   overflow-y: auto;
+}
+
+.name-and-date {
+  display:flex;
+}
+
+.name-and-date h5 {
+  width:70%;
+  margin-top: 5px;
+}
+
+.name-and-date span {
+  width:131px;
+}
+
+@media (max-width:900px) {
+  .name-and-date {
+    flex-wrap:wrap;
+  }
 }
 
 @media (max-width:768px) {
@@ -324,9 +352,13 @@ img{ max-width:100%;}
   .chat_list {
     padding: 7px 0 7px 26px;
   }
+
+  .mesgs {
+    width: 85%;
+  }
 }
 </style>
-<div style="padding-top:90px; "></div>
+<div style="padding-top:53px; "></div>
 {{-- <div class="container"> --}}
 
 <div class="messaging">
@@ -356,7 +388,10 @@ img{ max-width:100%;}
                 @endif
                   </div>
                 <div class="chat_ib">
-                  <h5>{{ $row->user_name }}<span class="chat_date">{{ $row->created_at }}</span></h5>
+                  <div class="name-and-date">
+                    <h5>{{ $row->user_name }}</h5>
+                    <span class="chat_date">{{ $row->created_at }}</span>
+                  </div>                  
                   <p>Sample text Sample text Sample text Sample text Sample text Sample text </p>
                 </div>
               </div>
@@ -416,7 +451,7 @@ img{ max-width:100%;}
             <div class="input_msg_write">
               <input type="text" id="send_messgae" name="send_messgae" class="write_msg" placeholder="Type a message"/>
               <input type="hidden" id="to_userss" value="{{ $friend_id }}" name="to_user">
-               <label id="" style="float: right; margin-right: 50px; margin-top: -42px;"> <img alt="" src="{{ $user_assets }}/images/clip.png" />
+               <label id="" style="float: right; margin-right: 50px; margin-top: -40px;"> <img alt="" src="{{ $user_assets }}/images/clip.png" />
                 <input type="file" name="file" id="file" size="60">
               </label>
               <button class="msg_send_btn" type="submit" ><svg style="enable-background:new 0 0 24 24;" version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="info"/><g id="icons"><path d="M21.5,11.1l-17.9-9C2.7,1.7,1.7,2.5,2.1,3.4l2.5,6.7L16,12L4.6,13.9l-2.5,6.7c-0.3,0.9,0.6,1.7,1.5,1.2l17.9-9   C22.2,12.5,22.2,11.5,21.5,11.1z" id="send"/></g></svg></button>
