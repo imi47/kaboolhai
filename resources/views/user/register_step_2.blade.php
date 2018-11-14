@@ -129,7 +129,7 @@ input[type=number]::-webkit-outer-spin-button {
 .error {
 	position:absolute;
 	left:15px;
-	top:-19px;
+	top:-21px;
 	margin:0 !important;
 }
 

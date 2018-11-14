@@ -545,6 +545,11 @@ p.t
         margin-left:2%;
         line-height: 15px;
       }
+
+      .save-search-btn {
+        margin-top:10px;
+        margin-left:16px;
+      }
     }
 
     @media (max-width:640px) {
@@ -1123,7 +1128,14 @@ p.t
          @endforeach
          @else
 
-          <p class="alert alert-danger">Not Available user list</p>
+          <p class="alert alert-danger">No users found in this category</p>
+          <style>
+            .col-md-9 .well {
+              background:none !important;
+              border:none !important;
+              box-shadow:none !important;
+            }
+          </style>
          @endif
          
        </div>  
@@ -1517,7 +1529,7 @@ p.t
         <input type="text" required="" name="search_comment" class="form-control">
         </div> --}}
         <div class="col-md-6">
-        <button class="btn btn-success">Save Search</button>
+        <button class="btn btn-success save-search-btn">Save Search</button>
       </div>
      
       </form>

@@ -18,7 +18,20 @@
   <div style="padding-top: 90px;"></div>
 <div class="container-fluid">
 
-  <style type="text/css">
+	<style type="text/css">
+	.contacts_detail, .somelinks {
+		float:none !important;
+	}
+
+	.txt_fetched {
+		float:none;
+	}
+
+	.hover, .in_box_brdr li{
+		display:flex;
+		justify-content:space-between;
+		flex-wrap:wrap;
+	}
 
 	.sidebar-container .sidebar, .sidebor {
 		background:transparent;
@@ -136,12 +149,12 @@
 		 }
 
 		  @media (max-width:768px) {
-				.contacts_detail, .somelinks {
+				/* .contacts_detail, .somelinks {
 					float:none;
 				 clear:both;
 				 text-align:center;
 				 width:auto;
-				}
+				} */
 
 				.sticky-nav .navbar-nav > li > .dropdown-menu {
 					top:48px !important;
@@ -183,14 +196,6 @@
 
 				.in_box_brdr {
 					margin-bottom:20px;
-				}
-
-				#profile .box_txt_lb, #partner .box_txt_lb {
-					display:block;
-				}
-
-				#profile .txt_fetched, #profile .self, #profile .self1, #partner .txt_fetched, #partner .self, #partner .self1 {
-					float:none;
 				}
 				
 				#btn {
