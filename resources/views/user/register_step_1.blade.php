@@ -9,10 +9,29 @@
     overflow:unset !important;
   }
 
+  .form_error {
+    line-height: 12px;
+    margin-top:-5px;
+  }
+
+  #password, #year {
+    margin-top:0;
+  }
+
+  #year {
+    line-height:unset;
+  }
+  
+  .on-focus {
+    display:flex;
+    flex-direction:column;
+  }
+
 select {
   padding:0px;
   height:27px !important;
   background-color:#eee;
+  margin:0;
 }
 
 .sidebar h3 {
@@ -34,14 +53,6 @@ input, textarea, select {
     padding:0 !important;
   }
 
-  /* .form_error {
-    margin-top:-13px;
-  } */
-
-  #year.form_error {
-    margin-left:30px !important;
-  }
-
   #register_step_1 #code{
     width:65px !important;
   }
@@ -58,13 +69,6 @@ input, textarea, select {
     width:200px;
   }
 
-  /* #regform input[type] {
-    padding:17px;
-    border:1px solid #ccc;
-    border-radius: 3px;
-    margin-bottom:-15px !important;
-  } */
-
   #register_step_1 .progress {
     margin-top:5px !important;
     margin-left:-15px !important;
@@ -74,60 +78,6 @@ input, textarea, select {
     width:100% !important;
     height:auto !important;
   }
-
-   @media (min-width:991px) {
-   /* .form_error {
-     margin-left:-234px;
-     margin-top:25px;
-   } */
-
-   #year.form_error {
-    margin-left: 56px !important;
-  }
-
-  #phone.form_error {
-    margin-left: 229px;
-  }
-
- }
- 
- @media (min-width:1200px) {
-   .form_error {
-     margin-left:286px;
-     margin-top:-14px;
-   }
-
-   #year.form_error {
-    margin-left: 69px !important;
-  }
-
-  #phone.form_error {
-    margin-left: 273px;
-  }
-
- }
-
- @media (max-width:991px) {
-  .form_error {
-     margin-left:-234px;
-     margin-top:25px;
-   }
-
-   #year.form_error {
-    margin-left: -123px !important;
-  }
-
-  #phone.form_error {
-    margin-left: 1px;
-  }
- }
-
- @media (max-width:1199px) and (min-width:992px) {
-   .form_error {
-     margin-left:240px;
-     margin-top:-13px;
-   }
- }
 
   @media (max-width:1200px) {
     #full {
@@ -141,11 +91,6 @@ input, textarea, select {
     #regform input[type=text],input[type=email], input[type=text],input[type=password], select {
       width:100% !important;
     }
-
-    #full {
-      /* width:90%; */
-    }
-
   }
 
   @media (max-width: 768px) {
@@ -159,44 +104,14 @@ input, textarea, select {
   #regform input[type=text], input[type=email], input[type=text], input[type=password], select {
     width: 100% !important;
     }
-
-    .form_error {
-     margin-left:-485px;
-     margin-top:27px;
-   }
 }
 .tooltip-inner {
     max-width: 100% !important;
 }
 
-  @media (max-width:575px) {
-    #year.form_error {
-      margin-left: -22vw !important;
-    }
-  }
-
   @media (max-width:530px) {
     .form-area {
       position:relative;
-    }
-    
-    .form_error {
-      position:absolute;
-      margin:55px  0 0 0;
-      left:35px;
-      /* top:50px; */
-    }
-
-    #phone.form_error {
-     position:absolute;
-     margin:-25px 0 0 0;
-    }
-
-    #year.form_error {
-      position:absolute;
-     margin:0;
-     top:-35px;
-     left:10px;
     }
   }
 
@@ -753,9 +668,9 @@ border-bottom-left-radius: 10px;*/
 <span class="on-focus">
 <input type="text" data-toggle="tooltip" data-placement="top" title="Kindly enter your first name in the field" onblur="fir()" onkeypress="ft()" title="First name" onfocus="first();" id="fi" name="firstname" value="{{ $fname }}" class="allinputs" placeholder ="Enter First Name" >
 
+<span id="firstname" class="form_error" style="color:red; font-size:13px;"></span>
 </span>
 </div>
-<span id="firstname" class="form_error" style="color:red; font-size:13px;"></span>
 </li><div class="btpad"></div>
 <li class="row listtopmarg">
 <div class="col-lg-4 col-md-4-col-sm-4 col-xs-12">
@@ -764,12 +679,12 @@ border-bottom-left-radius: 10px;*/
 <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
 <!-- <span class="colons">:</span> -->
 <span class="on-focus">
-<input type="text" data-toggle="tooltip" data-placement="top" title="Kindly enter your last name in the field" id="li" onblur="lst()" onkeypress="lt()" onfocus="last();" name="lastname" title="Last name" value="{{ $lname }}"  class="allinputs" placeholder ="Enter Last Name">
+  <input type="text" data-toggle="tooltip" data-placement="top" title="Kindly enter your last name in the field" id="li" onblur="lst()" onkeypress="lt()" onfocus="last();" name="lastname" title="Last name" value="{{ $lname }}"  class="allinputs" placeholder ="Enter Last Name">
+  <span id="lastname" class="form_error" style="color:red; font-size: 13px;"></span>
 
 </span>
 
 </div>
-<span id="lastname" class="form_error" style="color:red; font-size: 13px;"></span>
 </li><div class="btpad"></div>
 <li class="row listtopmarg" >
 <div class="col-lg-4 col-md-4-col-sm-4 col-xs-12">
@@ -780,10 +695,10 @@ border-bottom-left-radius: 10px;*/
 <!-- <span class="colons">:</span> -->
 <span class="on-focus">
 <input maxlength="8" type="text" data-toggle="tooltip" data-placement="top" title="Create your user name. It must not exceed 8 letters." id="ui" onblur="un()" onkeypress="us()" onfocus="usr()" name="user_name" title="User name" class="allinputs" placeholder ="Enter User Name">
+<span id="user_name" class="form_error" style="color:red; font-size: 13px;"></span>
 
 </span>
 </div>
-<span id="user_name" class="form_error" style="color:red; font-size: 13px;"></span>
 </li><div class="btpad"></div>
 
 <li class="row listtopmarg" >
@@ -795,10 +710,10 @@ border-bottom-left-radius: 10px;*/
 <!-- <span class="colons">:</span> -->
 <span class="on-focus">
 <input type="email" data-toggle="tooltip" data-placement="top" title="Enter your email address in the field" id="emai" onblur="emi()" onfocus="ema()" onkeypress="emails()" name="email" title="Email"  value="{{ $email }}" class="allinputs" placeholder ="Enter Email" style="height:27px;">
+<span id="email" class="form_error" style="color:red; font-size: 13px;"></span>
 </span>
 
 </div>
-<span id="email" class="form_error" style="color:red; font-size: 13px;"></span>
 </li><div class="btpad"></div>
 
 <li class="row listtopmarg" >
@@ -811,6 +726,7 @@ border-bottom-left-radius: 10px;*/
 <span class="on-focus">
 <input type="password" data-toggle="tooltip" data-placement="top" title="Password should be between 8-25 characters " {{-- id="password" --}} id="pa" name="password" onkeypress="passwordss()" onblur="pas()" onfocus="pass()" class="allinputs" placeholder ="Enter Password">
 
+  <span id="password" title="Password" class="form_error" style="color:red; font-size: 13px;"></span>
 <div class="col-12">
 
 <div class="pwstrength_viewport_progress" style="display: none;"></div>
@@ -818,7 +734,6 @@ border-bottom-left-radius: 10px;*/
 
 </span>
 </div>
-<span id="password" title="Password" class="form_error" style="color:red; font-size: 13px;"></span>
 </li><div class="btpad"></div>
 
 <li class="row listtopmarg" >
@@ -831,10 +746,10 @@ border-bottom-left-radius: 10px;*/
 <span class="on-focus">
 <input type="password" data-toggle="tooltip" data-placement="top" title="Re-enter your password to confirm" id="c_pa" title="Confirm Password" name="password_confirmation" onblur="c_pass()" onfocus="c_pas()" onkeypress="c_password()" class="allinputs" placeholder="Confirm Password">
 
+<span id="password_confirmation" class="form_error" style="color:red; font-size: 13px;"></span>
 </span>
 
 </div>
-<span id="password_confirmation" class="form_error" style="color:red; font-size: 13px;"></span>
 </li><div class="btpad"></div>
 
 <li class="row listtopmarg" >
@@ -845,15 +760,15 @@ border-bottom-left-radius: 10px;*/
 <!-- <span class="colons">:</span> -->
 {{-- <span class="on-focus"> --}}
 <select name="gender" id="gend" onblur="gen()" onchange="genders(this)" onfocus="gendr()" class="allselects" title="Gender">
-<option value="">Select</option>
-<option @if($gender=='Male') selected @endif value="Male">Male</option>
-<option value="Female" @if($gender=='Female') selected @endif>Female</option>
-</select>
-{{-- <div class="tool-tip  slideIn">Sample text Sample text Sample text Sample text Sample text Sample text </div>
-</span> --}}
+    <option value="">Select</option>
+    <option @if($gender=='Male') selected @endif value="Male">Male</option>
+    <option value="Female" @if($gender=='Female') selected @endif>Female</option>
+  </select>
+  <span id="gender" class="form_error" style="color:red; font-size: 13px;"></span>
+  {{-- <div class="tool-tip  slideIn">Sample text Sample text Sample text Sample text Sample text Sample text </div>
+  </span> --}}
 {{-- <span id="ged" class="firs" style="display: none;"> sample text sample text sample text sample text sample text sample text sample text </span> --}}
 </div>
-<span id="gender" class="form_error" style="color:red; font-size: 13px;"></span>
 </li><div class="btpad"></div>
 
 <li class="row listtopmarg">
@@ -861,20 +776,20 @@ border-bottom-left-radius: 10px;*/
 <label for="">Country: <span class="imporatant">*</span></label>
 </div>
 <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-<!-- <span class="colons">:</span> -->
-{{-- <select name="" id="" > --}}
-<select title="Country" id="cont" onblur="count()" onfocus="conry()" onchange="country_change(this)" name="country_id" class="allselects" >
-<option selected="" value="">Select country 
-</option>
-@foreach ($country as $row)
-<option value="{{ $row->country_id }}">
-  {{ $row->country_name }}
-</option>
-@endforeach
-</select>
+  <!-- <span class="colons">:</span> -->
+  {{-- <select name="" id="" > --}}
+    <select title="Country" id="cont" onblur="count()" onfocus="conry()" onchange="country_change(this)" name="country_id" class="allselects" >
+        <option selected="" value="">Select country 
+          </option>
+          @foreach ($country as $row)
+          <option value="{{ $row->country_id }}">
+            {{ $row->country_name }}
+          </option>
+          @endforeach
+        </select>
+        <span id="country_id" class="form_error" style="color:red; font-size: 13px;"></span>
 
 </div>
-<span id="country_id" class="form_error" style="color:red; font-size: 13px;"></span>
 </li><div class="btpad"></div>
 
 <li class="row listtopmarg" >
@@ -888,8 +803,8 @@ border-bottom-left-radius: 10px;*/
 <select title="State" onblur="stat()" onfocus="statuss()" selected="selected" id="state" onchange="state_change(this)"  name="state_id" class="allselects" >
 <option value="">Select</option>
 </select>
-</div>
 <span id="state_id" class="form_error" style="color:red; font-size: 13px;"></span>
+</div>
 </li><div class="btpad"></div>
 
 <li class="row listtopmarg">
@@ -903,9 +818,9 @@ border-bottom-left-radius: 10px;*/
 <select title="City"  onblur="city_blour()" onchange="city_change(this)" onfocus="city_focus()" name="city_id" id="city" selected="selected" class="allselects">
 <option value="">Select</option>
 </select>
+<span id="city_id" class="form_error" style="color:red; font-size:13px;"></span>
 
 </div>
-<span id="city_id" class="form_error" style="color:red; font-size:13px;"></span>
 </li><div class="btpad"></div>
 
 <li class="row listtopmarg">
@@ -918,14 +833,14 @@ border-bottom-left-radius: 10px;*/
 
 <input type="text" readonly="" id="code" name="code2" value="+92" placeholder="Code" class="smallselect">
 <input type="number" data-toggle="tooltip" data-placement="top" title="Kindly enter your correct phone number" onfocus="myFunction(this)" placeholder="Code" id="code1" name="phone_code" class="smallselect">
-<span class="on-focus">
-<input type="number" data-toggle="tooltip" data-placement="top" title="Kindly enter your correct phone number" id="full" onblur="phone_blur()" onfocus="phone_focus()" onkeypress="phone_press()"  placeholder=" Number" name="phone" class="smallselect" style="width: 100px;">
-
+<span class="on-focus" style='display:inline;'>
+  <input type="number" data-toggle="tooltip" data-placement="top" title="Kindly enter your correct phone number" id="full" onblur="phone_blur()" onfocus="phone_focus()" onkeypress="phone_press()"  placeholder=" Number" name="phone" class="smallselect" style="width: 100px;">
+  <span id="phone" class="form_error" style="color:red; font-size: 13px; display:block;"></span>
+  
 </span>
 </div>
 </li><div class="btpad"></div>
 
-<span id="phone" class="form_error" style="color:red; font-size: 13px;"></span>
 
 <span id="ppp" style="color:#9b9b9b; display: none; margin-left: 0px; margin-top: -18px; font-size: 13px;">Your contact will not be visble to other members and will remain private.</span>
 </li><div class="btpad"></div>
@@ -958,6 +873,7 @@ border-bottom-left-radius: 10px;*/
 @endfor
 </select>
 
+<span id="year" class="form_error" style="color:red; font-size: 13px; display:block;"></span>
 </div>
 </li><div class="btpad"></div>
 
@@ -967,7 +883,6 @@ border-bottom-left-radius: 10px;*/
 <div class="col-3">
 </div>
 <div class="col-9">
-<span id="year" class="form_error" style="color:red; font-size: 13px;"></span>
 </div>
 </li><div class="btpad"></div>
 </ul>

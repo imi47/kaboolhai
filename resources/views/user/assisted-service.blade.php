@@ -10,6 +10,10 @@
         z-index:9999;
     }
 
+    footer {
+        background:#5a378c;
+    }
+
     .navbar-form button .glyphicon {
     top: 1px;
   }

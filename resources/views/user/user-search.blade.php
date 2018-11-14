@@ -9,6 +9,10 @@
 
    <style type="text/css">
 
+    .list-active {
+        border:none !important;
+    }
+
     .col-md-3.content {
       position: sticky;
       top: -800px;

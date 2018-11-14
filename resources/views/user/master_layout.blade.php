@@ -67,6 +67,11 @@
   color: #666;
 }
 
+.paymg img
+{
+  width:unset !important;
+}
+
 #message_count, .noti_counts, #friend_counts {
   color: white !important;
   background-color: #FF4646;
