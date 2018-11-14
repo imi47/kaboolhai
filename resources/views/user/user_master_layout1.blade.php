@@ -68,6 +68,10 @@
   line-height:20px;
 }
 
+footer .fa-search {
+  color: #9a9a9a;
+}
+
 .noti_counts {
   top: -11px;
   right: -10px;
