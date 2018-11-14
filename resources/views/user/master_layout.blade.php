@@ -466,7 +466,13 @@
       }
     }
 
-    @media (max-width:1349px) {
+    @media (min-width:1361px) {
+      #navsidebare, #sidebar-2 {
+        display:none !important;
+      }
+    }
+
+    @media (max-width:1360px) {
       .ham {
         display:block;
       }
