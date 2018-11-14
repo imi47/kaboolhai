@@ -41,7 +41,7 @@
 .emojiPicker section.search .wrap {padding-top:1%;}
 .emojiPicker section.search input {display:block; width:96%; height:28px; margin:2%; padding:1%; font-size:12px; border:1px solid #ddd; border-radius:4px;}
 
-.emojiPicker .shortcode {height:40px; background:#eee; border-top:1px solid #ddd; vertical-align:middle;}
+.emojiPicker .shortcode {height:41px; background:#eee; border-top:1px solid #ddd; vertical-align:middle;}
 .emojiPicker .shortcode .info {display:none;}
 .emojiPicker .shortcode .emoji {position:relative; top:4px; left:8px; width:1.9em; height:1.9em; margin-right:20px;}
 .emojiPicker .shortcode em {position:relative; top:-5px; color:#444; font-size:12px; font-weight:900; font-style:normal;}

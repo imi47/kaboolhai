@@ -63,9 +63,9 @@
     margin-left:-21px;
   }
 
-  .emojiPicker {
+  /* .emojiPicker {
     left: 19px !important;
-  }
+  } */
 
   .emojiPickerIcon.black {
     height: 37px !important;

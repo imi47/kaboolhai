@@ -309,7 +309,7 @@
     }
 
     #bb img {
-      right: 17vw;
+      right: 19vw;
     }
 
     /* .text-bar input {
@@ -329,6 +329,11 @@
       display: block !important;
       margin-left: 48px !important;
     }
+
+    .arrow_button {
+      right: 13px;
+    }
+
   }
 
   @media (max-width:404px) {
@@ -349,9 +354,9 @@
     }
   } */
 
-  @media (min-width:392px) and (max-width:500px) {
+  @media (max-width:500px) {
     .text-bar input {
-      width: 79vw !important;
+      width: 77vw !important;
     } 
   }
 
@@ -372,7 +377,7 @@
   @media (min-width:338px) and (max-width:341px) {
     .arrow_button {
       top: 11px;
-      left: 36px;
+      left: 39px;
     }
 
     #bb {
@@ -382,7 +387,7 @@
 
   @media (max-width:337px) {
     .arrow_button {
-    right: -70vw;
+    right: -68.5vw;
     top: -38px;
     }
   }
@@ -725,7 +730,7 @@
       padding: 10px;
     }
     .arrow_button {
-      margin-left: -31px;
+      margin-left: -39px;
     }
     #navsidebare {
       overflow: scroll;
@@ -3175,6 +3180,10 @@ function get_message()
 
 </script>
 <style> 
+
+@media (max-width:550px) {
+  
+}
 
  @media (max-width:550px) {
       /* .nav.navbar-nav {

@@ -185,7 +185,7 @@
 }
 
 .text-bar input{
-  width: 255px !important;
+  width: 250px !important;
   border-radius:30px !important;
   margin-top:5px;
   padding:8px;
@@ -213,7 +213,7 @@
   position: fixed;
   right: 100px;
   width:26px;
-  margin-right: -6px;
+  margin-right:-3px;
   box-sizing: border-box;
 }
 
@@ -285,17 +285,6 @@
     right:21vw; 
   }
 
-  .emojiPicker {
-    left: 10px !important;
-    width: 74vw !important;
-    top: -15px !important;
-    height:300px !important;
-  }
-
-  .emojiPicker .sections {
-    height:216px !important;
-  }
-
   .arrow_button {
     right: 2px;
     top: 13px;
@@ -304,41 +293,20 @@
   .text-bar input {
     width: 310px !important;
   }
-}
-
-@media (max-width:375px) {
-
-  .second-section{
-    height:200px;
-  }
 
   .emojiPicker {
-    left: 9px !important;
-    width: 74vw !important;
-    top: -25px !important;
-    height:270px !important;
+    width: 100% !important;
+    max-width: 89vw !important;
+    height:320px !important;
+    top: -35px !important;
   }
 
   .emojiPicker .sections {
-    height:186px !important;
-  }
-}
-
-@media (max-width:320px) {
-
-  .second-section{
-    height:180px;
+    height: 236px !important;
   }
 
-  .emojiPicker {
-    height:250px !important;
-    left: 8px !important;
-    width: 74vw !important;
-    top: -25px !important;
-  }
-
-  .emojiPicker .sections {
-    height:166px !important;
+  .emojiPickerIconWrap input[type='text'] {
+    width: 77vw !important;
   }
 }
 
