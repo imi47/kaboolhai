@@ -69,7 +69,7 @@
 }
 
 footer .fa-search {
-  color: #9a9a9a;
+  color: #666;
 }
 
 .noti_counts {

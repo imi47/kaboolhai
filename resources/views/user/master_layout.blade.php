@@ -60,6 +60,13 @@
   color-stop(.6,#B88FF3));
 }
 
+.searchcontainer button {
+  padding: 13px 14px;
+  margin-top: -43px;
+  margin-right: unset;
+  color: #666;
+}
+
 #message_count, .noti_counts, #friend_counts {
   color: white !important;
   background-color: #FF4646;
@@ -1733,7 +1740,7 @@
                    <form action="{{ url('subscribe') }}" method="post">
                     {{ csrf_field() }}
                        <input type="text" class="form-control" style="height:44px;width:225px;border-radius-left: 5%;" placeholder="Enter Your Email" name="search">
-                       <button type="submit">Go</button>
+                       <button type="submit" class='fa fa-search'></button>
                    </form>
                </div>
               
