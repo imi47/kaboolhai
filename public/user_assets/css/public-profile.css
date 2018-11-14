@@ -4,6 +4,9 @@ body
 	background-color: #e6e6e6;
 	padding: 0px;
 }
+.modal-backdrop {
+	position:unset;
+ }
 .check-color{
 	font-size:18px;color:green;
 	/*margin: 3px;*/

@@ -61,21 +61,6 @@
   padding-top:32px;
 }
 
-.pl-profile {
-  box-shadow: 0 0 16px #ccc !important;
-}
-
-.pl-profile:hover {
-  border: 4px solid #ccff00;
-  /* height: 369px;
-  margin-bottom:0; */
-}
-
-.pl-profile:hover .pl-content-top {
-    /* width: 30px; */
-    height: 91px;
-}
-
   .main-section .arrow_button {
     margin-left:-21px;
   }
@@ -251,6 +236,7 @@
     width: 92%;
     margin: 0 auto 20px;
   }
+
   .pl-profile {
        width: 100%;
     height: 360px;
@@ -261,6 +247,20 @@
     margin-bottom: 20px;
     position: relative;
   }
+
+  .pl-profile:hover {
+    border: 4px solid #ccff00;
+  }
+
+  .pl-profile:hover {
+    border: 4px solid #ccff00;
+  }
+
+  .pl-profile:hover .pl-content-top {
+      /* width: 30px; */
+      height: 91px;
+  }
+
   .pl-profile img {
     width: 100%;
     height:100%;
