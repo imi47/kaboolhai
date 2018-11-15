@@ -55,11 +55,11 @@ Version: 1.0
   margin-right: 123px;
   position: absolute;
   right: 0;
-  top: 0;
+  top: 38px;
   z-index: 999;
 }
 
-#slider_area {
+.slider_area, .slider_area > div {
   height: 600px !important;
 }
 
@@ -187,7 +187,7 @@ padding-bottom: 26px;
 #slider_area .table {display: table;}
 #slider_area .table-cell {
   display: table-cell;
-  vertical-align: middle;
+  /* vertical-align: middle; */
 }
 #slider_area .slide_text h1 {
   color: #fff;
@@ -290,23 +290,19 @@ padding-bottom: 26px;
     top: 0;
     position: absolute;
     z-index: 999;
-    top: 395px;
+    top: 580px;
     width: 80vw;
     left:0;
   }
 
-  .margin-three {
-    margin-top: 315px !important;
-  }
+ .our-latest-blog {
+  margin-top: 540px;
+ }
 }
 
 @media (max-width:768px) {
   #slider_area #register {
-    top:470px;
-  }
-
-  .margin-three {
-    margin-top: 380px !important;
+    top:570px;
   }
 }
 

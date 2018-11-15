@@ -1080,7 +1080,7 @@ We feel responsible in uniting the suitable candidates till the end. Kabool Hai 
 	<div class=" container-fluid">
 		<div class="row">
 			<!-- section title -->
-			<div class="col-md-12 text-center">
+			<div class="col-md-12 text-center our-latest-blog">
 				<h1 style="font-family:sans-serif;" class=" orange-text text-transform-none "><img class="imgwithh2_3" src="{{ $user_assets }}/images/blogicon.png" />
 					Our Latest Blog</h1>
 			</div>
