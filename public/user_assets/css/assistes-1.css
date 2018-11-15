@@ -1,0 +1,312 @@
+/*------------------------------------------------------------------
+[Master Stylesheet]
+
+Template Name: Rakibâ€“One page Multipurpose HTML5 Template
+Template URI: http://bootexperts.com
+Description: This is One page Multipurpose HTML5 Template
+Author: MD.RAKIB HOSSAIN
+Author URI:https://www.facebook.com/rakibhossain82
+Version: 1.0
+
+-------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+[Table of contents]
+1. Body
+	[2. Header ]
+		[ 2.1 Logo ]
+		[ 2.1 Mainmenu ]
+	[2. Slider ]
+		[ 2.1 Slider-Text ]
+		[ 2.2 Fawesome-Control ]
+	[3. About ]
+		[ 3.1 About-Text ]
+	[4. Team ]
+		[ 4.1 Single-Team-Text ]
+		[ 4.2 Strat-Button ]
+	[5. What-We-Do ]
+		[ 5.1 What-We-Do-text ]
+		[ 5.2 Carousel_2_left ]
+	[6. Services ]
+	[7. Percent ]
+	[8. What ]
+		[ 8.1 Work-Menu ]
+		[ 8.2 Work-Item ]
+		[ 8.3 Popup-Text ]
+	[ 9. Brand-Logo ]
+	[ 10. Testimonials ]
+	[ 11. Blog ]
+		[ 11.1 Blog-Text ]
+		[ 11.2 Blog-All-Veiw ]
+	[12. Client ]
+	[ 13. Contact ]
+	[ 14 Happy ]
+	[ 15 Contact-Icon ]
+	[ 16 Contact-Bottom ]
+	[ 17 Footer ]
+		13.1 Footer-Top
+		13.2 Footer-Bottom
+		13.2.1 Footer-Bottom-Icon
+	/*ScrollUp*/
+/*-------------------------------------------------------------------*/
+#slider_area #register {
+  width: 32%;
+  float: right;
+  margin-top: 28px;
+  margin-right: 123px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 999;
+}
+
+#slider_area {
+  height: 600px !important;
+}
+
+#slider_area #register label {
+  margin-bottom:5px;
+  font-weight: 700;
+  color: #626262;
+}
+
+#slider_area .alignleft {
+  float:left;
+  margin-right:15px;
+  margin-bottom: 15px;
+}
+#slider_area .alignright {
+  float:right;
+  margin-left:15px;
+  margin-bottom: 15px;
+}
+#slider_area .aligncenter {
+  display:block;
+  margin:0 auto 15px;
+}
+#slider_area a:focus {
+  outline:0px solid;
+}
+#slider_area .nav li a:focus, #slider_area .nav li a:hover {
+  background-color: transparent;
+}
+#slider_area img {
+  max-width:100%;
+  height:auto;
+}
+#slider_area .fix {
+  overflow:hidden;
+}
+#slider_area h1, #slider_area h2, #slider_area h3, #slider_area h4, #slider_area h5, #slider_area h6 {
+  margin:0;
+  padding:0;
+  text-transform: uppercase;
+}
+#slider_area p{
+	font-size:13px;
+	color:#777777;
+}
+#slider_area a {
+  color:#fff;
+  text-decoration:none;
+  transition: all 300ms ease-out 0s;
+  text-transform: uppercase;
+}
+#slider_area *{
+  transition: all 300ms ease-out 0s;}
+#slider_area a:hover{
+  text-decoration:none;
+  color:#fff;
+}
+#slider_area .section_padding {
+  padding: 100px 0;
+}
+#slider_area .mrgntop{     margin-top: 10px;}
+#slider_area .mrgntopmidile {     margin-top: 35px;     text-align: left;}
+#slider_area .txtalignp{text-align: left !important;}
+#slider_area .section-title h1 {
+  font-size: 20px;
+/*  font-weight: 700;*/
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+#slider_area .section-title h1 {
+/*  padding-bottom: 10px;*/
+padding-bottom: 26px;
+}
+#slider_area .margnttopzero{    margin-bottom: 0px;     font-weight: bold !important;}
+#slider_area .divboxbg{    padding: 10px 25px;      border-radius: 3px; font-weight: bold;  background: #42a59b;}
+#slider_area .section-title p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
+  padding-bottom: 5px;
+  text-align: center;
+}
+
+
+
+
+/*------------------------------------------------------------------
+[2. Slider ]
+--------------------------------------------------------------------*/
+#slider_area .item::after {
+  background: #000 none repeat scroll 0 0;
+  content: "";
+  height: 100%;
+  left: 0;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+#slider_area .item {
+  position: relative;
+}
+#slider_area{position:relative;}
+#slider_area, #slider_area div{height:100%;}
+#slider_area .slider_bg {
+  width:100%;
+  height:100%;
+  top:0;left:0;
+  background-size:cover;
+  position:absolute;
+}
+#slider_area .divclassslider{ margin-left: 15%;     margin-top: 16%;}
+#slider_area margintp{ margin-top: 10px}
+#slider_area .slide-1{background-image:url(../images/slider/slide-bg-1.jpg)}
+#slider_area .slide-2{background-image:url(../images/slider/slide-bg-2.jpg)}
+#slider_area .slide-3{background-image:url(../kabool_hai_icons/slide-bg-3.jpg)}
+/*-------------------
+[ 2.1 Slider-Text ]
+---------------------*/
+#slider_area .single_slide .slide_text {
+  color: #fff;
+  position: relative;
+  z-index: 999;
+}
+#slider_area .table {display: table;}
+#slider_area .table-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+#slider_area .slide_text h1 {
+  color: #fff;
+  font-family: "Oswald",sans-serif;
+  font-size: 25px;
+  letter-spacing: 2px;
+  line-height: 45px;
+  text-transform: uppercase;
+  float: left;
+      font-weight: bold;
+      background-color: #ca7a17;
+      padding: 0px 25px; 
+}
+#slider_area .sluderm{ float: left;    margin-top: 10px;  color: #fff;}
+#slider_area .divclasnomrginbt{ margin-bottom: 0px;}
+#slider_area .stripdisplay{ display: none;}
+#slider_area .fontslider{ float:  left; width: 100%; margin-top: 10px;  font-weight: bold; font-size: 19px;  color: #fff;}
+#slider_area .bg-yellow {
+  background: #e6af2a none repeat scroll 0 0;
+  height: 2px !important;
+  margin: 5% 0;
+  width: 30px;
+}
+#slider_area .slide-text p{
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+}
+
+
+/*-------------------
+[ 5.2 Carousel_2_left ]
+---------------------*/
+#slider_area .carousel_2_left {
+  left: -75px !important;
+}
+#slider_area .carousel_2_right {
+  right: -75px !important;
+}
+
+/*------------------------------------------------------------------
+[ 13. Contact ]
+--------------------------------------------------------------------*/
+#slider_area .contact_title h1 {
+  padding-bottom: 100px;
+}
+#slider_area .contact_icon i {
+  color: #009788;
+  font-size: 45px;
+  margin-bottom: 15px;
+}
+#slider_area .contact_icon p {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 20px;
+}
+
+#slider_area input, #slider_area textarea {
+  border: 1px solid #dfdfdf;
+  font-size: 13px;
+  letter-spacing: 1px;
+  margin: 0 0 7px;
+  padding: 8px 15px;
+      text-transform: inherit;
+  resize: none;
+  width: 100%;
+}
+#slider_area .input-field label{ font-weight: normal; font-size: 13px;     color: #403d3d;}
+#slider_area .registerhead{    font-size: 14px;    font-weight: 600;     margin-top: 7px;  color: #2a7fb1;  margin-bottom: 10px;text-align: center;}
+/* #slider_area .registerp{    margin-bottom: 15px;} */
+#slider_area .input-field  input, textarea { height: 30px;}
+#slider_area .padingtop45{    padding-top: 45px;     padding-bottom: 35px;}
+#slider_area #register .login-form{    background: #f5f5f5;    padding: 20px 40px; border-radius: 2px; }
+#slider_area .submitbtn{ width: 100%; padding: 8px 0px; background: #2687bf; color: #fff; border-radius: 2px; border: none;  margin-top: 15px;}
+#slider_area input:focus, #slider_area textarea:focus {
+  border: 1px solid #e6af2a;
+}
+#slider_area .required {
+  font-size: 11px;
+  letter-spacing: 1px;
+  float: left;
+}
+
+@media (max-width:991px) {
+  #register {
+    position:relative;
+    width:80%;
+   margin:60px auto -200px auto !important;
+   float:none;
+  }
+
+  #slider_area #register {
+    width: 32%;
+    float: right;
+    margin-top: 28px;
+    margin-right: 123px;
+    position: absolute;
+    top: 0;
+    position: absolute;
+    z-index: 999;
+    top: 395px;
+    width: 80vw;
+    left:0;
+  }
+
+  .margin-three {
+    margin-top: 315px !important;
+  }
+}
+
+@media (max-width:768px) {
+  #slider_area #register {
+    top:470px;
+  }
+
+  .margin-three {
+    margin-top: 380px !important;
+  }
+}
+

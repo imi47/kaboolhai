@@ -963,6 +963,96 @@ We feel responsible in uniting the suitable candidates till the end. Kabool Hai 
 <!-- // End why Choose -->
 
 
+<section class="slider_area" id='slider_area'>
+         <div id="image_carousel_1" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators slider_indicators">
+            </ol>
+            <div class="carousel-inner" role="listbox">
+               <div class="active">
+                  <div class="single_slide">
+                     <div class="slider_bg slide-3"></div>
+                     <div class="container">
+                        <div class="row">
+                           <div class="col-md-4 col-sm-6 divclassslider">
+                              <div class="slide_text">
+                                 <div class="table">
+                                    <div class="table-cell">
+                                       <h1>ASSISTED SERVICE</h1>
+                                       <div class="bg-yellow"></div>
+                                       <span class="fontslider">Personalized assistance from experienced Relationship Manager who works solely for you!</span><br />
+                                       <p class="sluderm">Our Relationship Managers have helped thousands of members find their perfect life partners.</p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+           
+         </div>
+
+				<section class="registerdiv sectionpadding" id="register">
+				@if ($errors->any())
+		<div class="alert alert-danger">
+			<ul>
+					@foreach ($errors->all() as $error)
+						<li>{{ $error }}</li>
+					@endforeach
+			</ul>
+		</div>
+	@endif
+				@if(Session::has('error'))
+							<p class="alert alert-danger">{{ Session::get('error') }}</p>
+							
+						@endif
+						@if(Session::has('success'))
+							<p class="alert alert-success">{{ Session::get('success') }}</p>
+						@endif
+				<form class="login-form" method="post" action="{{ url('add-assisted') }}">
+					{{ csrf_field() }}
+					<div class="row marginlogin">
+						<div class="input-fieldlarge col s12 center">
+							<h3 class="registerhead"> Intrested In Assisted Service?</h3>
+							<p class="para">(Leave your contact details below, for <b>Free</b> consultation.)</p>
+						</div>
+					</div>
+					<div class="row marginlogin">
+						<div class=" col s12">
+							<label for="username" class="center-align">Full Name</label>
+							<input name="fullname" placeholder="Enter full name" type="text"  value="">
+							
+						</div>
+						<div class=" col s12 ">
+							<label for="email" class="center-align">Email</label>
+							<input name="email" type="email" value="" placeholder="Example@email.com" >
+						</div>
+						<div class=" col s12 ">
+							<label for="contactnum" class="center-align">Phone No</label>
+							<input name="phonenumber" type="number" value="" placeholder="Phone number" >
+						</div>
+					</div>
+					<div class="row marginlogin">
+						<div class=" col s12">
+							<label for="password">Present Location</label>
+							<input name="presentlocation" placeholder="Present location" value="" type="text" >
+						</div>
+					</div>
+					<div class="row marginlogin">
+						<div class="input-fieldlarge col s12">
+							<button  type="submit" class="validate submitbtn" value=""><i class="fa fa-sign-in" aria-hidden="true"></i> &nbsp;SUBMIT</button>
+						</div>
+					</div>
+					<div class="msgdiv"></div>
+					<div style="clear: both"></div>
+				</form>
+			</section>
+      </section>
+
+		
+
+
 <!-- modal start -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="margin-top: 80px;">
 	<div class="modal-dialog" role="document">
@@ -1220,6 +1310,7 @@ We feel responsible in uniting the suitable candidates till the end. Kabool Hai 
 <link rel="stylesheet" href="{{ $user_assets }}/css/responsive.css" />
 
 <link rel="stylesheet" href="{{ $user_assets }}/css/hover-min.css" />
+<link rel="stylesheet" href="{{ $user_assets }}/css/assistes-1.css" />
 
 
 

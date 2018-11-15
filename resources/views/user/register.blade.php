@@ -9,6 +9,24 @@ input, textarea {
     border: 1px solid #dfdfdf;
 }
 
+#myTextarea {
+	padding-top: 3px;
+}
+
+.modal-dialog.modal-lg {
+	margin-top:64px;
+}
+
+.modal-title.tb-modal-title {
+	font-size: 18px;
+	margin-top: 4px;
+}
+
+.last-textarea {
+	height: 96px !important;
+	padding:2px 10px;
+}
+
 .sidebar .well {
 	box-shadow: 0 4px 1px 0 rgba(0, 0, 0, 0.2), 0 6px 1px 0 rgba(0, 0, 0, 0.19) !important;
 }
@@ -201,33 +219,33 @@ label {
 <div class="form-group">
 	@if($gender=='Male')
 	<span><input type="checkbox" name=""></span> <span id="1stp">I belong to an upper middle class family. I am a graduate from a reputed institution and do an executive level job at an organization. I am capable enough to support my family. I have strong moral, ethical values and beliefs. I am yet a modern thinker but uphold Islamic values and traditions of ancestors. I am an extrovert and like to spend time with people and enjoy outdoor activities.</span><a  href="javascript:;" data-dismiss="modal" onclick="myFunction('1stp')" style="font-size: 20px;"> Add </a>
-<br><br>
+<br><hr>
 	<span><input type="checkbox" name=""></span><span id="2ndp"> I belong to a middle class family and whatever I am today is due to my hard work and dedication. I am not a very outgoing person and enjoy spending time with my family and friends. I have a good academic background which earned me a respected job. I can afford to have my own family and give a respectable living. I believe in following Islamic principles and a practicing Muslim.</span> <a  href="javascript:;" data-dismiss="modal" onclick="myFunction('2ndp')" style="font-size: 20px;"> Add</a>
 
-	<br><br>
+	<br><hr>
 	<span><input type="checkbox" name=""></span><span id="3rd"> I belong to a religious family background where everything is done according to Islamic principles and practices. I also ardently follow Islamic way of life. I am well-educated and sensible person. I like spending time with my family and friends. I enjoy life and the blessings of Allah. I believe in giving due space and rights to the partner.</span><a  href="javascript:;" data-dismiss="modal" onclick="myFunction('3rd')" style="font-size: 20px;"> Add </a></p>
 
-	<br><br>
+	<br><hr>
 	<span><input type="checkbox" name=""></span><span id="4rthp"> I am an open-mined, smart and cultured person. I completed my graduation from. I am very outgoing and have a modern mind set but Islamic values are kept in consideration. I enjoy humor, like travelling, reading, music etc. I am a homely and warm person full of life.</span><a  href="javascript:;" data-dismiss="modal" onclick="myFunction('4rthp')" style="font-size: 20px;"> Add </a></p>
-	<br><br>
+	<br><hr>
 	<span><input type="checkbox" name=""></span><span id="fithp"> I am a simple and God fearing person belonging to a middle class family. I am trustworthy and kind hearted who believe in the motto, ‘Live and Let Live’. I am doing a job in corporate industry and have a handsome salary which means I can easily afford a good living. I am an optimistic and fun loving so expect to have plenty of fun and enjoyment with me.</span><a  href="javascript:;" data-dismiss="modal" onclick="myFunction('fithp')" style="font-size: 20px;"> Add </a></p>
-	<br><br>
+	<br><hr>
 	<span><input type="checkbox" name=""></span><span id="sixp"> I am self-motivated, ambitious and hard-working person who believe in achieving the goals in life through own hard-work and dedication. I know how to balance my personal and professional life. I am confident about starting a family and completion of my deen as a Muslim. I like arranging family get together, attending parties, reading and watching movies. </span><a  href="javascript:;" data-dismiss="modal" onclick="myFunction('sixp')" style="font-size: 20px;"> Add </a></p>
-	<br><br>
+	<br><hr>
 	 <span><input type="checkbox" name=""></span><span id="7p"> I am warm and caring person who have a very close bond with the family and friends around. I am very good at keeping secrets that is why everyone trust me and confide with me for their secrets. I like to solve problems of people around me which gives me satisfaction and happiness. I have a good job with a decent salary to support my family. I like singing, reading, travelling and cooking.</span><a  href="javascript:;" data-dismiss="modal" onclick="myFunction('7p')" style="font-size: 20px;"> Add </a>
 
-	<br><br>
+	<br><hr>
 	<span><input type="checkbox" name=""></span><span id="8p"> I am a clever, intelligent and sharp witted person who is good at judging people. I belong to a religious yet modern Muslim family who are completely aware about girl’s right to marriage. I have completed my studies from a well-known educational institute and want to pursue my professional career. I am currently doing a job at an organization and I look forward to continue it after my marriage. I like to cook, read and do gardening in my spare time. I also enjoy spending time with my friends and family.</span><a  href="javascript:;" data-dismiss="modal" onclick="myFunction('8p')" style="font-size: 20px;"> Add </a>
 
-	<br><br>
+	<br><hr>
 	<span><input type="checkbox" name=""></span><span id="9p"> I am an accomplished and well-educated girl who knows how to keep the balance between home and professional life. I am loving, caring and outgoing person. My family has given me strong ethical and moral values which have made me strong and religiously firm in my beliefs. I believe that I am going to be a compassionate and inspiring life partner. My hobbies are enjoying with friends, watching movies, reading books etc</span>.<a  href="javascript:;" data-dismiss="modal" onclick="myFunction('9p')" style="font-size: 20px;"> Add </a>
 	@else
 	 <span><input type="checkbox" name=""></span> <span id="f1p"> I am a girl who is honest, caring and loving. I have completed my studies but preferred to stay at home to learn household skills and provide comfort to my family. My family is a source of courage and inspiration to me. It has given me strong family and religious values and ethics. I firmly believe in following the righteous path Allah has shown us. I am looking forward to start my family with some family oriented and religious person. I love cooking, gardening, sewing and other household stuff.</span><a  href="javascript:;" data-dismiss="modal" onclick="myFunction('f1p')" style="font-size: 20px;"> Add</a>
-	<br><br>
+	<br><hr>
 	 <span><input type="checkbox" name=""></span> <span id="f2p"> I am an easy going and caring person who do not lose hope with the downs in one’s life. I belong to an upper-middle class Muslim family. It is a source of strength and confidence for me. I have pursued my higher education and look forward to do a respectable job after completion of my studies. I am a spiritual person and have an inclination towards learning more about Quran and Sunnah. I like participating in intellectual and religious discussions.</span><a id="" href="javascript:;" data-dismiss="modal" onclick="myFunction('f2p')" style="font-size: 20px;"> Add</a>
-	<br><br>
+	<br><hr>
 	<span><input type="checkbox" name=""><span id="f3p"> I have a modern outlook on life but I believe in traditional values such as respect for parents and helping others in need. I am willing to change my opinions if you can convince me and you should be open-minded about your opinions as well. I travel occasionally and I am hoping to find someone who will be available to spend time with me. I prefer a teeto taler. Smoking is also a strict no-no.</span><a  href="javascript:;" data-dismiss="modal" onclick="myFunction('f3p')" style="font-size: 20px;"> Add</a>
-	<br><br>
+	<br><hr>
 	 <span><input type="checkbox" name=""></span> <span id="f4p"> My job has made me a patient man and improved my negotiation skills! My job also keeps me on my toes, as I am always trying to learn new skills to keep pace with the changing technology landscape. I especially value humour, ability to laugh at yourself, being able to communicate, respect for culture, staying healthy, and the freedom to think out of the box.</span><a  href="javascript:;" data-dismiss="modal" onclick="myFunction('f4p')" style="font-size: 20px;"> Add </a>
 	@endif
 </div>

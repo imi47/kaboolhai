@@ -9,6 +9,10 @@
     overflow:unset !important;
   }
 
+  .modal {
+    top:70px;
+  }
+
   .form_error {
     line-height: 12px;
     margin-top:-5px;
@@ -112,6 +116,10 @@ input, textarea, select {
   @media (max-width:530px) {
     .form-area {
       position:relative;
+    }
+
+    .modal h1 {
+      font-size: 18px;
     }
   }
 
@@ -1151,7 +1159,7 @@ background-size: 150px 150px;
 <script src="{{ $user_assets }}/js/custom2.js"></script>
 <script src="{{ $user_assets }}/js/register.js"></script>
 <link rel="stylesheet" href="{{ $user_assets }}/css/register.css" />
-</script>
+
  <script type="text/javascript">
  	$(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();   

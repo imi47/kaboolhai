@@ -24,6 +24,10 @@ body::-webkit-scrollbar-thumb, body *::-webkit-scrollbar-thumb
   color-stop(.6,#B88FF3))
 }
 
+.card {
+    margin-bottom:17px !important;
+}
+
 #nav-wrapper .navbar {
     height:50px !important;
     padding:0;
