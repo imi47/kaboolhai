@@ -952,10 +952,8 @@ footer .fa-search {
     .remove-top-margin:last-child {
      margin-top:13px;
   } */
-  .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
-    width:500px !important;
-  }
-  @media (max-width: 812px) {
+
+  @media (max-width: 813px) {
     .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
     position: fixed !important;
     left:0 !important;
