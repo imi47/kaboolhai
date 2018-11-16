@@ -880,6 +880,13 @@ footer .fa-search {
       }
   }
 
+  /* @media (max-width:812px) {
+    .icon-dropdown {
+      position:absolute !important;
+      left: 0 !important;
+    }
+  } */
+
     .dropdown-menu li a {
       height: unset !important;
   }
@@ -948,9 +955,10 @@ footer .fa-search {
   .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
     width:500px !important;
   }
-  @media (max-width: 727px) {
+  @media (max-width: 812px) {
     .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
     position: fixed !important;
+    left:0 !important;
   }
 }
 @media (max-width:515px) {

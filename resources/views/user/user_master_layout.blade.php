@@ -22,7 +22,9 @@
 
 	<style>
 
-		
+		.our-latest-blog {
+			margin-top:50px;
+		}
 
 		.sticky-nav {
 			top:-11px !important;
