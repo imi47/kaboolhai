@@ -90,6 +90,8 @@ public function manage_profile()
 		 $user->loking_a_income=$request->loking_a_income;
 		
 		$user->save();
+
+		Session::put('success', 'update your profile successfully');
 		return back();
 	}
 
@@ -102,6 +104,7 @@ public function manage_profile()
 		$user->native_city_id=$request->native_city_id;
 		$user->convenient_time=$request->convenient_time;
 		$user->save();
+		Session::put('success', 'update your profile successfully');
 		return back();
 	}
 	public function family_info(Request $request)
@@ -123,6 +126,7 @@ public function manage_profile()
 		$user->elder_sister=$request->elder_sister;
 		$user->younger_sister=$request->younger_sister;
 		$user->save();
+		Session::put('success', 'update your profile successfully');
 		return back();
 		
 	}
@@ -172,6 +176,7 @@ public function manage_profile()
 		  	$add_other_language->save();
 		   }
 		}
+		Session::put('success', 'update your profile successfully');
 		return back();
 	}
 
@@ -184,6 +189,7 @@ public function manage_profile()
 		$user->thelisimia=$request->thelisimia;
 		$user->body_type=$request->body_type;
 		$user->save();
+		Session::put('success', 'update your profile successfully');
 		return back();
 	}
 
@@ -197,6 +203,7 @@ public function manage_profile()
 		$user->occupation_detail=$request->occupation_detail;
 		$user->a_income=$request->a_income;
 		$user->save();
+		Session::put('success', 'update your profile successfully');
 		return back();
 	}
 
@@ -209,6 +216,7 @@ public function manage_profile()
 		$user->physical_status=$request->physical_status;
 		$user->skin_color=$request->skin_color;
 		$user->save();
+		Session::put('success', 'update your profile successfully');
 		return back();
 	}
 
@@ -223,6 +231,7 @@ public function manage_profile()
 		$user->attend_religious_service=$request->attend_religious_service;
 		$user->ethnic_type=$request->ethnic_type;
 		$user->save();
+		Session::put('success', 'update your profile successfully');
 		return back();
 	}
 
@@ -304,6 +313,7 @@ public function manage_profile()
 			$user->month=$request->month;
 			$user->year=$request->year;
 			$user->save();
+			Session::put('success', 'update your profile successfully');
 			return back();
 		}
 	}
@@ -328,6 +338,7 @@ public function loking_aperance_info(Request $request)
 		  	$hijab_time->save();
 		   }
 		}
+		Session::put('success', 'update your profile successfully');
 		return back();
 }
 	public function basic_info_loking(Request $request)
@@ -371,6 +382,7 @@ public function loking_aperance_info(Request $request)
 		  	$loking_other_language->save();
 		   }
 		}
+		Session::put('success', 'update your profile successfully');
 		return back();
 	}
 
@@ -559,7 +571,7 @@ public function loking_aperance_info(Request $request)
 		  	$child_count->save();
 		   }
 		}
-
+        Session::put('success', 'update your profile successfully');
 		return back();
 		   
 	}
@@ -582,6 +594,7 @@ public function loking_aperance_info(Request $request)
 		  	$value->save();
 		   }
 		}
+		Session::put('success', 'update your profile successfully');
 		return back();
 	}
 	public function edit_filed(Request $request)
@@ -621,6 +634,7 @@ public function loking_aperance_info(Request $request)
 		
 
 		$user->save();
+		Session::put('success', 'update your profile successfully');
 		return back();	
 	}
 

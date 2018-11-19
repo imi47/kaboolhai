@@ -411,12 +411,12 @@ public function divorcee()
     $delete=SaveSearch::where('save_id',$id)->delete();
     if($delete)
     {
-      Session::flash('success', 'Delete record!'); 
+      Session::put('success', 'Delete record!'); 
      return back(); 
     }
     else
     {
-      Session::flash('error', 'Invalid input!'); 
+      Session::put('error', 'Invalid input!'); 
      return back();
     }
 
@@ -434,7 +434,7 @@ public function divorcee()
       
       $check->link=$result->link;
       $check->save();
-     Session::flash('success', 'update Save Search'); 
+     Session::put('success', 'update Save Search'); 
      return back(); 
     }
     else
@@ -442,12 +442,12 @@ public function divorcee()
     $search->save();
     if($search)
     {
-    Session::flash('success', 'Save Search'); 
+    Session::put('success', 'Save Search'); 
     return back();
     }
     else
     {
-     Session::flash('error', 'invalid input!'); 
+     Session::put('error', 'invalid input!'); 
     return back(); 
     }
     }
@@ -1149,13 +1149,13 @@ public function confirm_friend($friend_id)
           	{
           		$passwords=sha1($request->password);
           		$pass_change=User::where('password',sha1($old_password))->update(['password' => $passwords]);
-          		Session::flash('success', 'Your password has been changed!'); 
+          		Session::put('success', 'Your password has been changed!'); 
                   return back();
           	}
           	else
           	{
 
-          		Session::flash('error', 'Your old password is not match please try again!'); 
+          		Session::put('error', 'Your old password is not match please try again!'); 
                   return back();
           	}
 		}
@@ -1163,6 +1163,7 @@ public function confirm_friend($friend_id)
 	}
 	public function photo_change(Request $request)
 	{
+
     $messages = array(
        
           'image_name.required' => 'Please select image',
@@ -1202,20 +1203,20 @@ public function confirm_friend($friend_id)
            	    
            	    if(!empty($user))
            	    {
-           	      Session::flash('success', 'Your photo uploded successfully'); 
+           	      Session::put('success', 'Your photo uploded successfully'); 
            	    
 		          return back();
 		        }
 		        else
 		        {
-		        	Session::flash('error', 'invalid input!'); 
+		        	Session::put('error', 'invalid input!'); 
            	    
 		          return back();
 		        }
 		    }
 		    else
 		    {
-		    	Session::flash('error', 'path not exist!'); 
+		    	Session::put('error', 'path not exist!'); 
            	    
 		          return back();
 		    }
@@ -1243,20 +1244,20 @@ public function confirm_friend($friend_id)
            	    
            	    if(!empty($user))
            	    {
-           	      Session::flash('success', 'Your photo uploded successfully'); 
+           	      Session::put('success', 'Your photo uploded successfully'); 
            	    
 		          return back();
 		        }
 		        else
 		        {
-		        	Session::flash('error', 'invalid input!'); 
+		        	Session::put('error', 'invalid input!'); 
            	    
 		          return back();
 		        }
 		    }
 		    else
 		    {
-		    	Session::flash('error', 'path not exist!'); 
+		    	Session::put('error', 'path not exist!'); 
            	    
 		          return back();
 		    }
@@ -1266,8 +1267,8 @@ public function confirm_friend($friend_id)
 		  }
 		  else
 		    {
-		    	Session::flash('error', 'Please select the image!'); 
-           	    
+		    	Session::put('error', 'Please select the image!'); 
+           	    dd(Session::get('error'));
 		          return back();
 		    }
 		}
@@ -1313,7 +1314,7 @@ public function confirm_friend($friend_id)
 			$user->save();
 			if(!empty($user))
 			{
-				Session::flash('success', 'Your settings has been saved!'); 
+				Session::put('success', 'Your settings has been saved!'); 
                   return back();
 			}
 			else
@@ -1363,7 +1364,7 @@ public function reject_photo_request($request_id)
 	if($photo_permission)
 	{
 
-	Session::flash('success', 'Reject photo permission request!'); 
+	Session::put('success', 'Reject photo permission request!'); 
     return back();
 	}
 	else
@@ -1393,7 +1394,7 @@ public function accept_photo_request($request_id)
 	if($photo_permission)
 	{
 
-	Session::flash('success', 'Accept photo permission request!'); 
+	Session::put('success', 'Accept photo permission request!'); 
     return back();
 	}
 	else
@@ -2280,7 +2281,8 @@ public function make_profile_image($image_id)
 
 	 	if($photo)
 	 	{
-	 		Session::flash('success', 'Your profile image has been change !'); 
+      Session::put('success', 'Your profile image has been change !');
+	 		// Session::flash('success', 'Your profile image has been change !'); 
 
 			return back();
 	 	}
@@ -2310,8 +2312,10 @@ public function make_profile_image($image_id)
 				$notification->save();
 		if($favourite_list)
 		{
-
-			Session::flash('success', 'Remove from Favourite !'); 
+         
+         
+          Session::put('success', 'Removed from favourite list!'); 
+			// Session::flash('success1', 'Remove from Favourite !'); 
 
 			return back();
 		}
@@ -2334,7 +2338,7 @@ public function make_profile_image($image_id)
 			$active_user=BlockUser::where('block_user_id',$favourit_id)->where('user_id',$user_id)->first();
 		if($active_user)
 		{
-			Session::flash('error', 'Kindly unblock this user before add favourite list !'); 
+			Session::put('success', 'Kindly unblock before add favourite list !'); 
 
 			return back();
 		}
@@ -2356,7 +2360,7 @@ public function make_profile_image($image_id)
 		{
 
 			
-			Session::flash('success', 'Add to favourite!'); 
+			Session::put('success', 'Added to favourite list!'); 
 
 			return back();
 		}
@@ -2379,7 +2383,8 @@ public function make_profile_image($image_id)
 		$active_user=BlockUser::where('block_user_id',$permission_id)->where('user_id',$user_id)->first();
 		if($active_user)
 		{
-			Session::flash('error', 'Kindly unblock this user before send photo permission request !'); 
+      Session::put('success', 'Kindly unblock this user before send photo permission request !');
+			// Session::flash('error', 'Kindly unblock this user before send photo permission request !'); 
 
 			return back();
 		}
@@ -2417,14 +2422,14 @@ public function make_profile_image($image_id)
 		{
 
 			
-			Session::flash('success', 'Your request has been submited successfully !'); 
+			\Session::put('success', 'send photo permission request!'); 
 
 			return back();
 		}
 	 }
 		else
 		{
-			Session::flash('error', 'invalid!'); 
+			\Session::flash('error', 'invalid!'); 
 
 			return back();
 		}
@@ -2689,7 +2694,7 @@ public function make_profile_image($image_id)
 		$ActivityLog->save();
 		if($active_user)
 		{
-			Session::flash('success', 'Active this user !'); 
+			Session::put('success', 'Is activated!'); 
            	    
 		          return back();
 		  
@@ -2714,7 +2719,7 @@ public function make_profile_image($image_id)
 			$active_user=BlockUser::where('block_user_id',$inviteprofile_user_id)->where('user_id',$user_id)->first();
 		if($active_user)
 		{
-			Session::flash('error', 'Kindly unblock this user before invite view profile !'); 
+			Session::flash('error', 'Kindly unblock before invite view profile !'); 
 
 			return back();
 		}
@@ -2734,7 +2739,7 @@ public function make_profile_image($image_id)
 		$ActivityLog->save();
 		if($InviteViewProfile)
 		{
-			Session::flash('success', 'Your request invite view my profile !'); 
+			Session::put('success', 'send request invite view my profile !'); 
 
 			return back();
 		}
@@ -2853,9 +2858,9 @@ public function make_profile_image($image_id)
 		$ActivityLog->save();
 		if($block)
 		{
-			Session::flash('success', 'Block this user !'); 
+			Session::put('success', 'is blocked!'); 
 
-			return back();
+			return redirect('blocked-list');
 		}
 	 }
 		else
@@ -2894,49 +2899,56 @@ Public function remove_user($user_id,$url)
     if($url=='Friend user list')
     {
       $friend=UserRequest::where('requested_user_id',Session::get('user_id'))->where('user_id',$user_id)->delete();
+
+       Session::put('success', 'removed from friend user list this user');
      
     }
     elseif ($url=='Favourite user list') 
     {
       FavouriteUser::where('favourite_user_id',$user_id)->where('user_id',Session::get('user_id'))->delete();
+      Session::put('success', 'removed from Favourite user list this user');
     }
      elseif ($url=='Block user list') 
     {
       BlockUser::where('block_user_id',$user_id)->where('user_id',Session::get('user_id'))->delete();
+      Session::put('success', 'removed from Block user list this user');
     }
     elseif ($url=='Hide user list') 
     {
       HidePrifile::where('hide_user_id',$user_id)->where('user_id',Session::get('user_id'))->delete();
+      Session::put('success', 'removed from Hide user list this user');
     }
      elseif ($url=='I view profile list') 
     {
       MyProfileViewed::where('myprofile_user_id',$user_id)->where('user_id',Session::get('user_id'))->delete();
+      Session::put('success', 'removed from I view profile user list this user');
     }
 
     elseif ($url=='View send request') 
     {
       UserRequest::where('requested_user_id',$user_id)->where('user_id',Session::get('user_id'))->delete();
+      Session::put('success', 'removed from View send request user list this user');
     }
 
 
     elseif ($url=='Invite view profile user list') 
     {
       InviteViewProfile::where('inviteprofile_user_id',$user_id)->where('user_id',Session::get('user_id'))->delete();
+      Session::put('success', 'removed from Invite view profile user list this user');
     }
 
      elseif ($url=='Photo Permission List') 
     {
       PhotoPermission::where('permission_user_id',$user_id)->where('user_id',Session::get('user_id'))->delete();
+      Session::put('success', 'removed from Photo Permission user list this user');
     }
 
        elseif ($url=='Friend Request reject list') 
     {
       DeleteRequest::where('delete_user_id',$user_id)->where('user_id',Session::get('user_id'))->delete();
+      Session::put('success', 'removed from Friend Request reject user list this user');
     }
   
-
-    
-    
     return back();
 }
 public function friend_delete_list()
@@ -3006,11 +3018,11 @@ public function iprofileview_list()
 		}
 		if($permissions)
 			{
-				 Session::flash('success', 'Your photo permission setting complete'); 
+				 Session::put('success', 'Your photo permission setting complete'); 
 		          return back();
 			}
 			else
-				Session::flash('error', 'invalid input'); 
+				Session::put('error', 'invalid input'); 
            	    
 		          return back();
 
@@ -3086,20 +3098,20 @@ public function iprofileview_list()
            	    
            	    if(!empty($user))
            	    {
-           	      Session::flash('success', 'Your photo uploded successfully'); 
+           	      Session::put('success', 'Your photo uploded successfully'); 
            	    
 		          return back();
 		        }
 		        else
 		        {
-		        	Session::flash('error', 'invalid input!'); 
+		        	Session::put('error', 'invalid input!'); 
            	    
 		          return back();
 		        }
 		    }
 		    else
 		    {
-		    	Session::flash('error', 'path not exist!'); 
+		    	Session::put('error', 'path not exist!'); 
            	    
 		          return back();
 		    }
@@ -3109,14 +3121,14 @@ public function iprofileview_list()
 		  }
 		  else
 		    {
-		    	Session::flash('error', 'Please select the image!'); 
+		    	Session::put('error', 'Please select the image!'); 
            	    
 		          return back();
 		    }
 		}
 		    else
 		    {
-		    	Session::flash('error', 'Not allowed more then 20 images!'); 
+		    	Session::put('error', 'Not allowed more then 20 images!'); 
            	    
 		          return back();	
 		    }

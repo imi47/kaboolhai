@@ -14,6 +14,7 @@
   <link rel="stylesheet" type="text/css" href="{{ $user_assets }}/css/jquery.emojipicker.css">
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
   <script type="text/javascript" src="{{ $user_assets }}/js/jquery.emojipicker.js"></script>
+  <script type="text/javascript" src="{{ $user_assets }}/js/bootstrap-notify.min.js"></script>
 
   <!-- Emoji Data -->
   <link rel="stylesheet" type="text/css" href="{{ $user_assets }}/css/jquery.emojipicker.tw.css">
@@ -1385,13 +1386,100 @@ footer .fa-search {
             </div>
             </ul>
           </div>
-          {{-- @if(Session::has('error'))
-          <p class="alert alert-danger">{{ Session::get('error') }}</p>
-          @endif
-          @if(Session::has('success'))
-          <p class="alert alert-success">{{ Session::get('success') }}</p>
-          @endif --}}
-          <!-- end main menu -->
+                 @if(Session::get('success'))
+
+                <script type="text/javascript">
+           
+          $.notify({
+
+
+  title: '<strong> {{ Session::get('user_name') }}</strong>',
+  message: '{{ Session::get('success') }}',
+  
+},{
+  // settings
+
+  element: 'body',
+  position: null,
+  type: "info",
+  allow_dismiss: true,
+  newest_on_top: false,
+  showProgressbar: false,
+  placement: {
+    from: "top",
+    align: "right"
+  },
+  offset: 20,
+  spacing: 10,
+  z_index: 99999999,
+  delay: 5000,
+  timer: 1000,
+  
+  mouse_over: null,
+  animate: {
+    enter: 'animated fadeInDown',
+    exit: 'animated fadeOutUp'
+  },
+  
+  
+});
+
+                </script>
+                     @php
+                     Session::forget('success');
+                     
+                       @endphp
+                @endif
+
+
+
+
+
+                @if(Session::get('error'))
+
+                <script type="text/javascript">
+           
+          $.notify({
+
+
+  title: '<strong>{{ Session::get('user_name') }}</strong>',
+  message: '{{ Session::get('error') }}',
+  
+},{
+  // settings
+
+  element: 'body',
+  position: null,
+  type: "danger",
+  allow_dismiss: true,
+  newest_on_top: false,
+  showProgressbar: false,
+  placement: {
+    from: "top",
+    align: "right"
+  },
+  offset: 20,
+  spacing: 10,
+  z_index: 99999999,
+  delay: 5000,
+  timer: 1000,
+  
+  mouse_over: null,
+  animate: {
+    enter: 'animated fadeInDown',
+    exit: 'animated fadeOutUp'
+  },
+  
+  
+});
+
+                </script>
+                     @php
+                    
+                      Session::forget('error');
+                       @endphp
+                @endif
+     <!-- end main menu -->
         </div>
       </div>
 
