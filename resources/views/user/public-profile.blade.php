@@ -293,12 +293,12 @@ $('.owl-carousel').owlCarousel({
 
 
 		 <div class="col-md-9 content">
-		 			@if(Session::has('error'))
+		 			<!-- @if(Session::has('error'))
                     <p class="alert alert-danger">{{ Session::get('error') }}</p>
                 @endif
                 @if(Session::has('success'))
                     <p class="alert alert-success">{{ Session::get('success') }}</p>
-                @endif
+                @endif -->
 		  <div class="well container1" style="background-color: #ffffff;border-radius:10px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
 			    <div class="headcontain">
 				  <div>

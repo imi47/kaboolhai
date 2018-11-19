@@ -1685,7 +1685,7 @@ footer .fa-search {
         box-shadow: 0 6px 12px rgba(0,0,0,.175) !important;
   }
   .sticky-nav .navbar-nav > li > .dropdown-menu {
-    /* width:500px !important; */
+    width:500px !important;
     /* position:absolute !important;
     right:200px !important; */
   }
