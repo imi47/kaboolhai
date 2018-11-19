@@ -135,9 +135,9 @@
 				 margin-bottom:40px;
 			 }
 
-			 /* .somelinks {
+			 .somelinks {
 				 margin-left:-9px;
-			 } */
+			 }
 
 			 .photo3 {
 				 margin: 8px auto 0 auto;
@@ -301,12 +301,12 @@ $('.owl-carousel').owlCarousel({
                 @endif -->
 		  <div class="well container1" style="background-color: #ffffff;border-radius:10px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
 			    <div class="headcontain">
-				  <div>
+				  <div class="row">
            @if(count($block_user))
            <p class="alert alert-danger text-center">Sory you are block</p>
             @else
 
-					<div class='image-section'>
+					<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 						<div class="imgofuser">
                @if($user_data->id==Session::get('user_id'))
                @if(count($myphoto))
@@ -393,7 +393,7 @@ $('.owl-carousel').owlCarousel({
 						</div>	
 					</div>
 
-					<div class="contacts_detail_parent">
+					<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 contacts_detail_parent">
 						<div class="contacts_detail">
 							<p class="t" style="font-size: 18px;"><strong>{{strtoupper($user_data->user_name)}}</strong></p>
 							<p class="t" style="font-weight:bold;">{{ $user_data->word_1 }}, {{ $user_data->word_2 }}, {{ $user_data->word_3 }}</p>
@@ -431,7 +431,7 @@ $('.owl-carousel').owlCarousel({
 						</div>		
 					</div>
 					@if($user_data->id<>Session::get('user_id'))
-					<div class='links-container'>
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 						<div class="somelinks">
 							<ul class="list_somebtn">
 								<li class="agea"><a href="{{ url('more-alike',$user_data->id) }}"><span><img src="{{ $user_assets }}/more-alike.png" alt="" class="icon_size"></span> <span class="linkT">More alike</span></a></li>
@@ -479,7 +479,7 @@ $('.owl-carousel').owlCarousel({
 						</div>
 					</div>
           @else
-            <div class='links-container'>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <div class="somelinks">
               <ul class="list_somebtn">
                
