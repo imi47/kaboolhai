@@ -46,16 +46,16 @@
       top:60px !important;
   }
 
-	.nav-white.sticky-nav .navbar-nav li a, .nav-white.sticky-nav .navbar-nav li a {
-		margin-top:2px;
-	}
-
 	#username-dropdown-toggle .dropdown-toggle {
 		margin-top:1px;
 	}
 
 	.humburger {
     margin-top: 10px !important;
+	}
+
+	.nav.navbar-nav {
+		margin-top:4px;
 	}
 	
 }
@@ -65,12 +65,12 @@
       top:52px !important;
   }
 
-	.nav-white.sticky-nav .navbar-nav li a, .nav-white.sticky-nav .navbar-nav li a {
-    margin-top: 4px;
-	}
-
 	#username-dropdown-toggle .dropdown-toggle {
     margin-top: 5px;
+	}
+
+	#friends-dropdown, #messages-dropdown, #notifications-dropdown {
+    margin-top: 7px !important;
 	}
 }
 

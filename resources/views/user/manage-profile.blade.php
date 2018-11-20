@@ -133,6 +133,7 @@ input[type='checkbox'] {
 	top: 2550px;
 } */
 
+
 @media (min-width:991px) {
 	.nav.navbar-nav {
 	margin-right:0;
@@ -182,20 +183,23 @@ input[type='checkbox'] {
         display:inline-block
       }
     }
-
-@media (max-width:768px) {
-	.mp-bio-label {
-    width: auto;
-}
-
-	.mp-form-list li {
-		display:block;
-	}
 }
 
 @media (max-width:768px) {
 	#username-dropdown-toggle .dropdown-menu {
 		left:-64px !important;
+	}
+
+	.mp-bio-label {
+    width: auto;
+}
+
+	#username-dropdown-toggle {
+		margin-top: 10px !important;
+	}
+
+	.mp-form-list li {
+		display:block;
 	}
 }
 

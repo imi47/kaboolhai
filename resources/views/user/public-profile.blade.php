@@ -112,6 +112,10 @@
 			 margin-top:0 !important;
 		 }
 
+	.photo3 p {
+		margin-top:3px;
+	}
+
 		 @media (max-width:1125px) {
 			#btn a button {
 					width:180px !important;
@@ -135,12 +139,17 @@
 				 margin-bottom:40px;
 			 }
 
-			 .somelinks {
+			 /* .somelinks {
 				 margin-left:-9px;
-			 }
+			 } */
 
 			 .photo3 {
 				 margin: 8px auto 0 auto;
+				 width:100px;
+			 }
+
+			 .photo3 p {
+				 /* margin:2px auto; */
 			 }
 
 			 .sticky-nav .navbar-nav > li > .dropdown-menu {
@@ -149,19 +158,16 @@
 		 }
 
 		  @media (max-width:768px) {
-				/* .contacts_detail, .somelinks {
-					float:none;
-				 clear:both;
-				 text-align:center;
+				.contacts_detail, .somelinks {
 				 width:auto;
-				} */
+				}
 
 				.sticky-nav .navbar-nav > li > .dropdown-menu {
 					top:48px !important;
 				}
 
 				.contacts_detail_parent {
-					margin-top:20px;
+					margin-top:8px;
 				}
 
 				.row.padding-two.sm-text-center {
@@ -306,7 +312,7 @@ $('.owl-carousel').owlCarousel({
            <p class="alert alert-danger text-center">Sory you are block</p>
             @else
 
-					<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+					<div class="col-lg-3 col-md-3 col-sm-12 col-xs-5">
 						<div class="imgofuser">
                @if($user_data->id==Session::get('user_id'))
                @if(count($myphoto))
@@ -390,10 +396,18 @@ $('.owl-carousel').owlCarousel({
 							@endif
 							@endif
 
+							@if($confirm_friend)
+							<div class="form-inline" style='margin-top:10px;'>
+          
+							 <a class="btn btn-danger unfriend" title="Reject Friend request" href="{{ url('delete-request',$confirm_friend->user_id) }}" style="padding:3px 0 3px 3px; background-color:#f47e2a;">Unfriend <i class=" 
+              fa fa-close" style="text-decoration: none; color: #dc3545; font-size: 20px;"></i></a>
+              </div>
+							@endif
+
 						</div>	
 					</div>
 
-					<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 contacts_detail_parent">
+					<div class="col-lg-3 col-md-3 col-sm-6 col-xs-7 contacts_detail_parent">
 						<div class="contacts_detail">
 							<p class="t" style="font-size: 18px;"><strong>{{strtoupper($user_data->user_name)}}</strong></p>
 							<p class="t" style="font-weight:bold;">{{ $user_data->word_1 }}, {{ $user_data->word_2 }}, {{ $user_data->word_3 }}</p>
@@ -421,13 +435,7 @@ $('.owl-carousel').owlCarousel({
 							
 							
 							@endif
-							@if($confirm_friend)
-							<div style="margin:-26px; " class="form-inline">
-          
-							 <a class="btn btn-primary unfriend" title="Reject Friend request" href="{{ url('delete-request',$confirm_friend->user_id) }}" style="padding:5px; background-color:#d35400; margin: 33px 0px 0px 23px;">Unfriend <i class=" 
-              fa fa-close" style="text-decoration: none; color: red; font-size: 20px; margin-left: 10px;"></i></a>
-              </div>
-							@endif
+							
 						</div>		
 					</div>
 					@if($user_data->id<>Session::get('user_id'))

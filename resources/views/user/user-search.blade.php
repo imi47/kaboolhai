@@ -528,10 +528,6 @@ p.t
   }
 
   @media (max-width:768px) {
-    #friends-dropdown, #messages-dropdown, #notifications-dropdown {
-          margin-top:12px !important;
-          margin-bottom:-12px !important;
-      }
 
       .col-xs-6 {
         width:50% ;

@@ -58,46 +58,16 @@
 
   @media (max-width:991px) {
   
-  .nav>li>a {
+  /* .nav>li>a {
     font-size: smaller;
     padding: 0 7px;
     font-weight:700;
     margin-top:15px;
-  }
+  } */
 
   .searchcontainer button {
       margin-top:-56px !important;
       padding-top:15px;
-    }
-
-  #friends-dropdown, #messages-dropdown, #notifications-dropdown {
-          margin-top:11px !important;
-          margin-bottom:-11px !important;
-      }
-
-      #username-dropdown-toggle {
-        margin-top:-10px !important;
-      }
-
-      #username-dropdown-toggle .dropdown-toggle {
-        margin-top:9px;
-      }
-      .humburger {
-          margin-top:4px !important;
-    }
-
-    .nav-white.sticky-nav .navbar-nav li a:hover, .nav-white.sticky-nav .navbar-nav > .open > a.menudesign {
-      padding-bottom:0;
-    }
-
-    .icon-dropdown {
-      margin-top:-16px !important;
-    }
-
-    #menu-div .navbar-collapse.collapse {
-      float: right;
-      margin-top: 7px;
-      margin-bottom: -3px;
     }
 
     .nav-white.sticky-nav .navbar-nav li a:hover, .nav-white.sticky-nav .navbar-nav > .open > a.menudesign {
@@ -112,24 +82,6 @@
   }
 
   @media (max-width:768px) {
-    #friends-dropdown, #messages-dropdown, #notifications-dropdown {
-          margin-top:4px !important;
-          margin-bottom:-4px !important;
-      }
-
-      .humburger {
-        margin-top: 4px !important;
-      }
-
-      .nav-white.sticky-nav .navbar-nav li a, .nav-white.sticky-nav .navbar-nav li a {
-
-      margin-top: 9px;
-
-    }
-
-    #menu-div {
-      margin-bottom: -7px;
-    }
 
     footer section div div {
       text-align:center;

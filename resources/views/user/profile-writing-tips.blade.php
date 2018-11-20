@@ -38,18 +38,12 @@
         #username-dropdown-toggle {
           margin-top:2px !important;
         }
-        .humburger {
-            margin-top:14px !important;
-      }
 
       .searchcontainer button {
       margin-top:-56px !important;
       padding-top:15px;
       }
 
-      #username-dropdown-toggle {
-          margin-top:2px !important;
-        }
         .humburger {
             margin-top:14px !important;
       }
@@ -82,17 +76,10 @@
    }
 
    @media (max-width:768px) {
-     #friends-dropdown, #messages-dropdown, #notifications-dropdown {
+     /* #friends-dropdown, #messages-dropdown, #notifications-dropdown {
             margin-top:12px !important;
             margin-bottom:-12px !important;
-        }
-
-      #username-dropdown-toggle {
-        margin-top:-0px !important;
-      }
-      .humburger {
-          margin-top:8px !important;
-    }
+        } */
   }
 
   @media (min-width:991px) {

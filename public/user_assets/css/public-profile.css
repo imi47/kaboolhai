@@ -4,6 +4,7 @@ body
 	background-color: #e6e6e6;
 	padding: 0px;
 }
+
 .modal-backdrop {
 	position:unset;
  }
@@ -504,13 +505,23 @@ ul.in_box_brdr li:hover {
 }
 
 @media (max-width:991px) {
-	.cnt_lod_ph
-	{
-		margin-top:-5px !important; 
-	}
+
 }
 
 @media (max-width:768px) {
+	.currentuserimg {
+		width: 100px;
+		height: auto;
+	}
+
+	.contacts_detail_parent + div .somelinks {
+		text-align: center;
+	}
+
+	.contacts_detail_parent + div {
+		margin-top:20px;
+	}
+
 	.cnt_lod_ph
 	{
 		margin:auto;
@@ -520,11 +531,17 @@ ul.in_box_brdr li:hover {
 	a.unfriend {
 		margin-top:0 !important;
 	}
+
+	.somelinks
+	{
+		padding: 0;
+		margin-left:0;
+	}
 }
 
-@media (max-width:768px) and (min-width:641px) {
+/* @media (max-width:768px) and (min-width:641px) {
 	.list_somebtn {
 		margin-top:40px;
 	}
-}
+} */
 

@@ -43,9 +43,6 @@ tr.dosrch th a {
             margin-bottom:-21px !important;
         }
 
-        #username-dropdown-toggle {
-          margin-top:2px !important;
-        }
         .humburger {
             margin-top:14px !important;
       }
@@ -72,9 +69,6 @@ tr.dosrch th a {
         text-align:left !important;
       }
 
-      #username-dropdown-toggle {
-          margin-top:2px !important;
-        }
         .humburger {
             margin-top:14px !important;
       }

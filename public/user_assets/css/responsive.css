@@ -323,7 +323,9 @@
     .navbar-default .navbar-nav > .open > a:hover, 
     .navbar-default .navbar-nav > .open > a:focus, 
     .navbar-nav > li > a { border-bottom: 0 !important;}
-    .navbar-default .navbar-nav > li > a { color: #fff; display: block; height: 38px; line-height: 38px; padding: 0 0 0 15px; text-align: left; }
+    .navbar-default .navbar-nav > li > a { color: #fff; display: block; height: 38px; line-height: 38px;
+        /* padding: 0 0 0 15px; */
+        text-align: left; }
     .megamenu-right-icon { display: block !important; float: right; position: absolute !important; right: 0; top: 0; }
     .megamenu-right-icon:hover { background-color: transparent !important; }
 

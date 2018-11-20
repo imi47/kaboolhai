@@ -335,6 +335,13 @@ img{ max-width:100%;}
   width:131px;
 }
 
+
+@media (max-width:1360px) {
+  .navbar-form button {
+    right: -17px;
+  }
+}
+
 @media (max-width:900px) {
   .name-and-date {
     flex-wrap:wrap;

@@ -77,10 +77,6 @@
     #username-dropdown-toggle ul.dropdown-menu {
       top:55px !important;
     }
-
-    #username-dropdown-toggle {
-          margin-top:2px !important;
-        }
         .humburger {
             margin-top:14px !important;
       }
@@ -124,8 +120,7 @@
 
   @media (max-width:768px) {
     #friends-dropdown, #messages-dropdown, #notifications-dropdown {
-      margin-top:12px !important;
-      margin-bottom:-12px !important;
+      margin-top:18px !important;
     }
 
     .navbar-default .navbar-nav > li > a { 

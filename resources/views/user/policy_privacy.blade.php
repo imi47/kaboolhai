@@ -104,11 +104,6 @@
        padding-right: 14px !important;
     }
 
-    #username-dropdown-toggle .dropdown-toggle {
-      margin-top:3px;
-    }
-
-
     #username-dropdown-toggle a {
         display: inline-block !important;
         padding-top: -0 !important;

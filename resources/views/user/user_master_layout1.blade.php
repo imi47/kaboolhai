@@ -177,10 +177,6 @@ footer .fa-search {
       width:40px;
     }
 
-    #username-dropdown-toggle {
-
-    }
-
     #accordion, #username-dropdown-toggle a {
       font-weight:600;
     }
@@ -257,7 +253,6 @@ footer .fa-search {
     }
 
     /* wrapper in thie media query because these styles don't work below 992 */
-
     @media (min-width:992px) {
       .icon-dropdown li:last-child {
       position:fixed;
@@ -487,10 +482,6 @@ footer .fa-search {
     padding-top: 15px;
     padding-bottom: 15px;
   }
-
-  /* #ham2 {
-    display:block;
-  } */
 }
 
 
@@ -708,7 +699,6 @@ footer .fa-search {
       .humburger {
         padding:5px;
       }
-
     }
     
     label {
@@ -830,6 +820,16 @@ footer .fa-search {
     @media (max-width: 991px) {
       .navbar-nav .dropdown .dropdown-toggle {
         padding-right:14px !important;
+        padding-top:0 !important;
+        padding-bottom:0 !important;
+      }
+
+      .nav.navbar-nav {
+        margin-top:11px;
+      }
+
+      .search-dropdown-toggle {
+        top:12px;
       }
 
       #menu-div {
@@ -859,16 +859,12 @@ footer .fa-search {
         margin-top:0;
       }
 
-      .nav.navbar-nav .dropdown {
+      /* .nav.navbar-nav .dropdown {
         margin-top: 9px !important;
-      }
+      } */
 
       .nav.navbar-nav .dropdown a.dropdown-toggle {
         line-height: 41px !important;
-      }
-
-      #username-dropdown-toggle ul.dropdown-menu {
-        top:47px !important;
       }
 
       #message_count {
@@ -880,13 +876,6 @@ footer .fa-search {
         top: 0px;
       }
   }
-
-  /* @media (max-width:812px) {
-    .icon-dropdown {
-      position:absolute !important;
-      left: 0 !important;
-    }
-  } */
 
     .dropdown-menu li a {
       height: unset !important;
@@ -1777,9 +1766,6 @@ footer .fa-search {
         margin-top:70px  !important;
       } */
 
-      .nav.navbar-nav .dropdown {
-        margin-top: 7px !important;
-      }
       .navbar-form {
         margin-right: 14px !important;
       }

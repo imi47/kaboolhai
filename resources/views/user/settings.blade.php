@@ -35,10 +35,6 @@ footer .footer-middle {
   margin-right:10px;
 }
 
-.navbar-form {
-  margin-top:18px;
-}
-
 .navbar-form button .glyphicon {
     top: 1px;
   }
@@ -46,16 +42,6 @@ footer .footer-middle {
   .navbar-form button {
     right: -4px;
     padding: 6px 11px !important;
-}
-
-.accordion-menu {
-  margin-top:-8px;
-}
-
-
-
-#accordion.nav.navbar-nav {
-  margin-top:20px;
 }
 
 .panel.with-nav-tabs.panel-default {
@@ -122,27 +108,6 @@ footer .footer-middle {
     background-color: #555;
 }
 
-.humburger {
-  margin-right:10px;
-}
-
-.nav-white.sticky-nav .navbar-nav li a {
-  margin-top:4px;
-}
-
-.nav-white.sticky-nav .navbar-nav li a span {
-  margin-top:-1px;
-}
-
-#friends-dropdown, #messages-dropdown, #notifications-dropdown {
-    margin-top:13px !important;
-    margin-bottom:-13px !important;
-  }
-
-.icon-dropdown {
-  margin-top:-15px !important;
-}
-
 .go_more {
   margin-top:-22px !important;
 }
@@ -150,31 +115,9 @@ footer .footer-middle {
       font-size:14px;
     }
 
-  #friends-dropdown a, #messages-dropdown a, #notifications-dropdown a{
-    padding:10px;
-  }
-
-  #username-dropdown-toggle {
-    margin-top:21px !important;
-  }
-  .humburger {
-      margin-top:14px !important;
-}
-
 .nav li.dropdown {
   width:auto !important;
 }
-
-@media (max-width:991px) {
-        #username-dropdown-toggle {
-          margin-top:9px !important;
-        }
-      
-
-    .nav-white.sticky-nav .navbar-nav li a {
-      margin-top: 0px;
-    }
-   }
 
    @media (min-width:991px) {
    .searchcontainer button {
@@ -188,25 +131,14 @@ footer .footer-middle {
       right: -17px;
     }
 
-    .search-dropdown-toggle {
-     top: 26px;
+    .nav.navbar-nav .dropdown a.dropdown-toggle {
+      padding-top:15px !important;
     }
   }
-
-  @media (min-width: 768px) {
-  .navbar-nav>li>a {
-      padding-top: 0;
-      padding-bottom: 0;
-  }
-}
 
  @media (max-width: 685px) {
   .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
     top: 55px !important;
-  }
-
-  #username-dropdown-toggle .dropdown-menu {
-    top: 47px !important;
   }
 
   tr.dosrch th a {
@@ -760,8 +692,6 @@ footer .footer-middle {
 <link rel="stylesheet" href="{{ $user_assets }}/css/owl.carousels.css" />
 <link rel="stylesheet" href="{{ $user_assets }}/css/owl.carousel.css" />
 
-<!-- hamburger menu  -->
-<link rel="stylesheet" href="{{ $user_assets }}/css/menu-hamburger.css" />
 <!-- common -->
 <link rel="stylesheet" href="{{ $user_assets }}/css/style.css" />
   
