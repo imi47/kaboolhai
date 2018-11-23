@@ -1,5 +1,6 @@
 @extends('user/user_master_layout1') 
 <style>
+
 @media (min-width:320px)
 {
   .mail_put
@@ -9,6 +10,22 @@
 }
 </style>
 @section('data') 
+
+<style>
+.navbar-form button {
+    padding: 6px 11px !important;
+}
+
+.navbar-form button .glyphicon {
+    top: 1px;
+}
+
+.searchcontainer button {
+    padding: 13px 16px;
+    margin-top: -56px;
+    margin-right: 0px;
+}
+</style>
 
 <div class="container">
   <div id="wait" style="display: none;"></div>

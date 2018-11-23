@@ -54,29 +54,6 @@
     width:40px;
   }
 
-   @media (max-width:991px) {
-    .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
-      top:55px !important;
-    }
-  }
-
-  @media (max-width:768px) {
-    .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
-      top:47px !important;
-    }
-  }
-
-  @media (max-width: 685px) {
-    .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
-    top: 55px !important;
-  }
-
-  #username-dropdown-toggle .dropdown-menu {
-    top: 47px !important;
-
-  }
-}
-
 @media (max-width:400px) {
     .about_text .bigheading {
       font-size:10vw !important;

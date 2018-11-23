@@ -7,6 +7,17 @@
   font-size: 16px;
 }
 
+ 	#logo-div {
+		margin-right: -61px !important;
+  }
+  
+  .nav.navbar-nav {
+	    margin-right:0 !important;
+	  }
+ 	  #logo-div {
+		  margin-right: -61px !important;
+	}
+
 .ca-main {
     padding: 50px 20px !important;
 }
@@ -21,6 +32,12 @@
   height: 41px !important;
 }
 
+@media (max-width:1360px) {
+  .nav.navbar-nav {
+	    margin-right:40px !important;
+	  }
+}
+
 @media (max-width: 320px) {
   .searchcontainer button {
     margin-top: -41px !important;
@@ -31,6 +48,26 @@
 
 @extends('user/user_master_layout1') 
 @section('data')
+
+<style>
+.navbar-form button {
+    padding: 6px 11px !important;
+}
+
+.navbar-form button .glyphicon {
+    top: 1px;
+}
+
+@media (max-width: 991px) {
+  .navbar-nav .dropdown .dropdown-toggle {
+    padding-top: 11px !important;
+    padding-bottom: 11px !important;
+  }
+}
+</style>
+
+
+
 <div style="padding-top:90px;"></div>
   
   <div class="container-fluid"> 

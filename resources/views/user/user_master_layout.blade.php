@@ -22,6 +22,10 @@
 
 	<style>
 
+	.nav > li {
+		margin: 8px 20px !important;
+	}
+
 		.our-latest-blog {
 			margin-top:50px;
 		}
@@ -31,12 +35,18 @@
 		}
 
 		.logo {
-			margin-top:13px;
+			margin-top:9px;
 		}
 
 		.shrink-nav .logo {
-			margin-top:17px;
+			margin-top:15px;
 			margin-bottom:-15px;
+		}
+
+		@media (max-width:640px) {
+			.shrink-nav .logo {
+				margin-top:17px;
+			}
 		}
 
 		.sticky-nav li a {

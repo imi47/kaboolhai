@@ -119,6 +119,8 @@ footer .footer-middle {
   width:auto !important;
 }
 
+
+
    @media (min-width:991px) {
    .searchcontainer button {
       margin-top:-56px !important;
@@ -126,21 +128,20 @@ footer .footer-middle {
     }
 }
 
+@media (max-width:991px) {
+  .navbar-nav .dropdown .dropdown-toggle {
+    padding-top: 11px !important;
+    padding-bottom: 11px !important;
+  }
+}
+
 @media (max-width:1300px) {
     .navbar-form button {
       right: -17px;
     }
-
-    .nav.navbar-nav .dropdown a.dropdown-toggle {
-      padding-top:15px !important;
-    }
   }
 
  @media (max-width: 685px) {
-  .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
-    top: 55px !important;
-  }
-
   tr.dosrch th a {
     font-size:12px;
   }

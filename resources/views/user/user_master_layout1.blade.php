@@ -1670,7 +1670,7 @@ footer .fa-search {
       }
       #username-dropdown-toggle .dropdown-menu {
         position: absolute !important;
-        right: 10px !important;
+        /* right: 10px !important; */
         padding-left:15px !important;
         padding-right:15px !important;
       }

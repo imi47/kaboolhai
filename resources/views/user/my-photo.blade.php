@@ -7,6 +7,20 @@
     line-height:400%;
   }
 
+  .searchcontainer button {
+    padding: 13px 16px;
+    margin-top: -56px;
+    margin-right: 0px;
+  }
+
+  .navbar-form button {
+    padding: 6px 11px !important;
+  }
+
+  .navbar-form button .glyphicon {
+    top: 1px;
+  }
+
   .hdlist li {
      border-radius:5px;
      padding-left:5px;
@@ -16,7 +30,6 @@
     background-color:#ed6c05;
   }
   
-
   .menulists {
     font-size: 16px;
     color:#333;
@@ -24,8 +37,8 @@
 
   @media (max-width:991px) {
     .nav-white.sticky-nav .navbar-nav li a, .nav-white.sticky-nav .navbar-nav li a {
-      padding-top:15px !important;
-      padding-bottom:15px !important;
+    padding-top: 11px !important;
+    padding-bottom: 11px !important;
     }
 
     .nav li.dropdown {
@@ -35,26 +48,13 @@
  
 
   @media (max-width: 685px) {
-    #username-dropdown-toggle .dropdown-menu {
-      left: -85px !important; 
-  }
+    .top-searches-by div > a, tr.tpsrch th a, tr.dosrch th a {
+      font-size:12px;
+    }
 
-  .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
-    top: 76px !important;
-  }
-
-  #username-dropdown-toggle .dropdown-menu {
-    top: 60px !important;
-
-  }
-
-  .top-searches-by div > a, tr.tpsrch th a, tr.dosrch th a {
-    font-size:12px;
-  }
-
-  .copyright p {
-    font-size:8px;
-  }
+    .copyright p {
+      font-size:8px;
+    }
 }
 </style>
 <div class="col-md-12">

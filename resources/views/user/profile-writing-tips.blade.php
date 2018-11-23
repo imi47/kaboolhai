@@ -44,7 +44,7 @@
       }
 
       .nav-white.sticky-nav .navbar-nav > .open > a, .navbar-nav .dropdown .dropdown-toggle {
-        padding-top:14px !important;
+        padding-top:11px !important;
       }
 
       #username-dropdown-toggle {

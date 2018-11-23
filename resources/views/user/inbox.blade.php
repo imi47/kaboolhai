@@ -30,8 +30,6 @@ footer section {
     margin-top:50px;
 }
 
-
-
 .container-1::after {
     content: "";
     clear: both;
@@ -67,16 +65,9 @@ footer section {
 }
 
 @media (max-width:991px) {
-#friends-dropdown, #messages-dropdown, #notifications-dropdown {
-        margin-top:21px !important;
-        margin-bottom:-21px !important;
-    }
-
-    #username-dropdown-toggle {
-        margin-top:9px !important;
-    }
-    .humburger {
-        margin-top:14px !important;
+    .navbar-nav .dropdown .dropdown-toggle {
+      padding-top: 11px !important;
+      padding-bottom: 11px !important;
     }
 
     .searchcontainer button {
@@ -84,39 +75,8 @@ footer section {
       padding-top:15px;
     }
 
-    .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
-      top:35px !important;
-    }
-
-    #username-dropdown-toggle ul.dropdown-menu {
-      top:53px !important;
-    }
-        .humburger {
-            margin-top:14px !important;
-      }
-
-      #username-dropdown-toggle ul.dropdown-menu {
-        top: 48px !important;
-        left: -88px !important;
-      }
-
       .navbar-nav {
         margin-top:-1px;
-      }
-      
-      .nav-white.sticky-nav .navbar-nav > .open > a {
-        margin-top: -15px;
-        padding-top: 14px;
-      }
-
-      .nav-white.sticky-nav .navbar-nav > .open > a {
-        margin-top:-12px;
-      }
-
-      #username-dropdown-toggle .dropdown-toggle {
-        padding-top: 13px !important;
-        display: inline !important;
-        padding-bottom: 12px !important;
       }
 }
 
@@ -134,18 +94,9 @@ footer section {
 
 
  @media (max-width: 685px) {
-  .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
-    top: 55px !important;
-  }
-
-  #username-dropdown-toggle .dropdown-menu {
-    top: 47px !important;
-
-  }
-
   tr.dosrch th a {
     font-size:12px;
-}
+  }
 }
 
 @media (max-width:320px) {

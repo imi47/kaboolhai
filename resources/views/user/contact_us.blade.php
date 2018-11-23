@@ -31,41 +31,6 @@
     }
    }
 
-   @media (max-width:991px) {
-    .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
-      top:55px !important;
-    }
-  }
-
-  @media (max-width:768px) {
-    .contact-info-container {
-      margin-top:40px;
-    }
-
-    .contact-info-container .smallhead {
-      text-align:left;
-    }
-
-    .contact-info-container .smallhead + .row div {
-      margin-left:-45px !important;
-    }
-
-    .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
-      top:47px !important;
-    }
-  }
-
-  @media (max-width: 685px) {
-    .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
-    top: 55px !important;
-  }
-
-  #username-dropdown-toggle .dropdown-menu {
-    top: 47px !important;
-
-  }
-}
-
 @media (max-width:500px) {
   .bigheading {
     font-size:8vw;

@@ -60,8 +60,8 @@
         }
 
         .navbar-nav .dropdown .dropdown-toggle {
-            padding-top: 15px !important;
-            padding-bottom: 15px !important;
+            padding-top: 11px !important;
+            padding-bottom: 11px !important;
          }
 
         html, body {

@@ -28,29 +28,13 @@
       text-transform:capitalize;
   }
 
-  .navbar .accordion-menu .dropdown {
-    margin-top:4px !important;
-  }
-
   @media (min-width:991px) {
     .nav.navbar-nav {
-      margin-right:0;
+      margin-right:15px;
       }
        #logo-div {
         margin-right: -61px;
       }
-  }
-
-  
-   @media (max-width:768px) {
-    .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
-      top:38px !important;
-
-    }
-
-     .nav-white.sticky-nav .navbar-nav li a:hover, .nav-white.sticky-nav .navbar-nav > .open > a {
-      padding-bottom:35px;
-    }
   }
 
   /* not working */
