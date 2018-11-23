@@ -88,56 +88,15 @@
 }
 
 @media (max-width:991px) {
-  #friends-dropdown, #messages-dropdown, #notifications-dropdown {
-      margin-top:18px !important;
-      margin-bottom:-18px !important;
-    }
-
-    #username-dropdown-toggle {
-      margin-top:0px !important;
-    }
-    .humburger {
-        margin-top:11px !important;
-    }
-
     .searchcontainer button {
       margin-top:-56px !important;
       padding-top:15px;
     }
 
-    #username-dropdown-toggle ul.dropdown-menu {
-      top:55px !important;
-    }
-
-     #username-dropdown-toggle {
-          margin-top:5px !important;
-        }
-        .humburger {
-            margin-top:14px !important;
-      }
-
-      #username-dropdown-toggle ul.dropdown-menu {
-        top: 37px !important;
-        left: -88px !important;
-      }
-
-      .navbar-nav {
-        margin-top:2px;
-      }
-      
-      .nav-white.sticky-nav .navbar-nav > .open > a {
-        margin-top: -15px;
-        padding-top: 14px;
-      }
-
-      .nav-white.sticky-nav .navbar-nav > .open > a {
-        margin-top:-12px;
-      }
-
-      #username-dropdown-toggle .dropdown-toggle {
-        padding-top: 9px !important;
-        display: inline !important;
-      }
+    .navbar-nav .dropdown .dropdown-toggle {
+      padding-top: 15px !important;
+      padding-bottom: 15px !important;
+  }
 }
 
 @media (min-width:991px) {
@@ -153,42 +112,11 @@
     }
   }
 
-@media (max-width:768px) {
-  #friends-dropdown, #messages-dropdown, #notifications-dropdown {
-      margin-top:13px !important;
-      margin-bottom:-13px !important;
-    }
-
-    #username-dropdown-toggle {
-      margin-top:0px !important;
-    }
-    .humburger {
-        margin-top:8px !important;
-    }
-
-    #username-dropdown-toggle ul.dropdown-menu {
-      top:48px !important;
-    }
-
-    .sticky-nav .navbar-nav > li > .dropdown-menu {
-      top:35px !important;
-    }
-}
-
- @media (max-width: 685px) {
-  .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
-    top: 56px !important;
-  }
-
   @media (max-width:320px) {
     .searchcontainer button {
       margin-top:-44px !important;
       padding-top:15px;
     }
-  }
-
-  #username-dropdown-toggle .dropdown-menu {
-    top: 47px !important;
   }
 
   tr.dosrch th a {

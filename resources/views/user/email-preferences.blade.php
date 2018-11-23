@@ -41,36 +41,9 @@
       margin-top:-56px !important;
       padding-top:12px;
 		}
-		
-		.sticky-nav .navbar-nav > li > .dropdown-menu {
-      top:60px !important;
-  }
 
 	#username-dropdown-toggle .dropdown-toggle {
 		margin-top:1px;
-	}
-
-	.humburger {
-    margin-top: 10px !important;
-	}
-
-	.nav.navbar-nav {
-		margin-top:4px;
-	}
-	
-}
-
-@media (max-width: 768px) {
-    .sticky-nav .navbar-nav > li > .dropdown-menu {
-      top:52px !important;
-  }
-
-	#username-dropdown-toggle .dropdown-toggle {
-    margin-top: 5px;
-	}
-
-	#friends-dropdown, #messages-dropdown, #notifications-dropdown {
-    margin-top: 7px !important;
 	}
 }
 

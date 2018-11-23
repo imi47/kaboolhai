@@ -30,11 +30,6 @@
 }
 
    @media (max-width:991px) {
-    #friends-dropdown, #messages-dropdown, #notifications-dropdown {
-            margin-top:21px !important;
-            margin-bottom:-21px !important;
-        }
-
         #username-dropdown-toggle {
           margin-top:2px !important;
         }
@@ -44,25 +39,12 @@
       padding-top:15px;
       }
 
-        .humburger {
-            margin-top:14px !important;
-      }
-
       #username-dropdown-toggle ul.dropdown-menu {
         top:43px !important;
       }
 
-      .navbar-nav {
-        margin-top:2px;
-      }
-      
-      .nav-white.sticky-nav .navbar-nav > .open > a {
-        margin-top: -15px;
-        padding-top: 14px;
-      }
-
-      .nav-white.sticky-nav .navbar-nav > .open > a {
-        margin-top:-12px;
+      .nav-white.sticky-nav .navbar-nav > .open > a, .navbar-nav .dropdown .dropdown-toggle {
+        padding-top:14px !important;
       }
 
       #username-dropdown-toggle {
@@ -74,13 +56,6 @@
       }
       
    }
-
-   @media (max-width:768px) {
-     /* #friends-dropdown, #messages-dropdown, #notifications-dropdown {
-            margin-top:12px !important;
-            margin-bottom:-12px !important;
-        } */
-  }
 
   @media (min-width:991px) {
    .searchcontainer button {

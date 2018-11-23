@@ -21,7 +21,7 @@
 
   @media (min-width:991px) {
     .nav.navbar-nav {
-      margin-right:0;
+      margin-right:15px;
       }
 
       #logo-div {

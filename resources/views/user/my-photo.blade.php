@@ -22,71 +22,17 @@
     color:#333;
   }
 
-  #menu-div .navbar-collapse.collapse {
-    float:right;
-  }
-
-  .navbar-form button .glyphicon {
-    top: 1px;
-  }
-
-  .navbar-form button {
-    right: -4px;
-    padding: 6px 11px !important;
-}
-
-.top-searches-by div > a, tr.tpsrch th a, tr.dosrch th a {
-  font-size:14px;
-}
-
-  .navbar-nav>li {
-    float:left !important;
-  }
-
-  @media (min-width:991px) {
-   .searchcontainer button {
-      margin-top:-56px !important;
-      padding-top:15px;
-    }
-}
-
-@media (max-width:1300px) {
-    .navbar-form button {
-      right: -17px;
-    }
-  }
-
   @media (max-width:991px) {
-  
-  /* .nav>li>a {
-    font-size: smaller;
-    padding: 0 7px;
-    font-weight:700;
-    margin-top:15px;
-  } */
-
-  .searchcontainer button {
-      margin-top:-56px !important;
-      padding-top:15px;
+    .nav-white.sticky-nav .navbar-nav li a, .nav-white.sticky-nav .navbar-nav li a {
+      padding-top:15px !important;
+      padding-bottom:15px !important;
     }
 
-    .nav-white.sticky-nav .navbar-nav li a:hover, .nav-white.sticky-nav .navbar-nav > .open > a.menudesign {
-      padding-bottom: 0;
-      padding: 11px 11px 11px 12px;
-    } 
-
-    .sidebar {
-      display:none;
-    }
-
-  }
-
-  @media (max-width:768px) {
-
-    footer section div div {
-      text-align:center;
+    .nav li.dropdown {
+      float:left;
     }
   }
+ 
 
   @media (max-width: 685px) {
     #username-dropdown-toggle .dropdown-menu {

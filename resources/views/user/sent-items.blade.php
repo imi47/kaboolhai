@@ -2,7 +2,7 @@
 @section('data') 
 
 <style>
- @media (max-width: 685px) {
+ /* @media (max-width: 685px) {
   .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
     top: 55px !important;
   }
@@ -11,7 +11,7 @@
     top: 47px !important;
 
   }
-}
+} */
 </style>
     <div class="col-md-6">
   <!-- <div class="row"> -->

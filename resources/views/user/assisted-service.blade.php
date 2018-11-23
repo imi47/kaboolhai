@@ -59,13 +59,10 @@
            float:none;
         }
 
-        #friends-dropdown, #messages-dropdown, #notifications-dropdown {
-            margin-top:15px !important;
-            margin-bottom:-15px !important;
-        }
-        .humburger {
-            margin-top:8px !important;
-        }
+        .navbar-nav .dropdown .dropdown-toggle {
+            padding-top: 15px !important;
+            padding-bottom: 15px !important;
+         }
 
         html, body {
             overflow-x:hidden;
@@ -75,45 +72,6 @@
             margin-top:-51px !important;
             padding-top:15px;
         }
-
-        #username-dropdown-toggle ul.dropdown-menu {
-            top:55px !important;
-        }
-
-        .sticky-nav .navbar-nav > li > .dropdown-menu {
-            top:40px !important;
-
-        }
-
-         #username-dropdown-toggle {
-          margin-top:2px !important;
-        }
-
-      #username-dropdown-toggle ul.dropdown-menu {
-        top:58px !important;
-      }
-
-      .navbar-nav {
-        margin-top:2px;
-      }
-      
-      .nav-white.sticky-nav .navbar-nav > .open > a {
-        margin-top: -15px;
-        padding-top: 14px;
-      }
-
-      .nav-white.sticky-nav .navbar-nav > .open > a {
-        margin-top:-12px;
-      }
-
-      #username-dropdown-toggle .dropdown-toggle {
-        padding-top: 9px !important;
-        display: inline !important;
-      }
-
-      .navbar-nav {
-        margin-top: 5px;
-        }
     }
 
     @media (min-width:991px) {
@@ -122,8 +80,8 @@
       padding-top:15px;
     }
 
-    .nav.navbar-nav {
-	margin-right:0;
+   .nav.navbar-nav {
+      margin-right:15px;
 	}
 
 	#logo-div {
@@ -151,21 +109,8 @@
             margin-top:650px;
         }
 
-        #friends-dropdown, #messages-dropdown, #notifications-dropdown {
-            margin-top:12px !important;
-            margin-bottom:-12px !important;
-        }
-
         .arrow-boxdiv#loading, .topboxstrip, .stripdisplay, .arrow-box {
             display:none;
-        }
-
-         #username-dropdown-toggle ul.dropdown-menu {
-            top:48px !important;
-        }
-
-        .sticky-nav .navbar-nav > li > .dropdown-menu {
-            top:36px !important;
         }
 
         .modal-dialog {
@@ -239,19 +184,11 @@
          }
      }
 
-      @media (max-width: 685px) {
-  .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
-    top: 56px !important;
-  }
+   @media (max-width: 685px) {
 
-  #username-dropdown-toggle .dropdown-menu {
-    top: 47px !important;
-  }
-
-  tr.dosrch th a {
-    font-size:12px;
-    }
-
+      tr.dosrch th a {
+         font-size:12px;
+      }
 }
 
 @media (max-width:320px) {

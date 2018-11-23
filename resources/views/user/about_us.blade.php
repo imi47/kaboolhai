@@ -95,34 +95,12 @@
         text-align:left !important;
       }
 
-       .nav-white.sticky-nav .navbar-nav li a, .nav-white.sticky-nav .navbar-nav li a{
-         margin-top:1px;
-       }
-
     #username-dropdown-toggle .dropdown-toggle {
       margin-top: 3px;
       padding-bottom: 12px !important;
       padding-top: 10px !important;
-}
-    
+    } 
   }
-
-  @media (max-width:768px) {
-    .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
-      top:47px !important;
-    }
-  }
-
-  @media (max-width: 685px) {
-    .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
-    top: 55px !important;
-  }
-
-  #username-dropdown-toggle .dropdown-menu {
-    top: 47px !important;
-
-  }
-}
 
 @media (max-width:400px) {
     .about_text .bigheading {

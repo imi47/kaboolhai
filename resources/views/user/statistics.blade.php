@@ -60,11 +60,6 @@
       margin-top:-56px !important;
       padding-top:12px;
     }
-
-    .sticky-nav .navbar-nav > li > .dropdown-menu {
-      top:60px !important;
-    }
-
   }
 
   @media (min-width:991px) {
@@ -103,10 +98,6 @@
 
     .listofmenu li div div.inner-content.text-center {
       width:84vw;
-    }
-
-    .sticky-nav .navbar-nav > li > .dropdown-menu {
-      top:52px !important;
     }
   }
 

@@ -44,31 +44,8 @@
       .searchcontainer button {
       margin-top:-56px !important;
       padding-top:15px;
-    }
-
-      #friends-dropdown, #messages-dropdown, #notifications-dropdown {
-            margin-top:21px !important;
-            margin-bottom:-21px !important;
-        }
-
-      #username-dropdown-toggle ul.dropdown-menu {
-        top:58px !important;
-      }
-
-      .navbar-nav {
-        margin-top:2px;
-      }
-      
-      .nav-white.sticky-nav .navbar-nav > .open > a {
-        margin-top: -15px;
-        padding-top: 14px;
-      }
-
-      .nav-white.sticky-nav .navbar-nav > .open > a {
-        margin-top:-12px;
-      }
-      
-    }
+    }      
+  }
 
     @media (min-width:991px) {
    .searchcontainer button {
@@ -96,16 +73,18 @@
     tr.dosrch th a {
       font-size:12px;
     }
-
-    #username-dropdown-toggle {
-      margin-top: 7px !important;
-    }
 }
-
 
   @media (max-width:320px) {
   .searchcontainer button {
     margin-top:-44px !important;
+  }
+}
+
+ @media (max-width:991px) {
+  .navbar-nav .dropdown .dropdown-toggle {
+      padding-top: 15px !important;
+      padding-bottom: 15px !important;
   }
 }
 
@@ -166,6 +145,10 @@
 
 <br><br>   
 
+<style>
+   
+  </style>
+
 @endsection
 
 @push('css')
@@ -220,11 +203,7 @@
       eval("page" + id + " = window.open(url, '" + id + "', 'toolbar=0,scrollbars=1,location=1,statusbar=0,menubar=0,resizable=0,width=" + width + ", height=" + height + ", left = 0, top = 0');");
    }
 </script>
-</script>
-@endpush      
-  
-  <style>
-    
-  </style>
+
+@endpush
 </body>
 </html>

@@ -231,10 +231,6 @@ footer .fa-search {
       color:#333;
     }
 
-    .humburger {
-      margin-right:10px;
-    }
-
     .fa-user-friends, .fa-envelope, .fa-bell {
       font-size:16px;
     }
@@ -267,8 +263,6 @@ footer .fa-search {
       padding: 0 !important;
     }
   }
-
-    
 
     .dropdown-menu.lenght.icon-dropdown.msgMenu hr{
       margin-bottom:0;
@@ -341,18 +335,6 @@ footer .fa-search {
       bottom: 32px;
     }
   }
-
-    /* .arrow_button {
-      right: -73vw;
-      top: -38px;
-    }
-  } */
-
-  /* @media (min-width:392px) {
-    .text-bar input {
-      width: 80vw !important;
-    }
-  } */
 
   @media (max-width:500px) {
     .text-bar input {
@@ -474,10 +456,6 @@ footer .fa-search {
 			margin-left:8px;
     }
 
-    
-
-    
-    
   .navbar-nav>li>a {
     padding-top: 15px;
     padding-bottom: 15px;
@@ -917,9 +895,6 @@ footer .fa-search {
     }
 
     @media (max-width:375px) {
-      /* .search-dropdown-toggle {
-       margin-right: -7px;
-      } */
 
       .nav.navbar-nav {
         margin-right: 37px;
@@ -1700,17 +1675,8 @@ footer .fa-search {
         padding-right:15px !important;
       }
 
-    /* .nav-white.sticky-nav .navbar-nav li a, .nav-white.sticky-nav .navbar-nav li a{
-         padding-right:14px !important;
-         margin-top:3px;
-       } */
-
       .nav-white.sticky-nav .navbar-nav li a:hover, .nav-white.sticky-nav .navbar-nav li a:hover {
        padding-right: 14px;
-    }
-
-    #username-dropdown-toggle .dropdown-toggle {
-      margin-top:3px;
     }
 
 
@@ -1726,10 +1692,6 @@ footer .fa-search {
         margin-top: 2px;
         padding-top: 0;
     }
-
-    .humburger {
-      margin-top:8px !important;
-    }
   }
 
 
@@ -1741,33 +1703,17 @@ footer .fa-search {
         display:inline-block !important;
       }
 
-
-     .navbar-nav {
-        margin: -0.5px -15px;
-      } 
-      .humburger {
-        margin-top:6px !important;
-      }
-
       #menu-div .collapse {
         margin-bottom: -30px;
         margin-top: 3px;
       }
 
-      /* .nav-white.sticky-nav .navbar-nav li a, .nav-white.sticky-nav .navbar-nav li a {
-        margin-top: 19px !important;
-      }
-
-      .dropdown.username-dropdown-toggle {
-        margin-top: 17px !important;
-      }
-
-      .dropdown.username-dropdown-toggle a.dropdown-toggle.menudesign {
-        margin-top:70px  !important;
-      } */
-
       .navbar-form {
         margin-right: 14px !important;
+      }
+
+      .nav.navbar-nav {
+        margin-top: 9px;
       }
 
     }
@@ -1776,10 +1722,6 @@ footer .fa-search {
         #menu-div .nav li.dropdown.username-dropdown-toggle {
         display:none !important;
       }
-
-      /* .nav.navbar-nav {
-        margin-right:45px;
-     } */
 
      .navbar-form button {
       padding: 3px 3px !important;

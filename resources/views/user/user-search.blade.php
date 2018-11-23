@@ -279,15 +279,7 @@
     display: inline-block;
     /* border-radius: 10px; */
   }
-  /*.pl-status
-  {
-    width: 38px;
-    height: 100px;
-    float: left;
-    margin-top:6px;
-    font-size:10px;
-    color:#ffffff; 
-  }*/
+
   .pl-content-top {
     /*width: 30px;*/
     height: 100px;
@@ -382,23 +374,6 @@
   color: green; margin-left: 5px; 
   /*font-size: 12px;*/
 }
-/*.pagination a {
-    color: #5a378c;
-    font-size:18px;
-    font-weight: bold;
-    padding-bottom:4px;
-    float: right;
-    padding: 8px 16px;
-    text-decoration: none;
-    transition: background-color .3s;
-    border: 1px solid #ddd;
-}*/
-
-/*.pagination a.active {
-    color: #ed6c05;
-    
-}*/
-/*.pagination a:hover:not(.active) {background-color: #ddd;}*/
 
    .bn {
     width: 100%;
@@ -474,9 +449,9 @@ p.t
   }
 
   @media (max-width:991px) {
-    #friends-dropdown, #messages-dropdown, #notifications-dropdown {
-      margin-top:18px !important;
-      margin-bottom:-18px !important;
+    .navbar-nav .dropdown .dropdown-toggle {
+      padding-top: 15px !important;
+      padding-bottom: 15px !important;
     }
 
     .searchcontainer button {
@@ -484,47 +459,9 @@ p.t
       padding-top:15px;
     }
 
-    #username-dropdown-toggle {
-      margin-top:0px !important;
-    }
-    .humburger {
-        margin-top:11px !important;
-    }
-
     .pl-top-selection img {
       width:15% !important;
     }
-
-    #username-dropdown-toggle {
-          margin-top:6px !important;
-        }
-        .humburger {
-            margin-top:14px !important;
-      }
-
-      #username-dropdown-toggle ul.dropdown-menu {
-        top: 37px !important;
-        left: -89px !important;
-      }
-
-      .navbar-nav {
-        margin-top:2px;
-      }
-      
-      .nav-white.sticky-nav .navbar-nav > .open > a {
-        margin-top: -15px;
-        padding-top: 14px;
-      }
-
-      .nav-white.sticky-nav .navbar-nav > .open > a {
-        margin-top:-12px;
-      }
-
-      #username-dropdown-toggle .dropdown-toggle {
-        padding-top: 9px !important;
-        display: inline !important;
-        padding-top: 11px !important;
-      }
   }
 
   @media (max-width:768px) {
@@ -569,13 +506,6 @@ p.t
         width:40% !important;
         }
       }
-
-      /* #username-dropdown-toggle {
-        margin-top:-0px !important;
-      } */
-      .humburger {
-          margin-top:8px !important;
-    }
 
     @media (max-width: 685px) {
       .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {

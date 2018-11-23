@@ -38,61 +38,19 @@ tr.dosrch th a {
 }
 
    @media (max-width:991px) {
-    #friends-dropdown, #messages-dropdown, #notifications-dropdown {
+    /* #friends-dropdown, #messages-dropdown, #notifications-dropdown {
             margin-top:21px !important;
             margin-bottom:-21px !important;
-        }
-
-        .humburger {
-            margin-top:14px !important;
-      }
+        } */
 
       .searchcontainer button {
         margin-top:-56px !important;
         padding-top:15px;
     }
 
-    #username-dropdown-toggle ul.dropdown-menu {
-        top:58px !important;
-      }
-
-       .nav-white.sticky-nav .navbar-nav > .open > a {
-        padding-right:14px;
-      }
-
-      #username-dropdown-toggle a {
-        display:inline !important;
-        padding-bottom:10px !important;
-      }
-
-      #username-dropdown-toggle ul.dropdown-menu {
-        text-align:left !important;
-      }
-
-        .humburger {
-            margin-top:14px !important;
-      }
-
-      #username-dropdown-toggle ul.dropdown-menu {
-        top:58px !important;
-      }
-
-      .navbar-nav {
-        margin-top:2px;
-      }
-      
-      .nav-white.sticky-nav .navbar-nav > .open > a {
-        margin-top: -15px;
-        padding-top: 14px;
-      }
-
-      .nav-white.sticky-nav .navbar-nav > .open > a {
-        margin-top:-12px;
-      }
-
-      #username-dropdown-toggle .dropdown-toggle {
-        padding-top: 9px !important;
-        display: inline !important;
+      .navbar-nav .dropdown .dropdown-toggle {
+        padding-top: 15px !important;
+        padding-bottom: 15px !important;
       }
    }
 

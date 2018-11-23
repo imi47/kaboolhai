@@ -45,64 +45,59 @@
     font-size:14px;
   }
 
-  @media (max-width:991px) and (min-width:768px) {
-    .humburger {
-      margin-top:12px !important;
-    }
-  }
-
   @media (max-width:991px) {
     #side-info {
       margin-top:50px;
     }
 
-    #friends-dropdown, #messages-dropdown, #notifications-dropdown {
-      margin-top:20px !important;
-      margin-bottom:-20px !important;
+    .navbar-nav .dropdown .dropdown-toggle {
+      padding-top: 11px !important;
     }
 
-    .navbar-default .navbar-nav > li > a { 
+    /* #friends-dropdown, #messages-dropdown, #notifications-dropdown {
+      margin-top:20px !important;
+      margin-bottom:-20px !important;
+    } */
+
+    /* .navbar-default .navbar-nav > li > a { 
       line-height:54px;
-    }
+    } */
     
     .searchcontainer button {
       margin-top:-56px !important;
       padding-top:15px;
     }
 
-    .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
+    /* .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
       top:35px !important;
-    }
+    } */
 
     #username-dropdown-toggle ul.dropdown-menu {
       top:55px !important;
     }
-        .humburger {
-            margin-top:14px !important;
-      }
 
       #username-dropdown-toggle ul.dropdown-menu {
         top:58px !important;
       }
 
-      .navbar-nav {
+      /* .navbar-nav {
         margin-top:2px;
-      }
+      } */
       
-      .nav-white.sticky-nav .navbar-nav > .open > a {
+      /* .nav-white.sticky-nav .navbar-nav > .open > a {
         margin-top: -15px;
         padding-top: 14px;
       }
 
       .nav-white.sticky-nav .navbar-nav > .open > a {
         margin-top:-12px;
-      }
+      } */
 
-      #username-dropdown-toggle .dropdown-toggle {
+      /* #username-dropdown-toggle .dropdown-toggle {
         padding-bottom: 12px !important;
         padding-top: 13px !important;
         display: inline !important;
-      }
+      } */
   }
   
   @media (max-width:1300px) {
@@ -119,9 +114,9 @@
 }
 
   @media (max-width:768px) {
-    #friends-dropdown, #messages-dropdown, #notifications-dropdown {
+    /* #friends-dropdown, #messages-dropdown, #notifications-dropdown {
       margin-top:18px !important;
-    }
+    } */
 
     .navbar-default .navbar-nav > li > a { 
       line-height:44px;
@@ -130,6 +125,10 @@
     #username-dropdown-toggle ul.dropdown-menu {
       top:47px !important;
     }
+
+    /* .navbar-nav .dropdown .dropdown-toggle {
+      padding-top: 0 !important;
+    } */
   }
 
   @media (max-width: 685px) {

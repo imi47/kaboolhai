@@ -17,6 +17,7 @@
   height: 41px !important;
 }
 
+
 @media (max-width: 320px) {
   .searchcontainer button {
     margin-top: -41px !important;
@@ -26,6 +27,22 @@
 
 @extends('user/user_master_layout1') 
 @section('data') 
+<style>
+  .navbar-form button {
+    padding: 6px 11px !important;
+  }
+
+  .navbar-form button .glyphicon {
+      top: 2px;
+  }
+
+  @media (max-width: 991px) {
+    .navbar-nav .dropdown .dropdown-toggle {
+      padding-top: 15px !important;
+      padding-bottom: 15px !important;
+    }
+}
+</style>
 <div style="padding-top:90px;"></div>
   
   <div class="container-fluid"> 
@@ -87,7 +104,6 @@ Please see the Account Upgrade screen to select a desired package and see the co
 <script type="text/javascript" src="{{ $user_assets }}/js/custom.js"></script>
 <link rel="stylesheet" href="{{ $user_assets }}/css/custom.css" />
 
-
 @endpush
 
 @push('js')
@@ -136,13 +152,3 @@ Please see the Account Upgrade screen to select a desired package and see the co
 <!-- setting -->
 <script type="text/javascript" src="{{ asset('public') }}/js/chosen.jq.js"></script>
 @endpush
-
-<style>
-.navbar-form button {
-  padding: 6px 11px !important;
-}
-
-.navbar-form button .glyphicon {
-    top: 2px;
-}
-</style>
