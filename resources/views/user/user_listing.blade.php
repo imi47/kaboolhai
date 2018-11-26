@@ -5,6 +5,34 @@
     color: green;
   }
 
+  .pagination a, .pagination span {
+    margin: 0 10px;
+    border-radius: 99px !important;
+    font-weight:600;
+    color:#5a378c !important;
+    background:#eee !important;
+  }
+
+   .pagination a:hover, .pagination span:hover {
+     background:#FFD4B1 !important;
+     border:1px solid #FFD4B1 !important;
+   }
+
+.pagination li:not(.active) span {
+  color:#ed6c05;
+}
+
+  .pagination .active span{
+    background-color:#ed6c05 !important;
+    border-color: #ed6c05;
+    color:#fff !important;
+  }
+
+  .pagination .active:hover span {
+    background-color:#ed6c05;
+    border-color: #ed6c05;
+  }
+
   .hdlist {
     line-height:400%;
   }
