@@ -7,6 +7,15 @@ html, body {
 	overflow-x:hidden;
 }
 
+.mp-btns {
+	margin-top: -60px;
+}
+
+.mp-form-list li{
+	display:flex;
+	align-items: center;
+}
+
 .hdlist {
     font-size:16px;
   }
@@ -186,13 +195,14 @@ input[type='checkbox'] {
 }
 
 @media (max-width:768px) {
+
 	#username-dropdown-toggle .dropdown-menu {
 		left:-64px !important;
 	}
 
 	.mp-bio-label {
     width: auto;
-}
+	}
 
 	#username-dropdown-toggle {
 		margin-top: 10px !important;
@@ -212,9 +222,9 @@ input[type='checkbox'] {
 		width:70vw;
 	}
 
-	.btn10, .btn7 {
+	/* .btn10, .btn7 {
 		margin-top:30px;
-	}
+	} */
 }
 
 </style>

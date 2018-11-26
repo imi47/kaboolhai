@@ -298,6 +298,14 @@ footer .fa-search {
 			width:100%;
     }
 
+    .mp-bio-label {
+      width:100px;
+    }
+
+    .mp-head {
+      font-size:12px;
+    }
+
     #bb {
       bottom:-17px;
     }
@@ -1693,9 +1701,13 @@ footer .fa-search {
         padding-top: 0;
     }
   }
-
-
+  
     @media (max-width:768px) {
+
+      .mp-form-list li {
+		    display:block;
+      }
+      
       #menu-div {
         float:right !important;
       }
@@ -3207,18 +3219,7 @@ function get_message()
 </script>
 <style> 
 
-@media (max-width:550px) {
-  
-}
-
  @media (max-width:550px) {
-      /* .nav.navbar-nav {
-      margin-right:50px;
-      } */
-
-      /* .nav .glyphicon-search {
-        right: -25px;
-      } */
 
       .navbar-form {
         right: 80px;
