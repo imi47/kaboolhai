@@ -1658,8 +1658,6 @@ footer .fa-search {
   }
   .sticky-nav .navbar-nav > li > .dropdown-menu {
     width:500px !important;
-    /* position:absolute !important;
-    right:200px !important; */
   }
   .icon-dropdown {
     position:absolute !important;
@@ -1744,6 +1742,12 @@ footer .fa-search {
         font-size: 12px;
         padding-left: 7px;
      }
+    }
+
+    @media (max-width:500px) {
+      .sticky-nav .navbar-nav > li > .dropdown-menu {
+        width:100vw !important;
+      }
     }
   </style>
   @endif
