@@ -57,6 +57,10 @@
   color-stop(.6,#B88FF3))
 }
 
+footer .fa-youtube-square {
+  margin-right:-2px;
+}
+
 #message_count, .noti_counts, #friend_counts {
   color: white !important;
   background-color: #FF4646;

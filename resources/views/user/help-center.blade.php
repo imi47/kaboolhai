@@ -12,6 +12,10 @@
     line-height:400%;
   }
 
+  .hdlist .l {
+    padding-left:5px;
+  }
+
   .hdlist li {
      border-radius:5px;
    }

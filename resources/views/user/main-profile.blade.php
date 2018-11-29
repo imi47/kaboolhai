@@ -2,16 +2,16 @@
 @section('data')
 
   <style>
-  /* html, body {
-    width:100vw;
-    overflow-x:hidden;
-  } */
   .clearfix:after {
    content: " "; /* Older browser do not support empty content */
    visibility: hidden;
    display: block;
    height: 0;
    clear: both;
+  }
+
+  footer .flinks i:not(:last-child) {
+    margin-right:3px;
   }
 
   .navbar-default {

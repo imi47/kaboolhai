@@ -31,6 +31,25 @@
 			text-align:center;
 		}
 	}
+
+	.hdlist {
+		line-height:400%;
+		font-size:16px;
+	}
+
+	.hdlist li {
+		border-radius: 5px;
+		padding-left:5px;
+	}
+
+	.hdlist li:hover {
+		background-color: #ed6c05;
+	}
+
+
+	.col-md-3.hidden-sm.hidden-xs .well a {
+   	 font-size: 16px;
+	}
 </style>
 <div style="padding-top: 90px;"></div>
   

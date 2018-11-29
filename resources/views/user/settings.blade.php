@@ -9,6 +9,10 @@ html, body {
   overflow-x:hidden;
 }
 
+.col-md-3.hidden-sm.hidden-xs .well {
+  margin-left:15px;
+}
+
 .hdlist {
     line-height:400%;
   }
