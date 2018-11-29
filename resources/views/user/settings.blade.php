@@ -112,9 +112,6 @@ footer .footer-middle {
     background-color: #555;
 }
 
-.go_more {
-  margin-top:-22px !important;
-}
     tr.dosrch th a {
       font-size:14px;
     }
