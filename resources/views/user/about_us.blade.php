@@ -67,8 +67,6 @@
   }
 
   @media (max-width:991px) {
-   
-
       .nav-white.sticky-nav .navbar-nav li a:hover, .nav-white.sticky-nav .navbar-nav > .open > a {
         display:block;
       }

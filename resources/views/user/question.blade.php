@@ -58,21 +58,6 @@
     }
   }
 
-  @media (max-width: 685px) {
-  .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
-    top: 56px !important;
-  }
-
-  #username-dropdown-toggle .dropdown-menu {
-    top: 47px !important;
-
-  }
-
-  tr.dosrch th a {
-    font-size:12px;
-  }
-}
-
 @media (max-width:320px) {
   .searchcontainer button {
     margin-top:-44px !important;

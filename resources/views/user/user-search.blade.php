@@ -492,10 +492,6 @@ p.t
     }
  
     @media (max-width:500px) {
-      /* .smallest {
-        width:100%;   
-      } */
-
       tr.dosrch th a {
         font-size:12px;
     }
@@ -506,16 +502,6 @@ p.t
         width:40% !important;
         }
       }
-
-    @media (max-width: 685px) {
-      .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
-        top: 56px !important;
-  }
-
-    #username-dropdown-toggle .dropdown-menu {
-      top: 48px !important;
-  }
-}
 
 @media (max-width:320px) {
   .searchcontainer button {

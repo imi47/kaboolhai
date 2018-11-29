@@ -1,18 +1,6 @@
 @extends('user/user_master_layout1') 
 @section('data') 
 
-<style>
- /* @media (max-width: 685px) {
-  .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
-    top: 55px !important;
-  }
-
-  #username-dropdown-toggle .dropdown-menu {
-    top: 47px !important;
-
-  }
-} */
-</style>
     <div class="col-md-6">
   <!-- <div class="row"> -->
     <!-- content -->

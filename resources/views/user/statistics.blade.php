@@ -150,11 +150,6 @@
     }
   }
 
-  @media (max-width: 685px) {
-  .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
-    top: 60px !important;
-  }
-
   @media (max-width:320px) {
     .searchcontainer button {
       margin-top:-44px !important;

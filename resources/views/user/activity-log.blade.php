@@ -2,6 +2,22 @@
 @section('data')
 
 <style>
+
+  .nav.navbar-nav {
+	margin-right:0;
+	}
+ 	#logo-div {
+		margin-right: -61px;
+  }
+
+  .hdlist {
+    line-height: 400%;
+  }
+
+  .col-md-3.hidden-sm.hidden-xs .well a {
+    font-size:16px;
+  }
+  
   @media (max-width:768px) {
     .al-main ul.al-log li {
     }

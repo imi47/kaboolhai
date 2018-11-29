@@ -37,17 +37,6 @@
       }
   }
 
-  /* not working */
-   @media (max-width: 685px) {
-    .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
-    top: 60px !important;
-  }
-   #username-dropdown-toggle .dropdown-menu {
-    top: 47px !important;
-    right:30px !important;
-   }
-}
-
   @media (max-width:320px) {
     .searchcontainer button {
       margin-top:-44px !important;

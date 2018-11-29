@@ -151,10 +151,6 @@
 			 .photo3 p {
 				 /* margin:2px auto; */
 			 }
-
-			 .sticky-nav .navbar-nav > li > .dropdown-menu {
-     		 top:55px !important;
- 			 }
 		 }
 
 		  @media (max-width:768px) {
@@ -164,10 +160,6 @@
 				
 				.contacts_detail, .somelinks {
 				 width:auto;
-				}
-
-				.sticky-nav .navbar-nav > li > .dropdown-menu {
-					top:48px !important;
 				}
 
 				.contacts_detail_parent {
@@ -233,17 +225,6 @@
 					font-size:3.6vw;
 				}
 		 }
-
-		 @media (max-width: 685px) {
-  .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
-    top: 55px !important;
-  }
-
-  #username-dropdown-toggle .dropdown-menu {
-    top: 47px !important;
-
-  }
-}
 
      </style>
 <script type="text/javascript">

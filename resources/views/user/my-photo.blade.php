@@ -44,6 +44,14 @@
     .nav li.dropdown {
       float:left;
     }
+
+    .sticky-nav .navbar-nav > li > .dropdown-menu {
+      top:47px !important;
+    }
+
+    #username-dropdown-toggle .dropdown-menu {
+      top:42px !important;
+    }
   }
  
 

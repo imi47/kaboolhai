@@ -797,12 +797,6 @@ footer .fa-search {
 
     @endif
 
-    /* @media (min-width:991px) { */
-      .sticky-nav .navbar-nav > li > .dropdown-menu {
-        top:56px;
-      }
-    /* } */
-
     @media (max-width: 991px) {
       .navbar-nav .dropdown .dropdown-toggle {
         padding-right:14px !important;
@@ -874,18 +868,7 @@ footer .fa-search {
       background-color: #5a378c !important;
       border-radius: 5px;
     }
-    #logindivv {
-      /* position: relative; */
-    }
-    /* #logindivv {
-  position:absolute;
-  width:100vw;
-  height:100vh;
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
-} */
+
 #logindivv {
     position:fixed;
     top:-13px;
@@ -918,13 +901,6 @@ footer .fa-search {
         display:none !important;
       }
     }
-    
-    /* .remove-top-margin {
-    margin-top:-70px;
-    }
-    .remove-top-margin:last-child {
-     margin-top:13px;
-  } */
 
   @media (max-width: 813px) {
     .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
@@ -1676,7 +1652,6 @@ footer .fa-search {
       }
       #username-dropdown-toggle .dropdown-menu {
         position: absolute !important;
-        /* right: 10px !important; */
         padding-left:15px !important;
         padding-right:15px !important;
       }
@@ -1684,7 +1659,6 @@ footer .fa-search {
       .nav-white.sticky-nav .navbar-nav li a:hover, .nav-white.sticky-nav .navbar-nav li a:hover {
        padding-right: 14px;
     }
-
 
     #username-dropdown-toggle a {
         display: inline-block !important;
