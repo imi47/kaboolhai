@@ -7,15 +7,6 @@ html, body {
 	overflow-x:hidden;
 }
 
-.mp-btns {
-	margin-top: -60px;
-}
-
-.mp-form-list li{
-	display:flex;
-	align-items: center;
-}
-
 .hdlist {
     font-size:16px;
   }
@@ -210,6 +201,15 @@ input[type='checkbox'] {
 
 	.mp-form-list li {
 		display:block;
+	}
+
+	.mp-btns {
+	margin-top: -60px;
+}
+
+	.mp-form-list li{
+		display:flex;
+		align-items: center;
 	}
 }
 
