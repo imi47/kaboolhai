@@ -423,7 +423,7 @@ $('.owl-carousel').owlCarousel({
 					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 						<div class="somelinks">
 							<ul class="list_somebtn">
-								<li class="agea"><a href="{{ url('more-alike',$user_data->id) }}"><span><img src="{{ $user_assets }}/more-alike.png" alt="" class="icon_size"></span> <span class="linkT">More alike</span></a></li>
+								<li class="agea"><a href="{{ url('more-alike',$user_data->id) }}"><span><img src="{{ $user_assets }}/more-alike.png" alt="" style='width:17px; margin-left:2px;'></span> <span class="linkT">More alike</span></a></li>
                  @if(count($block_users))
                   <li class="agea"><a href="javascript:;" data-toggle="modal" data-target="#unblock" ><span><img src="{{ $user_assets }}/send message.png" alt="" class="icon_size"></span><span class="linkT"> Send Message </span></a></li>
 								@elseif(count($confirm_friend))
@@ -443,7 +443,7 @@ $('.owl-carousel').owlCarousel({
 								<li class="agea"><a onclick="return false;" href="{{ url('photo-permission',$user_data->id) }}"><span><img src="{{ $user_assets }}/photorequest.png" alt="" class="icon_size"></span><span class="linkT"> Ask to Photo Permission</span></a>  (Permission request sent)</li>
 								@endif
 								@if(empty($invite))
-								<li class="agea"><a href="{{ url('invite-view-profile',$user_data->id) }}"><span><img src="{{ $user_assets }}/invite.png" alt="" class="icon_size"></span><span class="linkT"> Invite to view my profile</span></a></li>
+								<li class="agea"><a href="{{ url('invite-view-profile',$user_data->id) }}"><span><img src="{{ $user_assets }}/invite.png" alt="" style='width:17px; margin-left:3px;'></span><span class="linkT"> Invite to view my profile</span></a></li>
 								@else
 								<li class="agea"><a onclick="return false" href="{{ url('invite-view-profile',$user_data->id) }}"><span><img src="{{ $user_assets }}/invite.png" alt="" class="icon_size"></span><span class="linkT"> Invite to view my profile</span></a> (invitation request sent)</li>
 								@endif
@@ -456,13 +456,13 @@ $('.owl-carousel').owlCarousel({
 
 								<li class="agea"><a href="{{ url('activity-log',$user_data->id) }}"><span><img src="{{ $user_assets }}/historywithhim.png" alt="" class="icon_size"></span> <span class="linkT">Your history </span></a></li>
 								@if(empty($blockuser))
-								<li class="agea"><a href="{{ url('block-user',$user_data->id) }}" onclick="return confirm('Are you sure you want to block this user?');" ><span><img src="{{ $user_assets }}/block-user.png" alt="" class="icon_size"></span><span class="linkT"> Block {{ $user_data->user_name }}  </span></a></li>
+								<li class="agea"><a href="{{ url('block-user',$user_data->id) }}" onclick="return confirm('Are you sure you want to block this user?');" ><span><img src="{{ $user_assets }}/block-user.png" alt="" style='width:19px; margin-left:1px;'></span><span class="linkT"> Block {{ $user_data->user_name }}  </span></a></li>
 								 @else
 								  <li class="agea"><a href="{{ url('active-user',$user_data->id) }}" onclick="return confirm('Are you sure you want to unblock this user?');" ><span><img src="{{ $user_assets }}/block-user.png" alt="" class="icon_size"></span><span class="linkT"> Unblock User {{ $user_data->user_name }}  </span></a></li> @endif
 								  @if(empty($request))
 								<li class="agea"><a href="{{ url('add-friend',$user_data->id) }}"><span><img src="{{ $user_assets }}/sendrequest.png" alt="" class="icon_size"></span> <span class="linkT">Sent Request</span></a></li>
 								@else
-								<li class="agea"><a onclick="return false" href="{{ url('add-friend',$user_data->id) }}"><span><img src="{{ $user_assets }}/sendrequest.png" alt="" class="icon_size"></span> <span class="linkT">Sent Request</span></a> (Friend request sent)</li>
+								<li class="agea"><a onclick="return false" href="{{ url('add-friend',$user_data->id) }}"><span><img src="{{ $user_assets }}/sendrequest.png" alt="" style='width:22px;'></span> <span class="linkT">Sent Request</span></a> (Friend request sent)</li>
 								@endif
 							</ul>	
 						</div>
@@ -488,12 +488,12 @@ $('.owl-carousel').owlCarousel({
                
                
                 
-                <li class="agea"><a href="{{ url('favourite-list') }}"><i class="fa fa-heart" style="font-size: 20px;"></i> My Favourite</a></li>
+                <li class="agea"><a href="{{ url('favourite-list') }}"><i class="fa fa-heart" style="font-size: 18px;"></i> My Favourite</a></li>
                
                 
                
                 <li class="agea"><a href="{{ url('blocked-list') }}" ><i class="fa fa-ban" style="font-size: 20px;"></i> Blocked users</a></li>
-                <li class="agea"><a href="{{ url('my-photo') }}" ><i class="fa fa-camera" style="font-size: 20px;"></i> My Photo</a></li>
+                <li class="agea"><a href="{{ url('my-photo') }}" ><i class="fa fa-camera" style="font-size: 17px;"></i> My Photo</a></li>
 
                 <li class="agea"><a href="{{ url('settings') }}" ><i class="fa fa-wrench" style="font-size: 20px;"></i> Setting</a></li>
                  
