@@ -25,26 +25,33 @@
     margin-top: -56px;
     margin-right: 0px;
 }
+
+.container {
+  display:flex;
+  justify-content:center;
+}
+
+#already {
+  width:300px;
+}
 </style>
 
 <div class="container">
   <div id="wait" style="display: none;"></div>
   <div class="row"  id="already" style="padding-top: 120px;padding-bottom: 0px;">
-      <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4"></div>
-      <div class="col-sm-4 col-md-4 col-lg-4">
+      <div class=""></div>
+      <div class="">
         <div style="height: 526px;background-image: url({{$user_assets}}/lg_bg.png);background-repeat:no-repeat;background-size:contain;background-position:center fixed;position: relative;">
-           <h2 style="padding-left: 132px;padding-top: 40px;color:white;font-family:arial rounded mt;">Login</h2>
+           <h2 style="padding-left: 120px;padding-top: 40px;color:white;font-family:arial rounded mt;">Login</h2>
 
            <div>
             <div class="col-md-12">
    @if(Session::has('error'))
-                    <p style="width: 72%;
-    margin-left: 14%;" class="alert alert-danger">{{ Session::get('error') }}</p>
+                    <p style="width: 72%; margin-left: 14%;" class="alert alert-danger">{{ Session::get('error') }}</p>
                     
                 @endif
                 @if(Session::has('success'))
-                    <p style="width: 72%;
-    margin-left: 14%;" class="alert alert-success">{{ Session::get('success') }}</p>
+                    <p style="width: 72%; margin-left: 14%;" class="alert alert-success">{{ Session::get('success') }}</p>
                 @endif
  </div>
 
@@ -61,7 +68,7 @@
               <div style="padding-left:70px;color:white;padding-top:15px;">
                <button style="width: 65px;height: 35px;border-radius: 3px;border-radius: 0px;background-color: #ED6C05;border-color: #ED6C05;color:white;font-weight:bold;">Login</button>
               </div>
-              <div style="float:right;padding-right:70px;color:white;padding-top:15px;">
+              <div style="margin-left:68px; margin-top:10px">
               <a href="#" style="color:white;" onclick="return forgot()">Forgot Password?</a>
               </div>
 
