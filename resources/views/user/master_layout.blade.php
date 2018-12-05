@@ -72,12 +72,12 @@
   width:unset !important;
 }
 
-.view-all {
+/* .view-all {
   position: fixed;
   bottom: 221px;
   width: 493px;
   background: #eee;
-}
+} */
 
 #message_count, .noti_counts, #friend_counts {
   color: white !important;
