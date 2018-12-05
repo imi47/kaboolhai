@@ -72,6 +72,13 @@
   width:unset !important;
 }
 
+.view-all {
+  position: fixed;
+  bottom: 221px;
+  width: 493px;
+  background: #eee;
+}
+
 #message_count, .noti_counts, #friend_counts {
   color: white !important;
   background-color: #FF4646;
@@ -1165,8 +1172,6 @@
               @if(count(get_friend()))
               @foreach(get_friend() as $row)
               <div class="friend" id="friends">
-               
-
                 <li>
                   @if(!empty($row->photo->image))
                   <img src="{{ $user_assets }}/my_photo/{{ $row->photo->image }}" style="width: 45px; height: 45px; border-radius:100px; " alt="">
@@ -1191,7 +1196,7 @@
               <hr style="width: 100%;">
               @if(count(recent_join()))
               @foreach(recent_join() as $row)
-              <div>
+              <!-- <div> -->
                 <li style="margin-left: 4.3333%">
                   <a style="background-color: #ffffff; color: #666666 !important;" href="{{ url('public-profile',$row->id) }}">
                   @if(!empty($row->image))
@@ -1212,14 +1217,14 @@
                   </li>
                   @endforeach
                   @endif
-                <li class="text-center">
-                        {{-- <hr style="width: 100%;"> --}}
-                        <a href="{{ url('recent-join') }}">
-                         
-                            <span style="font-size: 18px; color: #666666;">View All</span>
-                         
-                        </a>
-                      </li>
+                <li class="text-center view-all">
+                {{-- <hr style="width: 100%;"> --}}
+                <a href="{{ url('recent-join') }}">
+                  
+                    <span style="font-size: 18px; color: #666666;">View All</span>
+                  
+                </a>
+              </li>
 
             </ul>
           </li>

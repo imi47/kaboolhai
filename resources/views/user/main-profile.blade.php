@@ -14,6 +14,10 @@
     margin-right:3px;
   }
 
+  li > .dropdown-menu {
+    /* -webkit-transform: unset; */
+  }
+
   .navbar-default {
     border:none;
   }
