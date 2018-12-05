@@ -253,7 +253,7 @@ footer .fa-search {
     }
 
     /* wrapper in thie media query because these styles don't work below 992 */
-    @media (min-width:992px) {
+    /* @media (min-width:992px) { */
       .icon-dropdown li:last-child {
       position:fixed;
       width: 493px;
@@ -266,7 +266,7 @@ footer .fa-search {
     .icon-dropdown li:last-child a {
       padding: 0 !important;
     }
-  }
+  /* } */
 
     .dropdown-menu.lenght.icon-dropdown.msgMenu hr{
       margin-bottom:0;
@@ -1614,6 +1614,14 @@ footer .fa-search {
     @media (max-width:991px) {
       .navbar-form {
         display:none;
+      }
+
+      .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
+        -webkit-transform: unset;
+      }
+
+      .icon-dropdown li:last-child {
+        top:410px;
       }
 
       .nav-white.sticky-nav .navbar-nav li a {
