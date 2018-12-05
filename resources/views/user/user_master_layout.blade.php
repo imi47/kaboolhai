@@ -70,7 +70,7 @@
 			width:57px;
 			float:right;
 			display:none;
-			margin-top: 8px;
+			margin-top: 6px;
     		margin-bottom: -9px;
 		 }
 		 .hamRotate.active {
@@ -185,7 +185,7 @@
       height:100% !important;
       position:fixed !important;
 		z-index:9999999;
-		margin-top:50px;
+		margin-top:46px;
     }
 	 
 	 #navsidebare ul {

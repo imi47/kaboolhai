@@ -34,6 +34,12 @@
 #already {
   width:300px;
 }
+
+#already .alert-danger {
+    padding: 2px;
+    margin-top: 10px;
+    border-radius: 3px;
+}
 </style>
 
 <div class="container">
@@ -65,7 +71,7 @@
                <label for="email">Password</label>
                 <input type="Password" name="password" class="form-control" style="width:78%;height: 30px;border-radius: 3px;">
               </div>
-              <div style="padding-left:70px;color:white;padding-top:15px;">
+              <div style="padding-left:70px;color:white;padding-top:10px;">
                <button style="width: 65px;height: 35px;border-radius: 3px;border-radius: 0px;background-color: #ED6C05;border-color: #ED6C05;color:white;font-weight:bold;">Login</button>
               </div>
               <div style="margin-left:68px; margin-top:10px">
