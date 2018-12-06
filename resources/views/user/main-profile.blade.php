@@ -109,6 +109,13 @@
 .social_icon {
   text-align:center;
 }
+
+@media (min-width:991px) {
+  .user_name_db {
+    text-align:left;
+  }
+}
+
 @media (max-width:991px) and (min-width:768px) {
     .profile_stat.hvr-grow a img {
       width:180px !important;

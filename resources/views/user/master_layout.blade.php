@@ -1552,7 +1552,7 @@
               <img src="{{ $user_assets }}/sunrise.jpg" width="175" height="175" class="user_img">
 
               @endif
-              <p class="text-center user_name_db" style="margin-top:5px;"> {{ user_data()->firstname.'
+              <p class="user_name_db" style="margin-top:5px;"> {{ user_data()->firstname.'
                 '.user_data()->lastname }}</p>
             </div>
           </a>
