@@ -7,6 +7,10 @@ html, body {
 	overflow-x:hidden;
 }
 
+.mp-btns {
+	margin-top: -60px;
+}
+
 .hdlist {
     font-size:16px;
   }
