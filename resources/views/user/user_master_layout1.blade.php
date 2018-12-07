@@ -252,21 +252,31 @@ footer .fa-search {
 
     }
 
-    /* wrapper in thie media query because these styles don't work below 992 */
-    /* @media (min-width:992px) { */
-      .icon-dropdown li:last-child {
-      position:fixed;
-      width: 493px;
-      padding: 0;
-      border: 1px solid #aaa;
-      top: 425px;
-      background-color:#eee;
+    #friends-dropdown .icon-dropdown li:nth-last-child(2), #notifications-dropdown .icon-dropdown li:nth-last-child(2) {
+      margin-bottom:25px;
+    }
+
+      #friends-dropdown .icon-dropdown li:last-child, #notifications-dropdown .icon-dropdown li:last-child {
+        position:fixed;
+        width: 493px;
+        padding: 0;
+        border: 1px solid #aaa;
+        top: 421px;
+        background-color:#eee;
+        padding: 4px 20px;
+    }
+
+    #notifications-dropdown .icon-dropdown li:last-child {
+      top:417px;
+    }
+
+    #friends-dropdown .icon-dropdown li:last-child a:hover {
+      background:none;
     }
 
     .icon-dropdown li:last-child a {
       padding: 0 !important;
     }
-  /* } */
 
     .dropdown-menu.lenght.icon-dropdown.msgMenu hr{
       margin-bottom:0;
@@ -647,7 +657,7 @@ footer .fa-search {
       overflow-y: scroll;
     }
     .top-searches-by div{
-			border-bottom:1px solid #fff;
+			border-bottom:1px solid #ddd;
 			padding:10px;
 		}
     .top-searches-by div > a {
@@ -813,7 +823,7 @@ footer .fa-search {
       }
 
       .search-dropdown-toggle {
-        top:12px;
+        top:9px;
       }
 
       #menu-div {
@@ -1117,7 +1127,7 @@ footer .fa-search {
                         {{-- <hr style="width: 100%;"> --}}
                         <a style="text-align:center;" href="{{ url('recent-join') }}">
                           
-                            <span style="font-size: 18px; color: #666666;">View All</span>
+                            <span style="font-size: 15px; color: #333;">View All</span>
                          
                          
                         </a>
@@ -1229,7 +1239,7 @@ footer .fa-search {
 
                     @endif
                     <a href="{{ url('notification') }}">
-                      <li style="color: black;" class="text-center">
+                      <li style="color:#333; font-size:15px;" class="text-center">
 
                         Show all
                       </li>
@@ -1278,7 +1288,7 @@ footer .fa-search {
                     @endif
                      {{-- @endif --}}
                     <a href="{{ url('notification') }}">
-                      <li style="color: black;" class="text-center">
+                      <li style="color:#333; font-size:15px;" class="text-center">
 
                         Show all
                       </li>
@@ -1684,6 +1694,18 @@ footer .fa-search {
         margin-top: 2px;
         padding-top: 0;
     }
+
+    #friends-dropdown li:last-child {
+        padding: 0 !important;
+        top:412px !important;
+        width:488px !important;
+      }
+
+      #notifications-dropdown li:last-child {
+        /* padding: 5px auto !important; */
+        top:408px !important;
+        width:488px !important;
+      }
   }
   
     @media (max-width:768px) {
@@ -1733,6 +1755,10 @@ footer .fa-search {
     @media (max-width:500px) {
       .sticky-nav .navbar-nav > li > .dropdown-menu {
         width:100vw !important;
+      }
+
+      #friends-dropdown .icon-dropdown li:last-child, #notifications-dropdown .icon-dropdown li:last-child {
+        width:96vw !important;
       }
     }
   </style>

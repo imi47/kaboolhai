@@ -64,6 +64,16 @@
     top: 7px !important;
   }
 
+  @media (min-width:991px) {
+    .basic-info label {
+      margin:20px auto;
+    }
+
+    #search-btn {
+      margin-bottom:3px;
+    }
+  }
+
   @media (max-width:991px) {
     #carousel-default img {
     width:90% !important;
@@ -211,7 +221,7 @@
       </div>
 
       <div id="profile">
-        <form method="get" action="{{ url('user-search') }}" class="form-inline">
+        <form method="get" action="{{ url('user-search') }}" class="form-inline basic-info">
           {{ csrf_field() }}
           <div class="row">
             <div class="col-md-3">

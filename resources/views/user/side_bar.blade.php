@@ -18,6 +18,6 @@
             
             <li class="{{ Request::is('contact-us') ? 'active' : '' }} l"><a href="{{ url('contact-us') }}" class="menulists"><span><img src="{{ $user_assets }}/contact_us_b.png" alt="" class="lmis"></span> Contact</a></li>
 
-            <li class="{{ Request::is('help-center') ? 'active' : '' }} l"><a href="{{ url('help-center') }}" class="menulists"><span><i class="fa fa-question" style="color:red; font-size: 45px;"></i></span> Help Center</a></li>
+            <li class="{{ Request::is('help-center') ? 'active' : '' }} l"><a href="{{ url('help-center') }}" class="menulists"><span> <img src="{{ $user_assets }}/images/question.svg" width='40px;'> </i></span> Help Center</a></li>
           
           </ul>

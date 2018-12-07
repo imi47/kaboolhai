@@ -91,6 +91,27 @@
   line-height:20px;
 }
 
+.dropdown-menu>li>a {
+  padding: 5px 20px;
+}
+
+#friends-dropdown li:nth-last-child(2), #notifications-dropdown li:nth-last-child(2) {
+  margin-bottom:25px;
+}
+
+#friends-dropdown li:last-child, #notifications-dropdown li:last-child {
+  position:fixed;
+  width: 493px;
+  padding: 0;
+  border: 1px solid #aaa;
+  top: 412px;
+  background-color:#eee;
+}
+
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
+  background-color:#e6e6e6;
+}
+
 .noti_counts {
   top: -4px !important;
   left: 14px !important;
@@ -330,7 +351,7 @@
   }
 
   .top-searches-by div{
-      border-bottom:1px solid #fff;
+      border-bottom:1px solid #ddd;
       padding:10px;
     }
 
@@ -563,7 +584,7 @@
         margin-right:25px;
       }
     }
-
+ 
   @media (max-width:768px) {
     #myNavbar .navbar-form {
       right: 30px !important;
@@ -585,7 +606,7 @@
 
 .msgMenu li:hover{background: #e6e6e6 !important; } 
 
-    @media (max-width:1230px) {
+    @media (max-width:1210px) {
       #myNavbar .nav:nth-child(1):nth-child(-n+6) {
         display:none;
       }
@@ -988,8 +1009,12 @@
 }
 
 @media (max-width:505px) {
-      .icon-dropdown {
+      .icon-dropdown, {
         width:100vw !important;
+      }
+
+      #friends-dropdown li:last-child, #notifications-dropdown li:last-child {
+        width:97.5vw !important;
       }
     }
 
@@ -1165,7 +1190,7 @@
                 {{ count_friend() }} @endif</span>
               <span id="request_counts"></span>
             </a>
-            <ul class="dropdown-menu lenght icon-dropdown">
+            <ul class="dropdown-menu lenght icon-dropdown" id='friends-dropdown'>
               <li class="notify_section">
 
               </li>
@@ -1221,7 +1246,7 @@
                 {{-- <hr style="width: 100%;"> --}}
                 <a href="{{ url('recent-join') }}">
                   
-                    <span style="font-size: 18px; color: #666666;">View All</span>
+                    <span style="font-size: 15px; color: #333;">View All</span>
                   
                 </a>
               </li>
@@ -1300,7 +1325,7 @@
              @if(!empty(count_notification())) {{ count_notification() }}
              <style>.noti_counts{background-color:#FF4646;}</style> @endif</span></span>
              </a>
-            <ul class="dropdown-menu lenght icon-dropdown">
+            <ul class="dropdown-menu lenght icon-dropdown" id='notifications-dropdown'>
               @if(!empty(get_notification()))
               @foreach(get_notification() as $row)
               <div id="get_noti" class="get_notifi">
@@ -1327,7 +1352,7 @@
 
 
               <a href="{{ url('notification') }}">
-                <li style="color: black;" class="text-center">
+                <li style="color:#333; font-size:15px;" class="text-center">
 
                   Show all
               </a>
@@ -1541,7 +1566,7 @@
         <div class="row">
           <div class="col-sm-2"></div>
           <a href="{{ url('public-profile',user_data()->id) }}">
-            <div class="col-sm-7 text-center">
+            <div class="col-sm-8 text-center">
               @if(!empty(get_photo()))
               <img src="{{ $user_assets }}/my_photo/{{ get_photo() }}" width="175" height="175" class="user_img" style="margin-left: ">
               @elseif(user_data()->image_name)

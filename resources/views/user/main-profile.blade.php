@@ -110,12 +110,6 @@
   text-align:center;
 }
 
-@media (min-width:991px) {
-  .user_name_db {
-    text-align:left;
-  }
-}
-
 @media (max-width:991px) and (min-width:768px) {
     .profile_stat.hvr-grow a img {
       width:180px !important;
@@ -321,7 +315,7 @@ footer .searchcontainer {
      <div class="row social_icon">
       <div class="col-lg-3 col-sm-3">
       </div>
-      <div class="col-lg-7 col-sm-8">
+      <div class="col-lg-6 col-sm-8">
         <img src="{{ $user_assets }}/db_images/g+.png" alt="" width="27" height="27" class="distance  hvr-grow">
 
        <a href="https://www.facebook.com/Saykaboolhai/" target="__blank">

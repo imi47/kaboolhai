@@ -27,7 +27,6 @@
   }
   .menulists
   {
-    font-size:22px;
     font-family: sans-serif;
   }
   .hdlist
@@ -47,9 +46,23 @@
   {
     color: white;
   }
+
+  @media (max-width:740px) {
+    .bigheading {
+      font-size:28px;
+    }
+
+    .smallhead {
+      font-size:20px;
+    }
+
+    .ptext {
+    font-size: 14px;
+    }
+  }
   
 </style>
-<div style="padding-top: 90px;"></div>>
+<div style="padding-top: 90px;"></div>
   
   <div class="container-fluid"> 
     <div class="row">
