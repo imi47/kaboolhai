@@ -1004,7 +1004,7 @@
   }
 
   #username-dropdown-toggle ul.dropdown-menu {
-      left: -76px !important;
+      left: -73px !important;
     }
 }
 

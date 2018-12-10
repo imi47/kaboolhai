@@ -35,6 +35,57 @@
     color:#333;
   }
 
+  /* user pic menu toggle code start */
+
+  .menu-container {
+		position: relative;
+		margin:auto;
+    display: inline-block;
+    float:right;
+    z-index:1;
+    margin-right:18px;
+	}
+
+	.menu-container .menu {
+		position: absolute;
+		background-color: #eee;
+		width:0;
+		height: 0;
+		top:0;
+		right:0;
+		transition: 500ms;
+		z-index: -1;
+    border-radius: 5px 15px 5px 5px;
+    overflow: hidden;
+    padding:10px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 7px #999;
+	}
+
+	.menu-container .menu.opened {
+    width:200px;
+    height:105px;
+  }
+
+	.menu-container .toggle {
+		transition: 500ms;
+    fill:red;
+    width: 30px;
+  }
+
+  .menu-container .toggle.rotate {
+    transform: rotate(45deg);
+  }
+  
+  .menu-container .menu ul li {
+    padding:5px;
+    cursor:pointer;
+    margin: 5px 0;
+    color:#333;
+    font-weight:600;
+  }
+  /* user pic menu toggle code end */
+
   @media (max-width:991px) {
     .nav-white.sticky-nav .navbar-nav li a, .nav-white.sticky-nav .navbar-nav li a {
     padding-top: 11px !important;
@@ -51,6 +102,10 @@
 
     #username-dropdown-toggle .dropdown-menu {
       top:42px !important;
+    }
+
+    .sidebar {
+      display:none;
     }
   }
  
@@ -71,6 +126,7 @@
       }
     }
 </style>
+
 <div class="col-md-12">
          {{--  <h4 class="text-color" style="text-align: center;">Settings</h4> --}}
         
@@ -131,12 +187,34 @@
             @foreach($photo as $row)
                 
               <div class="col-md-3">
-                <div class="g-photos" style="padding-bottom: 50px;">
-                  <a onclick="return confirm('Are you sure you want to delete this image?');" href="{{ url('delete-photo',$row->photo_id) }}" class="gp-cross"><i class="fa fa-window-close pull-right" style="color: red; font-size: 20px;"></i></a>
+                <div class="g-photos" style="padding-bottom: 50px;" style='position:relative;'>
+                  <a onclick="return confirm('Are you sure you want to delete this image?');" href="{{ url('delete-photo',$row->photo_id) }}" class="gp-cross">
+                  <!-- <i class="fa fa-window-close pull-right" style="color: red; font-size: 20px;"></i> -->
+                  </a>
+
+                  <div class="menu-container">
+                    <img  class='toggle' src="{{ $user_assets }}/images/plus.svg">
+                    <div class="menu">
+                      <ul>
+                        <li>Delete Picture</li>
+                        <li>Make Profile Picture</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <script>
+                    $(document).ready(function() {
+                      $('.toggle').click(function() {
+                        $(this).siblings('.menu').toggleClass('opened');
+                        $(this).toggleClass('rotate');                       
+                      });
+                    });
+                  </script>
+
                   <img style="height: 150px; width: 200px;" src="{{ $user_assets }}/my_photo/{{ $row->image }}" alt="" class="img-responsive" />
                   <div class="gp-text text-center">Album Photo {{ $user_data->user_name }}</div>
                   
-                  <a href="{{ url('make-profile-image',$row->photo_id) }}" class="btn btn-primary btn-sm">Make Profile Image</a>
+                  <!-- <a href="{{ url('make-profile-image',$row->photo_id) }}" class="btn btn-primary btn-sm">Make Profile Image</a> -->
                 </div>
               </div>
 

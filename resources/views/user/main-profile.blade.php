@@ -135,21 +135,8 @@
       /* margin-left:10.1vw; */
       margin-left:1.2vw;
     }
-
-    .navbar-nav .open .dropdown-menu {
-      top:47px !important;
-    }
-
-    #username-dropdown-toggle ul.dropdown-menu {
-      top:52px !important;
-    }
 }
 
-@media (max-width:767px) {
-  #username-dropdown-toggle ul.dropdown-menu {
-      top:45px !important;
-    }
-}
     .hvr-grow {
       margin-bottom:25px;
     }
@@ -160,7 +147,7 @@
 }
 @media (max-width:399px) {
   .social_icon {
-    margin-left:20px !important;
+    margin-left:10px !important;
   }
    .social_icon img {
     margin-right:20px !important;

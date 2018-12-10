@@ -3,11 +3,12 @@
 
 <style>
 
-  .nav.navbar-nav {
-	margin-right:0;
-	}
  	#logo-div {
 		margin-right: -61px;
+  }
+
+  .pagination {
+    margin-top:20px !important;
   }
 
   .hdlist {
@@ -54,10 +55,14 @@
     border-color: #ed6c05;
   }
 
+  @media (min-width:1361px) {
+    .nav.navbar-nav {
+    margin-right:0;
+    }
+  }
+
   
   @media (max-width:768px) {
-    .al-main ul.al-log li {
-    }
 
     .al-main ul.al-log li em {
       display:block;

@@ -5,6 +5,10 @@
     color: green;
   }
 
+  .pagination {
+    margin-top:20px;
+  }
+
   .pagination a, .pagination span {
     margin: 0 10px;
     border-radius: 99px !important;
@@ -57,6 +61,16 @@
   .headin-color{
     background-color: #ccc;
     padding: 5px;
+  }
+
+  @media (max-width:991px) {
+    .panel-body > .row {
+      margin-bottom:30px;
+    }
+
+    a[title='view profile'] + .col-md-8 + .col-md-2 a {
+      margin-top:10px;
+    }
   }
 
 @media (max-width: 685px) {

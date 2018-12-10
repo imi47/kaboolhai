@@ -71,20 +71,6 @@ input[type='checkbox'] {
    width: 6%;
 }
 
-@media (max-width:1131px) {
-	input[type='checkbox'] {
-    margin-top: 10px;
-    width: 21%;
-}
-}
-
-@media (max-width:1169px) {
-	input[type='checkbox'] {
-		margin-top: 10px;
-		width: 18%;
-	}
-}
-
 .searchcontainer button {
 	margin-top:-56px;
 }
