@@ -268,6 +268,7 @@
   .pl-profile img {
     width: 100%;
     height:100%;
+    opacity: 0.75;
     /*border-radius: 10px;*/
   }
   .pl-profile-content {
@@ -307,7 +308,8 @@
     list-style-type: none;
     margin-bottom:0px;
     margin-left: 7.5%;
-        line-height: 21px;
+    line-height: 21px;
+    margin-top:-20px;
   }
   .pl-list li {
     color: #fff;
@@ -500,6 +502,12 @@ p.t
       tr.dosrch th a {
         font-size:12px;
     }
+  }
+
+  @media (max-width:375px) {
+      .smallest {
+        width:100%;
+      }
   }
     
     @media (max-width:420px) {
