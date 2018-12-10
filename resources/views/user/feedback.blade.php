@@ -64,6 +64,12 @@
     padding-bottom: 11px !important;
   }
 }
+
+@media (max-width:520px) {
+  .navbar-form button {
+    padding: 6px 3px!important;
+  }
+}
 </style>
 
 

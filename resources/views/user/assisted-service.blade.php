@@ -208,6 +208,12 @@
     }
   }
 
+  @media (max-width:520px) {
+      .navbar-form button {
+         padding: 6px 3px!important;
+      }
+   }  
+
 </style>
  
       <div id="home"></div>

@@ -510,7 +510,6 @@ ul.in_box_brdr li:hover {
 
 @media (max-width:768px) {
 	.currentuserimg {
-		width: 100px;
 		height: auto;
 	}
 

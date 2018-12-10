@@ -41,6 +41,12 @@
       padding-top: 11px !important;
       padding-bottom: 11px !important;
     }
+
+    @media (max-width:520px) {
+      .navbar-form button {
+        padding: 6px 3px!important;
+      }
+  }
 }
 </style>
 <div style="padding-top:90px;"></div>

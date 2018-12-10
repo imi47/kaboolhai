@@ -465,7 +465,6 @@ p.t
   }
 
   @media (max-width:768px) {
-
       .col-xs-6 {
         width:50% ;
       }
@@ -488,6 +487,12 @@ p.t
     @media (max-width:640px) {
       .pagination > li > span {
         line-height: 1.7 !important;
+      }
+    }
+
+    @media (max-width:520px) {
+      .navbar-form button {
+       padding: 6px 3px!important;
       }
     }
  

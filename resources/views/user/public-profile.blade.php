@@ -163,7 +163,7 @@
 				}
 
 				.contacts_detail_parent {
-					margin-top:8px;
+					margin-top:30px;
 				}
 
 				.row.padding-two.sm-text-center {

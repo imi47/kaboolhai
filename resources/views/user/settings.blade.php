@@ -148,6 +148,12 @@ footer .footer-middle {
   }
 }
 
+@media (max-width:520px) {
+  .navbar-form button {
+    padding: 6px 3px!important;
+  }
+}
+
 </style>
  <div class="col-md-12">
          {{--  <h4 class="text-color" style="text-align: center;">Settings</h4> --}}

@@ -58,6 +58,12 @@
     }
   }
 
+  @media (max-width:520px) {
+  .navbar-form button {
+    padding: 6px 3px!important;
+  }
+}
+
 @media (max-width:320px) {
   .searchcontainer button {
     margin-top:-44px !important;
