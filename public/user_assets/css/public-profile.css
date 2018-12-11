@@ -504,10 +504,6 @@ ul.in_box_brdr li:hover {
    /* background-color:#f47e2a;  */
 }
 
-@media (max-width:991px) {
-
-}
-
 @media (max-width:768px) {
 	.currentuserimg {
 		height: auto;

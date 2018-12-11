@@ -224,6 +224,15 @@
 			.box_body, .txt_fetched {
 					font-size:3.6vw;
 				}
+			.hover, .in_box_brdr li {
+				flex-direction:column;	
+			}
+
+			.self, .self1 {
+				background:none;
+				color:#333;
+				border:none;
+			}
 		 }
 
      </style>

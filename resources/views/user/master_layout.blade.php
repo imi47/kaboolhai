@@ -1056,6 +1056,16 @@
     }
 }
 
+@media (max-width:400px) {
+  .navbar-form button {
+    padding: 5px 4px !important;
+  }
+
+  .navbar-form input[type='text'] {
+    padding-left:3px !important;
+  }
+}
+
 
   </style>
   <nav class="navbar navbar-default navbar-fixed-top">
