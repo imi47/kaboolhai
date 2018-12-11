@@ -42,12 +42,11 @@
   /* user pic menu toggle code start */
 
   .menu-container {
-		position: relative;
+		position: absolute;
 		margin:auto;
     display: inline-block;
-    float:right;
     z-index:1;
-    margin-right:18px;
+    /* left:200px; */
 	}
 
 	.menu-container .menu {
@@ -55,8 +54,9 @@
 		background-color: #eee;
 		width:0;
 		height: 0;
-		top:0;
-		right:0;
+    top:3px;
+    left:3px;
+		/* right:0; */
 		transition: 500ms;
 		z-index: -1;
     border-radius: 5px 15px 5px 5px;
@@ -64,7 +64,10 @@
     padding:10px;
     border: 1px solid #ccc;
     box-shadow: 2px 2px 7px #999;
-	}
+  }
+  .menu-container .menu li:hover {
+    color:#ed6c05;
+  }
 
 	.menu-container .menu.opened {
     width:200px;

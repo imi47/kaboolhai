@@ -252,7 +252,7 @@ footer .fa-search {
 
     }
 
-    #friends-dropdown .icon-dropdown li:nth-last-child(2), #notifications-dropdown .icon-dropdown li:nth-last-child(2) {
+    #friends-dropdown .icon-dropdown li:nth-last-child(2), #notifications-dropdown .icon-dropdow.msgMenu lin li:nth-last-child(2) {
       margin-bottom:25px;
     }
 
@@ -266,9 +266,9 @@ footer .fa-search {
         padding: 4px 20px;
     }
 
-    /* #notifications-dropdown .icon-dropdown li:last-child {
+    #notifications-dropdown .icon-dropdown li:last-child {
       top:417px;
-    } */
+    }
 
     #friends-dropdown .icon-dropdown li:last-child a:hover {
       background:none;
