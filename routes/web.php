@@ -55,7 +55,7 @@ Route::get("separated","User_controller@separated");
 Route::get("polygamy","User_controller@polygamy");
 Route::post("customer-query","User_controller@customer_query");
 Route::get("services","User_controller@services");
-Route::get("manage-profiles/{user}","User_controller@manage_profiles");
+Route::get("manage-profiles/{user}/{field}/{field2}","User_controller@manage_profiles");
 Route::get("policy-privacy","User_controller@policy_privacy");
 Route::get("term-condation","User_controller@term_condation");
 Route::get("contact-us","User_controller@contact_us");

@@ -7,6 +7,10 @@
     line-height:400%;
   }
 
+  .main-section {
+    z-index:2;
+  }
+
   .searchcontainer button {
     padding: 13px 16px;
     margin-top: -56px;

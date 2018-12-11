@@ -43,10 +43,6 @@
 		width:100%;
 		border:none;
   }
-  
-    .main-section {
-    width:420px;
-  }
 
   .navbar-form button .glyphicon {
     top: 1px;
@@ -67,10 +63,6 @@
 
   .main-section .arrow_button {
     margin-left:-21px;
-  }
-
-  #bb img {
-    margin-top: 14px;
   }
 
   .pagination a, .pagination span {

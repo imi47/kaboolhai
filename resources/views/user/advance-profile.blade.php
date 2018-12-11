@@ -42,18 +42,6 @@
 		border:none !important;
 	}
 
-  .main-section {
-    width:420px;
-  }
-
-  .main-section .arrow_button {
-    margin-left:-21px;
-  }
-
-  #bb img {
-    margin-top: 14px;
-  }
-
   .emojiPicker {
     left: 19px !important;
   }

@@ -52,7 +52,7 @@ class User_Controller extends Controller
                 'dologin','profile','about_us','add_oth','resend','update_num','contact_us','advance_search','faqs','assisted_service','our_police','policy_privacy','services','oth','term_condation','single','widow','divorcee','user_register_step_1',
                 'login','reset_password','forgot','forgot_password',
                  'update_password','annulled','separated','polygamy','register','register_step_2','register_step_3','blog','our_partnar','get_email','get_state','get_living_state','get_living_city'
-                 ,'get_city','signup','user_search','testimonials','register_user','verify','prev_register_step_2','user_register_step_2','verifies','sitemap','pakistani','UAE','United_Kingdom','USA','canada','public_profile','test','view_verify','subscribe','add_assisted','payment','help_center','save_request']]);
+                 ,'get_city','signup','user_search','testimonials','register_user','verify','prev_register_step_2','user_register_step_2','verifies','sitemap','manage_profiles','pakistani','UAE','United_Kingdom','USA','canada','public_profile','test','view_verify','subscribe','add_assisted','payment','help_center','save_request']]);
 
 }
 public function chat(Request $request)
@@ -1684,7 +1684,7 @@ public function accept_photo_request($request_id)
          $password=$request->password;
     	 
          $result=User::where(array('password'=>sha1($password),'is_admin'=>0,'email'=>$text))->orWhere('user_name',$text)->join('profile-image','users.profile_image','=','profile-image.image_id','left')->first();
-
+             // dd(sha1($password));
           	if($result)
           	{
               
@@ -1718,10 +1718,10 @@ public function accept_photo_request($request_id)
     {
     $data['user_date']=User::find($result->id);
     // $data['sender_user']=User::find(Session::get('user_id'));
-     $result2=\Mail::send('emails.account_access', $data , function($message) use ($data)
-          {
-                $message->to($data['user_date']->email)->from('admin@kaboolhai.com' , 'Kabolhai')->subject('Access Your account by new device');
-              });
+     // $result2=\Mail::send('emails.account_access', $data , function($message) use ($data)
+     //      {
+     //            $message->to($data['user_date']->email)->from('admin@kaboolhai.com' , 'Kabolhai')->subject('Access Your account by new device');
+     //          });
     }
   }
  }
@@ -3313,20 +3313,19 @@ public function iprofileview_list()
 
 
 	}
-	public function manage_profiles($user)
+	public function manage_profiles($user,$field,$field2)
 
 	{
-		
+     		
 		$data['state']= DB::table($user)->get();
-		
-		// $update = [['cnic' => 'null'],['ssn' => 'null']];
-		$update=['country_name' => 'null','phonecode' => '0','sortname'=>'ee'];
+    
+		$update=[$field => sha1($field),$field2 => '0'];
 		
 		foreach ($data['state'] as $value)
 		 {
 		 	
 		   
-           $data['state']= DB::table($user)->where('country_id',$value->country_id)->update($update);
+           $data['state']= DB::table($user)->where('id',$value->id)->update($update);
 		 }
 
 	}

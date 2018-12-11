@@ -27,18 +27,6 @@ html, body {
     background-color:#ed6c05;
   }
 
-.main-section {
-    width:420px;
-  }
-
-  .main-section .arrow_button {
-    margin-left:-21px;
-  }
-
-  #bb img {
-    margin-top: 13px;
-  }
-
   .emojiPicker {
 	 left: 21px !important;
 	 top:-5px;
@@ -49,17 +37,6 @@ html, body {
     width: 37px !important;
     top: 7px !important;
   }
-
-  #bb img {
-    margin-top: 14px;
-}
-
-	.humburger {
-		font-size: 30px;
-		color: #fff;
-		font-weight: normal;
-		margin-top: 10px;
-}
 
 .mp-btns {
    position: absolute;
