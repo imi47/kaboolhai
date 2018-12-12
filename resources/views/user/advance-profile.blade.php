@@ -54,7 +54,7 @@
 
   @media (min-width:991px) {
     .basic-info label {
-      margin:20px auto;
+      margin:23px auto;
     }
 
     #search-btn {
