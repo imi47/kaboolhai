@@ -59,7 +59,7 @@
 		/* right:0; */
 		transition: 500ms;
 		z-index: -1;
-    border-radius: 5px 15px 5px 5px;
+    border-radius: 5px;
     overflow: hidden;
     padding:10px;
     border: 1px solid #ccc;
@@ -81,7 +81,7 @@
   }
 
   .menu-container .toggle.rotate {
-    transform: rotate(45deg);
+    transform: rotate(225deg);
   }
   
   .menu-container .menu ul li {
