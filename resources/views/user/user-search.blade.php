@@ -525,7 +525,7 @@ p.t
    
      
     <div class="col-md-9">
-    <div class="well" style="background-color: currentColor;border-radius:10px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);height:auto;">
+    <div class="well" style="border-radius:10px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);height:auto;">
 
       {{-- <div class="row">
         <div class="col-sm-12">

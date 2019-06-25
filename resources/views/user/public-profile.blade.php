@@ -23,6 +23,12 @@
 		float:none !important;
 	}
 
+	.box_body span {
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+
 	.txt_fetched {
 		float:none;
 	}
@@ -30,7 +36,7 @@
 	.hover, .in_box_brdr li{
 		display:flex;
 		justify-content:space-between;
-		flex-wrap:wrap;
+		/* flex-wrap:wrap; */
 	}
 
 	.sidebar-container .sidebar, .sidebor {
@@ -185,16 +191,6 @@
 				#btn a button {
 					width:200px !important;
 				}
-
-				
-
-				.in_box_brdr {
-					margin-top:10px;
-				}
-
-				.in_box_brdr {
-					margin-bottom:20px;
-				}
 				
 				#btn {
 					display:block !important;
@@ -222,17 +218,17 @@
 
 		 @media (max-width:360px) {
 			.box_body, .txt_fetched {
-					font-size:3.6vw;
+					font-size:3.2vw;
 				}
-			.hover, .in_box_brdr li {
+			/* .hover, .in_box_brdr li {
 				flex-direction:column;	
-			}
+			} */
 
-			.self, .self1 {
+			/* .self, .self1 {
 				background:none;
 				color:#333;
 				border:none;
-			}
+			} */
 		 }
 
      </style>
@@ -302,7 +298,7 @@ $('.owl-carousel').owlCarousel({
            <p class="alert alert-danger text-center">Sory you are block</p>
             @else
 
-					<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 						<div class="imgofuser">
                @if($user_data->id==Session::get('user_id'))
                @if(count($myphoto))
@@ -429,7 +425,7 @@ $('.owl-carousel').owlCarousel({
 						</div>		
 					</div>
 					@if($user_data->id<>Session::get('user_id'))
-					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<div class="col-lg-4 col-md-5 col-sm-6 col-xs-12">
 						<div class="somelinks">
 							<ul class="list_somebtn">
 								<li class="agea"><a href="{{ url('more-alike',$user_data->id) }}"><span><img src="{{ $user_assets }}/more-alike.png" alt="" style='width:17px; margin-left:2px;'></span> <span class="linkT">More alike</span></a></li>
@@ -456,7 +452,9 @@ $('.owl-carousel').owlCarousel({
 								@else
 								<li class="agea"><a onclick="return false" href="{{ url('invite-view-profile',$user_data->id) }}"><span><img src="{{ $user_assets }}/invite.png" alt="" class="icon_size"></span><span class="linkT"> Invite to view my profile</span></a> (invitation request sent)</li>
 								@endif
-                <li class="agea"><a href="{{ url('addquestionlist',$user_data->id) }}"><span class="icon_size linkT" style="font-size: 25px;"><img style='margin-left:-7px;' src="{{ $user_assets }}/images/question.png" alt="" class="icon_size"></span> Question</a></li>
+
+								<li class="agea"><a href="{{ url('addquestionlist',$user_data->id) }}" onclick="return confirm('Are you sure you want to show this user?');" ><span><img src="{{ $user_assets }}/images/question.png" alt="" class="icon_size"></span> <span class="linkT">Question</span></a></li>
+
                 @if(empty($hideprofile))
 								<li class="agea"><a href="{{ url('hide-profile',$user_data->id) }}" onclick="return confirm('Are you sure you want to hide this user?');" ><span><img src="{{ $user_assets }}/dontshowagain.png" alt="" class="icon_size"></span> <span class="linkT">Don't show me again</span></a></li>
                 @else
@@ -469,15 +467,16 @@ $('.owl-carousel').owlCarousel({
 								 @else
 								  <li class="agea"><a href="{{ url('active-user',$user_data->id) }}" onclick="return confirm('Are you sure you want to unblock this user?');" ><span><img src="{{ $user_assets }}/block-user.png" alt="" class="icon_size"></span><span class="linkT"> Unblock User {{ $user_data->user_name }}  </span></a></li> @endif
 								  @if(empty($request))
-								<li class="agea"><a href="{{ url('add-friend',$user_data->id) }}"><span><img src="{{ $user_assets }}/sendrequest.png" alt="" class="icon_size"></span> <span class="linkT">Sent Request</span></a></li>
+								<li class="agea"><a href="{{ url('add-friend',$user_data->id) }}"><span><img src="{{ $user_assets }}/sendrequest.png" alt="" class="icon_size"></span> <span class="linkT">Send Request</span></a></li>
 								@else
-								<li class="agea"><a onclick="return false" href="{{ url('add-friend',$user_data->id) }}"><span><img src="{{ $user_assets }}/sendrequest.png" alt="" style='width:22px;'></span> <span class="linkT">Sent Request</span></a> (Friend request sent)</li>
+								<li class="agea"><a onclick="return false" href="{{ url('add-friend',$user_data->id) }}"><span><img src="{{ $user_assets }}/sendrequest.png" alt="" style='width:22px;'></span> <span class="linkT">Send Request</span></a> (Request sent)</li>
 								@endif
+								<li class="agea"><a href="{{ url('') }}"><span><img src="{{ $user_assets }}/icons/cancel-req.svg" alt="" class="icon_size"></span> <span class="linkT">Cancel request</span></a></li>
 							</ul>	
 						</div>
 					</div>
           @else
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12">
             <div class="somelinks">
               <ul class="list_somebtn">
                
@@ -2397,31 +2396,29 @@ $('.owl-carousel').owlCarousel({
 				</form>
 			</div>
 	
-			<div class="well w" style="background-color:#ffffff;border-radius:10px;">
-				<div class="row">
-					<div class="col-sm-3 col-sm-offset-2 col-xs-3 col-xs-offset-2">
-	          @if($user_data->mobile_status==1)
-						<img src="{{ $user_assets }}/public_profile_icon/mobile verified.png" alt="" class="masterTooltip" title="Phone Number is Verified!">
-	          @else
-	          <img src="{{ $user_assets }}/public_profile_icon/mobile unverified gray.png" alt="" class="masterTooltip" title="Phone Number is un verified!">
-	          @endif	
-					</div>
-					<div class="col-sm-3 col-xs-3">
-	           @if($user_data->email_status==1)
-						<img src="{{ $user_assets }}/public_profile_icon/email verified.png" alt="" class="masterTooltip" title="Email  is verified!">
-	          @else
-	          <img src="{{ $user_assets }}/public_profile_icon/email unverified.png" alt="" class="masterTooltip" title="Email  is unverified!">
-	          @endif
-					</div>
-					<div class="col-sm-3 col-xs-3">
-	          @if($user_data->ssn_status<>1)
-						<img src="{{ $user_assets }}/public_profile_icon/ssn verified.png" alt=""  class="masterTooltip" title="CNIC  is verified!">
-	          @else
-	          <img src="{{ $user_assets }}/public_profile_icon/ssn_unverified.png" alt=""  class="masterTooltip" title="CNIC  is unverified!">
-	          @endif
-					</div>
+			<div class="well w verification" style="background-color:#ffffff;border-radius:10px;">
+				<div>
+					@if($user_data->mobile_status==1)
+					<img src="{{ $user_assets }}/public_profile_icon/mobile verified.png" alt="" class="masterTooltip" title="Phone Number is Verified!">
+					@else
+					<img src="{{ $user_assets }}/public_profile_icon/mobile unverified gray.png" alt="" class="masterTooltip" title="Phone Number is un verified!">
+					@endif	
 				</div>
-			</div>
+				<div>
+						@if($user_data->email_status==1)
+					<img src="{{ $user_assets }}/public_profile_icon/email verified.png" alt="" class="masterTooltip" title="Email  is verified!">
+					@else
+					<img src="{{ $user_assets }}/public_profile_icon/email unverified.png" alt="" class="masterTooltip" title="Email  is unverified!">
+					@endif
+				</div>
+				<div>
+					@if($user_data->ssn_status<>1)
+					<img src="{{ $user_assets }}/public_profile_icon/ssn verified.png" alt=""  class="masterTooltip" title="CNIC  is verified!">
+					@else
+					<img src="{{ $user_assets }}/public_profile_icon/ssn_unverified.png" alt=""  class="masterTooltip" title="CNIC  is unverified!">
+					@endif
+				</div>
+		</div>
 	
 			<div style="padding:20px;">
 				<div class="row ntb">

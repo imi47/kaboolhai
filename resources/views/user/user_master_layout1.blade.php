@@ -40,10 +40,15 @@
 
 ::-webkit-scrollbar
 {
-	width: 0.5rem;
-	height: 0.5rem;
+	width: 0.5em;
+	height: 0.5em;
 	background-color: #F5F5F5;
 }
+
+/* body::-webkit-scrollbar, body *::-webkit-scrollbar {
+  width: 0.7rem;
+	height: 0.7rem;
+} */
 
 ::-webkit-scrollbar-thumb
 {
@@ -205,7 +210,7 @@ footer .fa-search {
     .navbar-form .form-control {
       font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
       height:30px;
-      border-radius:3px;
+      border-radius:5px;
       letter-spacing: 0;
       font-weight:normal;
     }
@@ -449,10 +454,6 @@ footer .fa-search {
        margin-top:10px;
        margin-bottom:50px;
      }
-    #sidebar-2 ul li:not(.divider) {
-      padding:10px;
-      font-size:large;
-    }
     #sidebar-2 ul li.divider {
       background-color:#222;
       height:1px;
@@ -766,7 +767,8 @@ footer .fa-search {
 
       .navbar-form button {
         top: 3px;
-        border-radius: 0;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
         right: -17px;
       }
 
@@ -1003,7 +1005,7 @@ footer .fa-search {
                 <!-- <li><a href="{{ url('inbox') }}" class="menudesign">Inbox</a></li> -->
                 <!-- <li><a href="{{ url('sent-items') }}" class="menudesign">Sent Items</a></li> -->
                 <li><a href="{{ url('blocked-list') }}" class="menudesign">Block List</a></li>
-                <li><a href="{{ url('public-profile',user_data()->id) }}" class="menudesign">Public Profile</a></li>
+                <li><a href="{{ url('public-profile',user_data()->id) }}" class="menudesign">My Profile</a></li>
                 <li><a href="{{ url('assisted-service') }}" class="menudesign">Assisted Service</a></li>
 
 
@@ -1025,7 +1027,7 @@ footer .fa-search {
                         Writing Tips</a></li>
                     <li><a style="background-color: #ffffff; color: black !important;" href="{{ url('friend-list') }}">Friend
                         List</a></li>
-                    <li><a style="background-color: #ffffff; color: black !important;" href="{{ url('public-profile',user_data()->id) }}">Public
+                    <li><a style="background-color: #ffffff; color: black !important;" href="{{ url('public-profile',user_data()->id) }}">My
                         Profile</a></li>
                     <li class="divider"></li>
                     <li><a style="background-color: #ffffff; color: black !important;" href="{{ url('hide-profile-list') }}">Hidden
@@ -1046,7 +1048,7 @@ footer .fa-search {
                         Question</a></li>
                     <li class="divider"></li>
                     <li><a style="background-color: #ffffff; color: black !important;" href="{{ url('notification') }}">Notifications</a></li>
-                    <li><a style="background-color: #ffffff; color: black !important;" href="{{ url('statistics') }}">Statistics</a></li>
+                    <!-- <li><a style="background-color: #ffffff; color: black !important;" href="{{ url('statistics') }}">Statistics</a></li> -->
                     <li><a style="background-color: #ffffff; color: black !important;" href="{{ url('settings') }}">Setting</a></li>
                     <li><a style="background-color: #ffffff; color: black !important;" href="{{ url('close-account') }}">Close
                         My Account</a></li>
@@ -1303,8 +1305,8 @@ footer .fa-search {
                   <a class="dropdown-toggle menudesign" data-toggle="dropdown" href="#">
                     {{ user_data()->user_name }} <span class="caret"></span></a>
                   <ul class="dropdown-menu" style="    background-color: #ffffff;">
-                    <li><a style="background-color: #ffffff; color: black !important;" href="{{ url('dashboard') }}">Dashboard</a></li>
-                    <li><a style="background-color: #ffffff; color:black !important;" href="{{ url('logout') }}">Logout</a></li>
+                    <li><img width="20" height="20" src="http://localhost/KBH/public/user_assets/dashboard.svg" alt=""><a style="background-color: #ffffff; color: black !important;" href="{{ url('dashboard') }}">Dashboard</a></li>
+                    <li><img width="20" height="20" src="http://localhost/KBH/public/user_assets/logout.svg" alt="log out"><a style="background-color: #ffffff; color:black !important;" href="{{ url('logout') }}">Logout</a></li>
                   </ul>
                   @endif
 
@@ -1558,7 +1560,7 @@ footer .fa-search {
             Writing Tips</a></li>
         <li><a href="{{ url('friend-list') }}">Friend
             List</a></li>
-        <li><a href="{{ url('public-profile',user_data()->id) }}">Public
+        <li><a href="{{ url('public-profile',user_data()->id) }}">My
             Profile</a></li>
         <li class="divider"></li>
         <li><a href="{{ url('hide-profile-list') }}">Hidden
@@ -1579,7 +1581,7 @@ footer .fa-search {
             Question</a></li>
         <li class="divider"></li>
         <li><a href="{{ url('notification') }}">Notifications</a></li>
-        <li><a href="{{ url('statistics') }}">Statistics</a></li>
+        <!-- <li><a href="{{ url('statistics') }}">Statistics</a></li> -->
         <li><a href="{{ url('settings') }}">Setting</a></li>
         <li><a href="{{ url('close-account') }}">Close
             My Account</a></li>
@@ -1678,19 +1680,11 @@ footer .fa-search {
       }
       #username-dropdown-toggle .dropdown-menu {
         position: absolute !important;
-        padding-left:15px !important;
-        padding-right:15px !important;
       }
 
       .nav-white.sticky-nav .navbar-nav li a:hover, .nav-white.sticky-nav .navbar-nav li a:hover {
        padding-right: 14px;
     }
-
-    #username-dropdown-toggle a {
-        display: inline-block !important;
-        padding-top: -0 !important;
-        padding-bottom: 10px !important;
-      }
 
       .nav-white.sticky-nav .navbar-nav > .open > a {
         padding-right: 14px;
@@ -1707,6 +1701,10 @@ footer .fa-search {
         /* padding: 5px auto !important; */
         top:413px !important;
         width:488px !important;
+      }
+
+      #username-dropdown-toggle ul li {
+        padding: 3px;
       }
   }
   

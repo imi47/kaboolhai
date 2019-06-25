@@ -111,9 +111,12 @@
 		 }
 
 	.sticky-nav .navbar-nav > li > .dropdown-menu {
-		border-radius: 5px;
 		right: 6px;
-		border: 2px solid #ddd;
+		border-radius: 3px;
+		border: 1px solid rgba(0,0,0,.15);
+		right: 52px;
+		box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+		padding-top: 2px;
 	}
 	footer .searchcontainer .form-control {
 		border-radius:3px;
@@ -664,7 +667,6 @@
       $('#logindivv').toggle();
       $('#navsidebare').hide('slow');
     });
-
   </script>
 
 
@@ -689,12 +691,6 @@
         });
 
 	</script>
-
-	<style>
-		.dropdown-open .dropdown-menu {
-			/* display:none !important; */
-		}
-	</style>
 
 	<div class="logindiv wow fadeIn" id="logindivv">
 

@@ -29,6 +29,7 @@
 			display:block !important;
 		}
 	 } */
+
 	html {
         overflow-x:hidden;
 	 }
@@ -42,8 +43,8 @@ body::-webkit-scrollbar-track, body *::-webkit-scrollbar-track
 
 body::-webkit-scrollbar, body *::-webkit-scrollbar
 {
-	width: 0.35rem;
-	height: 0.35rem;
+	width: 0.45rem;
+	height: 0.45rem;
 	background-color: #F5F5F5;
 }
 

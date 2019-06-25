@@ -43,8 +43,8 @@
 
 ::-webkit-scrollbar
 {
-	width: 0.5rem;
-	height: 0.5rem;
+	width: 0.5em;
+	height: 0.5em;
 	background-color: #F5F5F5;
 }
 
@@ -251,7 +251,16 @@
 
 	footer .searchcontainer button {
 		border-radius:0 3px 3px 0;
-	}
+  }
+  
+  #sidebar-2 ul li:not(.divider) {
+    padding: 5px 25px;
+    font-size: 16px;
+  }
+
+  #sidebar-2 ul li:not(.divider):hover {
+      background-color: #ED6C05;
+  }
 
   @media (min-width:1200px) {
     .jumbotron {
@@ -266,7 +275,7 @@
 
   .navbar-form .form-group input {
     height:30px;
-    border-radius: 3px;
+    border-radius: 5px;
   }
 
   .navbar-form button {
@@ -282,6 +291,26 @@
   #accordion, #username-dropdown-toggle a {
       font-weight:600;
   }
+
+  #username-dropdown-toggle ul li {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
+
+#username-dropdown-toggle ul li:hover, #username-dropdown-toggle ul li:hover a {
+    background-color: #f5f5f5 !important;
+}
+
+#username-dropdown-toggle ul li img {
+    margin-left: 7px;
+}
+
+#username-dropdown-toggle ul li a {
+    padding-left: 5px;
+    margin-top: 0;
+    padding: 0 0 0 5px !important;
+}
 
   #username-dropdown-toggle li a {
       font-weight:normal;
@@ -427,11 +456,6 @@
       margin-bottom:40px;
     }
 
-    #sidebar-2 ul li:not(.divider) {
-      padding:10px;
-      font-size:large;
-    }
-
     #sidebar-2 ul li.divider {
       background-color:#222;
       height:1px;
@@ -539,6 +563,11 @@
    @media (max-width:1360px) {
     .navbar-collapse.collapse {
       margin-right:92px;
+    }
+
+    .navbar-form button {
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
     }
 
       #myNavbar .navbar-form {
@@ -1110,7 +1139,7 @@
 
               <li><a href="{{ url('friend-list') }}">Friend List</a></li>
 
-              <li><a href="{{ url('public-profile',user_data()->id) }}">Public Profile</a></li>
+              <li><a href="{{ url('public-profile',user_data()->id) }}">My Profile</a></li>
               <li class="divider"></li>
               <li><a style="background-color: #ffffff; color: black !important;" href="{{ url('hide-profile-list') }}">Hidden
                   Profiles</a></li>
@@ -1127,7 +1156,7 @@
               <li><a href="{{ url('question') }}">My Question</a></li>
               <li class="divider"></li>
               <li><a href="{{ url('notification') }}">Notifications</a></li>
-              <li><a href="{{ url('statistics') }}">Statistics</a></li>
+              <!-- <li><a href="{{ url('statistics') }}">Statistics</a></li> -->
               <li><a href="{{ url('settings') }}">Setting</a></li>
               <li><a href="{{ url('close-account') }}">Close My Account</a></li>
               <li><a style="background-color: #ffffff; color: black !important;" href="{{ url('show-search') }}">Save
@@ -1379,9 +1408,9 @@
             <a class="dropdown-toggle menudesign" data-toggle="dropdown" href="#">
               @if(count(user_data())) {{ user_data()->user_name }} @endif<span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="{{ url('dashboard') }}">Dashboard</a></li>
+              <li><img width="20" height="20" src="http://localhost/KBH/public/user_assets/dashboard.svg" alt=""><a href="{{ url('dashboard') }}">Dashboard</a></li>
 
-              <li><a href="{{ url('logout') }}">Logout</a></li>
+              <li><img width="20" height="20" src="http://localhost/KBH/public/user_assets/logout.svg" alt="log out"><a href="{{ url('logout') }}">Logout</a></li>
             </ul>
           </li>
 
@@ -1482,7 +1511,7 @@
             Writing Tips</a></li>
         <li><a href="{{ url('friend-list') }}">Friend
             List</a></li>
-        <li><a href="{{ url('public-profile',user_data()->id) }}">Public
+        <li><a href="{{ url('public-profile',user_data()->id) }}">My
             Profile</a></li>
         <li class="divider"></li>
         <li><a href="{{ url('hide-profile-list') }}">Hidden
@@ -1503,7 +1532,7 @@
             Question</a></li>
         <li class="divider"></li>
         <li><a href="{{ url('notification') }}">Notifications</a></li>
-        <li><a href="{{ url('statistics') }}">Statistics</a></li>
+        <!-- <li><a href="{{ url('statistics') }}">Statistics</a></li> -->
         <li><a href="{{ url('settings') }}">Setting</a></li>
         <li><a href="{{ url('close-account') }}">Close
             My Account</a></li>
@@ -1579,9 +1608,8 @@
     <div class="col-md-3">
       <div class="well" style="background-color: #40395b;border-color:#ea670f;">
         <div class="row">
-          <div class="col-sm-2"></div>
           <a href="{{ url('public-profile',user_data()->id) }}">
-            <div class="col-sm-8 text-center">
+            <div class="text-center">
               @if(!empty(get_photo()))
               <img src="{{ $user_assets }}/my_photo/{{ get_photo() }}" width="175" height="175" class="user_img" style="margin-left: ">
               @elseif(user_data()->image_name)

@@ -69,6 +69,10 @@ input, textarea, select {
     width:387px !important;
   }
 
+  #regform .listtopmarg:nth-of-type(11) > div:last-child {
+    margin-left: -23px;
+  }
+
   #full {
     width:200px;
   }
@@ -95,6 +99,10 @@ input, textarea, select {
     #regform input[type=text],input[type=email], input[type=text],input[type=password], select {
       width:100% !important;
     }
+
+    #register_step_1 {
+      margin-left: 10px;
+    } 
   }
 
   @media (max-width: 768px) {
@@ -108,6 +116,10 @@ input, textarea, select {
   #regform input[type=text], input[type=email], input[type=text], input[type=password], select {
     width: 100% !important;
     }
+
+  #regform #password + div {
+    width: 97%;
+  } 
 }
 .tooltip-inner {
     max-width: 100% !important;
@@ -121,6 +133,12 @@ input, textarea, select {
     .modal h1 {
       font-size: 18px;
     }
+  }
+
+  @media (max-width: 411px) {
+  #regform .listtopmarg:nth-of-type(11) > div:last-child #full {
+    width: 161px !important;
+    margin-left: 23px;
   }
 
   @media (max-width:400px) {
@@ -735,7 +753,7 @@ border-bottom-left-radius: 10px;*/
 <input type="password" data-toggle="tooltip" data-placement="top" title="Password should be between 8-25 characters " {{-- id="password" --}} id="pa" name="password" onkeypress="passwordss()" onblur="pas()" onfocus="pass()" class="allinputs" placeholder ="Enter Password">
 
   <span id="password" title="Password" class="form_error" style="color:red; font-size: 13px;"></span>
-<div class="col-12">
+<div style="width: 95%; margin-left: 15px;">
 
 <div class="pwstrength_viewport_progress" style="display: none;"></div>
 </div>
@@ -835,7 +853,7 @@ border-bottom-left-radius: 10px;*/
 <div class="col-lg-4 col-md-4-col-sm-4 col-xs-12">
 <label for="">Phone: <span class="imporatant">*</span></label>
 </div>
-<div class="col-lg-8 col-md-6 col-sm-12 col-xs-12">
+<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
 <!-- <span class="colons">:</span> -->
 <img style="margin-top: 4px; margin-bottom: 6px;" src="{{ $user_assets }}/flags/pk.png" width="20" id="falgimg">
 
