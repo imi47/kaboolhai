@@ -56,7 +56,9 @@ Table of contents
     Reset
 ====================================== */
 
-body{ font-family: 'Open Sans', sans-serif; -webkit-font-smoothing: antialiased; font-size:14px; color:#333; line-height:23px; letter-spacing: 0.02em }
+body{ font-family: 'Open Sans', sans-serif; -webkit-font-smoothing: antialiased; font-size:14px; color:#333; line-height:23px;
+    letter-spacing: 0.02em;
+}
 
 body *:focus {
     outline: none !important;
@@ -2837,7 +2839,7 @@ nav { width: 100%; top: 0px; z-index: 99;}
 nav .container{ display: table-cell; vertical-align: middle; height: 80px; position: relative; }
 .shrink-nav .container { height: 60px; }
 .shrink-nav { background-color:#FFF; }
-.sticky-nav{ position: fixed; top: 0px; display: inline-table; z-index:999999 !important}
+.sticky-nav{ position: fixed; top: 0px; display: inline-table; z-index:6 !important}
 /* .logo { max-width: 240px; } */
 .logo { max-width: 200px; }
 .logo-style-2 { max-width: 177px; }

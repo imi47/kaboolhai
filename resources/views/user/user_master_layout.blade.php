@@ -67,11 +67,15 @@
 			-webkit-user-select: none;
 			-ms-user-select: none;
 			user-select: none;
-			width:57px;
-			float:right;
+			width: 57px;
+			height: 57px !important;
 			margin-top: 5px;
-    		margin-bottom: -9px;
-			 margin-right:-10px;
+			margin-bottom: -9px;
+			margin-right: -10px;
+			position: fixed;
+			right: 10px;
+			z-index: 7;
+			top: -10px;
 		 }
 		 .hamRotate.active {
 			transform: rotate(45deg);
@@ -114,7 +118,7 @@
 		right: 6px;
 		border-radius: 3px;
 		border: 1px solid rgba(0,0,0,.15);
-		right: 52px;
+		right: 35px;
 		box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 		padding-top: 2px;
 	}
@@ -154,12 +158,6 @@
     	text-decoration:none;
   	}
 
-	@media (max-width:500px) {
-		#navsidebare {
-			width:100%;
-		}
-	}
-
 	.well .btn {
 		margin: 25px auto;
 	}
@@ -175,7 +173,7 @@
 		#navsidebare {
       height:100% !important;
       position:fixed !important;
-		z-index:9999999;
+		z-index:7;
 		margin-top:45px;
     }
 	 
@@ -191,6 +189,13 @@
 		.logo-mobile {
 			display:none;
 		}
+
+		@media (max-width:500px) {
+		#navsidebare {
+			width:100%;
+			margin-top: unset;
+		}
+	}
 
 		@media (max-width:420px) {
 			.shrink-nav .logo-light {
@@ -285,7 +290,6 @@
 		overflow:scroll;
 		height:100vh;
 		overflow-x:hidden;
-		opacity:0.9;
 		background-color:#000;
     }
 
@@ -295,7 +299,8 @@
     }
     
     .navbar-container .main-nav .navbar-collapse{
-      float:right !important;
+			float:right !important;
+			margin-right: 30px;
     }
 
     /* .main-nav .navbar-collapse #accordion {
@@ -575,17 +580,6 @@
 				<!-- toggle navigation end -->
 				<!-- main menu -->
 				<div class="col-xs-10 main-nav">
-				<svg class="ham hamRotate ham8" viewBox="0 0 100 100" width="80" onclick="this.classList.toggle('active')">
-						<path
-								class="line top"
-								d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
-						<path
-								class="line middle"
-								d="m 30,50 h 40" />
-						<path
-								class="line bottom"
-								d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20" />
-					</svg>
 					<div class="navbar-collapse collapse">
 						<ul id="accordion" class="nav navbar-nav panel-group">
 							<!-- <li> <a href="register.html">Register</a> </li> -->
@@ -660,6 +654,18 @@
 
 		
 	</nav>
+
+	<svg class="ham hamRotate ham8" viewBox="0 0 100 100" width="80" onclick="this.classList.toggle('active')">
+			<path
+					class="line top"
+					d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
+			<path
+					class="line middle"
+					d="m 30,50 h 40" />
+			<path
+					class="line bottom"
+					d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20" />
+		</svg>
 
 	<script>
 		// i named signin1 instead of signin because other code interferes

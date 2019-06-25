@@ -136,10 +136,13 @@ footer .fa-search {
 			-webkit-user-select: none;
 			-ms-user-select: none;
       user-select: none;
-      float:right;
-      margin-bottom: -5px;
       width: 57px;
-      margin-top: -54px;
+      height: 57px;
+      margin-top: -2px;
+      position: fixed;
+      z-index: 6;
+      position: fixed;
+      right: 0;
 		 }
 		 .hamRotate.active {
 			transform: rotate(45deg);
@@ -306,6 +309,34 @@ footer .fa-search {
       margin-top: 52px;
     }
 
+    #sidebar-2 {
+      background-color:#000;
+      color:#fff;
+      height:100%;
+      margin-top:52px;
+      width:260px;
+      position:fixed;
+      /* right:-260px; */
+      right:-2000px;
+      transition:500ms;
+      z-index:6;
+      overflow:scroll;
+    }
+
+     #sidebar-2 ul {
+       margin-top:10px;
+       margin-bottom:50px;
+     }
+    #sidebar-2 ul li.divider {
+      background-color:#222;
+      height:1px;
+    }
+    
+     #sidebar-2 ul li a {
+       text-decoration:none;
+       color:#fff;
+     }
+
     @media (min-width:500px) {
       .search-dropdown-toggle:hover{
         color:#ed6c05;
@@ -314,7 +345,8 @@ footer .fa-search {
 
     @media (max-width:500px) {
 		#navsidebare {
-			width:100%;
+      width:100%;
+      margin-top: 0;
     }
 
     .mp-bio-label {
@@ -343,6 +375,11 @@ footer .fa-search {
 
    #sidebar-2 {
      width:100% !important;
+     margin-top: unset;
+   }
+
+   #sidebar-2 ul {
+     margin-top: 40px;
    }
 
    .view-profile {
@@ -435,34 +472,7 @@ footer .fa-search {
     #menu-div .navbar-collapse {
       border:none;
     }
-    #sidebar-2 {
-      background-color:#000;
-      color:#fff;
-      opacity:0.9;
-      height:100%;
-      margin-top:52px;
-      width:260px;
-      position:fixed;
-      /* right:-260px; */
-      right:-2000px;
-      transition:500ms;
-      z-index:999999;
-      overflow:scroll;
-    }
-
-     #sidebar-2 ul {
-       margin-top:10px;
-       margin-bottom:50px;
-     }
-    #sidebar-2 ul li.divider {
-      background-color:#222;
-      height:1px;
-    }
     
-     #sidebar-2 ul li a {
-       text-decoration:none;
-       color:#fff;
-     }
     @media (max-width:768px) {
       #stay-tuned-container p {
         margin:10px;
@@ -518,7 +528,6 @@ footer .fa-search {
       // });
     });
     
-    var sideGoMoreOpen = false;
   </script>
 </head>
 
@@ -732,7 +741,6 @@ footer .fa-search {
       overflow: scroll;
 		  overflow-x:hidden;
       height: 100vh;
-      opacity:0.9;
       background-color:#000;
     }
 
@@ -1451,33 +1459,6 @@ footer .fa-search {
         </div>
       </div>
 
-      <svg class="ham hamRotate ham8" viewBox="0 0 100 100" width="80" onclick="ham()">
-          <path
-              class="line top"
-              d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
-          <path
-              class="line middle"
-              d="m 30,50 h 40" />
-          <path
-              class="line bottom"
-              d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20" />
-        </svg>
-
-        <script>
-          function ham() {
-            document.querySelector('.ham').classList.toggle('active');
-          }
-
-          $('.ham').click(function() {
-            if(!sideGoMoreOpen)
-              $('#navsidebare').toggle('slow');
-            else {
-              $('#sidebar-2').css('right', '-2000px');
-              sideGoMoreOpen = false;
-            }
-          });
-        </script>
-
 
       <div class="navsidebar wow slideInRight" id="navsidebare" style="display:none;">
         <div class="row">
@@ -1607,20 +1588,39 @@ footer .fa-search {
       @endif
     </div>
 
-    <script>
+    <svg class="ham hamRotate ham8" viewBox="0 0 100 100" width="80" onclick="ham()">
+      <path
+          class="line top"
+          d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
+      <path
+          class="line middle"
+          d="m 30,50 h 40" />
+      <path
+          class="line bottom"
+          d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20" />
+    </svg>
     
+    <script>
+      var sideGoMoreOpen = false;
+          
+      function ham() {
+        document.querySelector('.ham').classList.toggle('active');
+      }
+
+      $('.ham').click(function() {
+        if(!sideGoMoreOpen)
+          $('#navsidebare').toggle('slow');
+        else {
+          $('#sidebar-2').css('right', '-2000px');
+          sideGoMoreOpen = false;
+        }
+      });
+
       $('#side-go-more-li').click(function(){
         $('#navsidebare').hide('fast');
         $("#sidebar-2").css('right', '0');
         sideGoMoreOpen = true;
       });
-
-      $('.ham').click(function(){
-        $('#sidebar-2').css('right', '-2000px');
-        sideGoMoreOpen = false;
-      });
-
-      
     </script>
 
   </div>

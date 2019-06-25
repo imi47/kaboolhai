@@ -199,9 +199,10 @@
 			-ms-user-select: none;
 			user-select: none;
       width: 55px;
-      position: absolute;
+      position: fixed;
       right: 10px;
       top: -2px;
+      z-index: 1031;
       display:none;
 		 }
 		 .hamRotate.active {
@@ -364,6 +365,7 @@
     height:100% !important;
     position:fixed !important;
     margin-top:50px;
+    opacity: 1 !important;
   }
 
   #navsidebare ul {
@@ -372,6 +374,7 @@
 
   #navsidebare a {
     text-decoration:none;
+    display: flex;
   }
 
   .tpsrch {
@@ -418,7 +421,7 @@
 
     li a.M {
       display: block;
-      width: 200px;
+      width: 100%;
       margin-top: 10px;
       /* background-color: red; */
       color: #ffffff;
@@ -434,26 +437,24 @@
       position:absolute;
       top:0;
       right:0;
-      z-index:999999;
+      z-index:1031;
   }
   
   #sidebar-2 {
       background-color:#000;
       color:#fff;
-      opacity:0.9;
       height:100%;
       width:260px;
       position:fixed;
-      /* right:-260px; */
       right:-2000px;
       transition:500ms;
-      z-index:9999;
+      z-index:1031;
       overflow:scroll;
       margin-top: 50px;
     }
 
     #sidebar-2 ul {
-      margin-bottom:40px;
+      margin-bottom:45px;
     }
 
     #sidebar-2 ul li.divider {
@@ -725,6 +726,14 @@
 	}
 
   @media (max-width:500px) {
+    #navsidebare, #sidebar-2 {
+      margin-top:0;
+    }
+
+    #sidebar-2 ul {
+      margin-top:40px;
+    }
+
     .logo-light img {
       width: 35vw;
       margin-top: 6px;
@@ -1417,20 +1426,7 @@
           <!-- <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> -->
         </ul>
       </div>
-    </div>
-
-
-    <svg class="ham hamRotate ham8" viewBox="0 0 100 100" width="80" onclick="this.classList.toggle('active')">
-		<path
-				class="line top"
-				d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
-		<path
-				class="line middle"
-				d="m 30,50 h 40" />
-		<path
-				class="line bottom"
-				d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20" />
-	 </svg>  
+    </div>  
   </nav>
 
 
@@ -1556,6 +1552,18 @@
             <li><a href="{{ url('blocked-list') }}" class="menudesign">Block List</a></li>
       </ul>  
     </div>
+
+    <svg class="ham hamRotate ham8" viewBox="0 0 100 100" width="80" onclick="this.classList.toggle('active')">
+      <path
+          class="line top"
+          d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
+      <path
+          class="line middle"
+          d="m 30,50 h 40" />
+      <path
+          class="line bottom"
+          d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20" />
+    </svg>
 
     <script>
       $('.ham').click(function(){
