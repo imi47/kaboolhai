@@ -19,6 +19,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
+<script src="https://kit.fontawesome.com/ffa8a2c96b.js"></script>
 
 	<style>
 
@@ -306,13 +307,6 @@
     /* .main-nav .navbar-collapse #accordion {
       float:right;
     } */
-
-	#logindivv {
-		position:fixed;
-		top:0;
-		right:0;
-		margin-right:0;
-	}
 
 	.growsec {
     background-image: url(../back.jpg);
@@ -693,46 +687,60 @@
             if (!login_div.is(e.target) && login_div.has(e.target).length === 0) 
             {
                 login_div.hide();
+								$('.dim').hide();
             }
         });
 
 	</script>
 
 	<div class="logindiv wow fadeIn" id="logindivv">
-
-		<div class="row" style="padding:15px;">
-			<div class="col-sm-12">
-				<form method="post" action="{{ url('dologin') }}" id="forgot-password">
-					<div style="padding-left:15px;">
-						<span id='login-div-x'>X</span>
-						<label for="" style="font-size:20px;padding-bottom:5px;">Email </label>
-						<input type="text" name="email" placeholder="Email/User name/Mobile" style="height:35px;padding:5px;" class="form-control">
-
-						<label for="" style="font-size:20px;padding-bottom:5px;">Password</label>
-						<input type="password" name="password" placeholder="Enter Password" style="height:35px;padding:5px;">
-						<div style="display:inline;">
-							<input type="checkbox"> Remember Me
-						</div>
-						<br> {{ csrf_field() }}
-						<button type="submit" style="width:100%;margin-top:10px;background-color:#25b206;border:1px solid #25b206;height:35px;color:#ffffff;">Sign
-							In</button>
-						<div style="text-align:center;color:blue;margin-top:10px;">
-							<a href="{{ url('forgot') }}">Forgot Password?</a>
-						</div>
-				</form>
+		<form method="post" action="{{ url('dologin') }}" id="forgot-password">
+			<i class="fas fa-times-circle" id='login-div-x'></i>
+			<h2>Login</h2>
+			<div class='input-container'>
+				<input type="email" name="email" id="email">
+				<label for="email">Email </label>
+				<i class="fas fa-user-alt"></i>
 			</div>
-		</div>
+
+			<div class='input-container'>
+				<input type="password" name="password" id="password">
+				<label for="password">Password</label>
+				<i class="fas fa-lock"></i>
+			</div>
+			<div style="display:inline;">
+				<input type="checkbox"> Remember Me
+			</div>
+			<br> {{ csrf_field() }}
+			<button type="submit">Sign In</button>
+			<div>
+				<a href="{{ url('forgot') }}">Forgot Password?</a>
+			</div>
+		</form>
 	</div>
-	</div>
+
+	<div class="dim"></div>
 
 	<script>
 		$(".signin").click(function () {
 			$("#logindivv").toggle();
+			$('.dim').toggle();
 		});
 
 		$("#login-div-x").click(function () {
 			$('#logindivv').hide();
+			$('.dim').hide();
 		});
+
+		$('.logindiv .input-container input').focus(function() {
+			$(this).addClass('focused');
+		});
+
+		$('.logindiv .input-container input').blur(function() {
+			if($(this).val().length == 0)
+				$(this).removeClass('focused');
+		});
+
 		//   $('#forgot-password').submit(function(e){
 
 		//    e.preventDefault();
@@ -2488,6 +2496,7 @@ function timerIncrement() {
     document.querySelector('.ham').classList.remove('active');
       $('#navsidebare').hide('slow');
       $('#logindivv').show('fast');
+			('.dim').show();
   }
 </script>
 
