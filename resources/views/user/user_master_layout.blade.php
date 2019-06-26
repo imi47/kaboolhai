@@ -16,7 +16,7 @@
 	<!--  <link rel="stylesheet" href="{{ $user_assets }}/css/bootstrap.min.css"> -->
 	<link rel="stylesheet" href="{{ $user_assets }}/css/style3.css" />
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
 <script src="https://kit.fontawesome.com/ffa8a2c96b.js"></script>
@@ -208,12 +208,6 @@
 		section .row .blockcontain .frownumdiv .textowndiv {
 			color:#fff !important;
 		}
-
-		@media (max-width:430px) {
-			#logindivv {
-				width:100vw;
-			}
-		}
 		
 		.top-searches-by div{
 			border-bottom:1px solid #fff;
@@ -276,15 +270,6 @@
 			letter-spacing:1px;
 			font-size:1.2em;
 		}
-    }
-        
-        #login-div-x {
-         position: absolute;
-        font-size:large;
-        font-weight: bold;
-        top: 0;
-        right: 0;
-        cursor: pointer;
     }
 
     #navsidebare {
@@ -708,13 +693,14 @@
 				<label for="password">Password</label>
 				<i class="fas fa-lock"></i>
 			</div>
-			<div style="display:inline;">
-				<input type="checkbox"> Remember Me
+			<div class="remember">
+				<input type="checkbox" id="checkbox-remember"><label for="checkbox-remember">Remember Me</label>
 			</div>
 			<br> {{ csrf_field() }}
 			<button type="submit">Sign In</button>
-			<div>
+			<div class="forgot-and-signup">
 				<a href="{{ url('forgot') }}">Forgot Password?</a>
+				<span>Don't have an account? <a href="{{url('register')}}">Sign up</a></span>
 			</div>
 		</form>
 	</div>
@@ -2496,7 +2482,7 @@ function timerIncrement() {
     document.querySelector('.ham').classList.remove('active');
       $('#navsidebare').hide('slow');
       $('#logindivv').show('fast');
-			('.dim').show();
+			$('.dim').show();
   }
 </script>
 

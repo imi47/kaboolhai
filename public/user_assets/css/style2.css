@@ -312,3 +312,9 @@ input[type=select]
   font-weight:bold;
   padding-top:5px;
 }
+
+@media (max-width:500px) {
+  .logindiv {
+      width:95%;
+  }
+}

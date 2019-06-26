@@ -897,22 +897,6 @@ footer .fa-search {
       border-radius: 5px;
     }
 
-#logindivv {
-    position:fixed;
-    top:-13px;
-    /* left:0; */
-    right:0;
-    margin-right:0;
-  }
-    #login-div-x {
-      position: absolute;
-      font-size: large;
-      font-weight: bold;
-      top: 0;
-      right: 0;
-      cursor: pointer;
-    }
-
     @media (max-width:375px) {
 
       .nav.navbar-nav {
@@ -1798,48 +1782,65 @@ footer .fa-search {
             if (!login_div.is(e.target) && login_div.has(e.target).length === 0) 
             {
                 login_div.hide();
+                $('.dim').hide();
             }
         });
          
       </script>
   <div class="logindiv wow fadeIn" id="logindivv">
-    <div class="row" style="padding:15px;">
-      <div class="col-sm-12">
-        <form method="post" action="{{ url('dologin') }}" id="forgot-password">
-          <div style="padding-left:15px;">
-            <span id='login-div-x'>X</span>
-            <label for="" style="font-size:20px;padding-bottom:5px;">Email </label>
-            <input type="text" name="email" placeholder="Email/User name/Mobile" style="height:35px;padding:5px;" class="form-control">
-            <label for="" style="font-size:20px;padding-bottom:5px;">Password</label>
-            <input type="password" name="password" placeholder="Enter Password" style="height:35px;padding:5px;">
-            {{-- <div style="display:inline;">
-              <input type="checkbox"> Remember Me
-            </div> --}}
-            <br>
-            {{ csrf_field() }}
-            <button type="submit" style="width:100%;margin-top:10px;background-color:#25b206;border:1px solid #25b206;height:35px;color:#ffffff;">Sign
-              In</button>
-            <div style="text-align:center;color:blue;margin-top:10px;">
-              <a href="{{ url('forgot') }}">Forgot Password?</a>
-            </div>
-        </form>
-      </div>
-    </div>
-  </div>
+		<form method="post" action="{{ url('dologin') }}" id="forgot-password">
+			<i class="fas fa-times-circle" id='login-div-x'></i>
+			<h2>Login</h2>
+			<div class='input-container'>
+				<input type="email" name="email" id="email">
+				<label for="email">Email </label>
+				<i class="fas fa-user-alt"></i>
+			</div>
+
+			<div class='input-container'>
+				<input type="password" name="password" id="password">
+				<label for="password">Password</label>
+				<i class="fas fa-lock"></i>
+			</div>
+			<div class="remember">
+				<input type="checkbox" id="checkbox-remember"><label for="checkbox-remember">Remember Me</label>
+			</div>
+			<br> {{ csrf_field() }}
+			<button type="submit">Sign In</button>
+			<div class="forgot-and-signup">
+				<a href="{{ url('forgot') }}">Forgot Password?</a>
+				<span>Don't have an account? <a href="{{url('register')}}">Sign up</a></span>
+			</div>
+		</form>
+	</div>
 </div>
   </div>
+
+	<div class="dim"></div>
+
   <script>
     // $("#signin").click(function(){
     //         $("#logindivv").toggle();
     //      });
          
-         $("#login-div-x").click(function(){
-          $('#logindivv').hide();
-        });
+    $("#signin").click(function () {
+			$("#logindivv").toggle();
+			$('.dim').toggle();
+		});
 
-         $("#signin").click(function() {
-          $('#logindivv').toggle('fast');
-  });
+		$("#login-div-x").click(function () {
+			$('#logindivv').hide();
+			$('.dim').hide();
+		});
+
+		$('.logindiv .input-container input').focus(function() {
+			$(this).addClass('focused');
+		});
+
+		$('.logindiv .input-container input').blur(function() {
+			if($(this).val().length == 0)
+				$(this).removeClass('focused');
+		});
       </script>
       @yield('data')
       <footer>
@@ -3240,6 +3241,7 @@ function get_message()
     document.querySelector('.ham').classList.remove('active');
       $('#navsidebare').hide('slow');
       $('#logindivv').show('fast');
+      $('.dim').show();
   }
 
 </script>
@@ -3257,9 +3259,6 @@ function get_message()
     }
 
     @media (max-width:430px) {
-			#logindivv {
-				width:100vw;
-			}
 
       .search-dropdown-toggle {
         right: -10px;
