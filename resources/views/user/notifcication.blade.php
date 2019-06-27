@@ -7,6 +7,10 @@
     line-height:400%;
   }
 
+  #menu-div {
+    margin-left: 0;
+  }
+
 .menulists {
   font-size: 16px;
 }

@@ -6,6 +6,10 @@
         color:#000;
     } */
 
+    #menu-div {
+       margin-left: 0;
+    }
+
     .main-section {
         z-index:9999;
     }
@@ -88,12 +92,6 @@
 		margin-right: -61px;
 	}
 }
-
-@media (max-width:1360px) {
-    .navbar-form button {
-        right: -17px;
-    }
-  }
 
     @media (max-width:768px) {
 

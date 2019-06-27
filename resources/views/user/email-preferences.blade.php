@@ -18,7 +18,11 @@
 
   .hdlist li:hover {
     background-color:#ed6c05;
-  }
+	}
+	
+	#menu-div {
+		margin-left: 0;
+	}
 
 @media (min-width:991px) {
    .searchcontainer button {

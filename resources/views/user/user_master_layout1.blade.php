@@ -62,6 +62,16 @@
   color-stop(.6,#B88FF3))
 }
 
+#menu-div {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: -63px;
+}
+
+#friends-dropdown, #messages-dropdown, #notifications-dropdown, #username-dropdown-toggle {
+  visibility: visible !important;
+}
+
 footer .fa-youtube-square {
   margin-right:-2px;
 }
@@ -96,9 +106,9 @@ footer .fa-search {
       margin-left:11px;
     }
 
-    .nav.navbar-nav {
-      margin-right:50px;
-    }
+    /* .nav.navbar-nav {
+      margin-right:43px;
+    } */
 
     .search-dropdown-toggle {
       display:none;
@@ -222,6 +232,7 @@ footer .fa-search {
       position:relative;
       margin-top: 14px;
       margin-bottom: 2px;
+      display: block !important;
     }
 
     .navbar-form button {
@@ -456,7 +467,7 @@ footer .fa-search {
     }
     
     #menu-div .navbar-collapse.collapse {
-      float:right;
+      float:none;
     }
     .icon-dropdown {
     width:500px;
@@ -744,7 +755,7 @@ footer .fa-search {
       background-color:#000;
     }
 
-    @media (min-width:1361px) {
+    @media (min-width:1266px) {
       .navbar-form {
         display:block !important;
       }
@@ -754,17 +765,24 @@ footer .fa-search {
       }
     }
 
-    @media (max-width:1360px) {
+    @media (max-width:1265px) {
       .navbar-form {
-        display:none;
-
+        display:none !important;
         position: absolute;
         border-radius: 3px;
         top: 13px;
-        right: 104px;
+        right: 50px;
         margin:0;
         padding:0px;
         border:none;
+      }
+
+      .navbar-form.visible {
+        display: block !important;
+      }
+
+      #friends-dropdown.invisible, #messages-dropdown.invisible, #notifications-dropdown.invisible, #username-dropdown-toggle.invisible {
+        visibility: hidden !important;
       }
 
       .navbar-form input {
@@ -786,7 +804,7 @@ footer .fa-search {
     }
 
     @if(empty(Session::get('user_id')))
-      @media (max-width:1100px) {
+      @media (max-width:1070px) {
         .navbar .accordion-menu #accordion>li,
         #signin {
           display: none;
@@ -794,15 +812,11 @@ footer .fa-search {
         #accordion {
           float: right;
         }
-
-      .navbar-form { 
-        margin-right: 69px !important;
-        }
     }
 
     @else 
 
-    @media (max-width:1200px) {
+    @media (max-width:1070px) {
       .navbar .accordion-menu #accordion>li,
       #signin {
         display: none;
@@ -813,10 +827,6 @@ footer .fa-search {
       #accordion {
         float: right;
       }
-
-      .navbar-form { 
-        margin-right: 69px !important;
-        }
     }
 
     @endif
@@ -842,7 +852,6 @@ footer .fa-search {
 
       #menu-div {
         background-color: inherit;
-        float: right;
       }
       .dropdown-menu {
         left: unset !important;
@@ -1063,7 +1072,7 @@ footer .fa-search {
                 </li>
               </ul>
 
-              <ul class="nav navbar-nav">
+              <ul class="nav navbar-nav navbar-right-2">
                 <li class="dropdown" id='friends-dropdown'>
                   <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;" onclick="return friend_count()"
                     title="Friend Request">
@@ -1327,19 +1336,22 @@ footer .fa-search {
                   <script>
                   var dropdownsVisible = true;
                     function toggleSearch() {
-                      $('.navbar-form').toggle();
+                      $('.navbar-form').toggleClass('visible');
                       
                       $('.search-dropdown-toggle').toggleClass('orange');
                       // alert('hi');
 
-                      if(dropdownsVisible) {
-                        $('#friends-dropdown, #messages-dropdown, #notifications-dropdown, #username-dropdown-toggle').css('visibility', 'hidden');
-                        dropdownsVisible = false;
-                      }
-                      else {
-                        $('#friends-dropdown, #messages-dropdown, #notifications-dropdown, #username-dropdown-toggle').css('visibility', 'visible');
-                        dropdownsVisible = true;
-                      }
+                      // if(dropdownsVisible) {
+                      //   $('#friends-dropdown, #messages-dropdown, #notifications-dropdown, #username-dropdown-toggle').css('visibility', 'hidden');
+                      //   dropdownsVisible = false;
+                      // }
+                      // else {
+                      //   $('#friends-dropdown, #messages-dropdown, #notifications-dropdown, #username-dropdown-toggle').css('visibility', 'visible');
+                      //   dropdownsVisible = true;
+                      // }
+
+                      // if($('.navbar-form').hasClass('visible'))
+                        $('#friends-dropdown, #messages-dropdown, #notifications-dropdown, #username-dropdown-toggle').toggleClass('invisible');
                     }
                 </script>
 
@@ -1698,9 +1710,6 @@ footer .fa-search {
 		    display:block;
       }
       
-      #menu-div {
-        float:right !important;
-      }
      #menu-div .collapse {
         display:inline-block !important;
       }
@@ -1716,6 +1725,7 @@ footer .fa-search {
 
       .nav.navbar-nav {
         margin-top: 9px;
+        margin-right:45px;
       }
 
     }
@@ -1753,6 +1763,14 @@ footer .fa-search {
 
       .navbar-form input[type='text'] {
         padding-left:3px !important;
+      }
+
+      .fa-user-friends, .fa-envelope, .fa-bell {
+        font-size: 18px;
+      }
+
+      .navbar-nav .dropdown .dropdown-toggle {
+        padding-right: 10px !important;
       }
     }
   </style>

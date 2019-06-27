@@ -143,7 +143,6 @@ body {
   top: 0;
   width: 100%;
   background: #fff;
-  z-index: 9999;
   webkit-transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;
     -o-transition: all .3s ease-in-out;
@@ -250,7 +249,6 @@ margintp{ margin-top: 10px}
 .single_slide .slide_text {
   color: #fff;
   position: relative;
-  z-index: 999;
 }
 .table {display: table;}
 .table-cell {
@@ -377,7 +375,7 @@ margintp{ margin-top: 10px}
 }
 .header-strip{ width: 100%; float: left; height: 7px; background: #2a7fb1; }
 .marginlogin{ margin-left: 0px; margin-right: 0px;}
-.registerdiv{ width: 32%; float: right; margin-top: 70px; margin-right: 123px; position: absolute; right: 0; top: 0; z-index: 999;}
+.registerdiv{ width: 32%; float: right; margin-top: 70px; margin-right: 123px; position: absolute; right: 0; top: 0;}
 .input-field{ width: 49%; float: left;}
 .input-fieldright{ float: right;}
 .nativedist{ width: 100%; border: solid 1px #ccc; height: 31px; font-size: 13px; margin-bottom: 7px;}
@@ -1024,7 +1022,6 @@ padding: 20px;
 box-sizing: border-box;
 display: block;
 background: #fff;
-    z-index: 99;
     position: relative;
 border-radius: 3px;
 box-shadow: 0 0 6px #a29e9e;
@@ -1064,7 +1061,7 @@ font-weight: 600;
 .color{font-size: 14px;
 font-weight: bold;color: #009788;
 }
-.divcontacts{ left: 0; top: 40%; position: fixed; width: 47px; cursor: pointer; height: 212px; background:url(../kabool_hai_icons/call-speak.png); z-index: 999; }
+.divcontacts{ left: 0; top: 40%; position: fixed; width: 47px; cursor: pointer; height: 212px; background:url(../kabool_hai_icons/call-speak.png); }
 .box-number {
     width: 30px;
     height: 30px;

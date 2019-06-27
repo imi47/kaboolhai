@@ -8,6 +8,10 @@
      padding-left:5px;
    }
 
+   #menu-div {
+    margin-left: 0;
+  }
+
   .hdlist li:hover {
     background-color:#ed6c05;
   }

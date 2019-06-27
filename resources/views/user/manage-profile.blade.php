@@ -7,6 +7,10 @@ html, body {
 	overflow-x:hidden;
 }
 
+#menu-div {
+	margin-left: 0;
+}
+
 .mp-btns {
 	margin-top: -60px;
 }
@@ -52,54 +56,6 @@ input[type='checkbox'] {
 	margin-top:-56px;
 }
 
-/* .btn1 {
-	top: 63px;
-}
-
-.btn2 {
-	top: 345px;
-}
-
-.btn3 {
-	top: 575px;
-}
-
-.btn4 {
-	top: 720px;
-}
-
-.btn5 {
-	top: 940px;
-}
-
-.btn6 {
-	top: 1150px;
-}
-
-.btn7 {
-	top: 1340px;
-}
-
-.btn8 {
-	top: 1620px;
-}
-
-.btn9 {
-	top: 2100px;
-}
-
-.btn10 {
-	top: 2270px;
-}
-
-.btn11 {
-	top: 2400px;
-}
-
-.btn12 {
-	top: 2550px;
-} */
-
 
 @media (min-width:991px) {
 	.nav.navbar-nav {
@@ -109,47 +65,6 @@ input[type='checkbox'] {
 	#logo-div {
 		margin-right: -61px;
 	}
-}
-
-@media (min-width:1361px) {
-      .navbar-form {
-        display:block !important;
-      }
-
-      #friends-dropdown, #messages-dropdown, #notifications-dropdown, #username-dropdown-toggle {
-        visibility:visible !important;
-      }
-    }
-
-    @media (max-width:1360px) {
-      .navbar-form {
-        display:none;
-
-        position: absolute;
-        border-radius: 3px;
-        top: 13px;
-        right: 104px;
-        margin:0;
-        padding:0px;
-        border:none;
-      }
-
-      .navbar-form input {
-        margin:0;
-        border: 3px solid #936BCB !important;
-        padding:14px;
-      }
-
-      .navbar-form button {
-        top: 3px;
-        border-radius: 0;
-        right: -17px;
-      }
-
-      .search-dropdown-toggle {
-        display:inline-block
-      }
-    }
 }
 
 @media (max-width:768px) {
