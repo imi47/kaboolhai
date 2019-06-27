@@ -5859,6 +5859,7 @@ li a.M:hover
 
 .logindiv i {
     font-size: 14px;
+    color:#9a9a9a;
 }
 
 .logindiv .input-container {
@@ -5867,6 +5868,7 @@ li a.M:hover
     grid-template-columns: auto 1fr;
     align-items: end;
     grid-column-gap: .5em;
+    margin-top: 2em;
     margin-bottom: 1.5em;
     position: relative;
 }

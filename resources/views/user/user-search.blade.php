@@ -12,6 +12,14 @@
      margin-bottom: 0;
    }
 
+   .three-icons {
+    position: absolute;
+    bottom: -55px;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+   }
+
    footer {
      margin-top: 20px;
    }
@@ -368,15 +376,25 @@
       border-radius:5px;
       font-size: 12px;
   }
-  .log ,i{
-    color: red; margin-left: 5px;
-}
-.log1{
-  color: green; margin-left: 5px; 
-  /*font-size: 12px;*/
-}
+  
+  .log0 {
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    margin-top: 8px;
+    margin-left: 8px;
+  }
+  
+  .log0.log1 {
+    background-color: lawngreen;
+  }
 
-   .bn {
+  .log0.log {
+    background-color: darkgray;
+  }
+  
+  .bn {
     width: 100%;
     border-radius: 10px;
     border: 1px;
@@ -1006,10 +1024,9 @@ p.t
                   @if($row->login_status==1)
                   {{-- <img src="{{ $user_assets }}/public_profile/online.gif" class="pl-content-top-img" width="30px"  title="Online" /> --}}
                   
-                   <i class="log1">Online</i>
-                 {{--  @else
-                  <img src="{{ $user_assets }}/public_profile/offline.png" class="pl-content-top-img" width="30px"  title="offline" />
-                  <i class="log">Offline</i> --}}
+                   <i class="log0 log1"></i>
+                   @else
+                  <i class="log0 log"></i> 
                   @endif
                 </div>
                {{--  <div class="pl-status">
@@ -1058,38 +1075,40 @@ p.t
                     <li title="Cast">{{$row->cast}}</li>
                     <div class="clearfix"></div>
                   </ul>
-                  <div class="pl-content-fotter pl-text-center">
-                    @if($row->email_status==1)
-                    <center> <img src="{{ $user_assets }}/public_profile/email_verified.png" title="Email verified"></center>
-                    @else
-                    <center> <img src="{{ $user_assets }}/public_profile/email_unverified_gray.PNG" title="Email unverified"></center>
-                    @endif
-                    <!-- <a>Contact</a> -->
-                  </div>
-                  <div class="pl-content-fotter pl-text-center">
-                    @if($row->email_status==1)
-
-                    <center><img src="{{ $user_assets }}/public_profile/mobile_verified.png" title="Mobile verified"></center>
-
-                    @else
-
-                    <center><img src="{{ $user_assets }}/public_profile/mobile_unverified.png" title="Mobile Unverified"></center>
-                    @endif
-                    <!-- <a>Message</a> -->
-                  </div>
-                  <div class="pl-content-fotter pl-text-center">
-                    @if($row->ssn_status==1)
-
-                    <center><img src="{{ $user_assets }}/public_profile/ssn_verified.png" title="SSn verified"></center>
-
-                    @else
-
-                    <center><img src="{{ $user_assets }}/public_profile/ssn_unverified.png" title="SSn Unverified"></center>
-                    @endif
-                    <!-- <a>Connect</a> -->
-                  </div>
                   <div class="clearfix"></div>
                 </div>
+                      <div class="three-icons">
+                        <div class="pl-content-fotter pl-text-center">
+                      @if($row->email_status==1)
+                      <center> <img src="{{ $user_assets }}/public_profile/email_verified.png" title="Email verified"></center>
+                      @else
+                      <center> <img src="{{ $user_assets }}/public_profile/email_unverified_gray.PNG" title="Email unverified"></center>
+                      @endif
+                      <!-- <a>Contact</a> -->
+                      </div>
+                      <div class="pl-content-fotter pl-text-center">
+                      @if($row->email_status==1)
+                      
+                      <center><img src="{{ $user_assets }}/public_profile/mobile_verified.png" title="Mobile verified"></center>
+                      
+                      @else
+                      
+                      <center><img src="{{ $user_assets }}/public_profile/mobile_unverified.png" title="Mobile Unverified"></center>
+                      @endif
+                      <!-- <a>Message</a> -->
+                      </div>
+                      <div class="pl-content-fotter pl-text-center">
+                      @if($row->ssn_status==1)
+                      
+                      <center><img src="{{ $user_assets }}/public_profile/ssn_verified.png" title="SSn verified"></center>
+                      
+                      @else
+                      
+                      <center><img src="{{ $user_assets }}/public_profile/ssn_unverified.png" title="SSn Unverified"></center>
+                      @endif
+                      <!-- <a>Connect</a> -->
+                      </div>
+                    </div>
               </div>
            </div>
          </div>
