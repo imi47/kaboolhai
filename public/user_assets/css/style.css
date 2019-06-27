@@ -4633,13 +4633,17 @@ thead th.first { padding-left: 0 !important; }
  }
  .pureregbtn
  {
-    width:49%;
+    width: 40%;
     height: 40px;
-    border:1px solid #bbbbbb;
-    color:#ffffff;
-    font-size:16px;
-    background-color:#ED6C05;
-    border-radius:5px;
+    border: 1px solid #bbbbbb;
+    color: #ffffff;
+    font-size: 16px;
+    background-color: #ED6C05;
+    border-radius: 5px;
+    padding: 0 10px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+
  }
  .pureregbtn:hover
  {
@@ -5212,6 +5216,11 @@ background:transparent !important;
 
 
 @media only screen and (max-width: 500px) {
+
+    .pureregbtn {
+        width:unset;
+        padding: 0 30px;
+    }
 
 	.fa-linkedin{
 		    position: relative;

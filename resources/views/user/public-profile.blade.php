@@ -50,6 +50,11 @@
 		margin-top: 10px;
 		height: 545px;
 	}
+
+	#profile {
+		margin-bottom: 10px;
+	}
+
 	</style>
 
 	@if(count($simlar))
@@ -63,7 +68,8 @@
 	<style>
 	.sidebar-container-container {
 		position:sticky;
-		top:-770px;
+		top:-600px;
+		margin-bottom: -13px;
 	}
 
 	#myCarousel2 {
@@ -428,7 +434,7 @@ $('.owl-carousel').owlCarousel({
 					<div class="col-lg-4 col-md-5 col-sm-6 col-xs-12">
 						<div class="somelinks">
 							<ul class="list_somebtn">
-								<li class="agea"><a href="{{ url('more-alike',$user_data->id) }}"><span><img src="{{ $user_assets }}/more-alike.png" alt="" style='width:17px; margin-left:2px;'></span> <span class="linkT">More alike</span></a></li>
+								<li class="agea"><a href="{{ url('more-alike',$user_data->id) }}"><span><img src="{{ $user_assets }}/more-alike.png" alt="" style='width:17px; margin-left:2px;'></span> <span class="linkT">Compatibility</span></a></li>
                  @if(count($block_users))
                   <li class="agea"><a href="javascript:;" data-toggle="modal" data-target="#unblock" ><span><img src="{{ $user_assets }}/send message.png" alt="" class="icon_size"></span><span class="linkT"> Send Message </span></a></li>
 								@elseif(count($confirm_friend))
@@ -471,7 +477,7 @@ $('.owl-carousel').owlCarousel({
 								@else
 								<li class="agea"><a onclick="return false" href="{{ url('add-friend',$user_data->id) }}"><span><img src="{{ $user_assets }}/sendrequest.png" alt="" style='width:22px;'></span> <span class="linkT">Send Request</span></a> (Request sent)</li>
 								@endif
-								<li class="agea"><a href="{{ url('') }}"><span><img src="{{ $user_assets }}/icons/cancel-req.svg" alt="" class="icon_size"></span> <span class="linkT">Cancel request</span></a></li>
+								<li class="agea"><a href="#"><span><img src="{{ $user_assets }}/icons/cancel-req.svg" alt="" class="icon_size"></span> <span class="linkT">Cancel request</span></a></li>
 							</ul>	
 						</div>
 					</div>
@@ -2713,7 +2719,8 @@ $('.owl-carousel').owlCarousel({
 	      <div class="modal-content">
 	      
 	        <div class="modal-header">
-	          <h3>{{ $user_data->user_name }}</h3>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h3>{{ $user_data->user_name }}</h3>
 	        </div>
 	        <div class="modal-body">
 	         
@@ -2727,13 +2734,6 @@ $('.owl-carousel').owlCarousel({
 	              
 	             
 	          </div>
-	       
-	        <div class="modal-footer">
-	          <div class="col-sm-12">
-	           <button class="btn btn-danger" style="padding: 5px;" data-dismiss="modal">Close</button>
-	          </div>
-	        </div>
-	        
 	      </div>
 	    </div>
 	  </div>

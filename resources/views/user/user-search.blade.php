@@ -8,6 +8,13 @@
 	<link rel="stylesheet" href="{{ $user_assets }}/css/user-card.css" />
 
    <style type="text/css">
+   .col-md-9 .well {
+     margin-bottom: 0;
+   }
+
+   footer {
+     margin-top: 20px;
+   }
 
     .list-active {
         border:none !important;
@@ -15,7 +22,7 @@
 
     .col-md-3.content {
       position: sticky;
-      top: -800px;
+      top: -640px;
     } 
 
     .col-md-3.content h2{
@@ -27,7 +34,7 @@
       border:1px solid #777;
       border-radius: 5px;
       margin-top: 10px;
-      height: 504px;
+      height: 540px;
   }
   
   #myCarousel .carousel-inner {
@@ -425,6 +432,17 @@ p.t
     margin-bottom: 20px;
   }
 
+  .save-search-btn-container {
+    width: 11vw;
+  }
+
+  .save-search-btn-container .save-search-btn {
+    padding: 8px 3px;
+    width: 100%;
+    font-size: 12px;
+    letter-spacing: normal;
+  }
+
    @media (max-width:1300px) {
     .navbar-form button {
       right: -17px;
@@ -456,6 +474,18 @@ p.t
     .pl-top-selection img {
       width:15% !important;
     }
+
+    .save-search-btn-container {
+      width: 50%;
+      float: right;
+    }
+
+    .save-search-btn-container .save-search-btn {
+      padding: 8px 3px;
+      width: 97%;
+      font-size: 12px;
+      letter-spacing: normal;
+    }
   }
 
   @media (max-width:768px) {
@@ -472,9 +502,29 @@ p.t
         line-height: 15px;
       }
 
-      .save-search-btn {
+      /* .save-search-btn {
         margin-top:10px;
         margin-left:16px;
+      } */
+
+      .col-md-3.content form:last-of-type {
+        width:95%;
+        margin:12px auto auto auto;
+      }
+
+      .col-md-3.content form:last-of-type .row {
+        margin:0;
+      }
+
+      .save-search-btn-container {
+        padding: 0;
+        width: 100%;
+      }
+
+      .save-search-btn-container .save-search-btn {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
       }
     }
 
@@ -494,6 +544,10 @@ p.t
       tr.dosrch th a {
         font-size:12px;
     }
+
+    .col-md-3.content form:last-of-type {
+        width:90%;
+      }
   }
 
   @media (max-width:375px) {
@@ -1445,7 +1499,7 @@ p.t
         {{-- <div class="col-md-6">
         <input type="text" required="" name="search_comment" class="form-control">
         </div> --}}
-        <div class="col-md-6">
+        <div class="col-md-6 col-xs-12 save-search-btn-container">
         <button class="btn btn-success save-search-btn">Save Search</button>
       </div>
      

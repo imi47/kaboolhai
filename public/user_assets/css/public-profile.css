@@ -510,6 +510,28 @@ ul.in_box_brdr li:hover {
    /* background-color:#f47e2a;  */
 }
 
+#nofriend .close {
+	margin-top: -10px;
+	position: absolute;
+	right: 13px;
+}
+
+#nofriend .modal-body {
+	padding: 0 15px;
+}
+
+#nofriend .modal-body .alert {
+	margin:0;
+	padding: 8px 10px;
+	background: none;
+	border: none;
+	font-weight: bold;
+}
+
+#nofriend .modal-header, #nofriend .modal-footer {
+	padding: 8px 10px;
+}
+
 @media (max-width:768px) {
 	.currentuserimg {
 		height: auto;

@@ -244,7 +244,7 @@ footer .fa-search {
     }
 
     .fa-user-friends, .fa-envelope, .fa-bell {
-      font-size:16px;
+      font-size:20px;
     }
 
     a, a:hover, a:active, a:visited, a:focus {
