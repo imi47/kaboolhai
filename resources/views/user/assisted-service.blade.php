@@ -6,10 +6,6 @@
         color:#000;
     } */
 
-    #menu-div {
-       margin-left: 0;
-    }
-
     .main-section {
         z-index:9999;
     }
@@ -77,21 +73,6 @@
             padding-top:15px;
         }
     }
-
-    @media (min-width:991px) {
-   .searchcontainer button {
-      margin-top:-51px !important;
-      padding-top:15px;
-    }
-
-   .nav.navbar-nav {
-      margin-right:15px;
-	}
-
-	#logo-div {
-		margin-right: -61px;
-	}
-}
 
     @media (max-width:768px) {
 

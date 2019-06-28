@@ -19,25 +19,6 @@
   .hdlist li:hover {
     background-color:#ed6c05;
 	}
-	
-	#menu-div {
-		margin-left: 0;
-	}
-
-@media (min-width:991px) {
-   .searchcontainer button {
-      margin-top:-56px !important;
-      padding-top:12px;
-    }
-
-		.nav.navbar-nav {
-			margin-right:0;
-	}
-
-	#logo-div {
-		margin-right: -61px;
-	}
-}
 
 @media (max-width:991px) {
 

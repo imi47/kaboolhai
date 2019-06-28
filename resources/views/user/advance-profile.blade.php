@@ -3,6 +3,10 @@
 
 <style>
 
+  .col-md-3 .well.w.menu {
+    margin-top: 23px;
+  }
+
 #myCarousel {
 		border:1px solid #777;
     border-radius: 5px;

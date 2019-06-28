@@ -7,10 +7,6 @@
     line-height:400%;
   }
 
-  #menu-div {
-    margin-left: 0;
-  }
-
 .menulists {
   font-size: 16px;
 }
@@ -58,21 +54,6 @@ tr.dosrch th a {
       }
    }
 
-   @media (min-width:991px) {
-    .searchcontainer button {
-        margin-top:-56px !important;
-        padding-top:15px;
-      }
-
-      .nav.navbar-nav {
-        margin-right:0;
-      }
-
-      #logo-div {
-        margin-right: -61px;
-    }
-}
-
 @media (max-width:1300px) {
     .navbar-form button {
       right: -17px;
@@ -94,6 +75,15 @@ tr.dosrch th a {
   footer section .container {
     margin-top:20px;
   }
+
+  .notifications li {
+    padding: 3px !important;
+  }
+
+  .notifications li img {
+    width: 40px;
+    height: 40px;
+  }
 </style>
 <div style="padding-top:90px;"></div>
 <div class="container-fluid">
@@ -110,45 +100,49 @@ tr.dosrch th a {
      
        
        
-         <div class="col-md-12">
-           <div class="notify_area">
-              <!-- start notif -->
-              @if(!empty($notification))
-              @foreach($notification as $row)
-              <a href="{{ url('public-profile',$row->sender_id) }}">
-             <div class="notify_blok">
-               <div class="pic_area">
-                <div class="img_box">
-
-                  @if(!empty($row->photo->image))
-                  <img src="{{ $user_assets }}/my_photo/{{ $row->photo->image }}" class="img-circle" alt="" width="100%" >
-                 
-                      @elseif($row->profile_image)
-                                      <img src="{{ $user_assets }}/profile_image/{{ $row->image_name }}" style="width: 45px; height: 45px; border-radius:100px; ">
-                      @else
-                      <img src="{{ $user_assets }}/sunrise.jpg" style="width: 45px; height: 45px; border-radius:100px; ">
-                                       @endif
-                </div>  
-               </div>
-               <div class="notify_ar">
-                 <div class="box_msg">
-                 <strong>  {{ $row->user->user_name}} </strong> {{$row->notification_type}}
-                 </div>
-                 <div class="box_time">
-                  <span class='time'> {{ $row->created_at }} </span>
-                 </div>
-                 </a>
-               </div>
-             </div>
-             @endforeach
-             @endif
+          <div class="notifications">
+            <li class="notification-dropdown-item dropdown-item">
+              <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
+              <div>
+                <span><strong>username</strong> viewed your profile</span>
+                <span><i class="fas fa-user-circle"></i>10h</span>
+              </div>
+            </li>
+            <li class="notification-dropdown-item dropdown-item">
+              <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
+              <div>
+                <span><strong>username</strong> viewed your profile</span>
+                <span><i class="fas fa-user-circle"></i>10h</span>
+              </div>
+            </li>
+            <li class="notification-dropdown-item dropdown-item">
+              <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
+              <div>
+                <span><strong>username</strong> viewed your profile</span>
+                <span><i class="fas fa-user-circle"></i>10h</span>
+              </div>
+            </li>
+            <li class="notification-dropdown-item dropdown-item">
+              <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
+              <div>
+                <span><strong>username</strong> viewed your profile</span>
+                <span><i class="fas fa-user-circle"></i>10h</span>
+              </div>
+            </li>
+            <li class="notification-dropdown-item dropdown-item">
+              <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
+              <div>
+                <span><strong>username</strong> viewed your profile</span>
+                <span><i class="fas fa-user-circle"></i>10h</span>
+              </div>
+            </li>
+          </div>
 
             <!-- end notif -->
 
             <!-- start notif -->
             
             <!-- end notif -->
-           </div>
          </div>
        
     </div>

@@ -68,6 +68,86 @@
   margin-left: -63px;
 }
 
+.dropdown-item {
+  padding: 5px !important;
+  border-bottom: 1px solid #ddd;
+  letter-spacing: normal;
+  font-size: 16px;
+}
+.dropdown-item:first-of-type {
+  border-top: none;
+}
+.dropdown-item:last-of-type {
+  border-bottom: none;
+  margin-bottom: 30px;
+}
+.dropdown-item > div span:first-child,
+.dropdown-item button {
+  font-size: .813em;
+}
+.dropdown-item img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: .625em;
+}
+.notification-dropdown-item {
+  display: flex;
+  align-items: center;
+}
+.notification-dropdown-item > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.notification-dropdown-item > div span:last-child {
+  font-size: .75em;
+  color: #888;
+  font-weight: 600;
+}
+.notification-dropdown-item > div i {
+  font-size: 15px;
+  color: #ed6c05;
+  margin-left: 0;
+}
+
+.friends-dropdown-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+.friends-dropdown-item > div {
+  display: grid;
+  grid-template-columns: 1fr 4em 4em;
+  align-items: center;
+  grid-column-gap: .3em;
+}
+
+.friends-dropdown-item.friends-dropdown-item.friends-dropdown-item.friends-dropdown-item > div a {
+    font-size: .85em;
+    font-weight: bold;
+    color: #3273dc !important;
+    padding:0 !important;
+}
+
+.friends-dropdown-item > div a:hover {
+  text-decoration: underline !important;
+}
+
+.friends-dropdown-item > div button {
+  color: white;
+  font-weight: bold;
+  border:none;
+  border-radius: 3px;
+}
+
+.friends-dropdown-item > div button:last-child {
+  background-color: #ed6c05;
+}
+
+.friends-dropdown-item > div button:first-of-type {
+  background-color: #5a378c;
+}
+
 #friends-dropdown, #messages-dropdown, #notifications-dropdown, #username-dropdown-toggle {
   visibility: visible !important;
 }
@@ -286,7 +366,7 @@ footer .fa-search {
     }
 
     #notifications-dropdown .icon-dropdown li:last-child {
-      top:417px;
+      top:419px;
     }
 
     #friends-dropdown .icon-dropdown li:last-child a:hover {
@@ -346,6 +426,10 @@ footer .fa-search {
      #sidebar-2 ul li a {
        text-decoration:none;
        color:#fff;
+     }
+
+     .navbar-right-2 .dropdown-menu {
+       top: 97%;
      }
 
     @media (min-width:500px) {
@@ -1109,23 +1193,17 @@ footer .fa-search {
                     <hr>
                     @if(count(recent_join()))
                     @foreach(recent_join() as $row)
-                    
-                      <li >
-                        <a style="color: #666666 !important;" href="{{ url('public-profile',$row->id) }}">
-                        @if(!empty($row->image))
-                        <img src="{{ $user_assets }}/my_photo/{{ $row->image }}" style="width: 45px; height: 45px; border-radius:100px; " alt="">
-                      
-                        @else($row->profile_image)
-                        <img src="{{ $user_assets }}/profile_image/{{ $row->image_name }}" style="width: 45px; height: 45px; border-radius:100px; " onerror="this.src='http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=Image +Not+Found'" alt="">
-                        
-                       @endif
-                        
-                          <strong>{{ $row->user_name }}</strong>
-                          <span style="font-size: 12px;">
-                          {{ $row->height .' '.$row->martial_status.' '.$row->language}}</span> <span class="view-profile" style="color: blue ; float: right; margin-top: 14px;">veiw
-                            Profile</span>
-                        </a> 
+
+                      <li class="friends-dropdown-item dropdown-item">
+                        <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
+                        <div>
+                          <a href="#">username</a>
+                          <button>Accept</button>
+                          <button>Remove</button>
+                        </div>
                       </li>
+
+
                          
                         @endforeach
                         @endif
@@ -1264,28 +1342,15 @@ footer .fa-search {
 
                     @if(count(get_notification()))
                     @foreach(get_notification() as $row)
-                    
-                    <li class='msgNoti get_notifi notify_section' id="get_noti">
-                      <a class="left-first-section" style="color: #666666 !important;" href="{{ url('public-profile',$row->sender_id) }}">
-                          @if(!empty($row->photo->image))
 
-                      {{-- <a class="left-first-section" style="color: #666666 !important;" rel="{{ $row->from_users->id }}" --}}
-                        {{-- href="#"> --}}
-                       {{--  @if(!empty($row->photo->image))
-                        <span > --}}
-                         <img src="{{ $user_assets }}/my_photo/{{ $row->photo->image }}" style="width: 45px; height: 45px; border-radius:100px; " alt="">
-                          @else
-                          <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=Image +Not+Found" style="width: 45px; height: 45px; border-radius:100px; ">
-                          @endif
-                          {{-- <span>{{ $row->from_users->user_name}}</span> --}}
-                        {{-- </span> --}}
-                        {{-- @endif --}}
-                       <span >{{
-                            $row->user->user_name.' '.$row->notification_type }}</span>
-                        </a>
-                     
-
+                    <li class="notification-dropdown-item dropdown-item">
+                      <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
+                      <div>
+                        <span><strong>username</strong> viewed your profile</span>
+                        <span><i class="fas fa-user-circle"></i>10h</span>
+                      </div>
                     </li>
+
                     {{-- @elseif($row->from_users->id==Session::get('user_id'))
                     <li><a class="left-first-section" style="background-color: #ffffff; color: black !important;" href="#"
                         onclick="current_chat()">{{ $row->to_users->user_name}}<span id="id_value" style="display: none;">{{
@@ -1334,24 +1399,10 @@ footer .fa-search {
                   <i class='glyphicon glyphicon-search search-dropdown-toggle' onclick='toggleSearch()'></i>
 
                   <script>
-                  var dropdownsVisible = true;
                     function toggleSearch() {
                       $('.navbar-form').toggleClass('visible');
-                      
                       $('.search-dropdown-toggle').toggleClass('orange');
-                      // alert('hi');
-
-                      // if(dropdownsVisible) {
-                      //   $('#friends-dropdown, #messages-dropdown, #notifications-dropdown, #username-dropdown-toggle').css('visibility', 'hidden');
-                      //   dropdownsVisible = false;
-                      // }
-                      // else {
-                      //   $('#friends-dropdown, #messages-dropdown, #notifications-dropdown, #username-dropdown-toggle').css('visibility', 'visible');
-                      //   dropdownsVisible = true;
-                      // }
-
-                      // if($('.navbar-form').hasClass('visible'))
-                        $('#friends-dropdown, #messages-dropdown, #notifications-dropdown, #username-dropdown-toggle').toggleClass('invisible');
+                      $('#friends-dropdown, #messages-dropdown, #notifications-dropdown, #username-dropdown-toggle').toggleClass('invisible');
                     }
                 </script>
 
@@ -1624,6 +1675,10 @@ footer .fa-search {
   @if(Session::get('user_id'))
   <style>
     @media (max-width:991px) {
+      
+      .notification-dropdown-item:last-of-type {
+        margin-bottom: 5px;
+      }
       .navbar-form {
         display:none;
       }
@@ -1706,6 +1761,14 @@ footer .fa-search {
   
     @media (max-width:768px) {
 
+      .dropdown-item {
+        font-size: 15px;
+      }
+
+      #notifications-dropdown li:last-child {
+        top: 414px !important;
+      }
+
       .mp-form-list li {
 		    display:block;
       }
@@ -1771,6 +1834,44 @@ footer .fa-search {
 
       .navbar-nav .dropdown .dropdown-toggle {
         padding-right: 10px !important;
+        padding-left: 10px !important;
+      }
+
+      .navbar-right-2 {
+        margin-right: 50px;
+      }
+
+      .friends-dropdown-item {
+        align-items: center;
+      }
+
+      .friends-dropdown-item > div {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+      }
+
+      .friends-dropdown-item > div a {
+        grid-column: 1/-1;
+      }
+
+      .friends-dropdown-item > div button {
+        padding: .3em;
+      }
+
+      .friends-dropdown-item > div button:first-of-type {
+        grid-column: 1;
+        grid-row: 2;
+      }
+
+      .friends-dropdown-item > div button:last-child {
+        grid-column: 2;
+        grid-row:2
+      }
+    }
+
+    @media (max-width: 640px) {
+      #notifications-dropdown li:last-child {
+        top: 418px !important;
       }
     }
   </style>
@@ -3279,7 +3380,7 @@ function get_message()
     @media (max-width:430px) {
 
       .search-dropdown-toggle {
-        right: -10px;
+        right: -5px;
       }
 
       .navbar-form {

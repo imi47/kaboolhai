@@ -318,7 +318,7 @@
     }
 
   .fa-user-friends, .fa-envelope, .glyphicon-bell {
-      font-size:16px;
+      font-size:20px;
     }
 
   a, a:hover, a:active, a:visited, a:focus {
@@ -802,12 +802,16 @@
 
     @media (max-width:375px) {
       .search-dropdown-toggle {
-        right: -37px !important;
+        right: -35px !important;
       }
 
       #myNavbar .navbar-form {
         right: -10px !important;
-      }   
+      }
+      
+      .fa-user-friends, .fa-envelope, .glyphicon-bell {
+        font-size: 18px;
+      }
     }
 
 </style>

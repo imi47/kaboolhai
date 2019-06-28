@@ -7,10 +7,6 @@ html, body {
 	overflow-x:hidden;
 }
 
-#menu-div {
-	margin-left: 0;
-}
-
 .mp-btns {
 	margin-top: -60px;
 }
@@ -54,17 +50,6 @@ input[type='checkbox'] {
 
 .searchcontainer button {
 	margin-top:-56px;
-}
-
-
-@media (min-width:991px) {
-	.nav.navbar-nav {
-	margin-right:0;
-	}
-
-	#logo-div {
-		margin-right: -61px;
-	}
 }
 
 @media (max-width:768px) {

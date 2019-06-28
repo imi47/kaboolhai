@@ -23,7 +23,7 @@
 		float:none !important;
 	}
 
-	.box_body span {
+	.box_body span:last-child {
 		text-overflow: ellipsis;
 		overflow: hidden;
 		white-space: nowrap;
@@ -61,7 +61,11 @@
 	<style>
 	.sidebar-container-container {
 		position:sticky;
-		top:-1270px;
+		top:-1080px;
+	}
+
+	.well:not(.w).sidebar {
+		margin-bottom: 5px;
 	}
 	</style>
 	@else
