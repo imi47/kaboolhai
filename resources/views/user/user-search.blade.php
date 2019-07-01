@@ -12,6 +12,10 @@
      margin-bottom: 0;
    }
 
+   .user-list-mobile {
+     display: none;
+   }
+
    .three-icons {
     position: absolute;
     bottom: -55px;
@@ -69,7 +73,7 @@
 }
 
   .pagination {
-    margin:0;
+    margin: 10px 0 0 0;
 }
 
 .well {
@@ -386,11 +390,11 @@
     margin-left: 8px;
   }
   
-  .log0.log1 {
+  .log1 {
     background-color: lawngreen;
   }
 
-  .log0.log {
+  .log {
     background-color: darkgray;
   }
   
@@ -460,6 +464,69 @@ p.t
     font-size: 12px;
     letter-spacing: normal;
   }
+
+  .user-list-mobile > div {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: .5em;
+    background-color: #fff;
+    padding: .5em;
+    margin-bottom: .625em;
+    box-shadow: 1px 1px 3px rgba(0,0,0,.2);
+    position: relative;
+    }
+
+    .user-list-mobile > div:hover {
+      background-color: #eee;
+    }
+
+    .user-list-mobile > div > span {
+    position: absolute;
+    padding: 4px;
+    border-radius: 50%;
+    right: 6px;
+    top: 6px;
+    }
+
+    .user-list-mobile > div > div:not(.icons) {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      line-height: normal;
+      margin-right: 15px;
+    }
+
+    .user-list-mobile > div > div:not(.icons) span {
+      font-size: .88em;
+    }
+
+    .user-list-mobile > div > div:not(.icons) span:first-child {
+      color: #ed6c05;
+      font-weight: bold;
+      font-size: .95em;
+    }
+
+    .user-list-mobile > div > div:not(.icons) .ago {
+    color: #777;
+    }
+
+    .user-list-mobile > div > img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-top: 5px;
+    }
+
+    .user-list-mobile > div > .icons {
+    grid-column: 1/-1;
+    justify-content: space-around;
+    display: flex;
+    border-top: 1px solid #ddd;
+    padding: 5px 5px 0px 5px;
+    }
+
+    .user-list-mobile > div > .icons img {
+    width: 20px;
+    }
 
    @media (max-width:1300px) {
     .navbar-form button {
@@ -543,6 +610,18 @@ p.t
         margin-left: 0;
         margin-right: 0;
         width: 100%;
+      }
+
+      .col-md-9 .well {
+        padding: 10px;
+      }
+
+      .col-md-9 .well .row {
+        display: none;
+      }
+
+      .user-list-mobile {
+        display: block;
       }
     }
 
@@ -1128,10 +1207,33 @@ p.t
           </style>
          @endif
          
-       </div>  
-          
+       </div>
+       
+       <div class="user-list-mobile">
+         <div>
+           <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
+           <div>
+             <span>username</span>
+             <span class="ago">2 months ago</span>
+             <span>33 yrs, 5' 8"</span>
+             <span>54 KG</span>
+             <span>Sindhi</span>
+             <span>Software Engineer</span>
+             <span>Lahore</span>
+             <span>Pakistan</span>
+             <span>Second Marriage</span>
+             <span>Chishti</span>
+          </div>
+          <div class="icons">
+              <img src="{{ $user_assets }}/public_profile/email_verified.png" title="Email verified">
+              <img src="{{ $user_assets }}/public_profile/email_unverified_gray.PNG" title="Email unverified">
+              <img src="{{ $user_assets }}/public_profile/mobile_verified.png" title="Mobile verified">
+          </div>
+          <!-- replace log1 with log for offline icon -->
+          <span class="log1"></span>
+         </div>
+       </div>
           {{ $user_data->links() }}
-
       </div>
     </div>
        
