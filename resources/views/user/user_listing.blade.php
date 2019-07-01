@@ -63,6 +63,36 @@
     padding: 5px;
   }
 
+  .panel-body .friends-dropdown-item {
+    grid-template-columns: 90px 1fr auto auto;
+    align-items: start;
+  }
+
+  .panel-body .friends-dropdown-item a {
+    font-size: 1em;
+  }
+
+  .panel-body .friends-dropdown-item span {
+    font-size: .8em;
+  }
+
+  .panel-body .friends-dropdown-item span:not(:last-child) {
+    margin-bottom: 5px;
+  }
+
+  .panel-body .dropdown-item img {
+    border-radius: 0;
+    width: 90px;
+    height: 90px;
+    border: 1px solid #bbb;
+    padding: 2px;
+  }
+
+  .panel-body .friends-dropdown-item button {
+    align-self: center;
+    font-size: .9em;
+  }
+
   @media (max-width:991px) {
     .panel-body > .row {
       margin-bottom:30px;
@@ -77,6 +107,23 @@
 
   tr.dosrch th a {
     font-size:12px;
+  }
+}
+
+.panel-body > .row {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .panel-body .friends-dropdown-item {
+    grid-template-columns: 90px 1fr 1fr;
+  }
+  .panel-body .friends-dropdown-item img {
+    grid-row: 1/3;
+  }
+  .panel-body .friends-dropdown-item .info {
+    display: grid;
+    grid-column: 2/-1;
   }
 }
 
@@ -135,6 +182,19 @@
         </div> 
         @endif
       </div>
+      
+      <li class="friends-dropdown-item dropdown-item">
+        <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
+        <div class="info">
+          <a href="#">username</a>
+          <span>Lahore, Pakistan</span>
+          <span>BBA</span>
+          <span>I belong to an upper middle class family. I am a graduate from a reputed institution and do an executive level job at an organization.</span>
+        </div>
+          <button>Accept</button>
+          <button>Remove</button>
+      </li>
+
       @endforeach
         @else
         <p class="alert alert-danger text-center">Empty</p>

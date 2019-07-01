@@ -68,6 +68,10 @@
   margin-left: -63px;
 }
 
+.dropdown-item, .dropdown-item.dropdown-item * {
+  line-height: normal !important;
+}
+
 .dropdown-item {
   padding: 5px !important;
   border-bottom: 1px solid #ddd;
@@ -89,11 +93,13 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  margin-right: .625em;
 }
 .notification-dropdown-item {
   display: flex;
   align-items: center;
+}
+.notification-dropdown-item img {
+  margin-right: .5em;
 }
 .notification-dropdown-item > div {
   display: flex;
@@ -111,40 +117,84 @@
   margin-left: 0;
 }
 
-.friends-dropdown-item {
+/* .friends-dropdown-item {
   display: grid;
   grid-template-columns: auto 1fr;
+  align-items: center;
 }
-.friends-dropdown-item > div {
+.friends-dropdown-item > div:first-child {
   display: grid;
   grid-template-columns: 1fr 4em 4em;
   align-items: center;
   grid-column-gap: .3em;
 }
 
-.friends-dropdown-item.friends-dropdown-item.friends-dropdown-item.friends-dropdown-item > div a {
-    font-size: .85em;
+.friends-dropdown-item.friends-dropdown-item.friends-dropdown-item.friends-dropdown-item > div:first-child a {
     font-weight: bold;
     color: #3273dc !important;
     padding:0 !important;
 }
 
-.friends-dropdown-item > div a:hover {
+.friends-dropdown-item > div:first-child a:hover {
   text-decoration: underline !important;
 }
 
-.friends-dropdown-item > div button {
+.friends-dropdown-item > div:last-child button {
   color: white;
   font-weight: bold;
   border:none;
   border-radius: 3px;
 }
 
-.friends-dropdown-item > div button:last-child {
+.friends-dropdown-item > div:last-child button:last-child {
   background-color: #ed6c05;
 }
 
-.friends-dropdown-item > div button:first-of-type {
+.friends-dropdown-item > div:last-child button:first-of-type {
+  background-color: #5a378c;
+} */
+
+.friends-dropdown-item {
+  display: grid;
+  grid-template-columns: 50px 1fr auto auto;
+  grid-column-gap: .625em;
+  align-items: center;
+}
+
+.friends-dropdown-item .info {
+  display: flex;
+  flex-direction: column;
+}
+
+.friends-dropdown-item a {
+  font-weight: bold;
+  color: #3273dc !important;
+  font-size: .85em;
+}
+
+.friends-dropdown-item.friends-dropdown-item a:hover {
+  background-color: unset;
+  color: #3273dc !important;
+  text-decoration: underline !important;
+}
+
+.friends-dropdown-item > .buttons {
+  justify-self: end;
+}
+
+.friends-dropdown-item >  button {
+  color: white;
+  font-weight: bold;
+  border:none;
+  border-radius: 3px;
+  padding: .3em .8em;
+}
+
+.friends-dropdown-item > button:last-child {
+  background-color: #ed6c05;
+}
+
+.friends-dropdown-item > button:first-of-type {
   background-color: #5a378c;
 }
 
@@ -381,13 +431,18 @@ footer .fa-search {
       margin-bottom:0;
     }
 
-    .dropdown-menu.lenght.icon-dropdown.msgMenu li a {
-      padding:9px !important;
+    .dropdown-menu.lenght.icon-dropdown.msgMenu li span.username {
+      padding:0px !important;
       margin:0;
     }
 
     .dropdown-menu.lenght.icon-dropdown.msgMenu li:last-child a {
       padding:0px !important;
+    }
+
+    .dropdown-menu.lenght.icon-dropdown.msgMenu li span {
+      grid-column: 1/-1;
+      font-size: .813em;
     }
 
     #navsidebare ul {
@@ -433,7 +488,7 @@ footer .fa-search {
      }
 
     @media (min-width:500px) {
-      .search-dropdown-toggle:hover{
+      .search-dropdown-toggle:hover {
         color:#ed6c05;
       }
     }
@@ -1196,11 +1251,12 @@ footer .fa-search {
 
                       <li class="friends-dropdown-item dropdown-item">
                         <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
-                        <div>
+                        <div class="info">
                           <a href="#">username</a>
+                          <span>15ft 11in - 180cm Married Urdu</span>
+                        </div>
                           <button>Accept</button>
                           <button>Remove</button>
-                        </div>
                       </li>
 
 
@@ -1817,6 +1873,29 @@ footer .fa-search {
       #friends-dropdown .icon-dropdown li:last-child, #notifications-dropdown .icon-dropdown li:last-child {
         width:96vw !important;
       }
+
+      .friends-dropdown-item {
+        grid-template-columns: 50px 1fr 1fr;
+      }
+
+      .friends-dropdown-item img {
+        grid-row: 1/3;
+      }
+
+      .friends-dropdown-item button {
+        margin-top: 5px;
+        padding: .5em .2em;
+      }
+
+      .friends-dropdown-item button:first-of-type {
+        grid-row: 2;
+        grid-column: 2;
+      }
+
+      .friends-dropdown-item button:last-of-type {
+        grid-row: 2;
+        grid-column:3;
+      }
     }
 
     @media (max-width:400px) {
@@ -1841,13 +1920,12 @@ footer .fa-search {
         margin-right: 50px;
       }
 
-      .friends-dropdown-item {
+      /* .friends-dropdown-item {
         align-items: center;
       }
 
       .friends-dropdown-item > div {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
       }
 
       .friends-dropdown-item > div a {
@@ -1856,17 +1934,16 @@ footer .fa-search {
 
       .friends-dropdown-item > div button {
         padding: .3em;
+        grid-row: 3;
       }
 
       .friends-dropdown-item > div button:first-of-type {
         grid-column: 1;
-        grid-row: 2;
       }
 
       .friends-dropdown-item > div button:last-child {
         grid-column: 2;
-        grid-row:2
-      }
+      } */
     }
 
     @media (max-width: 640px) {
