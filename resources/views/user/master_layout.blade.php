@@ -104,8 +104,13 @@
   width: 493px;
   padding: 0;
   border: 1px solid #aaa;
-  top: 412px;
+  top: 418px;
   background-color:#eee;
+}
+
+#friends-dropdown li:last-child a, #notifications-dropdown li:last-child a {
+  padding: 4px 15px 4px 25px;
+  display: inline-block;
 }
 
 .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
@@ -128,16 +133,17 @@
   top: 12px;
 }
 
-/* #bb {
-  bottom:-17px;
-} */
+#bb {
+  bottom: 27px;
+  display: none;
+}
 
 #bb {
   position:fixed;
 }
 
-#bb img {
-  display:none;
+.open-more #bb {
+  display: block;
 }
 
 .search-dropdown-toggle {
@@ -262,6 +268,125 @@
   #sidebar-2 ul li:not(.divider):hover {
       background-color: #ED6C05;
   }
+
+.dropdown-item.dropdown-item {
+  margin-top: 0 !important;
+}
+
+.dropdown-item, .dropdown-item.dropdown-item * {
+  line-height: normal !important;
+}
+
+.dropdown-item {
+  padding: 5px !important;
+  border-bottom: 1px solid #ddd;
+  letter-spacing: normal;
+  font-size: 16px;
+}
+.dropdown-item:first-of-type {
+  border-top: none;
+}
+.dropdown-item:last-of-type {
+  border-bottom: none;
+  margin-bottom: 30px;
+}
+.dropdown-item > div span:first-child,
+.dropdown-item button {
+  font-size: .813em;
+}
+.dropdown-item img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.notification-dropdown-item {
+  display: flex;
+  align-items: center;
+}
+.notification-dropdown-item img {
+  margin-right: .5em;
+}
+.notification-dropdown-item > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.notification-dropdown-item > div span:last-child {
+  font-size: .75em;
+  color: #888;
+  font-weight: 600;
+}
+.notification-dropdown-item > div span:last-child i {
+  margin-right: 3px;
+}
+.notification-dropdown-item > div i {
+  font-size: 15px;
+  color: #ed6c05;
+  margin-left: 0;
+}
+
+.friends-dropdown-item {
+  display: grid;
+  grid-template-columns: 50px 1fr auto auto;
+  grid-column-gap: .625em;
+  align-items: center;
+}
+
+.friends-dropdown-item .info {
+  display: flex;
+  flex-direction: column;
+}
+
+.friends-dropdown-item a {
+  font-weight: bold;
+  color: #3273dc !important;
+  font-size: .85em;
+}
+
+.friends-dropdown-item .info span {
+  grid-column: 1/-1;
+  font-size: .813em;
+}
+
+.friends-dropdown-item.friends-dropdown-item a:hover {
+  background-color: unset;
+  color: #3273dc !important;
+  text-decoration: underline !important;
+}
+
+.friends-dropdown-item > .buttons {
+  justify-self: end;
+}
+
+.friends-dropdown-item >  button {
+  color: white;
+  font-weight: bold;
+  border:none;
+  border-radius: 3px;
+  padding: .3em .8em;
+}
+
+.friends-dropdown-item > button:last-child {
+  background-color: #ed6c05;
+}
+
+.friends-dropdown-item > button:first-of-type {
+  background-color: #5a378c;
+}
+
+.dropdown-menu.lenght.icon-dropdown.msgMenu li span.username {
+  padding:0px !important;
+  margin:0;
+}
+
+.dropdown-menu.lenght.icon-dropdown.msgMenu li:last-child a {
+  padding:0px !important;
+}
+
+.dropdown-menu.lenght.icon-dropdown.msgMenu li span {
+  grid-column: 1/-1;
+  font-size: .813em;
+}
 
   @media (min-width:1200px) {
     .jumbotron {
@@ -624,6 +749,10 @@
       top: 3px !important;
     }
 
+    .dropdown-item {
+        font-size: 15px;
+      }
+
     #message_count, #friend_counts {
       top:0;
     }
@@ -725,6 +854,12 @@
     }
 	}
 
+  @media (max-width: 767px) {
+  .navbar-nav .open .dropdown-menu {
+        width: 500px;
+    }
+  }
+
   @media (max-width:500px) {
     #navsidebare, #sidebar-2 {
       margin-top:0;
@@ -760,9 +895,9 @@
       margin-left:0 !important;
     }
 
-    #bb img {
+    /* #bb img {
       right: 17vw;
-    }
+    } */
 
     #myNavbar .navbar-form { 
       right:0 !important;
@@ -771,6 +906,33 @@
     .arrow_button {
       position: absolute;
       right: 5px;
+    }
+
+    .navbar-nav .open .dropdown-menu {
+      width:100%;
+    }
+
+    .friends-dropdown-item {
+      grid-template-columns: 50px 1fr 1fr;
+    }
+
+    .friends-dropdown-item img {
+      grid-row: 1/3;
+    }
+
+    .friends-dropdown-item button {
+      margin-top: 5px;
+      padding: .5em .2em;
+    }
+
+    .friends-dropdown-item button:first-of-type {
+      grid-row: 2;
+      grid-column: 2;
+    }
+
+    .friends-dropdown-item button:last-of-type {
+      grid-row: 2;
+      grid-column:3;
     }
   }
 
@@ -820,65 +982,25 @@
   <!--  -->
   <!-- navigation panel -->
   <div class="main-section">
-    <div class="row border-chat">
-      <div class="col-md-12 col-sm-12 col-xs-12 first-section">
-        <div class="row">
-          <div class="col-md-8 col-sm-6 col-xs-6 left-first-section">
-            <p id="user_name"></p>
+    <div class="border-chat">
+        <div class='header'>
+            <div class="img-wrapper">
+              <img src="{{ $user_assets }}/img/avatar.png" alt="">
+              <span></span>
+            </div>
+            <div class="name-and-status">
+              <a href="#">username</a>
+              <span>Active now</span>
+            </div>
+            <img src="{{ $user_assets }}/icons/close.svg" alt="" class='close'>
           </div>
-          <div class="col-md-4 col-sm-6 col-xs-6 right-first-section">
-            <!-- <a href="#"><i class="fa fa-minus" aria-hidden="true"></i></a> -->
-            {{-- <a href="#"><i class="fa fa-clone" aria-hidden="true"></i></a> --}}
-            <span class='close'>
-              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
-   viewBox="0 0 47.971 47.971" style="enable-background:new 0 0 47.971 47.971;" xml:space="preserve">
-  	<g>
-  		<path d="M28.228,23.986L47.092,5.122c1.172-1.171,1.172-3.071,0-4.242c-1.172-1.172-3.07-1.172-4.242,0L23.986,19.744L5.121,0.88   c-1.172-1.172-3.07-1.172-4.242,0c-1.172,1.171-1.172,3.071,0,4.242l18.865,18.864L0.879,42.85c-1.172,1.171-1.172,3.071,0,4.242   C1.465,47.677,2.233,47.97,3,47.97s1.535-0.293,2.121-0.879l18.865-18.864L42.85,47.091c0.586,0.586,1.354,0.879,2.121,0.879   s1.535-0.293,2.121-0.879c1.172-1.171,1.172-3.071,0-4.242L28.228,23.986z"
-  		 fill="#FFFFFF" />
-  	</g>
-  	<g>
-  	</g>
-  	<g>
-  	</g>
-  	<g>
-  	</g>
-  	<g>
-  	</g>
-  	<g>
-  	</g>
-  	<g>
-  	</g>
-  	<g>
-  	</g>
-  	<g>
-  	</g>
-  	<g>
-  	</g>
-  	<g>
-  	</g>
-  	<g>
-  	</g>
-  	<g>
-  	</g>
-  	<g>
-  	</g>
-  	<g>
-  	</g>
-  	<g>
-  	</g>
-  </svg>
-            </span>
-
+    </div>
 <script>
 
   $('.close').click(function() {
     $('.main-section').css('bottom', '-465px');
   });
 </script>
-          </div>
-        </div>
-      </div>
-    </div>
     <div class="row border-chat">
       <div class="col-md-12 col-sm-12 col-xs-12 second-section">
         <div class="chat-section" id="chat-scroll">
@@ -925,7 +1047,7 @@
           </div>
 
           <div class="col-xs-1">
-          <label id="bb"> <img alt="" src="{{ $user_assets }}/images/clip.png" />
+          <label id="bb"> <i class="fas fa-paperclip attach"></i>
               <input type="file" name="file" id="file" size="60">
             </label>
             {{-- <textarea id="example1"></textarea> --}}
@@ -943,15 +1065,9 @@
   </div>
   <script type="text/javascript">
     $(document).ready(function () {
-      $(".left-first-section").click(function () {
+      $(".main-section .header .close").click(function () {
         $('.main-section').toggleClass("open-more");
-        $('#bb img').toggle();
-      });
-    });
-    $(document).ready(function () {
-      $(".close").click(function () {
-        $('.main-section').toggleClass("open-more");
-        $('#bb img').toggle();
+        $('#bb .attach').toggle();
       });
     });
 
@@ -1017,13 +1133,6 @@
   li a.M {
     border-radius:10px;
   }
-
-
-@media (max-width: 767px) {
-  .navbar-nav .open .dropdown-menu {
-      width: 500px;
-  }
-}
 
 @media (max-width: 768px) {
 
@@ -1279,24 +1388,15 @@
               @if(count(recent_join()))
               @foreach(recent_join() as $row)
               <!-- <div> -->
-                <li style="margin-left: 4.3333%">
-                  <a style="background-color: #ffffff; color: #666666 !important;" href="{{ url('public-profile',$row->id) }}">
-                  @if(!empty($row->image))
-                  <img src="{{ $user_assets }}/my_photo/{{ $row->image }}" style="width: 45px; height: 45px; border-radius:100px; " alt="">
-                 
-                  @else($row->profile_image)
-                  <img src="{{ $user_assets }}/profile_image/{{ $row->image_name }}" style="width: 45px; height: 45px; border-radius:100px; " onerror="this.src='http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=Image +Not+Found'" alt="">
-                  
-                 
-                  @endif
-
-                    <strong>{{ $row->user_name }}</strong>
-                     <span style="font-size: 12px;">
-                    {{ $row->height .' '.$row->martial_status.' '.$row->language}} </span> <span style="color: blue ; margin-top: 14px;" class='view-profile'>veiw
-                            Profile</span>
-                  </a>
-                  <hr>
-                  </li>
+                <li class="friends-dropdown-item dropdown-item">
+                  <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
+                  <div class="info">
+                    <a href="#">username</a>
+                    <span>15ft 11in - 180cm Married Urdu</span>
+                  </div>
+                    <button>Accept</button>
+                    <button>Remove</button>
+                </li>
                   @endforeach
                   @endif
                 <li class="text-center view-all">
@@ -1384,9 +1484,9 @@
              </a>
             <ul class="dropdown-menu lenght icon-dropdown" id='notifications-dropdown'>
               @if(!empty(get_notification()))
-              @foreach(get_notification() as $row)
               <div id="get_noti" class="get_notifi">
-                <li class="notify_section">
+                  @foreach(get_notification() as $row)
+                <!-- <li class="notify_section">
                   <a href="{{ url('public-profile',$row->sender_id) }}">
                     @if(!empty($row->photo->image))
                     <img src="{{ $user_assets }}/my_photo/{{ $row->photo->image }}" style="width: 45px; height: 45px; border-radius:100px; " alt="">
@@ -1399,20 +1499,28 @@
                             $row->user->user_name.' '.$row->notification_type }}</span>
 
                   </a>
+                </li> -->
+
+                <li class="notification-dropdown-item dropdown-item">
+                  <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
+                  <div>
+                    <span><strong>username</strong> viewed your profile</span>
+                    <span><i class="fas fa-user-circle"></i>10h</span>
+                  </div>
                 </li>
 
+                @endforeach
+                <a href="{{ url('notification') }}">
+                  <li style="color:#333; font-size:15px;" class="text-center">
+  
+                    Show all
+                </a>
               </div>
-              @endforeach
 
               @endif
 
 
 
-              <a href="{{ url('notification') }}">
-                <li style="color:#333; font-size:15px;" class="text-center">
-
-                  Show all
-              </a>
 
             </ul>
           </li>
@@ -3060,26 +3168,26 @@ if(string_of_words.match(filter))
   },1000);
 
 
-  setInterval(function() {
+  // setInterval(function() {
            
 
-      $.ajax({
-    url:'{{url('/get-notification')}}',
-            type: 'POST',
-            data: {
-              "_token": "{{ csrf_token() }}",
-              "user_id" : {{user_data()->id}}
-            },
-          success:function(response) {
-            $('.get_notifi').html("");
+  //     $.ajax({
+  //   url:'{{url('/get-notification')}}',
+  //           type: 'POST',
+  //           data: {
+  //             "_token": "{{ csrf_token() }}",
+  //             "user_id" : {{user_data()->id}}
+  //           },
+  //         success:function(response) {
+  //           $('.get_notifi').html("");
            
-              $('#get_noti').html(response);
+  //             $('#get_noti').html(response);
             
               
-          }
+  //         }
 
-        });
-  },1000);
+  //       });
+  // },1000);
   setInterval(function() {
            
 

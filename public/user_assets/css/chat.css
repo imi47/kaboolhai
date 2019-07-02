@@ -4,6 +4,7 @@
   right:50px;
   bottom:-465px;
   z-index: 1;
+  box-shadow: 0px 0px 30px rgba(0,0,0,.3);
 }
 
 .emojiPicker .active {
@@ -76,12 +77,71 @@
 .second-section{
   padding: 0px;
   margin: 0px;
-  background-color: #F3F3F3;
+  background-color: #fff;
   height: 300px;
   border-left: 2px solid #ccc;
   border-right: 2px solid #ccc;
   height:255px !important;
   padding:0 !important;
+}
+
+.main-section .header {
+  display: grid;
+  background-color: white;
+  align-items: center;
+  line-height: normal;
+  grid-template-columns: auto 1fr auto;
+  grid-column-gap: .5em;
+  height: 45px !important;
+  letter-spacing: normal;
+  border-bottom: 2px solid #ddd;
+}
+
+.main-section .header .close {
+  width: 13px;
+  margin-right: 10px;
+  padding: 0;
+}
+
+.main-section .header .img-wrapper {
+  position: relative;
+  margin-left: 8px;
+}
+
+.main-section .header .img-wrapper img {
+  height: 31px;
+  width: 31px;
+  border-radius: 50%;
+}
+
+.main-section .header .img-wrapper span {
+  position: absolute;
+  padding: 4px;
+  border-radius: 50%;
+  right: 0px;
+  top: 20px;
+  background-color: lawngreen;
+  border: 2px solid white;
+}
+
+.main-section .header .name-and-status {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-section .header .name-and-status a {
+  font-weight: bold;
+  color:#333;
+  text-transform: capitalize;
+}
+
+.main-section .header .name-and-status a:hover {
+  text-decoration: underline !important;
+}
+
+.main-section .header .name-and-status span {
+  color:#777;
+  font-size: 12px;
 }
 
 .left-chat,.right-chat{
@@ -195,6 +255,7 @@
   /* margin-right:160px; */
   border: 1px solid #ccc;
   box-sizing: border-box;
+  padding-right: 32px;
 }
 
 .emojiPickerIcon.black {
@@ -206,15 +267,20 @@
 
 #bb {
   position: absolute;
-  bottom: 32px;
+  bottom: 36px;
 }
 
-#bb img {
+#bb .attach {
   position: fixed;
   right: 100px;
   width:26px;
-  margin-right:-3px;
   box-sizing: border-box;
+  background: none;
+  color: #777;
+  width: 0;
+  font-size: 20px;
+  margin-right: 18px;
+  cursor: pointer;
 }
 
 .arrow_button {
@@ -281,7 +347,7 @@
     height:240px;
   }
 
-  #bb img{
+  #bb .attach{
     right:21vw; 
   }
 

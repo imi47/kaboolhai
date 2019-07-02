@@ -94,7 +94,7 @@
   /* user pic menu toggle code end */
 
   @media (max-width:991px) {
-    .nav-white.sticky-nav .navbar-nav li a, .nav-white.sticky-nav .navbar-nav li a {
+    .nav-white.sticky-nav .navbar-nav li > a, .nav-white.sticky-nav .navbar-nav li > a {
     padding-top: 11px !important;
     padding-bottom: 11px !important;
     }

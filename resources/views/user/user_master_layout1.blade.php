@@ -137,6 +137,12 @@
   font-weight: bold;
   color: #3273dc !important;
   font-size: .85em;
+  padding:0 !important;
+}
+
+.friends-dropdown-item .info span {
+  grid-column: 1/-1;
+  font-size: .813em;
 }
 
 .friends-dropdown-item.friends-dropdown-item a:hover {
@@ -378,12 +384,8 @@ footer .fa-search {
         padding: 0;
         border: 1px solid #aaa;
         top: 421px;
-        background-color:#eee;
-        padding: 4px 20px;
-    }
-
-    #notifications-dropdown .icon-dropdown li:last-child {
-      top:419px;
+        background-color: #eee;
+        padding: 2px 20px;
     }
 
     #friends-dropdown .icon-dropdown li:last-child a:hover {
@@ -405,11 +407,6 @@ footer .fa-search {
 
     .dropdown-menu.lenght.icon-dropdown.msgMenu li:last-child a {
       padding:0px !important;
-    }
-
-    .dropdown-menu.lenght.icon-dropdown.msgMenu li span {
-      grid-column: 1/-1;
-      font-size: .813em;
     }
 
     #navsidebare ul {
@@ -651,60 +648,17 @@ footer .fa-search {
 <body>
 
 <div class="main-section">
-    <div class="row border-chat">
-      <div class="col-md-12 col-sm-12 col-xs-12 first-section">
-        <div class="row">
-          <div class="col-md-8 col-sm-6 col-xs-6 left-first-section">
-            <p id="user_name">@if(count(user_data())) {{ user_data()->user_name }} @endif</p>
-          </div>
-          <div class="col-md-4 col-sm-6 col-xs-6 right-first-section">
-            <a href="#"><i class="fa fa-minus" aria-hidden="true"></i></a>
-            {{-- <a href="#"><i class="fa fa-clone" aria-hidden="true"></i></a> --}}
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
- viewBox="0 0 47.971 47.971" style="enable-background:new 0 0 47.971 47.971;" xml:space="preserve" class='close'>
-	<g>
-		<path d="M28.228,23.986L47.092,5.122c1.172-1.171,1.172-3.071,0-4.242c-1.172-1.172-3.07-1.172-4.242,0L23.986,19.744L5.121,0.88   c-1.172-1.172-3.07-1.172-4.242,0c-1.172,1.171-1.172,3.071,0,4.242l18.865,18.864L0.879,42.85c-1.172,1.171-1.172,3.071,0,4.242   C1.465,47.677,2.233,47.97,3,47.97s1.535-0.293,2.121-0.879l18.865-18.864L42.85,47.091c0.586,0.586,1.354,0.879,2.121,0.879   s1.535-0.293,2.121-0.879c1.172-1.171,1.172-3.071,0-4.242L28.228,23.986z"
-		 fill="#FFFFFF" />
-	</g>
-	<g>
-	</g>
-	<g>
-	</g>
-	<g>
-	</g>
-	<g>
-	</g>
-	<g>
-	</g>
-	<g>
-	</g>
-	<g>
-	</g>
-	<g>
-	</g>
-	<g>
-	</g>
-	<g>
-	</g>
-	<g>
-	</g>
-	<g>
-	</g>
-	<g>
-	</g>
-	<g>
-	</g>
-	<g>
-	</g>
-</svg>
-
-<script>
-  $('.close').click(function() {
-    $('.main-section').css('bottom', '-465px');
-  });
-</script>
-          </div>
+    <div class="border-chat">
+      <div class='header'>
+        <div class="img-wrapper">
+          <img src="{{ $user_assets }}/img/avatar.png" alt="">
+          <span></span>
         </div>
+        <div class="name-and-status">
+          <a href="#">username</a>
+          <span>Active now</span>
+        </div>
+        <img src="{{ $user_assets }}/icons/close.svg" alt="" class='close'>
       </div>
     </div>
     <div class="row border-chat">
@@ -729,14 +683,14 @@ footer .fa-search {
             <span style="color: red" id="error"></span>
             {{-- <input type="text" id="send_messgae" name="send_messgae" placeholder="Write messege"> --}}
 
-            <input type="text" id="send_messgae" name="send_messgae" class="emojiable-option" placeholder="Write Message">
+            <input type="text" id="send_messgae" name="send_messgae" class="emojiable-option" placeholder="Type a message">
 
             <input type="hidden" id="to_userss" name="to_user">
 
           </div>
           <a href="#">
             <div class="col-xs-1">
-              <label id="bb"> <img alt="" src="{{ $user_assets }}/images/clip.png" />
+              <label id="bb"> <i class="fas fa-paperclip attach"></i>
                 <input type="file" name="file" id="file" size="60">
               </label>
 
@@ -754,7 +708,7 @@ footer .fa-search {
   </div>
   <script type="text/javascript">
     $(document).ready(function () {
-      $(".left-first-section").click(function () {
+      $(".main-section .header .close").click(function () {
         $('.main-section').toggleClass("open-more");
       });
     });

@@ -612,6 +612,10 @@ p.t
         width: 100%;
       }
 
+      .col-md-9 {
+        margin-bottom: 1rem;
+      }
+
       .col-md-9 .well {
         padding: 10px;
       }
