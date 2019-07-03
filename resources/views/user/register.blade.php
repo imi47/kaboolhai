@@ -13,6 +13,11 @@ input, textarea {
 	padding-top: 3px;
 }
 
+#myModal .modal-title {
+	font-weight: bold;
+	color: #444;
+}
+
 .modal-dialog.modal-lg {
 	margin-top:64px;
 }
@@ -269,14 +274,9 @@ label {
 <div class="modal-content">
 
 <!-- Modal Header -->
-<div class="modal-header" style="color:#ffffff; height:75px; background-color:#e6e6e6; border-bottom-color:#000000; ">
-<div class="container">
-<div class="row">
-<div class="col-sm-4">
-{{-- <img width="100%" src="{{ $user_assets }}/KH-logo-blog-logo.png" style="width: 177px; height: 57px;"> --}}
-</div>
-</div>
-</div>
+<div class="modal-header">
+	<h4 class="modal-title">Upload Image</h4>
+	<button type="button" class="close" data-dismiss="modal">&times;</button>
 </div>
 
 <!-- Modal body -->
@@ -3788,7 +3788,9 @@ $('.elms'+state_id).parent('.row').remove();
 
 
 
-
+document.querySelector('.col-md-2 input[type="checked"]').onclick = function() {
+	this.checked = true;
+}
 
 </script>
 

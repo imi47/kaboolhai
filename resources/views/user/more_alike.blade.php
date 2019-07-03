@@ -14,6 +14,12 @@
 		padding: 5px;
 	}
 
+	.panel-body .col-sm-2.col-xs-12 {
+		display: flex;
+    flex-direction: column;
+    align-items: center;
+	}
+
 	@media (max-width:768px) {
 		.img-thumbnail.img-circle {
 			display:block;
@@ -29,6 +35,14 @@
 
 		.country, .city {
 			text-align:center;
+		}
+	}
+
+	@media (min-width: 769px) {
+		.panel-body .col-sm-8 p {
+			margin-top: 61.5px;
+			margin-bottom: 0;
+			padding: 0;
 		}
 	}
 
@@ -88,7 +102,7 @@
     		</div>
     		<div class="col-sm-8 col-xs-12">
     			
-    		<p class="text-center" style="padding-top: 5%; font-size: 15px;">Your profile matches with <strong id="counter"></strong> of <strong>{{ $more_alike->user_name }}</strong> preferences!</p>
+    		<p class="text-center" style="font-size: 15px;">Your profile matches with <strong id="counter"></strong> <strong>(20%)</strong> of <strong></strong>{{ $more_alike->user_name }}'s</strong> preferences!</p>
     		</div>
     		<div class="col-sm-2 col-xs-12">
                 @if($more_alike->gender=='Female')

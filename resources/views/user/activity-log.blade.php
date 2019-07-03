@@ -3,10 +3,6 @@
 
 <style>
 
- 	#logo-div {
-		margin-right: -61px;
-  }
-
   .pagination {
     margin-top:20px !important;
   }

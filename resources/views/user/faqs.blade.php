@@ -75,6 +75,11 @@
     width:40px;
   }
 
+  #answer8 ul, #answer9 ul {
+    list-style-type: disc;
+    margin-left: 10px;
+  }
+
 </style>
 <div style="padding-top:90px;"></div>
 <div class="container-fluid">
@@ -98,7 +103,7 @@
                   Can I register for my matrimonial account for free on Kabool Hai?
                 </div>
                 <div class="wow fadeIn ansbody" id="answer" >
-                  Registering on <strong>Kabool</strong> hai is totally free. By creating your free profile, you will become a member and you will be able to see other profiles and select the ones that match with your interests
+                  Registering on <strong>Kabool hai</strong> is totally free. By creating your free profile, you will become a member and you will be able to see other profiles and select the ones that match with your interests
                 </div>
               </div>
             </div>
@@ -128,7 +133,7 @@
                   Although I have successfully registered, but my profile does not show up online?
                 </div>
                 <div class="wow fadeIn ansbody" id="answer2" >
-                  Every new profile will be authenticated by our Kabool Hai Team and upon activation, your profile will be visible to all! Verification of profiles is done manually. Our team checks each and every profile carefully for the information that has been given and the candidates are contacted over the phone for confirmation of authority. You will get a notification once the profile is active!
+                  Every new profile will be authenticated by our <strong>Kabool Hai</strong> Team and upon activation, your profile will be visible to all! Verification of profiles is done manually. Our team checks each and every profile carefully for the information that has been given and the candidates are contacted over the phone for confirmation of authority. You will get a notification once the profile is active!
                 </div>
               </div>
             </div>
@@ -219,15 +224,17 @@
                   What are the benefits of a FREE membership?
                 </div>
                 <div class="wow fadeIn ansbody" id="answer8" >
-                  • Most trusted  Matrimonial service <br>
-                  • 100% verified Matrimonial profiles.<br>
-                  • Managed by Complete Professionals<br>
-                  • Dedicated Customer Care Service.<br>
-                  • Post your personal profile for free!<br>
-                  • Add more information about yourself and your family.<br>
-                  • Upload/add multiple photographs to your profile.<br>
-                  • Express interest in other members for FREE.<br>
-                  • Your contact details are not displayed to any member until and unless you approve to accept their contact request send to you privately. This means that your personal information is completely secure with us and you have a right to choose the proposal.
+                  <ul>
+                    <li>Most trusted  <strong>Matrimonial service</strong></li>
+                    <li>100% verified <strong>Matrimonial profiles.</strong></li>
+                    <li>Managed by Complete Professionals</li>
+                    <li>Dedicated Customer Care Service.</li>
+                    <li>Post your personal profile for free!</li>
+                    <li>Add more information about yourself and your family.</li>
+                    <li>Upload/add multiple photographs to your profile.</li>
+                    <li>Display your contact details to paid members.</li>
+                    <li>Express interest in other members for FREE.</li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -242,11 +249,14 @@
                    Why should I choose your paid membership package?
                   </div>
                   <div class="wow fadeIn ansbody" id="answer9" >
-                   A paid membership has various packages and options to help you access advanced features of Kaboolhai.com. Its benefits are as follows:<br>
-                  • You can search suitable profile through our website.<br>
-                  • We do not provide your contact details directly to even paid members. The members can send private message requests to the other candidate who has a right to accept or decline those requests. In case of decline, the person will not be allowed to access any of the personal details or information of the candidate. This ensures that your personal information remains secure with us.<br>
-                  • The members who opt for paid membership get top services and benefits that are not available to members who choose a free membership.<br>
-                  • Paid Kabool Hai members can express interest and send message requests to other members of Kaboolhai.com<br>
+                    A paid membership has various packages and options to help you access advanced features of <strong>Kaboolhai.com.</strong> Its benefits are as follows:<br>
+                    <ul>
+                      <li>You can search suitable profile through our website.</li>
+                      <li>Suitable matches can be contacted through contact number, personalized messages, and customer service.</li>
+                      <li>It is easy to send and receive personalized messages.</li>
+                      <li>The members who opt for paid membership get top services and benefits that are not available to members who choose a free membership.</li>
+                      <li>Paid <strong>Kabool Hai</strong> members can express interest and write messages to other members of <strong>Kaboolhai.com</strong></li>
+                    </ul>
 
                   </div>
                 </div>
@@ -278,15 +288,11 @@
                    How can I upgrade my Free membership to paid?
                   </div>
                   <div class="wow fadeIn ansbody" id="answer11" >
-                   We provide various options for upgrading your membership. You can login to your Kabool Hai account page and click upgrade button. Choose the right package for you, which will lead you to the payment page. You will be provided with various options for payment.
-
+                    We provide various options for upgrading your membership. You can login to your <strong>Kabool Hai</strong> account page and click upgrade button. Choose the right package for you, which will lead you to the payment page. You will be provided with various options for payment.
                   </div>
                 </div>
             </div>
           </div>
-
-
-
         </div>
       </div>
     </div>

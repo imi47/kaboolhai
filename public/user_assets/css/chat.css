@@ -325,11 +325,6 @@
     width:36px;
   }
 
-  .text-bar input {
-    padding-top:10px;
-    padding-bottom:10px;
-  }
-
   #user_name {
     font-size:14px;
   }
@@ -348,7 +343,7 @@
   }
 
   #bb .attach{
-    right:21vw; 
+    right:19vw; 
   }
 
   .arrow_button {

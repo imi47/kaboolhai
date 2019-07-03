@@ -69,7 +69,7 @@
     color:#ed6c05;
   }
 
-	.menu-container .menu.opened {
+	.menu-container.open .menu {
     width:200px;
     height:105px;
   }
@@ -78,9 +78,10 @@
 		transition: 500ms;
     fill:red;
     width: 30px;
+    cursor: pointer;
   }
 
-  .menu-container .toggle.rotate {
+  .menu-container.open .toggle {
     transform: rotate(225deg);
   }
   
@@ -208,15 +209,6 @@
                       </ul>
                     </div>
                   </div>
-
-                  <script>
-                    $(document).ready(function() {
-                      $('.toggle').click(function() {
-                        $(this).siblings('.menu').toggleClass('opened');
-                        $(this).toggleClass('rotate');                       
-                      });
-                    });
-                  </script>
 
                   <img style="height: 150px; width: 200px;" src="{{ $user_assets }}/my_photo/{{ $row->image }}" alt="" class="img-responsive" />
                   <div class="gp-text text-center">Album Photo {{ $user_data->user_name }}</div>
@@ -424,7 +416,16 @@
 </div>
 
  
+<script>
+  $('.menu-container .toggle').click(function(e) {
+    e.stopPropagation();
+    $(this).parent().toggleClass('open');
+  });
 
+  document.onclick = function() {
+    $('.menu-container').removeClass('open');
+  }
+</script>
 
   <div style="padding-bottom: 100px;"></div>  
 

@@ -61,7 +61,7 @@
 	<style>
 	.sidebar-container-container {
 		position:sticky;
-		top:-1080px;
+		top:-1078px;
 	}
 
 	.well:not(.w).sidebar {
@@ -72,7 +72,7 @@
 	<style>
 	.sidebar-container-container {
 		position:sticky;
-		top:-600px;
+		top:-578px;
 		margin-bottom: -13px;
 	}
 

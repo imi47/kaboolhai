@@ -29,6 +29,7 @@
   <style type="text/css">
     body {
       /* position:relative; */
+      letter-spacing: normal;
     }
 
 ::-webkit-scrollbar-track
@@ -471,10 +472,6 @@ footer .fa-search {
       font-size:12px;
     }
 
-    #bb {
-      bottom:-17px;
-    }
-
     #bb img {
       right: 19vw;
     }
@@ -508,9 +505,9 @@ footer .fa-search {
 
   }
 
-  @media (max-width:404px) {
+  @media (max-width: 500px) and (min-width: 405px) {
     #bb {
-      bottom: 32px;
+      bottom:-15px;
     }
   }
 
@@ -541,7 +538,7 @@ footer .fa-search {
     }
 
     #bb {
-      bottom: -19px;
+      bottom: -12px;
     }
   }
 
