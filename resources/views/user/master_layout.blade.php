@@ -744,6 +744,15 @@
     }
  
   @media (max-width:768px) {
+
+    #friends-dropdown li:last-child {
+      top: 416px;
+    }
+
+    #notifications-dropdown li:last-child {
+      top: 415px;
+    }
+
     #myNavbar .navbar-form {
       right: 30px !important;
       top: 3px !important;
@@ -934,6 +943,14 @@
       grid-row: 2;
       grid-column:3;
     }
+
+    #notifications-dropdown li:last-child {
+      top: 415px;
+    }
+
+    #friends-dropdown li:last-child {
+      top: 416px;
+    }
   }
 
     @media (max-width:500px) {
@@ -973,6 +990,14 @@
       
       .fa-user-friends, .fa-envelope, .glyphicon-bell {
         font-size: 18px;
+      }
+
+      #friends-dropdown li:last-child {
+        top: 414px;
+      }
+
+      #notifications-dropdown li:last-child {
+        top: 413px;
       }
     }
 

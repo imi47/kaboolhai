@@ -51,24 +51,52 @@
     border-color: #ed6c05;
   }
 
+  .al-log .request {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .al-log .request > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .al-log .request .cancel-req {
+    color: #444;
+    font-weight: bold;
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 3px;
+    margin: 3px 0;
+    background-color: #eee;
+    border: 1px solid #bbb;
+    cursor: pointer;
+  }
+
+  .al-log .request .cancel-req:hover {
+    background-color: #ddd;
+  }
+
   @media (min-width:1361px) {
     .nav.navbar-nav {
     margin-right:0;
     }
   }
 
-  
-  @media (max-width:768px) {
+  @media (max-width:500px) {
 
     .al-main ul.al-log li em {
       display:block;
       float:none !important;
     }
-  }
 
-  @media (max-width:500px) {
+    .al-log .request {
+      flex-direction: column;
+    }
+
     .al-main ul.al-log li,  .al-main ul.al-log li em {
-      font-size:3.3vw;
+      font-size: 12px;
     }
   }
 
@@ -124,8 +152,6 @@
   <div class="col-md-9">
     
     <div class="row">
-      
-     
         <div class="col-md-12">
             <div class="al-main">
                 <h3>Activity Log</h3>
@@ -141,7 +167,13 @@
                   @if(!empty($activity))
                   @foreach($activity as $row)
                     <li><a href="{{ url('public-profile',$row->user_id) }}">{{$row->activeuser->user_name}} </a>{{ $row->activity}}   .<em class="pull-right">{{ $row->created_at }}</em></li>
-                  @endforeach
+                    @endforeach
+                    <li class="request">
+                      <div>
+                        <span>You sent a friend request to <a href="">Kashif Latif</a></span>
+                        <span class="cancel-req">Cancel request</span>
+                      </div>
+                      <em class="pull-right">2019-07-04 05:33:33</em></li>
                   @endif
                   {{ $activity->links() }}
                   </ul>
