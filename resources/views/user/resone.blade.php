@@ -2,12 +2,22 @@
 @section('data') 
 <style type="text/css">
 	.radio-reason{
-		position: absolute; margin-left: -350px !important; 
+    width: auto;
 	}
-	.radio-lable{
-		margin-left: 60px !important;
+  
+  .col-md-9 form > div:not(.reason):not(.other-reason) {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
 
-	}
+  .col-md-9 form > div input[type='radio'] {
+    margin-right: 10px;
+  }
+
+  .col-md-9 form > div label {
+    margin: 0;
+  }
 </style>
 <div style="padding-top: 90px;"></div>
   
@@ -43,19 +53,31 @@
         	<div class="col-md-9">
         	<form method="post" action="{{ url('close') }}">
         		{{ csrf_field() }}
-            <input type="radio" value="This is temporary. I'll be back." onclick ="return other1()"  name="close_reason" class="radio-reason" style=""><label class="radio-lable">This is temporary. I'll be back.</label> 
-            <input type="radio" value="I found a Marriage Partner through Kaboolhai" onclick ="return other1()" name="close_reason" class="radio-reason"><label class="radio-lable">I found a Marriage Partner through Kaboolhai</label> 
-            <input type="radio" value="I have found somebody and am no longer looking" onclick ="return other1()" name="close_reason" class="radio-reason"><label class="radio-lable">I have found somebody and am no longer looking</label> 
-            <input type="radio" value="I am not happy with the service Kaboolhai are providing" onclick ="return others()" name="close_reason" class="radio-reason"><label class="radio-lable">I am not happy with the service Kaboolhai are providing</label> 
+            <div>
+              <input type="radio" value="This is temporary. I'll be back." onclick ="return other1()"  name="close_reason" class="radio-reason" style=""><label>This is temporary. I'll be back.</label>
+            </div> 
+            <div>
+              <input type="radio" value="I found a Marriage Partner through Kaboolhai" onclick ="return other1()" name="close_reason" class="radio-reason"><label>I found a Marriage Partner through Kaboolhai</label>
+            </div> 
+            <div>
+              <input type="radio" value="I have found somebody and am no longer looking" onclick ="return other1()" name="close_reason" class="radio-reason"><label>I have found somebody and am no longer looking</label>
+            </div> 
+            <div>
+              <input type="radio" value="I am not happy with the service Kaboolhai are providing" onclick ="return others()" name="close_reason" class="radio-reason"><label>I am not happy with the service Kaboolhai are providing</label>
+            </div> 
             <div class="reason" hidden="">
             <label>Please let us know what we can do better (optional)</label>
             <textarea name="bad_service" rows="4"></textarea>
             </div>
-            <input type="radio" value="I cannot afford the subscription" onclick ="return other1()" name="close_reason" class="radio-reason"><label class="radio-lable">I cannot afford the subscription</label> 
-            <input type="radio" value="Other reason" onclick ="return other()" name="close_reason" class="radio-reason"><label class="radio-lable">Other reason</label> 
+            <div>
+              <input type="radio" value="I cannot afford the subscription" onclick ="return other1()" name="close_reason" class="radio-reason"><label>I cannot afford the subscription</label>
+            </div> 
+            <div>
+              <input type="radio" value="Other reason" onclick ="return other()" name="close_reason" class="radio-reason"><label>Other reason</label> 
+            </div>
             <div class="other-reason" hidden="">
-            <label>Please state your reason for leaving here </label>
-            <textarea name="other_reason" rows="4"></textarea>
+              <label>Please state your reason for leaving here </label>
+              <textarea name="other_reason" rows="4"></textarea>
             </div>
             <br><br>
             
