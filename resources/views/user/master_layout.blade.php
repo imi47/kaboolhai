@@ -34,30 +34,17 @@
 </head>
 <style type="text/css">
 
-::-webkit-scrollbar-track
+body::-webkit-scrollbar, body *::-webkit-scrollbar
 {
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
-	background-color: #F5F5F5;
-	border-radius: 10px;
+	width: 0.7rem;
+  height: 0.7rem;
+  background-color: #f5f5f5;
 }
 
-::-webkit-scrollbar
+body::-webkit-scrollbar-thumb, body *::-webkit-scrollbar-thumb
 {
-	width: 0.5em;
-	height: 0.5em;
-	background-color: #F5F5F5;
-}
-
-::-webkit-scrollbar-thumb
-{
-	border-radius: 10px;
-	background-color: #FFF;
-	background-image: -webkit-gradient(linear,
-  40% 0%,
-  75% 84%,
-  from(#f47e2a),
-  to(#8B5BD1),
-  color-stop(.6,#B88FF3));
+	border-radius: 20px;
+	background-color: #999;
 }
 
 .searchcontainer button {

@@ -471,7 +471,7 @@ $('.owl-carousel').owlCarousel({
                 <li class="agea"><a href="{{ url('show-profile',$user_data->id) }}" onclick="return confirm('Are you sure you want to show this user?');" ><span><img src="{{ $user_assets }}/dontshowagain.png" alt="" class="icon_size"></span> <span class="linkT">show me again</span></a></li>
                 @endif
 
-								<li class="agea"><a href="{{ url('activity-log',$user_data->id) }}"><span><img src="{{ $user_assets }}/historywithhim.png" alt="" class="icon_size"></span> <span class="linkT">Your history </span></a></li>
+								<li class="agea"><a href="{{ url('activity-log',$user_data->id) }}"><span><img src="{{ $user_assets }}/historywithhim.png" alt="" class="icon_size"></span> <span class="linkT">Your history with him/her</span></a></li>
 								@if(empty($blockuser))
 								<li class="agea"><a href="{{ url('block-user',$user_data->id) }}" onclick="return confirm('Are you sure you want to block this user?');" ><span><img src="{{ $user_assets }}/block-user.png" alt="" style='width:19px; margin-left:1px;'></span><span class="linkT"> Block {{ $user_data->user_name }}  </span></a></li>
 								 @else

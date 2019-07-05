@@ -102,7 +102,7 @@
     		</div>
     		<div class="col-sm-8 col-xs-12">
     			
-    		<p class="text-center" style="font-size: 15px;">Your profile matches with <strong id="counter"></strong> <strong>(20%)</strong> of <strong></strong>{{ $more_alike->user_name }}'s</strong> preferences!</p>
+    		<p class="text-center" style="font-size: 15px;">Your profile matches with <strong id="counter"></strong> <strong>(10%)</strong> of <strong></strong>{{ $more_alike->user_name }}'s</strong> preferences!</p>
     		</div>
     		<div class="col-sm-2 col-xs-12">
                 @if($more_alike->gender=='Female')
