@@ -440,6 +440,8 @@ footer .fa-search {
      #sidebar-2 ul li a {
        text-decoration:none;
        color:#fff;
+       display: block;
+       padding: 5px 25px;
      }
 
      .navbar-right-2 .dropdown-menu {

@@ -248,7 +248,6 @@ body::-webkit-scrollbar-thumb, body *::-webkit-scrollbar-thumb
   }
   
   #sidebar-2 ul li:not(.divider) {
-    padding: 5px 25px;
     font-size: 16px;
   }
 
@@ -577,6 +576,8 @@ body::-webkit-scrollbar-thumb, body *::-webkit-scrollbar-thumb
      #sidebar-2 ul li a {
        text-decoration:none;
        color:#fff;
+       display: block;
+       padding: 5px 25px;
      }
 
   #friend_counts {
