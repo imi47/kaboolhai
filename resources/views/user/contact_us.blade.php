@@ -76,21 +76,10 @@
           </div>
 </form>
           <div class="col-sm-6 contact-info-container">
-            <h3 class="smallhead text-center"><u>Contact Us</u></h3>
+            <h3 class="smallhead text-center">Contact Us</h3>
             <div class="row">
-              <div style="padding-left: 65px;margin-top: 45px;">
-                <label for="" style="font-size:22px;"><strong><u>Address:</u></strong></label>
-                <p class="ptext">123 ABC Street Lahore, Punjab 12345 Pakistan</p>
-              </div>
-
               <div style="padding-left: 65px; margin-top: 35px;">
-                <label for="" style="font-size:22px;"><strong><u>Phone:</u></strong></label>
-                <p class="ptext">+901245678963</p>
-                <p class="ptext">+901245678963</p>
-              </div>
-
-              <div style="padding-left: 65px; margin-top: 35px;">
-                <label for="" style="font-size:22px;"><strong><u>Email:</u></strong></label>
+                <label for="" style="font-size:22px;"><strong>Email:</strong></label>
                 <p class="ptext">Admin@gmail.com</p>
                 <p class="ptext">contact@gmail.com</p>
               </div>

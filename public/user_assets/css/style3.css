@@ -1373,7 +1373,11 @@ a.button:hover
 
   .box_msg, .box_time {
 	 padding-left:5vw;
-  }
+	}
+	
+	.mp-bio-ans {
+		margin-left: 5px;
+	}
 }
 
 @media (max-width:550px) {

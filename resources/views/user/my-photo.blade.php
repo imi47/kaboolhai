@@ -303,6 +303,46 @@
         </div>
       </div>
       </div>
+
+      <div class="pic-examples">
+        <div>
+          <span>
+            <i class="fas fa-check"></i>
+            <span>Photos you can upload</span>
+          </span>
+          <div>
+            <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
+            <span>Close Up</span>
+          </div>
+          <div>
+            <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
+            <span>Full View</span>
+          </div>
+        </div>
+        <div>
+          <span>
+            <i class="fas fa-times"></i>
+            <span>Photos you cannot upload</span>
+          </span>
+          <div>
+            <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
+            <span>Side Face</span>
+          </div>
+          <div>
+            <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
+            <span>Blur</span>
+          </div>
+          <div>
+            <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
+            <span>Group</span>
+          </div>
+          <div>
+            <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
+            <span>Watermark</span>
+          </div>
+        </div>
+      </div>
+
     </div>
       </div>
       

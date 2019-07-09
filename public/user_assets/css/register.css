@@ -1,11 +1,9 @@
-body::-webkit-scrollbar, body *::-webkit-scrollbar
-{
-	width: 0.45rem;
-	height: 0.45rem;
+body *::-webkit-scrollbar {
+	width: .6rem;
+	height: .6rem;
 }
 
-body::-webkit-scrollbar-thumb, body *::-webkit-scrollbar-thumb
-{
+body *::-webkit-scrollbar-thumb {
 	border-radius: 20px;
 	background-color: #999;
 }

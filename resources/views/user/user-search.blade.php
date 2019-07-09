@@ -12,6 +12,10 @@
      margin-bottom: 0;
    }
 
+   .nav.navbar-nav .dropdown a.dropdown-toggle {
+    line-height: 21px !important;
+   }
+
    .user-list-mobile {
      display: none;
    }
@@ -292,10 +296,15 @@
     /* border-radius: 10px; */
   }
 
+  .pl-profile > img  {
+    visibility: hidden;
+  }
+
   .pl-content-top {
     /*width: 30px;*/
     height: 100px;
-    float: left;
+    float: right;
+    margin-right: 5px;
   }
  .pl-content-top-img {
         width: 15px !important;
@@ -391,7 +400,7 @@
   }
   
   .log1 {
-    background-color: lawngreen;
+    background-color: mediumseagreen;
   }
 
   .log {
@@ -465,68 +474,10 @@ p.t
     letter-spacing: normal;
   }
 
-  .user-list-mobile > div {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-gap: .5em;
-    background-color: #fff;
-    padding: .5em;
-    margin-bottom: .625em;
-    box-shadow: 1px 1px 3px rgba(0,0,0,.2);
-    position: relative;
-    }
-
-    .user-list-mobile > div:hover {
-      background-color: #eee;
-    }
-
-    .user-list-mobile > div > span {
-    position: absolute;
-    padding: 4px;
-    border-radius: 50%;
-    right: 6px;
-    top: 6px;
-    }
-
-    .user-list-mobile > div > div:not(.icons) {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      line-height: normal;
-      margin-right: 15px;
-    }
-
-    .user-list-mobile > div > div:not(.icons) span {
-      font-size: .88em;
-    }
-
-    .user-list-mobile > div > div:not(.icons) span:first-child {
-      color: #ed6c05;
-      font-weight: bold;
-      font-size: .95em;
-    }
-
-    .user-list-mobile > div > div:not(.icons) .ago {
-    color: #777;
-    }
-
-    .user-list-mobile > div > img {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    margin-top: 5px;
-    }
-
-    .user-list-mobile > div > .icons {
-    grid-column: 1/-1;
-    justify-content: space-around;
-    display: flex;
-    border-top: 1px solid #ddd;
-    padding: 5px 5px 0px 5px;
-    }
-
-    .user-list-mobile > div > .icons img {
+    /* .user-list-mobile > div > .icons img {
     width: 20px;
-    }
+    height: 25px !important;
+    } */
 
    @media (max-width:1300px) {
     .navbar-form button {
@@ -1100,7 +1051,7 @@ p.t
               <img src="{{ $user_assets }}/profile_image/{{ $row->image_name }}">
               @else
 
-              <img src="{{ $user_assets }}/dp-img-2.png">
+              <img src="" alt="picture">
               @endif
               <div class="pl-profile-content">
                 <div class="pl-content-top">
@@ -1215,23 +1166,34 @@ p.t
        
        <div class="user-list-mobile">
          <div>
-           <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
-           <div>
-             <span>username</span>
-             <span class="ago">2 months ago</span>
-             <span>33 yrs, 5' 8"</span>
-             <span>54 KG</span>
-             <span>Sindhi</span>
-             <span>Software Engineer</span>
-             <span>Lahore</span>
-             <span>Pakistan</span>
-             <span>Second Marriage</span>
-             <span>Chishti</span>
-          </div>
+           <a href="#">
+             <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
+             <div>
+               <span>username</span>
+               <span class="ago">2 months ago</span>
+               <span>33 yrs, 5' 8"</span>
+               <span>54 KG</span>
+               <span>Sindhi</span>
+               <span>Software Engineer</span>
+               <span>Lahore</span>
+               <span>Pakistan</span>
+               <span>Second Marriage</span>
+               <span>Chishti</span>
+            </div>
+           </a>
           <div class="icons">
-              <img src="{{ $user_assets }}/public_profile/email_verified.png" title="Email verified">
-              <img src="{{ $user_assets }}/public_profile/email_unverified_gray.PNG" title="Email unverified">
-              <img src="{{ $user_assets }}/public_profile/mobile_verified.png" title="Mobile verified">
+              <span>
+                <i class="fas fa-user"></i>
+                <span>Invite</span>
+              </span>
+              <span>
+                <i class="fas fa-comment-alt"></i>
+                <span>Message</span>
+              </span>
+              <span>
+                <i class="fas fa-user-check"></i>
+                <span>Verified</span>
+              </span>
           </div>
           <!-- replace log1 with log for offline icon -->
           <span class="log1"></span>
@@ -1663,7 +1625,7 @@ p.t
 
                        @else
                        
-              {{-- <img src="{{ $user_assets }}/dp-img-2.png"> --}}
+              {{-- <img src="" alt="picture"> --}}
               <a href="{{ url('public-profile',$row->id) }}" title="View Profile">
          <div class="image-wrapper"> <img src="{{ $user_assets }}/sunrise.jpg"></div>
                      </a>

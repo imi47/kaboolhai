@@ -825,7 +825,7 @@ public function confirm_friend($friend_id)
            $data['country']=DB::table('countries')->get();
            $data['search'] = 'user-search';
            $data['save_search']=url()->current();
-           $data['title']='Hide user list';
+           $data['title']='Hidden Profiles';
           return view('user/user_listing',$data);    
     }
 	public function add_friend($friend_id)

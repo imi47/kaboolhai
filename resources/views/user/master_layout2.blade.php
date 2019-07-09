@@ -520,7 +520,7 @@
 			<h2>Login</h2>
 			<div class='input-container'>
 				<input type="email" name="email" id="email">
-				<label for="email">Email </label>
+				<label for="email">Email or username</label>
 				<i class="fas fa-user-alt"></i>
 			</div>
 

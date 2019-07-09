@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="{{ $user_assets }}/css/muzamil.css" />
 
   <link rel="shortcut icon" href="{{ $user_assets }}/kabool-hai-favicon.png">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
   @stack('css')
   <style type="text/css">
     body {
@@ -32,14 +33,18 @@
       letter-spacing: normal;
     }
 
-    body::-webkit-scrollbar, body *::-webkit-scrollbar
+    *:not(i):not(.fa):not(.fas):not(.glyphicon) {
+      font-family: 'Roboto', sans-serif !important;
+    }
+
+body *::-webkit-scrollbar
 {
-	width: 0.7rem;
-  height: 0.7rem;
+	width: 0.85rem;
+  height: 0.85rem;
   background-color: #f5f5f5;
 }
 
-body::-webkit-scrollbar-thumb, body *::-webkit-scrollbar-thumb
+ body *::-webkit-scrollbar-thumb
 {
 	border-radius: 20px;
 	background-color: #999;
@@ -138,12 +143,13 @@ body::-webkit-scrollbar-thumb, body *::-webkit-scrollbar-thumb
   justify-self: end;
 }
 
-.friends-dropdown-item >  button {
+.friends-dropdown-item > button {
   color: white;
   font-weight: bold;
   border:none;
   border-radius: 3px;
   padding: .3em .8em;
+  width: 7rem;
 }
 
 .friends-dropdown-item > button:last-child {
@@ -201,10 +207,7 @@ footer .fa-search {
       font-size: 2.1rem;
       top: 20px;
       color:#f1e7ff;
-    }
-
-    .orange {
-      color:#ed6c05;
+      cursor: pointer;
     }
 
     .close {
@@ -319,6 +322,7 @@ footer .fa-search {
       margin-top: 14px;
       margin-bottom: 2px;
       display: block !important;
+      transition: 500ms !important;
     }
 
     .navbar-form button {
@@ -820,7 +824,9 @@ footer .fa-search {
 
     @media (max-width:1265px) {
       .navbar-form {
-        display:none !important;
+        width: 0;
+        opacity:0;
+        overflow: hidden;
         position: absolute;
         border-radius: 3px;
         top: 13px;
@@ -831,11 +837,12 @@ footer .fa-search {
       }
 
       .navbar-form.visible {
-        display: block !important;
+        width: 19vw;
+        opacity: 1;
       }
 
-      #friends-dropdown.invisible, #messages-dropdown.invisible, #notifications-dropdown.invisible, #username-dropdown-toggle.invisible {
-        visibility: hidden !important;
+      .navbar-form.visible > div, .navbar-form.visible > div input {
+        width:100%;
       }
 
       .navbar-form input {
@@ -853,6 +860,12 @@ footer .fa-search {
 
       .search-dropdown-toggle {
         display:inline-block
+      }
+    }
+
+    @media (max-width: 1265px) and (min-width: 1071px) {
+      #friends-dropdown.invisible, #messages-dropdown.invisible, #notifications-dropdown.invisible, #username-dropdown-toggle.invisible {
+        visibility: hidden !important;
       }
     }
 
@@ -880,6 +893,20 @@ footer .fa-search {
       #accordion {
         float: right;
       }
+
+      .navbar-form {
+        position: relative; 
+      }
+
+      .search-dropdown-toggle {
+        position: absolute;
+        right: 0;
+      }
+
+      #username-dropdown-toggle {
+        margin-right: 45px;
+      }
+
     }
 
     @endif
@@ -905,7 +932,7 @@ footer .fa-search {
       }
 
       .search-dropdown-toggle {
-        top:9px;
+        top:20px;
       }
 
       #menu-div {
@@ -1069,7 +1096,7 @@ footer .fa-search {
 
 
                 <li class="dropdown">
-                  <a class="dropdown-toggle menudesign" data-toggle="dropdown" href="#">Go More <span class="caret"></span></a>
+                  <a class="dropdown-toggle menudesign" data-toggle="dropdown" href="#">More Options<span class="caret"></span></a>
                   <ul class="dropdown-menu go_more " style="background-color: #ffffff;">
                    
                     <li><a href="{{ url('manage-profile') }}" style="background-color: #ffffff; color: black !important;">Manage
@@ -1160,11 +1187,9 @@ footer .fa-search {
                     @endforeach
                     @else
 
-                    <span style="margin-left: 20px;">No New Request</span>
+                    <p class='friends-dropdown-top-text'>No New Request</p>
                     @endif
-                    <hr>
-                    <span style="margin-left: 20px; font-size: 20px;"> Recent Join User</span>
-                    <hr>
+                    <p class='friends-dropdown-top-text'> Recent Join User</p>
                     @if(count(recent_join()))
                     @foreach(recent_join() as $row)
 
@@ -1374,12 +1399,20 @@ footer .fa-search {
                   <i class='glyphicon glyphicon-search search-dropdown-toggle' onclick='toggleSearch()'></i>
 
                   <script>
+                    var searchVisible = true;
+
                     function toggleSearch() {
                       $('.navbar-form').toggleClass('visible');
-                      $('.search-dropdown-toggle').toggleClass('orange');
                       $('#friends-dropdown, #messages-dropdown, #notifications-dropdown, #username-dropdown-toggle').toggleClass('invisible');
+                      $('.logo-light').toggleClass('logo-hidden');
+
+                      searchVisible = !searchVisible;
+
+                      if(searchVisible)
+                        $('.search-dropdown-toggle').attr('class', 'glyphicon glyphicon-search search-dropdown-toggle');
+                      else $('.search-dropdown-toggle').attr('class', 'far fa-times-circle search-dropdown-toggle');
                     }
-                </script>
+                  </script>
 
             </div>
             </ul>
@@ -1539,7 +1572,7 @@ footer .fa-search {
                   Center</span></a></li>
             
             @if(Session::get('user_id'))
-            <li class="wow fadeInDown" data-wow-delay="1.3s"><a href="#" class="M" id='side-go-more-li'><span><img width="40" height="40" src="{{ $user_assets }}/more.svg" alt="go more" /></span> <span style="padding-left:10px;">Go more</span></a></li>
+            <li class="wow fadeInDown" data-wow-delay="1.3s"><a href="#" class="M" id='side-go-more-li'><span><img width="40" height="40" src="{{ $user_assets }}/more.svg" alt="More options" /></span> <span style="padding-left:10px;">More Options</span></a></li>
           
 
             @endif
@@ -1655,7 +1688,14 @@ footer .fa-search {
         margin-bottom: 5px;
       }
       .navbar-form {
-        display:none;
+        width: 0;
+        opacity: 0;
+        overflow: hidden;
+        top: 2px;
+      }
+
+      #username-dropdown-toggle {
+        margin-right: 55px !important;
       }
 
       .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
@@ -1734,6 +1774,10 @@ footer .fa-search {
   
     @media (max-width:768px) {
 
+      .search-dropdown-toggle {
+        right: 60px;
+      }
+
       .dropdown-item {
         font-size: 15px;
       }
@@ -1761,6 +1805,13 @@ footer .fa-search {
 
       .navbar-form {
         margin-right: 14px !important;
+        position: absolute;
+        top: 13px;
+        right: 85px;
+      }
+
+      .navbar-form.visible {
+        width: 40vw;
       }
 
       .nav.navbar-nav {
@@ -1768,22 +1819,10 @@ footer .fa-search {
         margin-right:45px;
       }
 
-    }
-    @media (max-width:520px) {
-      /* #menu-div .nav li.dropdown:not(.username-dropdown-toggle) { */
-        #menu-div .nav li.dropdown.username-dropdown-toggle {
-        display:none !important;
+      #friends-dropdown.invisible, #messages-dropdown.invisible, #notifications-dropdown.invisible, #username-dropdown-toggle.invisible {
+        visibility: hidden !important;
       }
 
-     .navbar-form button {
-      padding: 3px 3px !important;
-     }
-
-     .navbar-form input[type='text'] {
-        width: 35vw;
-        font-size: 12px;
-        padding-left: 7px;
-     }
     }
 
     @media (max-width:500px) {
@@ -1806,6 +1845,7 @@ footer .fa-search {
       .friends-dropdown-item button {
         margin-top: 5px;
         padding: .5em .2em;
+        width: unset;
       }
 
       .friends-dropdown-item button:first-of-type {
@@ -1817,15 +1857,20 @@ footer .fa-search {
         grid-row: 2;
         grid-column:3;
       }
+
+      .logo-light.logo-hidden,
+      .logo-dark.logo-dark.logo-hidden {
+        opacity: 0;
+      }
+
+      .navbar-form.visible {
+        width: 72vw;
+      }
     }
 
     @media (max-width:400px) {
       .navbar-form button {
         padding: 3px 0px !important;
-      }
-
-      .navbar-form input[type='text'] {
-        padding-left:3px !important;
       }
 
       .fa-user-friends, .fa-envelope, .fa-bell {
@@ -1904,7 +1949,7 @@ footer .fa-search {
 			<h2>Login</h2>
 			<div class='input-container'>
 				<input type="email" name="email" id="email">
-				<label for="email">Email </label>
+				<label for="email">Email or username</label>
 				<i class="fas fa-user-alt"></i>
 			</div>
 
@@ -3369,11 +3414,28 @@ function get_message()
      }
     }
 
-    @media (max-width:430px) {
-
-      .search-dropdown-toggle {
-        right: -5px;
+    @media (max-width:520px) {
+      /* #menu-div .nav li.dropdown:not(.username-dropdown-toggle) { */
+        #menu-div .nav li.dropdown.username-dropdown-toggle {
+        display:none !important;
       }
+
+     .navbar-form button {
+      padding: 3px 3px !important;
+     }
+
+     .navbar-form input[type='text'] {
+        width: 35vw;
+        font-size: 12px;
+        padding-left: 7px;
+     }
+
+     .nav.navbar-nav {
+       margin-right: 70px;
+     }
+    }
+
+    @media (max-width:430px) {
 
       .navbar-form {
         right: 70px;

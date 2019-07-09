@@ -20,6 +20,7 @@
 
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="shortcut icon" href="{{ $user_assets }}/kabool-hai-favicon.png">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
   @stack('css')
   <script type="text/javascript">
     $(document).ready(function (e) {
@@ -34,17 +35,19 @@
 </head>
 <style type="text/css">
 
-body::-webkit-scrollbar, body *::-webkit-scrollbar
-{
-	width: 0.7rem;
-  height: 0.7rem;
+body *::-webkit-scrollbar {
+	width: .85rem;
+  height: .85rem;
   background-color: #f5f5f5;
 }
 
-body::-webkit-scrollbar-thumb, body *::-webkit-scrollbar-thumb
-{
+body *::-webkit-scrollbar-thumb {
 	border-radius: 20px;
 	background-color: #999;
+}
+
+*:not(i):not(.fa):not(.fas):not(.glyphicon) {
+  font-family: 'Roboto', sans-serif !important;
 }
 
 .searchcontainer button {
@@ -344,12 +347,13 @@ body::-webkit-scrollbar-thumb, body *::-webkit-scrollbar-thumb
   justify-self: end;
 }
 
-.friends-dropdown-item >  button {
+.friends-dropdown-item > button {
   color: white;
   font-weight: bold;
   border:none;
   border-radius: 3px;
   padding: .3em .8em;
+  width: 7rem;
 }
 
 .friends-dropdown-item > button:last-child {
@@ -920,6 +924,7 @@ body::-webkit-scrollbar-thumb, body *::-webkit-scrollbar-thumb
     .friends-dropdown-item button {
       margin-top: 5px;
       padding: .5em .2em;
+      width: unset;
     }
 
     .friends-dropdown-item button:first-of-type {
@@ -1092,6 +1097,7 @@ body::-webkit-scrollbar-thumb, body *::-webkit-scrollbar-thumb
       background-color: #ffffff;
       height: 350px;
       overflow-y: scroll;
+      min-width: 240px;
     }
 
     label {
@@ -1178,7 +1184,7 @@ body::-webkit-scrollbar-thumb, body *::-webkit-scrollbar-thumb
 }
 
 @media (max-width:505px) {
-      .icon-dropdown, {
+      .icon-dropdown {
         width:100vw !important;
       }
 
@@ -1266,7 +1272,7 @@ body::-webkit-scrollbar-thumb, body *::-webkit-scrollbar-thumb
           <li><a href="{{ url('my-photo') }}" class="menudesign">My Photos</a></li>
 
           <li class="dropdown">
-            <a class="dropdown-toggle menudesign" data-toggle="dropdown" href="#">Go More <span class="caret"></span></a>
+            <a class="dropdown-toggle menudesign" data-toggle="dropdown" href="#">More options<span class="caret"></span></a>
             <ul class="dropdown-menu go_more">
               <li><a href="{{ url('favourite-list') }}">My Favourite</a></li>
               <li><a href="{{ url('find-exact-match') }}">Find Exact Match</a></li>
@@ -1611,7 +1617,7 @@ body::-webkit-scrollbar-thumb, body *::-webkit-scrollbar-thumb
                   Center</span></a></li>
             
             @if(Session::get('user_id'))
-            <li class="wow fadeInDown" data-wow-delay="1.4s"><a href="#" class="M" id='side-go-more-li'><span><img width="40" height="40" src="{{ $user_assets }}/more.svg" alt="go more"></span> <span style="padding-left:10px;">Go more</span></a></li>
+            <li class="wow fadeInDown" data-wow-delay="1.4s"><a href="#" class="M" id='side-go-more-li'><span><img width="40" height="40" src="{{ $user_assets }}/more.svg" alt="More options"></span> <span style="padding-left:10px;">More Options</span></a></li>
 
             @endif
 

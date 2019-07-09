@@ -21,7 +21,14 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
 <script src="https://kit.fontawesome.com/ffa8a2c96b.js"></script>
 
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+
 	<style>
+
+*:not(i):not(.fa):not(.fas):not(.glyphicon) {
+	font-family: 'Roboto', sans-serif !important;
+}
 
 	.nav > li {
 		margin: 8px 20px !important;
@@ -684,7 +691,7 @@
 			<h2>Login</h2>
 			<div class='input-container'>
 				<input type="email" name="email" id="email">
-				<label for="email">Email </label>
+				<label for="email">Email or username</label>
 				<i class="fas fa-user-alt"></i>
 			</div>
 

@@ -35,15 +35,13 @@
 	 }
 
 
-	 body::-webkit-scrollbar, body *::-webkit-scrollbar
-{
-	width: 0.45rem;
-  height: 0.45rem;
+body *::-webkit-scrollbar {
+	width: 0.6rem;
+  height: 0.6rem;
   background-color: #f5f5f5;
 }
 
-body::-webkit-scrollbar-thumb, body *::-webkit-scrollbar-thumb
-{
+body *::-webkit-scrollbar-thumb {
 	border-radius: 20px;
 	background-color: #999;
 }

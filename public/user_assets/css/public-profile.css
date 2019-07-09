@@ -64,7 +64,8 @@ body
     box-sizing: border-box;
 }
 ul.in_box_brdr li:hover {
-    background-color: #f47e2a;
+		background-color: #f47e2a;
+		transform: scale(1.01);
 }
 .card.hovercard {
     position: relative;
@@ -319,8 +320,10 @@ ul.in_box_brdr li:hover {
 	{
 		font-weight:bolder;
 		/*color: white;*/
-		font-family: calibri;	
+		font-family: calibri;
+		padding: 0 5px;
 	}
+
 	.txt_fetched
 	{
 		float: right;
