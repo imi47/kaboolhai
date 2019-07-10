@@ -499,10 +499,10 @@ $('.owl-carousel').owlCarousel({
 
                 
                
-                <li class="agea"><a href="{{ url('who-looking-for-me') }}"><i class="fa fa-eye" style="font-size: 20px;"></i> Who Looking for me</a></li>
+                <li class="agea"><a href="{{ url('who-looking-for-me') }}"><i class="fa fa-eye" style="font-size: 20px;"></i> Who is Looking for Me</a></li>
                 
                 
-                <li class="agea"><a href="{{ url('who-am-i-looking') }}"><i class="fa fa-eye" style="font-size: 20px;"></i> Who am i looking</a></li>
+                <li class="agea"><a href="{{ url('who-am-i-looking') }}"><i class="fa fa-eye" style="font-size: 20px;"></i> Who am I Looking for</a></li>
                
                
                 
@@ -2442,7 +2442,13 @@ $('.owl-carousel').owlCarousel({
 									<li class="agea"><a href=""><span> <span class="countN icon_size">12</span> <span class="linkT">My Inbox</span></a></li>
 								</ul> --}}
 								<ul class="list_somebtn">
-									<li class="ageaa"><a href="{{ url('inbox') }}"><span><img width="28px" height="28px" src="{{ $user_assets }}/icons/message.png"><span class="linkT">My Inbox</span></a></li>
+									<li class="ageaa my-inbox">
+										<a href="{{ url('inbox') }}">
+											<span><i class="fas fa-envelope"></i><span class="linkT">My Inbox</span>
+											<span class="badge">13</span>
+										</a>
+										
+									</li>
 								</ul>
 					
 				</div>

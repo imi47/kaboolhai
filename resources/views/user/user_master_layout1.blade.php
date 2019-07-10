@@ -37,6 +37,10 @@
       font-family: 'Roboto', sans-serif !important;
     }
 
+    * h3:not(i):not(.fa):not(.fas):not(.glyphicon) {
+      font-family: 'open sans', sans-serif !important;
+    }
+
 body *::-webkit-scrollbar
 {
 	width: 0.85rem;
@@ -208,6 +212,7 @@ footer .fa-search {
       top: 20px;
       color:#f1e7ff;
       cursor: pointer;
+      position: relative;
     }
 
     .close {
@@ -1775,7 +1780,7 @@ footer .fa-search {
     @media (max-width:768px) {
 
       .search-dropdown-toggle {
-        right: 60px;
+        right: 54px;
       }
 
       .dropdown-item {
@@ -1878,8 +1883,8 @@ footer .fa-search {
       }
 
       .navbar-nav .dropdown .dropdown-toggle {
-        padding-right: 10px !important;
-        padding-left: 10px !important;
+        padding-right: 12px !important;
+        padding-left: 12px !important;
       }
 
       .navbar-right-2 {

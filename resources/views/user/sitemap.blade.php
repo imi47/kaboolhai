@@ -36,8 +36,8 @@
               
               <li><a href="{{ url('friend-list') }}">Friend listing</a></li>
               <li><a href="{{ url('find-exact-match') }}">Find exact match</a></li>
-              <li><a href="{{ url('who-looking-for-me') }}">Who looking for me</a></li>
-              <li><a href="{{ url('who-am-i-looking') }}">Who am i looking</a></li>
+              <li><a href="{{ url('who-looking-for-me') }}">Who is Looking for Me</a></li>
+              <li><a href="{{ url('who-am-i-looking') }}">Who am I looking for</a></li>
               <li><a href="{{ url('favourite-list') }}">Favourite listing</a></li>
               <li><a href="{{ url('photo-permission-list') }}">Photo permission listing</a></li>
               <li><a href="{{ url('hide-profile-list') }}">Hide listing</a></li>

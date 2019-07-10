@@ -57,6 +57,14 @@ body *::-webkit-scrollbar-thumb {
   color: #666;
 }
 
+.friends-dropdown-top-text {
+  margin-left: 10px;
+  font-size: 13px;
+  font-weight: bold;
+  padding-bottom: 4px;
+  margin-bottom: 4px;
+}
+
 .paymg img
 {
   width:unset !important;
@@ -378,6 +386,16 @@ body *::-webkit-scrollbar-thumb {
   font-size: .813em;
 }
 
+.navbar-fixed-top #myNavbar .form-group,
+.navbar-fixed-top #myNavbar input {
+  width: 100% !important;
+}
+
+.navbar-fixed-top #myNavbar .nav.navbar-,
+.logo-light {
+  transition: 500ms;
+}
+
   @media (min-width:1200px) {
     .jumbotron {
       margin-left: 24px;
@@ -636,6 +654,15 @@ body *::-webkit-scrollbar-thumb {
         font-size: 12px;
         padding-left: 7px;
       }
+
+      .navbar-fixed-top #myNavbar .navbar-form.navbar-form.navbar-form {
+        width: 64vw;
+      }
+
+      .navbar-fixed-top.search-visible .logo-light {
+        opacity: 0;
+        visibility: hidden;
+      } 
     }
 
     @media (min-width:521px) {
@@ -660,13 +687,13 @@ body *::-webkit-scrollbar-thumb {
     }
 
   @media (min-width: 1350px) {
-    #myNavbar {
+    .navbar-fixed-top #myNavbar {
         position: unset !important;
     }
 }
 
 @media (max-width:1360px) and (min-width:769px) {
-  #myNavbar .navbar-form {
+  .navbar-fixed-top #myNavbar .navbar-form {
     right: 70px !important;
   }
 }
@@ -688,8 +715,12 @@ body *::-webkit-scrollbar-thumb {
       border-bottom-right-radius: 5px;
     }
 
-      #myNavbar .navbar-form {
-        display:none;
+      .navbar-fixed-top #myNavbar .navbar-form {
+        width: 0;
+        opacity: 0;
+        visibility: hidden;
+        overflow: hidden;
+        transition:500ms;
 
         position: absolute;
         border-radius: 3px;
@@ -701,11 +732,22 @@ body *::-webkit-scrollbar-thumb {
         right: 106px !important;
       }
 
+
+      .navbar-fixed-top.search-visible #myNavbar .navbar-form {
+        width: 225px;
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .navbar-fixed-top.search-visible #myNavbar .nav.navbar-right {
+        opacity: 0;
+        visibility: hidden;
+      }
+
       .navbar-form input {
         margin:0;
         border: 3px solid #936BCB !important;
         padding:14px;
-        width: 232px !important;
       }
 
       .navbar-form button {
@@ -718,7 +760,7 @@ body *::-webkit-scrollbar-thumb {
         display:inline-block
       }
 
-      #myNavbar {
+      .navbar-fixed-top #myNavbar {
         float:right;
       }
 
@@ -745,14 +787,37 @@ body *::-webkit-scrollbar-thumb {
       top: 415px;
     }
 
-    #myNavbar .navbar-form {
-      right: 30px !important;
+    .navbar-fixed-top #myNavbar .navbar-form.navbar-form {
+      right: 5px !important;
       top: 3px !important;
+      z-index: 1;
+    }
+
+    .navbar-fixed-top #myNavbar .nav.navbar-right {
+      position: absolute;
+      display: grid;
+      grid-auto-flow: column;
+      top: 0;
+      right: 25px;
+    }
+
+    .navbar-fixed-top #myNavbar .nav.navbar-right .dropdown-toggle {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-fixed-top #myNavbar .nav.navbar-right #username-dropdown-toggle span {
+      margin-left: 5px;
+    }
+
+    .navbar-fixed-top.search-visible #myNavbar .nav.navbar-right.navbar-right {
+      opacity: 0;
+      visibility: hidden;
     }
 
     .dropdown-item {
         font-size: 15px;
-      }
+    }
 
     #message_count, #friend_counts {
       top:0;
@@ -769,9 +834,19 @@ body *::-webkit-scrollbar-thumb {
 
 .msgMenu li:hover{background: #e6e6e6 !important; } 
 
-    @media (max-width:1210px) {
-      #myNavbar .nav:nth-child(1):nth-child(-n+6) {
+    @media (max-width:1230px) {
+      .navbar-fixed-top #myNavbar .nav:nth-child(1):nth-child(-n+6) {
         display:none;
+      }
+
+      .navbar-fixed-top #myNavbar .navbar-form {
+        right: 0 !important;
+        position: relative;
+      }
+
+      .navbar-fixed-top.search-visible #myNavbar .nav.navbar-right {
+        opacity: 1;
+        visibility: visible;
       }
 
       .last-footer, .tpsrch-table, .dosrch {
@@ -787,7 +862,7 @@ body *::-webkit-scrollbar-thumb {
 
 
     @media (max-width:768px) {
-      /* #myNavbar .nav, #myNavbar, .nav {
+      /* .navbar-fixed-top #myNavbar .nav, .navbar-fixed-top #myNavbar, .nav {
         display:block !important;
       } */
 
@@ -850,9 +925,19 @@ body *::-webkit-scrollbar-thumb {
       margin-left: 48px ;
     }
 
-    #myNavbar .navbar-form {
+    .navbar-fixed-top #myNavbar .navbar-form {
       right: 20px !important;
     }
+
+    .navbar-fixed-top #myNavbar .nav.navbar-right {
+      right: 20px;
+    }
+
+    .nav>li>a {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    
 	}
 
   @media (max-width: 767px) {
@@ -876,7 +961,7 @@ body *::-webkit-scrollbar-thumb {
     }
 
     .search-dropdown-toggle {
-      right: -30px !important;
+      right: -25px !important;
     }
 
     .navbar-nav {
@@ -900,7 +985,7 @@ body *::-webkit-scrollbar-thumb {
       right: 17vw;
     } */
 
-    #myNavbar .navbar-form { 
+    .navbar-fixed-top #myNavbar .navbar-form { 
       right:0 !important;
     }
 
@@ -944,12 +1029,17 @@ body *::-webkit-scrollbar-thumb {
     #friends-dropdown li:last-child {
       top: 416px;
     }
+
+    .navbar-fixed-top #myNavbar .navbar-form.navbar-form.navbar-form {
+      right: -5px !important;
+    }
+
+    .navbar-fixed-top #myNavbar #username-dropdown-toggle {
+      display:none !important;
+    }
   }
 
     @media (max-width:500px) {
-      #myNavbar .nav.navbar-nav.navbar-right li.dropdown:nth-child(5){
-        display:none !important;
-      }
 
       .navbar-nav {
         margin:0;
@@ -973,11 +1063,8 @@ body *::-webkit-scrollbar-thumb {
     }
 
     @media (max-width:375px) {
-      .search-dropdown-toggle {
-        right: -35px !important;
-      }
 
-      #myNavbar .navbar-form {
+      .navbar-fixed-top #myNavbar .navbar-form {
         right: -10px !important;
       }
       
@@ -1200,14 +1287,6 @@ body *::-webkit-scrollbar-thumb {
       margin-left: -2px;
       margin-right: -2px;
     }
-
-    /* .glyphicon-bell {
-      margin-right:-2px;
-    } */
-    
-    .navbar-nav {
-      margin-right: -25px !important;
-    }
   }
 
   @media (max-width:319px) {
@@ -1246,7 +1325,7 @@ body *::-webkit-scrollbar-thumb {
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid innermenu">
       <div class="navbar-header logo_height">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-fixed-top #myNavbar">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
@@ -1292,8 +1371,8 @@ body *::-webkit-scrollbar-thumb {
               <li class="divider"></li>
 
 
-              <li><a href="{{ url('who-looking-for-me') }}">Who Looking For Me</a></li>
-              <li><a href="{{ 'who-am-i-looking' }}">Who Am I Looking</a></li>
+              <li><a href="{{ url('who-looking-for-me') }}">Who is Looking for Me</a></li>
+              <li><a href="{{ 'who-am-i-looking' }}">Who am I Looking for</a></li>
               <li><a href="{{ url('question') }}">My Question</a></li>
               <li class="divider"></li>
               <li><a href="{{ url('notification') }}">Notifications</a></li>
@@ -1327,43 +1406,18 @@ body *::-webkit-scrollbar-thumb {
           <i class='glyphicon glyphicon-search search-dropdown-toggle' onclick='toggleSearch()'></i>
 
         <script>
-          var dropdownsVisible = true;
-
-          
-
-
-          
+          var searchVisible = true;
 
           function toggleSearch() {
-            $('.navbar-form').toggle();
-            $('.search-dropdown-toggle').toggleClass('orange');
-            // $('.navbar-form').css{'position','absolute'}
+            $('.navbar-fixed-top').toggleClass('search-visible');
+            $('.logo-light').toggleClass('logo-hidden');
 
-            if(dropdownsVisible) {
-                $('.navbar-nav.navbar-right, .navbar-nav>li:last-child').css('visibility', 'hidden');
-                dropdownsVisible = false;
-              }
-              else {
-                $('.navbar-nav.navbar-right, .navbar-nav>li:last-child').css('visibility', 'visible');
-                dropdownsVisible = true;
-              }
+            searchVisible = !searchVisible;
+
+            if(searchVisible)
+              $('.search-dropdown-toggle').attr('class', 'glyphicon glyphicon-search search-dropdown-toggle');
+            else $('.search-dropdown-toggle').attr('class', 'far fa-times-circle search-dropdown-toggle');
           }
-
-          mq = window.matchMedia( "(min-width: 1360px)" );
-         
-         mq.addListener(mediaQueryResponse) // attach listener function to listen in on state changes so a page refresh will not be required
- 
-         // search option will stay in the same line in tablet mode 
-         function mediaQueryResponse(mq) {
- 
-           if(mq.matches == true && dropdownsVisible == false) {
-               $( ".navbar-nav.navbar-right, .navbar-nav>li:last-child" ).css('visibility', 'visible');
-               // alert('hi');
-           } if (mq.matches == false && dropdownsVisible == false) {
-            $( ".navbar-nav.navbar-right, .navbar-nav>li:last-child" ).css('visibility', 'hidden');
-           }
-         }
-         mediaQueryResponse(mq);
         </script>
 
         <ul class="nav navbar-nav navbar-right">
@@ -1398,11 +1452,11 @@ body *::-webkit-scrollbar-thumb {
               @endforeach
               @else
 
-              <span style="margin-left: 20px;">No New Request</span>
+              <p class='friends-dropdown-top-text'>No New Request</p>
               @endif
               <hr style="width: 100%;">
 
-              <span style="margin-left: 20px; font-size: 20px;"> Recent Join User</span>
+              <p class='friends-dropdown-top-text'> Recent Join User</p>
               <hr style="width: 100%;">
               @if(count(recent_join()))
               @foreach(recent_join() as $row)

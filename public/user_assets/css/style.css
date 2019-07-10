@@ -188,6 +188,39 @@ ul, ol, dl {list-style-position: outside;}
     min-width: 240px;
 }
 
+.my-inbox a {
+  position: relative;
+}
+
+.my-inbox .badge {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: -9px;
+  left: 16px;
+  padding: 0;
+  background-color: red;
+  font-size: 11px;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.my-inbox  a span {
+    display: flex;
+    align-items: center;
+}
+
+.my-inbox a span i {
+    color: #5a378c;
+    font-size: 2.4rem;
+    position: relative;
+}
+
 .friends-dropdown-top-text {
     margin-left: 10px;
     font-size: 13px;
@@ -5114,9 +5147,9 @@ background:transparent !important;
     width: 100%;
 								}
 								
-		.nav-tabs {
+		/*.nav-tabs {
 			background:#c7c7c7 !important;
-			}	
+			}	*/
 				
 								
 		@media(max-width:786px){

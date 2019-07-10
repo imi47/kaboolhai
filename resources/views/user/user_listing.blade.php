@@ -91,6 +91,8 @@
   .panel-body .friends-dropdown-item button {
     align-self: center;
     font-size: .9em;
+    display: flex;
+    justify-content: center;
   }
 
   @media (max-width:991px) {

@@ -9,6 +9,14 @@ html, body {
   overflow-x:hidden;
 }
 
+.panel-body {
+  padding-top: 20px;
+ }
+
+.nav-tabs>li {
+  margin-bottom: -2px;
+}
+
 .col-md-3.hidden-sm.hidden-xs .well {
   margin-left:15px;
 }
@@ -185,9 +193,6 @@ footer .footer-middle {
 
   <style>
    @media (max-width:768px) {
-     .nav-tabs {
-       background-color:#eee !important;
-     }
 
      .panel.with-nav-tabs .panel-heading {
        margin-top:-40px !important;
