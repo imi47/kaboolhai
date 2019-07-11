@@ -797,38 +797,7 @@ $('.owl-carousel').owlCarousel({
 @endphp
 
 @endforeach
-											
-	<div class="modal fadeInDown" id="myModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="false" >
-												
-    <div class="modal-dialog modal-md" style="margin-top: 100px;">
-      <div class="modal-content">
-      
-        <div class="modal-header">
-          <h3> Other Languages</h3>
-        </div>
-        <div class="modal-body">
-         
-            <div class="row">
-               
-                
-					{!! $data !!}							
-                        
-            </div>
-
-              
-             
-          </div>
-       
-        <div class="modal-footer">
-          <div class="col-sm-12">
-          	<button class="btn btn-danger" data-dismiss="modal">Close</button>
-            {{-- <h5><a href="#" class="btn-danger" data-dismiss="modal">Close</a></h5> --}}
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  </div>
+										
   								
   									@if(count($other_language)>2)
 										<a class="read-more" href="javascript:;" data-toggle="modal" data-target="#myModal">Read more</a>
@@ -855,40 +824,6 @@ $('.owl-carousel').owlCarousel({
 	$data .= '<div class="col-sm-4"><span class="fa fa-check check-color"></span>'.$row->loking_value.'<hr></div>';
     @endphp
 @endforeach
-
-											
-										<div class="modal fadeInDown" id="myModal1" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="false" >
-												
-    <div class="modal-dialog modal-md" style="margin-top: 100px;">
-      <div class="modal-content">
-      
-        <div class="modal-header">
-          <h3> Hobbies</h3>
-        </div>
-        <div class="modal-body">
-         
-            <div class="row">
-               
-                
-					{!! $data !!}							
-                        
-            </div>
-
-              
-             
-          </div>
-       
-        <div class="modal-footer">
-          <div class="col-sm-12">
-           <button class="btn btn-danger" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  </div>
-  
-
 
   							@if(count($hobbies)>2)
 										<a href="javascript:;" data-toggle="modal" data-target="#myModal1" style="color:#4ccee8;">Read more</a>
@@ -2929,6 +2864,69 @@ $('.owl-carousel').owlCarousel({
 </div>
 </div>
 </div>
+</div>
+
+<div class="modal fadeInDown" id="myModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="false" >
+												
+	<div class="modal-dialog modal-md" style="margin-top: 100px;">
+		<div class="modal-content">
+		
+			<div class="modal-header">
+				<h3> Other Languages</h3>
+			</div>
+			<div class="modal-body">
+			 
+					<div class="row">
+						 
+							
+				{!! $data !!}							
+											
+					</div>
+
+						
+					 
+				</div>
+		 
+			<div class="modal-footer">
+				<div class="col-sm-12">
+					<button class="btn btn-danger" data-dismiss="modal">Close</button>
+					{{-- <h5><a href="#" class="btn-danger" data-dismiss="modal">Close</a></h5> --}}
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</div>
+
+<div class="modal fadeInDown" id="myModal1" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="false" >
+												
+	<div class="modal-dialog modal-md" style="margin-top: 100px;">
+		<div class="modal-content">
+		
+			<div class="modal-header">
+				<h3> Hobbies</h3>
+			</div>
+			<div class="modal-body">
+			 
+					<div class="row">
+						 
+							
+				{!! $data !!}							
+											
+					</div>
+
+						
+					 
+				</div>
+		 
+			<div class="modal-footer">
+				<div class="col-sm-12">
+				 <button class="btn btn-danger" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+			
+		</div>
+	</div>
 </div>
 
  <script type="text/javascript">

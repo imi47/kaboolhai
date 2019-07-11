@@ -1191,7 +1191,73 @@ p.t
                 <span>Message</span>
               </span>
               <span>
-                <i class="fas fa-user-check"></i>
+                <img src="{{ $user_assets }}/icons/mobile_v.svg" alt="">
+                <span>Verified</span>
+              </span>
+          </div>
+          <!-- replace log1 with log for offline icon -->
+          <span class="log1"></span>
+         </div>
+         <div>
+           <a href="#">
+             <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
+             <div>
+               <span>username</span>
+               <span class="ago">2 months ago</span>
+               <span>33 yrs, 5' 8"</span>
+               <span>54 KG</span>
+               <span>Sindhi</span>
+               <span>Software Engineer</span>
+               <span>Lahore</span>
+               <span>Pakistan</span>
+               <span>Second Marriage</span>
+               <span>Chishti</span>
+            </div>
+           </a>
+          <div class="icons">
+              <span>
+                <i class="fas fa-user"></i>
+                <span>Invite</span>
+              </span>
+              <span>
+                <i class="fas fa-comment-alt"></i>
+                <span>Message</span>
+              </span>
+              <span>
+                <img src="http://localhost/KBH/public/user_assets/icons/email_v.svg" alt="">
+                <span>Verified</span>
+              </span>
+          </div>
+          <!-- replace log1 with log for offline icon -->
+          <span class="log1"></span>
+         </div>
+         <div>
+           <a href="#">
+             <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
+             <div>
+               <span>username</span>
+               <span class="ago">2 months ago</span>
+               <span>33 yrs, 5' 8"</span>
+               <span>54 KG</span>
+               <span>Sindhi</span>
+               <span>Software Engineer</span>
+               <span>Lahore</span>
+               <span>Pakistan</span>
+               <span>Second Marriage</span>
+               <span>Chishti</span>
+            </div>
+           </a>
+          <div class="icons">
+              <span>
+                <i class="fas fa-user"></i>
+                <span>Invite</span>
+              </span>
+              <span>
+                <i class="fas fa-comment-alt"></i>
+                <span>Message</span>
+              </span>
+              <span>
+                <img src="http://localhost/KBH/public/user_assets/icons/id_v.svg" alt="">
                 <span>Verified</span>
               </span>
           </div>

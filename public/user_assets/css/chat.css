@@ -1,5 +1,5 @@
 .main-section{
-  width: 300px;
+  width: 286px !important;
   position: fixed;
   right:50px;
   bottom:-465px;
@@ -81,7 +81,7 @@
   height: 300px;
   border-left: 2px solid #ccc;
   border-right: 2px solid #ccc;
-  height:255px !important;
+  height: 255px !important;
   padding:0 !important;
 }
 
@@ -245,11 +245,11 @@
 }
 
 .text-bar input{
-  width: 250px !important;
+  width: 239px !important;
   border-radius:30px !important;
   margin-top:5px;
-  padding:8px;
-  padding-left:50px;
+  padding:3px;
+  padding-left:35px;
   margin-bottom:5px;
   margin-left:5px;
   /* margin-right:160px; */
@@ -259,19 +259,21 @@
 }
 
 .emojiPickerIcon.black {
-  height:38px !important;
-  width:38px !important;
-  top:7px !important;
+  height: 30px !important;
+  width: 30px !important;
+  top: 6px !important;
   background-color:red;
 }
 
 #bb {
   position: absolute;
-  bottom: 36px;
+  bottom: 1px;
+  right: inherit;
+  left: 218px;
 }
 
 #bb .attach {
-  position: fixed;
+  /* position: fixed; */
   right: 100px;
   width:26px;
   box-sizing: border-box;
@@ -290,8 +292,8 @@
   border-radius: 99px;
   padding:0;
   position: absolute;
-  right: -226px;
-  top: -38px;
+  right: -210px;
+  top: -33px;
 }
 
 .arrow_button svg{
@@ -302,7 +304,7 @@
 @media (min-width:768px) {
   .emojiPicker {
     left: -138px !important;
-    top: -65px !important;
+    top: -48px !important;
   }
 }
 
@@ -348,7 +350,7 @@
 
   .arrow_button {
     right: 2px;
-    top: 13px;
+    top: 7px;
   }
 
   .text-bar input {

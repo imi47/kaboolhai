@@ -235,6 +235,10 @@ ul, ol, dl {list-style-position: outside;}
     position: relative;
   }
 
+  .user-list-mobile > div:not(:last-of-type) {
+    margin-bottom: 10px;
+  }
+
   .user-list-mobile > div a {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -312,6 +316,10 @@ ul, ol, dl {list-style-position: outside;}
     .user-list-mobile .icons > span i {
       color: #5a378c;
       opacity: .8;
+    }
+
+    .user-list-mobile .icons > span img {
+        width: 20px;
     }
 
 /* only ie7, ie9, ie10, ie11 */

@@ -457,6 +457,17 @@ footer .fa-search {
        top: 97%;
      }
 
+     @media (max-width: 640px) {
+      .text-bar input {
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
+
+      #bb {
+        bottom: 2px;
+      }
+     }
+
     @media (min-width:500px) {
       .search-dropdown-toggle:hover {
         color:#ed6c05;
@@ -510,36 +521,43 @@ footer .fa-search {
 
   }
 
-  @media (max-width: 500px) and (min-width: 405px) {
+  @media (max-width: 500px) and (min-width: 403px) {
     #bb {
-      bottom:-15px;
+      bottom: -38px;
+      left: -48px;
     }
   }
 
   @media (max-width:500px) {
     .text-bar input {
-      width: 77vw !important;
+      width: 75vw !important;
     } 
+  }
+
+  @media (max-width: 404px) {
+    #bb {
+      left: 69vw;
+    }
   }
 
   @media (min-width:344px) and (max-width:404px) {
     .arrow_button {
-      left: 83vw;
-      top:-38px;
+      left: 81vw;
+      top:-33px;
     }
   }
 
   @media (min-width:342px) and (max-width:343px) {
     .arrow_button {
-      top: -37px;
-      left: 282px;
+      top: -33px;
+      left: 277px;
     }
   }
 
   @media (min-width:338px) and (max-width:341px) {
     .arrow_button {
-      top: 11px;
-      left: 39px;
+      top: 7px;
+      left: 37px;
     }
 
     #bb {
@@ -549,8 +567,8 @@ footer .fa-search {
 
   @media (max-width:337px) {
     .arrow_button {
-    right: -68.5vw;
-    top: -38px;
+      right: -68vw;
+      top: -33px;
     }
   }
 

@@ -121,19 +121,17 @@ body *::-webkit-scrollbar-thumb {
   padding: 0px 14px 1px 7px;
 }
 
-.main-section {
-  width:300px !important;
-}
-
 .arrow_button {
   position: absolute;
   right: 9px;
-  top: 12px;
+  top: 6px;
 }
 
 #bb {
-  bottom: 27px;
+  bottom: 4px;
   display: none;
+  right: 95px;
+  left: unset;
 }
 
 #bb {
@@ -391,9 +389,15 @@ body *::-webkit-scrollbar-thumb {
   width: 100% !important;
 }
 
-.navbar-fixed-top #myNavbar .nav.navbar-,
+.navbar-fixed-top #myNavbar .nav.navbar-right,
 .logo-light {
   transition: 500ms;
+}
+
+.text-bar input {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 30px;
 }
 
   @media (min-width:1200px) {
@@ -1037,11 +1041,8 @@ body *::-webkit-scrollbar-thumb {
     .navbar-fixed-top #myNavbar #username-dropdown-toggle {
       display:none !important;
     }
-  }
 
-    @media (max-width:500px) {
-
-      .navbar-nav {
+    .navbar-nav {
         margin:0;
       }
 
@@ -1060,7 +1061,10 @@ body *::-webkit-scrollbar-thumb {
         height: 206px !important;
       }
 
-    }
+      #bb {
+        right: 61px;
+      }
+  }
 
     @media (max-width:375px) {
 
@@ -1100,12 +1104,7 @@ body *::-webkit-scrollbar-thumb {
             <img src="{{ $user_assets }}/icons/close.svg" alt="" class='close'>
           </div>
     </div>
-<script>
 
-  $('.close').click(function() {
-    $('.main-section').css('bottom', '-465px');
-  });
-</script>
     <div class="row border-chat">
       <div class="col-md-12 col-sm-12 col-xs-12 second-section">
         <div class="chat-section" id="chat-scroll">
@@ -1172,7 +1171,6 @@ body *::-webkit-scrollbar-thumb {
     $(document).ready(function () {
       $(".main-section .header .close").click(function () {
         $('.main-section').toggleClass("open-more");
-        $('#bb .attach').toggle();
       });
     });
 

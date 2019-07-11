@@ -71,12 +71,6 @@
     left: 19px !important;
   } */
 
-  .emojiPickerIcon.black {
-    height: 37px !important;
-    width: 37px !important;
-    top: 6px !important;
-  }
-
   .form-control {
     width: 200px !important;
   }
@@ -199,7 +193,7 @@ footer .form-control {
       <div class="col-xl-3 col-lg-3 col-md-5 col-sm-3 col-xs-6 col-xl-offset-0 col-lg-offset-0 col-md-offset-1 col-sm-offset-0">
       <div class="profile_stat hvr-grow">
         <a href="{{ url('public-profile',user_data()->id) }}">
-          <img src="{{ $user_assets }}/db_images/View-My-Profile.png" alt="" style="width:200px ;height: 200px;">
+          <img src="{{ $user_assets }}/db_images/profile.png" alt="" style="width:200px ;height: 200px;">
         </a>
       </div>
     </div>
@@ -213,7 +207,7 @@ footer .form-control {
       <div class="col-xl-3 col-lg-3 col-md-5 col-sm-3 col-xs-6 col-xl-offset-0 col-lg-offset-0 col-md-offset-1 col-sm-offset-0">
         <div class="profile_stat hvr-grow">
             <a href="{{ url('my-photo') }}">
-              <img src="{{ $user_assets }}/db_images/Photo-Upload.png" alt="" style="width:200px ;height: 200px;">
+              <img src="{{ $user_assets }}/db_images/photos.png" alt="" style="width:200px ;height: 200px;">
             </a>
         </div>  
       </div>
