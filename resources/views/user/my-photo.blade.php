@@ -156,194 +156,104 @@
         </div>
       </div>
 
-  <div class="col-md-9">
-    
-
-      
-      <h2 class="dashboard-h2">My Photos</h2>
-      <p class="dashboard-para"><em>Note:</em> You can upload 20 photos to your profile. Each photos must be less than 10 MB and in jpg, gif, png, bmp or tiff format. All photos uploaded are screened as per Photo Guidelines and 98% of those get activated within 2 hours.</p>
-      
-     
-      <ul class="nav nav-tabs" role="tablist">
-      <li role="presentation" class="active"><a href="#album" aria-controls="album" role="tab" data-toggle="tab">Photo Album</a></li>
-      {{-- <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li> --}}
-      </ul>
-
-      <!-- Tab panes -->
-      <div class="tab-content">
-      <div role="tabpanel" class="tab-pane fade in active" id="album">
-        <div class="album-main">
-          
-          <div class="form-group dropzone" id="dropzone">
-            <div class="dz-message">
-              <form method="post" action="{{ url('add-photo') }}" enctype="multipart/form-data">
-              {{ csrf_field() }}
-              <div class="col-md-6">
-              <input type="file" name="image_name" style="display: block; ">
-              </div>
-              <div class="col-md-4"></div>
-              <div class="col-md-2">
-              <button type="submit" class="btn btn-block">Save</button>
-              </div>
-              </form>
-            </div>
+  <div class="col-md-9 my-photos">
+    <h2>Edit My Photos</h2>
+    <div>
+      <div>
+        <h3>Primary Photo</h3>
+        <span>Your main picture</span>
+      </div>
+      <div>
+        <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
+        <div class="access-control">
+          <div>
+            <i class="fas fa-lock"></i>
+            <h3>Photo Access Control Panel</h3>
           </div>
-          
-          <div class="gallery">
-            {{-- @php $limit=1; @endphp --}}
-            @if(!empty($photo))
-            @foreach($photo as $row)
-                
-              <div class="col-md-3">
-                <div class="g-photos" style="padding-bottom: 50px;" style='position:relative;'>
-                  <a onclick="return confirm('Are you sure you want to delete this image?');" href="{{ url('delete-photo',$row->photo_id) }}" class="gp-cross">
-                  <!-- <i class="fa fa-window-close pull-right" style="color: red; font-size: 20px;"></i> -->
-                  </a>
-
-                  <div class="menu-container">
-                    <img  class='toggle' src="{{ $user_assets }}/images/plus.svg">
-                    <div class="menu">
-                      <ul>
-                        <li>Delete Picture</li>
-                        <li>Make Profile Picture</li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <img style="height: 150px; width: 200px;" src="{{ $user_assets }}/my_photo/{{ $row->image }}" alt="" class="img-responsive" />
-                  <div class="gp-text text-center">Album Photo {{ $user_data->user_name }}</div>
-                  
-                  <!-- <a href="{{ url('make-profile-image',$row->photo_id) }}" class="btn btn-primary btn-sm">Make Profile Image</a> -->
-                </div>
+          <ul>
+            <li>
+              <div>
+                <span>User Access</span>
+                <i class="fas fa-angle-right"></i>
               </div>
-
-            
-              @endforeach
-              @endif
-             {{--  <div class="col-md-3">
-                <div class="g-photos">
-                  <img src="{{ $user_assets }}/img/1.jpg" alt="" class="img-responsive" />
-                  <div class="gp-text text-center">Album Photo 2</div>
-                  <a href="javascript:;" class="gp-cross"><i class="fa fa-times"></i></a>
-                </div>
+              <ul>
+                <li><a href="#">item 1</a></li>
+                <li><a href="#">item 2</a></li>
+                <li><a href="#">item 3</a></li>
+                <li><a href="#">item 4</a></li>
+              </ul>
+            </li>
+            <li>
+              <div>
+                <span>User Requests</span>
+                <i class="fas fa-angle-right"></i>
               </div>
-              <div class="col-md-3">
-                <div class="g-photos">
-                  <img src="{{ $user_assets }}/img/2.jpg" alt="" class="img-responsive" />
-                  <div class="gp-text text-center">Album Photo 3</div>
-                  <a href="javascript:;" class="gp-cross"><i class="fa fa-times"></i></a>
-                </div>
+              <ul>
+                <li><a href="#">item 1</a></li>
+                <li><a href="#">item 2</a></li>
+                <li><a href="#">item 3</a></li>
+                <li><a href="#">item 4</a></li>
+              </ul>
+            </li>
+            <li>
+              <div>
+                <span>My Access</span>
+                <i class="fas fa-angle-right"></i>
               </div>
-              <div class="col-md-3">
-                <div class="g-photos">
-                  <img src="{{ $user_assets }}/img/3.jpg" alt="" class="img-responsive" />
-                  <div class="gp-text text-center">Album Photo 4</div>
-                  <a href="javascript:;" class="gp-cross"><i class="fa fa-times"></i></a>
-                </div>
+              <ul>
+                <li><a href="#">item 1</a></li>
+                <li><a href="#">item 2</a></li>
+                <li><a href="#">item 3</a></li>
+                <li><a href="#">item 4</a></li>
+              </ul>
+            </li>
+            <li>
+              <div>
+                <span>My Requests</span>
+                <i class="fas fa-angle-right"></i>
               </div>
-              <div class="col-md-3">
-                <div class="g-photos">
-                  <img src="{{ $user_assets }}/img/3.jpg" alt="" class="img-responsive" />
-                  <div class="gp-text text-center">Album Photo 5</div>
-                  <a href="javascript:;" class="gp-cross"><i class="fa fa-times"></i></a>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="g-photos">
-                  <img src="{{ $user_assets }}/img/3.jpg" alt="" class="img-responsive" />
-                  <div class="gp-text text-center">Album Photo 6</div>
-                  <a href="javascript:;" class="gp-cross"><i class="fa fa-times"></i></a>
-                </div>
-              </div> --}}
-            <div class="clearfix"></div>
-          </div>
+              <ul>
+                <li><a href="#">item 1</a></li>
+                <li><a href="#">item 2</a></li>
+                <li><a href="#">item 3</a></li>
+                <li><a href="#">item 4</a></li>
+              </ul>
+            </li>
+          </ul>
         </div>
       </div>
-      <div role="tabpanel" class="tab-pane fade" id="settings">
-        <div class="main-settings">
-          <div class="col-md-6">
-            <h3>Choose Display Option</h3>
-            <hr />
-            <form>
-              <input type="radio" name="setting" value="display" /> Visible to all Members <br/>
-              <input type="radio" name="setting" value="display" /> Visible to Members I like and to all Premium Members<br/>
-              <div>&nbsp;</div>
-              <div>&nbsp;</div>
-              <button  value="Save Changes" class="btn btn-success" />Save Changes</button>
-            </form>
-          </div>
-          <div class="col-md-6">
-            <h3>Allowed Members</h3>
-            <hr />
-            <form method="post" action="{{ url('photo-setting') }}">
-            @if(!empty($permission))
-            @foreach($permission as $row)
-            <input type="checkbox" @if($row->status==1) checked="" @endif value="{{ $row->user_id }}" name="permission[]"  /> {{ $row->user->user_name }} <br/>
-            @endforeach
-            @endif
-            {{ csrf_field() }}
-            {{-- <input type="checkbox" value="user1" /> Usman Iqbal <br/>
-            <input type="checkbox" value="user1" checked /> Farhan Ahmad <br/>
-            <input type="checkbox" value="user1" checked /> Ghulam Haider <br/>
-            <input type="checkbox" value="user1" checked /> Atif Yaqub <br/>
-            <input type="checkbox" value="user1" checked /> Babar Malik <br/>
-            <input type="checkbox" value="user1" /> Huzaifa Asif <br/>
-            <input type="checkbox" value="user1" /> Yasir Amjad <br/>
-            <input type="checkbox" value="user1" /> Salman Saeed <br/>
-            <input type="checkbox" value="user1" /> Nabeel Haider <br/>
-            <input type="checkbox" value="user1" /> Muhammad Adeel <br/>
-            <input type="checkbox" value="user1" /> Shoaib Anwar <br/> --}}
-            <div>&nbsp;</div>
-            <div>&nbsp;</div>
-            <button type="submit" value="Allow Permission" class="btn btn-success" />Allow Permission
-          </button>
-          </form>
-          </div>
-          <div class="clearfix"></div>
-        </div>
-      </div>
-      </div>
-
-      <div class="pic-examples">
-        <div>
-          <span>
-            <i class="fas fa-check"></i>
-            <span>Photos you can upload</span>
-          </span>
-          <div>
-            <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
-            <span>Close Up</span>
-          </div>
-          <div>
-            <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
-            <span>Full View</span>
-          </div>
-        </div>
-        <div>
-          <span>
-            <i class="fas fa-times"></i>
-            <span>Photos you cannot upload</span>
-          </span>
-          <div>
-            <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
-            <span>Side Face</span>
-          </div>
-          <div>
-            <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
-            <span>Blur</span>
-          </div>
-          <div>
-            <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
-            <span>Group</span>
-          </div>
-          <div>
-            <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
-            <span>Watermark</span>
-          </div>
-        </div>
-      </div>
-
     </div>
+
+    <div>
+      <div>
+        <h3>Public Gallery</h3>
+        <span>Everybody can view these pictures</span>
+      </div>
+      <div>
+        <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
+        <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
+        <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
+        <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
+        <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
+        <div class="upload"></div>
+      </div>
+    </div>
+
+    <div>
+      <div>
+        <h3>Private Gallery</h3>
+        <span>Control who can view these pictures</span>
+      </div>
+      <div>
+        <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
+        <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
+        <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
+        <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
+        <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
+        <div class="upload"></div>
+      </div>
+    </div>
+  </div>
       </div>
       
       
@@ -465,6 +375,11 @@
   document.onclick = function() {
     $('.menu-container').removeClass('open');
   }
+
+  $('.my-photos .access-control > ul li div').click(function() {
+    $(this).siblings().toggle(350);
+    $(this).toggleClass('open');
+  });
 </script>
 
   <div style="padding-bottom: 100px;"></div>  
