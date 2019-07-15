@@ -164,7 +164,23 @@
         <span>Your main picture</span>
       </div>
       <div>
-        <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
+        <div class="profile-pic-container has-pic">
+          <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
+          <div>
+            <span data-toggle="modal" data-target="#primary-pic-modal">
+              <i class="fas fa-edit"></i>
+              <span>Edit picture</span>
+            </span>
+            <span class="remove">
+              <i class="fas fa-trash"></i>
+              <span>Remove picture</span>
+            </span>
+            <span data-toggle="modal" data-target="#primary-pic-modal">
+              <i class="fas fa-plus"></i>
+              <span>Upload picture</span>
+            </span>
+          </div>
+        </div>
         <div class="access-control">
           <div>
             <i class="fas fa-lock"></i>
@@ -192,7 +208,6 @@
                 <li><a href="#">item 1</a></li>
                 <li><a href="#">item 2</a></li>
                 <li><a href="#">item 3</a></li>
-                <li><a href="#">item 4</a></li>
               </ul>
             </li>
             <li>
@@ -365,6 +380,72 @@
 
 </div>
 
+<div id="primary-pic-modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Add or edit profile picture</h4>
+        <i class="fas fa-times-circle" class="close" data-dismiss="modal"></i>
+      </div>
+      <div class="modal-body">
+        <div>
+          <div class="upload"></div>
+          <div>
+            <img src="{{ $user_assets }}/images/user.svg" alt="">
+            <div>
+              <h3>Guidelines</h3>
+              <span>
+                <i class="fas fa-check"></i>
+                <span>Passport style</span>
+              </span>
+              <span>
+                <i class="fas fa-check"></i>
+                <span>Clear face image</span>
+              </span>
+              <span>
+                <i class="fas fa-times"></i>
+                <span>No sunglasses</span>
+              </span>
+              <span>
+                <i class="fas fa-times"></i>
+                <span>No snapchat filters</span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h2>Not allowed</h2>
+          <div>
+            <div>
+              <span>Blurry</span>
+            </div>
+            <div>
+              <span>Bodyshot</span>
+            </div>
+            <div>
+              <span>Cartoon</span>
+            </div>
+            <div>
+              <span>Group</span>
+            </div>
+            <div>
+              <span>Offensive</span>
+            </div>
+            <div>
+              <span>Scenic</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
  
 <script>
   $('.menu-container .toggle').click(function(e) {
@@ -377,8 +458,15 @@
   }
 
   $('.my-photos .access-control > ul li div').click(function() {
+    $('.my-photos .access-control > ul li div').not(this).siblings().hide(350);
+    $('.my-photos .access-control > ul li div').not(this).removeClass('open');
     $(this).siblings().toggle(350);
     $(this).toggleClass('open');
+  });
+
+  $('.my-photos .profile-pic-container .remove').click(function() {
+    $(this).closest('.profile-pic-container').removeClass('has-pic');
+    $(this).parent().prev().attr('src', '{{ $user_assets }}/images/user.svg');
   });
 </script>
 
