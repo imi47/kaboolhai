@@ -28,18 +28,6 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
   @stack('css')
   <style type="text/css">
-    body {
-      /* position:relative; */
-      letter-spacing: normal;
-    }
-
-    *:not(i):not(.fa):not(.fas):not(.glyphicon) {
-      font-family: 'Roboto', sans-serif !important;
-    }
-
-    * h3:not(i):not(.fa):not(.fas):not(.glyphicon) {
-      font-family: 'open sans', sans-serif !important;
-    }
 
 body *::-webkit-scrollbar
 {
@@ -515,10 +503,10 @@ footer .fa-search {
       margin-left: 48px !important;
     }
 
-    .arrow_button {
+    /* .arrow_button {
       right: -210px;
       top: -33px;
-    }
+    } */
 
   }
 
@@ -636,44 +624,34 @@ footer .fa-search {
       </div>
     </div>
     <div class="row border-chat">
-      <div class="col-md-12 col-sm-12 col-xs-12 second-section">
+      <div class="second-section">
         <div class="chat-section" id="chat-scroll">
           <ul>
-
             <span class="sender"></span>
             <span class="new_message"></span>
-
           </ul>
         </div>
       </div>
     </div>
-    <div class="row border-chat third-section">
+    <div class="border-chat third-section">
       <form id='form' enctype="multipart/form-data">
         <div class="text-bar">
-          <div class="col-xl-11 col-lg-11 col-md-11 col-sm-11 col-xs-11">
+          <div>
 
             {{csrf_field()}}
 
             <span style="color: red" id="error"></span>
-            {{-- <input type="text" id="send_messgae" name="send_messgae" placeholder="Write messege"> --}}
-
             <input type="text" id="send_messgae" name="send_messgae" class="emojiable-option" placeholder="Type a message">
-
             <input type="hidden" id="to_userss" name="to_user">
 
+            <button class="arrow_button">
+              <svg style="enable-background:new 0 0 24 24;" version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="info"/><g id="icons"><path d="M21.5,11.1l-17.9-9C2.7,1.7,1.7,2.5,2.1,3.4l2.5,6.7L16,12L4.6,13.9l-2.5,6.7c-0.3,0.9,0.6,1.7,1.5,1.2l17.9-9   C22.2,12.5,22.2,11.5,21.5,11.1z" id="send"/></g></svg>
+            </button>
+
           </div>
-          <a href="#">
-            <div class="col-xs-1">
-              <label id="bb"> <i class="fas fa-paperclip attach"></i>
-                <input type="file" name="file" id="file" size="60">
-              </label>
-
-
-            </div>
-            <div class="col-xs-1">
-              <button class="arrow_button"><svg style="enable-background:new 0 0 24 24;" version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="info"/><g id="icons"><path d="M21.5,11.1l-17.9-9C2.7,1.7,1.7,2.5,2.1,3.4l2.5,6.7L16,12L4.6,13.9l-2.5,6.7c-0.3,0.9,0.6,1.7,1.5,1.2l17.9-9   C22.2,12.5,22.2,11.5,21.5,11.1z" id="send"/></g></svg>
-</button>
-            </div>
+          <label id="bb"> <i class="fas fa-paperclip attach"></i>
+            <input type="file" name="file" id="file" size="60">
+          </label>
         </div>
       </form>
     </div>

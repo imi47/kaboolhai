@@ -4,6 +4,22 @@
   margin-top: 15px;
 }
 
+body * {
+	letter-spacing: normal;
+}
+
+body *:focus {
+	outline: none !important;
+}
+
+*:not(i):not(.fa):not(.fas):not(.glyphicon) {
+	font-family: 'Roboto', sans-serif !important;
+}
+
+* h3:not(i):not(.fa):not(.fas):not(.glyphicon) {
+	font-family: 'open sans', sans-serif !important;
+}
+
 
 *
 {

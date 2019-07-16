@@ -63,10 +63,6 @@
     width:420px;
   }
 
-  .main-section .arrow_button {
-    margin-left:-21px;
-  }
-
   /* .emojiPicker {
     left: 19px !important;
   } */

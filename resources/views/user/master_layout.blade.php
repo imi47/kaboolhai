@@ -46,10 +46,6 @@ body *::-webkit-scrollbar-thumb {
 	background-color: #999;
 }
 
-*:not(i):not(.fa):not(.fas):not(.glyphicon) {
-  font-family: 'Roboto', sans-serif !important;
-}
-
 .searchcontainer button {
   padding: 13px 14px;
   margin-top: -43px;
@@ -121,25 +117,9 @@ body *::-webkit-scrollbar-thumb {
   padding: 0px 14px 1px 7px;
 }
 
-.arrow_button {
-  position: absolute;
-  right: 9px;
-  top: 6px;
-}
-
-#bb {
-  bottom: 4px;
-  display: none;
-  right: 95px;
-  left: unset;
-}
-
-#bb {
-  position:fixed;
-}
-
 .open-more #bb {
   display: block;
+  bottom: 5px;
 }
 
 .search-dropdown-toggle {
@@ -395,8 +375,8 @@ body *::-webkit-scrollbar-thumb {
 }
 
 .text-bar input {
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding-top: 6px;
+  padding-bottom: 6px;
   padding-left: 30px;
 }
 
@@ -985,17 +965,8 @@ body *::-webkit-scrollbar-thumb {
       margin-left:0 !important;
     }
 
-    /* #bb img {
-      right: 17vw;
-    } */
-
     .navbar-fixed-top #myNavbar .navbar-form { 
       right:0 !important;
-    }
-
-    .arrow_button {
-      position: absolute;
-      right: 5px;
     }
 
     .navbar-nav .open .dropdown-menu {
@@ -1046,10 +1017,6 @@ body *::-webkit-scrollbar-thumb {
         margin:0;
       }
 
-      .text-bar input[type='text'] {
-        width: 97% !important;
-      }
-
       .emojiPicker {
         width: 99% !important;
 
@@ -1059,10 +1026,6 @@ body *::-webkit-scrollbar-thumb {
 
       .emojiPicker .sections {
         height: 206px !important;
-      }
-
-      #bb {
-        right: 61px;
       }
   }
 
@@ -1091,80 +1054,52 @@ body *::-webkit-scrollbar-thumb {
   <!--  -->
   <!-- navigation panel -->
   <div class="main-section">
-    <div class="border-chat">
+      <div class="border-chat">
         <div class='header'>
-            <div class="img-wrapper">
-              <img src="{{ $user_assets }}/img/avatar.png" alt="">
-              <span></span>
-            </div>
-            <div class="name-and-status">
-              <a href="#">username</a>
-              <span>Active now</span>
-            </div>
-            <img src="{{ $user_assets }}/icons/close.svg" alt="" class='close'>
+          <div class="img-wrapper">
+            <img src="{{ $user_assets }}/img/avatar.png" alt="">
+            <span></span>
           </div>
-    </div>
-
-    <div class="row border-chat">
-      <div class="col-md-12 col-sm-12 col-xs-12 second-section">
-        <div class="chat-section" id="chat-scroll">
-          <ul>
-            {{--
-            <li>
-              <div class="left-chat"> --}}
-                {{-- <img src="image/1499345471_boy.png"> --}}
-                {{-- <span class="receiver"> --}}
-                  {{-- </span> --}}
-                {{-- <span>2 min</span> --}}
-                {{--
-              </div>
-            </li>
-            --}}
-            {{--
-            <li>
-              <div class="right-chat"> --}}
-                {{-- <img src="image/1499345471_boy.png"> --}}
-                <span class="sender"></span>
-                <span class="new_message"></span>
-                {{-- <span>2 min</span> --}}
-                {{--
-              </div>
-            </li>
-            --}}
-            {{--
-            <li> --}}
-          </ul>
+          <div class="name-and-status">
+            <a href="#">username</a>
+            <span>Active now</span>
+          </div>
+          <img src="{{ $user_assets }}/icons/close.svg" alt="" class='close'>
         </div>
       </div>
-    </div>
-    <div class="row border-chat third-section">
-      <form id='form' enctype="multipart/form-data">
-        <div class="text-bar">
-          <div class="col-xl-11 col-lg-11 col-md-11 col-sm-11 col-xs-11">
-
-            {{csrf_field()}}
-
-            <span style="color: red" id="error"></span>
-            <input type="text" id="send_messgae" name="send_messgae" class="emojiable-option" placeholder="Write Message">
-
-            <input type="hidden" required="" id="to_userss" name="to_user" placeholder="Write messege">
-          </div>
-
-          <div class="col-xs-1">
-          <label id="bb"> <i class="fas fa-paperclip attach"></i>
-              <input type="file" name="file" id="file" size="60">
-            </label>
-            {{-- <textarea id="example1"></textarea> --}}
-
-          </div>
-          <div class="col-xs-1">
-            <button class="arrow_button"><svg style="enable-background:new 0 0 24 24;" version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="info"/><g id="icons"><path d="M21.5,11.1l-17.9-9C2.7,1.7,1.7,2.5,2.1,3.4l2.5,6.7L16,12L4.6,13.9l-2.5,6.7c-0.3,0.9,0.6,1.7,1.5,1.2l17.9-9   C22.2,12.5,22.2,11.5,21.5,11.1z" id="send"/></g></svg>
-  </button>
+      <div class="row border-chat">
+        <div class="second-section">
+          <div class="chat-section" id="chat-scroll">
+            <ul>
+              <span class="sender"></span>
+              <span class="new_message"></span>
+            </ul>
           </div>
         </div>
-      </form>
+      </div>
+      <div class="border-chat third-section">
+        <form id='form' enctype="multipart/form-data">
+          <div class="text-bar">
+            <div>
+  
+              {{csrf_field()}}
+  
+              <span style="color: red" id="error"></span>
+              <input type="text" id="send_messgae" name="send_messgae" class="emojiable-option" placeholder="Type a message">
+              <input type="hidden" id="to_userss" name="to_user">
+  
+              <button class="arrow_button">
+                <svg style="enable-background:new 0 0 24 24;" version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="info"/><g id="icons"><path d="M21.5,11.1l-17.9-9C2.7,1.7,1.7,2.5,2.1,3.4l2.5,6.7L16,12L4.6,13.9l-2.5,6.7c-0.3,0.9,0.6,1.7,1.5,1.2l17.9-9   C22.2,12.5,22.2,11.5,21.5,11.1z" id="send"/></g></svg>
+              </button>
+  
+            </div>
+            <label id="bb"> <i class="fas fa-paperclip attach"></i>
+              <input type="file" name="file" id="file" size="60">
+            </label>
+          </div>
+        </form>
+      </div>
     </div>
-  </div>
   </div>
   </div>
   <script type="text/javascript">

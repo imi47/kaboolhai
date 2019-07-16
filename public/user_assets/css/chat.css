@@ -200,24 +200,6 @@
   border-radius: 50%;
   text-align: center;
 }
-/* .left-chat::before{
-  content: " ";
-  position:absolute;
-  top:0px;
-  left:55px;
-  bottom:150px;
-  border:15px solid transparent;
-  border-top-color:#7553A4; 
-} */
-/* .right-chat::before{
-  content: " ";
-  position:absolute;
-  top:0px;
-  right:55px;
-  bottom:150px;
-  border:15px solid transparent;
-  border-top-color:#fff; 
-} */
 
 /* chat box changes */
 
@@ -266,6 +248,7 @@
   border: 1px solid #ccc;
   box-sizing: border-box;
   padding-right: 32px;
+  font-size: 12px;
 }
 
 .emojiPickerIcon.black {
@@ -277,9 +260,8 @@
 
 #bb {
   position: absolute;
-  bottom: 1px;
-  right: inherit;
-  left: 218px;
+  bottom: 0;
+  right: 17%;
 }
 
 #bb .attach {
@@ -301,9 +283,9 @@
   background-color:#fff;
   border-radius: 99px;
   padding:0;
-  position: absolute;
-  right: -210px;
-  top: -33px;
+  position: relative;
+  right: 0;
+  top: 7px;
 }
 
 .arrow_button svg{
@@ -344,10 +326,13 @@
 
 @media (max-width:500px) {
   .main-section {
-    width:100%;
-    max-width: 90vw;
+    width:95vw !important;
     right:0;
-    margin-right:5vw; 
+    margin-right:2.5vw; 
+  }
+
+  .emojiPickerIconWrap {
+    width: 92%;
   }
 
   .second-section{
@@ -357,15 +342,6 @@
   #bb .attach{
     right:19vw; 
   }
-
-  .arrow_button {
-    right: 2px;
-    top: 7px;
-  }
-
-  /* .text-bar input {
-    width: 310px !important;
-  } */
 
   .emojiPicker {
     width: 100% !important;
@@ -378,8 +354,8 @@
     height: 236px !important;
   }
 
-  .emojiPickerIconWrap input[type='text'] {
-    width: 77vw !important;
+  .text-bar input {
+    width: 85% !important;
   }
 }
 
