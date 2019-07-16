@@ -516,60 +516,10 @@ footer .fa-search {
     }
 
     .arrow_button {
-      right: 13px;
-    }
-
-  }
-
-  @media (max-width: 500px) and (min-width: 403px) {
-    #bb {
-      bottom: -38px;
-      left: -48px;
-    }
-  }
-
-  @media (max-width:500px) {
-    .text-bar input {
-      width: 75vw !important;
-    } 
-  }
-
-  @media (max-width: 404px) {
-    #bb {
-      left: 69vw;
-    }
-  }
-
-  @media (min-width:344px) and (max-width:404px) {
-    .arrow_button {
-      left: 81vw;
-      top:-33px;
-    }
-  }
-
-  @media (min-width:342px) and (max-width:343px) {
-    .arrow_button {
-      top: -33px;
-      left: 277px;
-    }
-  }
-
-  @media (min-width:338px) and (max-width:341px) {
-    .arrow_button {
-      top: 7px;
-      left: 37px;
-    }
-
-    #bb {
-      bottom: -12px;
-    }
-  }
-
-  @media (max-width:337px) {
-    .arrow_button {
-      right: -68vw;
+      right: -210px;
       top: -33px;
     }
+
   }
 
   @media (min-width:501px) {
@@ -626,6 +576,10 @@ footer .fa-search {
   .navbar-nav>li>a {
     padding-top: 15px;
     padding-bottom: 15px;
+  }
+
+  .panel-body .friends-dropdown-item button {
+    width: unset;
   }
 }
 
@@ -825,9 +779,9 @@ footer .fa-search {
     .arrow_image {
       padding: 10px;
     }
-    .arrow_button {
+    /* .arrow_button {
       margin-left: -39px;
-    }
+    } */
     #navsidebare {
       overflow: scroll;
 		  overflow-x:hidden;
