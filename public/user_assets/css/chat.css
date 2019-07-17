@@ -148,23 +148,19 @@
   overflow: hidden;
 }
 .left-chat p,.right-chat p {
-  background-color:#7553A4;
   padding: 5px 10px;
   color:#fff;
   border-radius: 20px; 
   float:left;
-  width:60%;
+  width:65%;
   word-break: break-word;
   font-size: .95em;
   margin: 0;
 }
 
 .left-chat p {
-  border-bottom-left-radius: 0;  
-}
-
-.right-chat p {
-  border-bottom-right-radius: 0;  
+  border-bottom-left-radius: 3px;
+  background-color: #7553A4;
 }
 
 .left-chat span,.right-chat span{
@@ -176,9 +172,10 @@
 .right-chat span{
   left:45px;
 }
-.right-chat p{
+.right-chat p {
   float:right;
   background-color: #ed6c05;
+  border-bottom-right-radius: 3px;
 }
 .third-section{
   border-left: 2px solid #ccc;

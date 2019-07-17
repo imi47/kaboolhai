@@ -89,6 +89,17 @@ body *::-webkit-scrollbar-thumb {
   padding: 5px 20px;
 }
 
+.msgNoti.msgNoti a {
+  padding: 0;
+  font-size: .9em;
+  color: #333;
+}
+
+.dropdown-item, .msgNoti {
+  padding: 5px 10px !important;
+  border-bottom: 1px solid #ddd;
+}
+
 #friends-dropdown li:nth-last-child(2), #notifications-dropdown li:nth-last-child(2) {
   margin-bottom:25px;
 }
@@ -107,9 +118,9 @@ body *::-webkit-scrollbar-thumb {
   display: inline-block;
 }
 
-.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
+/* .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
   background-color:#e6e6e6;
-}
+} */
 
 .noti_counts {
   top: -4px !important;
@@ -253,8 +264,6 @@ body *::-webkit-scrollbar-thumb {
 }
 
 .dropdown-item {
-  padding: 5px !important;
-  border-bottom: 1px solid #ddd;
   letter-spacing: normal;
   font-size: 16px;
 }
@@ -278,6 +287,12 @@ body *::-webkit-scrollbar-thumb {
   display: flex;
   align-items: center;
 }
+
+#get_noti > li:nth-last-of-type(2) {
+  margin-bottom: 26px;
+  border-bottom: none;
+}
+
 .notification-dropdown-item img {
   margin-right: .5em;
 }
@@ -1371,9 +1386,9 @@ body *::-webkit-scrollbar-thumb {
               <div class="friend" id="friends">
                 <li>
                   @if(!empty($row->photo->image))
-                  <img src="{{ $user_assets }}/my_photo/{{ $row->photo->image }}" style="width: 45px; height: 45px; border-radius:100px; " alt="">
+                  <img src="{{ $user_assets }}/my_photo/{{ $row->photo->image }}" style="width: 45px; height: 45px; border-radius:50%; " alt="">
                   @else
-                  <img src="{{ $user_assets }}/dashbord/userpic.jpg" style="width: 45px; height: 45px; border-radius:100px; " alt="">
+                  <img src="{{ $user_assets }}/dashbord/userpic.jpg" style="width: 45px; height: 45px; border-radius:50%; " alt="">
 
                   @endif
                   <a href="{{ url('public-profile',$row->user_id) }}">{{ $row->user->user_name }} send friend request</a><a
@@ -1433,11 +1448,11 @@ body *::-webkit-scrollbar-thumb {
                 <a class="left-first-section" style="background-color: #ffffff; color: black !important;" rel="{{ $row->from_users->id }}"
                   href="#">
                   @if(!empty($row->photo->image))
-                  <img src="{{ $user_assets }}/my_photo/{{ $row->photo->image }}" style="width: 45px; height: 45px; border-radius:100px; ">
+                  <img src="{{ $user_assets }}/my_photo/{{ $row->photo->image }}" style="width: 45px; height: 45px; border-radius:50%; ">
                  
                  
                   @else
-                  <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=Image +Not+Found" style="width: 45px; height: 45px; border-radius:100px; ">
+                  <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=Image +Not+Found" style="width: 45px; height: 45px; border-radius:50%; ">
                   @endif
                   <span>{{ $row->from_users->user_name}}</span>
                   <hr>
@@ -1495,9 +1510,9 @@ body *::-webkit-scrollbar-thumb {
                 <!-- <li class="notify_section">
                   <a href="{{ url('public-profile',$row->sender_id) }}">
                     @if(!empty($row->photo->image))
-                    <img src="{{ $user_assets }}/my_photo/{{ $row->photo->image }}" style="width: 45px; height: 45px; border-radius:100px; " alt="">
+                    <img src="{{ $user_assets }}/my_photo/{{ $row->photo->image }}" style="width: 45px; height: 45px; border-radius:50%; " alt="">
                     @else
-                    <img src="{{ $user_assets }}/dashbord/userpic.jpg" style="width: 45px; height: 45px; border-radius:100px; " alt="">
+                    <img src="{{ $user_assets }}/dashbord/userpic.jpg" style="width: 45px; height: 45px; border-radius:50%; " alt="">
 
                     @endif
 

@@ -48,6 +48,24 @@ body *::-webkit-scrollbar
   margin-left: -63px;
 }
 
+.msgMenu .msgNoti a {
+  padding: 0;
+}
+
+.msgMenu .msgNoti a {
+  font-size: .9em;
+  color: #333 !important;
+}
+
+.msgMenu .msgNoti a:hover {
+  background-color: transparent;
+}
+
+.icon-dropdown li {
+  padding: 5px 10px !important;
+  border-bottom: 1px solid #ddd;
+}
+
 .dropdown-item.dropdown-item {
   margin-top: 0 !important;
 }
@@ -57,8 +75,6 @@ body *::-webkit-scrollbar
 }
 
 .dropdown-item {
-  padding: 5px !important;
-  border-bottom: 1px solid #ddd;
   letter-spacing: normal;
   font-size: 16px;
 }
@@ -588,7 +604,7 @@ footer .fa-search {
 
 /* .msgMenu li{border-bottom: 1px solid #e6e6e6; margin-top: -2px !important} */
 
-.msgMenu li:hover{background: #e6e6e6 !important; } 
+.icon-dropdown li:hover{background: #f5f5f5 !important; } 
 
 .navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse {
   max-height:0 !important;
@@ -1122,19 +1138,19 @@ footer .fa-search {
                     <span id="request_counts"></span>
                   </a>
                   <ul class="dropdown-menu lenght icon-dropdown msgMenu">
-                   
+                 
                     @if(count(get_friend()))
                     @foreach(get_friend() as $row)
                     
                       <li class="friend" id="friends">
                         @if(!empty($row->photo->image))
-                        <a style="background-color: #ffffff; color: #666666 !important;" href="{{ url('public-profile',$row->user_id) }}"><img
+                        <a style="background-color: # href="{{ url('public-profile',$row->user_id) }}"><img
                             src="{{ $user_assets }}/my_photo/{{ $row->photo->image }}" style="width: 45px; height: 45px; border-radius:100px; " alt="">
                           @else
                           <img src="{{ $user_assets }}/dashbord/userpic.jpg" style="width: 45px; height: 45px; border-radius:100px; " alt="">
                           @endif
-                          {{ $row->user->user_name }} send friend request</a><a style="background-color: #ffffff; color: #666666 !important;"
-                          href="{{ url('delete-request',$row->user_id) }}" class="btn pull-right">Delete</a><a style="background-color: #ffffff; color: #666666 !important;"
+                          {{ $row->user->user_name }} send friend request</a><a style="background-color: #
+                          href="{{ url('delete-request',$row->user_id) }}" class="btn pull-right">Delete</a><a style="background-color: #
                           href="{{ url('confirm-friend',$row->user_id) }}" class="btn pull-right">Confirm</a>
                        <hr style="width: 100%;">
                       </li> 
@@ -1179,14 +1195,26 @@ footer .fa-search {
                     <span class="fa fa-envelope icon_color"></span><span id="message_count">@if(!empty(count_message()))
                       {{ count_message() }} @endif</span></a>
                   <ul class="dropdown-menu lenght icon-dropdown msgMenu">
-
+                  @for($x=0; $x<10; $x++)
+                    
+                    <li class="msgNoti">
+                        <a class="left-first-section" rel="215" href="#">                            
+                            <span>
+                            <img src="https://kaboolhai.com/kaboolhai/public/user_assets/my_photo/1530014926Resignation.JPG" style="width: 45px; height: 45px; border-radius:100px; " alt="">
+                            </span>
+                           <span>dfgdfg</span>
+                           
+                        </a>
+                    
+                      </li>
+                                       @endfor
                     @if(!empty(tochat()))
                     @foreach(tochat() as $row)
                     
                    
                     @if($row->to_user==Session::get('user_id'))
                     <li class='msgNoti'>
-                      <a class="left-first-section" style="color: #666666 !important;" rel="{{ $row->from_users->id }}"
+                      <a class="left-first-section" rel="{{ $row->from_users->id }}"
                         href="#">
                         @if(!empty($row->photo->image))
                         <span >

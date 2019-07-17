@@ -2,10 +2,31 @@
 @section('data')
 
 <style>
+    
+    </style>
 
-  .col-md-3 .well.w.menu {
-    margin-top: 23px;
+
+<style>
+
+  @if(empty(Session::get('user_id')))
+  
+  .col-md-3 > .well.w:first-child {
+    padding-top: 8px;
+    padding-bottom: 12px;
   }
+  
+  .col-md-3 > .well.menu {
+    padding-top: 11px;
+    padding-bottom: 11px;
+    margin-top: 20px;
+  }
+  
+  @else 
+  .col-md-3 .well.w.menu {
+    margin-top: 27px;
+  }
+
+  @endif
 
 #myCarousel {
 		border:1px solid #777;
