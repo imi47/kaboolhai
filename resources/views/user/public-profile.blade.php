@@ -148,7 +148,8 @@
 				 float:none;
 				 clear:both;
 				 text-align:center;
-				 width:auto;
+				 margin-left: auto;
+				 margin-right: auto;
 			 }
 
 			 .contacts_detail {
@@ -310,6 +311,7 @@ $('.owl-carousel').owlCarousel({
 
 					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 						<div class="imgofuser">
+							<div class="ribbon"><span>Viewed</span></div>
                @if($user_data->id==Session::get('user_id'))
                @if(count($myphoto))
               @foreach($myphoto as $img)
