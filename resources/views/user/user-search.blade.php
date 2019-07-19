@@ -208,20 +208,16 @@
     height: 66px;
     background-color: #222222;
   }
-  .pl-top-selection:hover
-  {
-    -webkit-transform: scale(1.1);
-       -moz-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-         -o-transform: scale(1.1);
-            transform: scale(1.1);
-            -webkit-transition: all .2s ease-in-out;
-               -moz-transition: all .2s ease-in-out;
-                -ms-transition: all .2s ease-in-out;
-                 -o-transition: all .2s ease-in-out;
-                    transition: all .2s ease-in-out;
+
+  .pl-top-selection,
+  .perdiv {
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
   }
-  
+
   .pl-top-selection {
     width: 100%;
     display: block;
@@ -230,7 +226,18 @@
     padding: 10px 0;
     text-decoration: none;
     border-radius: 5px;
+    
   }
+
+  .pl-top-selection:hover
+  {
+    -webkit-transform: scale(1.1);
+       -moz-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+         -o-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  
   .category-active {
     border: 1px solid #727272;
     margin-bottom: 25px;
@@ -441,9 +448,13 @@ p.t
 {
   background-color:#25b206;
   border-color: #25b206;
-
-
 }
+
+.perdiv{
+    width: 32.777%;
+    margin-bottom: 20px;
+  }
+
 .perdiv:hover
   {
     -webkit-transform: scale(1.1);
@@ -451,16 +462,6 @@ p.t
         -ms-transform: scale(1.1);
          -o-transform: scale(1.1);
             transform: scale(1.1);
-            -webkit-transition: all .2s ease-in-out;
-               -moz-transition: all .2s ease-in-out;
-                -ms-transition: all .2s ease-in-out;
-                 -o-transition: all .2s ease-in-out;
-                    transition: all .2s ease-in-out;
-  }
-
-  .perdiv{
-    width: 32.777%;
-    margin-bottom: 20px;
   }
 
   .save-search-btn-container {
@@ -1054,6 +1055,7 @@ p.t
               <img src="" alt="picture">
               @endif
               <div class="pl-profile-content">
+                <div class="ribbon"><span>Viewed</span></div>
                 <div class="pl-content-top">
                   @if($row->login_status==1)
                   {{-- <img src="{{ $user_assets }}/public_profile/online.gif" class="pl-content-top-img" width="30px"  title="Online" /> --}}
@@ -1166,6 +1168,7 @@ p.t
        
        <div class="user-list-mobile">
          <div>
+           <div class="ribbon"><span>Viewed</span></div>
            <a href="#">
              <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
              <div>
@@ -1704,49 +1707,50 @@ p.t
 
    <div id="myCarousel" class="carousel slide" data-ride="carousel">
 			<!-- Indicators -->
-			
 	
 			<!-- Wrapper for slides -->
-
+      <div class="ribbon"><span>Viewed</span></div>
+      
 			<div class="carousel-inner">
-          @if(count($recent))
-          @foreach($recent as $key => $row)
-				<div class="item @if($key==0) active @endif">
-						<div class="card-container">
-						<div class="row cf">
-        <div id="card1" class="card four col">
-
-           @if($row->image_name)
-           <a href="{{ url('public-profile'.$row->id) }}" title="View Profile">
-                     <div class="image-wrapper"> <img  src="{{ $user_assets }}/profile_image/{{ $row->image_name }}"></div>
-                      </a>
-                    
-
-                       @else
-                       
-              {{-- <img src="" alt="picture"> --}}
-              <a href="{{ url('public-profile',$row->id) }}" title="View Profile">
-         <div class="image-wrapper"> <img src="{{ $user_assets }}/sunrise.jpg"></div>
-                     </a>
-                     
+        @if(count($recent))
+        @foreach($recent as $key => $row)
+        <div class="item @if($key==0) active @endif">
+          <div class="card-container">
+              <div class="row cf">
+                <div id="card1" class="card four col">
+                  
+                  @if($row->image_name)
+                  <a href="{{ url('public-profile'.$row->id) }}" title="View Profile">
+                    <div class="image-wrapper"> <img  src="{{ $user_assets }}/profile_image/{{ $row->image_name }}"></div>
+                  </a>
+                  
+                  
+                  @else
+                  
+                  {{-- <img src="" alt="picture"> --}}
+                  <a href="{{ url('public-profile',$row->id) }}" title="View Profile">
+                    <div class="image-wrapper"> <img src="{{ $user_assets }}/sunrise.jpg"></div>
+                  </a>
+                  
                     @endif
-
-          {{-- <div class="image-wrapper"><img src="{{ $user_assets }}/default_slider.jpg" alt=""></div> --}}
-          
-
-          <h3 class="name">{{ $row->user_name }}</h3>
-          <div class="info cf">
-            <div class="key-value-container">
-              <div class="key">Age</div>
-              <div class="value">@php $age=date('Y')-$row->year @endphp
-              {{ $age }}</div>
-            </div>
-            <div class="key-value-container">
-              <div class="key">Gender</div>
-              <div class="value">{{ $row->gender }}</div>
-            </div>
-            <div class="key-value-container">
-              <div class="key">Marital status</div>
+                    
+                    
+                    {{-- <div class="image-wrapper"><img src="{{ $user_assets }}/default_slider.jpg" alt=""></div> --}}
+                    
+                    
+                    <h3 class="name">{{ $row->user_name }}</h3>
+                    <div class="info cf">
+                      <div class="key-value-container">
+                        <div class="key">Age</div>
+                        <div class="value">@php $age=date('Y')-$row->year @endphp
+                          {{ $age }}</div>
+                        </div>
+                        <div class="key-value-container">
+                          <div class="key">Gender</div>
+                          <div class="value">{{ $row->gender }}</div>
+                        </div>
+                        <div class="key-value-container">
+                          <div class="key">Marital status</div>
               <div class="value">{{ $row->martial_status }}</div>
             </div>
             <div class="key-value-container">

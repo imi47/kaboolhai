@@ -137,6 +137,60 @@ ul, ol, dl {list-style-position: outside;}
     padding-top: 2px;
 }
 
+.ribbon {
+    position: absolute;
+    left: -5px;
+    top: -5px;
+    z-index: 1;
+    overflow: hidden;
+    width: 75px;
+    height: 75px;
+    transform: rotate(-90deg);
+}
+
+.ribbon span {
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFF;
+	text-transform: uppercase;
+	text-align: center;
+	line-height: normal;
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	width: 100px;
+	display: block;
+	background: #c03234;
+	box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+	position: absolute;
+	top: 19px;
+    right: -21px;
+    padding: 3px 0;
+}
+
+.ribbon span::before {
+	content: "";
+	position: absolute;
+	left: 0px;
+	top: 100%;
+	z-index: -1;
+	border-left: 3px solid #c03234;
+	border-right: 3px solid transparent;
+	border-bottom: 3px solid transparent;
+	border-top: 3px solid #c03234;
+}
+
+.ribbon span::after {
+	content: "";
+	position: absolute;
+	right: 0px;
+	top: 100%;
+	z-index: -1;
+	border-left: 3px solid transparent;
+	border-right: 3px solid #c03234;
+	border-bottom: 3px solid transparent;
+	border-top: 3px solid #c03234;
+}
+
 #username-dropdown-toggle ul li {
     display: flex;
     align-items: center;
@@ -331,6 +385,10 @@ ul, ol, dl {list-style-position: outside;}
 
     .user-list-mobile .icons > span img {
         width: 20px;
+    }
+
+    .user-list-mobile .ribbon span {
+        font-size: 11px;
     }
 
     .my-photos * {

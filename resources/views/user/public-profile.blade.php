@@ -2780,6 +2780,7 @@ $('.owl-carousel').owlCarousel({
 			</ol> --}}
 	
 			<!-- Wrapper for slides -->
+			<div class="ribbon"><span>Viewed</span></div>
 			<div class="carousel-inner">
 				@if(count($recent))
           @foreach($recent as $key => $row)
