@@ -377,27 +377,20 @@ footer .fa-search {
       #friends-dropdown .icon-dropdown li:last-child, #notifications-dropdown .icon-dropdown li:last-child {
         position:fixed;
         width: 493px;
-        padding: 0;
         border: 1px solid #aaa;
-        top: 421px;
         background-color: #eee;
-        padding: 2px 20px;
-    }
-
-    #friends-dropdown .icon-dropdown li:last-child {
-      top: 424px;
+        padding: 3px 20px !important;
+        top: 425px;
+        line-height: normal;
     }
 
     #friends-dropdown .icon-dropdown li:last-child a {
       margin-top: 0;
+      line-height: normal;
     }
 
     #friends-dropdown .icon-dropdown li:last-child a:hover {
       background:none;
-    }
-
-    #notifications-dropdown .icon-dropdown li:last-child {
-      top: 422px;
     }
 
     .icon-dropdown li:last-child a {
@@ -928,7 +921,7 @@ footer .fa-search {
       }
 
       #username-dropdown-toggle .dropdown-toggle {
-        padding-top:0;
+        padding-top:0 !important;
         margin-top:0;
       }
 

@@ -90,9 +90,17 @@
 
   .panel-body .friends-dropdown-item button {
     align-self: center;
-    font-size: .9em;
     display: flex;
     justify-content: center;
+  }
+
+  .panel-body .friends-dropdown-item button a {
+    color: white !important;
+    margin: 0;
+  }
+
+  .panel-body .friends-dropdown-item button a:hover {
+    color: white;
   }
 
   @media (max-width:991px) {
@@ -130,6 +138,7 @@
 }
 
 </style>
+
 <div style="padding-top: 90px;"></div>
   
   <div class="container-fluid"> 
@@ -151,50 +160,58 @@
         <div class="panel panel-default">
     <div class="panel-heading text-center"><h3>{{ $title }}</h3></div>
     <br>
+
     <div class="panel-body">
       @if(count($user_data))
-     @foreach($user_data as $row)
+     @foreach($user_data as $key => $row)
+
       <div class="row">
-          <a title="view profile" href="{{ url('public-profile',$row->id) }}">
+          <a title="view profile" href="{{ url('public-profile/'.$row->id) }}">
         <div class="col-md-2">
-                @if(!empty($row->image_name))
+                <!-- @if(!empty($row->image_name))
                 <img style="width: 100px; height: 100px;" class="img-thumbnail  pull-right" src="{{ $user_assets }}/profile_image/{{ $row->image_name }}">
                 @else
                 <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=Image +Not+Found"  style="width: 100px; height: 100px;" class="img-thumbnail  pull-right">
-              @endif
+              @endif -->
         </div>
+        
         <div class="col-md-8">
-          <h3>{{ $row->user_name }}</h3>
+          <!-- <h3>{{ $row->user_name }}</h3>
         </a>
           <span>{{ $row->country_name }}</span>
            <span>{{ $row->city_name }}</span><br>
            </span>{{ $row->job }}<span><br>
-          <span>{{ $row->description }}</span>
+          <span>{{ $row->description }}</span> -->
         </div>
-        @if($title=='Recent join')
+        <!-- @if($title=='Recent join')
         <div class="col-md-2">
           <a href="{{ url('public-profile',$row->id) }}"  class="btn btn-block">View Profile</a>
         </div>
-        @else
+        @else -->
         <div class="col-md-2">
-          @if($title=='Block user list')
+         <!--  @if($title=='Block user list')
           <a href="{{ url('remove-user',[$row->id,$title]) }}" onclick="return confirm('Are you sure you want to remove this user?');" class="btn btn-block">Unblock</a>
           @else<a href="{{ url('remove-user',[$row->id,$title]) }}" onclick="return confirm('Are you sure you want to remove this user?');" class="btn btn-block">Remove</a>
-          @endif
+          @endif -->
         </div> 
         @endif
       </div>
       
       <li class="friends-dropdown-item dropdown-item">
-        <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
+        @if(!empty($row->image_name))
+                <img style="width: 100px; height: 100px;" class="img-thumbnail  pull-right" src="{{ $user_assets }}/profile_image/{{ $row->image_name }}">
+                @else
+                <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=Image +Not+Found"  style="width: 100px; height: 100px;" class="img-thumbnail  pull-right">
+              @endif
         <div class="info">
-          <a href="#">username</a>
-          <span>Lahore, Pakistan</span>
-          <span>BBA</span>
-          <span>I belong to an upper middle class family. I am a graduate from a reputed institution and do an executive level job at an organization.</span>
+          <a href="#">{{ $row->user_name }}</a>
+          <span>{{ $row->country_name }}</span>
+          <span>{{ $row->job }}</span>
+          <span>{{ $row->description }}</span>
         </div>
-          <button>Accept</button>
-          <button>Remove</button>
+          
+          <!-- <a id="remove">Remove</a> -->
+          <button><a href="{{ url('remove-user',[$row->id,$title]) }}" onclick="return confirm('Are you sure you want to remove this user?');" class="btn btn-block">Remove</a> </button>
       </li>
 
       @endforeach

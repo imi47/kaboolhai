@@ -12,10 +12,6 @@
      margin-bottom: 0;
    }
 
-   .nav.navbar-nav .dropdown a.dropdown-toggle {
-    line-height: 21px !important;
-   }
-
    .user-list-mobile {
      display: none;
    }

@@ -49,6 +49,10 @@
     font-size:14px;
   }
 
+  .col-md-8 .btn {
+    margin: 0;
+  }
+
   @media (max-width:991px) {
     #side-info {
       margin-top:50px;

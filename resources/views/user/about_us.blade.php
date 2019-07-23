@@ -79,25 +79,9 @@
         padding-right:0;
       }
 
-      #username-dropdown-toggle  a {
-        padding-right: 15px;
-        padding-top: 10px;
-      }
-
-      #username-dropdown-toggle a {
-        display:inline !important;
-        padding-bottom:10px !important;
-      }
-
       #username-dropdown-toggle ul.dropdown-menu {
         text-align:left !important;
       }
-
-    #username-dropdown-toggle .dropdown-toggle {
-      margin-top: 3px;
-      padding-bottom: 12px !important;
-      padding-top: 10px !important;
-    } 
   }
 
 @media (max-width:400px) {
