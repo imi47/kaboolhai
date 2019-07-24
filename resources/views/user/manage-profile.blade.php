@@ -62,10 +62,6 @@ input[type='checkbox'] {
     width: auto;
 	}
 
-	#username-dropdown-toggle {
-		margin-top: 10px !important;
-	}
-
 	.mp-form-list li {
 		display:block;
 	}
