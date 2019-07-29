@@ -22,7 +22,6 @@ tr.dosrch th a {
   }
 
   .navbar-form button {
-    right: -4px;
     padding: 6px 11px !important;
 }
 
@@ -62,6 +61,15 @@ footer section {
 .message-wraper{
   max-height: 60vh;
   overflow-y: scroll !important;
+}
+
+#form {
+  margin-bottom: 0;
+}
+
+#bb {
+  bottom: 4px;
+  right: 16%;
 }
 
 @media (max-width:991px) {
@@ -113,10 +121,9 @@ img{ max-width:100%;}
 }
 
 .inbox_people {
-  background: #f8f8f8 none repeat scroll 0 0;
-  overflow: hidden;
   width: 25%;
   border-right:1px solid #c4c4c4;
+  overflow: auto;
 }
 .inbox_msg {
   clear: both;
@@ -124,27 +131,29 @@ img{ max-width:100%;}
   display:flex;
   height: 92%;
 }
-@media (max-height:656px) {
-  .inbox_msg {
-    height: 86%;
-  }
-}
 
 .top_spac{ margin: 20px 0 0;}
 
 
-.recent_heading {float: left; width:40%;}
 .srch_bar {
   display: inline-block;
   text-align: right;
   width: 60%; padding:
 }
-.headind_srch{ padding:10px 29px 10px 20px; overflow:hidden; border-bottom:1px solid #c4c4c4;}
+.headind_srch {
+    padding: 0 2rem;
+    overflow: hidden;
+    height: 52px;
+    display: flex;
+    align-items: center;
+}
 
 .recent_heading h4 {
   color: #05728f;
   font-size: 21px;
   margin: auto;
+  color: #ed6c05;
+  font-weight: bold;
 }
 .srch_bar input{ border:1px solid #cdcdcd; border-width:0 0 1px 0; width:80%; padding:2px 0 4px 6px; background:none;}
 .srch_bar .input-group-addon button {
@@ -157,57 +166,79 @@ img{ max-width:100%;}
 .srch_bar .input-group-addon { margin: 0 0 0 -27px;}
 
 .chat_ib h5{ font-size:15px; color:#464646; margin:0 0 8px 0;}
-.chat_ib h5 + span{ font-size:11px; float:right; color:#989898;}
+.chat_ib h5 + span{ font-size:12px; color:#989898;}
 .chat_ib p{ font-size:14px; color:#989898; margin:auto}
 .chat_img {
-  float: left;
   width: 50px;
 }
 .chat_ib {
-  float: left;
-  padding: 0 0 0 15px;
-  margin-left: 53px;
-  margin-top: -50px;
-  width: 82%;
+  padding: 0 0 0 10px;
+  overflow: hidden;
 }
 
-.chat_people{ overflow:hidden; clear:both;}
+.chat_people{ overflow:hidden; display: grid; grid-auto-flow: column; justify-content: start;}
 .chat_list {
-  border-bottom: 1px solid #c4c4c4;
+  border-bottom: 1px solid #eee;
   margin: 0;
   padding: 18px 16px 10px;
+  position: relative;
 }
-.inbox_chat { overflow-y: scroll;}
+
+.chat_list.current {
+  background-color: #f2f2f2;
+}
+
+.chat_list .unread-badge {
+  background-color: #ed6c05;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+}
+
+.chat_list.unread .unread-badge {
+    display: block;
+}
 
 .active_chat{ background:#ebebeb;}
 .incoming_msg{
-     margin: 26px 0 26px;
-     padding-left: 25px;
+     margin: 1rem 1rem 1rem 1.5rem;
 }
 .incoming_msg_img {
   display: inline-block;
-  width: 6%;
+  width: 2.5em;
 }
 .received_msg {
   display: inline-block;
-  padding: 0 0 0 10px;
+  padding-left: 5px;
   vertical-align: top;
-  width: 38%;
+  max-width: 50%;
  }
+
+ .received_msg .time_date {
+   text-align: left;
+ }
+
  .received_withd_msg p {
-  background: #ebebeb none repeat scroll 0 0;
-  border-radius: 99px;
-  color: #646464;
-  font-size: 14px;
+  background: #7553A4 none repeat scroll 0 0;
+  border-radius: 20px;
+  border-bottom-left-radius: 3px;
+  color: white;
+  font-size: 1.55rem;
   margin: 0;
-  padding: 5px 10px 5px 12px;
+  padding: .5rem 1rem;
   width: 100%;
+  word-break: break-word;
 }
 .time_date {
   color: #747474;
   display: block;
-  font-size: 12px;
-  margin: 8px 0 0;
+  font-size: 1.1rem;
+  margin-top: .2rem;
 }
 /* .received_withd_msg { width: 57%;} */
 .mesgs {
@@ -215,18 +246,69 @@ img{ max-width:100%;}
   width: 75%;
 }
 
- .sent_msg p {
-  background: #05728f none repeat scroll 0 0;
-  border-radius: 99px;
-  font-size: 14px;
-  margin: 0; color:#fff;
-  padding: 5px 10px 5px 12px;
-  width:100%;
+.mesgs .user-header {
+  display: grid;
+  align-items: center;
+  justify-content: start;
+  grid-column-gap: 1rem;
+  padding: .5rem 1rem;
+  box-shadow: 1px 1px 3px rgba(0,0,0,.2);
 }
-.outgoing_msg{ overflow:hidden; margin:26px 0 26px; margin-right:2.5%;}
+
+.mesgs .user-header .img-wrapper {
+  position: relative;
+  grid-column: 1;
+  grid-row: 1/3;
+}
+
+.mesgs .user-header img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.mesgs .user-header .img-wrapper span {
+  width: 13px;
+  height: 13px;
+  background-color: mediumseagreen;
+  position: absolute;
+  border-radius: 50%;
+  bottom: 0px;
+  right: -1px;
+  border: 2px solid white;
+}
+
+.mesgs .user-header .username {
+  grid-column: 2;
+  font-weight: bold;
+  font-size: 1.55rem;
+}
+
+.mesgs .user-header .username + span {
+  grid-column: 2;
+  color: #888;
+  font-size: 1.3rem;
+  margin-top: -5px;
+}
+
+ .sent_msg p {
+  background: #ed6c05 none repeat scroll 0 0;
+  border-radius: 20px;
+  border-bottom-right-radius: 3px;
+  font-size: 1.55rem;
+  margin: 0; color:#fff;
+  padding: .5rem 1rem;
+  width:100%;
+  word-break: break-word;
+}
+.outgoing_msg{ overflow:hidden; margin: 1rem; margin-right:1.5rem;}
 .sent_msg {
   float: right;
-  width: 46.5%;
+  max-width: 50%;
+}
+
+.sent_msg .time_date {
+  text-align: right;
 }
 
 /* .input_msg_write {
@@ -235,13 +317,33 @@ img{ max-width:100%;}
   width:70%;
 } */
 
-.input_msg_write input {
+.input_msg_write {
+  display: flex;
+  align-items: center;
+  background-color: white;
+}
+
+.input_msg_write input:not(.search) {
   border: medium none;
   color: #4c4c4c;
   font-size: 15px;
   width: 100%;
   margin:0;
-  padding: 12px 20px;
+  padding: 8px;
+  background-color: #eee;
+  margin: 5px;
+  border-radius: 20px;
+  height: 32px;
+  padding: 15px;
+}
+
+.input_msg_write label {
+  margin: 0;
+}
+
+.input_msg_write .fa-paperclip {
+  font-size: 21px;
+  color: #777;
 }
 
 .type_msg {
@@ -256,10 +358,9 @@ img{ max-width:100%;}
   border:none;
   cursor: pointer;
   background-color: transparent;
-  position: absolute;
-  right: 0;
-  top: 11px;
   width: 33px;
+  margin-right: 2rem;
+  margin-left: .5rem;
 }
 
 .msg_send_btn svg {
@@ -269,28 +370,22 @@ img{ max-width:100%;}
 
 /* .messaging { padding: 0 0 50px 0;} */
 .msg_history {
-  height: 92%;
+  height: calc(100% - 94px);
   overflow-y: auto;
 }
 
 .name-and-date {
   display:flex;
+  flex-direction: column;
 }
 
 .name-and-date h5 {
-  width:70%;
   margin-top: 5px;
-}
-
-.name-and-date span {
-  width:131px;
-}
-
-
-@media (max-width:1360px) {
-  .navbar-form button {
-    right: -17px;
-  }
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: normal;
+  color: #222;
 }
 
 @media (max-width:900px) {
@@ -300,17 +395,51 @@ img{ max-width:100%;}
 }
 
 @media (max-width:768px) {
+  
+  :root {
+    font-size: 9px;
+  }
+
+  .chat_list.unread .unread-badge {
+    display: none;
+  }
+
+  .chat_list.unread {
+    background-color: rgba(237,108,5,.3);
+  }
+
+  .incoming_msg,
+  .outgoing_msg {
+    margin: .6rem;
+  }
+
   .chat_ib {
     display:none;
   }
 
+  .headind_srch {
+    justify-content: center;
+    padding: 5px;
+    height: 51px;
+  }
+
+  .headind_srch h4 {
+    font-size: 18px;
+  }
+
+  .chat_img {
+    width: 40px;
+
+  }
+
   .inbox_people {
-    width:109px;
-    z-index:9;
+    width: 65px;
   }
 
   .chat_list {
-    padding: 7px 0 7px 26px;
+    padding: 7px;
+    display: flex;
+    justify-content: center
   }
 
   .mesgs {
@@ -319,13 +448,10 @@ img{ max-width:100%;}
 
   .type_msg {
     right: 0;
-    width: 85%;
-  }
-
-  .input_msg_write input {
-    padding: 12px 45px;
+    width: 100%;
   }
 }
+
 </style>
 <div style="padding-top:53px; "></div>
 {{-- <div class="container"> --}}
@@ -345,6 +471,7 @@ img{ max-width:100%;}
               @foreach($friend as $row)
               <a href="{{ url('friend-chat',$row->user_id) }}">
             <div class="chat_list">
+              <span class="unread-badge"></span>
               <div class="chat_people">
                 <div class="chat_img">
 
@@ -361,7 +488,7 @@ img{ max-width:100%;}
                     <h5>{{ $row->user_name }}</h5>
                     <span class="chat_date">{{ $row->created_at }}</span>
                   </div>                  
-                  <p>Sample text Sample text Sample text Sample text Sample text Sample text </p>
+                  <p>{{$row->description}}</p>
                 </div>
               </div>
             </div>
@@ -369,15 +496,64 @@ img{ max-width:100%;}
               @endforeach
               @endif
             
-            
+            <a href="http://localhost/KBH/friend-chat/215">
+              <div class="chat_list current">
+                <span class="unread-badge"></span>
+                <div class="chat_people">
+                  <div class="chat_img">
+  
+                                    <img src="http://localhost/KBH/public/user_assets/profile_image/female_avatar_7.jpg" style="border-radius: 100px;">
+  
+                
+                                    </div>
+                  <div class="chat_ib">
+                    <div class="name-and-date">
+                      <h5>username static</h5>
+                      <span class="chat_date">2018-05-08 13:23:33</span>
+                    </div>                  
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+              </a>
+
+              <a href="http://localhost/KBH/friend-chat/215">
+                <div class="chat_list unread">
+                  <span class="unread-badge"></span>
+                  <div class="chat_people">
+                    <div class="chat_img">
+    
+                                      <img src="http://localhost/KBH/public/user_assets/profile_image/female_avatar_7.jpg" style="border-radius: 100px;">
+    
+                  
+                                      </div>
+                    <div class="chat_ib">
+                      <div class="name-and-date">
+                        <h5>username static</h5>
+                        <span class="chat_date">2018-05-08 13:23:33</span>
+                      </div>                  
+                      <p></p>
+                    </div>
+                  </div>
+                </div>
+                </a>
             
           </div>
         </div>
         <div class="mesgs">
+          <div class="user-header">
+            <div class="img-wrapper">
+              <img src="{{ $user_assets }}/img/avatar.png" alt="">
+              <span></span>
+            </div>
+            <span class="username">user name</span>
+            <span>Active 5h ago</span>
+          </div>
           <div class="msg_history" id="chat-scroll">
                @if(isset($inbox))
               @foreach($inbox as $row)
               @if(Session::get('user_id')==$row->to_user)
+
             <div class="incoming_msg">
               <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
               
@@ -414,13 +590,13 @@ img{ max-width:100%;}
             <div class="new_message"></div>
        
            
-            <form id='form' enctype="multipart/form-data">
+            <form class="form" enctype="multipart/form-data">
           <div class="type_msg">
             {{csrf_field()}}
             <div class="input_msg_write">
-              <input type="text" id="send_messgae" name="send_messgae" class="write_msg" placeholder="Type a message"/>
+              <input type="text" id="send_message" name="send_message" class="write_msg" placeholder="Type a message"/>
               <input type="hidden" id="to_userss" value="{{ $friend_id }}" name="to_user">
-               <label id="" style="float: right; margin-right: 50px; margin-top: -40px;"> <img alt="" src="{{ $user_assets }}/images/clip.png" />
+               <label id=""> <i class="fas fa-paperclip"></i>
                 <input type="file" name="file" id="file" size="60">
               </label>
               <button class="msg_send_btn" type="submit" ><svg style="enable-background:new 0 0 24 24;" version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="info"/><g id="icons"><path d="M21.5,11.1l-17.9-9C2.7,1.7,1.7,2.5,2.1,3.4l2.5,6.7L16,12L4.6,13.9l-2.5,6.7c-0.3,0.9,0.6,1.7,1.5,1.2l17.9-9   C22.2,12.5,22.2,11.5,21.5,11.1z" id="send"/></g></svg></button>
@@ -429,9 +605,12 @@ img{ max-width:100%;}
           </form>
         </div>
       </div>
-      
-      
-    
+
+      <script>
+        $(document).ready(function() {
+          $("#send_message").emojioneArea();
+        });
+      </script>
       
     </div>
   {{-- </div> --}}
@@ -517,94 +696,119 @@ $("#file").change(function () {
          
 
 
-    $('#form').on('submit',function (e) {
-e.preventDefault();
-var message=document.getElementById("send_messgae").value;
-var file=document.getElementById("file").value;
+    $('.form').on('submit',function (e) {
+
+
+        e.preventDefault();
+        // var message=document.getElementById("send_messgae").value;
+        var message=$('#send_message').val();
+        
+        var file=document.getElementById("file").value;
 // var d = new Date();
-var time = new Date().toLocaleTimeString();
-if(message)
-{
-var word_to_match = message;
-var string_of_words = 'a string containing the word ender, this will match';
-//use \b to match on word boundaries
-var filter = new RegExp('\\b' + word_to_match + '\\b', 'gi');
-if(string_of_words.match(filter))
- {
-   $('#error').html('Block ' + word_to_match);
-   $('#send_messgae').val('');
+        var time = new Date().toLocaleTimeString();
+        if(message)
+        {
+          var word_to_match = message;
+          var string_of_words = 'a string containing the word ender, this will match';
+          //use \b to match on word boundaries
+          var filter = new RegExp('\\b' + word_to_match + '\\b', 'gi');
+            if(string_of_words.match(filter))
+            {
+                $('#error').html('Block ' + word_to_match);
+                $('#send_message').val('');
    
-   return false;
- } 
-}
+                 return false;
+             } 
+        }
+        
+        $.ajax({
+             type: 'post',
+              url: "{{ url('send_message') }}",
+              data: new FormData(this),
+                  contentType: false,       
+                  cache: false,            
+                  processData:false,
+             success: function (data)
+              {
+                  response = $.parseJSON(data);
+                  if(message && file)
+                  {
+                      $('.new_message').append('<div class="outgoing_msg"><div class="sent_msg"><p>'+response.message+'</p><span class="time_date">'+time+'|Today</span></div></div>');
+                      $('#chat-scroll').animate({
+                      scrollTop: $('#chat-scroll').get(0).scrollHeight},10);
 
-   $.ajax({
-           type: 'post',
-           url: "{{ url('send_message') }}",
-            // data: new FormData(this),
-           // data: $('#form').serialize(),
-            data: new FormData(this),
-                 contentType: false,       
-                 cache: false,            
-                 processData:false,
-           success: function (data)
-            {
-              response = $.parseJSON(data);
-               if(message && file)
-               {
-             $('.new_message').append('<div class="outgoing_msg"><div class="sent_msg"><p>'+response.message+'</p><span class="time_date">'+time+'|Today</span></div></div>');
-           $('#chat-scroll').animate({
-            scrollTop: $('#chat-scroll').get(0).scrollHeight},10);
-
-           $('.new_message').append('<div class="outgoing_msg"><div class="sent_msg"><a href="{{ url('public/user_assets/attached') }}/'+response.attached+'" target="_blank"><img src="{{ url('public/user_assets/attached') }}/'+response.attached+'">'+time+'|Today</span></div></div>');
-           $('#chat-scroll').animate({
-            scrollTop: $('#chat-scroll').get(0).scrollHeight},10);
-         }
-          else if(file)
-            {
-              var filename = response.attached;
-             var valid_extensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i; 
+                      $('.new_message').append('<div class="outgoing_msg"><div class="sent_msg"><a href="{{ url('public/user_assets/attached') }}/'+response.attached+'" target="_blank"><img src="{{ url('public/user_assets/attached') }}/'+response.attached+'">'+time+'|Today</span></div></div>');
+                      $('#chat-scroll').animate({
+                      scrollTop: $('#chat-scroll').get(0).scrollHeight},10);
+                  }
+                  else if(file)
+                  {
+                      var filename = response.attached;
+                       var valid_extensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i; 
 
 
-             if(valid_extensions.test(filename))
-{ 
-   $('.new_message').append('<div class="outgoing_msg"><div class="sent_msg"><a href="{{ url('public/user_assets/attached') }}/'+response.attached+'" target="_blank"><img src="{{ url('public/user_assets/attached') }}/'+response.attached+'">'+time+'|Today</span></div></div>');
-           $('#chat-scroll').animate({
-            scrollTop: $('#chat-scroll').get(0).scrollHeight},10);
+                      if(valid_extensions.test(filename))
+                      { 
+                            $('.new_message').append('<div class="outgoing_msg"><div class="sent_msg"><a href="{{ url('public/user_assets/attached') }}/'+response.attached+'" target="_blank"><img src="{{ url('public/user_assets/attached') }}/'+response.attached+'">'+time+'|Today</span></div></div>');
+                            $('#chat-scroll').animate({
+                            scrollTop: $('#chat-scroll').get(0).scrollHeight},10);
             
-} 
+                      } 
 
-  else
-      {
-   $('.new_message').append('<div class="outgoing_msg"><div class="sent_msg"><a href="{{ url('public/user_assets/attached') }}/'+response.attached+'" target="_blank">'+response.attached+time+'|Today</span></div></div>');
-   $('#chat-scroll').animate({
-            scrollTop: $('#chat-scroll').get(0).scrollHeight},10);
+                      else
+                      {
+                           $('.new_message').append('<div class="outgoing_msg"><div class="sent_msg"><a href="{{ url('public/user_assets/attached') }}/'+response.attached+'" target="_blank">'+response.attached+time+'|Today</span></div></div>');
+                          $('#chat-scroll').animate({
+                          scrollTop: $('#chat-scroll').get(0).scrollHeight},10);
             
-}
+                      }
 
           
-         }
-             else if(message)
-            {
-               $('.new_message').append('<div class="outgoing_msg"><div class="sent_msg"><p>'+response.message+'</p><span class="time_date">'+time+'|Today</span></div></div>');
-           $('#chat-scroll').animate({
-            scrollTop: $('#chat-scroll').get(0).scrollHeight},10);
+                }
+                else if(message)
+                {
+                    $('.new_message').append('<div class="outgoing_msg"><div class="sent_msg"><p>'+response.message+'</p><span class="time_date">'+time+'|Today</span></div></div>');
+                    $('#chat-scroll').animate({
+                    scrollTop: $('#chat-scroll').get(0).scrollHeight},10);
            
-            }
+               }
             
            
            }
          });
          
         
-         document.getElementById("send_messgae").value = "";
+         document.getElementById("send_message").value = "";
         
        
          });
+
+         document.querySelector('.msg_send_btn').onclick = function() {
+          $('.msg_history').stop().animate({
+            scrollTop: $('.msg_history')[0].scrollHeight
+          }, 500);
+
+          $('.emojionearea-editor').text('');
+         }
+
+         $('.emojionearea-editor').keypress(
+          function(event){
+            if (event.keyCode == '13') {
+              $(this).text('');
+            }
+        });
+
+        $(document).keypress(
+          function(event){
+            if (event.keyCode == '13') {
+              $('.emojionearea-editor').text('');
+            }
+        });
+
   </script>
 @endsection
 
-</script>
+
 @push('css')
 <link rel="shortcut icon" href="{{ $user_assets }}/images/favicon.png">
     <link rel="stylesheet" href="{{ $user_assets }}/css/animate.css" />
@@ -640,7 +844,8 @@ if(string_of_words.match(filter))
 {{-- <script type="text/javascript" src="{{ $user_assets }}/js/custom.js"></script> --}}
 <link rel="stylesheet" href="{{ $user_assets }}/css/custom.css" />
 
-
+<!-- emojiOneArea -->
+<link rel="stylesheet" href="{{ $user_assets }}/css/emojionearea.css">
  
 @endpush
 
@@ -685,10 +890,12 @@ if(string_of_words.match(filter))
 <!-- hamburger menu-->
 <script type="text/javascript" src="{{ $user_assets }}/js/classie.js"></script>
 <script type="text/javascript" src="{{ $user_assets }}/js/hamburger-menu.js"></script>
- 
+
+<!-- emojiOneArea -->
+<script type="text/javascript" src="{{ $user_assets }}/js/emojionearea.min.js"></script>
+
 @endpush      
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 </body>
 </html>

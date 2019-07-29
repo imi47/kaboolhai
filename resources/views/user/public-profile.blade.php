@@ -2413,7 +2413,9 @@ $('.owl-carousel').owlCarousel({
 							<li data-target="#myCarousel2" data-slide-to="1"></li>
 							<li data-target="#myCarousel2" data-slide-to="2"></li>
 						</ol> --}}
-	
+						
+						<!-- <div class="ribbon"><span>Viewed</span></div> -->
+
 						<!-- Wrapper for slides -->
 						<div class="carousel-inner">
 							@if(count($simlar))

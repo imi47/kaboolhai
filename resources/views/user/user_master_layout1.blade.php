@@ -12,7 +12,8 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
     crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="{{ $user_assets }}/css/jquery.emojipicker.css">
-  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script type="text/javascript" src="{{ $user_assets }}/js/jquery.emojipicker.js"></script>
   <script type="text/javascript" src="{{ $user_assets }}/js/bootstrap-notify.min.js"></script>
 
@@ -212,7 +213,7 @@ footer .fa-search {
 
     .search-dropdown-toggle {
       display:none;
-      font-size: 2.1rem;
+      font-size: 22px;
       top: 20px;
       color:#f1e7ff;
       cursor: pointer;
@@ -607,10 +608,6 @@ footer .fa-search {
   <script type="text/javascript">
     $(document).ready(function (e) {
       $('#send_messgae').emojiPicker();
-      //   $('#send_messgae').emojiPicker({
-      //   width: '300px',
-      //   height: '200px'
-      // });
     });
     
   </script>

@@ -747,6 +747,60 @@ ul, ol, dl {list-style-position: outside;}
           margin: 0;
       }
 
+      .inbox_msg .emojionearea {
+          border: none;
+      }
+
+      .emojionearea.emojionearea.focused {
+        box-shadow: none;
+      }
+
+      .inbox_msg .emojionearea.emojionearea-inline {
+          height: 45px;
+          display: flex;
+          align-items: center;
+      }
+
+      .inbox_msg .emojionearea.emojionearea-inline>.emojionearea-editor {
+        background: #eee;
+        border-radius: 30px;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 5px;
+        height: 30px;
+        margin-right: 20px;
+        width: 100%;
+        position: relative;
+      }
+
+      .inbox_msg .emojionearea-picker {
+        right:-7px !important;
+      }
+
+      .inbox_msg .emojionearea.emojionearea-inline>.emojionearea-button {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .inbox_msg .emojionearea.emojionearea-inline>.emojionearea-button {
+          margin-right: 7px !important;
+      }
+
+      .notifications .notification-dropdown-item {
+        justify-content: unset;
+        margin-bottom: 1rem;
+      }
+
+      .notifications .notification-dropdown-item.notification-dropdown-item > div {
+        grid-template-columns: 1fr;
+        grid-gap: .5rem;
+      }
+
+      .notifications .notification-dropdown-item div img {
+        width: 14px;
+        height: 14px;
+      }
+
       @media (max-width: 991px) {
         .my-photos > div:not(:first-of-type) > div:last-child {
             display: grid;
@@ -805,6 +859,18 @@ ul, ol, dl {list-style-position: outside;}
             grid-template-columns: repeat(3, 5.625em);
             grid-gap: 3.3em 1.5em;
           }
+      }
+
+      @media (max-width: 480px) {
+        .inbox_msg .emojionearea .emojionearea-button.active+.emojionearea-picker-position-top,
+        .inbox_msg .emojionearea .emojionearea-picker .emojionearea-wrapper {
+          width: 100%;
+        }
+      
+        .inbox_msg .received_withd_msg p,
+        .inbox_msg .sent_msg p {
+          font-size: 1.4rem;
+        }
       }
 
       @media (hover: hover) {
@@ -6638,7 +6704,7 @@ li a.M:hover
     transition: 300ms;
 }
 
-.logindiv .input-container input.focused + label {
+.logindiv .input-container input.focused ~ label {
     top:-19px;
     font-size: 12px;
 }

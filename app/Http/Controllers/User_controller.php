@@ -196,8 +196,9 @@ Public function read_message(Request $request)
 }
 public function send_message_user(Request $request)
  {
+    // dd($request);
    $new_message=new chats();
-   $new_message->message=$request->send_messgae;
+   $new_message->message=$request->send_message;
    $new_message->from_user=Session::get('user_id');
    $new_message->to_user=$request->to_user;
     $image = $request->file('file');	
@@ -215,14 +216,16 @@ public function send_message_user(Request $request)
         }
             	
    $new_message->save();
-
+  
    return json_encode($new_message);
  } 
 	public function login()
 	{
+   
 		if(Session::get('user_id'))
 		{
-	      return redirect('dashboard');	
+	      return redirect('dashboard');
+        	
 		}
 
 		
@@ -764,12 +767,12 @@ public function confirm_friend($friend_id)
 	{
 		
 	
-		$friend=UserRequest::where('requested_user_id',$friend_id)->where('user_id',Session::get('user_id'))->first();
+		$friend=UserRequest::where('user_id',$friend_id)->where('requested_user_id',Session::get('user_id'))->first();
 
 		        
 		if(!empty($friend))
 		{
-		$friend=UserRequest::where('requested_user_id',$friend_id)->where('user_id',Session::get('user_id'))->delete();
+		$friend=UserRequest::where('user_id',$friend_id)->where('requested_user_id',Session::get('user_id'))->delete();
 		
 		$Userdelete=new DeleteRequest();
 		$Userdelete->delete_user_id=$friend_id;
@@ -865,6 +868,44 @@ public function confirm_friend($friend_id)
             return back();
 		}
 	}
+
+  public function cancel_request($friend_id){
+
+    $friend=UserRequest::where('requested_user_id',$friend_id)->where('user_id',Session::get('user_id'))->delete();
+    
+        $ActivityLog=new ActivityLog();
+        $ActivityLog->user_id=Session::get('user_id');
+        $ActivityLog->activity_user_id=$friend_id;
+        $ActivityLog->activity='cancel friend request';
+        $ActivityLog->save();
+    // if(empty($friend))
+    // {
+    // $active_user=BlockUser::where('block_user_id',$friend_id)->where('user_id',Session::get('user_id'))->first();
+    // if($active_user)
+    // {
+    //   Session::flash('error', 'Kindly unblock this user before add friend list !'); 
+
+    //   return back();
+    // }
+    // $UserRequest=new UserRequest();
+    // $UserRequest->requested_user_id=$friend_id;
+    // $UserRequest->user_id=Session::get('user_id');
+    // $UserRequest->friend_status=0;
+    // $UserRequest->save();
+    if($friend)
+    {
+      Session::flash('success', 'Your request has been canceled successfully'); 
+            return back();
+    }
+  
+    else
+    {
+      Session::flash('error', 'invalid'); 
+            return back();
+    }
+  }
+
+
 	public function like(Request $request)
 	{
 		$data['like_user_id']=$request->id;
@@ -1671,6 +1712,7 @@ public function accept_photo_request($request_id)
 	
 	public function dologin(Request $request)
 	{
+
 		          ob_start();
               system('ipconfig /all');
               $mycom=ob_get_contents();
@@ -1727,7 +1769,7 @@ public function accept_photo_request($request_id)
  }
 
                $result->save();
-           	   return redirect('dashboard');
+           	   return redirect('public-profile/'. Session::get('user_id'));
              // }
              // else
              // {
@@ -1836,7 +1878,7 @@ public function accept_photo_request($request_id)
 		// dd($activity_user_id);
 		$user_id=Session::get('user_id');
 		$data['activity_log']=ActivityLog::with('otheruser')->where('user_id',$user_id)->where('activity_user_id',$activity_user_id)->orderBy('activity_id', 'desc')->paginate('15');
-
+      $data['request']=UserRequest::where('user_id',Session::get('user_id'))->where('requested_user_id',$activity_user_id)->first();
 		$data['activity']=ActivityLog::with('activeuser')->where('user_id',$activity_user_id)->where('activity_user_id',$user_id)->orderBy('activity_id', 'desc')->paginate('15');
 		
 		  $data['title']='Activity Log';
@@ -1979,14 +2021,14 @@ public function accept_photo_request($request_id)
 	 }
 	public function public_profile($user_id=0)
 	{
-
 		 
 		// $all_chats= DB::table('chats')->where('to_user',Session::get('user_id'))->orwhere('from_user',Session::get('user_id'))->orderBy('created_at','asc')->groupBy('to_user')->get();
-
+     
     $data['block_user']=BlockUser::where('user_id',$user_id)->where('block_user_id',Session::get('user_id'))->first();
 
+
      $data['block_users']=BlockUser::where('block_user_id',$user_id)->where('user_id',Session::get('user_id'))->first();
-      
+     
     
 		// $data['all_chats']= chats::with('from_users')->distinct()->where([['from_user','=',Session::get('user_id')]])->orderBy('created_at','asc')->get(['to_user','from_user']);
 		
@@ -1995,6 +2037,7 @@ public function accept_photo_request($request_id)
 
 	if($user_id == 0)
 	{
+    // dd('helloe');
 		return redirect('/');
 	}
 			// echo $data['beard']=$request->beard;die();
@@ -2003,7 +2046,7 @@ public function accept_photo_request($request_id)
 	  	{
 	  		if(Session::get('user_id')){
 	 		$MyProfile=MyProfileViewed::where('user_id',Session::get('user_id'))->where('myprofile_user_id',$user_id)->first();
-	 		if(empty($MyProfile))
+       	 		if(empty($MyProfile))
 	 		{
 	  		    $MyProfileViewed=new MyProfileViewed();
 	  		    $MyProfileViewed->user_id=Session::get('user_id');
@@ -2029,6 +2072,8 @@ public function accept_photo_request($request_id)
 	  	
  if($user_id!=null)
  {
+
+
   $data['current_chat']= chats::select('id','message','to_user')->where([['from_user','=',Session::get('user_id')],['to_user','=',$user_id]])->orWhere([['from_user','=',$user_id],['to_user','=',Session::get('user_id')]])->orderBy('created_at','asc')->get();
   $data['to_user']=$user_id;
 }
@@ -2073,7 +2118,7 @@ public function accept_photo_request($request_id)
             {
               $data['recent']=User::orderBy('id', 'desc')->join('my_photos','my_photos.user_id','=','users.id','left')->join('profile-image','profile-image.image_id','=','users.profile_image','left')->join('countries','countries.country_id','=','users.country_id','left')->join('cities','cities.city_id','users.city_id','left')->limit(4)->get();
             // dd($data['recent']);
-            $data['simlar']=User::where(['country_id'=>$data['user_data']->country_id,'height'=>$data['user_data']->height,'language'=>$data['user_data']->language,'martial_status'=>$data['user_data']->martial_status])->where('id','<>',$user_id)->join('my_photos','my_photos.user_id','=','users.id','left')->join('profile-image','profile-image.image_id','=','users.profile_image','left')->limit(4)->get();
+            $data['simlar']=User::where(['country_id'=>$data['user_data']->country_id,'language'=>$data['user_data']->language,'martial_status'=>$data['user_data']->martial_status])->where('id','<>',$user_id)->join('my_photos','my_photos.user_id','=','users.id','left')->join('profile-image','profile-image.image_id','=','users.profile_image','left')->limit(4)->get();
             }
 
 			
@@ -2151,11 +2196,15 @@ public function accept_photo_request($request_id)
               $data['living_cities']=Loking::where(['user_id'=>$user_id,'loking_type'=>'cities'])->join('cities','cities.city_id','=','lokings.loking_value')->get();
               $data['allcountry']=DB::table('countries')->get();
               $data['title']='Public Profile';
+
+
+             
 			       return view('user/public-profile',$data);
             
 			
 			
 		}
+
 		public function get_user_profile($user_id)
 		{
 		
@@ -2835,7 +2884,9 @@ public function make_profile_image($image_id)
 	{
 		$user_id=Session::get('user_id');
 	  $data['user_data']=UserRequest::where('requested_user_id',$user_id)->where('friend_status',1)->join('users','users.id','=','usersrequets.user_id')->join('countries','countries.country_id','=','users.country_id')->join('states','states.state_id','users.state_id')->join('cities','cities.city_id','users.city_id')->join('profile-image','profile-image.image_id','=','users.profile_image','left')->orderBy('users.id','desc')->paginate('12');
+    // dd($data['user_data']);
 	   $data['title']='Friend user list';
+
 		   return view('user/user_listing',$data);  
 		
 	}
@@ -3183,7 +3234,7 @@ public function iprofileview_list()
     // $data['inbox']=chats::with('to_users','to_photo')->where('to_user',$user_id)->where('from_user',$friend_id)->orderBy('chats.id','desc')->get();
 
     $data['friend']=UserRequest::where('requested_user_id',$user_id)->where('friend_status',1)->join('users','users.id','=','usersrequets.user_id','left')->join('profile-image','profile-image.image_id','=','users.profile_image','left')->orderBy('users.id','desc')->get();
-    dd($data['friend']);
+    // dd($data['friend']);
 		// dd($data['notification']);
 		 $data['title']='Inbox'; 
 		 return view('user/inbox',$data);
