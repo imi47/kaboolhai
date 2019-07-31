@@ -549,7 +549,7 @@ img{ max-width:100%;}
             <span class="username">user name</span>
             <span>Active 5h ago</span>
           </div>
-          <div class="msg_history" id="chat-scroll">
+          <div class="msg_history" id="chat-scroll-inbox">
                @if(isset($inbox))
               @foreach($inbox as $row)
               @if(Session::get('user_id')==$row->to_user)
@@ -606,12 +606,14 @@ img{ max-width:100%;}
         </div>
       </div>
 
+      <!-- <input type="text" class="a">
       <script>
-        $(document).ready(function() {
-          $("#send_message").emojioneArea();
+        $('.a').keyup(function(e) {
+          if(e.which == 13)
+            alert($(this).val());
         });
-      </script>
-      
+      </script> -->
+
     </div>
   {{-- </div> --}}
   <script type="text/javascript">
@@ -698,11 +700,11 @@ $("#file").change(function () {
 
     $('.form').on('submit',function (e) {
 
-
+      
         e.preventDefault();
         // var message=document.getElementById("send_messgae").value;
         var message=$('#send_message').val();
-        
+      
         var file=document.getElementById("file").value;
 // var d = new Date();
         var time = new Date().toLocaleTimeString();
@@ -720,7 +722,6 @@ $("#file").change(function () {
                  return false;
              } 
         }
-        
         $.ajax({
              type: 'post',
               url: "{{ url('send_message') }}",
@@ -783,31 +784,44 @@ $("#file").change(function () {
        
          });
 
-         document.querySelector('.msg_send_btn').onclick = function() {
-          $('.msg_history').stop().animate({
-            scrollTop: $('.msg_history')[0].scrollHeight
-          }, 500);
+         document.querySelector('.msg_send_btn').onclick = function () {
+            scrollToBottom('.msg_history');
 
-          $('.emojionearea-editor').text('');
+          $('.mesgs .emojionearea-editor').text('');
          }
 
-         $('.emojionearea-editor').keypress(
-          function(event){
-            if (event.keyCode == '13') {
-              $(this).text('');
-            }
-        });
+         $(function () {
+            $(".mesgs #send_message").emojioneArea(
+              {
+                events: {
+                  keyup: function (editor, event) {
+                    if (event.which == 13) {
+                      $('.mesgs #send_message').html($('.emojionearea-editor').html());
+                      $('.mesgs .form').submit();
+                      $('.mesgs .emojionearea-editor').text('');
+                      scrollToBottom('.msg_history');
+                      console.log(1);
+                    }
+                  }
+                }
+              }
+            );
 
-        $(document).keypress(
-          function(event){
-            if (event.keyCode == '13') {
-              $('.emojionearea-editor').text('');
-            }
-        });
+            scrollToBottom('.msg_history');
+            
+            // $('.input_msg_write').keyup(function (event) {
+            //   if (event.which == 13) {
+            //     $('.mesgs #send_message').html($('.emojionearea-editor').html());
+            //     $('.mesgs .form').submit();
+            //     $('.mesgs .emojionearea-editor').text('');
+            //     scrollToBottom('.msg_history');
+            //   }
+            // });
+          });
 
+        
   </script>
 @endsection
-
 
 @push('css')
 <link rel="shortcut icon" href="{{ $user_assets }}/images/favicon.png">

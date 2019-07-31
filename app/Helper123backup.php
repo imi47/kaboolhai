@@ -15,7 +15,12 @@ function user_data()
  
  }
 
-
+ function count_unread_msg()
+{
+     $message= chats::where('read_at',null)->where('to_user',Session::get('user_id'))->count();
+    return $message;
+  
+}
  function count_message()
 {
      $message= chats::where('status',0)->where('to_user',Session::get('user_id'))->count();
@@ -24,8 +29,8 @@ function user_data()
 }
 function tochat()
 {
-    //  $all_chats= chats::with('to_users','from_users','photo')->distinct()->where([['to_user','=',Session::get('user_id')]])->orderBy('created_at','asc')->get(['to_user','from_user']);
-    // return $all_chats;
+     $all_chats= chats::with('to_users','from_users','photo')->distinct()->where([['to_user','=',Session::get('user_id')]])->orderBy('created_at','asc')->get(['to_user','from_user']);
+     return $all_chats;
   
 }
 
@@ -49,6 +54,15 @@ function get_photo()
   }
  }
 
+ function get_viewed(){
+     $viewed = \App\ViewUser::where('user_id' , Session::get('user_id'))->get();
+         $viewed_list = array();
+         foreach ($viewed as $key => $row) {
+           array_push($viewed_list, $row->viewed_user_id);
+         }
+         return $viewed_list;
+ }
+
  function get_friend()
  {
  $friend=UserRequest::with('user','photo')->where('requested_user_id',Session::get('user_id'))->where('friend_status',0)->get();
@@ -61,7 +75,25 @@ function get_photo()
  }
  function recent_join()
  {
- $friend=User::join('profile-image','profile-image.image_id','=','users.profile_image','left')->join('my_photos','my_photos.user_id','=','users.id','left')->orderBy('id','desc')->limit('20')->get();
+  DB::enableQueryLog();
+  $friend_sent=UserRequest::where('user_id',Session::get('user_id'))->get();
+  $friend_sent_list = array();
+  foreach ($friend_sent as $value) {
+    $friend_sent_list[] = $value->requested_user_id;
+  }
+
+  $rejected_friend=\App\Reject::where('user_id', Session::get('user_id'))->get();
+  $reject_friend_list= array();
+  foreach ($rejected_friend as $key => $value1) {
+      array_push($reject_friend_list, $value1->reject_user_id);
+  }
+
+  // dd($friend_sent_list);
+ $friend=User::where('users.id', '!=',Session::get('user_id'))->join('profile-image','profile-image.image_id','=','users.profile_image','left')->join('my_photos','my_photos.user_id','=','users.id','left')
+->whereNotIn('users.id', $friend_sent_list)
+->whereNotIn('users.id', $reject_friend_list)
+ ->orderBy('id','desc')->limit('20')->get();
+// dd($friend);
   return $friend;
  }
 
@@ -81,14 +113,6 @@ function get_photo()
  	$country_test = DB::table('countries')->get();
  	return $country_test;
  }
- function get_viewed(){
-    $viewed = \App\ViewUser::where('user_id' , Session::get('user_id'))->get();
-        $viewed_list = array();
-        foreach ($viewed as $key => $row) {
-          array_push($viewed_list, $row->viewed_user_id);
-        }
-        return $viewed_list;
-}
 
  function months()
  {

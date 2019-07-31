@@ -12,6 +12,10 @@
      margin-bottom: 0;
    }
 
+   .nav.navbar-nav .dropdown a.dropdown-toggle {
+    line-height: 21px !important;
+   }
+
    .user-list-mobile {
      display: none;
    }
@@ -1051,7 +1055,18 @@ p.t
               <img src="" alt="picture">
               @endif
               <div class="pl-profile-content">
-                <div class="ribbon"><span>Viewed</span></div>
+
+                <?php     
+                      if(!empty(get_viewed())){
+                        if(in_array($row->id, get_viewed())){
+                          ?>
+                            <div class="ribbon"><span>Viewed</span></div>
+                       <?php
+                        }
+                      }
+                ?>
+
+              
                 <div class="pl-content-top">
                   @if($row->login_status==1)
                   {{-- <img src="{{ $user_assets }}/public_profile/online.gif" class="pl-content-top-img" width="30px"  title="Online" /> --}}
@@ -1163,23 +1178,61 @@ p.t
        </div>
        
        <div class="user-list-mobile">
+        
+          
+        @if(count($user_data))
+        @foreach($user_data as $row)
          <div>
-           <div class="ribbon"><span>Viewed</span></div>
-           <a href="#">
-             <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
+
+          @if(!empty(get_viewed()))
+            @if(in_array($row->id , get_viewed()))
+               <div class="ribbon"><span>Viewed</span></div>
+            @endif
+          @endif     
+
+           <a href="{{ url('public-profile',$row->id) }}">
+             <!-- <img src="https://source.unsplash.com/user/erondu/1600x900" alt=""> -->
+             
+               @if(!empty($row->image->image))
+
+              <img src="{{ $user_assets }}/profile_image/{{ $row->image->image }}">
+              @else
+
+              <img src="https://source.unsplash.com/user/erondu/1600x900" alt="picture">
+              @endif
+
              <div>
-               <span>username</span>
-               <span class="ago">2 months ago</span>
-               <span>33 yrs, 5' 8"</span>
-               <span>54 KG</span>
-               <span>Sindhi</span>
-               <span>Software Engineer</span>
-               <span>Lahore</span>
-               <span>Pakistan</span>
-               <span>Second Marriage</span>
-               <span>Chishti</span>
+               <!-- <span>username</span> -->  
+               <span >{{strtoupper(str_limit($row->user_name,8))}}</span>
+
+               @if($row->login_status == 1)
+               <span class="ago">Online</span>
+               @else
+               <span class="ago">{{ \Carbon\Carbon::parse($row->last_login)->diffForHumans() }}</span>
+               @endif
+
+               @if(!empty($row->height))
+                    @php
+                    $one = str_replace("ft","'",$row->height);
+                    $two = str_replace('in','"', $one);
+                    $foot = explode(" ", $two);
+                   
+                    @endphp
+               @endif     
+                    
+
+               <span>{{$age}} yrs, {{$foot[0].' '.$foot[1]}}</span>
+
+               <span>{{$row->weight}}</span>
+               <span>{{$row->language}}</span>
+               <span>{{str_limit($row->job,12)}}</span>
+               <span>{{$row->city_name}}</span>
+               <span>{{$row->country_name}}</span>
+               <span>{{ $row->marige_type }}</span>
+               <span>{{ $row->cast }}</span>
             </div>
            </a>
+           
           <div class="icons">
               <span>
                 <i class="fas fa-user"></i>
@@ -1194,108 +1247,18 @@ p.t
                 <span>Verified</span>
               </span>
           </div>
+         
           <!-- replace log1 with log for offline icon -->
+          @if($row->login_status == 1)
           <span class="log1"></span>
+          @else
+          <span class="log"></span>
+          @endif
          </div>
-         <div>
-           <a href="#">
-             <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
-             <div>
-               <span>username</span>
-               <span class="ago">2 months ago</span>
-               <span>33 yrs, 5' 8"</span>
-               <span>54 KG</span>
-               <span>Sindhi</span>
-               <span>Software Engineer</span>
-               <span>Lahore</span>
-               <span>Pakistan</span>
-               <span>Second Marriage</span>
-               <span>Chishti</span>
-            </div>
-           </a>
-          <div class="icons">
-              <span>
-                <i class="fas fa-user"></i>
-                <span>Invite</span>
-              </span>
-              <span>
-                <i class="fas fa-comment-alt"></i>
-                <span>Message</span>
-              </span>
-              <span>
-                <img src="http://localhost/KBH/public/user_assets/icons/email_v.svg" alt="">
-                <span>Verified</span>
-              </span>
-          </div>
-          <!-- replace log1 with log for offline icon -->
-          <span class="log1"></span>
-         </div>
-         <div>
-           <a href="#">
-             <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
-             <div>
-               <span>username</span>
-               <span class="ago">2 months ago</span>
-               <span>33 yrs, 5' 8"</span>
-               <span>54 KG</span>
-               <span>Sindhi</span>
-               <span>Software Engineer</span>
-               <span>Lahore</span>
-               <span>Pakistan</span>
-               <span>Second Marriage</span>
-               <span>Chishti</span>
-            </div>
-           </a>
-          <div class="icons">
-              <span>
-                <i class="fas fa-user"></i>
-                <span>Invite</span>
-              </span>
-              <span>
-                <i class="fas fa-comment-alt"></i>
-                <span>Message</span>
-              </span>
-              <span>
-                <img src="http://localhost/KBH/public/user_assets/icons/id_v.svg" alt="">
-                <span>Verified</span>
-              </span>
-          </div>
-          <!-- replace log1 with log for offline icon -->
-          <span class="log1"></span>
-         </div>
-         <div>
-          <a href="#">
-            <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
-            <div>
-              <span>username</span>
-              <span class="ago">2 months ago</span>
-              <span>33 yrs, 5' 8"</span>
-              <span>54 KG</span>
-              <span>Sindhi</span>
-              <span>Software Engineer</span>
-              <span>Lahore</span>
-              <span>Pakistan</span>
-              <span>Second Marriage</span>
-              <span>Chishti</span>
-           </div>
-          </a>
-         <div class="icons">
-             <span>
-               <i class="fas fa-user"></i>
-               <span>Invite</span>
-             </span>
-             <span>
-               <i class="fas fa-comment-alt"></i>
-               <span>Message</span>
-             </span>
-             <span>
-               <img src="http://localhost/KBH/public/user_assets/icons/unverified.svg" alt="">
-               <span>Unverified</span>
-             </span>
-         </div>
-         <!-- replace log1 with log for offline icon -->
-         <span class="log1"></span>
-        </div>
+          @endforeach
+          @endif
+        
+          
        </div>
           {{ $user_data->links() }}
       </div>
@@ -1648,10 +1611,32 @@ p.t
         <div class="col-sm-6">
           <select name="loking_for" id="" class="serach_relative">
  <option value="">Gender</option>
+           <!--         <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      
+          </select> -->
+          <?php  
+                    $user_id = Session::get('user_id');
+                    $gender = '';
+                    $user = \App\User::where('id' , $user_id)->first();
+                    if($user->gender != null){
+                      if($user->gender == 'Male'){
+                        $gender = 'Female';
+                      }
+                      else{
+                        $gender = 'Male';
+                      }
+               ?>
+              <option value="{{$gender}}">{{$gender}}</option>
+             <?php } 
+             else {  ?>
+             
                    <option value="Male">Male</option>
                       <option value="Female">Female</option>
                       
-          </select>
+         
+        <?php } ?>
+         </select>
         </div>
         <div class="col-sm-6">
              <select name="martial_status" id="" class="serach_relative">
@@ -1705,12 +1690,18 @@ p.t
 			<!-- Indicators -->
 	
 			<!-- Wrapper for slides -->
-      <div class="ribbon"><span>Viewed</span></div>
+      <!-- <div class="ribbon"><span>Viewed</span></div> -->
       
 			<div class="carousel-inner">
         @if(count($recent))
         @foreach($recent as $key => $row)
+
         <div class="item @if($key==0) active @endif">
+          @if(!empty(get_viewed()))
+            @if(in_array($row->id, get_viewed()))
+          <div class="ribbon"><span>Viewed</span></div>
+            @endif
+          @endif
           <div class="card-container">
               <div class="row cf">
                 <div id="card1" class="card four col">

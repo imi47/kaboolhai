@@ -23,13 +23,22 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
   @stack('css')
   <script type="text/javascript">
-    $(document).ready(function (e) {
+
+    function scrollToBottom(e) {
+      $(e).stop().animate({
+        scrollTop: $(e)[0].scrollHeight
+      }, 500);
+    }
+
+    $(function (e) {
       $('#send_messgae').emojiPicker();
 
       //   $('#send_messgae').emojiPicker({
       //   // width: '300px',
       //   height: '200px'
       // });
+
+      scrollToBottom('#chat-scroll');
     });
   </script>
 </head>

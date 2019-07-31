@@ -12,7 +12,8 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
     crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="{{ $user_assets }}/css/jquery.emojipicker.css">
-  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script type="text/javascript" src="{{ $user_assets }}/js/jquery.emojipicker.js"></script>
   <script type="text/javascript" src="{{ $user_assets }}/js/bootstrap-notify.min.js"></script>
 
@@ -29,651 +30,630 @@
   @stack('css')
   <style type="text/css">
 
-    body *::-webkit-scrollbar
-    {
-      width: 0.85rem;
-      height: 0.85rem;
-      background-color: #f5f5f5;
-    }
-    
-     body *::-webkit-scrollbar-thumb
-    {
-      border-radius: 20px;
-      background-color: #999;
-    }
-    
-    #menu-div {
-      display: flex;
-      justify-content: flex-end;
-      margin-left: -63px;
-    }
-    
-    .msgMenu .msgNoti a {
-      padding: 0;
-    }
-    
-    .msgMenu .msgNoti a {
-      font-size: .9em;
-      color: #333 !important;
-    }
-    
-    .msgMenu .msgNoti a:hover {
-      background-color: transparent;
-    }
-    
-    .icon-dropdown li {
-      padding: 5px 10px !important;
-      border-bottom: 1px solid #ddd;
-    }
-    
-    .dropdown-item.dropdown-item {
-      margin-top: 0 !important;
-    }
-    
-    .dropdown-item, .dropdown-item.dropdown-item * {
-      line-height: normal !important;
-    }
-    
-    .dropdown-item {
-      letter-spacing: normal;
-      font-size: 16px;
-    }
-    .dropdown-item:first-of-type {
-      border-top: none;
-    }
-    .dropdown-item:last-of-type {
-      border-bottom: none;
-      margin-bottom: 30px;
-    }
-    .dropdown-item > div span:first-child,
-    .dropdown-item button {
-      font-size: .813em;
-    }
-    .dropdown-item img {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-    }
-   /* .notification-dropdown-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .notification-dropdown-item img {
-      margin-right: .5em;
-    }
-    
-    .notification-dropdown-item > div:first-child {
-          display: grid;
-        grid-auto-flow: column;
-        align-items: center;
-    }
-    
-    .notification-dropdown-item > div:first-child img {
-      width: 50px;
-      height: 50px;
-    }
-    
-    .notification-dropdown-item > div:first-child div {
-          display: flex;
-        flex-direction: column;
-    }
-    
-    .notification-dropdown-item > div:first-child div img {
-      width: 17px;
-      height: 17px;
-    }
-    
-    .notification-dropdown-item > div:last-child {
+body *::-webkit-scrollbar
+{
+	width: 0.85rem;
+  height: 0.85rem;
+  background-color: #f5f5f5;
+}
+
+ body *::-webkit-scrollbar-thumb
+{
+	border-radius: 20px;
+	background-color: #999;
+}
+
+#menu-div {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: -63px;
+}
+
+.msgMenu .msgNoti a {
+  padding: 0;
+}
+
+.msgMenu .msgNoti a {
+  font-size: .9em;
+  color: #333 !important;
+}
+
+.msgMenu .msgNoti a:hover {
+  background-color: transparent;
+}
+
+.icon-dropdown li {
+  padding: 5px 10px !important;
+  border-bottom: 1px solid #ddd;
+}
+
+.dropdown-item.dropdown-item {
+  margin-top: 0 !important;
+}
+
+.dropdown-item, .dropdown-item.dropdown-item * {
+  line-height: normal !important;
+}
+
+.dropdown-item {
+  letter-spacing: normal;
+  font-size: 16px;
+}
+.dropdown-item:first-of-type {
+  border-top: none;
+}
+.dropdown-item:last-of-type {
+  border-bottom: none;
+  margin-bottom: 30px;
+}
+.dropdown-item > div span:first-child,
+.dropdown-item button {
+  font-size: .813em;
+}
+.dropdown-item img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.notification-dropdown-item {
+  display: flex;
+  align-items: center;
+}
+.notification-dropdown-item img {
+  margin-right: .5em;
+}
+
+.notification-dropdown-item > div:first-child {
       display: grid;
-      grid-gap: .5rem;
-    }
-    
-    .notification-dropdown-item > div span:last-child {
-      font-size: .75em;
-      color: #888;
-      font-weight: 600;
-    }
-    .notification-dropdown-item > div i {
-      font-size: 15px;
-      color: #ed6c05;
-      margin-left: 0;
-    }
-    
-    .notification-dropdown-item > div img {
-      width: 15px;
-      height: 15px;
-      margin: 0 3px 0 0;
-    }
-    
-    .notification-dropdown-item a,
-    .notification-dropdown-item a:hover {
-      color: white !important ;
-    }*/
-    
-    .friends-noti-dropdown-item {
-      display: grid;
-      grid-template-columns: 50px 1fr auto auto;
-      grid-column-gap: .625em;
-      align-items: center;
-    }
-    
-    .friends-noti-dropdown-item .info {
+    grid-auto-flow: column;
+    align-items: center;
+}
+
+.notification-dropdown-item > div:first-child img {
+  width: 50px;
+  height: 50px;
+}
+
+.notification-dropdown-item > div:first-child div {
       display: flex;
-      flex-direction: column;
-    }
-    
-    .friends-noti-dropdown-item a {
-      font-weight: bold;
-      color: #3273dc !important;
-      font-size: .85em;
-      padding:0 !important;
-    }
-    
-    .friends-noti-dropdown-item .info span {
-      grid-column: 1/-1;
-      font-size: .813em;
-    }
-    
-    .friends-noti-dropdown-item.friends-noti-dropdown-item a:hover {
-      background-color: unset;
-      color: #3273dc !important;
-      text-decoration: underline !important;
-    }
-    
-    .friends-noti-dropdown-item > .buttons {
-      justify-self: end;
-    }
-    
-    .friends-noti-dropdown-item > button {
-      color: white;
-      font-weight: bold;
-      border:none;
-      border-radius: 3px;
-      padding: .3em .8em;
-      width: 7rem;
-    }
-    
-    .friends-noti-dropdown-item > button:last-child {
-      background-color: #ed6c05;
-    }
-    
-    .friends-noti-dropdown-item > button:first-of-type {
-      background-color: #5a378c;
-    }
-    
-    .friends-noti-dropdown-item > button:first-of-type a,
-    .friends-noti-dropdown-item > button:last-child a {
-      color: white !important;
-    }
-    
-    .friends-noti-dropdown-item > button:first-of-type a:hover,
-    .friends-noti-dropdown-item > button:last-child a:hover {
-      color: white !important;
-    }
-    
-    #friends-dropdown, #messages-dropdown, #notifications-dropdown, #username-dropdown-toggle {
-      visibility: visible !important;
+    flex-direction: column;
+}
+
+.notification-dropdown-item > div:first-child div img {
+  width: 17px;
+  height: 17px;
+}
+
+.notification-dropdown-item > div:last-child {
+  display: grid;
+  grid-gap: .5rem;
+}
+
+.notification-dropdown-item > div span:last-child {
+  font-size: .75em;
+  color: #888;
+  font-weight: 600;
+}
+.notification-dropdown-item > div i {
+  font-size: 15px;
+  color: #ed6c05;
+  margin-left: 0;
+}
+
+.notification-dropdown-item > div img {
+  width: 15px;
+  height: 15px;
+  margin: 0 3px 0 0;
+}
+
+.notification-dropdown-item a,
+.notification-dropdown-item a:hover {
+  color: white !important ;
+}
+
+.friends-dropdown-item {
+  display: grid;
+  grid-template-columns: 50px 1fr auto auto;
+  grid-column-gap: .625em;
+  align-items: center;
+}
+
+.friends-dropdown-item .info {
+  display: flex;
+  flex-direction: column;
+}
+
+.friends-dropdown-item a {
+  font-weight: bold;
+  color: #3273dc !important;
+  font-size: .85em;
+  padding:0 !important;
+}
+
+.friends-dropdown-item .info span {
+  grid-column: 1/-1;
+  font-size: .813em;
+}
+
+.friends-dropdown-item.friends-dropdown-item a:hover {
+  background-color: unset;
+  color: #3273dc !important;
+  text-decoration: underline !important;
+}
+
+.friends-dropdown-item > .buttons {
+  justify-self: end;
+}
+
+.friends-dropdown-item > button,
+.notification-dropdown-item button {
+  color: white;
+  font-weight: bold;
+  border:none;
+  border-radius: 3px;
+  padding: .3em .8em;
+  width: 7rem;
+}
+
+.friends-dropdown-item > button:last-child,
+.notification-dropdown-item button:last-child {
+  background-color: #ed6c05;
+}
+
+.friends-dropdown-item > button:first-of-type,
+.notification-dropdown-item button:first-of-type {
+  background-color: #5a378c;
+}
+
+.friends-dropdown-item > button:first-of-type a,
+.friends-dropdown-item > button:last-child a {
+  color: white !important;
+}
+
+.friends-dropdown-item > button:first-of-type a:hover,
+.friends-dropdown-item > button:last-child a:hover {
+  color: white !important;
+}
+
+#friends-dropdown, #messages-dropdown, #notifications-dropdown, #username-dropdown-toggle {
+  visibility: visible !important;
+}
+
+footer .fa-youtube-square {
+  margin-right:-2px;
+}
+
+#message_count, .noti_counts, #friend_counts {
+  color: white !important;
+  background-color: #FF4646;
+  border-radius: 99px;
+  right: 5px;
+  font-size: 11px;
+  top: 5px;
+  position: absolute;
+  padding: 0px 8px 0px 6px;
+  line-height:20px;
+}
+
+footer .fa-search {
+  color: #666;
+}
+
+.noti_counts {
+  top: -11px;
+  right: -10px;
+}
+
+    .sticky-nav {
+      position: fixed;
+      top: -4px;
     }
 
-    .noti-dropdown-item .info a {
+    .hdlist .fa-question {
+      margin-left:11px;
+    }
+
+    /* .nav.navbar-nav {
+      margin-right:43px;
+    } */
+
+    .search-dropdown-toggle {
+      display:none;
+      font-size: 22px;
+      top: 20px;
+      color:#f1e7ff;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .close {
+      margin-top: -3px;
+      height: 35px;
+      margin-right: -13px;
+      width: 35px;
+      opacity: 0.7;
+      padding: 11px;
+    }
+
+    .close path {
+      stroke-width:"10";
+    }
+
+    .close:hover {
+      opacity:1;
+    }
+
+    .ham {
+			cursor: pointer;
+			-webkit-tap-highlight-color: transparent;
+			transition: transform 400ms;
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			-ms-user-select: none;
+      user-select: none;
+      width: 57px;
+      height: 57px;
+      margin-top: -2px;
+      position: fixed;
+      z-index: 6;
+      position: fixed;
+      right: 0;
+		 }
+		 .hamRotate.active {
+			transform: rotate(45deg);
+		 }
+		 .hamRotate180.active {
+			transform: rotate(180deg);
+		 }
+		 .line {
+			fill:none;
+			transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+			stroke:#fff;
+			stroke-width:5.5;
+			stroke-linecap:round;
+		 }
+		
+		 .ham8 .top {
+			stroke-dasharray: 40 160;
+		 }
+		 .ham8 .middle {
+			stroke-dasharray: 40 142;
+			transform-origin: 50%;
+			transition: transform 400ms;
+		 }
+		 .ham8 .bottom {
+			stroke-dasharray: 40 85;
+			transform-origin: 50%;
+			transition: transform 400ms, stroke-dashoffset 400ms;
+		 }
+		 .ham8.active .top {
+			stroke-dashoffset: -64px;
+		 }
+		 .ham8.active .middle {
+			transform: rotate(90deg);
+		 }
+		 .ham8.active .bottom {
+			stroke-dashoffset: -64px;
+     }
+     
+     .col-md-3.hidden-sm.hidden-xs .well a {
+       color:#333;
+     }
+
+    .lmis {
+      width:40px;
+    }
+
+    #accordion, #username-dropdown-toggle a {
+      font-weight:600;
+    }
+
+    footer .searchcontainer .form-control {
+		border-radius:3px;
+	}
+
+	  footer .searchcontainer button {
+		border-radius:0 3px 3px 0;
+	}
+
+   #username-dropdown-toggle li a {
+      font-weight:normal;
+    }
+
+    .humburger {
+      margin-top: 8px;
+    }
+
+
+    .navbar-form .form-control {
+      font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+      height:30px;
+      border-radius:5px;
+      letter-spacing: 0;
+      font-weight:normal;
+    }
+
+    .navbar-form {
+      position:relative;
+      margin-top: 14px;
+      margin-bottom: 2px;
+      display: block !important;
+      transition: 500ms !important;
+    }
+
+    .navbar-form button {
+      top: 1px;
+      right: -4px;
+      position: absolute;
+      padding: 3px 11px !important;
+      background-color:#ececec;
+      border-radius:3px;
+    }
+
+    .navbar-form button:hover {
+      border:1px solid #ececec;
+    }
+
+    .navbar-form button .glyphicon {
+      top: 3px;
+      right: -2px;
+      color:#333;
+    }
+
+    .fa-user-friends, .fa-envelope, .fa-bell {
+      font-size:20px;
+    }
+
+    a, a:hover, a:active, a:visited, a:focus {
+     text-decoration:none;
+    }
+
+    .bg-orange.no-padding.wow {
+      margin:auto 30px;
+    }
+
+    .icon-dropdown {
+      left:-449px;
+
+    }
+
+    #friends-dropdown .icon-dropdown li:nth-last-child(2), #notifications-dropdown .icon-dropdow.msgMenu lin li:nth-last-child(2) {
+      margin-bottom:25px;
+    }
+
+      #friends-dropdown .icon-dropdown li:last-child, #notifications-dropdown .icon-dropdown li:last-child {
+        position:fixed;
+        width: 493px;
+        border: 1px solid #aaa;
+        background-color: #eee;
+        padding: 3px 20px !important;
+        top: 425px;
+        line-height: normal;
+    }
+
+    #friends-dropdown .icon-dropdown li:last-child a {
+      margin-top: 0;
+      line-height: normal;
+    }
+
+    #friends-dropdown .icon-dropdown li:last-child a:hover {
+      background:none;
+    }
+
+    .icon-dropdown li:last-child a {
+      padding: 0 !important;
+    }
+
+    .dropdown-menu.lenght.icon-dropdown.msgMenu hr{
+      margin-bottom:0;
+    }
+
+    .dropdown-menu.lenght.icon-dropdown.msgMenu li span.username {
+      padding:0px !important;
+      margin:0;
+    }
+
+    .dropdown-menu.lenght.icon-dropdown.msgMenu li:last-child a {
+      padding:0px !important;
+    }
+
+    #navsidebare ul {
+      margin-bottom:80px;
+    }
+
+    #navsidebare {
+      height:100% !important;
+      position:fixed !important;
+      margin-top: 52px;
+    }
+
+    #sidebar-2 {
+      background-color:#000;
+      color:#fff;
+      height:100%;
+      margin-top:52px;
+      width:260px;
+      position:fixed;
+      /* right:-260px; */
+      right:-2000px;
+      transition:500ms;
+      z-index:6;
+      overflow:scroll;
+    }
+
+     #sidebar-2 ul {
+       margin-top:10px;
+       margin-bottom:50px;
+     }
+    #sidebar-2 ul li.divider {
+      background-color:#222;
+      height:1px;
+    }
+    
+     #sidebar-2 ul li a {
+       text-decoration:none;
+       color:#fff;
+       display: block;
+       padding: 5px 25px;
+     }
+
+     .navbar-right-2 .dropdown-menu {
+       top: 97%;
+     }
+
+     @media (max-width: 640px) {
+      .text-bar input {
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
+
+      #bb {
+        bottom: 2px;
+      }
+     }
+
+    @media (min-width:500px) {
+      .search-dropdown-toggle:hover {
+        color:#ed6c05;
+      }
+    }
+
+    @media (max-width:500px) {
+		#navsidebare {
+      width:100%;
       margin-top: 0;
     }
 
-    .noti-dropdown-item .info img,
-      .noti-dropdown-item .info i {
-        margin-left: 0;
-        margin-right: 3px;
+    .mp-bio-label {
+      width:100px;
+    }
+
+    .mp-head {
+      font-size:12px;
+    }
+
+    #bb img {
+      right: 19vw;
+    }
+
+    /* .text-bar input {
+      width: 323px !important;
+    } */
+    
+    .logo-light img, .logo-dark img {
+      width: 34vw;
+    }
+
+   #sidebar-2 {
+     width:100% !important;
+     margin-top: unset;
+   }
+
+   #sidebar-2 ul {
+     margin-top: 40px;
+   }
+
+   .view-profile {
+      float: none !important;
+      display: block !important;
+      margin-left: 48px !important;
+    }
+
+    /* .arrow_button {
+      right: -210px;
+      top: -33px;
+    } */
+
+  }
+
+  @media (min-width:501px) {
+    .view-profile {
+      margin-top: 8px !important;
+    }
+  }
+    
+    .label {
+      display: none;
+    }
+    .logo-mobile {
+			display:none;
+		}
+
+    #navsidebare a {
+      text-decoration:none;
+    }
+    
+    #menu-div .navbar-collapse.collapse {
+      float:none;
+    }
+    .icon-dropdown {
+    width:500px;
+    height:400px;
+    overflow-y:scroll;
+  }
+    /* .icon-dropdown {
+      position:absolute !important;
+    } */
+    .fa.fa-smile-o {
+      font-size: 20px;
+    }
+    #menu-div .navbar-collapse {
+      border:none;
+    }
+    
+    @media (max-width:768px) {
+      #stay-tuned-container p {
+        margin:10px;
       }
 
-      .noti-dropdown-item .info img {
-        width: 13px;
-        height: 13px;
+      .bg-orange.no-padding.wow p{
+        padding-left:10px;
+        padding-right:10px; 
       }
 
-      .noti-dropdown-item .info > span {
-        margin-top: 3px;
-      }
-    
-    footer .fa-youtube-square {
-      margin-right:-2px;
+      .copyright p{
+			float:none !important;
+			margin-top:15px;
+			margin-left:8px;
     }
-    
-    #message_count, .noti_counts, #friend_counts {
-      color: white !important;
-      background-color: #FF4646;
-      border-radius: 99px;
-      right: 5px;
-      font-size: 11px;
-      top: 5px;
-      position: absolute;
-      padding: 0px 8px 0px 6px;
-      line-height:20px;
-    }
-    
-    footer .fa-search {
-      color: #666;
-    }
-    
-    .noti_counts {
-      top: -11px;
-      right: -10px;
-    }
-    
-        .sticky-nav {
-          position: fixed;
-          top: -4px;
-        }
-    
-        .hdlist .fa-question {
-          margin-left:11px;
-        }
-    
-        /* .nav.navbar-nav {
-          margin-right:43px;
-        } */
-    
-        .search-dropdown-toggle {
-          display:none;
-          font-size: 22px;
-          top: 20px;
-          color:#f1e7ff;
-          cursor: pointer;
-          position: relative;
-        }
-    
-        .close {
-          margin-top: -3px;
-          height: 35px;
-          margin-right: -13px;
-          width: 35px;
-          opacity: 0.7;
-          padding: 11px;
-        }
-    
-        .close path {
-          stroke-width:"10";
-        }
-    
-        .close:hover {
-          opacity:1;
-        }
-    
-        .ham {
-          cursor: pointer;
-          -webkit-tap-highlight-color: transparent;
-          transition: transform 400ms;
-          -moz-user-select: none;
-          -webkit-user-select: none;
-          -ms-user-select: none;
-          user-select: none;
-          width: 57px;
-          height: 57px;
-          margin-top: -2px;
-          position: fixed;
-          z-index: 6;
-          position: fixed;
-          right: 0;
-         }
-         .hamRotate.active {
-          transform: rotate(45deg);
-         }
-         .hamRotate180.active {
-          transform: rotate(180deg);
-         }
-         .line {
-          fill:none;
-          transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-          stroke:#fff;
-          stroke-width:5.5;
-          stroke-linecap:round;
-         }
-        
-         .ham8 .top {
-          stroke-dasharray: 40 160;
-         }
-         .ham8 .middle {
-          stroke-dasharray: 40 142;
-          transform-origin: 50%;
-          transition: transform 400ms;
-         }
-         .ham8 .bottom {
-          stroke-dasharray: 40 85;
-          transform-origin: 50%;
-          transition: transform 400ms, stroke-dashoffset 400ms;
-         }
-         .ham8.active .top {
-          stroke-dashoffset: -64px;
-         }
-         .ham8.active .middle {
-          transform: rotate(90deg);
-         }
-         .ham8.active .bottom {
-          stroke-dashoffset: -64px;
-         }
-         
-         .col-md-3.hidden-sm.hidden-xs .well a {
-           color:#333;
-         }
-    
-        .lmis {
-          width:40px;
-        }
-    
-        #accordion, #username-dropdown-toggle a {
-          font-weight:600;
-        }
-    
-        footer .searchcontainer .form-control {
-        border-radius:3px;
-      }
-    
-        footer .searchcontainer button {
-        border-radius:0 3px 3px 0;
-      }
-    
-       #username-dropdown-toggle li a {
-          font-weight:normal;
-        }
-    
-        .humburger {
-          margin-top: 8px;
-        }
-    
-    
-        .navbar-form .form-control {
-          font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
-          height:30px;
-          border-radius:5px;
-          letter-spacing: 0;
-          font-weight:normal;
-        }
-    
-        .navbar-form {
-          position:relative;
-          margin-top: 14px;
-          margin-bottom: 2px;
-          display: block !important;
-          transition: 500ms !important;
-        }
-    
-        .navbar-form button {
-          top: 1px;
-          right: -4px;
-          position: absolute;
-          padding: 3px 11px !important;
-          background-color:#ececec;
-          border-radius:3px;
-        }
-    
-        .navbar-form button:hover {
-          border:1px solid #ececec;
-        }
-    
-        .navbar-form button .glyphicon {
-          top: 3px;
-          right: -2px;
-          color:#333;
-        }
-    
-        .fa-user-friends, .fa-envelope, .fa-bell {
-          font-size:20px;
-        }
-    
-        a, a:hover, a:active, a:visited, a:focus {
-         text-decoration:none;
-        }
-    
-        .bg-orange.no-padding.wow {
-          margin:auto 30px;
-        }
-    
-        .icon-dropdown {
-          left:-449px;
-    
-        }
-    
-        #friends-dropdown .icon-dropdown li:nth-last-child(2), #notifications-dropdown .icon-dropdow.msgMenu lin li:nth-last-child(2) {
-          margin-bottom:25px;
-        }
-    
-          #friends-dropdown .icon-dropdown li:last-child, #notifications-dropdown .icon-dropdown li:last-child {
-            position:fixed;
-            width: 493px;
-            border: 1px solid #aaa;
-            background-color: #eee;
-            padding: 3px 20px !important;
-            top: 425px;
-            line-height: normal;
-        }
-    
-        #friends-dropdown .icon-dropdown li:last-child a {
-          margin-top: 0;
-          line-height: normal;
-        }
-    
-        #friends-dropdown .icon-dropdown li:last-child a:hover {
-          background:none;
-        }
-    
-        .icon-dropdown li:last-child a {
-          padding: 0 !important;
-        }
-    
-        .dropdown-menu.lenght.icon-dropdown.msgMenu hr{
-          margin-bottom:0;
-        }
-    
-        .dropdown-menu.lenght.icon-dropdown.msgMenu li span.username {
-          padding:0px !important;
-          margin:0;
-        }
-    
-        .dropdown-menu.lenght.icon-dropdown.msgMenu li:last-child a {
-          padding:0px !important;
-        }
-    
-        #navsidebare ul {
-          margin-bottom:80px;
-        }
-    
-        #navsidebare {
-          height:100% !important;
-          position:fixed !important;
-          margin-top: 52px;
-        }
-    
-        #sidebar-2 {
-          background-color:#000;
-          color:#fff;
-          height:100%;
-          margin-top:52px;
-          width:260px;
-          position:fixed;
-          /* right:-260px; */
-          right:-2000px;
-          transition:500ms;
-          z-index:6;
-          overflow:scroll;
-        }
-    
-         #sidebar-2 ul {
-           margin-top:10px;
-           margin-bottom:50px;
-         }
-        #sidebar-2 ul li.divider {
-          background-color:#222;
-          height:1px;
-        }
-        
-         #sidebar-2 ul li a {
-           text-decoration:none;
-           color:#fff;
-           display: block;
-           padding: 5px 25px;
-         }
-    
-         .navbar-right-2 .dropdown-menu {
-           top: 97%;
-         }
-    
-         @media (max-width: 640px) {
-          .text-bar input {
-            padding-top: 5px;
-            padding-bottom: 5px;
-          }
-    
-          #bb {
-            bottom: 2px;
-          }
-         }
-    
-        @media (min-width:500px) {
-          .search-dropdown-toggle:hover {
-            color:#ed6c05;
-          }
-        }
-    
-        @media (max-width:500px) {
-        #navsidebare {
-          width:100%;
-          margin-top: 0;
-        }
-    
-        .mp-bio-label {
-          width:100px;
-        }
-    
-        .mp-head {
-          font-size:12px;
-        }
-    
-        #bb img {
-          right: 19vw;
-        }
-    
-        /* .text-bar input {
-          width: 323px !important;
-        } */
-        
-        .logo-light img, .logo-dark img {
-          width: 34vw;
-        }
-    
-       #sidebar-2 {
-         width:100% !important;
-         margin-top: unset;
-       }
-    
-       #sidebar-2 ul {
-         margin-top: 40px;
-       }
-    
-       .view-profile {
-          float: none !important;
-          display: block !important;
-          margin-left: 48px !important;
-        }
-    
-        /* .arrow_button {
-          right: -210px;
-          top: -33px;
-        } */
-    
-      }
-    
-      @media (min-width:501px) {
-        .view-profile {
-          margin-top: 8px !important;
-        }
-      }
-        
-        .label {
-          display: none;
-        }
-        .logo-mobile {
-          display:none;
-        }
-    
-        #navsidebare a {
-          text-decoration:none;
-        }
-        
-        #menu-div .navbar-collapse.collapse {
-          float:none;
-        }
-        .icon-dropdown {
-        width:500px;
-        height:400px;
-        overflow-y:scroll;
-      }
-        /* .icon-dropdown {
-          position:absolute !important;
-        } */
-        .fa.fa-smile-o {
-          font-size: 20px;
-        }
-        #menu-div .navbar-collapse {
-          border:none;
-        }
-        
-        @media (max-width:768px) {
-          #stay-tuned-container p {
-            margin:10px;
-          }
-    
-          .bg-orange.no-padding.wow p{
-            padding-left:10px;
-            padding-right:10px; 
-          }
-    
-          .copyright p{
-          float:none !important;
-          margin-top:15px;
-          margin-left:8px;
-        }
-    
-      .navbar-nav>li>a {
-        padding-top: 15px;
-        padding-bottom: 15px;
-      }
-    
-      .panel-body .friends-noti-dropdown-item button {
-        width: unset;
-      }
-    }
-    
-    
-    
-    @media (max-width:767px) {
-        .modal input[type=checkbox], input[type=radio] {
-          /* display:block; */
-          width:6%;
-        }
-      }
-    
-      @media (max-width:320px) {
-        .searchcontainer button {
-          margin-top:-44px !important;
-        }
-      }
-    
-    /* .msgMenu li{border-bottom: 1px solid #e6e6e6; margin-top: -2px !important} */
-    
-    .icon-dropdown li:hover{background: #f5f5f5 !important; } 
-    
-    .navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse {
-      max-height:0 !important;
-    }
-      </style>
+
+  .navbar-nav>li>a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .panel-body .friends-dropdown-item button {
+    width: unset;
+  }
+}
+
+
+
+@media (max-width:767px) {
+    .modal input[type=checkbox], input[type=radio] {
+      /* display:block; */
+      width:6%;
+	  }
+  }
+
+  @media (max-width:320px) {
+		.searchcontainer button {
+			margin-top:-44px !important;
+		}
+  }
+
+/* .msgMenu li{border-bottom: 1px solid #e6e6e6; margin-top: -2px !important} */
+
+.icon-dropdown li:hover{background: #f5f5f5 !important; } 
+
+.navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse {
+  max-height:0 !important;
+}
+  </style>
   
   <script type="text/javascript">
-    $()(function (e) {
+    $(document).ready(function (e) {
       $('#send_messgae').emojiPicker();
-      //   $('#send_messgae').emojiPicker({
-      //   width: '300px',
-      //   height: '200px'
-      // });
     });
     
   </script>
@@ -681,7 +661,7 @@
 
 <body>
 
-  <div class="main-section">
+<div class="main-section">
     <div class="border-chat">
       <div class='header'>
         <div class="img-wrapper">
@@ -739,318 +719,318 @@
   
   </script>
 
-<style type="text/css">
-  #navsidebare {
-   box-sizing:border-box;
- }
+  <style type="text/css">
+     #navsidebare {
+      box-sizing:border-box;
+    }
 
- #navsidebare * {
-   box-sizing:border-box;
- }
+    #navsidebare * {
+      box-sizing:border-box;
+    }
 
- #sidebar-2 {
-   box-sizing:border-box;
- }
+    #sidebar-2 {
+      box-sizing:border-box;
+    }
 
- #sidebar-2 * {
-   box-sizing:border-box;
- }
+    #sidebar-2 * {
+      box-sizing:border-box;
+    }
 
- .go_more {
-   background-color: #ffffff;
-   height: 350px;
-   overflow-y: scroll;
- }
- .top-searches-by div{
-   border-bottom:1px solid #ddd;
-   padding:10px;
- }
- .top-searches-by div > a {
- color: #fff !important;
- }
+    .go_more {
+      background-color: #ffffff;
+      height: 350px;
+      overflow-y: scroll;
+    }
+    .top-searches-by div{
+			border-bottom:1px solid #ddd;
+			padding:10px;
+		}
+    .top-searches-by div > a {
+    color: #fff !important;
+    }
 
- @media (max-width:768px) and (min-width:521px) {
-   .navbar-form input[type='text'] {
-     width:232px;
-   }
- }
+    @media (max-width:768px) and (min-width:521px) {
+      .navbar-form input[type='text'] {
+        width:232px;
+      }
+    }
 
- @media (max-width:520px) {
-   .tpsrch {
-     display:none;
-   }
-   .top-searches-by {
-     display:block;
-   }
+    @media (max-width:520px) {
+			.tpsrch {
+				display:none;
+			}
+			.top-searches-by {
+				display:block;
+			}
 
-   .navbar-form input {
-     width:232px;
-   }
- }
- @media (min-width:521px) {
-   .tpsrch {
-     display:block;
-   }
-   .top-searches-by {
-     display:none;
-   }
- }
- 
- @media (min-width:992px) {
-   .nav-white.sticky-nav .navbar-nav li a {
-     margin-top:5px;
-   }
-   
-   .humburger {
-     padding:5px;
-   }
- }
- 
- label {
-   /*padding: 10px;*/
-   /*background: red; */
-   display: table;
-   /*color: #fff;*/
- }
- label .fa {
-   color: white;
-   font-size: 30px;
-   margin-left: -50px;
- }
- input[type="file"] {
-   display: none;
- }
- /*.emojy_image{
-   font-size: 30px;
- margin-left: -120px;
- color: white;
- padding: 0px !important;
+      .navbar-form input {
+        width:232px;
+      }
+		}
+		@media (min-width:521px) {
+			.tpsrch {
+				display:block;
+			}
+			.top-searches-by {
+				display:none;
+			}
+    }
+    
+    @media (min-width:992px) {
+      .nav-white.sticky-nav .navbar-nav li a {
+        margin-top:5px;
+      }
+      
+      .humburger {
+        padding:5px;
+      }
+    }
+    
+    label {
+      /*padding: 10px;*/
+      /*background: red; */
+      display: table;
+      /*color: #fff;*/
+    }
+    label .fa {
+      color: white;
+      font-size: 30px;
+      margin-left: -50px;
+    }
+    input[type="file"] {
+      display: none;
+    }
+    /*.emojy_image{
+      font-size: 30px;
+    margin-left: -120px;
+    color: white;
+    padding: 0px !important;
 }*/
- .arrow_image {
-   padding: 10px;
- }
- /* .arrow_button {
-   margin-left: -39px;
- } */
- #navsidebare {
-   overflow: scroll;
-   overflow-x:hidden;
-   height: 100vh;
-   background-color:#000;
- }
+    .arrow_image {
+      padding: 10px;
+    }
+    /* .arrow_button {
+      margin-left: -39px;
+    } */
+    #navsidebare {
+      overflow: scroll;
+		  overflow-x:hidden;
+      height: 100vh;
+      background-color:#000;
+    }
 
- @media (min-width:1266px) {
-   .navbar-form {
-     display:block !important;
-   }
+    @media (min-width:1266px) {
+      .navbar-form {
+        display:block !important;
+      }
 
-   #friends-dropdown, #messages-dropdown, #notifications-dropdown, #username-dropdown-toggle {
-     visibility:visible !important;
-   }
- }
+      #friends-dropdown, #messages-dropdown, #notifications-dropdown, #username-dropdown-toggle {
+        visibility:visible !important;
+      }
+    }
 
- @media (max-width:1265px) {
-   .navbar-form {
-     width: 0;
-     opacity:0;
-     overflow: hidden;
-     position: absolute;
-     border-radius: 3px;
-     top: 13px;
-     right: 50px;
-     margin:0;
-     padding:0px;
-     border:none;
-   }
+    @media (max-width:1265px) {
+      .navbar-form {
+        width: 0;
+        opacity:0;
+        overflow: hidden;
+        position: absolute;
+        border-radius: 3px;
+        top: 13px;
+        right: 50px;
+        margin:0;
+        padding:0px;
+        border:none;
+      }
 
-   .navbar-form.visible {
-     width: 19vw;
-     opacity: 1;
-   }
+      .navbar-form.visible {
+        width: 19vw;
+        opacity: 1;
+      }
 
-   .navbar-form.visible > div, .navbar-form.visible > div input {
-     width:100%;
-   }
+      .navbar-form.visible > div, .navbar-form.visible > div input {
+        width:100%;
+      }
 
-   .navbar-form input {
-     margin:0;
-     border: 3px solid #936BCB !important;
-     padding:14px;
-   }
+      .navbar-form input {
+        margin:0;
+        border: 3px solid #936BCB !important;
+        padding:14px;
+      }
 
-   .navbar-form button {
-     top: 3px;
-     border-top-right-radius: 5px;
-     border-bottom-right-radius: 5px;
-     right: -17px;
-   }
+      .navbar-form button {
+        top: 3px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        right: -17px;
+      }
 
-   .search-dropdown-toggle {
-     display:inline-block
-   }
- }
+      .search-dropdown-toggle {
+        display:inline-block
+      }
+    }
 
- @media (max-width: 1265px) and (min-width: 1071px) {
-   #friends-dropdown.invisible, #messages-dropdown.invisible, #notifications-dropdown.invisible, #username-dropdown-toggle.invisible {
-     visibility: hidden !important;
-   }
- }
+    @media (max-width: 1265px) and (min-width: 1071px) {
+      #friends-dropdown.invisible, #messages-dropdown.invisible, #notifications-dropdown.invisible, #username-dropdown-toggle.invisible {
+        visibility: hidden !important;
+      }
+    }
 
- @if(empty(Session::get('user_id')))
-   @media (max-width:1070px) {
-     .navbar .accordion-menu #accordion>li,
-     #signin {
-       display: none;
-     }
-     #accordion {
-       float: right;
-     }
- }
+    @if(empty(Session::get('user_id')))
+      @media (max-width:1070px) {
+        .navbar .accordion-menu #accordion>li,
+        #signin {
+          display: none;
+        }
+        #accordion {
+          float: right;
+        }
+    }
 
- @else 
+    @else 
 
- @media (max-width:1070px) {
-   .navbar .accordion-menu #accordion>li,
-   #signin {
-     display: none;
-   }
-   .navbar .accordion-menu .dropdown {
-     /* display:; */
-   }
-   #accordion {
-     float: right;
-   }
+    @media (max-width:1070px) {
+      .navbar .accordion-menu #accordion>li,
+      #signin {
+        display: none;
+      }
+      .navbar .accordion-menu .dropdown {
+        /* display:; */
+      }
+      #accordion {
+        float: right;
+      }
 
-   .navbar-form {
-     position: relative; 
-   }
+      .navbar-form {
+        position: relative; 
+      }
 
-   .search-dropdown-toggle {
-     position: absolute;
-     right: 0;
-   }
+      .search-dropdown-toggle {
+        position: absolute;
+        right: 0;
+      }
 
-   #username-dropdown-toggle {
-     margin-right: 45px;
-   }
+      #username-dropdown-toggle {
+        margin-right: 45px;
+      }
 
- }
+    }
 
- @endif
+    @endif
 
- @media (max-width: 991px) {
+    @media (max-width: 991px) {
 
-   #notifications-dropdown .icon-dropdown li:last-child {
-     top: 418px;
-   }
-   
-   .navbar-nav .dropdown .dropdown-toggle {
-     padding-right:14px !important;
-     padding-top:0 !important;
-     padding-bottom:0 !important;
-   }
+      #notifications-dropdown .icon-dropdown li:last-child {
+        top: 418px;
+      }
+      
+      .navbar-nav .dropdown .dropdown-toggle {
+        padding-right:14px !important;
+        padding-top:0 !important;
+        padding-bottom:0 !important;
+      }
 
-   #friends-dropdown .icon-dropdown li:last-child {
-     top:420px;
-   }
+      #friends-dropdown .icon-dropdown li:last-child {
+        top:420px;
+      }
 
-   .nav.navbar-nav {
-     margin-top:11px;
-   }
+      .nav.navbar-nav {
+        margin-top:11px;
+      }
 
-   .search-dropdown-toggle {
-     top:20px;
-   }
+      .search-dropdown-toggle {
+        top:20px;
+      }
 
-   #menu-div {
-     background-color: inherit;
-   }
-   .dropdown-menu {
-     left: unset !important;
-   }
-   .navbar-default .navbar-nav > li > a { 
-     line-height:54px;
-   }
-   .humburger {
-     margin-top:12px !important;
-     margin-bottom:-5px !important;
-   }
+      #menu-div {
+        background-color: inherit;
+      }
+      .dropdown-menu {
+        left: unset !important;
+      }
+      .navbar-default .navbar-nav > li > a { 
+        line-height:54px;
+      }
+      .humburger {
+        margin-top:12px !important;
+        margin-bottom:-5px !important;
+      }
 
-   .nav-white.sticky-nav .navbar-nav > .open > a {
-     padding-right: 14px;
-     padding-bottom: -2px;
-     margin-top: -15px;
-     padding-top: 14px;
-   }
+      .nav-white.sticky-nav .navbar-nav > .open > a {
+        padding-right: 14px;
+        padding-bottom: -2px;
+        margin-top: -15px;
+        padding-top: 14px;
+      }
 
-   #username-dropdown-toggle .dropdown-toggle {
-     padding-top:0 !important;
-     margin-top:0;
-   }
+      #username-dropdown-toggle .dropdown-toggle {
+        padding-top:0 !important;
+        margin-top:0;
+      }
 
-   /* .nav.navbar-nav .dropdown {
-     margin-top: 9px !important;
-   } */
+      /* .nav.navbar-nav .dropdown {
+        margin-top: 9px !important;
+      } */
 
-   .nav.navbar-nav .dropdown a.dropdown-toggle {
-     line-height: 41px !important;
-   }
+      .nav.navbar-nav .dropdown a.dropdown-toggle {
+        line-height: 41px !important;
+      }
 
-   #message_count {
-     top: 0;
-     padding: 0px 7px 0px 6px;
-   }
+      #message_count {
+        top: 0;
+        padding: 0px 7px 0px 6px;
+      }
 
-   #friend_counts {
-     top: 0px;
-   }
+      #friend_counts {
+        top: 0px;
+      }
+  }
+
+    .dropdown-menu li a {
+      height: unset !important;
+  }
+
+    .shrink-nav .accordion-menu {
+    top: 0px;
 }
+    .navbar-toggle {
+      background-color: #5a378c !important;
+      border-radius: 5px;
+    }
 
- .dropdown-menu li a {
-   height: unset !important;
-}
+    @media (max-width:375px) {
 
- .shrink-nav .accordion-menu {
- top: 0px;
-}
- .navbar-toggle {
-   background-color: #5a378c !important;
-   border-radius: 5px;
- }
+      .nav.navbar-nav {
+        margin-right: 37px;
+      }
 
- @media (max-width:375px) {
+      .navbar-nav .dropdown .dropdown-toggle {
+        margin-right:-5px !important;
+      }
+    }
 
-   .nav.navbar-nav {
-     margin-right: 37px;
-   }
+    @media (max-width:319px) {
+      .search-dropdown-toggle, .navbar-form {
+        display:none !important;
+      }
+    }
 
-   .navbar-nav .dropdown .dropdown-toggle {
-     margin-right:-5px !important;
-   }
- }
-
- @media (max-width:319px) {
-   .search-dropdown-toggle, .navbar-form {
-     display:none !important;
-   }
- }
-
-@media (max-width: 813px) {
- .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
- position: fixed !important;
- left:0 !important;
-}
+  @media (max-width: 813px) {
+    .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
+    position: fixed !important;
+    left:0 !important;
+  }
 }
 @media (max-width:515px) {
-.sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
- width:100vw !important;
-}
-}
-#username-dropdown-toggle ul.dropdown-menu{
-    width:100px !important;
-    
+  .sticky-nav .navbar-nav > li > .dropdown-menu, .shrink-nav .dropdown.simple-dropdown .dropdown-menu {
+    width:100vw !important;
   }
-</style>
+}
+  #username-dropdown-toggle ul.dropdown-menu{
+       width:100px !important;
+       
+     }
+  </style>
   <!--  -->
   <!-- navigation panel -->
   <div class="wrapper">
@@ -1062,9 +1042,6 @@
             <a class="logo-light" href="{{ url('/') }}"><img alt="" src="{{ $user_assets }}/images/kaboolhai.png" class="logo" /></a>
             <a class="logo-dark" href="{{ url('/') }}"><img alt="" src="{{ $user_assets }}/images/kaboolhai.png" class="logo" /></a> 
             <a  class="logo-mobile" href="{{ url('/') }}"><img alt="" src="{{ $user_assets }}/db_images/KH-logo2.png" /></a>
-
-            
-
 
               
                 
@@ -1203,13 +1180,13 @@
                     
                       <li class="friend" id="friends">
                         @if(!empty($row->photo->image))
-                        <a style="background-color: #;" href="{{ url('public-profile',$row->user_id) }}"><img
+                        <a style="background-color: # href="{{ url('public-profile',$row->user_id) }}"><img
                             src="{{ $user_assets }}/my_photo/{{ $row->photo->image }}" style="width: 45px; height: 45px; border-radius:100px; " alt="">
                           @else
-                          <img src="{{ $user_assets }}/dashbord/userpic.jpg" style="width: 45px; height: 45px; border-radius:100px; " alt=""></a>
+                          <img src="{{ $user_assets }}/dashbord/userpic.jpg" style="width: 45px; height: 45px; border-radius:100px; " alt="">
                           @endif
-                          {{ $row->user->user_name }} send friend request</a><a style="background-color: #"
-                          href="{{ url('delete-request',$row->user_id) }}" class="btn pull-right">Delete</a><a style="background-color: #"
+                          {{ $row->user->user_name }} send friend request</a><a style="background-color: #
+                          href="{{ url('delete-request',$row->user_id) }}" class="btn pull-right">Delete</a><a style="background-color: #
                           href="{{ url('confirm-friend',$row->user_id) }}" class="btn pull-right">Confirm</a>
                        <hr style="width: 100%;">
                       </li> 
@@ -1223,19 +1200,14 @@
                     @if(count(recent_join()))
                     @foreach(recent_join() as $row)
 
-                      <li class="friends-noti-dropdown-item dropdown-item">
-                        @if(!empty($row->image->image))
-                        <img
-                            src="{{ $user_assets }}/my_photo/{{ $row->image->image }}" style="width: 45px; height: 45px; border-radius:100px; " alt="">
-                        @else
+                      <li class="friends-dropdown-item dropdown-item">
                         <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
-                        @endif
                         <div class="info">
-                          <a href="{{ url('public-profile',$row->id) }}">{{$row->user_name}} </a>
-                          <span>{{$row->height.' '.$row->martial_status.' '.$row->language }}</span>
+                          <a href="#">username</a>
+                          <span>15ft 11in - 180cm Married Urdu</span>
                         </div>
-                          <button><a href="{{ url('add-friend',$row->id) }}" onclick="return confirm('Are you sure you want to Add this user?');">Accept</a></button>
-                          <button><a href="{{ url('reject-suggest',$row->id) }}" onclick="return confirm('Are you sure you want to remove this user?');">Remove</a></button>
+                          <button>Accept</button>
+                          <button>Remove</button>
                       </li>
 
 
@@ -1256,26 +1228,30 @@
                 </li>
                 <li class="dropdown" id='messages-dropdown'>
                   <a class="dropdown-toggle" data-toggle="dropdown" href="#" title="Message" onclick="return get_message()">
-                    
-                    <span class="fa fa-envelope icon_color"></span><span class="message_count">@if(!empty(
-
-                      count_message()))
+                    <span class="fa fa-envelope icon_color"></span><span id="message_count">@if(!empty(count_message()))
                       {{ count_message() }} @endif</span></a>
                   <ul class="dropdown-menu lenght icon-dropdown msgMenu">
-                  
+                  @for($x=0; $x<10; $x++)
                     
-                   
+                    <li class="msgNoti">
+                        <a class="left-first-section" rel="215" href="#">                            
+                            <span>
+                            <img src="https://kaboolhai.com/kaboolhai/public/user_assets/my_photo/1530014926Resignation.JPG" style="width: 45px; height: 45px; border-radius:100px; " alt="">
+                            </span>
+                           <span>dfgdfg</span>
+                           
+                        </a>
+                    
+                      </li>
+                                       @endfor
                     @if(!empty(tochat()))
-
-
-
                     @foreach(tochat() as $row)
                     
                    
                     @if($row->to_user==Session::get('user_id'))
                     <li class='msgNoti'>
                       <a class="left-first-section" rel="{{ $row->from_users->id }}"
-                        href="{{ url('friend-chat',$row->from_users) }}">
+                        href="#">
                         @if(!empty($row->photo->image))
                         <span >
                           <img src="{{ $user_assets }}/my_photo/{{ $row->photo->image }}" style="width: 45px; height: 45px; border-radius:100px; " alt=""
@@ -1294,7 +1270,10 @@
                       </a>
 
                     </li>
-                    
+                    {{-- @elseif($row->from_users->id==Session::get('user_id'))
+                    <li><a class="left-first-section" style="background-color: #ffffff; color: black !important;" href="#"
+                        onclick="current_chat()">{{ $row->to_users->user_name}}<span id="id_value" style="display: none;">{{
+                          $row->to_users->id }}</span></a></li> --}}
                     @endif
                     @endforeach
                     @endif
@@ -1314,9 +1293,13 @@
                     </li>
                     <li class="divider"></li>
                     @if($row->to_user==Session::get('user_id'))
-                    <li><a class="left-first-section" style="background-color: #ffffff; color: black !important;" href="{{ url('friend-chat',$row->to_users->id) }}">{{ $row->to_users->user_name}}<span id="id_value" style="display: none;">{{
+                    <li><a class="left-first-section" style="background-color: #ffffff; color: black !important;" href="#"
+                        onclick="current_chat()">{{ $row->to_users->user_name}}<span id="id_value" style="display: none;">{{
                           $row->to_users->id }}</span></a></li>
-                   
+                    {{-- @elseif($row->from_users->id==Session::get('user_id'))
+                    <li><a class="left-first-section" style="background-color: #ffffff; color: black !important;" href="#"
+                        onclick="current_chat()">{{ $row->to_users->user_name}}<span id="id_value" style="display: none;">{{
+                          $row->to_users->id }}</span></a></li> --}}
                     {{-- @endif
                     @endforeach
                     @endif
@@ -1367,118 +1350,33 @@
                     </a> --}}
 
 
-                     <li class="dropdown" id='notifications-dropdown' >
+
+
+                   <li class="dropdown" id='notifications-dropdown' >
                   <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;" onclick="return read_notification()"
                     title="Notification">
                     <span class="fa fa-bell icon_color"><span class="noti_counts" style="font-size:13px; color:#ed6c05;">@if(!empty(count_notification())) {{ count_notification() }} @endif</span></span>
                   </a>
-                   
-
-
-
                    <ul class="dropdown-menu lenght icon-dropdown">
 
                     @if(count(get_notification()))
                     @foreach(get_notification() as $row)
+
+                    <li class="notification-dropdown-item dropdown-item">
+                      <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
+                      <div>
+                        <span><strong>username</strong> viewed your profile</span>
+                        <span><i class="fas fa-user-circle"></i>10h</span>
+                      </div>
+                    </li>
+
+                    {{-- @elseif($row->from_users->id==Session::get('user_id'))
+                    <li><a class="left-first-section" style="background-color: #ffffff; color: black !important;" href="#"
+                        onclick="current_chat()">{{ $row->to_users->user_name}}<span id="id_value" style="display: none;">{{
+                          $row->to_users->id }}</span></a></li> --}}
                    
-                    <?php
-                    $check= "grid-template-columns : 50px 1fr;";
-                    if($row->notification_type =='Send you photo permission request'){
-                      $permission = \App\PhotoPermission::where([['user_id', $row->sender_id],['permission_user_id', Session::get('user_id')]])->latest()->first();
-                      // dd($permission);
-                      if($permission != null){
-                        if($permission->status != 1){
-                          $check= "";
-                        }
-                        else{
-                          $check= 'grid-template-columns : 50px 1fr';
-                        } 
-                      }
-                    }
-                          ?>
-                    
-                    <li class="friends-noti-dropdown-item dropdown-item noti-dropdown-item" style='{{$check}}'>
-                                                
-                      <!-- <img src="https://source.unsplash.com/user/erondu/1600x900" alt=""> -->
-                      
-                        <img src="{{ $user_assets }}/my_photo/{{ $row->photo->image }}" alt="">
-                        
-                                                <div class="info">
-                          <a href="http://localhost/Kaboolhai/public-profile/241"><strong>{{$row->user->user_name }}</strong> {{$row->notification_type}}
-                            </a>
-                          <span>
-                            
-                            
-                            <!-- <i class="fas fa-user-circle"></i> -->
-                            <?php
-                            $class='';
-                            if($row->notification_type =='Send you invite view my profile request'){
-                              ?>
-
-                              <img src="{{ $user_assets }}/invite.png" alt="" >
-                            
-                          <?php 
-                           }
-                            elseif($row->notification_type =='Add you favourite list' || $row->notification_type =='Remove you from favourite list' ){
-
-                              ?>
-
-                              <img src="{{ $user_assets }}/favorite.png" alt="" class="icon_size">
-
-                           <?php
-                            }
-                            elseif($row->notification_type =='Send you photo permission request'){ 
-                              ?>
-                              <img src="{{$user_assets}}/photorequest.png" alt="" class="icon_size">
-                              <?php
-                            }
-                             else{
-                                ?>
-
-                              
-                                <i class="fas fa-user-circle"></i>
-                            <?php
-                             } 
-                          ?>
-
-                            
-                            
-                          {{ \Carbon\Carbon::parse($row->created_at)->diffForHumans() }} </span>
-                        </div>
-
-                        <?php
-                    if($row->notification_type =='Send you photo permission request'){
-                      $permission = \App\PhotoPermission::where([['user_id', $row->sender_id],['permission_user_id', Session::get('user_id')]])->latest()->first();
-                      // dd($permission);
-                      if($permission != null){
-                        if($permission->status != 1){
-                          ?>
-
-                          <button><a href="http://localhost/Kaboolhai/add-friend/241" onclick="return confirm('Are you sure you want to Add this user?');">Accept</a></button>
-                          <button><a href="http://localhost/Kaboolhai/reject-suggest/241" onclick="return confirm('Are you sure you want to remove this user?');">Remove</a></button>
-                          <?php 
-                        }
-                      }
-                    }
-                    ?>
-                      </li>
-
-                      @endforeach
-                      @endif
-
-                      <li class="friends-noti-dropdown-item dropdown-item noti-dropdown-item">
-                                                <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
-                                                <div class="info">
-                          <a href="http://localhost/Kaboolhai/public-profile/241">dfhghg </a>
-                          <span><img src="https://source.unsplash.com/user/erondu/1600x900">5ft 9in - 175cm unmarried Punjabi</span>
-                        </div>
-                          <button><a href="http://localhost/Kaboolhai/add-friend/241" onclick="return confirm('Are you sure you want to Add this user?');">Accept</a></button>
-                          <button><a href="http://localhost/Kaboolhai/reject-suggest/241" onclick="return confirm('Are you sure you want to remove this user?');">Remove</a></button>
-                      </li>
-
-
-
-                  
+                    @endforeach
+                    @endif
                      {{-- @endif --}}
                     <a href="{{ url('notification') }}">
                       <li style="color:#333; font-size:15px;" class="text-center">
@@ -1805,7 +1703,7 @@
   <style>
     @media (max-width:991px) {
       
-      /*.notification-dropdown-item:last-of-type {
+      .notification-dropdown-item:last-of-type {
         margin-bottom: 5px;
       }
       .navbar-form {
@@ -1813,7 +1711,7 @@
         opacity: 0;
         overflow: hidden;
         top: 2px;
-      }*/
+      }
 
       #username-dropdown-toggle {
         margin-right: 55px !important;
@@ -1955,26 +1853,26 @@
         width:96vw !important;
       }
 
-      .friends-noti-dropdown-item {
+      .friends-dropdown-item {
         grid-template-columns: 50px 1fr 1fr;
       }
 
-      .friends-noti-dropdown-item img {
+      .friends-dropdown-item img {
         grid-row: 1/3;
       }
 
-      .friends-noti-dropdown-item button {
+      .friends-dropdown-item button {
         margin-top: 5px;
         padding: .5em .2em;
         width: unset;
       }
 
-      .friends-noti-dropdown-item button:first-of-type {
+      .friends-dropdown-item button:first-of-type {
         grid-row: 2;
         grid-column: 2;
       }
 
-      .friends-noti-dropdown-item button:last-of-type {
+      .friends-dropdown-item button:last-of-type {
         grid-row: 2;
         grid-column:3;
       }
@@ -2007,28 +1905,28 @@
         margin-right: 50px;
       }
 
-      /* .friends-noti-dropdown-item {
+      /* .friends-dropdown-item {
         align-items: center;
       }
 
-      .friends-noti-dropdown-item > div {
+      .friends-dropdown-item > div {
         grid-template-columns: 1fr 1fr;
       }
 
-      .friends-noti-dropdown-item > div a {
+      .friends-dropdown-item > div a {
         grid-column: 1/-1;
       }
 
-      .friends-noti-dropdown-item > div button {
+      .friends-dropdown-item > div button {
         padding: .3em;
         grid-row: 3;
       }
 
-      .friends-noti-dropdown-item > div button:first-of-type {
+      .friends-dropdown-item > div button:first-of-type {
         grid-column: 1;
       }
 
-      .friends-noti-dropdown-item > div button:last-child {
+      .friends-dropdown-item > div button:last-child {
         grid-column: 2;
       } */
     }
@@ -3314,8 +3212,8 @@ function timerIncrement() {
             if(item.to_user=={{user_data()->id}})
             {
              
-               $('.message_count').show();
-               $('.message_count').html('1')
+               $('#message_count').show();
+               $('#message_count').html('1')
             }
             if(item.attached)
             {
@@ -3501,7 +3399,7 @@ function get_message()
           success:function(response) {
             
            
-             $('.message_count').hide();
+             $('#message_count').hide();
              
           }
         });
@@ -3521,58 +3419,47 @@ function get_message()
       $('.dim').show();
   }
 
-  function scrollToBottom(e) {
-    $(e).stop().animate({
-      scrollTop: $(e)[0].scrollHeight
-    }, 500);
-  }
-
-  $(function() {
-    scrollToBottom('#chat-scroll');
-  });
-
-
 </script>
 <style> 
 
-  @media (max-width:550px) {
- 
-       .navbar-form {
-         right: 80px;
-       }
- 
-       .nav.navbar-nav {
-         margin-right:45px;
+ @media (max-width:550px) {
+
+      .navbar-form {
+        right: 80px;
       }
-     }
- 
-     @media (max-width:520px) {
-       /* #menu-div .nav li.dropdown:not(.username-dropdown-toggle) { */
-         #menu-div .nav li.dropdown.username-dropdown-toggle {
-         display:none !important;
-       }
- 
-      .navbar-form button {
-       padding: 3px 3px !important;
-      }
- 
-      .navbar-form input[type='text'] {
-         width: 35vw;
-         font-size: 12px;
-         padding-left: 7px;
-      }
- 
+
       .nav.navbar-nav {
-        margin-right: 70px;
+        margin-right:45px;
+     }
+    }
+
+    @media (max-width:520px) {
+      /* #menu-div .nav li.dropdown:not(.username-dropdown-toggle) { */
+        #menu-div .nav li.dropdown.username-dropdown-toggle {
+        display:none !important;
       }
+
+     .navbar-form button {
+      padding: 3px 3px !important;
      }
- 
-     @media (max-width:430px) {
- 
-       .navbar-form {
-         right: 70px;
-       }
+
+     .navbar-form input[type='text'] {
+        width: 35vw;
+        font-size: 12px;
+        padding-left: 7px;
      }
- </style>
+
+     .nav.navbar-nav {
+       margin-right: 70px;
+     }
+    }
+
+    @media (max-width:430px) {
+
+      .navbar-form {
+        right: 70px;
+      }
+    }
+</style>
   </body>
 </html>
