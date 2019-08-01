@@ -591,28 +591,20 @@ img{ max-width:100%;}
        
            
             <form class="form" enctype="multipart/form-data">
-          <div class="type_msg">
-            {{csrf_field()}}
-            <div class="input_msg_write">
-              <input type="text" id="send_message" name="send_message" class="write_msg" placeholder="Type a message"/>
-              <input type="hidden" id="to_userss" value="{{ $friend_id }}" name="to_user">
-               <label id=""> <i class="fas fa-paperclip"></i>
-                <input type="file" name="file" id="file" size="60">
-              </label>
-              <button class="msg_send_btn" type="submit" ><svg style="enable-background:new 0 0 24 24;" version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="info"/><g id="icons"><path d="M21.5,11.1l-17.9-9C2.7,1.7,1.7,2.5,2.1,3.4l2.5,6.7L16,12L4.6,13.9l-2.5,6.7c-0.3,0.9,0.6,1.7,1.5,1.2l17.9-9   C22.2,12.5,22.2,11.5,21.5,11.1z" id="send"/></g></svg></button>
-            </div>
-          </div>
+              <div class="type_msg">
+                {{csrf_field()}}
+                <div class="input_msg_write">
+                  <input type="text" id="send_message" name="send_message" class="write_msg" placeholder="Type a message"/>
+                  <input type="hidden" id="to_userss" value="{{ $friend_id }}" name="to_user">
+                  <label id=""> <i class="fas fa-paperclip"></i>
+                    <input type="file" name="file" id="file" size="60">
+                  </label>
+                  <button class="msg_send_btn" type="submit" ><svg style="enable-background:new 0 0 24 24;" version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="info"/><g id="icons"><path d="M21.5,11.1l-17.9-9C2.7,1.7,1.7,2.5,2.1,3.4l2.5,6.7L16,12L4.6,13.9l-2.5,6.7c-0.3,0.9,0.6,1.7,1.5,1.2l17.9-9   C22.2,12.5,22.2,11.5,21.5,11.1z" id="send"/></g></svg></button>
+                </div>
+              </div>
           </form>
         </div>
       </div>
-
-      <!-- <input type="text" class="a">
-      <script>
-        $('.a').keyup(function(e) {
-          if(e.which == 13)
-            alert($(this).val());
-        });
-      </script> -->
 
     </div>
   {{-- </div> --}}
@@ -791,33 +783,28 @@ $("#file").change(function () {
          }
 
          $(function () {
-            $(".mesgs #send_message").emojioneArea(
-              {
-                events: {
-                  keyup: function (editor, event) {
-                    if (event.which == 13) {
-                      $('.mesgs #send_message').html($('.emojionearea-editor').html());
-                      $('.mesgs .form').submit();
-                      $('.mesgs .emojionearea-editor').text('');
-                      scrollToBottom('.msg_history');
-                      console.log(1);
-                    }
-                  }
-                }
-              }
-            );
-
+            $(".mesgs #send_message").emojioneArea({
+             events: {
+               keyup: function (editor, event) {
+                 if (event.which == 13) {
+                   $('.mesgs #send_message').html($('.emojionearea-editor').html());
+                   $('.mesgs .emojionearea-editor').blur();
+                   $('.mesgs .emojionearea-editor').focus();
+                   $('.mesgs .form').submit();
+                   $('.mesgs .emojionearea-editor').text('');
+                   scrollToBottom('.msg_history');
+                 }
+               }
+             }
+           });
+            
             scrollToBottom('.msg_history');
             
-            // $('.input_msg_write').keyup(function (event) {
-            //   if (event.which == 13) {
-            //     $('.mesgs #send_message').html($('.emojionearea-editor').html());
-            //     $('.mesgs .form').submit();
-            //     $('.mesgs .emojionearea-editor').text('');
-            //     scrollToBottom('.msg_history');
-            //   }
-            // });
           });
+
+          window.onload = function() {
+            $('.mesgs .emojionearea-editor').focus();
+          }
 
         
   </script>

@@ -51,6 +51,34 @@
 			margin-bottom:-15px;
 		}
 
+		.menudesign + .dropdown-menu {
+			padding: 0 !important;
+		}
+
+		.menudesign + .dropdown-menu li {
+			display: flex;
+			align-items: center;
+			padding: 3px;
+		}
+		
+		.menudesign + .dropdown-menu li a {
+			padding: 7px 5px;
+			display: block;
+			width: 100%;
+			color: #000 !important;
+			font-size: 14px;
+			margin: 0;
+		}
+
+		.menudesign + .dropdown-menu li img {
+			margin-right: 5px;
+		}
+
+		.menudesign + .dropdown-menu li a:hover {
+			background-color: #f5f5f5;
+			color: #000 !important;
+		}
+
 		@media (max-width:640px) {
 			.shrink-nav .logo {
 				margin-top:17px;
@@ -617,11 +645,15 @@
 								</a>
 								<ul class="dropdown-menu" style="    background-color: #ffffff;">
 									<li>
-										<a style="background-color: #ffffff; color: black !important; font-size: 13px;" href="{{ url('dashboard') }}">Dashboard</a>
+										<a href="{{ url('dashboard') }}">
+											<img width="20" height="20" src="http://localhost/KBH/public/user_assets/dashboard.svg" alt="">Dashboard
+										</a>
 									</li>
 
 									<li>
-										<a style="background-color: #ffffff; color:black !important; font-size: 13px;" href="{{ url('logout') }}">Logout</a>
+										<a href="{{ url('logout') }}">
+											<img width="20" height="20" src="http://localhost/KBH/public/user_assets/logout.svg" alt="log out">Logout
+										</a>
 									</li>
 								</ul>
 								@endif
