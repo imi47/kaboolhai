@@ -686,7 +686,7 @@
       <div class='header'>
         <div class="img-wrapper">
           <img src="{{ $user_assets }}/img/avatar.png" alt="">
-          <span></span>
+          <span id='mark'></span>
         </div>
         <div class="name-and-status">
           <a href="#">username</a>

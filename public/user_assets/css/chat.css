@@ -120,8 +120,12 @@
   border-radius: 50%;
   right: 0px;
   top: 20px;
-  background-color: lawngreen;
+  background-color: #a5a5a5;
   border: 2px solid white;
+}
+
+.main-section .header .img-wrapper span.online {
+  background-color: lawngreen;
 }
 
 .main-section .header .name-and-status {
