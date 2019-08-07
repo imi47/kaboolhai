@@ -445,7 +445,7 @@ img{ max-width:100%;}
 
   .chat_img {
     width: 40px;
-
+    height: 40px;
   }
 
   .inbox_people {
@@ -851,7 +851,7 @@ $("#file").change(function () {
                    $('.mesgs #send_message').html($('.emojionearea-editor').html());
                    $('.mesgs .emojionearea-editor').blur();
                    $('.mesgs .emojionearea-editor').focus();
-                   $('.mesgs .form').submit();
+                   $('.mesgs .form1').submit();
                    $('.mesgs .emojionearea-editor').text('');
                    scrollToBottom('.msg_history');
                  }

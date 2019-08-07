@@ -668,7 +668,7 @@
       </style>
   
   <script type="text/javascript">
-    $()(function (e) {
+    $(function (e) {
       $('#send_messgae').emojiPicker();
       //   $('#send_messgae').emojiPicker({
       //   width: '300px',
@@ -681,7 +681,7 @@
 
 <body>
 
-  <div class="main-section">
+  <div class="main-section open-more">
     <div class="border-chat">
       <div class='header'>
         <div class="img-wrapper">
