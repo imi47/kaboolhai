@@ -170,7 +170,15 @@ img{ max-width:100%;}
 .chat_ib p{ font-size:14px; color:#989898; margin:auto}
 .chat_img {
   width: 50px;
+  height: 50px;
 }
+
+.chat_img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
 .chat_ib {
   padding: 0 0 0 10px;
   overflow: hidden;
@@ -210,8 +218,16 @@ img{ max-width:100%;}
 }
 .incoming_msg_img {
   display: inline-block;
-  width: 2.5em;
+      height: 40px;
+    width: 40px;  
 }
+
+.incoming_msg_img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%
+}
+
 .received_msg {
   display: inline-block;
   padding-left: 5px;
@@ -474,13 +490,23 @@ img{ max-width:100%;}
               <span class="unread-badge"></span>
               <div class="chat_people">
                 <div class="chat_img">
+                   @php 
 
-                 @if(!empty($row->image_name))
-                 <img src="{{ $user_assets }}/profile_image/{{ $row->image_name }}"  style="border-radius: 100px;">
+                    $dp=\App\MyPhoto::where('user_id' , $row->user_id)->first();
+
+                   @endphp
+
+
+                 @if(!empty($dp->image))
+                 <img src="{{ $user_assets }}/my_photo/{{ $dp->image }}">
 
               {{-- <img src="{{ $user_assets }}/profile_image/{{ $row->image_name }}"> --}}
-                @else
+                @elseif(!empty($row->image_name))
+                 <!-- <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> -->
+                 <img src="{{ $user_assets }}/profile_image/{{ $row->image_name }}">
+                 @else
                  <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil">
+                 
                 @endif
                   </div>
                 <div class="chat_ib">
@@ -502,7 +528,7 @@ img{ max-width:100%;}
                 <div class="chat_people">
                   <div class="chat_img">
   
-                                    <img src="http://localhost/KBH/public/user_assets/profile_image/female_avatar_7.jpg" style="border-radius: 100px;">
+                                    <img src="http://localhost/KBH/public/user_assets/profile_image/female_avatar_7.jpg">
   
                 
                                     </div>
@@ -523,7 +549,7 @@ img{ max-width:100%;}
                   <div class="chat_people">
                     <div class="chat_img">
     
-                                      <img src="http://localhost/KBH/public/user_assets/profile_image/female_avatar_7.jpg" style="border-radius: 100px;">
+                                      <img src="http://localhost/KBH/public/user_assets/profile_image/female_avatar_7.jpg">
     
                   
                                       </div>
@@ -543,11 +569,28 @@ img{ max-width:100%;}
         <div class="mesgs">
           <div class="user-header">
             <div class="img-wrapper">
-              <img src="{{ $user_assets }}/img/avatar.png" alt="">
+              @if(!empty($friend_chat))
+              @if($friend_chat->image != null)
+                <img src="{{ $user_assets }}/my_photo/{{$friend_chat->image}}" alt="">
+              @else
+                <img src="{{ $user_assets }}/img/avatar.png" alt="">
+              @endif  
+              @else
+                <img src="{{ $user_assets }}/img/avatar.png" alt="">
+              @endif
+              
               <span></span>
             </div>
-            <span class="username">user name</span>
-            <span>Active 5h ago</span>
+            
+            <span class="username">@if(!empty($friend_chat)){{$friend_chat->user_name}}@endif</span>
+                    @if(!empty($friend_chat))
+                    @if($friend_chat->login_status==1)
+                      <span>Active now</span>
+                    @else
+                      <span>{{ \Carbon\Carbon::parse($friend_chat->last_login)->diffForHumans() }}</span>  
+
+                    @endif
+                    @endif
           </div>
           <div class="msg_history" id="chat-scroll-inbox">
                @if(isset($inbox))
@@ -555,7 +598,21 @@ img{ max-width:100%;}
               @if(Session::get('user_id')==$row->to_user)
 
             <div class="incoming_msg">
-              <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+              <div class="incoming_msg_img">
+
+              @if(!empty($friend_chat))
+              @if($friend_chat->image != null)
+                <img src="{{ $user_assets }}/my_photo/{{$friend_chat->image}}" alt="">
+              @else
+              <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil">
+                <!-- <img src="{{ $user_assets }}/img/avatar.png" alt=""> -->
+              @endif  
+              @else
+              <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil">
+                <!-- <img src="{{ $user_assets }}/img/avatar.png" alt=""> -->
+              @endif
+                
+               <!-- <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil">-->  </div> 
               
               <div class="received_msg">
                 <div class="received_withd_msg">
@@ -590,7 +647,7 @@ img{ max-width:100%;}
             <div class="new_message"></div>
        
            
-            <form class="form" enctype="multipart/form-data">
+            <form class="form1" enctype="multipart/form-data">
               <div class="type_msg">
                 {{csrf_field()}}
                 <div class="input_msg_write">
@@ -690,7 +747,7 @@ $("#file").change(function () {
          
 
 
-    $('.form').on('submit',function (e) {
+    $('.form1').on('submit',function (e) {
 
       
         e.preventDefault();
@@ -775,6 +832,10 @@ $("#file").change(function () {
         
        
          });
+
+      $(document).ready(function(){
+        $('.main-section').html('');
+      });
 
          document.querySelector('.msg_send_btn').onclick = function () {
             scrollToBottom('.msg_history');
