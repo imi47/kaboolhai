@@ -11,18 +11,17 @@
   <!-- favicon -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
     crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="{{ $user_assets }}/css/jquery.emojipicker.css">
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
-  <script type="text/javascript" src="{{ $user_assets }}/js/jquery.emojipicker.js"></script>
   <script type="text/javascript" src="{{ $user_assets }}/js/bootstrap-notify.min.js"></script>
 
-  <!-- Emoji Data -->
-  <link rel="stylesheet" type="text/css" href="{{ $user_assets }}/css/jquery.emojipicker.tw.css">
-  <script type="text/javascript" src="{{ $user_assets }}/js/jquery.emojis.js"></script>
+  <!-- emojiOneArea -->
+  <link rel="stylesheet" href="{{ $user_assets }}/css/emojionearea.css">
+  <script type="text/javascript" src="{{ $user_assets }}/js/emojionearea.min.js"></script>
 
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <link rel="stylesheet" href="{{ $user_assets }}/css/muzamil.css" />
+
 
   <link rel="shortcut icon" href="{{ $user_assets }}/kabool-hai-favicon.png">
   <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
@@ -517,17 +516,6 @@
            top: 97%;
          }
     
-         @media (max-width: 640px) {
-          .text-bar input {
-            padding-top: 5px;
-            padding-bottom: 5px;
-          }
-    
-          #bb {
-            bottom: 2px;
-          }
-         }
-    
         @media (min-width:500px) {
           .search-dropdown-toggle:hover {
             color:#ed6c05;
@@ -548,14 +536,6 @@
           font-size:12px;
         }
     
-        #bb img {
-          right: 19vw;
-        }
-    
-        /* .text-bar input {
-          width: 323px !important;
-        } */
-        
         .logo-light img, .logo-dark img {
           width: 34vw;
         }
@@ -574,11 +554,6 @@
           display: block !important;
           margin-left: 48px !important;
         }
-    
-        /* .arrow_button {
-          right: -210px;
-          top: -33px;
-        } */
     
       }
     
@@ -665,15 +640,12 @@
     .navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse {
       max-height:0 !important;
     }
+
       </style>
   
   <script type="text/javascript">
     $(function (e) {
-      $('#send_messgae').emojiPicker();
-      //   $('#send_messgae').emojiPicker({
-      //   width: '300px',
-      //   height: '200px'
-      // });
+      $('#send_messgae').emojioneArea();
     });
     
   </script>
@@ -681,7 +653,7 @@
 
 <body>
 
-  <div class="main-section open-more">
+  <div class="main-section">
     <div class="border-chat">
       <div class='header'>
         <div class="img-wrapper">
@@ -713,17 +685,16 @@
             {{csrf_field()}}
 
             <span style="color: red" id="error"></span>
-            <input type="text" id="send_messgae" name="send_messgae" class="emojiable-option" placeholder="Type a message">
+            <input type="text" id="send_messgae" name="send_messgae" placeholder="Type a message">
             <input type="hidden" id="to_userss" name="to_user">
 
             <button class="arrow_button">
               <svg style="enable-background:new 0 0 24 24;" version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="info"/><g id="icons"><path d="M21.5,11.1l-17.9-9C2.7,1.7,1.7,2.5,2.1,3.4l2.5,6.7L16,12L4.6,13.9l-2.5,6.7c-0.3,0.9,0.6,1.7,1.5,1.2l17.9-9   C22.2,12.5,22.2,11.5,21.5,11.1z" id="send"/></g></svg>
             </button>
-
+            <label id="bb"> <i class="fas fa-paperclip attach"></i>
+              <input type="file" name="file" id="file" size="60">
+            </label>
           </div>
-          <label id="bb"> <i class="fas fa-paperclip attach"></i>
-            <input type="file" name="file" id="file" size="60">
-          </label>
         </div>
       </form>
     </div>
@@ -829,9 +800,7 @@
  .arrow_image {
    padding: 10px;
  }
- /* .arrow_button {
-   margin-left: -39px;
- } */
+ 
  #navsidebare {
    overflow: scroll;
    overflow-x:hidden;

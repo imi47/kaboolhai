@@ -192,7 +192,8 @@ img{ max-width:100%;}
   position: relative;
 }
 
-.chat_list.current {
+.chat_list.current,
+.chat_list:hover {
   background-color: #f2f2f2;
 }
 
@@ -833,7 +834,7 @@ $("#file").change(function () {
        
          });
 
-      $(document).ready(function(){
+      $(function(){
         $('.main-section').html('');
       });
 
@@ -905,9 +906,6 @@ $("#file").change(function () {
 
 {{-- <script type="text/javascript" src="{{ $user_assets }}/js/custom.js"></script> --}}
 <link rel="stylesheet" href="{{ $user_assets }}/css/custom.css" />
-
-<!-- emojiOneArea -->
-<link rel="stylesheet" href="{{ $user_assets }}/css/emojionearea.css">
  
 @endpush
 
@@ -952,9 +950,6 @@ $("#file").change(function () {
 <!-- hamburger menu-->
 <script type="text/javascript" src="{{ $user_assets }}/js/classie.js"></script>
 <script type="text/javascript" src="{{ $user_assets }}/js/hamburger-menu.js"></script>
-
-<!-- emojiOneArea -->
-<script type="text/javascript" src="{{ $user_assets }}/js/emojionearea.min.js"></script>
 
 @endpush      
 <!-- Optional JavaScript -->

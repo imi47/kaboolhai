@@ -7,16 +7,20 @@
   <meta charset="utf-8">
   <meta name="author" content="">
   <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1" />
-  <link rel="stylesheet" href="{{ $user_assets }}/css/chat.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
-    crossorigin="anonymous">
+  crossorigin="anonymous">
+  
+  <!-- emojiOneArea -->
+  <link rel="stylesheet" href="{{ $user_assets }}/css/emojionearea.css">
+
+  <link rel="stylesheet" href="{{ $user_assets }}/css/chat.css">
+  
   <link rel="stylesheet" type="text/css" href="{{ $user_assets }}/css/jquery.emojipicker.css">
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 
-  <!-- Emoji Data -->
-  <link rel="stylesheet" type="text/css" href="{{ $user_assets }}/css/jquery.emojipicker.tw.css">
-  <script type="text/javascript" src="{{ $user_assets }}/js/jquery.emojipicker.js"></script>
-  <script type="text/javascript" src="{{ $user_assets }}/js/jquery.emojis.js"></script>
+
+  <!-- emojiOneArea -->
+  <script type="text/javascript" src="{{ $user_assets }}/js/emojionearea.min.js"></script>
 
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="shortcut icon" href="{{ $user_assets }}/kabool-hai-favicon.png">
@@ -31,13 +35,7 @@
     }
 
     $(function (e) {
-      $('#send_messgae').emojiPicker();
-
-      //   $('#send_messgae').emojiPicker({
-      //   // width: '300px',
-      //   height: '200px'
-      // });
-
+      $('#send_messgae').emojioneArea();
       scrollToBottom('#chat-scroll');
     });
   </script>
@@ -137,9 +135,12 @@ body *::-webkit-scrollbar-thumb {
   padding: 0px 14px 1px 7px;
 }
 
-.open-more #bb {
-  display: block;
-  bottom: 5px;
+.arrow_button {
+  top: -1px;
+}
+
+#bb {
+  left: 13px;
 }
 
 .search-dropdown-toggle {
@@ -396,12 +397,6 @@ body *::-webkit-scrollbar-thumb {
 .navbar-fixed-top #myNavbar .nav.navbar-right,
 .logo-light {
   transition: 500ms;
-}
-
-.text-bar input {
-  padding-top: 6px;
-  padding-bottom: 6px;
-  padding-left: 30px;
 }
 
   @media (min-width:1200px) {
@@ -1040,17 +1035,6 @@ body *::-webkit-scrollbar-thumb {
     .navbar-nav {
         margin:0;
       }
-
-      .emojiPicker {
-        width: 99% !important;
-
-        height:290px !important;
-        top: -5px !important;
-      }
-
-      .emojiPicker .sections {
-        height: 206px !important;
-      }
   }
 
     @media (max-width:375px) {
@@ -1076,13 +1060,13 @@ body *::-webkit-scrollbar-thumb {
 
 <body style="background-color: #2B354B; overflow-x:hidden;" onload='mediaQueryResponse1()'>
   <!--  -->
-  <!-- navigation panel -->
-  <div class="main-section">
+    <!-- navigation panel -->
+    <div class="main-section">
       <div class="border-chat">
         <div class='header'>
           <div class="img-wrapper">
             <img src="{{ $user_assets }}/img/avatar.png" alt="">
-            <span></span>
+            <span id='mark'></span>
           </div>
           <div class="name-and-status">
             <a href="#">username</a>
@@ -1105,21 +1089,20 @@ body *::-webkit-scrollbar-thumb {
         <form id='form' enctype="multipart/form-data">
           <div class="text-bar">
             <div>
-  
+
               {{csrf_field()}}
-  
+
               <span style="color: red" id="error"></span>
-              <input type="text" id="send_messgae" name="send_messgae" class="emojiable-option" placeholder="Type a message">
+              <input type="text" id="send_messgae" name="send_messgae" placeholder="Type a message">
               <input type="hidden" id="to_userss" name="to_user">
-  
+
               <button class="arrow_button">
                 <svg style="enable-background:new 0 0 24 24;" version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="info"/><g id="icons"><path d="M21.5,11.1l-17.9-9C2.7,1.7,1.7,2.5,2.1,3.4l2.5,6.7L16,12L4.6,13.9l-2.5,6.7c-0.3,0.9,0.6,1.7,1.5,1.2l17.9-9   C22.2,12.5,22.2,11.5,21.5,11.1z" id="send"/></g></svg>
               </button>
-  
+              <label id="bb"> <i class="fas fa-paperclip attach"></i>
+                <input type="file" name="file" id="file" size="60">
+              </label>
             </div>
-            <label id="bb"> <i class="fas fa-paperclip attach"></i>
-              <input type="file" name="file" id="file" size="60">
-            </label>
           </div>
         </form>
       </div>
@@ -3313,11 +3296,6 @@ function get_message()
 </script>
 @endif
 
-  <script type="text/javascript" src="{{ $user_assets }}/js/jquery.emojipicker.js"></script>
-  <script type="text/javascript" src="{{ $user_assets }}/js/jquery.emojis.js"></script>
-     <script type="text/javascript" src="{{ $user_assets }}/js/jquery.emojiarea.js"></script>
-
-<script type="text/javascript" src="{{ $user_assets }}/js/emoji-picker.js"></script>
 </body>
 
 </html>
