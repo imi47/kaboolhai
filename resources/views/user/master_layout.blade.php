@@ -107,6 +107,72 @@ body *::-webkit-scrollbar-thumb {
   border-bottom: 1px solid #ddd;
 }
 
+.friends-noti-dropdown-item {
+      display: grid;
+      grid-template-columns: 50px 1fr auto auto;
+      grid-column-gap: .625em;
+      align-items: center;
+    }
+    
+    .friends-noti-dropdown-item .info {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .friends-noti-dropdown-item a {
+      font-weight: bold;
+      color: #3273dc !important;
+      font-size: .85em;
+      padding:0 !important;
+    }
+    
+    .friends-noti-dropdown-item .info span {
+      grid-column: 1/-1;
+      font-size: .813em;
+    }
+    
+    .friends-noti-dropdown-item.friends-noti-dropdown-item a:hover {
+      background-color: unset;
+      color: #3273dc !important;
+      text-decoration: underline !important;
+    }
+    
+    .friends-noti-dropdown-item > .buttons {
+      justify-self: end;
+    }
+    
+    .friends-noti-dropdown-item > button {
+      color: white;
+      font-weight: bold;
+      border:none;
+      border-radius: 3px;
+      padding: .3em .8em;
+      width: 7rem;
+    }
+    
+    .friends-noti-dropdown-item > button:last-child {
+      background-color: #ed6c05;
+    }
+    
+    .friends-noti-dropdown-item > button:first-of-type {
+      background-color: #5a378c;
+    }
+    
+    .friends-noti-dropdown-item > button:first-of-type a,
+    .friends-noti-dropdown-item > button:last-child a {
+      color: white !important;
+    }
+    
+    .friends-noti-dropdown-item > button:first-of-type a:hover,
+    .friends-noti-dropdown-item > button:last-child a:hover {
+      color: white !important;
+    }
+    
+    .noti-dropdown-item .info img {
+      width: 13px;
+      height: 13px;
+    }
+
 #friends-dropdown li:nth-last-child(2), #notifications-dropdown li:nth-last-child(2) {
   margin-bottom:25px;
 }
@@ -318,11 +384,6 @@ body *::-webkit-scrollbar-thumb {
 }
 .notification-dropdown-item > div span:last-child i {
   margin-right: 3px;
-}
-.notification-dropdown-item > div i {
-  font-size: 15px;
-  color: #ed6c05;
-  margin-left: 0;
 }
 
 .friends-dropdown-item {

@@ -401,15 +401,17 @@ ul, ol, dl {list-style-position: outside;}
         margin-left: 0;
       }
 
-      .my-photos .profile-pic-container {
+      .my-photos .profile-pic-container,
+      .my-photos > div:not(:first-of-type) > div:last-child .img-container {
         position: relative;
         cursor: pointer;
       }
 
-      .my-photos .profile-pic-container div {
+      .my-photos .profile-pic-container div,
+      .my-photos > div:not(:first-of-type) > div:last-child .img-container span {
         position: absolute;
         top: 50%;
-        left: 50%;;
+        left: 50%;
         display: grid;
         grid-gap: .3em;
         align-items: center;
@@ -419,14 +421,29 @@ ul, ol, dl {list-style-position: outside;}
     }
 
     .my-photos .profile-pic-container div > span {
-        padding: .5em;
         width: 100%;
+        transition: 350ms;
+    }
+
+    .my-photos .profile-pic-container div > span,
+    .my-photos > div:not(:first-of-type) > div:last-child .img-container span {
+        padding: .5em;
         text-align: center;
         background-color: rgba(0,0,0,.4);
       }
 
-      .my-photos .profile-pic-container div > span:hover {
-          background-color: rgba(0,0,0,.5);
+      .my-photos > div:not(:first-of-type) > div:last-child .img-container span {
+        display: flex;
+        width: max-content;
+      }
+
+      .my-photos > div:not(:first-of-type) > div:last-child .img-container span i {
+        margin-right: 7px;
+      }
+
+      .my-photos .profile-pic-container div > span:hover,
+      .my-photos > div:not(:first-of-type) > div:last-child .img-container span:hover {
+        background-color: rgba(0,0,0,.5);
       }
 
       .my-photos .profile-pic-container div > span:not(:last-child) {
@@ -441,8 +458,10 @@ ul, ol, dl {list-style-position: outside;}
         display: none;
       }
 
-      .my-photos .profile-pic-container i {
+      .my-photos .profile-pic-container i,
+      .my-photos > div:not(:first-of-type) > div:last-child .img-container i {
           color: white;
+          font-size: 15px;
       }
 
       .my-photos > div {
@@ -517,6 +536,10 @@ ul, ol, dl {list-style-position: outside;}
         justify-content: space-between;
         grid-template-columns: 275px 2fr;
         grid-gap: 2em;
+      }
+
+      .my-photos .access-control {
+          display: none;
       }
 
       .my-photos .access-control > div {
@@ -859,6 +882,11 @@ ul, ol, dl {list-style-position: outside;}
             grid-template-columns: repeat(3, 5.625em);
             grid-gap: 3.3em 1.5em;
           }
+
+          .my-photos > div:not(:first-of-type) > div:last-child .img-container span {
+            width: calc(100% - 7px);
+            font-size: 12px;
+          }
       }
 
       @media (max-width: 480px) {
@@ -871,20 +899,31 @@ ul, ol, dl {list-style-position: outside;}
         .inbox_msg .sent_msg p {
           font-size: 1.4rem;
         }
+
+        .my-photos > div:not(:first-of-type) > div:last-child .img-container span {
+            flex-direction: column;
+        }
+
+        .my-photos > div:not(:first-of-type) > div:last-child .img-container span i {
+            margin: 0 0 5px 0;
+        }
       }
 
       @media (hover: hover) {
-        .my-photos .profile-pic-container div {
+        .my-photos .profile-pic-container div,
+        .my-photos > div:not(:first-of-type) > div:last-child .img-container span {
             transform:translate(-50%, -50%) scale(0);
         }
 
-        .my-photos .profile-pic-container:hover div {
+        .my-photos .profile-pic-container:hover div,
+        .my-photos > div:not(:first-of-type) > div:last-child .img-container:hover span {
             transform: translate(-50%, -50%) scale(1);
         }
      }
 
       @media (hover: none) {
-        .my-photos .profile-pic-container div {
+        .my-photos .profile-pic-container div,
+        .my-photos > div:not(:first-of-type) > div:last-child .img-container span {
             transform: translate(-50%, 0) scale(1);
             bottom: 7px;
             top: unset;

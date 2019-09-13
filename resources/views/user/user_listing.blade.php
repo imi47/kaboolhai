@@ -64,8 +64,19 @@
   }
 
   .panel-body .friends-dropdown-item {
-    grid-template-columns: 90px 1fr auto auto;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: auto 1fr auto;
     align-items: start;
+    list-style-type: none;
+  }
+
+  .panel-body .friends-dropdown-item {
+    margin-bottom: 15px;
+  }
+
+  .panel-body .friends-dropdown-item:last-of-type {
+    margin-bottom: 0;
   }
 
   .panel-body .friends-dropdown-item a {
@@ -92,6 +103,12 @@
     align-self: center;
     display: flex;
     justify-content: center;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    padding: .3em .8em;
+    width: 7rem;
+    background-color: #5a378c;
   }
 
   .panel-body .friends-dropdown-item button a {
@@ -126,7 +143,7 @@
 
 @media (max-width: 768px) {
   .panel-body .friends-dropdown-item {
-    grid-template-columns: 90px 1fr 1fr;
+    grid-template-columns: auto 1fr;
   }
   .panel-body .friends-dropdown-item img {
     grid-row: 1/3;
@@ -134,6 +151,11 @@
   .panel-body .friends-dropdown-item .info {
     display: grid;
     grid-column: 2/-1;
+  }
+
+  .panel-body .dropdown-item img {
+    height: 60px;
+    width: 60px;
   }
 }
 
@@ -165,43 +187,13 @@
       @if(count($user_data))
      @foreach($user_data as $key => $row)
 
-      <div class="row">
-          <a title="view profile" href="{{ url('public-profile/'.$row->id) }}">
-        <div class="col-md-2">
-                <!-- @if(!empty($row->image_name))
-                <img style="width: 100px; height: 100px;" class="img-thumbnail  pull-right" src="{{ $user_assets }}/profile_image/{{ $row->image_name }}">
-                @else
-                <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=Image +Not+Found"  style="width: 100px; height: 100px;" class="img-thumbnail  pull-right">
-              @endif -->
-        </div>
-        
-        <div class="col-md-8">
-          <!-- <h3>{{ $row->user_name }}</h3>
-        </a>
-          <span>{{ $row->country_name }}</span>
-           <span>{{ $row->city_name }}</span><br>
-           </span>{{ $row->job }}<span><br>
-          <span>{{ $row->description }}</span> -->
-        </div>
-        <!-- @if($title=='Recent join')
-        <div class="col-md-2">
-          <a href="{{ url('public-profile',$row->id) }}"  class="btn btn-block">View Profile</a>
-        </div>
-        @else -->
-        <div class="col-md-2">
-         <!--  @if($title=='Block user list')
-          <a href="{{ url('remove-user',[$row->id,$title]) }}" onclick="return confirm('Are you sure you want to remove this user?');" class="btn btn-block">Unblock</a>
-          @else<a href="{{ url('remove-user',[$row->id,$title]) }}" onclick="return confirm('Are you sure you want to remove this user?');" class="btn btn-block">Remove</a>
-          @endif -->
-        </div> 
-        @endif
-      </div>
+     
       
       <li class="friends-dropdown-item dropdown-item">
         @if(!empty($row->image_name))
-                <img style="width: 100px; height: 100px;" class="img-thumbnail  pull-right" src="{{ $user_assets }}/profile_image/{{ $row->image_name }}">
+                <img class="img-thumbnail  pull-right" src="{{ $user_assets }}/profile_image/{{ $row->image_name }}">
                 @else
-                <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=Image +Not+Found"  style="width: 100px; height: 100px;" class="img-thumbnail  pull-right">
+                <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=Image +Not+Found" class="img-thumbnail  pull-right">
               @endif
         <div class="info">
           <a href="#">{{ $row->user_name }}</a>
@@ -211,7 +203,7 @@
         </div>
           
           <!-- <a id="remove">Remove</a> -->
-          <button><a href="{{ url('remove-user',[$row->id,$title]) }}" onclick="return confirm('Are you sure you want to remove this user?');" class="btn btn-block">Remove</a> </button>
+          <button><a href="{{ url('remove-user',[$row->id,$title]) }}" onclick="return confirm('Are you sure you want to remove this user?');">Remove</a> </button>
       </li>
 
       @endforeach
