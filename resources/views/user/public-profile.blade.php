@@ -451,9 +451,9 @@ $('.owl-carousel').owlCarousel({
               
                
 								@if(empty($favourit))
-								<li class="agea"><a href="{{ url('favourite-user',$user_data->id) }}"><span><img src="{{ $user_assets }}/favorite.png" alt="" class="icon_size"></span><span class="linkT">  Add to my favourite </span></a></li>
+								<li class="agea"><a href="{{ url('favourite-user',$user_data->id) }}"><span><img src="{{ $user_assets }}favorites.png" alt="" class="icon_size"></span><span class="linkT">  Add to my favourite </span></a></li>
 
-								@else <li class="agea"><a href="{{ url('delete-favourite-user',$user_data->id) }}"><span><img src="{{ $user_assets }}/favorite.png" alt="" class="icon_size"></span><span class="linkT">Remove from my favorite </span></a></li> @endif
+								@else <li class="agea"><a href="{{ url('delete-favourite-user',$user_data->id) }}"><span><img src="{{ $user_assets }}favorite.png" alt="" class="icon_size"></span><span class="linkT">Remove from my favorite </span></a></li> @endif
 								@if(empty($photo))
 								<li class="agea"><a href="{{ url('photo-permission',$user_data->id) }}"><span><img src="{{ $user_assets }}/photorequest.png" alt="" class="icon_size"></span><span class="linkT"> Ask to Photo Permission</span></a></li>
 								@else
@@ -2395,7 +2395,7 @@ $('.owl-carousel').owlCarousel({
 									<li class="ageaa"><a href=""><span> <span class="countN icon_size">20</span> <span class="linkT">My Favourites</span></a></li>
 								</ul> --}}
 								<ul class="list_somebtn">
-									<li class="ageaa"><a href="{{ url('favourite-list') }}"><span><img style="height: 25px;" src="{{ $user_assets }}/icons/favorite.png"> <span class="linkT">My Favourites</span></a></li>
+									<li class="ageaa"><a href="{{ url('favourite-list') }}"><span><img style="height: 25px;" src="{{ $user_assets }}/icons/favorites.png"> <span class="linkT">My Favourites</span></a></li>
 								</ul>
 	
 					

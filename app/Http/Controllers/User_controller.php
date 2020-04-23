@@ -55,10 +55,16 @@ class User_Controller extends Controller
                  ,'get_city','signup','user_search','testimonials','register_user','verify','prev_register_step_2','user_register_step_2','verifies','sitemap','manage_profiles','pakistani','UAE','United_Kingdom','USA','canada','public_profile','test','view_verify','subscribe','add_assisted','payment','help_center','save_request']]);
 
 }
+
+
+
 public function chat(Request $request)
 {
+
+
 	$obj = new chats();
 	$id=$request->to_user;
+  $friend_user = \App\User::where('id', Request('to_user'))->first();
 	// echo $id;
  $data['all_chats']= chats::distinct()->where([['from_user','=',Session::get('user_id')]])->orderBy('created_at','asc')->get(['to_user']);
  if($id!=null)
@@ -159,17 +165,40 @@ public function chat(Request $request)
         }
 
         $obj->sender=$sender;
-        $obj->user_name=$user_name;
+        //$obj->user_name=$user_name;
+        $obj->user_name=$friend_user->user_name;
+        if($friend_user->login_status==1)
+        {
+          $obj->status=1;
+        }
+        else{
+          $obj->staus = 0;
+        }
+
+
+        $friend_user = \App\User::where('id', Request('to_user'))->first();
+
+
         echo json_encode($obj);
        
       }
  }
  // return view('user/chat',$data);
+
+}
+
+
+
+
+public function check_read(){
+
+  $chat = 
+   chats::select('message','attached')->where([['from_user','=',$request->to_user],['to_user','=',Session::get('user_id')],['read_at','=',null]])->orderBy('created_at','asc')->update(['read_at'=>1]);
 }
 public function check_unseen(Request $request)
 {
 	
- $chat = chats::select('message','attached','to_user')->where([['from_user','=',$request->to_user],['to_user','=',Session::get('user_id')],['sending_bit','=','0']])->orderBy('created_at','asc')->get();
+ $chat = 
    chats::select('message','attached')->where([['from_user','=',$request->to_user],['to_user','=',Session::get('user_id')],['sending_bit','=','0']])->orderBy('created_at','asc')->update(['sending_bit'=>1]);
   if(!empty($chat))
   {
@@ -196,7 +225,14 @@ Public function read_message(Request $request)
 }
 public function send_message_user(Request $request)
  {
-    // dd($request);
+     // dd($request->send_message);
+
+
+  
+
+
+
+
    $new_message=new chats();
    $new_message->message=$request->send_message;
    $new_message->from_user=Session::get('user_id');
@@ -385,6 +421,83 @@ public function divorcee()
        $data['userphoto']=MyPhoto::where('user_id',Session::get('user_id'))->where('dp_status',1)->first();
        $data['user_data']=User::where('id',Session::get('user_id'))->join('countries','countries.country_id','=','users.country_id')->join('cities','cities.city_id','users.city_id')->join('profile-image','profile-image.image_id','=','users.profile_image','left')->first();
       
+
+       $me['asia'] = \App\Loking::where([['user_id',Session::get('user_id')],['loking_type','Asia']])->first();
+                    $me['Religious History'] = \App\Loking::Where([['user_id',Session::get('user_id')],['loking_type','Religious History']])->first();
+                    $me['Living with'] = \App\Loking::Where([['user_id',Session::get('user_id')],['loking_type','Living with']])->first();
+                    $me['Sects'] = \App\Loking::Where([['user_id',Session::get('user_id')],['loking_type','Sects']])->first();
+                    $me['Has Children'] = \App\Loking::Where([['user_id',Session::get('user_id')],['loking_type','Has Children']])->first();
+                    $me['Body Type'] = \App\Loking::Where([['user_id',Session::get('user_id')],['loking_type','Body Type']])->first();
+                    $me['Pray'] = \App\Loking::Where([['user_id',Session::get('user_id')],['loking_type','Pray']])->first();
+                    $me['Africa'] = \App\Loking::Where([['user_id',Session::get('user_id')],['loking_type','Africa']])->first();
+                    $me['Antarctica'] = \App\Loking::Where([['user_id',Session::get('user_id')],['loking_type','Antarctica']])->first();
+                    $me['Europe'] = \App\Loking::Where([['user_id',Session::get('user_id')],['loking_type','Europe']])->first();
+                    $me['North America'] = \App\Loking::Where([['user_id',Session::get('user_id')],['loking_type','North America']])->first();
+                    $me['Australasia'] = \App\Loking::Where([['user_id',Session::get('user_id')],['loking_type','Australasia']])->first();
+                    $me['South America'] = \App\Loking::Where([['user_id',Session::get('user_id')],['loking_type','South America']])->first();
+
+                    $other['asia'] = \App\Loking::where([['user_id',$like_id],['loking_type','Asia']])->first();
+                 $other['Religious History'] = \App\Loking::Where([['user_id',$like_id],['loking_type','Religious History']])->first();
+                    $other['Living with'] = \App\Loking::Where([['user_id',$like_id],['loking_type','Living with']])->first();
+                    $other['Sects'] = \App\Loking::Where([['user_id',$like_id],['loking_type','Sects']])->first();
+                    $other['Has Children'] = \App\Loking::Where([['user_id',$like_id],['loking_type','Has Children']])->first();
+                    $other['Body Type'] = \App\Loking::Where([['user_id',$like_id],['loking_type','Body Type']])->first();
+                    $other['Pray'] = \App\Loking::Where([['user_id',$like_id],['loking_type','Pray']])->first();
+                    $other['Africa'] = \App\Loking::Where([['user_id',$like_id],['loking_type','Africa']])->first();
+                    $other['Antarctica'] = \App\Loking::Where([['user_id',$like_id],['loking_type','Antarctica']])->first();
+                    $other['Europe'] = \App\Loking::Where([['user_id',$like_id],['loking_type','Europe']])->first();
+                    $other['North America'] = \App\Loking::Where([['user_id',$like_id],['loking_type','North America']])->first();
+                    $other['Australasia'] = \App\Loking::Where([['user_id',$like_id],['loking_type','Australasia']])->first();
+                    $other['South America'] = \App\Loking::Where([['user_id',$like_id],['loking_type','South America']])->first();
+
+                    $data['me']=$me;
+                    $data['other']=$other;
+
+
+                      $counter = 0;
+                //     if($me['asia']->loking_value == $other['asia']->loking_value || $me['Africa']->loking_value == $other['Africa']->loking_value || $me['Antarctica']->loking_value == $other['Antarctica']->loking_value || $me['Europe']->loking_value == $other['Europe']->loking_value ||  $me['North America']->loking_value==$other['North America'] ->loking_value || $me['Australasia']->loking_value == $other['Australasia']->loking_value || $me['South America']->loking_value==$other['South America']->loking_value){
+                //     $counter++;
+                // }  
+                if(!empty($me['Religious History']) && !empty($other['Religious History'])){                
+                if ($me['Religious History']->loking_value = $other['Religious History']->loking_value) {
+                    $counter++;
+                }
+              }
+
+              if(!empty($me['Living with']) && !empty($other['Living with'])){
+                if($me['Living with']->loking_value==$other['Living with']->loking_value)
+                    {
+                        $counter++;
+                    }
+                  }
+
+                  if(!empty($me['Sects']) && !empty($other['Sects'])){
+                    if($me['Sects']->loking_value ==  $other['Sects']->loking_value){
+                        $counter++;
+                    }
+                  }
+                  if(!empty($me['Body Type']) && !empty($other['Body Type'])){
+                    if($me['Body Type']->loking_value==$other['Body Type']->loking_value){
+                        $counter++;
+                    }
+                  }
+                  if(!empty($me['Pray']) && !empty($other['Pray'])){
+                    if($me['Pray']->loking_value == $other['Pray']->loking_value){
+                        $counter++;
+                    }
+                  }
+                  if(!empty($me['Has Children']) && !empty($other['Has Children'])){
+                    if($me['Has Children']->loking_value == $other['Has Children']->loking_value){
+                      $counter++;
+                    }
+                  }
+
+                    $perc =0;
+                    $perc = ($counter/6)*100;
+
+                
+              $data['per']=$perc;
+
        $data['title']='More Alike';
        return view('user/more_alike',$data);
   }
@@ -470,6 +583,7 @@ public function divorcee()
   }
 	public function user_search(Request $request)
 	{
+    $current = \App\User::where('id' , Session::get('user_id'))->first();
 		$data1='user-search';
 		$user_name =   $request->user_name;
 		$loking_for =   $request->loking_for;
@@ -539,6 +653,8 @@ public function divorcee()
         {
         	 
         	 $data = $data->where('user_name','like', '%'. $user_name.'%');
+          // $data = User::where('user_name','like', '%'. $user_name.'%')->first();
+          
 
          // where('user_name',$user_name);
         }
@@ -588,8 +704,16 @@ public function divorcee()
         }
          if(!empty($loking_for))
         {
-        	
+                  	
           $data = $data->where('gender',$loking_for);
+        }
+        if($current->gender == 'Male')
+        {
+          $data = $data->where('gender','Female');
+        }
+        if($current->gender=='Female')
+        {
+          $data = $data->where('gender','Male');
         }
 
         if(!empty($age_from && $age_to))
@@ -630,14 +754,15 @@ public function divorcee()
           $data = $data->where('religiousness',$religiousness);
         }
 
-         $data=$data->join('cities','cities.city_id','=','users.city_id','left')->join('countries','countries.country_id','=','users.country_id','left')->join('profile-image','profile-image.image_id','=','users.profile_image','left')->join('my_photos','my_photos.user_id','=','users.id','left')->orderBy('id','desc')->paginate('12');
+         $data=$data->join('cities','cities.city_id','=','users.city_id','left')->join('countries','countries.country_id','=','users.country_id','left')->orderBy('id','desc')->paginate('12');
+
          $d['user_data']=$data;
          $d['save_search']=$request->fullUrl();
          $d['country']=DB::table('countries')->get();
          $d['search']=$data1;
-         $d['recent']=User::orderBy('id', 'desc')->join('my_photos','my_photos.user_id','=','users.id','left')->join('profile-image','profile-image.image_id','=','users.profile_image','left')->join('countries','countries.country_id','=','users.country_id','left')->join('cities','cities.city_id','users.city_id','left')->limit(4)->get();
+         $d['recent']=User::where('gender','!=', $current->gender)->orderBy('id', 'desc')->join('my_photos','my_photos.user_id','=','users.id','left')->join('profile-image','profile-image.image_id','=','users.profile_image','left')->join('countries','countries.country_id','=','users.country_id','left')->join('cities','cities.city_id','users.city_id','left')->limit(4)->get();
 
-         $d['title']='User Listing';
+        $d['title']='User Listing';
          // @foreach ($d['user_data'] as $value)
          //  {
          // 	$d['city']=DB::table('cities')->where('city_id',$value->city_id)->get();
@@ -773,7 +898,7 @@ public function confirm_friend($friend_id)
 		if(!empty($friend))
 		{
 		$friend=UserRequest::where('user_id',$friend_id)->where('requested_user_id',Session::get('user_id'))->delete();
-		
+		$chat = Chat::where([['from_user',$friend_id],['to_user', Session::get('user_id')]])->delete();
 		$Userdelete=new DeleteRequest();
 		$Userdelete->delete_user_id=$friend_id;
 		$Userdelete->user_id=Session::get('user_id');
@@ -831,6 +956,109 @@ public function confirm_friend($friend_id)
            $data['title']='Hidden Profiles';
           return view('user/user_listing',$data);    
     }
+
+
+  public function accept_friend_photopermission($friend_id){
+    // dd('hello');
+
+    $friend=UserRequest::where('requested_user_id',$friend_id)->where('user_id',Session::get('user_id'))->first();
+   
+      
+      $permission =\App\PhotoPermission::where([['permission_user_id' , Session::get('user_id')],['user_id' , $friend_id] ,['status' , 0] ])->first();
+      $permission->status = 1 ;
+      $permission->sum = $permission->sum + 1 ;
+      $permission->save();
+      // $email_setting=EmailPerferance::where('user_id',$request_id)->first();
+      // if($email_setting)
+      // {
+      //   if($email_setting->responce_photo_request_status==1)
+      //   {
+      //     $data['user_date']=User::find($request_id);
+      //     $data['sender_user']=User::find(Session::get('user_id'));
+      //     $result=\Mail::send('emails.accept_photo_permission', $data , function($message) use ($data)
+      //     {
+      //           $message->to($data['user_date']->email)->from('admin@kaboolhai.com' , 'Kabolhai')->subject('Accept your Photo Permission Request');
+      //         });
+      //   }
+      // }
+
+
+       $ActivityLog=new ActivityLog();
+        $ActivityLog->user_id=Session::get('user_id');
+        $ActivityLog->activity_user_id=$friend_id;
+        $ActivityLog->activity='Gave you permission';
+        $ActivityLog->save();
+      
+       $ActivityLog=new ActivityLog();
+        $ActivityLog->user_id=Session::get('user_id');
+        $ActivityLog->activity_user_id=$friend_id;
+        $ActivityLog->activity='Gave you permission';
+        $ActivityLog->save();
+
+      if($permission)
+    {
+      Session::flash('success', 'You gavr photo permision'); 
+            return back();
+    }
+  
+    else
+    {
+      Session::flash('error', 'invalid'); 
+            return back();
+    }
+
+
+
+  }
+
+public function cancel_photopermission_request($friend_id){
+
+       // $friend=UserRequest::where('requested_user_id',$friend_id)->where('user_id',Session::get('user_id'))->delete();
+        $permission = \App\PhotoPermission::where([['user_id' , $friend_id],['permission_user_id', Session::get('user_id')],['status' , 0]])->first();
+        $permission->flag=1;
+        $permission->save();
+        
+        // $email_setting=EmailPerferance::where('user_id',$friend_id)->first();
+        //  if($email_setting->responce_photo_request_status==1)
+        //   {
+        //     $data['user_date']=User::find($friend_id);
+        //      $data['sender_user']=User::find(Session::get('user_id'));
+        //       $result=\Mail::send('emails.reject_photo_permission', $data , function($message) use ($data)
+        //   {
+        //         $message->to($data['user_date']->email)->from('admin@kaboolhai.com' , 'Kabolhai')->subject('Reject your Photo Permission Request');
+        //       });
+        // }
+        $ActivityLog=new ActivityLog();
+        $ActivityLog->user_id=Session::get('user_id');
+        $ActivityLog->activity_user_id=$friend_id;
+        $ActivityLog->activity='cancel photo permission request';
+        $ActivityLog->save();
+  
+    if($permission)
+    {
+      Session::flash('success', 'You canceled successfully'); 
+            return back();
+    }
+  
+    else
+    {
+      Session::flash('error', 'invalid'); 
+            return back();
+    }
+}
+
+
+public function end_permission(){
+  
+
+  $permission = \App\PhotoPermission::where([['user_id' , Session::get('user_id')],['permission_user_id', request('permited_id') ],['status' , 1]])->first();
+  if($permission){
+        $permission->flag=0;
+        $permission->status=0;
+        $permission->save();
+      }
+}
+
 	public function add_friend($friend_id)
 	{
 		
@@ -1713,6 +1941,7 @@ public function accept_photo_request($request_id)
 	public function dologin(Request $request)
 	{
 
+
 		          ob_start();
               system('ipconfig /all');
               $mycom=ob_get_contents();
@@ -1880,10 +2109,23 @@ public function accept_photo_request($request_id)
 		$data['activity_log']=ActivityLog::with('otheruser')->where('user_id',$user_id)->where('activity_user_id',$activity_user_id)->orderBy('activity_id', 'desc')->paginate('15');
       $data['request']=UserRequest::where('user_id',Session::get('user_id'))->where('requested_user_id',$activity_user_id)->first();
 		$data['activity']=ActivityLog::with('activeuser')->where('user_id',$activity_user_id)->where('activity_user_id',$user_id)->orderBy('activity_id', 'desc')->paginate('15');
-		
+	// dd($data['activity_log']);
 		  $data['title']='Activity Log';
 	    return view('user/activity-log',$data);
 	}
+
+  public function activity_log_own($activity_user_id)
+  {
+    // dd($activity_user_id);
+    $user_id=Session::get('user_id');
+    $data['activity_log']=ActivityLog::with('otheruser')->where('user_id',$user_id)->orderBy('activity_id', 'desc')->paginate('15');
+      $data['request']=UserRequest::where('user_id',Session::get('user_id'))->get();
+    $data['activity']=ActivityLog::with('activeuser')->where('user_id',$activity_user_id)->where('activity_user_id',$user_id)->orderBy('activity_id', 'desc')->paginate('15');
+    // dd($data['activity_log']);
+      $data['title']='Activity Log';
+      return view('user/activity-log-own',$data);
+  }
+
 	public function profile_writing_tips()
 	{
 		$data['title']='Prifile writeing tips';
@@ -2046,6 +2288,7 @@ public function accept_photo_request($request_id)
 	  	{
 	  		if(Session::get('user_id')){
 	 		$MyProfile=MyProfileViewed::where('user_id',Session::get('user_id'))->where('myprofile_user_id',$user_id)->first();
+      $invite = InviteViewProfile::where('user_id',Session::get('user_id'))->where('inviteprofile_user_id',$user_id)->first();
        	 		if(empty($MyProfile))
 	 		{
 	  		    $MyProfileViewed=new MyProfileViewed();
@@ -2053,6 +2296,10 @@ public function accept_photo_request($request_id)
 	  		    $MyProfileViewed->myprofile_user_id=$user_id;
 	  		    $MyProfileViewed->save();
 	 		} 	
+       if($invite != null){
+         $invite->status=1;
+         $invite->delete();
+       }
 
 	 		    $ActivityLog=new ActivityLog();
 				$ActivityLog->user_id=Session::get('user_id');
@@ -2063,7 +2310,7 @@ public function accept_photo_request($request_id)
 				$notification=new Notification();
 				$notification->sender_id=Session::get('user_id');
 				$notification->receiver_id=$user_id;
-				$notification->notification_type='view your profile';
+				$notification->notification_type='viewed your profile';
 				$notification->save();
 				}	
 	  	}
@@ -2197,9 +2444,12 @@ public function accept_photo_request($request_id)
               $data['allcountry']=DB::table('countries')->get();
               $data['title']='Public Profile';
 
-
-             
-			       return view('user/public-profile',$data);
+              $previous_view = \App\ViewUser::where([['user_id', Session::get('user_id')],['viewed_user_id', $user_id]])->delete();
+              $viewed = new \App\ViewUser();
+              $viewed->user_id= Session::get('user_id');
+              $viewed->viewed_user_id = $user_id;
+              $viewed->save();
+             			       return view('user/public-profile',$data);
             
 			
 			
@@ -2344,6 +2594,68 @@ public function make_profile_image($image_id)
 	 	}
 }
 
+// public function make_profile_image(Request $request)
+// {
+
+// dd('hello');
+
+//   $user_id =Session::get('user_id');
+//    $photo=MyPhoto::where('user_id',$user_id)->update(['dp_status'=>0]);
+   
+
+
+
+
+//   $rules = array(
+//         'image_name' => 'required|max:10000|mimes:jpeg,jpg,gif,png,bmp',
+        
+//          );
+          
+//          $validator = \Validator::make($request->all(), $rules , $messages);
+//           if ($validator->fails())
+//           {
+
+//               return redirect()->back()->withErrors($validator->errors());
+//           }
+
+// $image = $request->file('image_name');
+//        if($image){
+//             $destinationPath = public_path(). '/user_assets/my_photo/';
+//             $locationimage = $image->getClientOriginalName();
+
+            
+
+//             $img=$image->move($destinationPath, $locationimage);
+
+//             if(!empty($img))
+//             {
+//               $user=new MyPhoto();
+//               $user->image=$locationimage;
+//               $user->user_id=Session::get('user_id');
+//                 $user->dp_status=1;
+              
+//               $user->save();
+                
+//                 if(!empty($user))
+//                 {
+//                   Session::put('success', 'Your photo uploded successfully');
+//                   $data['msg'] =  'Your photo uploded successfully';
+                
+//                   return back();
+//                 }
+//                 else
+//                 {
+//                     Session::put('error', 'invalid input!'); 
+                
+//                       return back();
+//                 }
+//             }
+
+//     }
+
+    
+// }
+
 	public function delete_favourite_user($favourite_id)
 	{
 		
@@ -2363,7 +2675,7 @@ public function make_profile_image($image_id)
 		{
          
          
-          Session::put('success', 'Removed from favourite list!'); 
+          Session::flash('success1', 'Removed from favourite list!'); 
 			// Session::flash('success1', 'Remove from Favourite !'); 
 
 			return back();
@@ -2426,6 +2738,7 @@ public function make_profile_image($image_id)
 		
 		$user_id =Session::get('user_id');
 		$permission=PhotoPermission::where('permission_user_id',$permission_id)->where('user_id',$user_id)->first();
+
 		if(empty($permission))
 		{
 
@@ -2437,12 +2750,24 @@ public function make_profile_image($image_id)
 
 			return back();
 		}
+  }
+$PhotoPermission=new PhotoPermission();
 
-		$PhotoPermission=new PhotoPermission();
-		$PhotoPermission->permission_user_id=$permission_id;
-		$PhotoPermission->user_id=$user_id;
-		$PhotoPermission->status=0;
-		$PhotoPermission->save();
+    if(!empty($permission)){
+      $permission->flag = 3;
+      $permission->status = 0;
+      $permission->save();
+    }
+    else{
+
+    
+    $PhotoPermission->permission_user_id=$permission_id;
+    $PhotoPermission->user_id=$user_id;
+    $PhotoPermission->flag = 3;
+    $PhotoPermission->status=0;
+    $PhotoPermission->save();
+    }
+
 		         $notification=new Notification();
 				$notification->sender_id=Session::get('user_id');
 				$notification->receiver_id=$permission_id;
@@ -2454,20 +2779,20 @@ public function make_profile_image($image_id)
 		$ActivityLog->activity='send photo permission request';
 		$ActivityLog->save();
 
-		$email_setting=EmailPerferance::where('user_id',$permission_id)->first();
-		if(!empty($email_setting))
-		{
-		if($email_setting->photo_request_status==1)
-		{
-		$data['user_date']=User::find($permission_id);
-		$data['sender_user']=User::find(Session::get('user_id'));
-		 $result=\Mail::send('emails.photo_permission', $data , function($message) use ($data)
-	  		  {
-                $message->to($data['user_date']->email)->from('admin@kaboolhai.com' , 'Kabolhai')->subject('Photo Permission Request');
-              });
-		}
-
-		if($PhotoPermission)
+// 		$email_setting=EmailPerferance::where('user_id',$permission_id)->first();
+// 		if(!empty($email_setting))
+// 		{
+// 		if($email_setting->photo_request_status==1)
+// 		{
+// 		$data['user_date']=User::find($permission_id);
+// 		$data['sender_user']=User::find(Session::get('user_id'));
+// 		 $result=\Mail::send('emails.photo_permission', $data , function($message) use ($data)
+// 	  		  {
+//                 $message->to($data['user_date']->email)->from('admin@kaboolhai.com' , 'Kabolhai')->subject('Photo Permission Request');
+//               });
+// 		}
+// }
+		if($PhotoPermission || $permission)
 		{
 
 			
@@ -2475,7 +2800,7 @@ public function make_profile_image($image_id)
 
 			return back();
 		}
-	 }
+	 
 		else
 		{
 			\Session::flash('error', 'invalid!'); 
@@ -2483,8 +2808,9 @@ public function make_profile_image($image_id)
 			return back();
 		}
 			
-	}
-}
+  	
+  }
+
 	public function question_category(Request $request)
 	{
 		$category=$request->category;
@@ -2923,6 +3249,39 @@ public function make_profile_image($image_id)
 
 
 	}
+
+  public function reject($block_id){
+
+
+    $reject=new \App\Reject();
+    $user_id =Session::get('user_id');
+    $active_user=\App\Reject::where('reject_user_id',$block_id)->where('user_id',$user_id)->first();
+    if(empty($active_user))
+    {
+
+    $reject->reject_user_id=$block_id;
+    $reject->user_id=$user_id;
+    $reject->save(); 
+    // $ActivityLog=new ActivityLog();
+    // $ActivityLog->user_id=$user_id;
+    // $ActivityLog->activity_user_id=$block_id;
+    // $ActivityLog->activity='Block user';
+    // $ActivityLog->save();
+    if($reject)
+    {
+      Session::put('success', 'is removed!'); 
+
+      return  back();
+    }
+   }
+    else
+    {
+      Session::flash('error', 'invalid!'); 
+
+      return back();
+    }
+
+  }
 	
 	
 
@@ -3092,6 +3451,7 @@ public function iprofileview_list()
 		$user_id=Session::get('user_id');
 		$result=User::find($user_id);
 		$pho=MyPhoto::where('user_id',$user_id)->where('dp_status',0)->get();
+    $data['dp']=MyPhoto::where('user_id',$user_id)->where('dp_status',1)->first();
 		$data['permission']=PhotoPermission::with('user')->where('permission_user_id',$user_id)->get();
 		
 		$data['photo']=$pho;
@@ -3101,7 +3461,7 @@ public function iprofileview_list()
 	}
 	public function add_photo(Request $request)
 	{
-		
+		// dd($request->file('image_name'));
 		
 		
 			$count=MyPhoto::where('user_id',Session::get('user_id'))->count();
@@ -3129,10 +3489,11 @@ public function iprofileview_list()
 		 	 $image = $request->file('image_name');
 		 	 if($image){
             $destinationPath = public_path(). '/user_assets/my_photo/';
-            $locationimage = time().$image->getClientOriginalName();
+            $locationimage = $image->getClientOriginalName();
+            $deletepreviouse=\App\MyPhoto::where([['image', $locationimage ],['user_id', Session::get('user_id')]])->first();
             $img=$image->move($destinationPath, $locationimage);
 
-            if(!empty($img))
+            if(!empty($img) && empty($deletepreviouse))
             {
             	$user=new MyPhoto();
             	$user->image=$locationimage;
@@ -3149,7 +3510,8 @@ public function iprofileview_list()
            	    
            	    if(!empty($user))
            	    {
-           	      Session::put('success', 'Your photo uploded successfully'); 
+           	      Session::put('success', 'Your photo uploded successfully');
+                  $data['msg'] =  'Your photo uploded successfully';
            	    
 		          return back();
 		        }
@@ -3184,6 +3546,8 @@ public function iprofileview_list()
 		          return back();	
 		    }
 
+        return 'yes';
+
 		 // return view('user/my-photo',$data);
 	}
 	public function delete_photo($image_id)
@@ -3208,6 +3572,7 @@ public function iprofileview_list()
 		 $data['title']='Send Item'; 
 		 return view('user/inbox',$data);
 	}
+
    public function friend_chat($friend_id)
   {
      $data['title']='Inbox'; 
@@ -3222,13 +3587,18 @@ public function iprofileview_list()
         
     })->orderBy('created_at','asc')->get();
     // dd($data['inbox']);
+    $chat = 
+   chats::select('message','attached')->where([['from_user','=',$friend_id],['to_user','=',Session::get('user_id')],['read_at','=',null]])->orderBy('created_at','asc')->update(['read_at'=>1]);
+
        $data['friend']=UserRequest::where('requested_user_id',$user_id)->where('friend_status',1)->join('users','users.id','=','usersrequets.user_id')->join('profile-image','profile-image.image_id','=','users.profile_image','left')->orderBy('users.id','desc')->get();
+       $data['friend_chat']=\App\User::where('id' , $friend_id)->join('my_photos','my_photos.user_id','=','users.id','left')->first();
        $data['friend_id']=$friend_id;
     return view('user/inbox',$data);
   }
+
 	public function inbox()
 	{
-		$data['friend_id']=215;
+		// $data['friend_id']=215;
 		$user_id=Session::get('user_id');
     
     // $data['inbox']=chats::with('to_users','to_photo')->where('to_user',$user_id)->where('from_user',$friend_id)->orderBy('chats.id','desc')->get();
@@ -3317,7 +3687,10 @@ public function iprofileview_list()
 			
 	}
 	public function signup(Request $request)
+
 	{
+
+    dd($request);
 		if(Session::get('user_id'))
 		{
 			return redirect('dashboard');	

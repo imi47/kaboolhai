@@ -1,3 +1,4 @@
+
 @extends('user/user_master_layout1') 
 @section('data')
 <style type="text/css">
@@ -193,7 +194,7 @@ img{ max-width:100%;}
 }
 
 .chat_list.current,
-.chat_list:hover {
+.chat_list:hover  {
   background-color: #f2f2f2;
 }
 
@@ -487,7 +488,9 @@ img{ max-width:100%;}
              @if(!empty($friend))
               @foreach($friend as $row)
               <a href="{{ url('friend-chat',$row->user_id) }}">
-            <div class="chat_list">
+            <div class="chat_list @if(!empty(check_friend_unread_msg($row->user_id)))
+                unread
+              @endif">
               <span class="unread-badge"></span>
               <div class="chat_people">
                 <div class="chat_img">
@@ -523,7 +526,7 @@ img{ max-width:100%;}
               @endforeach
               @endif
             
-            <a href="http://localhost/KBH/friend-chat/215">
+           <!--  <a href="http://localhost/KBH/friend-chat/215">
               <div class="chat_list current">
                 <span class="unread-badge"></span>
                 <div class="chat_people">
@@ -563,11 +566,12 @@ img{ max-width:100%;}
                     </div>
                   </div>
                 </div>
-                </a>
+                </a> -->
             
           </div>
         </div>
         <div class="mesgs">
+         @if(!empty($friend_id)) 
           <div class="user-header">
             <div class="img-wrapper">
               @if(!empty($friend_chat))
@@ -593,6 +597,7 @@ img{ max-width:100%;}
                     @endif
                     @endif
           </div>
+          @endif
           <div class="msg_history" id="chat-scroll-inbox">
                @if(isset($inbox))
               @foreach($inbox as $row)
@@ -647,7 +652,7 @@ img{ max-width:100%;}
 
             <div class="new_message"></div>
        
-           
+           @if(!empty($friend_id))
             <form class="form1" enctype="multipart/form-data">
               <div class="type_msg">
                 {{csrf_field()}}
@@ -661,6 +666,7 @@ img{ max-width:100%;}
                 </div>
               </div>
           </form>
+          @endif
         </div>
       </div>
 
@@ -761,7 +767,7 @@ $("#file").change(function () {
         if(message)
         {
           var word_to_match = message;
-          var string_of_words = 'a string containing the word ender, this will match';
+          var string_of_words = 'fuck fucking bitch butt chutiya suck lick chattay panchoda panchodi benchod benchodi phudi puddi lulla lun lora tattay cholah cholla kuss kussi dallah dalla dalli bacha bachi motherfucker asshole dickhead yuwan yuwani ghashti putter panayvi painayvi yawa kanjri mummay mammay breast tits testicals hoe chawal chawali chutter poppay chuppay chamaatt pitt lund dick';
           //use \b to match on word boundaries
           var filter = new RegExp('\\b' + word_to_match + '\\b', 'gi');
             if(string_of_words.match(filter))

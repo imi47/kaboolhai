@@ -11,7 +11,9 @@
   <!-- favicon -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
     crossorigin="anonymous">
+  <!-- <link rel="stylesheet" type="text/css" href="{{ $user_assets }}/css/jquery.emojipicker.css"> -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <!-- <script type="text/javascript" src="{{ $user_assets }}/js/jquery.emojipicker.js"></script> -->
   <script type="text/javascript" src="{{ $user_assets }}/js/bootstrap-notify.min.js"></script>
 
   <!-- emojiOneArea -->
@@ -21,7 +23,6 @@
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <link rel="stylesheet" href="{{ $user_assets }}/css/muzamil.css" />
-
 
   <link rel="shortcut icon" href="{{ $user_assets }}/kabool-hai-favicon.png">
   <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
@@ -535,7 +536,7 @@
         .mp-head {
           font-size:12px;
         }
-    
+        
         .logo-light img, .logo-dark img {
           width: 34vw;
         }
@@ -553,8 +554,7 @@
           float: none !important;
           display: block !important;
           margin-left: 48px !important;
-        }
-    
+        }    
       }
     
       @media (min-width:501px) {
@@ -640,12 +640,24 @@
     .navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse {
       max-height:0 !important;
     }
-
       </style>
   
   <script type="text/javascript">
     $(function (e) {
-      $('#send_messgae').emojioneArea();
+      $('#send_messgae').emojioneArea({
+        events: {
+         keyup: function (editor, event) {
+           if (event.which == 13) {
+             $('#send_message').html($('.emojionearea-editor').html());
+             $('.main-section .emojionearea-editor').blur();
+             $('.main-section .emojionearea-editor').focus();
+             $('#form').submit();
+             $('.main-section .emojionearea-editor').text('');
+             // scrollToBottom('#chat-scroll');
+           }
+         }
+       }
+      });
     });
     
   </script>
@@ -658,11 +670,11 @@
       <div class='header'>
         <div class="img-wrapper">
           <img src="{{ $user_assets }}/img/avatar.png" alt="">
-          <span id='mark'></span>
+          <span id="mark"></span>
         </div>
         <div class="name-and-status">
-          <a href="#">username</a>
-          <span>Active now</span>
+          <a href="#" id="user_name">username</a>
+          <span id='status'></span>
         </div>
         <img src="{{ $user_assets }}/icons/close.svg" alt="" class='close'>
       </div>
@@ -800,7 +812,7 @@
  .arrow_image {
    padding: 10px;
  }
- 
+
  #navsidebare {
    overflow: scroll;
    overflow-x:hidden;
@@ -1226,7 +1238,7 @@
                 <li class="dropdown" id='messages-dropdown'>
                   <a class="dropdown-toggle" data-toggle="dropdown" href="#" title="Message" onclick="return get_message()">
                     
-                    <span class="fa fa-envelope icon_color"></span><span class="message_count">@if(!empty(
+                    <span class="fa fa-envelope icon_color"></span><span id="message_count">@if(!empty(
 
                       count_message()))
                       {{ count_message() }} @endif</span></a>
@@ -1244,7 +1256,7 @@
                     @if($row->to_user==Session::get('user_id'))
                     <li class='msgNoti'>
                       <a class="left-first-section" rel="{{ $row->from_users->id }}"
-                        href="{{ url('friend-chat',$row->from_users) }}">
+                        href="#">
                         @if(!empty($row->photo->image))
                         <span >
                           <img src="{{ $user_assets }}/my_photo/{{ $row->photo->image }}" style="width: 45px; height: 45px; border-radius:100px; " alt=""
@@ -1306,6 +1318,7 @@
                     <span class="fa fa-bell icon_color"> <span class="noti_counts">@if(!empty(count_notification())) {{ count_notification() }} @endif</span></span>
 
                   </a>
+                  
                   <ul class="dropdown-menu lenght icon-dropdown">
                     @if(count(get_notification()))
                     @foreach(get_notification() as $row)
@@ -1348,6 +1361,7 @@
                    <ul class="dropdown-menu lenght icon-dropdown">
 
                     @if(count(get_notification()))
+                    @php $flag=0; @endphp
                     @foreach(get_notification() as $row)
                    
                     <?php
@@ -1356,8 +1370,9 @@
                       $permission = \App\PhotoPermission::where([['user_id', $row->sender_id],['permission_user_id', Session::get('user_id')]])->latest()->first();
                       // dd($permission);
                       if($permission != null){
-                        if($permission->status != 1){
+                        if($permission->status != 1 ){
                           $check= "";
+                          
                         }
                         else{
                           $check= 'grid-template-columns : 50px 1fr';
@@ -1373,7 +1388,7 @@
                         <img src="{{ $user_assets }}/my_photo/{{ $row->photo->image }}" alt="">
                         
                                                 <div class="info">
-                          <a href="http://localhost/Kaboolhai/public-profile/241"><strong>{{$row->user->user_name }}</strong> {{$row->notification_type}}
+                          <a href="http://localhost/Kaboolhai/public-profile/{{$row->user->id}}"><strong>{{$row->user->user_name }}</strong> {{$row->notification_type}}
                             </a>
                           <span>
                             
@@ -1420,11 +1435,12 @@
                       $permission = \App\PhotoPermission::where([['user_id', $row->sender_id],['permission_user_id', Session::get('user_id')]])->latest()->first();
                       // dd($permission);
                       if($permission != null){
-                        if($permission->status != 1){
+                        if($permission->status != 1 && $permission->flag != 1 && $flag == 0 ){
+                          $flag = 1;
                           ?>
 
-                          <button><a href="http://localhost/Kaboolhai/add-friend/241" onclick="return confirm('Are you sure you want to Add this user?');">Accept</a></button>
-                          <button><a href="http://localhost/Kaboolhai/reject-suggest/241" onclick="return confirm('Are you sure you want to remove this user?');">Remove</a></button>
+                          <button><a href="{{ url('accept-friend-photopermission')}}/{{$row->sender_id}}" onclick="return confirm('Are you sure you want to Add this user?');">Accept</a></button>
+                          <button><a href="{{ url('cancel-photopermission-request')}}/{{$row->sender_id}}" onclick="return confirm('Are you sure you want to remove this user?');">Remove</a></button>
                           <?php 
                         }
                       }
@@ -1435,7 +1451,7 @@
                       @endforeach
                       @endif
 
-                      <li class="friends-noti-dropdown-item dropdown-item noti-dropdown-item">
+                      <!-- <li class="friends-noti-dropdown-item dropdown-item noti-dropdown-item">
                                                 <img src="https://source.unsplash.com/user/erondu/1600x900" alt="">
                                                 <div class="info">
                           <a href="http://localhost/Kaboolhai/public-profile/241">dfhghg </a>
@@ -1443,7 +1459,7 @@
                         </div>
                           <button><a href="http://localhost/Kaboolhai/add-friend/241" onclick="return confirm('Are you sure you want to Add this user?');">Accept</a></button>
                           <button><a href="http://localhost/Kaboolhai/reject-suggest/241" onclick="return confirm('Are you sure you want to remove this user?');">Remove</a></button>
-                      </li>
+                      </li> -->
 
 
 
@@ -1461,8 +1477,8 @@
                   <a class="dropdown-toggle menudesign" data-toggle="dropdown" href="#">
                     {{ user_data()->user_name }} <span class="caret"></span></a>
                   <ul class="dropdown-menu" style="    background-color: #ffffff;">
-                    <li><img width="20" height="20" src="http://localhost/KBH/public/user_assets/dashboard.svg" alt=""><a style="background-color: #ffffff; color: black !important;" href="{{ url('dashboard') }}">Dashboard</a></li>
-                    <li><img width="20" height="20" src="http://localhost/KBH/public/user_assets/logout.svg" alt="log out"><a style="background-color: #ffffff; color:black !important;" href="{{ url('logout') }}">Logout</a></li>
+                    <li><img width="20" height="20" src="{{$user_assets}}/dashboard.svg" alt=""><a style="background-color: #ffffff; color: black !important;" href="{{ url('dashboard') }}">Dashboard</a></li>
+                    <li><img width="20" height="20" src="{{$user_assets}}/logout.svg" alt="log out"><a style="background-color: #ffffff; color:black !important;" href="{{ url('logout') }}">Logout</a></li>
                   </ul>
                   @endif
 
@@ -3205,21 +3221,33 @@ function timerIncrement() {
 }
 </script>
       <script type="text/javascript">
-         var to_user;
+          var to_user;
          $("a.left-first-section").click(function(){
             to_user=$(this).attr('rel');
+
          
          $('#to_userss').val(to_user);
-            $.post('{{ url('/chat') }}' , {_token: '{{ csrf_token() }}' , to_user: to_user} , function(data)
+            $.post("{{ url('chat') }}" , {_token: '{{ csrf_token() }}' , to_user: to_user} , function(data)
          {
          response = $.parseJSON(data);
          $('.sender').html(response.sender);
          $('#user_name').html(response.user_name);
-         
-         // alert(response.code_flage);
+         if(response.status==1){
+            $('#status').html('Active Now');
+            $('#mark').addClass('online');
+         }
+         else{
+          $('#status').html('Offline');
+          $('#mark').removeClass('online');
+
+         }
+         $('.main-section').addClass('open-more');
+         scrollToBottom('#chat-scroll');
+                  // alert(response.code_flage);
          });
    
 });
+         $(document).ready(function(){
       setInterval(function() {
            
       $.ajax({
@@ -3327,7 +3355,7 @@ else
          
          });
          },1000);
-         
+         });
          
 $("#file").change(function () {
        var fileExtension = ['xlsx','xls','csv','jpg','jpeg','png','gif','bmp','doc','docx','pdf','txt'];
@@ -3350,7 +3378,7 @@ var file=document.getElementById("file").value;
 if(message)
 {
 var word_to_match = message;
-var string_of_words = 'a string containing the word ender, this will match';
+var string_of_words = 'fuck butt chutiya suck lick chattay panchoda panchodi benchod benchodi phudi puddi lulla lun lora tattay cholah cholla kuss kussi dallah dalla dalli bacha bachi motherfucker asshole dickhead yuwan yuwani ghashti putter panayvi painayvi yawa kanjri mummay mammay breast tits testicals hoe chawal chawali chutter poppay chuppay chamaatt pitt lund';
 //use \b to match on word boundaries
 var filter = new RegExp('\\b' + word_to_match + '\\b', 'gi');
 if(string_of_words.match(filter))
@@ -3421,10 +3449,17 @@ else
          });
          
         
-         document.getElementById("send_messgae").value = "";
+         // document.getElementById("send_messgae").value = "";
+             $('.main-section .emojionearea-editor').text('');
+
         
        
          });
+
+
+
+
+
          function friend_count()
   {
     $.ajax({
@@ -3495,11 +3530,6 @@ function get_message()
       scrollTop: $(e)[0].scrollHeight
     }, 500);
   }
-
-  $(function() {
-    scrollToBottom('#chat-scroll');
-  });
-
 
 </script>
 <style> 
